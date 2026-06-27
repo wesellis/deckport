@@ -1,0 +1,85 @@
+[game]
+title       = "The Dark Mod"
+slug        = "the-dark-mod"
+aliases     = ["TDM", "thedarkmod", "TheDarkMod"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5252610"
+
+[launch]
+binary         = "thedarkmod.x64"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** Native Linux 64-bit binary (`thedarkmod.x64`). **No Proton needed** for the standard path.
+
+**Install:** In Desktop Mode, open a terminal and run the one-liner below to download the official installer, then let it fetch the game files automatically. After install, **add `thedarkmod.x64` from your `~/tdm/` folder as a non-Steam game.**
+
+**Install command:**
+`sh -c 'mkdir ~/tdm; cd ~/tdm; curl -o tdm_installer.linux64.zip https://update.thedarkmod.com/zipsync/tdm_installer.linux64.zip; unzip tdm_installer.linux64.zip; chmod +x ./tdm_installer.linux64; ./tdm_installer.linux64 --unattended'`
+
+**Proton:** Alternatively, Proton can be used with `TheDarkModx64.exe` if the native path presents issues. A simplified forum install script for Deck is linked below.
+
+**Controller:** The engine has had gamepad support since TDM 2.09, but no in-game input mappings are active by default (only the main menu). On Deck the easiest path is to apply a Steam Input controller layout (or bind a gamepad manually in-game); some users report it working out of the box on Deck.
+
+**Missions:** Additional fan missions can be downloaded directly from the in-game mission downloader."""
+
+[about]
+developer = "The Dark Mod Team (community volunteers)"
+publisher = "The Dark Mod Team (free, standalone)"
+released  = "2009 (Doom 3 mod); 2013 (standalone, free); ongoing updates through 2.13+"
+genre     = "Stealth, first-person, fan-made standalone"
+modes     = "Single-player"
+summary   = """
+**The Dark Mod** is a free, standalone **stealth** game built as a love letter to the **Thief** series, created by community volunteers who began work in late 2004 using the **Doom 3 engine** SDK. It launched in 2009 as a Doom 3 total conversion and became a fully standalone free game in 2013.
+
+The base game ships with a training mission and a starter FM (fan mission), with hundreds of additional **fan-crafted missions** available via the built-in downloader. Each mission is a self-contained stealth scenario set in a dark, Victorian-inspired city. The project remains actively maintained, with version 2.10 (2022) delivering a major rendering upgrade, and new missions continuing to appear regularly."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5252610"
+
+[[links.guides]]
+title = "Official Download Page — thedarkmod.com"
+url   = "https://www.thedarkmod.com/downloads/"
+
+[[links.guides]]
+title = "Installer and Manual Installation (DarkMod Wiki)"
+url   = "https://wiki.thedarkmod.com/index.php?title=Installer_and_Manual_Installation"
+
+[[links.guides]]
+title = "Dark Mod on the Steam Deck — Official Forums Thread"
+url   = "https://forums.thedarkmod.com/index.php?/topic/21447-dark-mod-on-the-steam-deck/"
+
+[[links.guides]]
+title = "PCGamingWiki — The Dark Mod"
+url   = "https://www.pcgamingwiki.com/wiki/The_Dark_Mod"
+
+[[links.guides]]
+title = "TDM v2.10 Major Upgrade — GamingOnLinux"
+url   = "https://www.gamingonlinux.com/2022/03/free-stealth-game-the-dark-mod-v210-is-a-huge-upgrade/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Completely free and standalone** — no owned files or Doom 3 copy needed.
+
+**Install:** Run the one-liner install command in a Deck terminal (Desktop Mode) to download everything automatically into `~/tdm/`. Then add `~/tdm/thedarkmod.x64` as a non-Steam game.
+
+**Alternative:** The official Deck forum thread has a simplified install script if preferred.
+
+**Missions:** Hundreds of fan missions are available via the in-game downloader after first launch."""

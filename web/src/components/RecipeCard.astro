@@ -1,0 +1,157 @@
+---
+import type { Recipe } from "../lib/recipes";
+import { gridUrl } from "../lib/grids";
+import { normalizeTier } from "../lib/recipes";
+import StatusBadge from "./StatusBadge.astro";
+import ProtonBadge from "./ProtonBadge.astro";
+
+interface Props {
+  recipe: Recipe;
+}
+const { recipe } = Astro.props;
+const kind = recipe.type === "proton" ? "Proton" : "Native";
+const grid = gridUrl(recipe.slug);
+// "other" is a non-informative engine for most delisted Windows games — only show
+// the engine when it actually tells you something.
+const engineLabel = recipe.engine && recipe.engine !== "other" ? recipe.engine : "";
+// Every card gets a tier medal: a real ProtonDB tier when we have one, otherwise
+// a purple "Unknown" (pending reports, or a non-Steam game with no ProtonDB entry).
+const tierKey = normalizeTier(recipe.protondbTier);
+const realTier = tierKey !== null && tierKey !== "pending" ? tierKey : null;
+---
+
+<a
+  class="recipe-card"
+  href={`/recipes/${recipe.slug}`}
+  data-slug={recipe.slug}
+  data-status={recipe.status}
+  data-engine={recipe.engine}
+  data-type={recipe.type}
+  data-tier={realTier ?? "unknown"}
+  data-search={`${recipe.title} ${recipe.aliases.join(" ")} ${recipe.engine}`.toLowerCase()}
+>
+  <div class="rc-grid">
+    {
+      grid ? (
+        <img src={grid} alt={`${recipe.title} grid artwork`} loading="lazy" width="460" height="215" />
+      ) : (
+        <span class="rc-grid-ph">{recipe.title}</span>
+      )
+    }
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:.5rem;">
+    <span class="title">{recipe.title}</span>
+    <StatusBadge status={recipe.status} verifiedOn={recipe.verifiedOn} />
+  </div>
+  <div class="rc-foot">
+    <span class="meta">
+      {kind}{engineLabel ? ` · ${engineLabel}` : ""}<span class="rc-votes" hidden>
+        {" · "}👍 <span class="rc-up">0</span> 👎 <span class="rc-down">0</span></span>
+      <span class="rc-verified" hidden title="Community-verified by 👍 votes">{" · "}✓ verified</span>
+    </span>
+    {
+      realTier ? (
+        <ProtonBadge tier={recipe.protondbTier} compact />
+      ) : (
+        <span class="medal medal-sm" style="--medal:#cf7fe0" title="No ProtonDB rating yet — pending reports, or not a Steam game">
+          <span class="coin" />Unknown
+        </span>
+      )
+    }
+  </div>
+</a>
+
+<style>
+  /* Steam-style landscape grid, flush to the card's top edge. The negative
+     margins cancel the card's own padding so the banner is full-bleed; the
+     aspect ratio matches SteamGridDB's 460x215 capsule. */
+  .rc-grid {
+    margin: -1rem -1.1rem 0;
+    aspect-ratio: 460 / 215;
+    overflow: hidden;
+    border-radius: var(--radius) var(--radius) 0 0;
+    background: var(--line);
+  }
+  .rc-grid img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.18s ease;
+  }
+  .recipe-card:hover .rc-grid img {
+    transform: scale(1.03);
+  }
+  /* bottom row: type/engine on the left, ProtonDB tier medal on the right */
+  .rc-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .rc-foot .meta {
+    min-width: 0;
+  }
+  /* compact medal variant for the card */
+  .recipe-card :global(.medal-sm) {
+    font-size: 0.7rem;
+    padding: 0.12rem 0.5rem;
+    flex: none;
+  }
+  /* Fallback banner for the rare recipe with no SteamGridDB art: a branded
+     gradient with the title, so every card still has a horizontal image. */
+  .rc-grid-ph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: radial-gradient(circle at 30% 30%, var(--panel-2, #2a2f3a), var(--bg, #14171c));
+    box-shadow: inset 0 0 0 1px var(--line);
+  }
+</style>
+
+<script>
+  // Fill thumbs up/down counts on every recipe card in one batch request.
+  // Runs once per page (Astro bundles a component script a single time).
+  const meta = document.querySelector<HTMLMetaElement>('meta[name="deckport-api"]');
+  const api = meta?.content || "/api";
+  const VERIFY_THRESHOLD =
+    parseInt(
+      document
+        .querySelector<HTMLMetaElement>('meta[name="deckport-verify-threshold"]')
+        ?.content || "10",
+      10,
+    ) || 10;
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>(".recipe-card[data-slug]"),
+  );
+  const slugs = [...new Set(cards.map((c) => c.dataset.slug).filter(Boolean))];
+
+  if (slugs.length) {
+    fetch(`${api}/votes?slugs=${encodeURIComponent(slugs.join(","))}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((data: Record<string, { up: number; down: number }>) => {
+        for (const card of cards) {
+          const c = data[card.dataset.slug || ""];
+          if (!c) continue;
+          const box = card.querySelector<HTMLElement>(".rc-votes");
+          const up = card.querySelector<HTMLElement>(".rc-up");
+          const down = card.querySelector<HTMLElement>(".rc-down");
+          const verified = card.querySelector<HTMLElement>(".rc-verified");
+          if (up) up.textContent = String(c.up);
+          if (down) down.textContent = String(c.down);
+          if (box) box.hidden = false; // only show once we have real numbers
+          if (verified) verified.hidden = !(c.up >= VERIFY_THRESHOLD && c.up > c.down);
+        }
+      })
+      .catch(() => {
+        /* API offline (e.g. static-only deploy) — leave counts hidden */
+      });
+  }
+</script>

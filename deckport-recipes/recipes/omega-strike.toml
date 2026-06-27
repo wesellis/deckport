@@ -1,0 +1,76 @@
+[game]
+title       = "Omega Strike"
+slug        = "omega-strike"
+aliases     = []
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = "680340"
+sgdb_id     = ""
+
+[launch]
+binary         = "Omega Strike.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `680340`), single-player 2D Metroidvania by **Woblyware** (delisted from Steam on **Aug 8, 2024** after the studio wound down). It's a **GameMaker** title (the data file is `data.win`).
+
+**DRM:** Lightweight GameMaker 2D run-and-gun with **no `GFWL`/`SecuROM`/online DRM** — only the standard Steam wrapper — so it runs cleanly under Proton on the Deck.
+
+**Proton:** ProtonDB tier **silver** (small sample, ~6 reports); `GE-Proton` is a safe pick (stock `proton_experimental` should also work). No special winetricks or launch options needed.
+
+**Install:** The Windows binary is `Omega Strike.exe` (next to `data.win` in the install folder) — **confirm against your own install** by right-clicking the game in Steam → Manage → Browse local files.
+
+**Controller:** GameMaker XInput gamepad support is built in, so a controller works in-game; on the Deck, enable the default **Gamepad with Mouse Trackpad** Steam Input layout if any menu prompts stay keyboard-only.
+
+deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Woblyware"
+publisher = "Woblyware"
+released  = "2017"
+genre     = "Metroidvania / run-and-gun action"
+modes     = "Single-player"
+summary   = "**Omega Strike** is a 2D pixel-art **Metroidvania** with run-and-gun combat, set in a large open-ended world. Doctor Omega and his mutant armies threaten world domination, and the player controls **three freedom fighters** — Sarge, Bear, and Dex — each with distinct weapons and traversal abilities. It earned generally positive reviews for its 16-bit-style sprite work, **chiptune soundtrack**, and witty writing, with the main criticism being its relatively short length. The PC version was self-published by **Woblyware** (Digerati handled later console releases) and was **delisted from Steam in August 2024** following the studio's closure."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Omega Strike - ProtonDB reports (appid 680340)"
+url   = "https://www.protondb.com/app/680340"
+
+[[links.guides]]
+title = "Omega Strike - Delisted Games (delisting history)"
+url   = "https://delistedgames.com/omega-strike/"
+
+[[links.guides]]
+title = "Omega Strike - Steam Community Hub"
+url   = "https://steamcommunity.com/app/680340"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Game:** Single-player 2D Metroidvania (**Woblyware**), a **GameMaker** title delisted from Steam on **Aug 8, 2024** after the studio shut down. Lightweight, with built-in XInput controller support and **no `GFWL`/online dependency** beyond the standard Steam wrapper, so it plays well on the Deck under Proton (ProtonDB **silver**, small report sample).
+
+**Install:** Binary `Omega Strike.exe` is from the known install layout — **verify against yours**.
+
+**Availability:** At least one community comment claimed the Steam build may still have been buyable for a window after the console delisting, so **double-check current store availability** before relying on the 'not for sale' assumption.
+
+**Offline:** No servers to worry about (offline single-player).
+"""

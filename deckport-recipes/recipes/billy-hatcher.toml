@@ -1,0 +1,61 @@
+[game]
+title       = "Billy Hatcher and the Giant Egg"
+slug        = "billy-hatcher"
+aliases     = ["Billy Hatcher", "Billy Hatcher and the Giant Egg PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "38837"
+
+[launch]
+binary         = "BillyHatcher.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+This game was NEVER on Steam, so there is no genuine ProtonDB tier. (Steam App 10650 is an unrelated title, Stormrise -- do not associate it with this game.) The PC port was a Sega release sold at retail in Europe in 2006 and digitally via GamersGate in 2009; supply your own legally obtained copy.
+Use GE-Proton for this older DirectX title. The port ships with SecuROM and a one-time online serial activation, which can interfere under Proton -- keep your serial/activation handy.
+Controllers are NOT natively XInput-friendly: the port uses DirectInput and has poor pad support out of the box. Install the Xidi wrapper (https://github.com/samuelgr/Xidi) for proper XInput mapping (right-stick camera, triggers, rumble), or use Steam Input to bind a controller.
+Essential community fix: the unofficial widescreen patch (WSGF / PCGamingWiki) replaces the capped 1600x1200 with 1080p/1440p/4K presets. The port also lacks V-Sync (screen tearing) and has framerate quirks. The game is a PC port of the 2003 GameCube title by Sonic Team / Sega."""
+
+[about]
+developer = "Sonic Team"
+publisher = "Sega"
+released  = "2003 (GameCube); 2006 (PC, Europe)"
+genre     = "3D Platformer, Puzzle-Platformer"
+modes     = "Single-player, Local multiplayer"
+summary   = "Billy Hatcher and the Giant Egg is a 3D platformer developed by Sonic Team and originally released for the Nintendo GameCube in 2003. Sega later released a Windows PC port, sold at retail in Europe (2006) and digitally via GamersGate (2009); it was never on Steam. Players control Billy, a boy who gains the power to roll giant eggs to hatch allies and defeat enemies across colorful jungle-themed worlds. The game features inventive egg-rolling mechanics and cooperative local multiplayer modes."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Billy Hatcher and the Giant Egg"
+url   = "https://www.pcgamingwiki.com/wiki/Billy_Hatcher_and_the_Giant_Egg"
+
+[[links.guides]]
+title = "Xidi — XInput wrapper for DirectInput games"
+url   = "https://github.com/samuelgr/Xidi"
+
+[[links.guides]]
+title = "PCGamingWiki — Billy Hatcher widescreen patch (community fix)"
+url   = "https://community.pcgamingwiki.com/files/file/2651-billy-hatcher-and-the-giant-egg-widescreen-patch/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+This title was never sold on Steam, so there is no real ProtonDB rating (Steam App 10650 belongs to an unrelated game, Stormrise). Supply your own legally obtained copy of the Sega PC port (retail EU 2006 / GamersGate 2009).
+DRM: the port uses SecuROM with a one-time online serial activation, which may need attention under Proton.
+Controllers are NOT native XInput -- the port is DirectInput with poor pad support; use the Xidi wrapper or Steam Input. The widescreen patch is effectively required to get past the 1600x1200 cap, and there is no V-Sync (screen tearing). Prefer GE-Proton over stock Valve Proton."""

@@ -1,0 +1,74 @@
+[game]
+title       = "Zoo Tycoon (2001)"
+slug        = "zoo-tycoon-2001"
+aliases     = ["Zoo Tycoon", "Zoo Tycoon Classic", "Microsoft Zoo Tycoon"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "zoo.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton Experimental"
+winetricks = []
+notes      = """
+**Game:** Zoo Tycoon (2001, Blue Fang Games / Microsoft) — classic zoo-building simulation. Never given a digital release; long unavailable from Microsoft. Supply your own disc or installed copy.
+
+**Install:** Install your copy under a Wine/Proton prefix, then add `zoo.exe` as a non-Steam game in **Desktop Mode**. SteamDeckHQ ran it on **Wine-GE 8-26**; **Proton Experimental** also works. The exe ends up at e.g. `drive_c/Program Files/Microsoft Games/Zoo Tycoon/zoo.exe`.
+
+**Resolution fix (recommended):** By default it runs 4:3 with black bars. Edit `zoo.ini` in the game folder and, under the `[user]` section, set `screenwidth=1280` and `screenheight=800` for a proper Deck aspect ratio.
+
+**Performance:** Hard-capped to 60 FPS — apply a 60 FPS frame limit and a ~4W TDP cap. Real-world power draw is roughly **8–9W**, giving about 6 hours on an OLED and ~4 hours on an LCD. Mouse-driven UI works well with the Deck's trackpad or in desktop mode.
+
+**Do not toggle windowed/fullscreen:** switching modes in-game crashes it and offers no benefit.
+
+**Expansions:** Marine Mania and Dinosaur Digs expansion content also work via the same method.
+
+**SteamDeckHQ:** Featured in *Classics on Deck* #3 (March 2025)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Zoo Tycoon"
+url   = "https://www.pcgamingwiki.com/wiki/Zoo_Tycoon"
+
+[[links.guides]]
+title = "SteamDeckHQ — Classics on Deck #3 (Zoo Tycoon)"
+url   = "https://steamdeckhq.com/news/classics-on-deck-zoo-tycoon-driver-san-francisco/"
+
+[about]
+developer = "Blue Fang Games"
+publisher = "Microsoft"
+released  = "2001"
+genre     = "Construction and management simulation"
+modes     = "Single-player"
+summary   = "**Zoo Tycoon** (2001) is a **construction and management simulation** by **Blue Fang Games / Microsoft** in which players design, build and run their own zoo. It is long unavailable from Microsoft — never released digitally — but runs cleanly on Steam Deck via Proton Experimental with very low power draw. The Marine Mania and Dinosaur Digs expansions also work via the same method."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Never released digitally — supply your own disc/installed copy. Add `zoo.exe` as a non-Steam game.
+
+**No digital storefront:** long unavailable from Microsoft with no current legal purchase path (a GOG dream-list page exists but it is not for sale).
+
+**Disc DRM (SafeDisc):** retail discs use SafeDisc, which is broken on Windows 10/11; under Wine/Proton this is generally a non-issue, but be aware of it if installing from disc.
+
+**Resolution:** Defaults to 4:3 with black bars. Edit `zoo.ini` `[user]` section: `screenwidth=1280`, `screenheight=800`.
+
+**Capped at 60 FPS / ~8–9W:** apply a 60 FPS limit and ~4W TDP cap. Do not toggle windowed/fullscreen in-game — it crashes.
+
+**Expansions:** Marine Mania and Dinosaur Digs expansion content work via the same method."""

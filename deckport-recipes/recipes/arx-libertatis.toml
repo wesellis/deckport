@@ -1,0 +1,80 @@
+[game]
+title       = "Arx Libertatis"
+slug        = "arx-libertatis"
+aliases     = ["Arx Libertatis", "arx", "Arx Fatalis (Arx Libertatis)"]
+type        = "native"
+engine      = "other"
+steam_appid = "1700"
+sgdb_id     = "1539"
+
+[launch]
+binary         = "arx"
+launch_options = ""
+requires_files = ["data.pak", "loc.pak", "arx.pak"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** A native Linux build is available and packaged for most distributions (AUR: `arx-libertatis` or `arx-libertatis-bin`; portable dev snapshots are also published on the project site). The binary is simply `arx`.
+
+**Easiest on Steam Deck (Luxtorpeda):** The community-recommended path is the **Luxtorpeda** Steam Play compatibility tool. In Desktop Mode install **ProtonUp-Qt** from Discover, use it to install **Luxtorpeda**, then in Steam set Arx Fatalis (app 1700) to use Luxtorpeda as its compatibility tool. Launching the game then auto-downloads and runs the Arx Libertatis native engine against your installed data — no manual binary install needed.
+
+**Manual install:** After installing the `arx` binary, point it at your Arx Fatalis data files using `arx-install-data` (bundled helper script), which copies, renames to lowercase, and verifies checksums from your Steam install. Note the on-disk Steam folder is lowercase: `steamapps/common/arx fatalis/`.
+
+**Alternative launch option:** Set the Steam launch option for Arx Fatalis to: `arx --data-dir "/path/to/steamapps/common/arx fatalis" %command%` (adjust the `arx` binary path to wherever you installed it).
+
+**Controller:** Input is handled via `SDL`, but Arx Fatalis is a keyboard/mouse-era game (rune-drawing magic). On Deck, apply one of the **community Steam Input layouts** for usable gamepad control — there is no polished built-in controller scheme."""
+
+[about]
+developer = "Arx Libertatis Team (community project); original game by Arkane Studios"
+publisher = "Independently released (free, open source); original published by JoWooD Productions"
+released  = "2012 (first release); ongoing"
+genre     = "Open-source engine, RPG, First-person"
+modes     = "Single-player"
+summary   = """
+**Arx Libertatis** is a fully open-source, cross-platform port of **Arx Fatalis**, a **first-person RPG** released in 2002 by **Arkane Studios** (later creators of **Dishonored**). The engine port launched in 2012, bringing the game to modern operating systems with support for arbitrary resolutions, widescreen, improved renderer compatibility, and bug fixes absent from the original.
+
+The original game is sold on GOG and Steam (app 1700) and must be owned to supply the data files. Arx Fatalis is notable for its unique **rune-drawing magic system** and immersive underground world setting."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = "https://www.protondb.com/app/1700"
+steamgriddb = "https://www.steamgriddb.com/game/1539"
+
+[[links.guides]]
+title = "Making Steam launch native Linux Arx Libertatis — Steam Arx Fatalis discussions"
+url   = "https://steamcommunity.com/app/1700/discussions/0/4338734745073654553/"
+
+[[links.guides]]
+title = "Installing the game data under Linux — Arx Libertatis Wiki"
+url   = "https://wiki.arx-libertatis.org/Installing_the_game_data_under_Linux"
+
+[[links.guides]]
+title = "Arx Libertatis on Steam Deck (Luxtorpeda) — Arx Fatalis discussions"
+url   = "https://steamcommunity.com/app/1700/discussions/0/4034725235920005944/"
+
+[[links.guides]]
+title = "Linux packages — Arx Libertatis Wiki"
+url   = "https://wiki.arx-libertatis.org/Linux_packages"
+
+[[links.guides]]
+title = "Arx Libertatis official site"
+url   = "https://arx-libertatis.org/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires Arx Fatalis data files (`data.pak`, `loc.pak`, `arx.pak`, and others) from your own purchase — available on Steam (app 1700) and GOG. The `arx` binary is a separate install from your distribution repos; it does **NOT** ship with data.
+
+**Install:** Easiest on Deck is the **Luxtorpeda** compatibility tool (via ProtonUp-Qt), which auto-fetches the engine and runs it against your data. Otherwise run `arx-install-data` pointing at the Steam data directory (`steamapps/common/arx fatalis/`, lowercase on disk) to correctly lowercase and verify all required files.
+
+**Proton:** No Proton needed — this is a native Linux engine. Apply a community Steam Input layout for comfortable controller play."""

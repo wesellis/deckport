@@ -1,0 +1,54 @@
+[game]
+title       = "Clock Tower (1996 PC)"
+slug        = "clock-tower-pc"
+aliases     = ["Clock Tower 1996", "Clock Tower PC port", "Clock Tower SNES PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "CT32.EXE"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add CT32.EXE as a non-Steam game and set Proton version to GE-Proton. CT32.EXE is the main executable of the 1997 Windows 95 port (the original shipped in Japanese only). The Windows port is Japanese-language by default — apply Silanda's improved English translation patch (romhacking.net entry 3135) to your own copy before launch. This is a mouse-driven point-and-click game: configure the Steam Deck's right trackpad as a mouse for comfortable play. The old DirectDraw fullscreen can misbehave under Wine/Proton; if fullscreen breaks, run windowed or use a wrapper like DxWnd. Note: Clock Tower: Rewind (Steam App 2794770) is the official 2024 remaster (WayForward / Limited Run / Sunsoft) with modern controls and widescreen; consider that release first if you want a Deck-optimized experience. This recipe covers the original Windows 95 PC port of the 1995 Super Famicom game."
+
+[about]
+developer = "Human Entertainment"
+publisher = "Human Entertainment"
+released  = "1997 (Windows 95 port; SNES original 1995)"
+genre     = "Point-and-click survival horror"
+modes     = "Single-player"
+summary   = "Clock Tower is a point-and-click survival horror game originally developed by Human Entertainment for the Super Famicom in 1995, later ported to Windows 95 (released March 1997). Players control Jennifer Simpson, a teenage orphan stalked through a sprawling mansion by the Scissorman, a relentless killer armed with giant scissors. The game is driven entirely by mouse input, with gameplay focused on hiding, fleeing, and uncovering the mansion's dark secrets. The Windows port adds a CGI intro and revised music but is otherwise close to the original. It is the founding entry of the Clock Tower series and a landmark in the survival horror genre."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Clock Tower"
+url   = "https://www.pcgamingwiki.com/wiki/Clock_Tower"
+
+[[links.guides]]
+title = "Romhacking.net — Clock Tower (Windows) English translation patches (incl. Silanda)"
+url   = "https://www.romhacking.net/translations/3135/"
+
+[[links.guides]]
+title = "Clock Tower: Rewind on Steam (2024 official remaster — recommended for Deck)"
+url   = "https://store.steampowered.com/app/2794770/Clock_Tower_Rewind/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Supply your own legally obtained copy of the game. The original 1997 Windows 95 port is not on Steam, so there is no ProtonDB rating for it — tier is unknown pending testing. The port ships in Japanese; the standard fix is Silanda's improved English translation patch (romhacking.net entry 3135), applied to your own copy. Main executable is CT32.EXE. DirectDraw fullscreen can break under Proton — run windowed or use DxWnd if needed. Clock Tower: Rewind (Steam App 2794770) is the official 2024 remaster with native widescreen and modern controller support — strongly consider that first. The game is entirely mouse-driven; use the right trackpad for mouse navigation on Deck."

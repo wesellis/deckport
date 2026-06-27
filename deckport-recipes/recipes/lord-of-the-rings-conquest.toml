@@ -1,0 +1,77 @@
+[game]
+title       = "The Lord of the Rings: Conquest"
+slug        = "lord-of-the-rings-conquest"
+aliases     = ["LOTR Conquest", "Lord of the Rings Conquest"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[about]
+developer = "Pandemic Studios"
+publisher = "Electronic Arts"
+released  = "2009"
+genre     = "Action, hack-and-slash"
+modes     = "Single-player, co-op, multiplayer"
+summary   = """
+**The Lord of the Rings: Conquest** is a 2009 action game from **Pandemic Studios** that applies the studio's **Star Wars: Battlefront** formula to Middle-earth, with large-scale battles of up to **150 on-screen characters** and four class-based hero types. It ships with two campaigns: a Good campaign retracing the War of the Ring, and an Evil campaign imagining Sauron reclaiming the One Ring.
+
+Originally released on Windows, PlayStation 3, and Xbox 360, it drew mixed reviews for its repetitive combat, dated graphics, and balance issues. EA shut down its **online multiplayer servers** in 2010 (and on remaining platforms by 2016) and later **delisted** the game, leaving the offline campaigns and split-screen play intact."""
+
+[launch]
+binary         = "Conquest.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Pandemic's 2009 Lord of the Rings battle game — essentially Star Wars: Battlefront in Middle-earth, from the same studio, delisted. Up to 150 characters on screen, two campaigns.
+
+**Proton:** Runs under Proton; `GE-Proton` is the safe pick for this SecuROM-era EA title (`proton_experimental` also works).
+
+**Install:** Launch the game's own `Conquest.exe` directly as a non-Steam shortcut — **the EA/launcher wrapper is the part that fights the dead activation servers**.
+
+**Controller:** The PC build does **not** have clean native gamepad support — the in-game menus expose no pad bindings and the community routinely uses `reWASD` / `x360ce` on Windows. On Deck the reliable route is a **Steam Input layout that maps the controller to keyboard/mouse** (start from a community config, or build one), rather than relying on the Deck being detected as a native gamepad.
+
+**Multiplayer:** Campaign-only on Deck; the original EA Nation online play is gone. Fan multiplayer lives on via the `MordorWide` EA-Nation re-implementation (with its `ConquestPatch`) and the older `CNQReboot` over LAN / `RadminVPN`."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "MordorWide ConquestPatch (EA Nation re-implementation)"
+url   = "https://github.com/MordorWide/ConquestPatch"
+
+[[links.guides]]
+title = "CNQReboot — how to play LOTR Conquest online again"
+url   = "https://cnqreboot.proboards.com/thread/425/play-lotr-conquest-online"
+
+[[links.guides]]
+title = "Conquest fixes & widescreen (ModDB)"
+url   = "https://www.moddb.com/games/lotr-conquest/downloads/conquest-fixes"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted EA game. The EA Nation / SecuROM activation (`license limit reached`) fails now that the servers are gone, so **a DRM-free copy is the practical route** (the v1.1 patch only touched the dead account service).
+
+**Display:** Known black-screen-at-launch issue (audio plays, no picture) — minimize and restore, or alt-tab once; running `GE-Proton` avoids most of it.
+
+**Controller:** No clean native gamepad support on PC — the game expects keyboard/mouse and the menus have no pad bindings. Use a **Steam Input controller-to-keyboard/mouse layout** (a community config is the easy start) instead of expecting native gamepad detection.
+
+**Cosmetic:** Optional widescreen/FOV tweaks exist via fan config edits if the HUD looks stretched at 16:10.
+
+**Install:** Add `Conquest.exe` as a non-Steam game and force `GE-Proton` in its Compatibility tab.
+
+**Binary:** `Conquest.exe` (default install: `Electronic Arts/The Lord of the Rings - Conquest/Conquest.exe`)."""

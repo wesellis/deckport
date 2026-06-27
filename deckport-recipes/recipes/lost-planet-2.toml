@@ -1,0 +1,75 @@
+[game]
+title       = "Lost Planet 2"
+slug        = "lost-planet-2"
+aliases     = ["Lost Planet 2", "LP2"]
+type        = "proton"
+engine      = "other"         # Capcom MT Framework
+steam_appid = "45750"
+sgdb_id     = ""
+
+[launch]
+binary         = "LP2DX9.exe"   # confirmed; DX9 is the more stable build. DX11 build = LP2DX11.exe
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** 2010 Capcom four-player co-op shooter on the `MT Framework 2.0` engine. **Delisted** since 2021 — bring your own copy; this recipe is configuration only.
+
+**Two builds ship in the game folder:** `LP2DX9.exe` (DirectX 9) and `LP2DX11.exe` (DirectX 11). DX11 looks better (water, boss detail) but DX9 is the more stable path under Proton — start with DX9, switch the recipe's `binary` to `LP2DX11.exe` if you want the visuals and it holds up. (The Lost Planet 2 *Benchmark* is a separate standalone download, not part of the retail game.)
+
+**GFWL — read this first:** Historically the PC version required Games for Windows Live (now dead), which was the #1 blocker on Deck. **In May 2025 Capcom shipped a Steam update that strips GFWL out of the game entirely.** If your Steam copy is updated, GFWL is gone and **no xlive bypass is needed** — but that same patch also removed online multiplayer and wiped existing GFWL-tied saves. Net for Deck: a current Steam build should launch straight into single-player.
+
+**If you have an older / non-updated build that still calls GFWL:** the legitimate offline fix is an open-source GFWL emulator/shim — drop a stub `xlive.dll` (e.g. the community **xlive/XLiveless**-style replacement documented on PCGamingWiki) next to the exe so the game stops waiting on the dead service. This disables online and System Link but lets single-player and local play boot.
+
+**Proton:** Try `GE-Proton` (latest) first; reports also cite stock `Proton 7.0-3` / `GE-Proton7-29` working. `%command%` passthrough is set so you can prepend env vars if needed.
+
+**Compatibility:** Single-player campaign is the reliable mode. Online and System Link are broken/removed; occasional crashes after saving are reported. Pre-rendered title-screen video may glitch — harmless.
+
+**Controller:** Native Xinput gamepad support — the Deck controller works without remapping.
+"""
+
+[[links.guides]]
+title = "Lost Planet 2 — ProtonDB reports"
+url   = "https://www.protondb.com/app/45750"
+
+[[links.guides]]
+title = "Steam guide: Make the game work on Win 7/10/11 + crashing fixes (DX9/DX11, GFWL)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1277648786"
+
+[[links.guides]]
+title = "PCGamingWiki — Lost Planet 2 (xlive.dll GFWL fix, exe list)"
+url   = "https://www.pcgamingwiki.com/wiki/Lost_Planet_2"
+
+[about]
+developer = "Capcom"
+publisher  = "Capcom"
+released   = "2010"
+genre      = "Third-person shooter"
+modes      = "Single-player, online co-op, online multiplayer"
+summary    = "**Lost Planet 2** is a 2010 third-person shooter from Capcom, a sequel to **Lost Planet: Extreme Condition** built on the **MT Framework 2.0** engine. Set on a terraforming planet, it emphasizes **four-player co-op** campaigns against giant **Akrid** creatures alongside larger competitive multiplayer. The PC version originally relied on **Games for Windows Live**; it was delisted in 2021, and a later patch removed the GFWL backend along with its online multiplayer, leaving the single-player and local content."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted since 2021 — configuration only, no store links.
+
+**GFWL:** A May 2025 Steam update removed GFWL from the game, so a current build needs no bypass; that patch also removed online MP and wiped old GFWL saves. Only older non-updated builds still need the legitimate `xlive.dll` GFWL shim.
+
+**Display:** Two exes ship — `LP2DX9.exe` (default here, more stable) and `LP2DX11.exe` (prettier). Swap if one misbehaves.
+
+**Scope:** Single-player only is reliable; online/System Link is removed/broken. Crashes after saving reported occasionally.
+
+**Note:** ProtonDB tier left blank pending a fresh Deck test.
+"""

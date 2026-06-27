@@ -1,0 +1,81 @@
+[game]
+title       = "Gears of War"
+slug        = "gears-of-war"
+aliases     = ["Gears of War", "GoW", "WarGame"]
+type        = "proton"
+engine      = "other"         # Unreal Engine 3
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "WarGame-G4WLive.exe"   # main game exe in Binaries/ (Microsoft Games/Gears of War/Binaries/WarGame-G4WLive.exe); startup.exe is the GFWL launcher you bypass
+launch_options = ""
+requires_files = []
+
+[[links.guides]]
+title = "PCGamingWiki — Gears of War"
+url   = "https://www.pcgamingwiki.com/wiki/Gears_of_War"
+
+[[links.guides]]
+title = "ModDB — Bypassing GFWL on Gears of War"
+url   = "https://www.moddb.com/games/gears-of-war/features/bypassing-gfwl-and-getting-online-to-work-free"
+
+[[links.guides]]
+title = "Lutris — Gears of War (install script)"
+url   = "https://lutris.net/games/gears-of-war/"
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2007 Epic Games PC port (UE3) of the Xbox 360 shooter, delisted around 2010 — **supply your own copy**. Built on Games for Windows Live (now dead).
+
+**Not on Steam:** This 2007 PC port shipped only on the Games for Windows Marketplace / retail disc — it was **never on Steam**, so there is no ProtonDB page (tier left blank). It's run via Lutris or a manually-added non-Steam shortcut under `GE-Proton`. (Don't confuse it with the 2025 Steam remaster *Gears of War: Reloaded*, app 2523720 — a different game.)
+
+**Proton:** Use `GE-Proton` (community reports confirm it runs, e.g. `GE-Proton7-15` and newer); `proton_experimental` also works once GFWL is neutralized.
+
+**DRM:** Apply Title Update 3 in order — `GearsOfWar_TitleUpdate.exe`, then `GearsTU.exe`, then `GearsPC_TU3_Microsoft.exe` — to **fix the expired digital-signature error** ('cannot run the game with modified executable code').
+
+**GFWL:** Remove the GFWL dependency with a community launcher bypass plus an `xlive` stub (`Xliveless` / `xlivelessness`). The bypass drops the stub and edits `AppData/Roaming/Microsoft Games/Gears of War/CurrentSite/default.htm` so the launcher no longer blocks startup. A maintained helper that skips `startup.exe` and launches `WarGame-G4WLive.exe` directly is `shayaantx/Sera` on GitHub.
+
+**Fix:** Kill any lingering GFWL/LIVE process if launch hangs.
+
+**Install:** Single-player + save work after the bypass; **GFWL online is dead**.
+
+**Controller:** Native Xbox 360 / XInput pad support works out of the box, so the Deck's built-in controls are detected with no extra config — other pads can route through Steam Input as an Xbox 360 controller.
+"""
+
+[about]
+developer = "Epic Games"
+publisher = "Microsoft Game Studios"
+released  = "2007"
+genre     = "Third-person cover-based shooter"
+modes     = "Single-player, multiplayer (co-op campaign and competitive)"
+summary   = "**Gears of War** is the 2007 PC port of Epic Games' 2006 Xbox 360 shooter, built on **Unreal Engine 3**. It popularized the cover-based **'stop and pop'** third-person shooter formula and was a major critical and commercial success. The PC edition added five extra campaign chapters, new multiplayer maps, and a **map editor**. It was delisted around 2010 after its **Games for Windows Live** digital certificate expired, which blocks launch on unpatched copies."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted — configuration only, no links.
+
+**DRM:** NOT plug-and-play — requires Title Update 3 (applied in order) to fix the expired-certificate launch block, **PLUS** the community GFWL Launcher Bypass (`Xliveless` stub + `default.htm` edit) so the dead Games for Windows Live no longer blocks startup.
+
+**Fix:** Kill the LIVE process if launch hangs.
+
+**Install:** Single-player and saves work post-bypass; **GFWL online is gone**.
+
+**Controller:** Native Xbox 360/XInput support — Deck controls detected with no extra setup.
+
+**Proton:** Use `GE-Proton`. **Never on Steam** (GFWL-only), so no ProtonDB tier exists — tier left blank.
+
+**Binary:** Main game exe is `WarGame-G4WLive.exe` in `Binaries/` (full path `Microsoft Games/Gears of War/Binaries/WarGame-G4WLive.exe`). `startup.exe` is the GFWL launcher you bypass.
+"""

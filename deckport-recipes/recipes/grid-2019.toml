@@ -1,0 +1,80 @@
+[game]
+title       = "GRID (2019)"
+slug        = "grid-2019"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "703860"
+sgdb_id     = ""
+
+[launch]
+binary         = "Grid.exe"   # launcher; the DX12 renderer is Grid_dx12.exe (the game is DX12-only)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `703860`, removed 2023-12-01 over expired car/likeness licensing).
+
+**Proton:** ProtonDB tier silver — community reports it running **out of the box** on Proton. Boiling Steam confirmed it working as far back as `Proton 5.13`, and `Proton Experimental`/`GE-Proton` handle it on Deck.
+
+**Display:** The game is **DX12-only** (no DX11 fallback exists), which is fine on the Deck's `RADV`/Vulkan path.
+
+**Install:** Main executable is `Grid.exe` (launcher), which hands off to `Grid_dx12.exe`.
+
+**DRM:** No GFWL/SecuROM DRM steps required.
+
+**Known quirk:** Under Proton the game can **crash when you change a graphics preset and hit Apply** (see ValveSoftware/Proton #4280). The game itself runs fine — just avoid switching presets in-game, or edit `hardware_settings_config.xml` directly. See caveats.
+
+deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2019"
+genre     = "Racing"
+modes     = "Single-player, multiplayer"
+summary   = "**GRID** is a 2019 racing game and the fourth entry in Codemasters' **GRID series**, a reboot of the 2008 original. It blends **arcade handling** with sim-style touches across circuit, street, touring, and stock car events, and features a **'nemesis' AI system** where rival drivers react to aggressive play. Reviews were generally positive and it won **Best Racing Game at Gamescom 2019**. It was delisted in November 2023 over **expired real-world car and likeness licensing**; online services were retired in December 2025, but the career and offline modes remain fully playable."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — GRID (2019)"
+url   = "https://www.protondb.com/app/703860"
+
+[[links.guides]]
+title = "ValveSoftware/Proton #4280 — crash when changing graphics presets"
+url   = "https://github.com/ValveSoftware/Proton/issues/4280"
+
+[[links.guides]]
+title = "GRID (2019) — PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/GRID_(2019)"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Removed 2023-12-01 (expired car/likeness licensing); not currently for sale.
+
+**Proton:** ProtonDB silver — community reports confirm it launches and plays on Proton/Deck, but this specific recipe still **needs an on-Deck confirmation**.
+
+**Controller:** Support is native (built as a console-derived racing game with full gamepad support), so no Steam Input hack needed.
+
+**Display:** DX12-only renderer (`Grid_dx12.exe`) — no DX11 path, but `DXVK`/`VKD3D` handle it fine.
+
+**Graphics presets:** Known Proton quirk — the game can **crash when you change a graphics preset and click Apply** (ValveSoftware/Proton #4280; reported since Proton 5.13). Resolution changes are fine. Workaround: leave the preset on its default, or set quality manually by editing `hardware_settings_config.xml` in the game's config directory rather than using the in-game preset buttons.
+
+**Online:** Multiplayer services were shut down by the publisher — career/single-player and local play are unaffected."""

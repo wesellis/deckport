@@ -1,0 +1,84 @@
+[game]
+title       = "Sonic P-06"
+slug        = "sonic-p-06"
+aliases     = ["Sonic Project 06", "Sonic the Hedgehog P-06", "Sonic Project '06"]
+type        = "proton"
+engine      = "unity"
+steam_appid = ""
+sgdb_id     = "5250180"
+
+[launch]
+binary         = "Sonic the Hedgehog.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton8-3"
+winetricks = []
+notes      = """
+**Proton:** Windows-only Unity build; runs well on Deck via `GE-Proton`. **`GE-Proton8-3` (or newer GE builds) is strongly recommended** — vanilla Proton omits the media codecs needed for the animated main-menu background, causing a checkerboard pattern.
+
+**Install:** In Desktop Mode, download the latest release ZIP from ChaosX's official link (posted in the **Sonic the Hedgehog P-06** Steam group / ChaosX's social channels — distribution is via Google Drive, there is no official itch.io page). Extract to a flat folder, then right-click `Sonic the Hedgehog.exe` and Add to Steam.
+
+**Fix:** Force `GE-Proton` via the game's Compatibility settings in Steam.
+
+**Display:** Performance on Deck targets a stable **40 FPS**; some open-world stages may dip."""
+
+[about]
+developer = "ChaosX"
+publisher = "Independently released (free fan game)"
+released  = "2019 (ongoing updates)"
+genre     = "Action platformer"
+modes     = "Single-player"
+summary   = """
+**Sonic P-06** is a complete fan remake of the infamously rushed **Sonic the Hedgehog (2006)** built from scratch in **Unity** by solo developer **ChaosX** over several years. Where the original 2006 title was shipped unfinished with severe performance and collision problems, P-06 rebuilds every character, stage, and mechanic with tight controls, stable framerates, and numerous quality-of-life improvements.
+
+Released in **episodic character-focused drops** (Sonic, Shadow, Silver), it has earned wide praise from the **Sonic** community as a redemption arc for one of the franchise's most controversial entries. The project requires no files from the original game and is entirely **self-contained**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5250180"
+
+[[links.guides]]
+title = "Have You Played Sonic P-06? (Linux/Deck notes) — Linux Gaming Central"
+url   = "https://linuxgamingcentral.org/posts/sonicp-06/"
+
+[[links.guides]]
+title = "Sonic P-06 on Steam Deck OLED — Best Settings (YouTube)"
+url   = "https://www.youtube.com/watch?v=WiMPvC4SK58"
+
+[[links.guides]]
+title = "Sonic on Steam Deck Compatibility Guide — Sonic Stadium forums"
+url   = "https://www.sonicstadium.org/forums/topic/30280-sonic-on-steam-deck-a-guide-to-compatibility-of-sonic-games-on-deck/"
+
+[[links.guides]]
+title = "PCGamingWiki — Sonic P-06"
+url   = "https://www.pcgamingwiki.com/wiki/Sonic_P-06"
+
+[[links.guides]]
+title = "GameBanana — Sonic P-06 Hub (mods and community)"
+url   = "https://gamebanana.com/games/7579"
+
+[[links.guides]]
+title = "Sonic the Hedgehog P-06 — official Steam group (release announcements / download links)"
+url   = "https://steamcommunity.com/groups/STHP-06/announcements/listing"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Proton:** Use `GE-Proton` (`8-3` or newer) — **vanilla Proton causes a checkerboard background** on the main menu due to missing media codec support.
+
+**Self-contained:** No owned game files required; the download is fully self-contained.
+
+**Source:** Obtain the release ZIP only from ChaosX's official link in the **Sonic the Hedgehog P-06** Steam group / ChaosX's social channels (distributed via Google Drive) — **do not use third-party mirrors or reuploads**.
+
+**Display:** Performance varies by stage; **40 FPS** cap recommended on Deck for smoothness."""

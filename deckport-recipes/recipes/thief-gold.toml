@@ -1,0 +1,132 @@
+[game]
+title       = "Thief: The Dark Project (Thief Gold)"
+slug        = "thief-gold"
+aliases     = ["Thief Gold", "Thief: The Dark Project", "Thief 1"]
+type        = "proton"
+engine      = "other"
+steam_appid = "211600"
+sgdb_id     = ""
+
+[launch]
+binary         = "thief.exe"
+launch_options = "PROTON_NO_ESYNC=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Install method**
+Thief Gold is on Steam (App ID 211600, ~$7) — install it like any other Steam title
+and run it through Proton. ProtonDB rates it Gold (trending Platinum, ~69 reports);
+it is not Steam Deck "Verified" but plays well after the steps below. It is also sold
+on GOG; if you use the GOG copy, install via Heroic and pick GE-Proton (latest stable).
+Either way the game ships as `thief.exe` in the install folder (Steam path:
+`steamapps/common/Thief_Gold/`). Force a recent GE-Proton (or Proton 9.x / Experimental)
+in the game's Compatibility properties.
+
+**TFix — NewDark community patch (essential)**
+TFix (by Tannar/community, built on the NewDark engine update) is the essential patch
+for modern Thief Gold. It fixes crashes, restores cutscenes, adds widescreen support,
+and greatly improves stability under Proton. It patches the game in place — it does NOT
+add a separate launcher, so you still launch `thief.exe` afterward.
+
+IMPORTANT INSTALL METHOD ON DECK — USE THE "LITE" ZIP, NOT THE INSTALLER EXE:
+  1. Get TFix from the official TTLG forum thread or ModDB (see links below).
+  2. Prefer "TFix Lite" (a plain ZIP). The full self-extracting installer EXE runs a
+     setup wizard that is awkward under Proton; the Lite ZIP avoids that entirely.
+  3. In Steam, right-click Thief Gold → Manage → Browse local files, then extract the
+     ZIP contents into that folder, overwriting/replacing duplicates when prompted.
+  4. Edit `cam_ext.cfg` (or run TFix's config) to set resolution:
+       game_screen_size 1280 800
+     (1280x800 is native Steam Deck resolution)
+  5. If you must run the full installer EXE instead, do it with protontricks pointed at
+     App ID 211600 so it lands in the correct prefix.
+
+**Steam Overlay**
+The Steam overlay can cause flickering/rendering glitches in DarkEngine games. If you
+see graphical corruption, disable it in Properties → General → "Enable the Steam Overlay
+while in-game". (On a GOG/Heroic copy added as a non-Steam game, disable it on that
+shortcut's per-game properties.)
+
+**Controller**
+Thief Gold has no native controller support. Recommended approach:
+  - Use Steam Input with a community layout for "Thief Gold" or "Thief 1".
+  - Right trackpad = mouse look, right trackpad click = use/attack.
+  - Left trackpad = lean left/right mapped to Q/E.
+  - This is a first-person game — trackpad mouse look is more natural than joystick.
+
+**Audio**
+With TFix/NewDark installed, set the audio backend to OpenAL in the game's video/audio
+options (or via TFix's config tool) — it is the most reliable mode under Proton and
+avoids legacy EAX/A3D errors. If audio still fails on launch, you can disable EAX in
+cam.cfg as a fallback.
+
+**Performance**
+The DarkEngine is single-threaded and CPU-bound on one core. Runs at 60 fps easily.
+No TDP limits needed. Excellent battery life.
+
+**Save System**
+Thief uses a per-mission save system. Use F5/F9 for quick save and load. Save before
+attempting difficult sections — the game is unforgiving.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Thief Gold on Steam (App 211600)"
+url   = "https://store.steampowered.com/app/211600/Thief_Gold/"
+
+[[links.guides]]
+title = "Thief Gold (211600) on ProtonDB"
+url   = "https://www.protondb.com/app/211600"
+
+[[links.guides]]
+title = "TFix: unofficial patch for Thief 1/Gold (TTLG thread)"
+url   = "https://www.ttlg.com/forums/showthread.php?t=134733"
+
+[[links.guides]]
+title = "Step-by-Step guide for installing TFix (Steam Community)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=293411786"
+
+[[links.guides]]
+title = "Thief Gold on GOG"
+url   = "https://www.gog.com/game/thief_gold"
+
+[about]
+developer = "Looking Glass Studios"
+publisher = "Eidos Interactive"
+released  = "1998 (Gold: 1999)"
+genre     = "Stealth / Immersive Sim"
+modes     = "Single-player"
+summary   = """
+**Thief: The Dark Project (Thief Gold)** by **Looking Glass Studios** (1998/1999) is
+the founding masterpiece of the stealth genre, placing you in the shadows of a
+gaslit fantasy-industrial city as master thief Garrett. Thief Gold adds three missions
+to the original release. The DarkEngine's emergent stealth systems — light, sound, and
+surface simulation — remain unmatched. Available on Steam (App 211600) and GOG; runs on
+Steam Deck via Proton/GE-Proton with the TFix (NewDark) patch installed from the Lite ZIP.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- TFix (NewDark) is essential; install the Lite ZIP into the game folder. It patches in
+  place and does NOT add a new launcher — the game still runs as thief.exe.
+- Set resolution in cam_ext.cfg / TFix config (game_screen_size 1280 800 for Deck).
+- Set audio backend to OpenAL for reliability under Proton.
+- If you see flickering/corruption, disable the Steam overlay in game Properties.
+- No native controller support; trackpad mouse look recommended over joystick.
+- DarkEngine is single-threaded; do not expect multi-core scaling.
+- ProtonDB: Gold (trending Platinum); not Steam Deck "Verified".
+"""

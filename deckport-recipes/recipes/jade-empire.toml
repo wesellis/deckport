@@ -1,0 +1,132 @@
+[game]
+title       = "Jade Empire: Special Edition"
+slug        = "jade-empire"
+aliases     = ["Jade Empire SE"]
+type        = "proton"
+engine      = "other"
+steam_appid = "7110"
+sgdb_id     = ""
+
+[launch]
+binary         = "JadeEmpire.exe"
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Step 0 — Bypass the broken launcher/config (do this first)**
+By default Steam runs the game through `JadeEmpireConfig.exe`, which often
+fails to start (the "launcher error" / game-won't-launch problem reported on
+both Windows and Proton). The reliable fix is to launch the game executable
+directly instead of the config tool:
+- In the game's install folder
+  (`steamapps/common/Jade Empire/`) the relevant files are:
+    - `JadeEmpire.exe`         — the actual game (launch this)
+    - `JadeEmpireConfig.exe`   — config/launcher Steam calls by default (often crashes)
+    - `Jade Empire Launcher.exe`
+- This recipe sets `[launch].binary = "JadeEmpire.exe"` so the game is run
+  directly. A common community workaround on a normal Steam install is to
+  back up `JadeEmpireConfig.exe` and copy `JadeEmpire.exe` over it so Steam's
+  default launch starts the game — but pointing the recipe straight at
+  `JadeEmpire.exe` avoids needing to rename anything.
+
+**Step 1 — Unlock frame rate**
+The game ships with an artificial 30 fps cap. To remove it:
+1. Edit `JadeEmpire.ini`, which lives in the GAME INSTALL FOLDER
+   (next to JadeEmpire.exe), e.g.:
+   ~/.steam/steam/steamapps/common/Jade Empire/JadeEmpire.ini
+   (If you don't see it, launch the game once first so it is generated.)
+2. Find the line:
+     ClampFPS=1
+   Change it to:
+     ClampFPS=0
+3. Save and relaunch — the game now runs above 30 fps.
+Note: uncapping fps speeds up the in-game camera turn rate; lower the turn
+sensitivity slider in the options menu to compensate.
+
+**Step 2 — Optional stutter reduction (d3d9 override)**
+Some players report micro-stutters. A DXVK-compatible d3d9.dll override can
+help:
+1. Copy a DXVK `d3d9.dll` (from a DXVK release on GitHub) next to
+   JadeEmpire.exe in the game directory.
+2. Add the launch option:
+     WINEDLLOVERRIDES="d3d9=n,b" %command%
+This is optional — many players run fine without it. (Modern GE-Proton ships
+DXVK by default, so this is rarely needed on Deck.)
+
+**Step 3 — Proton version**
+GE-Proton is recommended for best compatibility (ProtonDB tier is Gold).
+Proton 8.x / 9.x and Proton Experimental are also reported working. Older
+Proton 7.0 can produce audio crackling; prefer 8+ if you hit that.
+
+**Step 4 — Controls**
+The game has native controller support ("support for game-pads" per the Steam
+store), so the Deck's gamepad works out of the box. If on-screen prompts show
+keyboard icons instead of controller glyphs, open Steam Input for the game and
+apply the "Gamepad" controller layout to force pad mode.
+
+**Step 5 — Resolution**
+Set resolution to 1280x800 in the in-game display settings to match the Deck's
+native screen. The game supports widescreen, so no widescreen patch is needed.
+
+**Step 6 — Install method**
+Standard Steam install (no extra files required). Set the game's compatibility
+tool to GE-Proton (or Proton Experimental) under Properties > Compatibility.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Steam store page"
+url   = "https://store.steampowered.com/app/7110/"
+
+[[links.guides]]
+title = "ProtonDB entry"
+url   = "https://www.protondb.com/app/7110"
+
+[[links.guides]]
+title = "PCGamingWiki (fixes, FPS cap, widescreen, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/Jade_Empire:_Special_Edition"
+
+[[links.guides]]
+title = "Steam Community: Easy fix to game failing to launch (run JadeEmpire.exe directly)"
+url   = "https://steamcommunity.com/app/7110/discussions/0/492379159708074789/"
+
+[[links.guides]]
+title = "GOG forum: Un-cap the 30 fps lock (ClampFPS)"
+url   = "https://www.gog.com/forum/jade_empire_special_edition/tip_uncap_30_fps_lock"
+
+[about]
+developer = "BioWare"
+publisher = "2K Games (orig. PC SE); Aspyr/EA (current Steam listing)"
+released  = "2007"
+genre     = "Action RPG"
+modes     = "Single-player"
+summary   = """**Jade Empire: Special Edition** by BioWare (2007) is a wuxia martial-arts RPG
+originally built for Xbox before landing on PC. It features BioWare's signature
+branching narrative in a richly realised mythological Chinese setting, and runs
+very well on Steam Deck with only a single config tweak to unlock the frame rate."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Steam's default launch runs JadeEmpireConfig.exe, which frequently fails to start ("launcher error" / won't launch). This recipe launches JadeEmpire.exe directly to avoid it.
+- ClampFPS must be set to 0 in JadeEmpire.ini or the game is locked to 30 fps.
+- JadeEmpire.ini is in the GAME INSTALL FOLDER (steamapps/common/Jade Empire/), next to JadeEmpire.exe — NOT in the Proton prefix.
+- Uncapping fps speeds up the camera turn rate; reduce the turn sensitivity slider to compensate.
+- Audio crackling possible on Proton 7; use GE-Proton or Proton 8+ to avoid.
+- Controller is natively supported; if prompts show keyboard icons, apply the Gamepad layout in Steam Input.
+- d3d9.dll override is optional; only apply if you experience stuttering (GE-Proton already includes DXVK).
+"""

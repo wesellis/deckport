@@ -1,0 +1,78 @@
+[game]
+title       = "Super Cloudbuilt"
+slug        = "super-cloudbuilt"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "463700"
+sgdb_id     = ""
+
+[launch]
+binary         = "CloudbuiltSE.exe"   # best guess; UE3/UDK titles usually ship a *-Win32-Shipping.exe under Binaries/Win32 — confirm exact name in your install
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 463700`), removed Sept 2021 after Coilworks' publishing deal with Double Eleven ended — **no longer for sale**. Rocket-powered 3D parkour platformer on Unreal Engine 3.
+
+**Proton:** ProtonDB tier `gold`: runs well under Proton on the Deck. Use `GE-Proton` (or `proton_experimental` as a fallback).
+
+**DRM:** No `GFWL`/`SecuROM`/`Denuvo` DRM to bypass.
+
+**Controller:** Native Xbox-style controller support, so it works on Deck controls out of the box — verify the in-game controller binds map cleanly.
+
+**Display:** Lock the Deck to `60Hz` if you hit frame-pacing stutter.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Coilworks, Double Eleven"
+publisher = "Double Eleven"
+released  = "2017"
+genre     = "Action platformer, third-person shooter"
+modes     = "Single-player"
+summary   = "**Super Cloudbuilt** is a remastered, expanded edition of the 2014 PC title **Cloudbuilt**, built on **Unreal Engine 3**. Players control Demi, a soldier in a rocket-powered exo-suit, **wall-running** and parkouring through cel-shaded levels suspended above an abyss while shooting hostile robots and dodging hazards. It emphasizes speed, momentum, and creative routing, with reviewers praising its intense and rewarding movement but noting punishing difficulty and repetitive level visuals. It was **delisted from Steam** in September 2021 after the publishing arrangement ended."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Super Cloudbuilt (appid 463700)"
+url   = "https://www.protondb.com/app/463700"
+
+[[links.guides]]
+title = "ValveSoftware/Proton issue #1139 — Super Cloudbuilt compatibility"
+url   = "https://github.com/ValveSoftware/Proton/issues/1139"
+
+[[links.guides]]
+title = "Coilworks — Super Cloudbuilt (official developer page)"
+url   = "https://coilworks.se/super-cloudbuilt"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted on Steam (`appid 463700`) since Sept 2021 — **not for sale**. deckport links nothing.
+
+**Proton:** ProtonDB `gold`; community reports it playable under Proton.
+
+**Binary:** Binary name `CloudbuiltSE.exe` is a best guess — **confirm the actual `.exe` in your install's `Binaries` folder**.
+
+**Controller:** Native controller support means Deck controls work without a Steam Input hack.
+
+**Display:** If you see frame-pacing stutter, cap the Deck refresh rate.
+
+**Multiplayer:** Single-player only, so no dead-server concern.
+
+**Status:** Recipe not yet hardware-confirmed on a Deck."""

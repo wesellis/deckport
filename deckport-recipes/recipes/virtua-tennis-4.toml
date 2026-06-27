@@ -1,0 +1,76 @@
+[game]
+title       = "Virtua Tennis 4"
+slug        = "virtua-tennis-4"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "71390"
+sgdb_id     = ""
+
+[launch]
+binary         = "VT4.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `71390`). ProtonDB silver: confirmed running well on Steam Deck once Games for Windows Live is dealt with.
+
+**Proton:** `GE-Proton` is the most reliable choice here.
+
+**GFWL:** The blocker is GFWL — **the game throws 'Failed to initialize Games for Windows Live' otherwise.**
+
+**Fix:** Apply the Xliveless GFWL-bypass mod (drop its `xlive.dll` into the install folder next to `VT4.exe`) so the game launches offline with no GFWL prefix work at all.
+
+**Alternative:** Without the mod, install the game, then uninstall the bundled Win7 GFWL and install the current GFWL/Xbox client into the Proton prefix (**the bundled installer reverts newer versions, so order matters**).
+
+**Controller:** Native Xinput gamepad support, so the Deck controller works out of the box once you're in-game.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Sega"
+publisher = "Sega"
+released  = "2011"
+genre     = "Sports (tennis)"
+modes     = "Single-player, local multiplayer, online (defunct)"
+summary   = "**Virtua Tennis 4** is the fourth main entry in Sega's long-running **arcade-style tennis series**, brought to PC in 2011 after the console versions. Its headline addition is the **World Tour** career mode, a board-game-style progression layout (often compared to Mario Party) of tournaments, training, and exhibition matches. The console releases added **motion controls** (PlayStation Move, Kinect, Wii MotionPlus), but reviews were mixed on their implementation. The PC version shipped via **Games for Windows Live**, and its online play has since been retired, leaving it as a single-player and local-multiplayer game."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Virtua Tennis 4 (appid 71390) reports"
+url   = "https://www.protondb.com/app/71390"
+
+[[links.guides]]
+title = "PCGamingWiki — Virtua Tennis 4 (GFWL / Xliveless notes)"
+url   = "https://www.pcgamingwiki.com/wiki/Virtua_Tennis_4"
+
+[[links.guides]]
+title = "Steam Community — getting Virtua Tennis 4 running on Steam Deck"
+url   = "https://steamcommunity.com/app/71390/discussions/0/3414305211875685710/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Status:** Delisted Steam game (appid `71390`); ProtonDB silver, with Deck users confirming it plays well after handling GFWL.
+
+**GFWL:** Main hurdle is Games for Windows Live: apply the Xliveless bypass (`xlive.dll` into the game folder beside `VT4.exe`) to skip GFWL entirely, or install the current GFWL/Xbox client into the prefix after removing the bundled Win7 version (**install order matters** — the bundled one reverts newer GFWL).
+
+**Controller:** Native gamepad support, so the Deck controller works in-game without a Steam Input layout.
+
+**Online:** The previous online/multiplayer modes relied on GFWL, which is dead — **treat this as single-player/local.**"""

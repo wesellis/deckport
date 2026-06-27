@@ -1,0 +1,54 @@
+[game]
+title       = "Last Bronx"
+slug        = "last-bronx"
+aliases     = ["Last Bronx: Tokyo Bangaichi", "Last Bronx PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "LastBronx.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Use GE-Proton for this 1998 Windows port of Sega AM3's weapon-based fighter (the PC version is based on the 1997 Sega Saturn port, not the 1996 Model 2 arcade original). IMPORTANT: this port renders entirely in software — it never shipped Direct3D or 3Dfx acceleration and was the only Sega arcade-to-PC port without a hardware-3D patch, so dgVoodoo2 / DirectX wrappers do NOT help here. The real modern problem is that the game runs far too fast on current CPUs; cap it with a frame limiter (target 60 FPS, or 30 FPS if it is still too fast) — vsync alone does not fix it. Running the exe with Windows 98 compatibility behaviour can also help. For controls, map a controller layout with Steam Input (D-pad/stick to movement, face buttons to the weapon/attack inputs) and test in practice mode before real matches."
+
+[about]
+developer = "Sega AM3"
+publisher = "Sega"
+released  = "1998 (Windows PC; arcade 1996, Saturn 1997)"
+genre     = "Fighting, Weapon-Based 3D Fighter"
+modes     = "Single-player vs CPU, Local 2-player PvP"
+summary   = "Last Bronx is a weapon-based 3D fighting game developed by Sega AM3, originally released in arcades in 1996 on Sega Model 2 hardware, ported to the Sega Saturn in 1997, and to Windows PC in 1998. Set in the underground street-gang world of Tokyo, each fighter wields a distinct weapon — wooden swords, tonfa, chains, and more. The game features a full cast of stylized characters and was notable for its realistic weapon-combat feel at the time of release."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Last Bronx"
+url   = "https://www.pcgamingwiki.com/wiki/Last_Bronx"
+
+[[links.guides]]
+title = "Classic Game Fixes — Last Bronx on Windows 10 (frame-rate fix)"
+url   = "https://classicgamefixes.wixsite.com/home/last-bronx"
+
+[[links.guides]]
+title = "VOGONS — Last Bronx PC discussion (software renderer, FMV/CD notes)"
+url   = "https://www.vogons.org/viewtopic.php?t=75024"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "You must supply your own legally obtained copy — this game has no current digital storefront release, and it is a CD-based title (a community no-disc fix exists to run it without the original disc). The PC version renders entirely in software with no Direct3D/3Dfx path, so DirectX wrappers like dgVoodoo2 are NOT the fix — the actual issue is the game running far too fast on modern CPUs, which needs a frame limiter (target 60 FPS). Configure Steam Input to map your controller to the game's inputs. ProtonDB tier is left pending: there is no Steam release and insufficient modern Proton/Steam Deck reports to assign a real tier."

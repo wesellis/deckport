@@ -1,0 +1,70 @@
+[game]
+title       = "You Don't Know Jack (2011)"
+slug        = "you-don-t-know-jack-2011"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "99200"
+sgdb_id     = ""
+
+[launch]
+binary         = "Win/project/jack/bin/win/JackGame.exe"   # game launcher lives deep in the tree, not at the root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Steam game (appid `99200`, removed from sale 2015-03-15).
+
+**Binary:** the launcher is **not** at the install root — it sits at `Win/project/jack/bin/win/JackGame.exe`. Point Proton at that exe, otherwise the game won't start.
+
+**Proton:** start with `GE-Proton` (or `proton_experimental`). Reports are mixed: several Deck/Proton users hit a **black screen with the intro audio playing but no video/inputs**, so if the first Proton version black-screens, try switching to another Proton build (older `Proton 7`/`8` or `GE-Proton`) before giving up. No special winetricks have been confirmed as required.
+
+**DRM:** Steam DRM only — **no GFWL/SecuROM/CD check** on this 2011 release.
+
+**Controller:** This is a trivia/quiz game driven entirely by menu + answer selection, so a **Steam Input keyboard/mouse layout** (D-pad or stick to move, click to select) makes it playable on the Deck. Native gamepad support is limited (keyboard-centric, 2-player max).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Jellyvision Games"
+publisher = "THQ"
+released  = "2011"
+genre     = "Party trivia quiz / comedy game show"
+modes     = "Single-player, local multiplayer (up to 4 players)"
+summary   = "**You Don't Know Jack (2011)** is a comedy trivia game styled as an irreverent TV game show, hosted by snarky emcee **Cookie Masterson**. It was **Jellyvision**'s first new full entry in the long-running **series** after roughly an eight-year hiatus, mixing pop-culture and general-knowledge questions with the franchise's signature 'high culture and dick jokes' humor. Players answer a sequence of multiple-choice questions before a closing **'Jack Attack'** speed round. The PC version was delisted from sale after publisher **THQ went bankrupt** in 2013, which is why it is no longer purchasable on Steam."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — YOU DON'T KNOW JACK (appid 99200) compatibility reports"
+url   = "https://www.protondb.com/app/99200"
+
+[[links.guides]]
+title = "Wikipedia — You Don't Know Jack (2011 video game)"
+url   = "https://en.wikipedia.org/wiki/You_Don't_Know_Jack_(2011_video_game)"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted Steam game (appid `99200`, off sale since 2015-03-15).
+
+**Status:** **not Deck-confirmed.** Community reports are mixed — some get it running under Proton, others hit a black screen (intro audio, no video). Treat the ProtonDB tier as unknown until tested and try multiple Proton versions if it black-screens.
+
+**Network:** runs offline/single-machine (no live servers needed).
+
+**Controller:** native controller support is minimal (keyboard-driven, 2 players max), so set up a **Steam Input keyboard/mouse layout** for handheld play — easy since it's just menu navigation and answer selection.
+
+**Binary:** the real launcher is `Win/project/jack/bin/win/JackGame.exe` inside the install folder — **not** a `.exe` at the game root. If your install layout differs, point `launch.binary` at the actual `JackGame.exe`."""

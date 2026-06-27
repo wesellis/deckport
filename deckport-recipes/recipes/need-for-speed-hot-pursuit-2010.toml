@@ -1,0 +1,76 @@
+[game]
+title       = "Need for Speed: Hot Pursuit (2010)"
+slug        = "need-for-speed-hot-pursuit-2010"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "47870"
+sgdb_id     = ""
+
+[launch]
+binary         = "NFS11.exe"   # main game exe; Launcher.exe and ConfigTool.exe also ship in the folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `47870`, removed 2020-10-05 alongside the Remastered).
+
+**Launch:** Main exe is `NFS11.exe` — **point the launcher at it, not `Launcher.exe`**, to skip the EA/Origin shell.
+
+**Proton:** Stock Steam Proton versions often refuse to launch it on Deck — **install `GE-Proton` via ProtonUp-Qt and select it per-game** (`GE-Proton 9-25` confirmed working by the community); `proton_experimental` may also work after a Steam Deck update.
+
+**DRM:** Uses Solidshield activation DRM plus Origin/EA online activation (not GFWL, not SecuROM). The Steam build wraps this in Steam DRM; expect a one-time online activation on first launch.
+
+**Display:** Runs ~60 fps on Deck; **capping the refresh to 50 Hz** smooths the occasional dip.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Criterion Games"
+publisher = "Electronic Arts"
+released  = "2010"
+genre     = "Arcade racing"
+modes     = "Single-player, online multiplayer"
+summary   = "**Need for Speed: Hot Pursuit** is a 2010 **arcade racing** game developed by **Criterion Games**, the **Burnout** studio, and published by Electronic Arts. It reboots the classic Hot Pursuit formula with high-speed cop-versus-racer chases through the open roads of fictional Seacrest County, using takedowns, spike strips and roadblocks. The game introduced **Autolog**, an early social system that tracked friends' times and recommended challenges. Critically acclaimed at launch, it was delisted from Steam on 2020-10-05 when the **Hot Pursuit Remastered** version released."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Need for Speed: Hot Pursuit (app 47870)"
+url   = "https://www.protondb.com/app/47870"
+
+[[links.guides]]
+title = "PCGamingWiki — Need for Speed: Hot Pursuit"
+url   = "https://www.pcgamingwiki.com/wiki/Need_for_Speed:_Hot_Pursuit"
+
+[[links.guides]]
+title = "Steam Community — Need for Speed: The Controller Fix"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3040247021"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted in 2020.
+
+**Proton:** Community ProtonDB reports confirm it runs on Deck, but stock Proton frequently won't launch it — **use `GE-Proton`** (`9-25` known good) via ProtonUp-Qt.
+
+**Controller:** Gamepad support on the 2010 PC version is finicky — it recognizes pads as an Xbox controller but often needs help. Enable **Steam Input** and apply a community controller layout/fix if the Deck pad isn't detected in-menu.
+
+**DRM:** Solidshield activation DRM plus Origin/EA online activation (not GFWL, not SecuROM); the Steam build adds Steam DRM. Expect a one-time online activation on first launch.
+
+**Crash fix:** Known PC-side issue: the 'Business or Pleasure' mission can crash at checkpoints 18-19 — **drop graphics to lowest to pass it**.
+
+**Online:** Autolog/online cop-vs-racer features depend on EA servers that are dead; single-player career is fully playable offline."""

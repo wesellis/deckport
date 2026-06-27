@@ -1,0 +1,71 @@
+[game]
+title       = "F1 2015"
+slug        = "f1-2015"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "286570"
+sgdb_id     = ""
+
+[launch]
+binary         = "F1_2015.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `286570`). Codemasters racing title.
+
+**Proton:** ProtonDB gold — runs out of the box on Proton via DXVK/Vulkan. The Windows build under Proton actually performs **better** than Feral's native Linux port (native caps ~17 FPS; Proton holds 30 FPS and 60 in menus). `GE-Proton` or `proton_experimental` both work; `Proton 7.0+` is fine.
+
+**Controller:** Full native controller support, so the Steam Deck gamepad works out of the box.
+
+**Display:** The game resets graphics to the Low preset at 800x600 on every launch — **set your preset/resolution in-game each session**, or after first run make the `hardware_settings` config write-protected so it stops reverting. Optionally add `-vulkan` to launch options.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Codemasters Birmingham"
+publisher = "Codemasters"
+released  = "2015"
+genre     = "Racing / Simulation"
+modes     = "Single-player, Multiplayer"
+summary   = """
+**F1 2015** is an officially licensed Formula One racing game based on the 2015 FIA Formula One World Championship, and the first entry in Codemasters' long-running **F1 series** to launch on the **EGO 4.0 engine** with rebuilt physics and a fully voiced **pit radio**. It was the first F1 game built for the eighth console generation. A native Linux port was later produced by Feral Interactive.
+
+Critical reception was mixed, with praise for the improved driving model and visuals but criticism of the thin selection of game modes and unstable multiplayer; it was **delisted** from digital storefronts in 2022 as part of a wider removal of older Codemasters titles."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — F1 2015 (appid 286570)"
+url   = "https://www.protondb.com/app/286570"
+
+[[links.guides]]
+title = "Steam Community — F1 2015"
+url   = "https://steamcommunity.com/app/286570"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted Steam game (appid `286570`); deckport links nothing.
+
+**Compatibility:** ProtonDB gold. Community reports confirm it runs well on Linux/Proton/Deck via DXVK/Vulkan — the Proton-on-Windows-build path beats Feral's native Linux port (native ~17 FPS vs Proton 30 FPS / 60 in menus).
+
+**Controller:** Native gamepad support, so Deck controls work without a custom layout.
+
+**Quirk:** Graphics default to Low preset / 800x600 on every launch unless you write-protect the `hardware_settings` config.
+
+**Binary:** Set to `F1_2015.exe` (confirm against your install)."""

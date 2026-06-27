@@ -1,0 +1,75 @@
+[game]
+title       = "SHIFT 2: Unleashed"
+slug        = "shift-2-unleashed"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "47920"
+sgdb_id     = ""
+
+[launch]
+binary         = "SHIFT2U.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `47920`, removed from sale 2021-05-31). ProtonDB rates it `gold` (good confidence, ~34 reports, trending toward platinum) — community reports it running on Linux/Proton on the Deck. Main binary is `SHIFT2U.exe`.
+
+**Proton:** Use `GE-Proton` (via `ProtonUp-Qt`) for the smoothest run; `proton_experimental` also works for most. A few reports hit a black screen on launch; if that happens, try a different (often newer) Proton build.
+
+**DRM:** The game uses **TAGES SolidShield** copy protection with a **5-machine activation limit** per key, originally backed by EA online activation. EA retired the online services on 2021-08-31, but **owned copies still launch and play offline** after that date. The real constraint is the activation cap: if a key has already been activated on 5 machines it gets locked, and only EA support can reset it.
+
+**Controller:** Gamepad works without Steam Input remapping; pick a controller scheme in-game. The default has noticeable steering input lag — fix it by editing `vehicleset_pc_custom_pad.xml` (in `ControllerDefaults/PC`), changing `DampeningEnabled="1"` to `"0"`, marking the file read-only, then re-selecting the `Custom` controller scheme in-game.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Slightly Mad Studios"
+publisher = "Electronic Arts"
+released  = "2011"
+genre     = "Sim-leaning racing"
+modes     = "Single-player, multiplayer"
+summary   = """
+**SHIFT 2: Unleashed** is the seventeenth **Need for Speed** installment and the sequel to **Need for Speed: Shift**, developed by **Slightly Mad Studios** and published by Electronic Arts in 2011. It leans toward **simulation-style racing** while keeping an arcade edge, and is best known for its immersive **in-helmet camera**, night racing, and the **Autolog** social system carried over from Hot Pursuit.
+
+Reviews were generally favorable but mixed, praising the visceral driving feel while noting the busy cockpit camera could be distracting. The PC version was **delisted from Steam in 2021**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Shift 2 Unleashed reports"
+url   = "https://www.protondb.com/app/47920"
+
+[[links.guides]]
+title = "Steam Community guide — Shift 2 Unleashed PC fixes (controller dampening + visuals)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2374946734"
+
+[[links.guides]]
+title = "Delisted Games — SHIFT 2: Unleashed (delisting + server retirement)"
+url   = "https://delistedgames.com/shift-2-unleashed/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Uses TAGES SolidShield with a 5-machine activation limit per key. EA retired the online services on 2021-08-31, but **owned copies still launch and play offline** afterward — the catch is the activation cap: a key already used on 5 machines locks up and needs EA support to reset.
+
+**Delisted:** Removed from Steam 2021-05-31 (appid `47920`), so it passes the not-for-sale rule.
+
+**Status:** ProtonDB `gold` (good confidence, ~34 reports, trending platinum) — community reports confirm it runs on Proton/Deck, but this exact recipe still needs an on-Deck pass. Binary is `SHIFT2U.exe`. A minority hit a launch black screen; switching Proton builds usually clears it.
+
+**Controller:** Gamepad works without Steam Input remapping; if steering feels laggy set `DampeningEnabled` to `0` in `vehicleset_pc_custom_pad.xml` (under `ControllerDefaults/PC`), mark it read-only, and re-pick the `Custom` scheme."""

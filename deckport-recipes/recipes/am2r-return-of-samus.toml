@@ -1,0 +1,70 @@
+[game]
+title       = "AM2R: Return of Samus"
+slug        = "am2r-return-of-samus"
+aliases     = ["AM2R", "Another Metroid 2 Remake"]
+type        = "native"        # native Linux via the AM2RLauncher — no Proton needed
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "AM2RLauncher"   # the community launcher; builds + runs the native Linux game
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Overview:** Another Metroid 2 Remake (AM2R) by **DoctorM64** — a free `GameMaker` fan remake of Metroid II.
+
+**Native (recommended):** The clean Deck path is native — **install the `AM2RLauncher` Flatpak from Flathub** (`io.github.am2r_community_developers.AM2RLauncher`). It builds the native Linux build + community updates, so **no Proton** is needed.
+
+**Supply your own data:** You must provide your own `AM2R 1.1` game data — the launcher ships no copyrighted files.
+
+**Proton:** A Windows `.exe` under Proton also works if you prefer.
+"""
+
+[about]
+developer = "Milton \"DoctorM64\" Guasti"
+publisher = "Independently released (free fan project)"
+released  = "2016"
+genre     = "Action-adventure, Metroidvania"
+modes     = "Single-player"
+summary   = """
+**AM2R** (Another Metroid 2 Remake) is a fan-made remake of Nintendo's 1991 Game Boy game **Metroid II: Return of Samus**, built in **GameMaker: Studio** by Argentine developer Milton Guasti over roughly a decade of solo work. It rebuilds the original's 2D exploration and Metroid-hunting structure with modernized graphics, controls, and music while staying faithful to the source.
+
+Released for Windows in **August 2016**, it was widely praised by fans and press for its polish, but Nintendo issued **DMCA takedowns** days later and it is no longer officially distributed. The AM2R community has continued maintaining and updating the project since.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "AM2RLauncher on Flathub (the recommended Deck install)"
+url   = "https://flathub.org/apps/io.github.am2r_community_developers.AM2RLauncher"
+
+[[links.guides]]
+title = "AM2RLauncher install guide (wiki)"
+url   = "https://github.com/AM2R-Community-Developers/AM2RLauncher/wiki/Installation-Process"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Unofficial fan remake that Nintendo has issued takedowns against — **its availability is unstable; obtain it only from a source you judge legitimate**.
+
+**Install:** Native Flatpak path is the community-recommended way to run it on Deck — install via **Discover**, then use the launcher's built-in `Install Community Updates`.
+
+**Controller:** Works natively; if button mapping is off, add a **Steam Input** gamepad layout as a fallback.
+
+**Links:** deckport links nothing.
+"""

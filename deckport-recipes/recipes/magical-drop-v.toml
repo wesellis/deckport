@@ -1,0 +1,73 @@
+[game]
+title       = "Magical Drop V"
+slug        = "magical-drop-v"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "204960"
+sgdb_id     = ""
+
+[about]
+developer = "Golgoth Studio"
+publisher = "UTV Ignition Entertainment"
+released  = "2012"
+genre     = "Puzzle"
+modes     = "Single-player, local multiplayer (Head-to-Head 1v1, Team Battle 2v2, King of the Hill four-player free-for-all)"
+summary   = """
+**Magical Drop V** is a fast-paced competitive **puzzle** game and the fifth main entry in the **Magical Drop** series, which originated with **Data East** in 1995. Players push and pull columns of colored balloons, lining up matching colors to clear the board and bury opponents under falling pieces.
+
+Developed by the French studio **Golgoth Studio**, it launched on Windows via Steam in November 2012 and was the first new series installment in over a decade. It was **removed from sale on Steam in July 2020**, reportedly tied to the dormant publisher Ignition Entertainment and licensing of the Magical Drop property."""
+
+[launch]
+binary         = "Magical Drop V.exe"   # Adobe AIR launcher exe in the install root; confirm exact name from your copy
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["corefonts"]
+notes      = """
+**Delisted:** Steam game (appid `204960`, removed from Steam `2020-07-28`).
+
+**Engine:** Adobe AIR — the executable is a small AIR-runtime launcher (named like `Magical Drop V.exe` in the install root), **NOT a generic `game.exe`**. Confirm the exact name from your copy and set `[launch] binary` to it.
+
+**Proton:** ProtonDB rates this **Platinum** (small sample — 5 reports, low confidence). **start with `GE-Proton`** (or `proton_experimental`). Adobe AIR titles can be finicky: if you hit a blank/black window or a missing-runtime error, install fonts via `protontricks` (`corefonts` is pre-seeded here) and, if the bundled AIR runtime fails, the `adobeair` winetricks verb is the usual recovery.
+
+**Controller:** Steam lists Partial Controller Support, so the in-game gamepad path should bind; for anything it misses, a Steam Input layout (controller or keyboard-as-controller) covers menus and play.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Magical Drop V (appid 204960)"
+url   = "https://www.protondb.com/app/204960"
+
+[[links.guides]]
+title = "Delisted Games — Magical Drop V"
+url   = "https://delistedgames.com/magical-drop-v/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** removed from Steam `2020-07-28` (no longer for sale).
+
+**Engine:** Adobe AIR — the main Deck risk is the bundled AIR runtime. If the game shows a blank window or runtime error, use `protontricks` (`corefonts` pre-seeded; try the `adobeair` verb as recovery) and `GE-Proton`.
+
+**Status:** ProtonDB reports this **Platinum**, but on a small/low-confidence sample (5 reports) and no Deck-specific Verified badge (game is delisted), so **status NEEDS-TEST** until confirmed on a Deck.
+
+**Controller:** Steam lists Partial Controller Support; a Steam Input layout covers any unbound menus, so input is workable.
+
+**Binary:** the shipped name (`Magical Drop V.exe`) is the typical AIR launcher — verify against your install."""

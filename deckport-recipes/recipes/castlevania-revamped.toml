@@ -1,0 +1,58 @@
+[game]
+title       = "Castlevania ReVamped"
+slug        = "castlevania-revamped"
+aliases     = ["Castlevania Revamped", "Castlevania HD Remake"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Castlevania ReVamped.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+notes      = """
+Built in GameMaker Studio 2; runs well under GE-Proton (recent stable Proton also works for GameMaker titles).
+GameMaker exposes XInput natively, so Xbox-style pads work directly and the game ships with gamepad vibration support — no Steam Input remap is required, though forcing the Steam Input layout is harmless.
+Not a Steam title: it is a free standalone download (Windows + native Linux builds) distributed by the creator, so no Konami files are needed.
+The Windows zip's launcher is the GameMaker runner; if the exact exe name differs, point the binary at whichever .exe is in the extracted folder.
+"""
+
+[about]
+developer = "Lv.4 Games"
+publisher = "Lv.4 Games"
+released  = "2024"
+genre     = "Platformer 2D / Action / Metroidvania"
+modes     = "Single-player"
+summary   = "Castlevania ReVamped is a free fan-made re-working of the original NES Castlevania (1987) by Lv.4 Games, built in GameMaker Studio 2. It fuses the classic 'Classicvania' feel with Metroidvania-style, gear-gated exploration, adding modern moves like wall-jumping, super-sliding, and eight-way whip strikes. It ships as a standalone Windows and native-Linux download — no original Konami files are required. This is a separate project from Castlevania Chronicles II: Simon's Quest."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "DSOGaming — Castlevania ReVamped free fan game (overview + official download link)"
+url   = "https://www.dsogaming.com/news/castlevania-revamped-is-a-new-free-8-bit-fan-game-for-pc/"
+
+[[links.guides]]
+title = "Castlevania ReVamped Open-Source Edition (GameMaker project, GitHub)"
+url   = "https://github.com/LSDonkeyKong/Castlevania-ReVamped-Open-Source-Edition"
+
+[[links.guides]]
+title = "Castlevania Dungeon forum — release thread"
+url   = "https://castlevaniadungeon.net/forums/index.php?topic=10289.0"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Free standalone GameMaker Studio 2 fan game (Lv.4 Games, 2024) — no Steam page, so no real ProtonDB rating exists. A native Linux build is also available and may be the simpler option on Deck. No Konami files needed. Native XInput pad support with rumble; Steam Input not required. Different from Castlevania Chronicles II already in list."

@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Node / website
+node_modules/
+web/build/
+web/.svelte-kit/
+web/dist/
+.astro/
+
+# Secrets / local config
+.env
+*.local
+push.toml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# deckport build artifact (the flattened single-file importer is generated)
+/deckport.dist.py
+
+# Internal planning notes — private by default.
+# Remove this line if you want the planning docs public in the repo.
+.internal/
+
+# Hypothesis test cache
+.hypothesis/

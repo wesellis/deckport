@@ -1,0 +1,76 @@
+[game]
+title       = "Kingdoms of Amalur: Reckoning"
+slug        = "kingdoms-of-amalur-reckoning"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "102500"
+sgdb_id     = ""
+
+[launch]
+binary         = "Reckoning.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 6.3-8"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 102500`), pulled July 2020 ahead of the Re-Reckoning remake — **original is no longer for sale**. ProtonDB Platinum and Deck-Verified 'Playable'.
+
+**Proton:** Known-good is `Proton 6.3-8` (`5.13-6` also fine). Newer Proton (`7.0`/`8.0`/`9.0`/`10.0`) introduces a mouse-steering bug in conversations and indoors — **pin to `6.3-8`** to avoid it.
+
+**Install:** Binary is `Reckoning.exe`.
+
+**GFWL:** The Steam build is GFWL-free (no Games for Windows Live), so no DRM bypass is needed.
+
+**Controller:** Native Xinput controller support, works out of the box with the Deck's built-in gamepad.
+
+**Display:** For ultrawide/FOV the community uses external `Widescreen Fixer`, but the Deck's 16:10 panel runs fine at native res without it.
+
+**Files:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Big Huge Games"
+publisher = "38 Studios / Electronic Arts"
+released = "2012"
+genre = "Action role-playing game"
+modes = "Single-player"
+summary = "**Kingdoms of Amalur: Reckoning** is a 2012 open-world **action RPG** set in the Faelands of Amalur, where the player controls the **Fateless One**, a hero resurrected free of the destiny that binds everyone else. Its development pedigree was its big draw: fantasy author **R.A. Salvatore** built the world lore, comics artist **Todd McFarlane** led the visual design, and Elder Scrolls veteran **Ken Rolston** was lead designer. The game was well reviewed for its fast, **combo-driven combat** and large world, but the commercial failure of **38 Studios** shortly after launch ended any sequel. The original release was **delisted from Steam in 2020** ahead of the Re-Reckoning remaster."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Kingdoms of Amalur: Reckoning (appid 102500)"
+url   = "https://www.protondb.com/app/102500"
+
+[[links.guides]]
+title = "Steam Community — mouse input discussion (102500)"
+url   = "https://steamcommunity.com/app/102500/discussions/0/558754899620858211/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Original Reckoning (`appid 102500`) was delisted in July 2020 ahead of the Re-Reckoning remake — **no longer for sale**. ProtonDB Platinum / Deck-Verified Playable.
+
+**Proton:** Pin Proton to `6.3-8` — `Proton 7.0+` has a mouse-steering bug during conversations and indoors.
+
+**Controller:** Native Xinput controller support — no Steam Input layout hack required.
+
+**Display:** Optional external `Widescreen Fixer` for FOV, but not needed at the Deck's native 16:10.
+
+**Server:** Single-player only, so no server concerns.
+"""

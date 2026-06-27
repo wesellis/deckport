@@ -1,0 +1,76 @@
+[game]
+title       = "eXceed - Gun Bullet Children"
+slug        = "exceed-gun-bullet-children"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "207370"
+sgdb_id     = ""
+
+[launch]
+binary         = "eXceeded.exe"   # main game exe; eXceeded-config.exe sets options before launch
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `207370`), a top-down danmaku shooter. **ProtonDB gold.**
+
+**Proton:** Became playable on `Proton 7.0`+; early-Proton rendering issues are resolved on `Proton Experimental`, so **use that** (`Proton 8.0` also works).
+
+**Install:** Main exe is `eXceeded.exe`; `eXceeded-config.exe` confirms display/sound settings before launch.
+
+**Display:** The game forces `640x480` fullscreen — there is no native widescreen; let the Deck scale it (`DXWnd` is a desktop-only windowed workaround, not needed on Deck).
+
+**Files:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - eXceed - Gun Bullet Children (207370)"
+url   = "https://www.protondb.com/app/207370"
+
+[[links.guides]]
+title = "Steam guide - How to play eXceed in English (official text patch)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=187462763"
+
+[[links.guides]]
+title = "Steam guide - Fix framerate for the eXceed collection"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=188843066"
+
+[about]
+developer = "Tennen-Sozai (Flat)"
+publisher = "Nyu Media"
+released  = "2005 (Japan); 2012 Steam (Western)"
+genre     = "Vertical-scrolling danmaku (bullet hell) shoot-em-up"
+modes     = "Single-player"
+summary   = "**eXceed - Gun Bullet Children** is a vertically-scrolling **bullet-hell shooter** and the first entry in the **eXceed series** by Japanese doujin studio **Tennen-Sozai**. Originally a 2005 Comiket release, it was localized and brought to Steam in 2012 by Nyu Media, alongside its sequels Gun Bullet Children's Story (eXceed 2nd) and eXceed 3rd. The title was **delisted from Steam in January 2023** when Nyu Media wound down operations and could no longer reach the developer to transfer publishing rights. It is noted for dense, score-focused danmaku patterns at a low 640x480 resolution."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Proton:** ProtonDB gold; community reports it running via Proton (`7.0`+ / `Experimental` / `8.0`). Single-player shooter, so no online-server concern.
+
+**Display:** forces `640x480` fullscreen — no widescreen, expect a 4:3 image scaled by the Deck.
+
+**Controller:** it accepts a gamepad, but support is partial — community reports note the **left analog stick + a face button work by default while the D-pad does not**, and stick movement is awkward for a danmaku game.
+
+**Fix:** build a Steam Input layout that maps the left stick + D-pad to the keyboard arrow keys (the game's `Options > Key Config` defines the keys); set fire/bomb/slow on the face buttons. That Steam Input keyboard layout makes it fully playable.
+
+**Language:** Story-mode text in the Steam build is Japanese; an English text patch exists.
+
+**NEEDS-TEST:** not yet confirmed on a Deck with this exact config."""

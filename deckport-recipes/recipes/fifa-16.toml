@@ -1,0 +1,75 @@
+[game]
+title       = "FIFA 16"
+slug        = "fifa-16"
+aliases     = ["FIFA 16", "FIFA16"]
+type        = "proton"
+engine      = "other"
+steam_appid = "353370"
+sgdb_id     = ""
+
+[launch]
+binary         = "fifa16.exe"   # install root: Origin Games/FIFA 16/fifa16.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2015 EA Canada football game (`Ignite` engine; Steam appid `353370`, delisted Sept 2023 — **bring your own copy**).
+
+**DRM:** It is an EA/Origin title: the Steam copy installs the EA app (formerly Origin) launcher, which Proton must run before the game starts.
+
+**Proton:** Use `GE-Proton` (best EA-app compatibility on Deck); if the EA app fails to load with stock Proton, switch to a recent `GE-Proton` build.
+
+**Install:** On first run **let the EA app fully install/sign in** — link your EA account once, after which it can launch offline.
+
+**Controller:** Full native gamepad support: the game ships Xbox 360 / XInput controller bindings, so the Steam Deck controls map automatically (no Steam Input keyboard layout needed).
+
+**Display:** Graphics/resolution are set by the separate `fifaconfig.exe` tool in the `fifasetup` subfolder of the install dir (`Origin Games/FIFA 16/fifasetup/fifaconfig.exe`), **NOT the in-game menu** — run it once via Proton to pick the Deck's `1280x800` resolution. You can also edit `Documents/FIFA16/fifasetup.ini` directly.
+"""
+
+[about]
+developer = "EA Canada"
+publisher = "Electronic Arts (EA Sports)"
+released  = "2015"
+genre     = "Sports / Football simulation"
+modes     = "Single-player, online multiplayer"
+summary   = "**FIFA 16** is the 2015 installment of EA Sports' annual **football simulation** series, built on the **Ignite engine** and developed by EA Canada. It was the first entry to add playable **women's national teams**, alongside returning modes such as Career Mode and FIFA Ultimate Team (including the new FUT Draft). The game introduced gameplay tweaks like Messi-inspired no-touch dribbling and was well received at launch, but it has since been **removed from Steam** as EA rotates out older annual sports titles."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted EA sports title (Steam appid `353370`) — configuration only, no links.
+
+**DRM:** Requires the EA app (Origin) launcher, which Proton must run first — use `GE-Proton` for the smoothest EA-app handshake and complete the one-time EA account sign-in on first launch.
+
+**Rights:** EA sports games carry extra licensed-IP layers (players/leagues), so this is the **most rights-sensitive entry in the book** even as pure documentation.
+
+**Controller:** Works out of the box (native XInput/Xbox 360 bindings).
+
+**Display:** Set video options (resolution to `1280x800`) via the `fifasetup/fifaconfig.exe` tool in the install folder, not the in-game menu.
+
+**Verify:** Tier is inferred from sibling FIFA titles + EA-app behavior; confirm appid `353370` and exe name (`fifa16.exe`, lowercase — case matters on Linux) against your own copy.
+"""
+
+[[links.guides]]
+title = "FIFA 16 - PCGamingWiki (exe path, fixes, config)"
+url   = "https://www.pcgamingwiki.com/wiki/FIFA_16"
+
+[[links.guides]]
+title = "How to Install the EA App on the Steam Deck"
+url   = "https://pimylifeup.com/steam-deck-ea-app/"
+
+[[links.guides]]
+title = "FIFA 16 Fixes & Troubleshooting (FIFA Infinity)"
+url   = "https://www.fifa-infinity.com/fifa-16/fifa-16-fixes-troubleshooting/"

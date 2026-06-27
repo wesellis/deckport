@@ -1,0 +1,79 @@
+[game]
+title       = "Dusklight (Zelda: Twilight Princess PC Port)"
+slug        = "dusklight"
+aliases     = ["Dusklight", "Twilight Princess PC Port", "Dusk TP Port", "Zelda TP PC"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Dusklight-v1.4.1-linux-x86_64.AppImage"
+launch_options = ""
+requires_files = ["The Legend of Zelda: Twilight Princess GameCube disc dump (ISO — use CleanRip on a Wii)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**No Proton needed:** Dusklight ships a native Linux `x86_64` build packaged as a single AppImage (e.g. `Dusklight-v1.4.1-linux-x86_64.AppImage`, downloaded from the `TwilitRealm/dusklight` GitHub releases). In Desktop Mode, mark it executable (`chmod +x` or right-click → Properties → Permissions → Is executable) before adding it as a non-Steam game. When using Steam's "Add a Non-Steam Game" picker, set the file filter to **All Files** so the AppImage shows up.
+
+**Install:** On first run the game will prompt you to locate your Twilight Princess GameCube disc dump. Nine disc image formats are supported (`ISO`, `GCZ`, and others) so most dump methods work. **Use `CleanRip` on a Wii to legally dump your disc if needed.**
+
+**Features:** The port delivers an unlocked framerate (easy 60fps on Steam Deck), native gyro and mouse aim support, **Mirror Mode** (now accessible on Deck), a built-in achievements system, a built-in speedrun timer, and 4K texture pack support via seven selectable graphics backends.
+
+**Significance:** This is the first major GameCube decompilation-based PC port to ship and is considered a landmark release — equivalent in scope to what **Ship of Harkinian** was for Ocarina of Time.
+
+**Guide:** Official setup guide at `duskport.com/dusk/`."""
+
+[about]
+developer = "TwilitRealm (based on the zeldaret/tp decompilation project, 5.5 years of community work)"
+publisher = "TwilitRealm (community project)"
+released  = "2006 (GameCube/Wii original); PC port v1.0.0 released May 9 2026; v1.4.1 June 16 2026"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = """
+**Dusklight** is an unofficial native PC port of **The Legend of Zelda: Twilight Princess** (GameCube), developed by the **TwilitRealm** community team on top of the **zeldaret/tp decompilation project** — 5.5 years of community decompilation work. It is the first major **GameCube decompilation-based PC port** to ship, widely considered a landmark release equivalent in scope to what **Ship of Harkinian** was for Ocarina of Time. Confirmed platforms include Windows, macOS, Linux, Steam Deck, Android, and iOS.
+
+Features include an unlocked framerate, native gyro and mouse aim, **Mirror Mode**, a built-in achievements system, a built-in speedrun timer, 4K texture pack support, seven graphics backends, and support for nine disc image formats. First released v1.0.0 on May 9 2026; actively updated to v1.4.1 as of June 2026. Requires the player to supply a Twilight Princess GameCube disc dump."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Dusklight official site and setup guide"
+url   = "https://duskport.com/dusk/"
+
+[[links.guides]]
+title = "Dusklight official site"
+url   = "https://duskport.com/"
+
+[[links.guides]]
+title = "TwilitRealm/dusklight GitHub releases (Linux AppImage downloads)"
+url   = "https://github.com/TwilitRealm/dusklight/releases"
+
+[[links.guides]]
+title = "Steam Deck HQ — install the Twilight Princess PC port on Steam Deck"
+url   = "https://steamdeckhq.com/tips-and-guides/how-to-install-the-legend-of-zelda-twilight-princess-pc-port-on-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a GameCube disc dump of Twilight Princess. **Use `CleanRip` on a Wii to dump your disc legally.** Nine disc image formats are supported (`ISO`, `GCZ`, etc.) so most dump methods work.
+
+**AppImage gotcha:** The Linux/Deck download is a single AppImage (named like `Dusklight-vX.Y.Z-linux-x86_64.AppImage`), not a bare `Dusk` executable. Mark it executable in Desktop Mode first, and set the "Add a Non-Steam Game" picker to **All Files** so it appears. Some distros also need `libfuse2`.
+
+**Mirror Mode:** Unlockable on Steam Deck.
+
+**Status:** As of June 2026 (`v1.4.1`) the port is actively updated and Steam Deck support is first-class. First release was May 9 2026 — community Deck reports are still early but very positive.
+
+**Guide:** Official setup guide at `duskport.com/dusk/` covers the full setup."""

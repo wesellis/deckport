@@ -1,0 +1,71 @@
+[game]
+title       = "Hitogata Happa"
+slug        = "hitogata-happa"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "92210"
+sgdb_id     = ""
+
+[about]
+developer = "Platine Dispositif"
+publisher = "Rockin' Android"
+released  = "2011"
+genre     = "Vertical-scrolling shoot-'em-up (doujin shmup)"
+modes     = "Single-player"
+summary   = """
+**Hitogata Happa** is a **vertical-scrolling doujin shmup** from Japanese indie studio **Platine Dispositif**, brought to the West and to Steam by **Rockin' Android**. Part of the **Gundemonium** family of titles, it casts the player as a witch's army of **magic dolls**, each with distinct weapons and abilities purchased with points dropped by enemies.
+
+Its signature mechanic is a **self-destruct bomb system**: when the flow gauge fills, a doll can hurl itself into enemies for heavy damage, which is essential to clearing the game. It is known for its **punishing difficulty** and is regarded as one of the harder doujin shooters of its era."""
+
+[launch]
+binary         = "happa.exe"   # Platine Dispositif build; config lives in happa.ini next to it
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `92210`, pulled 2019-07-31 at the developer's request). **Community reports no DRM blockers.**
+
+**Engine:** 2D top-down shooter on Platine Dispositif's DirectX engine (same family as the `Gundemonium` games, which run cleanly under Proton).
+
+**Proton:** ProtonDB tier silver — community reports it running on Linux/Proton. Use `GE-Proton` (`proton_experimental` also works); **no winetricks needed.**
+
+**Controller:** The overseas build has native `XInput` controller support, so the Steam Deck gamepad maps directly — **no Steam Input layout required.**
+
+**Install:** Per-game key bindings can be edited in `happa.ini` (not all keys are remappable in-game). deckport only configures the prefix; **it never bundles the game files.**"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Hitogata Happa (compatibility reports)"
+url   = "https://www.protondb.com/app/92210"
+
+[[links.guides]]
+title = "PCGamingWiki - Hitogata Happa (config, controller, happa.ini)"
+url   = "https://www.pcgamingwiki.com/wiki/Hitogata_Happa"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** Delisted from Steam 2019-07-31 (developer request) — not currently for sale on that store. deckport links nothing.
+
+**Proton:** ProtonDB silver — runs under Proton (`GE-Proton` / `experimental`), no DRM blockers, single-player only so no server concerns.
+
+**Controller:** Native `XInput` support means the Deck gamepad works without a Steam Input layout; remaining keys are editable in `happa.ini`.
+
+**Binary:** `happa.exe` is the expected Platine Dispositif build name — confirm against your install.
+
+**NEEDS-TEST:** not yet confirmed end-to-end on Deck hardware."""

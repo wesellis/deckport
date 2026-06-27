@@ -1,0 +1,75 @@
+[game]
+title       = "Blood: One Unit Whole Blood"
+slug        = "blood-one-unit-whole-blood"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "299030"
+sgdb_id     = ""
+
+[about]
+developer = "Monolith Productions"
+publisher = "GT Interactive"
+released  = "1997 (One Unit Whole Blood compilation, 1998)"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Blood** is a 1997 **first-person shooter** built on the **Build engine**, the same technology behind Duke Nukem 3D and Shadow Warrior. Players control **Caleb**, an undead gunslinger seeking revenge on the dark god Tchernobog and his Cabal cult, across levels steeped in horror and B-movie references. It is known for its gory action, deadpan humor, and exotic arsenal, and is regarded as one of the finest Build-engine shooters.
+
+**One Unit Whole Blood** is the 1998 compilation bundling the main game with the **Plasma Pak** and **Cryptic Passage** expansions; the Steam release was later **delisted**."""
+
+[launch]
+binary         = "dosboxBlood.exe"   # Steam package is a DOS game wrapped in DOSBox; launcher exe is dosboxBlood.exe (config: dosboxBlood.conf). The DOS binary inside the prefix is BLOOD.EXE.
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 299030`).
+
+**Proton:** This is a DOS-era shooter and the Steam package runs it inside bundled DOSBox (launcher = `dosboxBlood.exe`, config = `dosboxBlood.conf`) — it is **NOT a Win32 native game**. Runs fine on Deck through Proton; ProtonDB tier `silver`.
+
+**Controller:** **KEY CONTROLLER FIX** — edit `dosboxBlood.conf` and set `output = openglnb`. This re-enables the Steam overlay and lets Steam Input inject controller/keyboard input into DOSBox. **Without it the overlay is suppressed and the gamepad does nothing.** Use a Steam Input gamepad-as-keyboard/mouse layout (no native controller support in-engine).
+
+**Fix:** For better aim, the BMOUSE mouse-fix (`BMOUSE.EXE`, enabled via `BLOOD.CFG` + the conf) gives proper free mouselook. Alternatively run the game through a Build source port (e.g. `BuildGDX` / `NBlood`) for modern mouselook and controls.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Blood: One Unit Whole Blood (appid 299030)"
+url   = "https://www.protondb.com/app/299030"
+
+[[links.guides]]
+title = "Steam Controller for Blood? (openglnb DOSBox + Steam Input discussion)"
+url   = "https://steamcommunity.com/app/299030/discussions/0/487877107133859657/"
+
+[[links.guides]]
+title = "Blood Fixes and Improvements (Steam guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails?id=286998267"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted Steam game (`appid 299030`), ProtonDB `silver` — community reports confirm it runs on Linux/Proton/Deck.
+
+**Proton:** It's a DOS game running in bundled DOSBox via the `dosboxBlood.exe` launcher, not a Win32 native, so Proton just hosts DOSBox.
+
+**Controller:** NO native gamepad support, but set `output = openglnb` in `dosboxBlood.conf` and apply a Steam Input keyboard/mouse layout — **that combination makes the gamepad usable** (this is the working hack). Without the `openglnb` edit the Steam overlay/input is suppressed.
+
+**Fix:** For real mouselook use BMOUSE or a Build source port (`BuildGDX`/`NBlood`)."""

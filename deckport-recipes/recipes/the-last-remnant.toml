@@ -1,0 +1,78 @@
+[game]
+title       = "The Last Remnant"
+slug        = "the-last-remnant"
+aliases     = ["Last Remnant", "TLR"]
+type        = "proton"
+engine      = "other"
+steam_appid = "23310"         # 2009 original, delisted 2018 (replaced by The Last Remnant Remastered)
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/TLR.exe"   # confirmed — UE3 game, real exe lives in Binaries\TLR.exe (~11.9MB); NOT in root or CookedPC
+launch_options = ""           # if it fails to launch, try: PROTON_NO_ESYNC=1 %command%
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Square Enix's 2009 Unreal Engine 3 RPG (Steam appid `23310`), Square Enix's first UE3 title. This is the **original 2009 PC release**, delisted from Steam in 2018 when **The Last Remnant Remastered** (a separate UE4 re-release, different appid) replaced it. This recipe targets the **original**, not the Remastered.
+
+**ProtonDB:** Rated **Gold** (good confidence, ~30 reports; best reports reach Platinum). Generally plays well on Linux/Steam Deck with no per-user tinkering for most people.
+
+**DRM:** Plain Steam DRM — no `GFWL`/`SecuROM`/`Denuvo`.
+
+**Proton:** Runs under Proton — `GE-Proton` (or `proton_experimental`) is the safe default; older stable Proton also works for many.
+
+**Binary:** The real executable is `Binaries\\TLR.exe` (~11.9 MB). It is **not** in the install root and **not** in `CookedPC` — make sure the launcher points at `Binaries\\TLR.exe`.
+
+**Launch crash fix:** If it crashes on launch or refuses to start, the most reliable fix (reported repeatedly by users) is to delete `baseengine.ini` and `basegame.ini` from `Engine\\Config`, then **Verify integrity of game files** in Steam to regenerate them. As a second step, add `PROTON_NO_ESYNC=1 %command%` to the launch options.
+
+**In-battle crash fix:** Some users hit crashes around the first battle; pinning the process to a single CPU core (CPU affinity) resolves it on native Windows. On Deck this is rarely needed, but if you see early-battle crashes try a single-thread Proton workaround / FPS cap.
+
+**Display:** It can be GPU-heavy at native res. The Deck's FSR plus the in-game resolution scaling help; capping to 30/40 fps gives steadier frametimes.
+"""
+
+[about]
+developer = "Square Enix"
+publisher = "Square Enix"
+released  = "2009"
+genre     = "Strategy role-playing game"
+modes     = "Single-player"
+summary   = "**The Last Remnant** is a strategy RPG from **Square Enix**, first released on Xbox 360 in 2008 and on Windows in 2009. It is notable for being Square Enix's first game built on **Unreal Engine 3**, and for its distinctive **'Union' battle system** in which the player commands multiple groups of units rather than individual characters. Set in a world divided into city-states and shaped by conflict over magical artifacts called **Remnants**, the PC version received a warmer reception than the console original thanks to extra content and tuning. The original 2009 PC release was **delisted from Steam in 2018** when it was superseded by The Last Remnant Remastered."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — The Last Remnant (appid 23310) compatibility reports"
+url   = "https://www.protondb.com/app/23310"
+
+[[links.guides]]
+title = "Steam Community — TLR.exe launch-crash fixes (ini delete + verify, CPU affinity)"
+url   = "https://steamcommunity.com/app/23310/discussions/0/684839199623268849/"
+
+[[links.guides]]
+title = "Steam Community — controller / XInput gamepad setup discussion"
+url   = "https://steamcommunity.com/app/23310/discussions/0/3020122487781933152/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** This is a delisted commercial game (the 2009 original, appid `23310`). It was removed from the Steam store in 2018, so it can no longer be purchased there; only owners who bought it before delisting still have it in their library. A separate, still-purchasable **Remastered** version exists — this recipe is for the original, not the Remastered.
+
+**Controller:** Native `XInput` support — in the in-game options choose **Gamepad → Preset "Type A"**; use the Xbox 360 layout (it does not read generic/DirectInput pads without XInput). The game has **no mouse support** (menus are keyboard/D-pad driven), so Steam Input mapping the Deck pad as an Xbox controller works cleanly with no extra hack.
+
+**Fix:** Launch failures are most reliably fixed by deleting `baseengine.ini` + `basegame.ini` from `Engine\\Config` and verifying game files; `PROTON_NO_ESYNC=1` is a secondary workaround.
+
+**Status:** ProtonDB **Gold**; reported playable on Steam Deck. Marked `needs-test` pending a first-hand Deck verification.
+"""

@@ -1,0 +1,93 @@
+[game]
+title       = "OpenGOAL: Jak and Daxter"
+slug        = "opengoal-jak-and-daxter"
+aliases     = ["OpenGOAL", "Jak and Daxter PC Port", "jak-project", "gk"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5432867"
+
+[launch]
+binary         = "gk"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** Fully native Linux — **no Proton needed**.
+
+**Install (Launcher):** OpenGOAL Launcher (`open-goal/launcher` on GitHub) — the recommended path for all three games. On Steam Deck run it in Desktop Mode; download the amd64 AppImage, mark it executable, and use it to install and manage game versions. The launcher handles ISO extraction and decompilation. Use its "Copy Game Executable Command" button to add each game to Steam as a non-Steam shortcut for Game Mode.
+
+**Decky plugin deprecated:** The old `open-goal/decky-plugin` is **deprecated** — use the Launcher instead. On Steam Deck you may need to use the compiled `jak-project` releases rather than the Launcher if it misbehaves.
+
+**Launching each game:** `gk` defaults to booting Jak 1. To play the sequels, launch with `./gk --game jak2` or `./gk --game jak3` (the Launcher's per-game shortcut commands set this for you).
+
+**Fix:** If the Launcher shows an `EGL_BAD_PARAMETER` error, switch to the direct `jak-project` release tarball and **add the `gk` binary to Steam manually**.
+
+**Status:** Jak 1 is considered feature-complete; Jak 2 and Jak 3 are in beta (minor audio/graphics bugs) but fully completable start-to-finish as of 2026.
+"""
+
+[about]
+developer = "open-goal community contributors"
+publisher = "Independently released (free, open source)"
+released  = "2021 (ongoing)"
+genre     = "Action-adventure, platformer"
+modes     = "Single-player"
+summary   = "**OpenGOAL** is a community **decompilation** and native PC port of the **Jak and Daxter** trilogy (The Precursor Legacy, Jak II, Jak 3) for x86-64 Linux and Windows. The project began in 2020, targeting Naughty Dog's proprietary **Game Oriented Assembly Lisp (GOAL)** language — over 98% of the PS2 originals were written in this custom Lisp dialect. The team decompiled the GOAL bytecode back into readable source, built their own GOAL compiler, and retargeted it to x86-64, making these among the most technically ambitious **fan ports** ever completed.\n\nJak and Daxter: The Precursor Legacy reached **feature-complete** status first and is the recommended starting point; Jak II and Jak 3 entered public beta with minor remaining rough edges."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5432867"
+
+[[links.guides]]
+title = "Official Installation Docs — opengoal.dev"
+url   = "https://opengoal.dev/docs/usage/installation/"
+
+[[links.guides]]
+title = "How to Set Up the Jak Trilogy on Steam Deck — Steam Deck HQ"
+url   = "https://steamdeckhq.com/tips-and-guides/how-to-set-up-the-jak-and-daxter-trilogys-native-pc-ports-on-steam-deck/"
+
+[[links.guides]]
+title = "Play Jak and Daxter Natively on Steam Deck — NerdZap"
+url   = "https://nerdzap.com/guides/jak-and-daxter-native-steam-deck/"
+
+[[links.guides]]
+title = "jak-project (compiled releases / gk runtime) — GitHub"
+url   = "https://github.com/open-goal/jak-project/releases"
+
+[[links.guides]]
+title = "OpenGOAL Launcher — GitHub Releases"
+url   = "https://github.com/open-goal/launcher/releases"
+
+[[links.guides]]
+title = "OpenGOAL FAQ"
+url   = "https://opengoal.dev/docs/faq/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Native — no ProtonDB tier:** This is a native Linux x86-64 build, so there is no Proton/ProtonDB rating; it does not appear on ProtonDB as a Steam title (no steam_appid).
+
+**Supply your own copy:** Requires a legally owned PS2 disc dump of Jak and Daxter: The Precursor Legacy (and Jak II / Jak 3 for those games). The launcher or decompilation tool extracts assets from the ISO — **the ISO itself is not bundled**.
+
+**Sequels need a launch flag:** `gk` boots Jak 1 by default; run `./gk --game jak2` or `./gk --game jak3` for the others (the Launcher's per-game shortcut sets this automatically).
+
+**Decky plugin deprecated:** Use the OpenGOAL Launcher, not the old `decky-plugin`.
+
+**Fix:** If the launcher AppImage fails with `EGL_BAD_PARAMETER` on SteamOS, use the direct `jak-project` release and add `gk` to Steam manually.
+
+**Status:** Jak 2 and Jak 3 are beta; expect minor audio glitches.
+
+**Note:** deckport links nowhere to obtain ISOs.
+"""

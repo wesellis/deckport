@@ -1,0 +1,70 @@
+[game]
+title       = "F1 2017"
+slug        = "f1-2017"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "515220"
+sgdb_id     = ""
+
+[launch]
+binary         = "F1_2017.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Codemasters racing game (Steam appid `515220`, pulled when the Formula 1 license window closed). Runs on the Deck under Proton — community ProtonDB reports rate it platinum (it runs out of the box for most reporters, with the loading-hang fix below as the one common tweak).
+
+**Fix:** Some users hit a known issue where any session (career / Grand Prix / events) **hangs on the 'Loading' screen** under stock Proton; switching to `GE-Proton` resolves it (it bundles the relevant patches).
+
+**Proton:** If you still see the loading hang on stock Proton, try `GE-Proton` or `proton_experimental` and, if needed, the `DXVK_ASYNC=1 %command%` launch option.
+
+**Controller:** Native gamepad support, so it plays well with the Deck controls out of the box (set the in-game controller profile to PlayStation/Xbox as appropriate).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — F1 2017 reports (tier + tweaks)"
+url   = "https://www.protondb.com/app/515220"
+
+[[links.guides]]
+title = "ValveSoftware/Proton #4529 — F1 2017 'Loading' hang report"
+url   = "https://github.com/ValveSoftware/Proton/issues/4529"
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2017"
+genre     = "Racing simulation"
+modes     = "Single-player, online multiplayer"
+summary   = "**F1 2017** is the official game of the 2017 FIA Formula One World Championship and the tenth Formula One title developed by **Codemasters** on its **EGO engine**. It features all twenty drivers, ten teams and twenty circuits of the season alongside twelve **classic cars** from teams such as Ferrari, McLaren, Williams, Red Bull and Renault. The game is best known for its deep, expanded **career mode** with a research-and-development tree and for the return of historic machinery, earning generally favorable reviews. It was later **delisted** from sale when the Formula One licensing window closed and was succeeded by newer entries in the series."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing. Delisted Codemasters racing title (license expired).
+
+**Status:** Community reports confirm it runs on Linux/Proton, so it should play on the Deck — but this specific recipe hasn't been hardware-verified yet.
+
+**Fix:** Main gotcha: a **'stuck on Loading'** hang affects some users on stock Proton; `GE-Proton` (or `proton_experimental`, with `DXVK_ASYNC=1` as a fallback) fixes it.
+
+**Binary:** `F1_2017.exe`.
+
+**Controller:** Native controller support — set the in-game controller profile to match (PS/Xbox); no Steam Input layout needed.
+
+**Online:** Online multiplayer relies on services that may no longer be live, but single-player (career / Grand Prix / time trial) is fully playable offline."""

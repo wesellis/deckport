@@ -1,0 +1,72 @@
+[game]
+title       = "Jump Force"
+slug        = "jump-force"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "816020"
+sgdb_id     = ""
+
+[launch]
+binary         = "JUMP_FORCE.exe"   # EAC launcher wrapper at the install root; the real game exe is JUMP_FORCE/Binaries/Win64/JUMP_FORCE-Win64-Shipping.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `816020`), removed from sale 2022-02-07; online servers shut down 2022-08-24, so only solo (and LAN) modes work now.
+
+**Fix:** Stock Valve Proton (incl. `proton_experimental`) does **NOT** work because of Easy Anti-Cheat — you **MUST force `GE-Proton`** (community confirms `GE-Proton7-29` era working).
+
+**Proton:** The game is **Unsupported** out of the box on Deck; set the compatibility tool to `GE-Proton` in the game Properties to get past the launch error.
+
+**Launch:** Launches through the EAC wrapper `JUMP_FORCE.exe` at the install root, which then starts `JUMP_FORCE/Binaries/Win64/JUMP_FORCE-Win64-Shipping.exe`.
+
+**Display:** Runs ~60fps; if you see dips, drop `Shadows` and `Anti-Aliasing` to Medium (or everything to Low).
+
+**Controller:** Native controller support — it's a fighting game, no Steam Input layout needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Spike Chunsoft"
+publisher = "Bandai Namco Entertainment"
+released  = "2019"
+genre     = "3D arena fighting"
+modes     = "Single-player, local LAN, online (servers closed)"
+summary   = "**Jump Force** is a crossover **fighting game** built to celebrate the 50th anniversary of Shueisha's **Weekly Shonen Jump** magazine, pitting characters from series like **Dragon Ball**, **One Piece**, **Naruto**, **Yu-Gi-Oh!**, and **Bleach** against each other in **3v3 team battles**. Built on **Unreal Engine 4**, it features a story mode and online multiplayer alongside its roster of over 50 manga heroes and villains. Reception was mixed, with praise for the fan-service crossover but criticism of its stiff animation, story, and realistic art style. It was **pulled from sale** on 2022-02-07 and its online servers were shut down on 2022-08-24, leaving only offline and local play available."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — JUMP FORCE (appid 816020)"
+url   = "https://www.protondb.com/app/816020"
+
+[[links.guides]]
+title = "GamingOnLinux — GE-Proton Easy Anti-Cheat fixes"
+url   = "https://www.gamingonlinux.com/2023/04/ge-proton-7-55-released-essential-fix-for-easy-anti-cheat-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Fix:** Requires `GE-Proton` — stock Valve Proton fails on this game's Easy Anti-Cheat. Force `GE-Proton` in the game's compatibility settings.
+
+**Online:** Permanently dead (servers shut down 2022-08-24); only single-player and LAN remain.
+
+**Controller:** Native gamepad support, no controller hack needed.
+
+**Status:** Recipe reflects community Deck reports but has **not been confirmed on a Deck** by this project."""

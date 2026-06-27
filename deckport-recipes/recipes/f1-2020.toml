@@ -1,0 +1,72 @@
+[game]
+title       = "F1 2020"
+slug        = "f1-2020"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "1080110"
+sgdb_id     = ""
+
+[launch]
+binary         = "F1_2020.exe"   # DX11 build; DX12 build is F1_2020_dx12.exe in the same folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Delisted Steam game (appid `1080110`), Codemasters EGO engine. ProtonDB gold; runs well on Deck under `GE-Proton` (`proton_experimental` also reported working).
+
+**Display:** Two builds ship — `F1_2020.exe` (DX11) and `F1_2020_dx12.exe` (DX12). **Prefer the DX11 build on Deck for stability**; DX12 can give a few more fps but is more crash-prone in Proton.
+
+**DRM:** Shipped with Denuvo Anti-Tamper at launch, but Codemasters **removed Denuvo in a late-September/early-October 2021 patch** (the update sharply cut the install size). Only Steam's standard DRM remains, and there's no EA anti-cheat (this predates EAAC, which only affects the newer EA-published F1 titles), so it boots cleanly under Proton.
+
+**Controller:** Full native controller support (it's a racing game) — gamepad works out of the box, no Steam Input layout needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2020"
+genre     = "Racing simulation"
+modes     = "Single-player, multiplayer"
+summary   = "**F1 2020** is the official video game of the 2020 Formula One and Formula 2 World Championships, developed and published by **Codemasters** on its **EGO engine**. It is the twelfth title in Codemasters' modern **Formula 1 series** and was the first to add a **'My Team'** mode that lets players create and manage their own constructor alongside the standard career, time-trial and split-screen modes. The game was well received for its handling and depth. It was delisted from Steam and other storefronts in March 2023 after Codemasters' **Formula 1 licensing for the title expired**, leaving owners as the only ones able to redownload it."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB community reports — F1 2020"
+url   = "https://www.protondb.com/app/1080110"
+
+[[links.guides]]
+title = "F1 2020 — PCGamingWiki (DRM, fixes, DX11/DX12 notes)"
+url   = "https://www.pcgamingwiki.com/wiki/F1_2020"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisting:** Delisted from Steam on 2023-03-15 (FIA/EA licensing expired) — appid `1080110` still resolves for owners.
+
+**Status:** ProtonDB gold and many community reports confirm it running on Linux/Proton, so it should play on Deck, but **this exact recipe hasn't been Deck-confirmed yet** (`needs-test`).
+
+**Display:** Pick the DX11 build (`F1_2020.exe`) for best stability; switch to `F1_2020_dx12.exe` only if you want the extra fps.
+
+**DRM:** Denuvo Anti-Tamper was removed by a 2021 patch; only Steam's standard DRM remains and there's no EA anti-cheat, so it launches under Proton without any bypass.
+
+**Controller:** Native gamepad support is fine on Deck.
+
+**Online:** Online multiplayer/My Team online features may be dead post-delisting; single-player and time-trial are unaffected."""

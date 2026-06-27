@@ -1,0 +1,74 @@
+[game]
+title       = "Test Drive Unlimited"
+slug        = "test-drive-unlimited"
+aliases     = ["TDU", "Test Drive Unlimited 1"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""             # never released on Steam; add as a non-Steam shortcut. (appid 105400 is Fable III, not this game)
+sgdb_id     = "35588"        # https://www.steamgriddb.com/game/35588 (correct TDU)
+
+[launch]
+binary         = "TestDriveUnlimited.exe"   # main game exe; installs to the TestDriveUnlimited install folder
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Eden Games' 2006 open-world racer set on Oʻahu. The PC version (2007) was a retail/DVD release and was **never sold on Steam**, so add it as a **non-Steam shortcut** and force a Proton tool on it. Single-player works under Proton once the copy-protection and a community patch are sorted.
+
+**Binary:** The main executable is `TestDriveUnlimited.exe` (the original retail exe). This game does **not** use Games for Windows Live — there is no `xlive.dll`/GFWL login to clear.
+
+**DRM:** The retail PC release ships with **SecuROM**, which fails on modern Windows and under Proton. The community **TDU Platinum** mega-mod (TurboDuck) is the standard way to get a working, modern install: it bundles the 4 GB large-address-aware patch and a clean launcher so the SecuROM disc check is no longer in the way. Install Platinum, then point the shortcut at its launcher/exe.
+
+**Proton:** `GE-Proton` is the most reliable; `proton_experimental` also works for some. No special D3D launch flag is required — the game is a Direct3D 9 title.
+
+**Online:** Official servers are dead. The fan **Project Paradise** project (TurboDuck) can restore TDU1 multiplayer; otherwise treat it as **single-player only**.
+
+**Tier note:** Because it isn't a Steam app, there's no official ProtonDB entry (appid 105400 is Fable III). Community reports put it around **Silver** — playable but needs the Platinum mod plus a Proton tool, not a one-click launch."""
+
+[about]
+developer = "Eden Games"
+publisher = "Atari"
+released  = "2006 (PC: 2007)"
+genre     = "Open-world arcade racing"
+modes     = "Single-player, online multiplayer (official servers offline; fan-restored via Project Paradise)"
+summary   = "**Test Drive Unlimited** is an open-world arcade racing game by **Eden Games**, the first entry to popularize the **'massively open online racing'** concept on a fully drivable recreation of the Hawaiian island of **Oʻahu** with over 1,000 miles of road. Released on Xbox 360 in 2006 and ported to PC in 2007, it let players buy houses and cars, customize avatars, and seamlessly meet other drivers in a persistent **free-roam world**. It was well received for its scale and sense of freedom and is considered the precursor to later open-world driving games. The PC version was a retail/DVD release that never came to Steam; its official multiplayer servers have since shut down, leaving single-player intact."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "TDU Platinum mega-mod (modern install, 4GB patch, clean launcher) — TurboDuck"
+url   = "https://turboduck.net/forums/topic/35843-released-test-drive-unlimited-platinum-v121/"
+
+[[links.guides]]
+title = "Project Paradise — fan multiplayer server restoration for TDU1 — TurboDuck"
+url   = "https://turboduck.net/forums/topic/30648-test-drive-unlimited-project-paradise-v003a-public-beta-available/"
+
+[[links.guides]]
+title = "Test Drive Unlimited — PCGamingWiki (DRM, fixes, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/Test_Drive_Unlimited"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Retail/DVD PC game that was never on Steam — add it as a **non-Steam shortcut** and force a Proton tool on it. The `steam_appid` is intentionally blank (105400 is Fable III, a different game).
+
+**Setup:** Runs on Deck but needs work. The retail exe is **SecuROM-protected** and won't start on a modern stack; the practical fix is to install the community **TDU Platinum** mega-mod (it bundles the 4 GB patch and a clean launcher), then point the shortcut at its launcher. There is **no GFWL** to bypass and **no `PROTON_NO_D3D11` flag** is needed. Use `GE-Proton`.
+
+**Controller:** Native XInput support — an Xbox-style pad (including the Deck's built-in controls) works out of the box, no custom Steam Input layout required.
+
+**Online:** Official servers are dead. **Project Paradise** (TurboDuck) can restore TDU1 multiplayer; otherwise it's single-player only.
+
+**Binary:** `TestDriveUnlimited.exe` for a vanilla install; after installing TDU Platinum, point at the launcher/exe that Platinum provides."""

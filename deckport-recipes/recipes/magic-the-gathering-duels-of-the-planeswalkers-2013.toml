@@ -1,0 +1,68 @@
+[game]
+title       = "Magic: The Gathering - Duels of the Planeswalkers 2013"
+slug        = "magic-the-gathering-duels-of-the-planeswalkers-2013"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "97330"
+sgdb_id     = ""
+
+[launch]
+binary         = "DotP_2013.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `97330`) — pulled when Wizards of the Coast and Stainless Games parted ways; no longer for sale.
+
+**Proton:** ProtonDB rates it platinum and community reports confirm it runs on Linux/Proton, including the Deck. Recommended: latest `GE-Proton` (`proton_experimental` also works for most reports). Main exe is `DotP_2013.exe`.
+
+**GFWL:** The Windows build ships with Games for Windows Live (GFWL) for the title/profile splash; it generally launches through Proton without extra steps, **but if it hangs on the GFWL prompt, set the Steam launch option to skip/dismiss it or run offline**.
+
+**Controller:** This card game originated on Xbox 360/PS3 and the PC build carries gamepad support, so it generally plays with the Deck's controls. If buttons don't bind cleanly under Proton, use a **Steam Input** gamepad/Deck layout to map the menus.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Stainless Games"
+publisher = "Wizards of the Coast"
+released  = "2012"
+genre     = "Digital collectible card game"
+modes     = "Single-player, online multiplayer"
+summary   = "The fourth entry in the **Duels of the Planeswalkers** series, a digital adaptation of the **Magic: The Gathering** trading card game built around **preconstructed, partly customizable decks** rather than full deckbuilding. The single-player content spans a ten-match campaign plus encounters, a harder revenge campaign, and puzzle-like challenges, while multiplayer adds Planechase, Archenemy, and Two-Headed Giant modes. It launched in June 2012 across Steam, Xbox Live Arcade, PlayStation Network, and iPad to generally positive reviews, though some critics felt it was only an incremental step over the prior year's release. It was later **delisted** from sale after Wizards of the Coast and Stainless Games ended their partnership and the series moved on to newer titles."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 97330)"
+url   = "https://www.protondb.com/app/97330"
+
+[[links.guides]]
+title = "PCGamingWiki - Duels of the Planeswalkers 2013"
+url   = "https://www.pcgamingwiki.com/wiki/Magic:_The_Gathering_-_Duels_of_the_Planeswalkers_2013"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted (WotC/Stainless split) — not for sale, owners can still install from their library.
+
+**Proton:** ProtonDB platinum; runs on `GE-Proton` / `proton_experimental`. Exe is `DotP_2013.exe`.
+
+**Controller:** Gamepad support (console origin); if bindings misbehave under Proton, apply a Steam Input layout.
+
+**GFWL:** Ships with Games for Windows Live for the splash/profile — usually launches fine under Proton, **but it can stall on the GFWL prompt; dismiss it or run offline if so**.
+
+**Multiplayer:** Online multiplayer relied on GFWL servers that are gone, so **treat this as single-player vs AI**."""

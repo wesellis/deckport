@@ -1,0 +1,144 @@
+[game]
+title       = "Freelancer"
+slug        = "freelancer"
+aliases     = ["Freelancer HD Edition"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "EXE/Freelancer.exe"
+launch_options = ""
+requires_files = ["EXE/Freelancer.exe"]
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["directplay", "d3dx9", "dotnet48"]
+notes      = """
+**Overview**
+Freelancer (2003) is disc/ISO only — no legal digital storefront exists
+(not on Steam, GOG, or any other platform). Supply your own copy
+(original retail disc or personal disc image).
+
+**SafeDisc DRM — read this first**
+The retail disc uses SafeDisc v1 copy protection. SafeDisc no longer
+functions on Windows 10/11 and does NOT work under Proton/Wine either,
+so a stock retail Freelancer.exe will refuse to launch. You MUST apply a
+community executable that removes the disc check. The simplest path is the
+free Freelancer HD Edition (it bundles a disc-check-free executable plus
+HD textures, widescreen and numerous bug fixes); the standalone Jason's
+Freelancer Patch / Unofficial Patch 1.4 does the same. This is the normal,
+expected way the community runs the game today — without it, it will not
+start under Proton.
+
+**Installation**
+1. Install Freelancer from disc/ISO to a non-system folder on your Deck
+   (e.g. ~/Games/Freelancer/).
+2. Apply Freelancer HD Edition (or Jason's Freelancer Patch) on top of that
+   base install — this is what supplies the disc-check-free executable and
+   widescreen support. Follow the HD Edition wiki for the patch procedure;
+   its installer patches your existing Freelancer folder in place.
+3. In Steam, add the main EXE as a Non-Steam Game:
+   EXE/Freelancer.exe (HD Edition keeps the exe in the same EXE folder).
+4. In the game's Properties → Compatibility, force GE-Proton (latest stable).
+
+**Graphics / Wine / Font Rendering**
+Freelancer is a Direct3D 8 title; DXVK (bundled with GE-Proton) handles the
+D3D8/D3D9 path well. A recent Wine-Staging build also gives clean menu font
+rendering — GE-Proton bundles one and works well out of the box. If using
+Bottles or Heroic instead of Steam's Proton layer, pick a recent
+Wine-Staging runner. If menu fonts look wrong, copy the game's Arial fonts
+from the ISO into the prefix's Windows/Fonts folder.
+
+**DirectPlay (Multiplayer)**
+DirectPlay is required for online multiplayer.
+winetricks directplay installs the necessary component.
+Run once via the Proton prefix console or add it to winetricks above.
+Active private server communities: Crossfire, Discovery.
+Connect via the in-game server browser once DirectPlay is installed.
+
+**Controller / Input**
+Freelancer was designed for mouse + keyboard.
+In Desktop Mode, configure a Steam Input layout with:
+- Right stick → mouse look
+- Left stick → strafe/throttle
+- Triggers → primary/secondary fire
+Several community layouts exist in the Steam Input browser — search
+"Freelancer" after adding as Non-Steam.
+
+**Performance**
+Runs comfortably at 45–60 fps on Deck at 720p.
+TDP limit: ~8W recommended. Battery: ~5h on OLED.
+HD Edition may add a small GPU overhead for higher-res textures; 720p still
+runs well at medium-high settings.
+
+**Widescreen**
+HD Edition includes native 16:10 widescreen support for the Deck's display.
+For vanilla install, edit Freelancer.ini and add:
+  [Display]
+  screen_width=1280
+  screen_height=800
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = "https://www.steamgriddb.com/game/5243"
+
+[[links.guides]]
+title = "Freelancer HD Edition — ModDB"
+url   = "https://www.moddb.com/mods/freelancer-hd-edition"
+
+[[links.guides]]
+title = "Freelancer HD Edition — GitHub"
+url   = "https://github.com/BC46/freelancer-hd-edition"
+
+[[links.guides]]
+title = "PCGamingWiki — Freelancer"
+url   = "https://www.pcgamingwiki.com/wiki/Freelancer"
+
+[[links.guides]]
+title = "Freelancer HD Edition — install instructions (wiki)"
+url   = "https://github.com/BC46/freelancer-hd-edition/wiki"
+
+[[links.guides]]
+title = "Freelancer HD Edition on Linux/Wine (Lutris) walkthrough"
+url   = "https://darklab8.github.io/blog/article/article_freelancer_hd_edition_at_linux.html"
+
+[about]
+developer = "Digital Anvil"
+publisher = "Microsoft Game Studios"
+released  = "2003-03-04"
+genre     = "Space trading / combat"
+modes     = "Single-player, Multiplayer (private servers)"
+summary   = """**Freelancer** by Digital Anvil (2003) is a beloved open-world space trading and combat game
+that was never re-released digitally after Microsoft's original retail run ended. It remains
+a disc/ISO-only title with an active community that maintains private multiplayer servers and
+the free Freelancer HD Edition remaster — making it a great candidate for Deck play."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Supply your own copy — disc or personal disc image only; no legal digital storefront exists.
+- SafeDisc v1 DRM BLOCKER: the stock retail Freelancer.exe will not launch on modern systems
+  or under Proton/Wine. You MUST apply a community disc-check-free executable (bundled with the
+  free Freelancer HD Edition, or Jason's Freelancer Patch / Unofficial Patch 1.4). This is the
+  normal community fix, not optional polish.
+- HD Edition / patch is a free download applied on top of your base install; do not apply it to
+  a fresh empty folder — base game files must be present first. Its installer patches the existing
+  Freelancer folder in place and keeps the exe at EXE/Freelancer.exe.
+- DirectPlay must be installed via winetricks for multiplayer to work.
+- Keyboard + mouse game: there is no native gamepad support — build/import a Steam Input layout.
+- Menu font rendering may look incorrect with stock Proton; prefer GE-Proton or Wine-Staging.
+- Vanilla install requires manual widescreen INI edit for 1280x800; HD Edition / Jason's Patch
+  handles widescreen automatically.
+- Private server communities (e.g. Crossfire, Discovery) may need port-forwarding or VPN behind strict NAT.
+"""

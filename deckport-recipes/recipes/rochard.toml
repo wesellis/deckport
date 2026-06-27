@@ -1,0 +1,68 @@
+[game]
+title       = "Rochard"
+slug        = "rochard"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "107800"
+sgdb_id     = ""
+
+[launch]
+binary         = "Rochard.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `107800`) — physics puzzle-platformer by Recoil Games, removed from Steam in 2021 after the studio's bankruptcy.
+
+**Proton:** ProtonDB rates the Windows build platinum (small sample — only ~4 reports, low confidence — but no trouble reports) and it **runs out-of-the-box**: install, set Proton (`GE-Proton` or `proton_experimental` both work; Valve Proton is fine too), launch `Rochard.exe`.
+
+**Native Linux note:** Rochard also shipped a **native Linux build** (added via Humble Indie Bundle 6 in 2012). If your copy includes the Linux depot you can run that directly on the Deck instead of Proton; this recipe targets the Windows build under Proton, which is the more universally available form.
+
+**DRM:** Steam wrapper only — no GFWL, no SecuROM, no DRM hoops and no online servers to worry about (offline single-player).
+
+**Controller:** Native Xbox/gamepad support, so it works as-is on the Deck's controls; if a pad isn't detected just apply the Steam-bundled `Gamepad` layout.
+
+**Install:** deckport only configures the prefix; it never bundles the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Rochard (appid 107800) compatibility reports"
+url   = "https://www.protondb.com/app/107800"
+
+[[links.guides]]
+title = "Wikipedia — Rochard (platforms, native Linux/Mac, history)"
+url   = "https://en.wikipedia.org/wiki/Rochard"
+
+[about]
+developer = "Recoil Games"
+publisher = "Sony Online Entertainment"
+released  = "2011"
+genre     = "Side-scrolling puzzle platformer"
+modes     = "Single-player"
+summary   = "**Rochard** is a 2D side-scrolling puzzle-platformer set in three-dimensional sci-fi environments, built in the **Unity engine**. You play as John Rochard, an unlucky asteroid miner who uncovers a mysterious alien artifact, and solve physics-based puzzles and light combat using the **G-Lifter**, a gravity gun that lifts heavy objects and lets you manipulate gravity to reach new heights. It was well received for its inventive gravity mechanics and humor, and was notable as one of the first **PlayStation 3** games to use the Unity engine. It was later **delisted** from storefronts following developer Recoil Games' closure."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Confirm the exe name matches your install (standard is `Rochard.exe`).
+
+**Availability:** Delisted from Steam in 2021 (Recoil Games bankruptcy); not sold anywhere now.
+
+**Compatibility:** ProtonDB platinum (small sample, low confidence) — the handful of reports show it running cleanly under Proton, so this should be a near-zero-effort Deck title. A native Linux build also exists if your copy includes it. Offline single-player, native gamepad support, no DRM/GFWL.
+
+**Status:** Not yet personally verified on a Deck (status `needs-test`)."""

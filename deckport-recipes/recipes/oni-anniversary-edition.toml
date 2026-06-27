@@ -1,0 +1,76 @@
+[game]
+title       = "Oni: Anniversary Edition"
+slug        = "oni-anniversary-edition"
+aliases     = ["Oni", "Oni AE"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Oni.exe"   # confirmed — point Steam at Oni.exe in the install dir
+launch_options = 'WINEDLLOVERRIDES="msacm32=n,b" %command%'
+requires_files = []
+
+[proton]
+version    = "Proton 9.0"
+winetricks = []
+notes      = """
+**Overview:** Oni (2001, Bungie West) — third-person action with a focus on hand-to-hand combat.
+
+**Install:** Never officially on Steam, so add it as a non-Steam shortcut pointing at `Oni.exe`.
+
+**Patch:** The community 'Anniversary Edition' patch (and/or the Daodan DLL) adds widescreen, modern-resolution support, and modern-system fixes — **install/patch on a Windows PC first, then copy the whole Oni folder to the Deck.**
+
+**Proton:** Runs well under the latest numbered Proton.
+
+**Audio fix:** Place the extracted `msacm32.dll` in Oni's folder and set the launch option `WINEDLLOVERRIDES="msacm32=n,b" %command%` to stop sound-effect frame drops.
+
+**Library:** Per the Oni2.net Steam Deck guide it plays straight from the SteamOS library after first launch (which downloads the Linux runtime + Proton).
+"""
+
+[about]
+developer = "Bungie West"
+publisher = "Gathering of Developers"
+released  = "2001"
+genre     = "Third-person action"
+modes     = "Single-player"
+summary   = "**Oni** is a third-person action game built around a fluid blend of **hand-to-hand combat** and gunplay, with the melee fighting as its centerpiece. It was the only title from **Bungie West**, a division of Bungie, and its anime-inspired cyberpunk style drew heavily on **Ghost in the Shell** and **Akira**. Originally released for Windows and Mac in 2001, it was never sold on Steam and is best run on Deck via a non-Steam shortcut. The community **Anniversary Edition** patch and Daodan DLL add widescreen and modern-system support to keep the game playable on current hardware."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "OniGalore: Playing on the Steam Deck (official community guide)"
+url   = "https://wiki.oni2.net/Playing_on_the_Steam_Deck"
+
+[[links.guides]]
+title = "OniGalore: Daodan DLL (widescreen + modern-system fixes)"
+url   = "https://wiki.oni2.net/Daodan_DLL"
+
+[[links.guides]]
+title = "OniGalore: Anniversary Edition"
+url   = "https://wiki.oni2.net/Anniversary_Edition"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Original retail/CD game — supply your own copy; the Anniversary Edition (or just the Daodan DLL) is a community patch applied on top for widescreen and modern-system support.
+
+**Not on Steam:** Never on Steam — add as a non-Steam shortcut, so there's no clean ProtonDB app rating; community (Oni2.net Steam Deck guide) confirms it runs well under Proton.
+
+**Controller:** Oni is natively keyboard + mouse with no built-in gamepad support, so bind a Steam Input keyboard/mouse layout to your controller. (The Daodan DLL / OniX patches fix modern-system compatibility but do not add native gamepad input.)
+
+**Audio:** Audio frame-drops fixed via the `msacm32` launch option above.
+
+**Links:** OniGalore (oni2.net) Steam Deck guide, Daodan DLL, and Anniversary Edition pages linked above.
+"""

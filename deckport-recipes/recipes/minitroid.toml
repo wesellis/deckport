@@ -1,0 +1,74 @@
+[game]
+title       = "Minitroid"
+slug        = "minitroid"
+aliases     = ["minitroid"]
+type        = "native"
+engine      = "love"
+steam_appid = ""
+sgdb_id     = ""
+
+[about]
+developer = "tducasse and Mauricet"
+publisher = "tducasse (self-published)"
+released  = "2021"
+genre     = "Metroidvania action-platformer"
+modes     = "Single-player"
+summary   = """
+**Minitroid** is a tiny **Metroid-inspired** action-platformer made for **LOWREZJAM 2021**, rendered entirely on a **64x64 pixel grid**. tducasse handled the code, music, and sound while Mauricet created the pixel art and animations.
+
+Built with the **LÖVE (Love2D)** framework, it was released free on itch.io under a **pay-what-you-want** model, with the source code also published openly. It is a **short game-jam title** rather than a commercial release, which is why it is not sold on storefronts."""
+
+[launch]
+binary         = "minitroid.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**What you actually download:** the itch.io page only offers a **Windows** build (`minitroid-windows.zip`) and a browser/HTML5 version. There is **no standalone `.love`** and **no Linux build** published, so you start from the Windows zip and its fused `minitroid.exe`.
+
+**Native on Deck (recommended):** install a **LÖVE (Love2D)** runtime (`Flatpak`: `org.love2d.love2d`, or an **AppImage**) and point it at the fused exe — `love minitroid.exe`. The LÖVE runtime loads a fused Windows build directly, so no extraction is needed. Steam launch option: `love minitroid.exe # %command%`.
+
+**Alternative:** the fused exe is a plain zip; extract it to `minitroid.love` and run that with the same `love` runtime.
+
+**Fallback:** run `minitroid.exe` under **Proton**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = ""
+
+[[links.guides]]
+title = "Minitroid - official itch.io page (free / name-your-price)"
+url   = "https://tducasse.itch.io/minitroid"
+
+[[links.guides]]
+title = "tducasse/minitroid - source code on GitHub"
+url   = "https://github.com/tducasse/minitroid"
+
+[[links.guides]]
+title = "LÖVE (Love2D) - free 2D engine / runtime for running .love and fused exes"
+url   = "https://love2d.org/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Fused Windows build:** the only desktop download is `minitroid-windows.zip`; `minitroid.exe` inside it is a fused LÖVE build (loader stub + the `.love` archive, all zipped). The bare exe will not run natively on the Deck.
+
+**Native path (no extraction needed):** install a `love` runtime on the Deck (`Flatpak` `org.love2d.love2d` or an AppImage) and run `love minitroid.exe` - LÖVE loads a fused Windows exe directly. Or extract the exe (it is a plain zip) to `minitroid.love` and run that.
+
+**No Linux build:** itch.io has no native Linux/Mac download, so the `love`-runtime route is the simplest native option.
+
+**Fallback:** otherwise use the `Proton` fallback noted above.
+
+**Exact exe name unconfirmed:** `minitroid.exe` follows LÖVE's fused-build naming convention but was not independently verified, hence `needs-test`."""

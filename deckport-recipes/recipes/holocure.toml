@@ -1,0 +1,77 @@
+[game]
+title       = "HoloCure: Save the Fans!"
+slug        = "holocure"
+aliases     = ["HoloCure", "HoloCure Save the Fans", "holocure.exe"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = "2420510"
+sgdb_id     = "5337776"
+
+[launch]
+binary         = "holocure.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Engine:** Windows-only `GameMaker` build; runs under Proton on Steam Deck.
+
+**Source:** Available free on both Steam (app `2420510`) and itch.io (`kay-yu.itch.io/holocure`).
+
+**Steam:** **The Steam version installs and runs on Deck out of the box with Proton** — rated Platinum on ProtonDB with no tweaks required.
+
+**Install (itch.io):** For the itch.io standalone version, download the ZIP, extract it, add `holocure.exe` as a non-Steam game, and enable `Proton Experimental` (or any recent `Proton GE` build) in `Properties > Compatibility`.
+
+**Controller:** Plays well with a gamepad, but the game lacks Deck-native button prompts (one reason Steam tags it "Not Supported"); use Steam Input — community controller configs are available.
+
+**Performance:** Generally smooth, but later waves with many enemies on screen can dip below 60 FPS. Game speed is tied to frame rate, so heavy slowdown can make a run feel slightly longer; capping the Deck's refresh rate helps keep it steady.
+"""
+
+[about]
+developer = "Kay Yu (KayAnimate)"
+publisher = "Kay Yu (free fan project)"
+released  = "2022"
+genre     = "Roguelite, Action, Survivor"
+modes     = "Single-player"
+summary   = "**HoloCure: Save the Fans!** is a free, unofficial fan game inspired by **Vampire Survivors** featuring characters from the virtual YouTuber group **Hololive**. Players choose a Hololive talent and battle hordes of fans across **auto-attack roguelite** gameplay, unlocking weapons, collabs, and character-specific abilities. Developed by solo developer **Kay Yu** and released free on itch.io in 2022, it gained viral popularity in the Hololive community and later received an official Steam release in 2023, still free. The game has received frequent content updates adding new characters and game modes."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = "https://www.protondb.com/app/2420510"
+steamgriddb = "https://www.steamgriddb.com/game/5337776"
+
+[[links.guides]]
+title = "HoloCure — Steam Store Page (Free)"
+url   = "https://store.steampowered.com/app/2420510/HoloCure__Save_the_Fans/"
+
+[[links.guides]]
+title = "Steam Deck compatibility discussion — Steam Community"
+url   = "https://steamcommunity.com/app/2420510/discussions/0/3824172831340898482/"
+
+[[links.guides]]
+title = "HoloCure — Official itch.io page (Kay Yu, free)"
+url   = "https://kay-yu.itch.io/holocure"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Prefer Steam:** **Strongly prefer the free Steam version over the itch.io standalone** — it installs and works on Deck with zero configuration.
+
+**itch.io build:** Add the `.exe` as a non-Steam game and force `Proton Experimental`.
+
+**Data files:** No owned data files required.
+
+**Steam tag "Not Supported":** Steam's own Deck status reads "Not Supported," but this is incomplete/strict Valve verification (no Deck button prompts, late-wave perf), not a real blocker — ProtonDB community reports rate it Platinum and it runs out of the box.
+
+**Legal:** Unofficial Hololive fan game — not affiliated with Cover Corp.
+"""

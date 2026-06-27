@@ -1,0 +1,70 @@
+[game]
+title       = "SoulWorker"
+slug        = "soulworker"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "1377580"
+sgdb_id     = ""
+
+[launch]
+binary         = "Soulworker.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Free-to-play, live on Steam (appid `1377580`, global VALOFE/G·O·P release). Account login is required; kernel-level **nProtect GameGuard** anti-cheat is present.
+
+**Proton:** ProtonDB **silver** (trending gold). nProtect GameGuard currently launches and works under Proton — the game is generally playable without heavy tinkering. Reported good on `GE-Proton` and `proton_experimental`.
+
+**Fix (GameGuard / opencl.dll):** After GameGuard updates the launcher can fail to start unless `opencl.dll` is present in the prefix's system folders — several ProtonDB reporters had to copy/provide `opencl.dll` (e.g. into `windows/system32` and `syswow64` of the prefix) to get past the anti-cheat init. Try the latest `GE-Proton` first; add the DLL only if launch hangs at the GameGuard step.
+
+**Display:** Exclusive fullscreen can misbehave on the Deck; **borderless windowed at a lower resolution** improves performance. The regional install folder (e.g. `Soulworker_GB`, `SoulWorker_TWN`) contains a `General.ini` you can edit — set the screen mode to borderless and the resolution to `1280x800` to match the Deck panel. Confirm the exact key names in your copy's ini before changing them.
+
+**Controller:** Has gamepad support, but **in-game key/button rebinding does not save under Proton** per ProtonDB reports — use the default bindings or remap via Steam Input.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "VALOFE (originally developed by South Korean studio Lion Games)"
+publisher = "G·O·P / VALOFE (global Steam release on this appid)"
+released  = "October 2, 2020 (global VALOFE Steam release; the series originally launched in Japan in 2016)"
+genre     = "Anime-style action MMORPG (MMOARPG)"
+modes     = "Online multiplayer (requires login to a live server)"
+summary   = "**SoulWorker** is a free-to-play **anime-styled action MMORPG** known for its fast **hack-and-slash combat**, **cel-shaded visuals**, and a cast of teenage 'Soulworkers' fighting in a post-apocalyptic world. The series originally launched in Japan in 2016. The earlier Western release via Gameforge's EU/NA servers shut down on April 30, 2021, but this appid (`1377580`) is the separate **global VALOFE/G·O·P release that is still live and free-to-play on Steam** (released October 2, 2020)."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Soulworker (appid 1377580) reports"
+url   = "https://www.protondb.com/app/1377580"
+
+[[links.guides]]
+title = "Steam store page — Soulworker (live, free-to-play)"
+url   = "https://store.steampowered.com/app/1377580/Soulworker/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Install from Steam.** This appid is a **free-to-play, still-live** title — install it through Steam; deckport only configures the prefix and links nothing.
+
+**Online MMO:** Requires login to a live server. (Note: the older Gameforge EU/NA service shut down Apr 30 2021, but this `1377580` listing is the separate global VALOFE/G·O·P release that remains online.)
+
+**Anti-cheat:** Kernel-level **nProtect GameGuard**. It currently works under Proton, but a GameGuard update may require providing `opencl.dll` in the prefix to get past the anti-cheat launch step — so this is needs-test, not fully verified.
+
+**Proton:** ProtonDB **silver** (trending gold). Generally playable on `GE-Proton`.
+
+**Display/Controls:** Prefer borderless windowed at a lower resolution (e.g. `1280x800`) for performance; in-game rebinding does not save under Proton, so use Steam Input to remap if needed."""

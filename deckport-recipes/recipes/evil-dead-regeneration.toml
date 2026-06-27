@@ -1,0 +1,86 @@
+[game]
+title       = "Evil Dead: Regeneration"
+slug        = "evil-dead-regeneration"
+aliases     = ["Evil Dead Regeneration", "Evil Dead"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "game/EvilDead.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2005 `Cranky Pants Games` / `THQ` third-person action game (Bruce Campbell as Ash).
+
+**Binary:** Retail disc installs to `THQ/Evil Dead Regeneration/` with the playable EXE at
+`game/EvilDead.exe`. A separate `Launcher.exe` in the root sets resolution/controls before
+handing off to `EvilDead.exe` — point the launch at the game EXE directly to skip it.
+
+**DRM — main blocker:** The retail disc is protected with **StarForce**, whose driver does
+not load on modern Windows and does not work under Proton/Wine at all. You must apply the
+official **Beenox retail Patch 1.01**, which updates the executable so it no longer needs the
+StarForce disc check — without it the game will not start. Bring your own legitimately owned
+disc/copy (out of print: THQ defunct + the Evil Dead game license has since splintered).
+
+**Controller:** Native input is **DirectInput-only**; the pad is not detected as a normal
+XInput gamepad, so create a **Steam Input** keyboard/mouse + controller mapping.
+
+**Known issues:** Launches in a window with no in-menu widescreen option, and controls can
+freeze if you don't give input within a few seconds of the game starting — tap a key/button
+on the title screen. No community WidescreenFixesPack patch exists yet (only requested).
+
+**Proton:** Use `GE-Proton`; fall back to `proton_experimental` if it misbehaves.
+"""
+
+[about]
+developer = "Cranky Pants Games"
+publisher = "THQ"
+released  = "2005"
+genre     = "Third-person action, hack-and-slash"
+modes     = "Single-player"
+summary   = "**Evil Dead: Regeneration** is a 2005 **third-person hack-and-slash** based on Sam Raimi's **Evil Dead** films, with Bruce Campbell reprising his role as Ash Williams. Set in an alternate continuity after Evil Dead II, Ash is committed to an asylum and must again fight off the **Deadites**, aided by the wise-mouthed, joke-slinging half-Deadite sidekick Sam, voiced by Ted Raimi. Released for Windows, PlayStation 2, and Xbox, it was noted for its over-the-top humor and gory combat but criticized for being short and repetitive. It is **out of print** following THQ's closure and the splintering of the Evil Dead game license."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Out of print — supply your own legitimately owned disc/copy;
+configuration only, no download links.
+
+**StarForce blocker:** The unpatched retail EXE will not run on Proton — apply the official
+Beenox **Patch 1.01** (removes the StarForce disc check) before adding to Steam.
+
+**Binary:** Playable EXE is `game/EvilDead.exe`; `Launcher.exe` in the root is only a config
+front-end.
+
+**Controller:** DirectInput-only — map via **Steam Input**.
+
+**Display:** Opens windowed with no widescreen toggle; controls can freeze if no input is
+given shortly after launch.
+"""
+
+[[links.guides]]
+title = "Evil Dead: Regeneration — PCGamingWiki (fixes, DRM, known issues)"
+url   = "https://www.pcgamingwiki.com/wiki/Evil_Dead:_Regeneration"
+
+[[links.guides]]
+title = "Official Beenox Patch 1.01 (StarForce disc-check fix) — ModDB"
+url   = "https://www.moddb.com/games/the-evil-deadregeneration/downloads/patch-1-01-51"
+
+[[links.guides]]
+title = "Widescreen fix request — ThirteenAG WidescreenFixesPack (GitHub)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/issues/1396"

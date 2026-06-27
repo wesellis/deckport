@@ -1,0 +1,72 @@
+[game]
+title       = "eXceed 2nd - Vampire REX"
+slug        = "exceed-2nd-vampire-rex"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "207380"
+sgdb_id     = ""
+
+[launch]
+binary         = "eXceed2nd-VR.exe"   # vertical shmup main exe (~32 MB); confirm exact casing from your install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam shmup by Flat Software (`appid 207380`, removed from sale 2023-01-06; eXceed Trilogy delisting). ProtonDB platinum.
+
+**Proton:** Community confirms it runs near-flawlessly on `Proton 5.13-6`; `GE-Proton` (or `proton_experimental` as a fallback) works just as well on the Deck.
+
+**DRM:** No GFWL/SecuROM DRM.
+
+**Controller:** Native keyboard + XInput controller support, so the Deck gamepad works out of the box; if the in-game controller mapping feels off, force the Deck's built-in keyboard/mouse Steam Input layout.
+
+**Quirk:** Known minor quirk: the on-screen virtual keyboard for high-score name entry **may not accept input under Proton** — focus the physical/Deck keyboard for that one screen.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Tennen-sozai (formerly FLAT)"
+publisher = "Nyu Media"
+released  = "2012 (Steam release; remake of the 2006 doujin original)"
+genre     = "Vertical-scrolling danmaku (bullet hell) shoot 'em up"
+modes     = "Single-player"
+summary   = "**eXceed 2nd - Vampire REX** is the second entry in the **eXceed trilogy**, a Japanese doujin **bullet-hell** shoot 'em up series by the circle Tennen-sozai (originally FLAT). It centers on a single playable character, the vampire **Ria File**, and was localized into English by Nyu Media for its Steam release. The series is regarded as an underrated example of XP-era doujin **danmaku** design. It was delisted from Steam in January 2023 after the publisher **lost contact with the developer**, though existing owners retain library access."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 207380)"
+url   = "https://www.protondb.com/app/207380"
+
+[[links.guides]]
+title = "Steam Deck compatibility with Proton 5.13-6 (community thread)"
+url   = "https://steamcommunity.com/app/207380/discussions/0/3463849349666162559/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Removed from Steam 2023-01-06 (publisher lost contact with developer); no longer for sale, owners keep library access.
+
+**Proton:** ProtonDB platinum and community-confirmed playable on `Proton 5.13-6` / `GE-Proton`. Single-player offline shmup, so no dead-server risk.
+
+**Quirk:** Virtual on-screen keyboard for score name entry **may not take input under Proton** — use the physical/Deck keyboard for that screen.
+
+**Binary:** Main exe is `eXceed2nd-VR.exe` (~32 MB) — verify the exact name/casing in your install.
+"""

@@ -1,0 +1,70 @@
+[game]
+title       = "Project CARS"
+slug        = "project-cars"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "234630"
+sgdb_id     = ""
+
+[launch]
+binary         = "pCARS64.exe"   # 64-bit launcher; use pCARS.exe for the 32-bit build
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `234630`) — pulled because the car/track licenses expired, so it is no longer sold.
+
+**Proton:** Runs well on the Deck. `GE-Proton` is the known-good pick, and `proton_experimental` also works — the Project CARS family historically needed Experimental to fix alt-tab input loss.
+
+**Install:** Launcher exe is `pCARS64.exe` (64-bit) or `pCARS.exe` (32-bit).
+
+**Controller:** Native gamepad and racing-wheel support, so **controller input works out of the box** on the Deck — no Steam Input layout required.
+
+**Files:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Slightly Mad Studios"
+publisher = "Bandai Namco Entertainment"
+released  = "2015"
+genre     = "Racing simulator"
+modes     = "Single-player, online multiplayer"
+summary   = "**Project CARS** is a 2015 **racing simulator** developed by Slightly Mad Studios and published by Bandai Namco. Notable for its community-funded development through the studio's **WMD crowdfunding** model, it features licensed cars and tracks, **dynamic weather**, and a day-night cycle, with extensive controller and racing-wheel support. The game was praised for its visuals and depth of simulation. It was **delisted** from sale in October 2022 after various vehicle and track **licenses expired** and were not renewed, though existing owners can still download and play it."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Project CARS (234630)"
+url   = "https://www.protondb.com/app/234630"
+
+[[links.guides]]
+title = "ValveSoftware/Proton issue #244 — Project CARS (force-feedback vs. settings-save tradeoff)"
+url   = "https://github.com/ValveSoftware/Proton/issues/244"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted (licenses expired) — no longer for sale, so a recipe is appropriate.
+
+**Proton:** Use `GE-Proton` (or `proton_experimental`). Launcher exe is `pCARS64.exe` (64-bit) / `pCARS.exe` (32-bit).
+
+**Status:** Community ProtonDB reports rate it gold and it plays on Linux/Deck; the recipe itself **still needs a hands-on Deck confirmation**.
+
+**Controller:** Native gamepad + wheel support means controller works without a Steam Input layout. Force-feedback on some racing wheels can be **unreliable** under newer `Wine`/`DXVK`.
+
+**Multiplayer:** Online multiplayer servers may be gone; single-player and career are unaffected."""

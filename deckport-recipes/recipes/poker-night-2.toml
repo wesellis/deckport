@@ -1,0 +1,75 @@
+[game]
+title       = "Poker Night 2"
+slug        = "poker-night-2"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "234710"
+sgdb_id     = ""
+
+[launch]
+binary         = "PokerNight2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (`appid 234710`), Telltale Engine. Binary is `PokerNight2.exe`.
+
+**Proton:** ProtonDB Platinum — runs out of the box on Deck with `GE-Proton` (`proton_experimental` also works).
+
+**DirectX:** Proton ships the DirectX 9 / MSVC 2010 libs the game needs, so no extra winetricks are usually required.
+
+**Fix:** If it crashes right after the 'Click anywhere to continue' intro, **delete the stale save** `pnati2.save` under the prefix's `Documents/Telltale Games/Poker Night 2/` folder and relaunch.
+
+**Install:** deckport only configures the prefix; it never bundles the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Poker Night 2 (appid 234710) — Platinum"
+url   = "https://www.protondb.com/app/234710"
+
+[[links.guides]]
+title = "Steam Community: Instant Crash On Start-Up (Fix)"
+url   = "https://steamcommunity.com/app/234710/discussions/0/846956740728769113/"
+
+[[links.guides]]
+title = "PCGamingWiki: Poker Night 2 (paths, fixes, save location)"
+url   = "https://www.pcgamingwiki.com/wiki/Poker_Night_2"
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2013"
+genre     = "Poker / casual card game"
+modes     = "Single-player"
+summary   = """
+**Poker Night 2** is a 2013 poker game from **Telltale Games** and the sequel to **Poker Night at the Inventory**. The unseen player competes in **Texas hold 'em** and **Omaha hold 'em** against four crossover characters: Sam from Sam & Max, Brock Samson from The Venture Bros., Ash Williams from The Evil Dead, and Claptrap from Borderlands, with **GLaDOS** from Portal as the dealer.
+
+The PC version drew generally favorable reviews, with critics praising the **voice acting** and the banter between the licensed personalities. It was pulled from sale in September 2018 after the **digital distribution agreement for its licensed properties expired**."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Proton:** ProtonDB Platinum (`appid 234710`, delisted). Binary is `PokerNight2.exe`.
+
+**Fix:** Crash after the intro 'Click anywhere to continue' = **delete the old** `pnati2.save` in `Documents/Telltale Games/Poker Night 2/` inside the prefix, then relaunch.
+
+**DLL:** If you hit a missing-DLL error (`d3dx9_41.dll` / `MSVCP100.dll`), Proton's built-in DirectX/MSVC libs normally cover it.
+
+**Controller:** Works via native gamepad support; otherwise a `Steam Input` mouse/click layout makes this card game fully playable on Deck."""

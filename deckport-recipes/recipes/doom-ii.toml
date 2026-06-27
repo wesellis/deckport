@@ -1,0 +1,72 @@
+[game]
+title       = "DOOM II"
+slug        = "doom-ii"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "2300"
+sgdb_id     = ""
+
+[launch]
+binary         = "base/DOOM2.EXE"   # original MS-DOS executable; lives in the install's base/ subfolder (runs under DOSBox), not the root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Classic MS-DOS DOOM II (delisted Steam `appid 2300`; removed in 2024 when the DOOM + DOOM II remaster, `appid 2280`, replaced it). On Steam this shipped wrapped in DOSBox, so the raw `DOOM2.EXE` is a DOS binary, **not a Win32 one**.
+
+**Proton:** Two good Deck paths: (1) point the prefix at the bundled DOSBox launcher and run under `GE-Proton`, or (2) **recommended on Deck** — install the `Boxtron` compat tool (`dosbox-staging`) from the Steam Tinker / community-tools route and set it as the game's compatibility tool; this gives clean scaling and native controller mapping.
+
+**Layout:** The Steam install root holds `doom2.bat` / `doom2 + mouse.bat` launchers and a `base/` subfolder; `base/` contains the bundled `DOSBox.exe`, `DOOM2.EXE`, the `.conf`, and `doom2.wad`.
+
+**Controller:** Either way, for a modern feel you can copy `doom2.wad` out of `base/` and feed it to a source port (`GZDoom` or `Chocolate Doom`), which adds proper gamepad support and vibration.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "id Software"
+publisher = "GT Interactive"
+released  = "1994"
+genre     = "First-person shooter"
+modes     = "Single-player, co-op, deathmatch multiplayer"
+summary   = "**DOOM II: Hell on Earth** is the sequel to id Software's genre-defining 1993 shooter, built on the same **DOOM engine** and released for MS-DOS in 1994. It expanded the original with larger, more open levels set on a demon-overrun Earth, new enemies, and the iconic double-barreled **Super Shotgun**. Widely praised and hugely influential on the **first-person shooter** genre, this classic MS-DOS edition (Steam appid 2300) was **delisted in 2024** when the DOOM + DOOM II remaster replaced it on the store."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Fixing the MS-DOS Doom games on Steam (DOSBox setup & tweaks)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=479076280"
+
+[[links.guides]]
+title = "Boxtron — run Steam DOS games via native dosbox-staging"
+url   = "https://github.com/dreamer/boxtron"
+
+[[links.guides]]
+title = "ProtonDB — DOOM II (appid 2300) reports"
+url   = "https://www.protondb.com/app/2300"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted classic DOOM II (`appid 2300`), replaced on Steam by the DOOM + DOOM II remaster (`appid 2280`).
+
+**Display:** Steam's overall Deck rating shows 'Unsupported' only because the bundled DOS versions lack controller support out of the box; community reports confirm it plays well once configured.
+
+**Online:** Single-player only — no online dependency, so nothing to worry about server-side.
+
+**Controller:** Default DOSBox wrapper has weak gamepad input: on Deck, run via `Boxtron` (`dosbox-staging`) as the compat tool, or drop a `GZDoom` / `Chocolate Doom` source port into the install for real controller support, vibration, and widescreen. A `Steam Input` gamepad layout also works as a fallback."""

@@ -1,0 +1,85 @@
+[game]
+title       = "Super Mario 64 Coop DX"
+slug        = "sm64coopdx"
+aliases     = ["SM64 Coop DX", "SM64CoopdX", "Super Mario 64 Co-op"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "sm64coopdx"
+launch_options = ""
+requires_files = ["Super Mario 64 USA ROM dump (baserom.us.z64) that you own legally"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SM64 Coop DX Official Site"
+url   = "https://sm64coopdx.com"
+
+[[links.guides]]
+title = "SM64 Coop DX GitHub Releases"
+url   = "https://github.com/coop-deluxe/sm64coopdx/releases"
+
+[[links.guides]]
+title = "sm64-steam-deck-builder (GitHub, build-from-source option)"
+url   = "https://github.com/the-outcaster/sm64-steam-deck-builder"
+
+[[links.guides]]
+title = "v1.5.1 release (Linux + SteamOS prebuilt binaries)"
+url   = "https://github.com/coop-deluxe/sm64coopdx/releases/tag/v1.5.1"
+
+[about]
+developer = "Coop DX community team"
+publisher = "Community (open source)"
+released  = "Ongoing; v1.5.1 (late May/early June 2026)"
+genre     = "Platformer, Co-op, Fan Port"
+modes     = "Single-player, Online Co-op (up to 16 players)"
+summary   = """**Super Mario 64 Coop DX** is a community-maintained open-source co-op mod \
+built on the SM64 PC decompilation project, supporting **up to 16 players online**, a Lua mod \
+API, uncapped framerate, and widescreen support. It needs a legally obtained SM64 USA ROM, \
+which you supply on first launch to generate the game assets. The project ships **official \
+prebuilt Linux and SteamOS binaries** in its GitHub releases (v1.5 is the last to include a \
+dedicated SteamOS build; from v1.6 the Linux build is used), so on Steam Deck you can usually \
+just download, extract, and run — no compiling required. A community \
+**sm64-steam-deck-builder** script also exists for building from source if preferred."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- **Requires a USA Super Mario 64 ROM dump that you own legally.** The project \
+  does not distribute ROM files. Supply your own copy — do not use ROM sites.
+- Easiest Steam Deck path: in Desktop Mode, download the **prebuilt SteamOS or Linux build** \
+  from github.com/coop-deluxe/sm64coopdx/releases (latest v1.5.1; v1.5 is the last with a \
+  dedicated SteamOS asset — use the Linux build from v1.6 on), extract it, and run the \
+  sm64coopdx executable.
+- On first run, provide your ROM one of two ways: **drag and drop your .z64 ROM onto the \
+  sm64coopdx window**, or rename your USA ROM to **baserom.us.z64** and place it either next \
+  to the executable or in ~/.local/share/sm64coopdx/. The game generates its assets on first \
+  launch; this takes a few minutes.
+- Prefer building from source? The community **sm64-steam-deck-builder** script \
+  (github.com/the-outcaster/sm64-steam-deck-builder) automates the build pipeline in Desktop \
+  Mode (needs build dependencies / root).
+- Add the sm64coopdx executable as a non-Steam game shortcut to launch it from Game Mode.
+- Online co-op requires all players to be running the same version of SM64 Coop DX.
+- Lua mods go in the mods/ subdirectory next to the binary; many are available at \
+  sm64coopdx.com/mods.
+- The game is a fan project based on the Nintendo decompilation; Nintendo has not authorized \
+  it. The project distributes no Nintendo IP — only the build toolchain and co-op code.
+"""

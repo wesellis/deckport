@@ -1,0 +1,74 @@
+[game]
+title       = "Mega Man X8 (Demake)"
+slug        = "mega-man-x8-demake"
+aliases     = ["Mega Man X8 16-bit", "MMX8 Demake"]
+type        = "proton"
+engine      = "godot"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Mega Man X8 16-bit 1.0.0.8.exe"   # from the dev's Godot export_presets.cfg (v1.0.0.8)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**What it is:** A free fan 'demake' of Mega Man X8 by Alysson da Paz (Alones) — the PS2 game reimagined in 16-bit pixel art with widescreen + 60 FPS. Single playable character (X). v1.0 released 2024-09-07.
+
+**Engine:** Built in **Godot 3.5**, exported as a single self-contained Windows .exe (the game data .pck is embedded — no extra files to supply).
+
+**Proton:** Reported to run flawlessly on Deck with **Proton Experimental**; **GE-Proton** also works. Holds a locked 60/90 FPS even with the GPU down-clocked. No winetricks needed.
+
+**Controller:** Native gamepad support with in-game button remapping — works as a normal controller, no Steam Input layout required. A few users hit quirks with the D-pad on certain pads; remapping in the options menu resolves it.
+
+**Install:** Download the .exe from the dev's official release, then in Desktop mode add it as a Non-Steam Game and force Proton Experimental in Properties > Compatibility. It is a standalone executable, not a normal-installer; just point Steam at the .exe.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Mega Man X8 16-bit — official showcase / download (Sonic Fan Games HQ)"
+url   = "https://sonicfangameshq.com/forums/showcase/mega-man-x8-16-bit.2184/"
+
+[[links.guides]]
+title = "Mega Man X8 16-bit — source code (AlyssonDaPaz, GitHub)"
+url   = "https://github.com/AlyssonDaPaz/Mega-Man-X8-16-bit"
+
+[[links.guides]]
+title = "Megaman X8 Demake on Steam Deck — installation guide"
+url   = "https://gameskeys.net/megaman-x8-demake-steam-deck-installation-guide/"
+
+[about]
+developer = "Alysson da Paz (Alones)"
+publisher = "Alysson da Paz (Alones)"
+released  = "2024"
+genre     = "Action platformer"
+modes     = "Single-player"
+summary   = """
+**Mega Man X8 16-bit** is a free fan demake that reimagines Capcom's 2004 PlayStation 2 game **Mega Man X8** in a **16-bit SNES** style, aiming to recapture the feel of the first three **Mega Man X** titles. It was created by a single developer, Alysson da Paz, using the **Godot Engine 3.5**, along with Aseprite, Tiled and Audacity, and was released as part of the **Sonic Amateur Game Expo 2024 (SAGE 2024)**.
+
+The game is fully playable from start to finish with **X** as the sole playable character, with Zero, Axl and the Navigators intentionally left out to keep the project low in scope. As an unofficial, non-commercial fan project not affiliated with **Capcom**, it is distributed for free rather than sold.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free fan game (not affiliated with **Capcom**) — download it from the author's official release (Sonic Fan Games HQ / GitHub). It is a free, non-commercial fan project.
+
+**Binary:** `Mega Man X8 16-bit 1.0.0.8.exe` (v1.0.0.8). The filename embeds the version, so a newer build may differ — point the launcher at the actual .exe in the download.
+
+**Standalone:** Self-contained Godot export — no installer, no separate data files to copy. Add the .exe directly as a Non-Steam Game.
+"""

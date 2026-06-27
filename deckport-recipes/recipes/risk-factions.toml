@@ -1,0 +1,72 @@
+[game]
+title       = "Risk: Factions"
+slug        = "risk-factions"
+aliases     = ["Risk Factions"]
+type        = "proton"
+engine      = "other"
+steam_appid = "47800"         # delisted 2020-10-05 (EA/Hasbro license expired)
+sgdb_id     = ""
+
+[launch]
+binary         = "Risk Factions.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Stainless Games' 2011 digital take on the Risk board game (EA), delisted 2020-10-05 (Steam appid `47800`). Turn-based strategy with a tongue-in-cheek comic campaign and AI/local play.
+
+**Proton:** DirectX 9 Steamworks title; runs under Proton — `GE-Proton` is the safe pick, `proton_experimental` also works.
+
+**Display:** if the mouse cursor sticks in the top-left corner under fullscreen, **switch the game to WINDOWED mode** (community-confirmed fix) and Gaming Mode will still present it full-screen.
+
+**Controller:** the built-in controller support drives menus and the campaign fine; if you prefer pointer control, add a Steam Input gamepad-with-mouse layout.
+
+**Languages:** pass `-language -german` / `-french` / `-spanish` in launch options to switch from English.
+"""
+
+[about]
+developer = "Stainless Games"
+publisher = "Electronic Arts"
+released  = "2011"
+genre     = "Turn-based strategy"
+modes     = "Single-player, local and online multiplayer"
+summary   = "**Risk: Factions** is a digital adaptation of Hasbro's **Risk** board game developed by **Stainless Games** and published by **Electronic Arts**. Beyond the classic ruleset, it adds a tongue-in-cheek **'Factions' mode** with new maps, special territories, and five cartoonish armies (humans, cats, robots, zombies, and yeti) tied to a comic single-player campaign. It first launched on **Xbox Live Arcade** in 2010 and came to PC via Steam in 2011, earning generally favorable reviews. The PC version was **delisted in 2020 after EA's Hasbro license expired**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - RISK: Factions (app 47800)"
+url   = "https://www.protondb.com/app/47800"
+
+[[links.guides]]
+title = "SteamDB - RISK: Factions (app 47800)"
+url   = "https://steamdb.info/app/47800/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** delisted commercial game.
+
+**Input:** turn-based strategy, so no twitch-input concerns.
+
+**Known quirk:** the mouse can get stuck in the top-left corner in fullscreen — **switch the game to windowed mode** (community-reported fix), or just play with a controller, which works well.
+
+**Controller:** built-in controller support is fine; a Steam Input gamepad-with-mouse layout covers any pointer-only screens.
+
+**Binary:** confirmed (`Risk Factions.exe`).
+
+**ProtonDB:** reported **Platinum** on app `47800` (small sample, ~6 reports / low confidence) — re-check on next pass. Steamworks-only DRM; no GFWL/SecuROM blockers.
+"""

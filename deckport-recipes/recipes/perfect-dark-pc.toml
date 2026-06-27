@@ -1,0 +1,80 @@
+[game]
+title       = "Perfect Dark (PC Port)"
+slug        = "perfect-dark-pc"
+aliases     = ["Perfect Dark Decompilation", "perfect_dark PC", "PD PC Port"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "pd.x86_64"   # native Linux binary — add as a non-Steam game
+launch_options = ""
+requires_files = ["Perfect Dark N64 ROM placed in data/ as pd.ntsc-final.z64 (NTSC Final / US V1.1, md5 e03b088b6ac9e0080440efed07c1e40f)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Port:** Perfect Dark (PC Port) is an unofficial **native PC port** by `fgsfdsfgs`, built directly on top of the `n64decomp/perfect_dark` **100% complete decompilation** of the 2000 N64 shooter. The port first appeared in late 2023 and continues to receive active updates.
+
+**Proton:** Full **Linux support** is provided — use the native Linux binary on Steam Deck with **no Proton required**.
+
+**Features:** unlocked 60 FPS, widescreen, mouselook, configurable FOV, and working split-screen multiplayer. **Steam Deck HQ reported the port runs great on Deck** (solid 60 FPS, low power draw).
+
+**Install:** Build/download the Linux binary `pd.x86_64`, place your ROM in the `data/` folder as `pd.ntsc-final.z64`, then add `pd.x86_64` as a non-Steam game in Desktop Mode.
+
+**ROM:** The **NTSC Final / US V1.1 / US Rev 1** ROM is required (md5 `e03b088b6ac9e0080440efed07c1e40f`). PAL and JPN ROMs use separate binaries (`pd.pal.x86_64`, `pd.jpn.x86_64`).
+
+**Controller:** Controller support (dual-analog) works natively — no Steam Input layer required.
+"""
+
+[about]
+developer = "Rare (original 2000 N64 game); PC port by fgsfdsfgs, based on the n64decomp/perfect_dark complete decompilation"
+publisher = "Rare / Nintendo (original); fan-made PC port"
+released  = "2000 (N64); PC port first released late 2023, actively updated"
+genre     = "First-person shooter"
+modes     = "Single-player, split-screen multiplayer"
+summary   = """
+**Perfect Dark** is a 2000 first-person shooter developed by **Rare** for the **Nintendo 64**, serving as a spiritual successor to **GoldenEye 007**. Players take the role of **Joanna Dark**, a Carrington Institute agent uncovering a corporate conspiracy entangled with alien factions, across both a single-player campaign and a substantial multiplayer suite including bots.
+
+The PC port by **fgsfdsfgs**, first released in late 2023, is built on the **100% complete decompilation** and ships **native Linux binaries** (run `pd.x86_64`). Enhancements include unlocked 60 FPS gameplay, widescreen display, mouselook, FOV controls, and working **split-screen multiplayer**, making this one of the most feature-complete fan PC ports of an N64 classic.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "perfect_dark PC port — fgsfdsfgs GitHub repository"
+url   = "https://github.com/fgsfdsfgs/perfect_dark"
+
+[[links.guides]]
+title = "n64decomp/perfect_dark — base 100% complete decompilation"
+url   = "https://github.com/n64decomp/perfect_dark"
+
+[[links.guides]]
+title = "Steam Deck HQ — Perfect Dark native PC port is great on Steam Deck"
+url   = "https://steamdeckhq.com/news/perfect-darks-reboot-may-be-canceled-but-the-originals-native-pc-port-is-great-on-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a **legally-owned** Perfect Dark N64 ROM dump. The port needs the **NTSC Final / US V1.1 / US Rev 1** ROM (md5 `e03b088b6ac9e0080440efed07c1e40f`), placed in the `data/` folder and named `pd.ntsc-final.z64`.
+
+**Maturity:** The port has been available and actively developed since late 2023; Steam Deck reports are positive (Steam Deck HQ noted a solid 60 FPS and very low power draw).
+
+**Deck:** Use the native Linux binary on Deck (`type = 'native'`, **no Proton**). Add `pd.x86_64` as a non-Steam game.
+
+**Multiplayer:** Split-screen multiplayer works natively.
+
+**Updates:** Check the GitHub repository for the latest source/build; there is no fixed release cadence.
+"""

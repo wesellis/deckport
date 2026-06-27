@@ -1,0 +1,68 @@
+[game]
+title       = "Castlevania: Simon's Destiny"
+slug        = "castlevania-simons-destiny"
+aliases     = ["Simon's Destiny", "Simons Destiny GZDoom", "Castlevania GZDoom fan game"]
+type        = "native"
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run org.zdoom.GZDoom -iwad ~/.var/app/org.zdoom.GZDoom/.config/gzdoom/Castlevania.ipk3"
+requires_files = ["Castlevania.ipk3"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Overview:** Non-commercial Castlevania fangame in first-person `GZDoom` by Batandy (Andrea Gori) — **completely standalone**, free on itch.io (batandy.itch.io/simonsdestiny). No Doom or Castlevania files needed; the download (currently V1.4) ships a self-contained IWAD, `Castlevania.ipk3`.
+
+**Install:** Install the GZDoom Flatpak (`org.zdoom.GZDoom`) via Discover in Desktop Mode. Download Simon's Destiny from itch.io, extract it, and place `Castlevania.ipk3` in `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/`.
+
+**Launch:** Because `Castlevania.ipk3` is a standalone IWAD, launch it with `-iwad ~/.var/app/org.zdoom.GZDoom/.config/gzdoom/Castlevania.ipk3` (or just pick "Castlevania: Simon's Destiny" from the GZDoom IWAD picker on first run). Add as a non-Steam shortcut with those launch options. Set the renderer to Hardware (OpenGL).
+
+**Content:** Six levels recreating the NES Castlevania in 3D with Simon's whip and all classic enemies."""
+
+[about]
+developer = "Batandy / Andrea Gori (batandy.itch.io)"
+publisher = "Independently released (free, itch.io)"
+released  = "2017 (current V1.4)"
+genre     = "First-person action (Castlevania fan game, standalone GZDoom)"
+modes     = "Single-player"
+summary   = "**Castlevania: Simon's Destiny** is a non-commercial first-person **fan game** built on **GZDoom** by developer Batandy that faithfully recreates the NES original **Castlevania** in 3D. It features six levels mirroring the classic stages, Simon Belmont's iconic **whip**, a full roster of classic enemies, and original visual and audio work designed to evoke the **1986 game**. Completely standalone and free, it requires no Doom or Castlevania files. Batandy has released several other GZDoom fangames including **GZ PT** (a GZDoom recreation of P.T.) using the same standalone pk3 approach."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Castlevania: Simon's Destiny (official itch.io page + install instructions)"
+url   = "https://batandy.itch.io/simonsdestiny"
+
+[[links.guides]]
+title = "Castlevania: Simon's Destiny - The Doom Wiki"
+url   = "https://doomwiki.org/wiki/Castlevania:_Simon's_Destiny"
+
+[[links.guides]]
+title = "GZDoom Flatpak (Flathub) - IWAD/file placement notes"
+url   = "https://github.com/flathub/org.zdoom.GZDoom"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free on itch.io (batandy.itch.io/simonsdestiny). No Doom or Castlevania files needed.
+
+**Non-commercial:** Fan game — **no Konami affiliation**.
+
+**Install:** Install the GZDoom Flatpak (`org.zdoom.GZDoom`) via Discover, extract the itch.io download, place `Castlevania.ipk3` in `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/`, and add as a non-Steam shortcut with launch options: `run org.zdoom.GZDoom -iwad ~/.var/app/org.zdoom.GZDoom/.config/gzdoom/Castlevania.ipk3`. It is a standalone IWAD, so you can also just select "Castlevania: Simon's Destiny" from the GZDoom launcher's IWAD list.
+
+**Note:** Batandy's other GZDoom games (`GZ PT`, etc.) use the same pattern. deckport links nothing."""

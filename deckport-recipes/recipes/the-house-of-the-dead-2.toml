@@ -1,0 +1,54 @@
+[game]
+title       = "The House of the Dead 2"
+slug        = "the-house-of-the-dead-2"
+aliases     = ["HOTD2", "House of the Dead 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Hod2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add Hod2.exe as a non-Steam game (default install path C:/Program Files (x86)/SEGA/THE HOUSE OF THE DEAD 2/Hod2.exe). Use GE-Proton. The game uses mouse-based aiming with no native gamepad support — map the Steam Deck's right trackpad (or gyro) as a mouse pointer for aiming, and map triggers/face buttons to fire and reload via a Steam Input layout. The PC port runs at a fixed 640x480 resolution. KNOWN ISSUE: on Windows the game can stop responding to mouse/keyboard input when an Xbox-style controller is detected; if input is dead under Proton, disable/limit the Steam Input controller emulation and rely on trackpad-as-mouse. Supports 1-2 player local co-op on the same machine. NOTE: a House of the Dead 2 Remake is available on GOG and Steam and is the recommended modern option."
+
+[about]
+developer = "Sega AM1"
+publisher = "Sega"
+released  = "1998"
+genre     = "Light-gun Shooter / Rail Shooter"
+modes     = "Single-player, 2-player co-op"
+summary   = "The House of the Dead 2 is the Windows PC port (2001) of Sega's 1998 arcade light-gun sequel, set two years after the original as agents James Taylor and Gary Stewart battle a new zombie outbreak in Venice, Italy. The game expands on the original with more branching paths, new enemy types, and local 2-player co-op. On PC and Steam Deck, mouse aiming replaces the light gun. A modern remake (released 2025) is available on Steam and GOG."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — The House of the Dead 2"
+url   = "https://www.pcgamingwiki.com/wiki/The_House_of_the_Dead_2"
+
+[[links.guides]]
+title = "The House of the Dead 2 Remake on GOG"
+url   = "https://www.gog.com/en/game/the_house_of_the_dead_2_remake"
+
+[[links.guides]]
+title = "THE HOUSE OF THE DEAD 2: Remake on Steam"
+url   = "https://store.steampowered.com/app/3376690/THE_HOUSE_OF_THE_DEAD_2_Remake/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Supply your own copy of the 1998/2001 PC port; launch Hod2.exe (not HotD2.exe). Use the right trackpad or gyro as a mouse for aiming — no native gamepad support; build a Steam Input layout. Fixed 640x480 resolution. Game may ignore mouse/keyboard if an Xbox-style controller is detected — tame the Steam Input controller emulation if input goes dead. The 2025 House of the Dead 2 Remake on Steam/GOG is the recommended modern alternative."

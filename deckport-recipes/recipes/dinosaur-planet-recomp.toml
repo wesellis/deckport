@@ -1,0 +1,73 @@
+[game]
+title       = "Dinosaur Planet (N64 Prototype Recompiled)"
+slug        = "dinosaur-planet-recomp"
+aliases     = ["Dino Planet Recomp", "Dinosaur Planet N64", "Rare Dinosaur Planet"]
+type        = "native"        # N64 static recompilation via N64Recomp — native Linux build
+engine      = "other"         # N64Recomp framework
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "DinosaurPlanetRecompiled"   # CMake add_executable target; ships in the Linux .tar.gz / .AppImage
+launch_options = ""
+requires_files = ["Dinosaur Planet N64 Dec 2000 prototype ROM (the build released by Forest of Illusion on 2021-02-20 — a cancelled Rare N64 game that became Star Fox Adventures on GameCube)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Recomp:** Static recompilation of the N64 prototype of **Dinosaur Planet**, a cancelled Rare N64 game, using the `N64Recomp` framework (the same toolchain as `Zelda 64: Recompiled`, etc.) with **RT64** as the renderer. Official project: `DinosaurPlanetRecomp/dino-recomp`.
+
+**Build:** `v0.3.0` (released 2026-05-31) is the latest. Ships official native Linux builds (AppImage, Flatpak, and `.tar.gz`) that **run on the Steam Deck without Proton** — no Wine/Proton needed.
+
+**ROM:** The recomp targets the **December 2000 prototype** ROM, the build released publicly by **Forest of Illusion on 2021-02-20**. Dinosaur Planet was never commercially released — the original N64 game was retooled into **Star Fox Adventures** for GameCube in 2002. The repo ships **no game assets**; you supply the prototype ROM.
+
+**GPU:** RT64 needs **Vulkan 1.2** (or D3D12); the Steam Deck's GPU meets this."""
+
+[about]
+developer = "Rare (original ~2000 N64 prototype); recompilation by community team using N64Recomp"
+publisher = "Nintendo (planned publisher for the cancelled N64 release)"
+released  = "Never released (cancelled ~2001); Dec 2000 N64 prototype published by Forest of Illusion on 2021-02-20; N64Recomp-based port v0.3.0 released 2026-05-31"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = """
+**Dinosaur Planet** was a **Nintendo 64** action-adventure game in development at **Rare** circa 1999-2001, starring original characters Sabre and Krystal. Shortly before completion, Nintendo and Rare retooled it into a **Star Fox** title — Krystal and the setting were retained and the game was rebuilt for GameCube as **Star Fox Adventures** (2002). A near-complete but unfinished **December 2000 prototype** of the game (as it existed before the Star Fox conversion) was published by the preservation group **Forest of Illusion on 2021-02-20**.
+
+This recipe uses the community **N64Recomp**-based port (`DinosaurPlanetRecomp/dino-recomp`, v0.3.0, 2026-05-31) that runs the prototype as a native PC build without emulation, using the RT64 renderer. You must supply the Dec 2000 prototype ROM. The source game was itself unfinished when cancelled, so expect rough edges."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Dinosaur Planet: Recompiled — official project (GitHub)"
+url   = "https://github.com/DinosaurPlanetRecomp/dino-recomp"
+
+[[links.guides]]
+title = "Releases — official native Linux builds (AppImage / Flatpak / tar.gz)"
+url   = "https://github.com/DinosaurPlanetRecomp/dino-recomp/releases"
+
+[[links.guides]]
+title = "N64Recomp — N64 static recompilation framework (GitHub)"
+url   = "https://github.com/N64Recomp/N64Recomp"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** This requires the **December 2000 Dinosaur Planet prototype** ROM (the build published by Forest of Illusion on 2021-02-20) — a cancelled game that was never commercially released. The recomp ships **NO assets**; you provide the ROM yourself.
+
+**Quality:** The source game was itself unfinished at cancellation, so **expect bugs and incomplete sections**. `v0.3.0` (2026-05-31) is the current build and adds widescreen, control remapping, resolution options and a debug/cheats UI.
+
+**Binary:** The Linux build's executable is `DinosaurPlanetRecompiled` (CMake target). Use the official `*-Linux-x64.AppImage`, `.flatpak`, or `.tar.gz` from GitHub Releases — these run natively, no Proton.
+
+**GPU:** RT64 renderer requires **Vulkan 1.2** (or D3D12) and an SSE4.1 CPU; the Steam Deck satisfies both.
+
+**Framework:** Uses the `N64Recomp` framework — same toolchain as `Zelda 64: Recompiled` and other recomp ports."""

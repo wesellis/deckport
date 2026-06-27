@@ -1,0 +1,93 @@
+// Resolve a SteamGridDB HERO image (wide cinematic banner) for each recipe and
+// cache the URLs to src/lib/hero-cache.json. The recipe detail page uses the hero
+// as its poster background, falling back to the landscape grid when there's none.
+//
+//   STEAMGRIDDB_API_KEY=... node scripts/fetch-heroes.mjs           # fill gaps
+//   STEAMGRIDDB_API_KEY=... node scripts/fetch-heroes.mjs --force   # refetch all
+//
+// Picks the OLDEST hero (lowest id) — usually the original, best one. We link the
+// SteamGridDB CDN (we host nothing). No hero → `null`, and the page uses the grid.
+import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { parse as parseToml } from "smol-toml";
+
+const HERE = path.dirname(fileURLToPath(import.meta.url));
+const RECIPES = path.join(HERE, "../../deckport-recipes/recipes");
+const CACHE = path.join(HERE, "../src/lib/hero-cache.json");
+const BASE = "https://www.steamgriddb.com/api/v2";
+
+const KEY = process.env.STEAMGRIDDB_API_KEY;
+const force = process.argv.includes("--force");
+
+if (!KEY) {
+  console.error("error: set STEAMGRIDDB_API_KEY (free key at steamgriddb.com).");
+  process.exit(1);
+}
+
+async function sgdb(p) {
+  const r = await fetch(BASE + p, { headers: { Authorization: `Bearer ${KEY}` } });
+  if (!r.ok) throw new Error(`${r.status} on ${p}`);
+  return r.json();
+}
+
+async function resolveGameId(rec) {
+  if (rec.sgdb_id) return rec.sgdb_id;
+  if (rec.steam_appid) {
+    try {
+      const r = await sgdb(`/games/steam/${encodeURIComponent(rec.steam_appid)}`);
+      if (r.data?.id) return r.data.id;
+    } catch {
+      /* fall through to name search */
+    }
+  }
+  for (const term of [rec.title, ...(rec.aliases || [])]) {
+    if (!term) continue;
+    const r = await sgdb(`/search/autocomplete/${encodeURIComponent(term)}`);
+    if (r.data?.[0]?.id) return r.data[0].id;
+  }
+  return null;
+}
+
+async function resolveHero(id) {
+  const clean = (list) => (list || []).filter((g) => !g.nsfw && !g.humor);
+  const pickUrl = (g) => g && (g.thumb || g.url);
+  const oldest = (arr) => (arr.length ? [...arr].sort((a, b) => a.id - b.id)[0] : null);
+  const heroes = clean((await sgdb(`/heroes/game/${id}?types=static&nsfw=false&limit=50`)).data);
+  return heroes.length ? pickUrl(oldest(heroes)) : null;
+}
+
+const files = readdirSync(RECIPES).filter((f) => f.endsWith(".toml") && !f.startsWith("_"));
+const cache = existsSync(CACHE) ? JSON.parse(readFileSync(CACHE, "utf8")) : {};
+
+for (const f of files) {
+  const slug = f.replace(/\.toml$/, "");
+  if (!force && slug in cache) continue; // keep prior results (incl. null); retry only new
+  const t = parseToml(readFileSync(path.join(RECIPES, f), "utf8"));
+  const rec = {
+    title: t.game?.title ?? slug,
+    sgdb_id: t.game?.sgdb_id ?? "",
+    steam_appid: t.game?.steam_appid ?? "",
+    aliases: t.game?.aliases ?? [],
+  };
+  try {
+    const id = await resolveGameId(rec);
+    const url = id ? await resolveHero(id) : null;
+    cache[slug] = url;
+    console.log(`${url ? "✓" : "·"} ${slug}${url ? "" : "  (no hero)"}`);
+  } catch (e) {
+    console.warn(`! ${slug}: ${e.message}`);
+    if (!(slug in cache)) cache[slug] = null;
+  }
+}
+
+const live = new Set(files.map((f) => f.replace(/\.toml$/, "")));
+const sorted = Object.fromEntries(
+  Object.keys(cache)
+    .filter((k) => live.has(k))
+    .sort()
+    .map((k) => [k, cache[k]]),
+);
+writeFileSync(CACHE, JSON.stringify(sorted, null, 2) + "\n");
+const hits = Object.values(sorted).filter(Boolean).length;
+console.log(`\nwrote ${path.relative(process.cwd(), CACHE)} — ${hits}/${files.length} with a hero`);

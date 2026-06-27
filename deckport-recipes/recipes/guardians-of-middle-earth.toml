@@ -1,0 +1,79 @@
+[game]
+title       = "Guardians of Middle-Earth"
+slug        = "guardians-of-middle-earth"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "111900"
+sgdb_id     = ""
+
+[about]
+developer = "Monolith Productions"
+publisher = "Warner Bros. Interactive Entertainment"
+released  = "2013 (PC); 2012 on PS3/Xbox 360"
+genre     = "Multiplayer online battle arena (MOBA)"
+modes     = "5v5 online multiplayer, co-op vs AI, practice/bot play"
+summary   = """
+**Guardians of Middle-earth** is a **Lord of the Rings**-themed **MOBA** developed by Monolith Productions and published by Warner Bros. Interactive Entertainment, first released on consoles in 2012 and ported to Windows in 2013. Built around a **5v5 lane-pushing Conquest mode**, it featured a roster of Tolkien characters such as Gandalf, Sauron and Gollum.
+
+It received a mixed reception (around 71 on Metacritic) and struggled to retain players. Its online services were shut down and the title was **delisted**, its Steam price zeroed in January 2019 after the **Lord of the Rings license lapsed**."""
+
+[launch]
+binary         = "GOME.exe"   # main executable lives in the game's x86/ subfolder (beside game.dll)
+launch_options = "PROTON_NO_D3D11=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted Steam MOBA** (Steam/ProtonDB appid `111900`).
+
+**GFWL:** The game ships with Games for Windows Live (`GFWL`), which is **the only real Deck hurdle**.
+
+**Proton:** Use `GE-Proton` (or current `proton_experimental`).
+
+**Fix:** The community fix that gets it past the GFWL wall: **delete the in-prefix `Games for Windows - LIVE` / GFWL component** and drop a GFWL emulator (`xlive.dll`) into the game's `x86` folder beside `GOME.exe`, then run with the `PROTON_NO_D3D11=1 %command%` launch option already set above. Several reports confirm it launching and playing this way (also reported working when run through Lutris with a Steam Proton build).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Guardians of Middle-earth (appid 111900)"
+url   = "https://www.protondb.com/app/111900"
+
+[[links.guides]]
+title = "PCGamingWiki — Guardians of Middle-earth"
+url   = "https://www.pcgamingwiki.com/wiki/Guardians_of_Middle-earth"
+
+[[links.guides]]
+title = "PCGamingWiki — Games for Windows - LIVE (GFWL fix reference)"
+url   = "https://www.pcgamingwiki.com/wiki/Games_for_Windows_-_LIVE"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted from Steam (price zeroed Jan 2019 when the **Lord of the Rings license lapsed**) — no longer for sale.
+
+**Multiplayer:** It's a MOBA and its online/matchmaking servers were shut down around 2018-2019, so **live multiplayer is effectively gone**; what remains is bot/practice play, so set expectations accordingly.
+
+**GFWL:** `GFWL` is the main Deck snag — see the `[proton]` notes for the `xlive.dll` bypass + `PROTON_NO_D3D11=1`.
+
+**Controller:** PC build leans on Steam Input — apply a gamepad layout (it's a console MOBA on PS3/360, so it maps cleanly to a controller; `x360ce` also works under Windows).
+
+**Binary:** `GOME.exe` in the game's `x86/` subfolder (sits next to `game.dll`).
+
+**Status:** ProtonDB rates appid `111900` **platinum**, but on a small/low-confidence sample (~6 reports), and **nobody has confirmed this exact recipe on a Deck yet**."""

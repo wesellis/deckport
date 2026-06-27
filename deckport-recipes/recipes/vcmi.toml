@@ -1,0 +1,79 @@
+[game]
+title       = "VCMI: Heroes of Might and Magic III Engine"
+slug        = "vcmi"
+aliases     = ["VCMI", "vcmi-client", "Heroes of Might and Magic III VCMI"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "vcmilauncher"
+launch_options = ""
+requires_files = ["Data", "Maps", "Mp3"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Proton:** None needed — this is a **native Linux** build via Flatpak (`eu.vcmi.VCMI` on Flathub/Discover). The Flatpak's default entry point is the **launcher** `vcmilauncher` (which manages data files and mods); the game client itself is `vcmiclient` (no hyphen). Run with `flatpak run eu.vcmi.VCMI`, or start the client directly via `flatpak run --command=vcmiclient eu.vcmi.VCMI`.
+
+**Install:** Install via Discover in Desktop Mode.
+
+**Data:** Copy the `Data/`, `Maps/`, and `Mp3/` directories from your Heroes III: Complete or Shadow of Death installation to `~/.var/app/eu.vcmi.VCMI/data/vcmi/` (Flatpak path) or `~/.local/share/vcmi/` (non-Flatpak).
+
+**GOG:** The GOG version is recommended — use `innoextract` to unpack the installer if needed.
+
+**Mods:** The built-in VCMI Launcher lets you manage mods including HD visuals.
+"""
+
+[about]
+developer = "VCMI Team and contributors"
+publisher = "Independent (free open-source project)"
+released  = "2010 (first public release); ongoing — active development through 2025-2026"
+genre     = "Turn-based strategy"
+modes     = "Single-player, Multiplayer (hot-seat and network)"
+summary   = "**VCMI** is a full open-source reimplementation of the **Heroes of Might and Magic III** engine, maintained by a dedicated community since the mid-2000s. It preserves complete compatibility with original HoMM3 campaigns, maps, and data while unlocking **HD resolutions**, new content possibilities, and a rich **mod ecosystem** accessible through the in-game launcher. The project supports Heroes III: Shadow of Death and Complete editions (available on **GOG**). Network multiplayer, new town types, scripting, and AI improvements go well beyond the original game. VCMI is widely regarded as the definitive way to play HoMM3 on modern hardware and Linux."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = ""
+
+[[links.guides]]
+title = "VCMI on Flathub (eu.vcmi.VCMI)"
+url   = "https://flathub.org/apps/eu.vcmi.VCMI"
+
+[[links.guides]]
+title = "VCMI Official Website"
+url   = "https://vcmi.eu/"
+
+[[links.guides]]
+title = "VCMI Linux Installation Guide"
+url   = "https://vcmi.eu/players/Installation_Linux/"
+
+[[links.guides]]
+title = "VCMI GitHub Repository"
+url   = "https://github.com/vcmi/vcmi"
+
+[[links.guides]]
+title = "Heroes III Steam Deck Installation Guide (HotA variant, data file steps apply to VCMI too)"
+url   = "https://heroes3wog.net/steam-deck-installation-guide-heroes-iii-horn-of-the-abyss-v1-7/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires owned Heroes of Might and Magic III: Complete or Shadow of Death data files (`Data/`, `Maps/`, `Mp3/`). Purchase on **GOG** and copy the three directories to the Flatpak data path.
+
+**HD Mod:** HD Mod assets are separate and optional — install via the VCMI Launcher mod browser.
+
+**Native:** Native Flatpak is the recommended approach on Steam Deck; **no Proton required**.
+"""

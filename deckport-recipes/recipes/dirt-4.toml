@@ -1,0 +1,72 @@
+[game]
+title       = "Dirt 4"
+slug        = "dirt-4"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "421020"
+sgdb_id     = ""
+
+[launch]
+binary         = "dirt4.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (`appid 421020`).
+
+**Proton:** Run the WINDOWS build through Proton on the Deck — `GE-Proton` (or a recent `proton_experimental`) is the known-good path; community reports a locked 60 FPS on Ultra with only a couple harmless startup warning messages.
+
+**Fix:** **Prefer the Windows/Proton version over the bundled native Linux build** — the native build has stability problems and dislikes Xbox-style controllers, whereas the Windows-through-Proton version is plug-and-play for the Deck's gamepad.
+
+**DRM:** No GFWL/SecuROM/DRM steps needed.
+
+**Online:** Online multiplayer servers were historically flaky but a Proton networking fix addressed DiRT 4's server-connect issue; treat single-player/career as the supported experience.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2017"
+genre     = "Racing (rally)"
+modes     = "Single-player, online multiplayer"
+summary   = "**DiRT 4** is a rally and rallycross racing game developed and published by Codemasters, released for PC in June 2017 as part of the long-running **Colin McRae/DiRT series**. Its standout feature is the **'Your Stage'** system, a procedural generator that builds near-limitless rally routes from a few parameters. It was generally well received for its driving model and content, offering both an accessible arcade handling option and a more demanding simulation mode. The game was later delisted from Steam, reportedly due to **expiring licensing agreements**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 421020)"
+url   = "https://www.protondb.com/app/421020"
+
+[[links.guides]]
+title = "Proton issue tracker — DiRT 4 (#992)"
+url   = "https://github.com/ValveSoftware/Proton/issues/992"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Status:** Delisted Steam game (`appid 421020`), ProtonDB gold. Community reports confirm it runs on Deck via the Windows build under Proton at locked 60 FPS Ultra.
+
+**Proton:** Use `GE-Proton` (or recent `proton_experimental`); avoid the native Linux build (less stable, poor controller support) — the Windows/Proton path gives plug-and-play gamepad.
+
+**DRM:** No DRM/GFWL workaround required.
+
+**Online:** Online play depended on servers that may no longer be reliable, so plan on single-player/career.
+
+**Binary:** Binary set to `dirt4.exe`; double-check against your install layout."""

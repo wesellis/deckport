@@ -1,0 +1,136 @@
+[game]
+title       = "Fallout 2"
+slug        = "fallout-2"
+aliases     = ["Fallout II"]
+type        = "proton"
+engine      = "other"
+steam_appid = "38410"
+sgdb_id     = "8287"
+
+[launch]
+binary         = "fallout2.exe"
+launch_options = "WINEDLLOVERRIDES=\"ddraw.dll=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Launch executable**
+Launch fallout2.exe (NOT fallout2HR.exe / the "fallout2 launcher" wrapper). On the
+Steam release the High-Res patch and the sfall engine patch are already bundled; the
+GOG release ships sfall as well. ProtonDB reports the game as Gold / very playable
+once the ddraw override and the SingleCore fix below are applied.
+
+**CRITICAL: ddraw.dll override (do not skip)**
+sfall and the Restoration Project both inject through a bundled ddraw.dll in the game
+folder. Proton's built-in ddraw will shadow it unless you force the native one. Set
+this launch option (already pre-filled in this recipe):
+  WINEDLLOVERRIDES="ddraw.dll=n,b" %command%
+Without it, sfall/RPU and the high-resolution patch will NOT load and the game may
+crash or run at the wrong resolution. (Per the RPU official Linux install docs.)
+
+**CRITICAL: fix the world-map / New Reno slowdown**
+By default sfall sets SingleCore=1, which is correct on Windows but causes severe
+slowdowns under Proton (world map crawls; some areas like New Reno can drop toward
+1 fps). Edit ddraw.ini in the game directory and change:
+  SingleCore=1   ->   SingleCore=0
+Optionally also set ProcessorIdle=1. This is the single most important performance
+tweak on Deck.
+
+**Proton version**
+No hard version lock (unlike Fallout 1). GE-Proton latest or recent Valve Proton both
+work. Fallout 1's invisible-cursor bug does not affect Fallout 2.
+
+**Restoration Project Unofficial (RPU) — Highly Recommended**
+RPU restores cut content, fixes hundreds of bugs, bundles an up-to-date sfall + the
+high-res patch, and is widely considered the definitive way to play Fallout 2.
+  - Project: https://github.com/BGforgeNet/Fallout2_Restoration_Project
+  - Must be installed on a CLEAN/vanilla copy, then start a NEW game.
+  - Windows/GOG install: download rpu_v*.exe from Releases and point it at the game dir.
+  - Linux/Deck install: download rpu_v*.zip, extract it into the (lowercased) game dir,
+    then run rpu-install.sh. The same ddraw.dll override above is required for it to apply.
+  - Tune resolution/brightness etc. in the resulting ddraw.ini / mods/rpu.ini.
+
+**Resolution**
+The high-res patch / sfall lets you set a native Deck resolution. Either pick it in the
+in-game options or set resolution in ddraw.ini (e.g. 1280x800 for the Deck LCD).
+
+**Controller**
+Fallout 2 has no native gamepad support — it is mouse-and-keyboard. Use Steam Input:
+map the right trackpad as a precision mouse, right trackpad click = left mouse button,
+and bind the keyboard actions you need. Community "Fallout 2" layouts exist in Steam.
+
+**Performance / battery**
+Tiny system requirements; once SingleCore=0 is set it runs smoothly with low TDP and
+gets long battery life.
+
+**Known quirks**
+- Intro movies may stutter or fail on some Proton versions; press Escape to skip.
+- If the window is the wrong size, adjust resolution in ddraw.ini.
+- Auto-saves are infrequent — quick-save often.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Fallout 2 on GOG"
+url   = "https://www.gog.com/game/fallout_2"
+
+[[links.guides]]
+title = "Fallout 2 on ProtonDB"
+url   = "https://www.protondb.com/search#fallout%202"
+
+[[links.guides]]
+title = "Fallout 2 Restoration Project (RPU) on GitHub"
+url   = "https://github.com/BGforgeNet/Fallout2_Restoration_Project"
+
+[[links.guides]]
+title = "RPU official Linux / Proton install docs (ddraw.dll override)"
+url   = "https://github.com/BGforgeNet/Fallout2_Restoration_Project/blob/master/docs/linux.md"
+
+[[links.guides]]
+title = "Workaround for running Fallout 2 under Steam Play (SingleCore fix)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1629727470"
+
+[about]
+developer = "Black Isle Studios"
+publisher = "Interplay"
+released  = "1998"
+genre     = "Isometric RPG"
+modes     = "Single-player"
+summary   = """
+**Fallout 2** by **Black Isle Studios** (1998) expands on the original with a larger
+world, deeper reactivity, more companions, and a darker comedic tone. Set 80 years
+after Fallout 1, you play the Chosen One seeking the Garden of Eden Creation Kit to
+save your village. The Restoration Project Unofficial (RPU) mod is the definitive
+version, restoring cut content and fixing bugs. Runs well on Steam Deck via Proton —
+launch fallout2.exe, force the bundled ddraw.dll override, and set SingleCore=0 to
+avoid Proton slowdowns. No Proton version lock required.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Launch fallout2.exe (not the fallout2HR launcher wrapper).
+- REQUIRED launch option: WINEDLLOVERRIDES="ddraw.dll=n,b" %command% — otherwise sfall / the
+  high-res patch / RPU will not load and the game may crash or use the wrong resolution.
+- REQUIRED perf fix: edit ddraw.ini and set SingleCore=0 (default 1 causes severe Proton
+  slowdowns, e.g. world map and New Reno crawling toward 1 fps).
+- No Proton version lock needed (unlike Fallout 1); GE-Proton latest works fine.
+- RPU mod is strongly recommended but optional: it installs via rpu_v*.exe (Windows/GOG) or
+  rpu-install.sh after extracting rpu_v*.zip (Linux/Deck); install on a clean copy + start a new game.
+- No native controller support; configure right trackpad as mouse via Steam Input.
+- Intro videos may stutter — press Escape to skip safely.
+- Save frequently; the engine does not auto-save often.
+"""

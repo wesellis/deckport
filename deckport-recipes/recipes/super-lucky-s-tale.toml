@@ -1,0 +1,74 @@
+[game]
+title       = "Super Lucky's Tale"
+slug        = "super-lucky-s-tale"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "847360"
+sgdb_id     = ""
+
+[launch]
+binary         = "SLT.exe"   # original (delisted) Unity build ships as SLT.exe in the install root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Original Super Lucky's Tale (Steam appid `847360`), delisted Aug 2020 when New Super Lucky's Tale launched; owners can still install it from their library. Unity engine title, single-player 3D platformer, no online component. ProtonDB overall tier gold (recent reports trend higher, but confidence is only moderate on a small report count — gold is the honest call).
+
+**Proton:** A 2018-era Proton report (`Proton 3.76`) showed missing-character/flickering rendering, but that is long obsolete — **use `GE-Proton` (or recent `proton_experimental`)** for clean DXVK rendering on the Deck's AMD GPU.
+
+**DRM:** No GFWL/SecuROM/Denuvo DRM.
+
+**Controller:** Native Xbox-style controller support, so the Deck's built-in pad works out of the box; non-Xbox pads (e.g. DualShock 4) need a Steam Input layout, which the Deck provides automatically.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Playful Studios"
+publisher = "Microsoft Studios"
+released  = "2017"
+genre     = "3D platformer"
+modes     = "Single-player"
+summary   = "**Super Lucky's Tale** is a 2017 **Unity**-engine **3D platformer** starring Lucky the fox, who travels the Book of Ages to stop the villain Jinx and his Kitty Litter henchmen. Developed by Playful Studios and published by Microsoft, it launched as an **Xbox One X** title and is a follow-up to the Oculus Rift VR game **Lucky's Tale**. The original Steam release was **delisted in August 2020** when the expanded remaster New Super Lucky's Tale arrived; existing owners can still install the original from their libraries."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Super Lucky's Tale (appid 847360)"
+url   = "https://www.protondb.com/app/847360"
+
+[[links.guides]]
+title = "Proton issue #1570 - Super Lucky's Tale rendering report"
+url   = "https://github.com/ValveSoftware/Proton/issues/1570"
+
+[[links.guides]]
+title = "Delisted Games - Super Lucky's Tale"
+url   = "https://delistedgames.com/super-luckys-tale/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Owners can reinstall from their Steam library; deckport links nothing.
+
+**Delisted:** Delisted in Aug 2020 (original Super Lucky's Tale, not the New Super Lucky's Tale remaster, appid `1038300`, which is still sold and Deck Verified). ProtonDB tier gold.
+
+**Proton:** Set Proton to `GE-Proton` (or recent `proton_experimental`) — the only negative report on file is a 2018 `Proton 3.76` rendering glitch that modern Proton resolves.
+
+**Online:** Single-player only, no servers to worry about.
+
+**Controller:** Native controller support means the Deck's gamepad works without extra config; some users note the original ignores certain analog-trigger inputs (e.g. dig-on-hold) and only fully supports Xbox-layout pads, so prefer the Deck's default Xbox-style input.
+
+**NEEDS-TEST:** binary `SLT.exe` and exact `GE-Proton` build not yet confirmed on a physical Deck."""

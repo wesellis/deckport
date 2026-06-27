@@ -1,0 +1,73 @@
+[game]
+title       = "The Force Engine (Dark Forces)"
+slug        = "the-force-engine"
+aliases     = ["Dark Forces", "TFE", "Star Wars: Dark Forces"]
+type        = "native"
+engine      = "other"
+steam_appid = "32400"
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run io.github.theforceengine.tfe"
+requires_files = ["Star Wars: Dark Forces game data (Steam app 32400)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "The Force Engine official site"
+url   = "https://theforceengine.github.io/"
+
+[[links.guides]]
+title = "The Force Engine on Flathub"
+url   = "https://flathub.org/apps/io.github.theforceengine.tfe"
+
+[[links.guides]]
+title = "The Force Engine GitHub repository (luciusDXL)"
+url   = "https://github.com/luciusDXL/TheForceEngine"
+
+[[links.guides]]
+title = "Star Wars: Dark Forces on Steam (buy game data)"
+url   = "https://store.steampowered.com/app/32400/"
+
+[[links.guides]]
+title = "Steam Deck setup guide (Steam Community)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3240895881"
+
+[about]
+developer = "LucasArts (original); The Force Engine contributors (engine, led by luciusDXL)"
+publisher = "LucasArts"
+released  = "1995 (original); The Force Engine v1.0 December 2022, on Flathub February 2024"
+genre     = "First-person shooter"
+modes     = "Single-player"
+summary   = """**Star Wars: Dark Forces** (LucasArts, 1995) is the landmark FPS that predates Jedi Knight, \
+featuring Kyle Katarn in a story-driven campaign across 14 missions. **The Force Engine** is a \
+reverse-engineered open source reimplementation of LucasArts' Jedi Engine. It adds mouselook, \
+widescreen and high resolutions, controller support, and mod support. It is published as a native \
+Linux Flatpak on Flathub (io.github.theforceengine.tfe) and reads the original game's data files."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Install The Force Engine via Flatpak: search 'The Force Engine' in Discover, or run `flatpak install flathub io.github.theforceengine.tfe`.
+- Requires Dark Forces game data; buy on Steam (app 32400, ~$6). On first run point TFE at the game's data files (DARK.GOB etc.) inside the Steam install.
+- TFE has built-in controller support; mouselook, widescreen and high resolutions are configurable in its settings.
+- For a handheld-friendly layout, in TFE's graphics settings set virtual resolution to Widescreen 800p and use Windowed mode.
+- Optional: a community Steam Input layout ("Full Grown Mappings for The Force Engine - Dark Forces") adds a touch weapon wheel and gyro aiming.
+- No Proton required — native Linux Flatpak runs directly on Steam Deck.
+"""

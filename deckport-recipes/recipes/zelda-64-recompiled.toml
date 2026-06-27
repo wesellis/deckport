@@ -1,0 +1,79 @@
+[game]
+title       = "Zelda 64: Recompiled (Majora's Mask)"
+slug        = "zelda-64-recompiled"
+aliases     = ["Zelda64Recomp", "MM PC Port Recompiled", "Majoras Mask Recompiled"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Zelda64Recompiled"
+launch_options = ""
+requires_files = ["Majora's Mask N64 ROM dump (NTSC-U 1.0)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Proton:** **Zelda 64: Recompiled is a native Linux build — no Proton needed.**
+
+**Install:** Download the latest release from GitHub, extract it, and add the `Zelda64Recompiled` binary as a non-Steam game in Desktop Mode. A Linux build and a Flatpak are both provided.
+
+**ROM:** On first run the game will prompt you to locate your Majora's Mask `NTSC-U 1.0` ROM dump.
+
+**Engine:** This is Wiseguy's (Mr-Wiseguy) own showpiece for the `N64Recomp` static recompilation tool and uses the `RT64` rendering engine.
+
+**Controller:** Gyro support is available via a mouse-aim proxy. On Steam Deck, open Controller Settings, set "Gyro Behavior" to "As Mouse", and set the gyro activation buttons to none (gyro always on).
+
+**Mods:** Texture packs and mods can be installed via the drag-and-drop mod installer added in `v1.2.0`. Mods are hosted on the Thunderstore page.
+
+**Battery:** Community reports indicate ~6W battery draw at 60fps on Steam Deck.
+
+**GPU:** GPU must support `Vulkan 1.2` or newer — Steam Deck qualifies."""
+
+[about]
+developer = "Wiseguy (Mr-Wiseguy)"
+publisher = "Community project"
+released  = "2000 (Nintendo 64 original); static recompilation first released 2024; v1.2.0 May 2025 added modding and texture pack support with a drag-and-drop installer; v1.2.2 August 2025 is a frame-pacing hotfix"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = """
+**Zelda 64: Recompiled** is an unofficial native PC port of The Legend of Zelda: **Majora's Mask** built using Wiseguy's (Mr-Wiseguy) **N64Recomp** static recompilation tool — his own showpiece project for the technology. Unlike decompilation-based ports such as 2Ship2Harkinian, this uses **static recompilation** to translate the original N64 binary directly to native x86 code, paired with the **RT64** rendering engine for modern graphics output.
+
+The port features an **unlocked framerate**, widescreen support, gyro aiming via mouse proxy, and as of v1.2.0 a drag-and-drop mod and texture pack installer. It requires a Majora's Mask NTSC-U 1.0 ROM dump specifically. Note: this is a distinct and simultaneously maintained project from **2Ship2Harkinian** (HarbourMasters' decompilation-based port of the same game) — different underlying technology, same source game."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Zelda64Recomp — GitHub releases"
+url   = "https://github.com/Zelda64Recomp/Zelda64Recomp/releases"
+
+[[links.guides]]
+title = "How to Set Up Majora's Mask PC Port on Steam Deck — Steam Deck HQ"
+url   = "https://steamdeckhq.com/tips-and-guides/zelda-majoras-mask-pc-steam-deck/"
+
+[[links.guides]]
+title = "Zelda 64: Recompiled mod database — Thunderstore"
+url   = "https://thunderstore.io/c/zelda-64-recompiled/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a Majora's Mask `NTSC-U 1.0` ROM specifically — unlike 2Ship2Harkinian which accepts multiple regions.
+
+**GPU:** GPU must support `Vulkan 1.2+`; Steam Deck qualifies.
+
+**Technology:** This is a **static recompilation** (not a decompilation) — different underlying technology from `2S2H` but same source game; both ports are actively maintained simultaneously.
+
+**Mods:** Drag-and-drop mod and texture pack support added in `v1.2.0` (May 2025)."""

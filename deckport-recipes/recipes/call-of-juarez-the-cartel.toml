@@ -1,0 +1,68 @@
+[game]
+title       = "Call of Juarez: The Cartel"
+slug        = "call-of-juarez-the-cartel"
+aliases     = ["CoJ The Cartel", "Call of Juarez Cartel"]
+type        = "proton"
+engine      = "other"
+steam_appid = "33420"
+sgdb_id     = ""
+
+[launch]
+binary         = "CoJ_TheCartel.exe"
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Techland's 2011 modern-day western shooter on Chrome Engine 5; Steam appid `33420`, delisted March 2018.
+
+**Proton:** Runs under Proton — use `GE-Proton` (or `proton_experimental`) for the smoothest boot. Main executable is `CoJ_TheCartel.exe`.
+
+**DRM:** The game ships the Ubisoft/Uplay launcher, which is **the usual point of failure**: let it run once to register, allow it to go offline, and dismiss its update prompt. Activation of an existing key is required.
+
+**Controller:** Native XInput controller support — the Steam Deck gamepad is detected as an Xbox pad with no extra config.
+
+**Mod:** A community Overhaul Mod raises FOV to 68 vertical, fixes weapon-model clipping at high FOV, unlocks all weapons, smooths the sluggish movement and removes motion blur. Install it into the game dir before first launch."""
+
+[about]
+developer = "Techland"
+publisher = "Ubisoft"
+released  = "2011"
+genre     = "First-person shooter"
+modes     = "Single-player, three-player online co-op"
+summary   = "**Call of Juarez: The Cartel** is the third entry in Techland's **Call of Juarez** series, built on the **Chrome Engine 5**. Unlike the Old West setting of earlier games, it is a modern-day crime story following three law-enforcement agents through Los Angeles and Mexico in pursuit of a drug cartel, with a **three-player co-op** mode where each character pursues hidden personal agendas. It was widely panned at release for rushed, glitchy mechanics, weak writing, and tone-deaf stereotypes, and was later **delisted from Steam in March 2018**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Call of Juarez: The Cartel (appid 33420)"
+url   = "https://www.protondb.com/app/33420"
+
+[[links.guides]]
+title = "The Cartel Overhaul Mod (FOV/weapon/motion-blur fixes) — ModDB"
+url   = "https://www.moddb.com/mods/the-cartel-overhaul-mod"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (Steam appid `33420`, removed March 2018) — supply your own copy; key activation through the Ubisoft launcher is still required.
+
+**DRM:** Uses the Ubisoft Game Launcher (Uplay), **not GFWL**; the launcher is the most common failure point — run it once to register, let it go offline, and dismiss the update prompt.
+
+**Controller:** Native XInput controller support, so the Deck pad works out of the box.
+
+**Mod:** The Overhaul Mod (FOV/weapon/motion-blur fixes) is recommended.
+
+**Status:** ProtonDB reports for The Cartel are sparse (only a few, low confidence) but trend **Gold** — best reported Platinum. Still flagged `needs-test` until confirmed on-device; sibling Chrome Engine titles also run well under Proton."""

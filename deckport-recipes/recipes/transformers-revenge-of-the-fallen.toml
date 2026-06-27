@@ -1,0 +1,73 @@
+[game]
+title       = "Transformers: Revenge of the Fallen"
+slug        = "transformers-revenge-of-the-fallen"
+aliases     = ["Transformers Revenge of the Fallen", "Transformers ROTF"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Transformers2.exe"   # retail PC exe (NoDVD swap replaces this same file)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2009 Luxoflux (PC port by Beenox) / Activision third-person shooter based on the film. Never sold on Steam (retail-disc release, no appid). Split Autobot/Decepticon campaigns.
+
+**Install:** Run the disc/ISO setup once via Proton (add the installer to Steam as a non-Steam shortcut, force Proton), then point the shortcut at `Transformers2.exe` inside the game folder. Community reports it boots and runs better under Proton than on modern Windows.
+
+**Proton:** `GE-Proton` is the safest target; `proton_experimental` also works.
+
+**DRM:** original exe uses `SecuROM`, which fails on modern systems — **replace `Transformers2.exe` with a NoDVD/fixed exe of the same name** in the game directory before launching.
+
+**Path:** Install to a plain path (e.g. `C:\\Games\\Transformers`), **NOT** `Program Files`, to avoid admin/path issues under the prefix.
+
+**Display:** the retail PC port locks the framerate to **32 FPS**. An unofficial PCGamingWiki **ultrawide fix + FPS unlock** patch (drop files into the game folder, tweak `Settings.ini`) raises that and adds wide aspect ratios — useful for the Deck. The default build maxes at 1920x1200.
+
+**Online:** multiplayer ran on an **Activision master server** (not Games for Windows Live), which was retired on **17 April 2020**, so default online play is offline. A community mod can reportedly restore it. The single-player Autobot/Decepticon campaigns are the draw and are unaffected."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "Luxoflux (PC port by Beenox)"
+publisher = "Activision"
+released  = "2009"
+genre     = "Third-person action shooter"
+modes     = "Single-player, multiplayer (online, now defunct)"
+summary   = "**Transformers: Revenge of the Fallen** is a 2009 **third-person action** game based on the second live-action film, developed by **Luxoflux** and ported to PC by **Beenox**. Players fight through separate **Autobot and Decepticon campaigns**, switching between robot and vehicle forms in fast, arcade-style combat. The PC version shipped only on retail disc (never on Steam) and uses **SecuROM** DRM. Its online multiplayer ran on an Activision master server that was retired in April 2020, leaving the single-player campaigns as the draw. It is remembered as a serviceable but rough movie tie-in."
+
+[[links.guides]]
+title = "PCGamingWiki: Transformers: Revenge of the Fallen (DRM, fixes, 32 FPS lock)"
+url   = "https://www.pcgamingwiki.com/wiki/Transformers:_Revenge_of_the_Fallen"
+
+[[links.guides]]
+title = "PCGamingWiki community: Ultrawide Fix & FPS Unlock (unofficial patch)"
+url   = "https://community.pcgamingwiki.com/files/file/2430-transformers-revenge-of-the-fallen-ultrawide-fix-fps-unlock/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** never on Steam (retail disc, licensing now lapsed) — configuration only, no links.
+
+**DRM:** real exe is `Transformers2.exe`. Must swap in a same-named NoDVD/fixed exe (`SecuROM` breaks on modern systems).
+
+**Path:** install outside `Program Files`.
+
+**Controller:** native Xbox/XInput gamepad support — if it doesn't bind in-game, apply a `Steam Input` controller layout.
+
+**FPS:** retail port is locked to 32 FPS; the unofficial ultrawide + FPS-unlock patch raises it and adds wider aspect ratios.
+
+**Online:** the Activision master server (not Games for Windows Live) closed in April 2020, so default multiplayer is offline; single-player campaign is unaffected.
+
+**ProtonDB:** tier not catalogued (no Steam appid); community reports it boots and runs on Deck under Proton."""

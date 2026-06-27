@@ -1,0 +1,99 @@
+[game]
+title       = "Pokemon Infinite Fusion"
+slug        = "pokemon-infinite-fusion"
+aliases     = ["Pokemon Infinite Fusion", "Pokémon Infinite Fusion", "Game.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5404428"
+
+[launch]
+binary         = "Game.exe"   # main launcher in the install root; use InfiniteFusion-performance.exe for full controller support
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton9-20"
+winetricks = []
+notes      = """
+**Game:** Pokemon Infinite Fusion is a Windows fan game built on RPG Maker XP (`RGSS3` runtime). Portable/standalone — extract and run, nothing to install.
+
+**Download:** Get the standalone Windows zip from the official Discord (discord.gg/infinitefusion). The download root contains `Game.exe` (the main launcher, which streams fusion sprites on the fly) plus the bundled runtime.
+
+**Install:** Extract to a folder on the Deck (e.g. `~/Games/PokemonInfiniteFusion/`). Add `Game.exe` as a non-Steam game, then in `Properties > Compatibility` check **'Force the use of a specific Steam Play compatibility tool'** and select `GE-Proton` (install via `ProtonUp-Qt` from Discover).
+
+**Proton:** `GE-Proton9-20` works; community guides also report plain `Proton 7.0` running fine. Try a different version if it fails to launch.
+
+**Runtime:** The `RGSS3` runtime is bundled in the download — no separate RPG Maker install needed.
+
+**Controller:** `Game.exe` itself has limited native gamepad support — players usually lay a Steam Input keyboard layout over it (map d-pad/face buttons to arrows + Z/X/Enter), or use the touchscreen/trackpad for menus. For better out-of-the-box pad support, launch the alternate `InfiniteFusion-performance.exe` instead (same game, the performance/alt launcher, which adds full controller support but needs sprites pre-downloaded locally).
+
+**First launch:** Initial loading screens can take a while the first time; this is normal.
+
+**Offline:** No internet connection or owned game files required (`Game.exe` does fetch fusion sprites over the net on demand; the alt/performance launcher runs fully offline from a local sprite pack).
+"""
+
+[about]
+developer = "Schrroms and contributors"
+publisher = "Independent (free fan project)"
+released  = "2015 (initial); v6.7 current as of 2024-2025"
+genre     = "RPG, Fan game"
+modes     = "Single-player"
+summary   = """
+**Pokemon Infinite Fusion** is a fan-made **RPG** built on **RPG Maker XP** by developer Schrroms, featuring a **fusion mechanic** that lets the player combine any two Pokemon into unique hybrids — over 22,000 custom hand-drawn sprites exist for the most popular combinations. The game follows a traditional Pokemon adventure structure through the Kanto and Johto regions but adds deep replay value through its combinatorial team-building.
+
+Released incrementally since 2015, it has amassed a massive community with dedicated servers and a fusion calculator website. It is entirely **free** and contains no official Nintendo assets outside sprite references. Being a fan game with **Pokemon IP**, it has no official distribution channel beyond the community Discord.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5404428"
+
+[[links.guides]]
+title = "How to Install Pokemon Infinite Fusion on Steam Deck - ARVRTips"
+url   = "https://arvrtips.com/pokemon-infinite-fusion-on-steam-deck/"
+
+[[links.guides]]
+title = "How to Play Pokemon Infinite Fusion on Steam Deck - Prima Games"
+url   = "https://primagames.com/tips/how-to-play-pokemon-infinite-fusion-on-steam-deck"
+
+[[links.guides]]
+title = "Official Download Info - Pokémon Infinite Fusion Wiki (Fandom)"
+url   = "https://infinitefusion.fandom.com/wiki/Official_Download"
+
+[[links.guides]]
+title = "Official Discord (download link is pinned here)"
+url   = "https://discord.gg/infinitefusion"
+
+[[links.guides]]
+title = "Installing Pokemon Infinite Fusion on Linux / Steam Deck (Quad's ramblings)"
+url   = "https://blog.quad.moe/2025/04/linux-infinitefusion/"
+
+[[links.guides]]
+title = "PIF: Official Alt Download Guide (HackMD)"
+url   = "https://hackmd.io/@PIF-Tech/AltDownloadGuide"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Source:** Fan game with Pokemon IP — **obtain ONLY from the official Discord** (discord.gg/infinitefusion); many lookalike websites distribute malware.
+
+**Cost:** The game is free; **if you paid for it you were scammed.**
+
+**Runtime:** RPG Maker XP runtime is bundled — no separate install.
+
+**Controller:** `Game.exe` has limited native gamepad support — overlay a Steam Input keyboard binding, or run the alternate `InfiniteFusion-performance.exe` for full controller support (needs a local sprite pack).
+
+**Proton:** `GE-Proton` or `Proton 7.0` both reported working by the community.
+
+**Install method:** Portable/standalone — extract the zip and run; nothing installs into Windows.
+"""

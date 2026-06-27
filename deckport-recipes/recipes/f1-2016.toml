@@ -1,0 +1,74 @@
+[game]
+title       = "F1 2016"
+slug        = "f1-2016"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "391040"
+sgdb_id     = ""
+
+[launch]
+binary         = "f1_2016.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Steam racing game (appid `391040`), removed March 2022 when EA/Codemasters let the FIA license lapse.
+
+**Proton:** ProtonDB tier `silver` (recent reports trend lower) — community reports it runs and is playable on Deck, but results are inconsistent. Use `GE-Proton` (or a recent `proton_experimental`) for best results; **not every Proton build launches it cleanly.**
+
+**R6025 launch crash:** the common `R6025 - pure virtual function call` runtime error that stops the game from starting is tied to CPU SMT/HyperThreading. On a desktop the fix is disabling SMT (AMD) / HyperThreading (Intel) in BIOS; if you hit R6025 on a fresh prefix here, try a different Proton build before assuming the recipe is broken.
+
+**DRM:** ships with `Denuvo`, which limits machine activations to 5 per day — **avoid repeatedly recreating the prefix or swapping Proton versions in a short window** or you can exhaust activations.
+
+**Controller:** usually works as a gamepad, but **some Deck/Proton combinations report the controller not being detected at all.** If input dies, apply a Steam Input gamepad layout / try a different Proton build rather than assuming it's natively reliable.
+
+**Install:** deckport only configures the prefix; it never bundles or links game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — F1 2016 reports (tier + per-Proton notes)"
+url   = "https://www.protondb.com/app/391040"
+
+[[links.guides]]
+title = "Steam — R6025 pure virtual function call fix (SMT/HyperThreading)"
+url   = "https://steamcommunity.com/app/391040/discussions/1/4137187221850842379/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted March 2022, so it's not for sale.
+
+**Proton:** ProtonDB `silver` — community reports `F1 2016` running and playable on Deck/Proton.
+
+**Cosmetic:** expect persistent minor visual artifacts (shimmering around car/driver models and distant objects, occasional screen vibration); these don't break on-track gameplay.
+
+**DRM:** `Denuvo` caps activations at 5/day, so **don't churn the prefix or Proton version repeatedly.**
+
+**R6025 crash:** an `R6025 - pure virtual function call` error on launch is a known SMT/HyperThreading issue; if it appears, switch Proton builds (or disable SMT on a desktop) rather than recreating the prefix.
+
+**Controller:** usually detected as a gamepad, but **not guaranteed** — some Deck/Proton combos report no controller input. Apply a Steam Input layout if it drops out.
+
+**Status:** recipe not yet hardware-verified on a specific Deck."""
+
+[about]
+developer = "Codemasters Birmingham"
+publisher = "Codemasters"
+released  = "2016"
+genre     = "Racing / sim-cade"
+modes     = "Single-player, online multiplayer"
+summary   = "**F1 2016** is the official **Formula One** racing game for the 2016 season, built on Codemasters' **EGO engine**. It was the first in the series to feature a **ten-season career mode** and reintroduced the formation lap, manual race starts, the safety car and the new Virtual Safety Car. Critically well received (around 86 on Metacritic), it was widely praised as Codemasters' best F1 game to that point. It was **delisted** from Steam in March 2022 after the underlying **FIA Formula One license** lapsed."

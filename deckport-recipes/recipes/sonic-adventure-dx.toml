@@ -1,0 +1,58 @@
+[game]
+title       = "Sonic Adventure DX"
+slug        = "sonic-adventure-dx"
+aliases     = ["SADX", "Sonic Adventure DX: Director's Cut"]
+type        = "proton"
+engine      = "other"
+steam_appid = "71250"
+sgdb_id     = ""
+
+[launch]
+binary         = "Sonic Adventure DX.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Use GE-Proton for best compatibility. The Steam 2011 release runs well as-is, but in the in-game launcher you must switch the controller input from Keyboard to Gamepad or your controller will be ignored. For widescreen (16:9) and a smoother frame rate, run the SADX Mod Installer (SA Mod Manager / X-Hax sadx-mod-loader); it downgrades the 2011 build to the moddable 2004 version and the loader/manager needs the .NET runtime and VC++ 2022 (x86), which winetricks can supply. Vanilla runs at 4:3 and can dip from 60 to 40 FPS on the 2014 build."
+
+[about]
+developer = "Sonic Team"
+publisher = "Sega"
+released  = "2003"
+genre     = "Platformer / Action-Adventure"
+modes     = "Single-player"
+summary   = "Sonic Adventure DX: Director's Cut is the PC port of the 1998 Dreamcast platformer, following Sonic and five other characters across a large open-ish hub world. Players explore Station Square and beyond while defeating Dr. Eggman's schemes. The 2011 release is sold on Steam (app 71250). The community SADX Mod Installer adds widescreen and frame-rate fixes for a smoother modern experience."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SADX Mod Loader (X-Hax, GitHub)"
+url   = "https://github.com/X-Hax/sadx-mod-loader"
+
+[[links.guides]]
+title = "PCGamingWiki — Sonic Adventure DX (2011)"
+url   = "https://www.pcgamingwiki.com/wiki/Sonic_Adventure_DX_(2011)"
+
+[[links.guides]]
+title = "ProtonDB — Sonic Adventure DX"
+url   = "https://www.protondb.com/app/71250"
+
+[[links.guides]]
+title = "Steam Community — works on Steam Deck (switch input to gamepad)"
+url   = "https://steamcommunity.com/app/71250/discussions/0/3452590350698006553/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = "In the in-game launcher, switch controller input from Keyboard to Gamepad or the controller won't work. Vanilla is locked to 4:3 and the 2014 build can dip from 60 to 40 FPS; run the SADX Mod Installer for 16:9 widescreen and a frame-rate fix (it downgrades the 2011 build to the moddable 2004 version)."

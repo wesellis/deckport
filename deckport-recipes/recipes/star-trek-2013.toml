@@ -1,0 +1,81 @@
+[game]
+title       = "Star Trek (2013)"
+slug        = "star-trek-2013"
+aliases     = ["Star Trek The Video Game", "Star Trek 2013"]
+type        = "proton"
+engine      = "other"         # Unreal Engine 3
+steam_appid = "203250"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/Win32/StarTrekGame.exe"   # best guess — UE3 project exe; verify under Binaries/Win32 in your copy
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2013 Digital Extremes / Namco Bandai third-person co-op shooter tied to the Abrams films, Unreal Engine 3 (Steam appid `203250`).
+
+**Proton:** Use `GE-Proton` (or `proton_experimental` as a fallback). It was a plain Steam release.
+
+**DRM:** No GFWL or SecuROM DRM.
+
+**Controller:** Cross-platform console title (PS3/Xbox 360/PC) so it ships with native full gamepad support — **the Deck controller works out of the box, no Steam Input layout needed.**
+
+**Install:** Normal install, then copy the install dir to the Deck (delisted, so it must come from your own library). The UE3 game binary lives under `Binaries/Win32/`. The exe name is the UE3 project default `StarTrekGame.exe` (best guess) — if Steam shows a UE3 splash/launcher instead of launching the game, point the recipe at the real game exe in that folder.
+
+**Co-op:** To start co-op you launch a single-player game, then in-menu invite a friend (the campaign is co-op throughout). Online matchmaking infrastructure is effectively dead, but invite-based and local play of the singleplayer/co-op campaign still work where the servers respond.
+
+**ProtonDB:** No dedicated ProtonDB entry (delisted in 2016), so there's no community Proton tier — tier pending. Treat as needs-test.
+"""
+
+[about]
+developer = "Digital Extremes"
+publisher = "Namco Bandai Games"
+released  = "2013"
+genre     = "Third-person action-adventure shooter"
+modes     = "Single-player, two-player co-op"
+summary   = """
+**Star Trek (2013)** is a third-person action-adventure shooter developed by Digital Extremes and published by Namco Bandai Games, built on **Unreal Engine 3**. Set between the 2009 J.J. Abrams film and Star Trek Into Darkness, it lets players control James T. Kirk and Spock through a campaign playable solo or in **two-player co-op** against the reptilian Gorn.
+
+The game was a critical and commercial failure, widely panned for its repetitive combat and bugs, and is considered to have hurt the film tie-in's reputation. It was **delisted from Steam** in 2016 after the **Paramount license expired**.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted from Steam April 2016 (Paramount license expired) — **not for sale.**
+
+**Controller:** Native full controller support (console port), works on Deck without a custom Steam Input layout.
+
+**DRM:** No GFWL/SecuROM DRM.
+
+**Online:** Online co-op matchmaking is broken (servers gone); play singleplayer/local.
+
+**Exe:** Set to the UE3 project default `Binaries/Win32/StarTrekGame.exe` (best guess) — verify the real game exe under `Binaries/Win32` in your copy.
+
+**ProtonDB:** No dedicated entry (delisted); tier pending.
+"""
+
+[[links.guides]]
+title = "Star Trek (2013) — PCGamingWiki (fixes, config, co-op)"
+url   = "https://www.pcgamingwiki.com/wiki/Star_Trek_(2013)"
+
+[[links.guides]]
+title = "Star Trek — ProtonDB (app 203250)"
+url   = "https://www.protondb.com/app/203250"
+
+[[links.guides]]
+title = "CO-OP works! — Steam community thread (how to launch co-op)"
+url   = "https://steamcommunity.com/app/203250/discussions/0/810923021571405608/"

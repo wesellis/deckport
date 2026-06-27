@@ -1,0 +1,79 @@
+[game]
+title       = "Magic 2014 - Duels of the Planeswalkers"
+slug        = "magic-2014-duels-of-the-planeswalkers"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "213850"
+sgdb_id     = ""
+
+[about]
+developer = "Stainless Games"
+publisher = "Wizards of the Coast"
+released  = "2013"
+genre     = "Digital collectible card game / strategy"
+modes     = "Single-player campaign, Sealed Play, and online multiplayer (1v1 ranked and 2v2)"
+summary   = """
+**Magic 2014 - Duels of the Planeswalkers** is the 2013 entry in the **Duels series**, an introductory digital adaptation of Wizards of the Coast's **Magic: The Gathering** trading card game. The single-player campaign follows planeswalker Chandra Nalaar across planes such as Shandalar, Ravnica and Innistrad, unlocking preconstructed decks through a series of duels.
+
+This installment added **Sealed Play**, letting players open booster packs to build a 60-card deck and run it through a campaign. It was pulled from sale in November 2020 at Wizards' request as the series was superseded by **Magic Duels** and later **Magic: The Gathering Arena**."""
+
+[launch]
+binary         = "DotP_D14.exe"   # confirmed; "D14" = Duels 2014. Lives in steamapps/common/Magic 2014/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** ProtonDB rates it platinum. Most reports say it runs essentially like the Windows build under Proton with no special tweaks; `proton_experimental` works for most and **`GE-Proton` is a good fallback**. A few reports note a stuck/black loading screen on first launch — re-launch and/or switch Proton version if you hit it.
+
+**DRM:** No GFWL or SecuROM DRM to bypass — it's plain Steam DRM.
+
+**Delisted:** Delisted Steam game (appid `213850`, pulled Nov 2020 at WotC's request — no longer for sale, owners keep library access).
+
+**Controller:** Native gamepad support (the DotP series is console-style; PCGamingWiki documents a gamepad layout and local co-op needs controllers), so the Deck's built-in controls work out of the box with no Steam Input layout required.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Magic 2014 (appid 213850, Platinum)"
+url   = "https://www.protondb.com/app/213850"
+
+[[links.guides]]
+title = "PCGamingWiki - Duels of the Planeswalkers 2014 (controller/fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Magic:_The_Gathering_-_Duels_of_the_Planeswalkers_2014"
+
+[[links.guides]]
+title = "Steam Community hub - Magic 2014"
+url   = "https://steamcommunity.com/app/213850"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing — it only configures the prefix.
+
+**Delisted:** Delisted Nov 2020 (WotC request); not for sale, but prior owners keep Steam library access.
+
+**Proton:** ProtonDB platinum with multiple reports of it running like the Windows build under Proton. Use `GE-Proton` (or `proton_experimental`).
+
+**DRM:** No GFWL/SecuROM — plain Steam DRM only.
+
+**Controller:** Native controller support, so Deck gamepad works without a Steam Input layout.
+
+**Binary:** Binary is `DotP_D14.exe` (the series uses the "D14" = Duels 2014 short tag, not the full year), in `steamapps/common/Magic 2014/`.
+
+**Online:** Single-player and pass-and-play are fully offline; any online multiplayer is dead."""

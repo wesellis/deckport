@@ -1,0 +1,72 @@
+[game]
+title       = "Heretic: Shadow of the Serpent Riders"
+slug        = "heretic-shadow-of-the-serpent-riders"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "2390"
+sgdb_id     = ""
+
+[launch]
+binary         = "heretic.bat"   # Steam ships the DOS game inside DOSBox; heretic.bat launches base\DOSBOX.EXE which runs HERETIC.EXE
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid 2390), removed when Nightdive's 'Heretic + Hexen' re-release shipped — **original is no longer for sale**. No DRM or GFWL to deal with.
+
+**Install:** This is the DOS game wrapped in DOSBox: the Steam launcher is `heretic.bat`, which calls `base\\DOSBOX.EXE` with `base\\heretic.conf` and boots `HERETIC.EXE` (Raven never made a native Windows build).
+
+**Proton:** DOS-in-DOSBox runs cleanly under Proton; ProtonDB is **platinum** on appid 2390, so `GE-Proton` (or `proton_experimental`) just works. (Steam's official **Deck Verified** badge belongs to Nightdive's separate `Heretic + Hexen` remaster, not this original DOS release.)
+
+**Controller:** Two control paths on Deck. (1) Play it as-is in DOSBox and apply a `Steam Input` gamepad layout — DOSBox has no native controller, so a community/keyboard-mouse layout is the working hack. (2) Drop a modern source port into the install: extract a Heretic-capable port (e.g. `GZDoom` or `Crispy Heretic`) into the game folder, rename `DOSBOX` to `dosboxold` and the port exe to `dosbox` so the `.bat` launches it, which gives native controller support, mouselook and OpenGL/Vulkan rendering.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Raven Software"
+publisher = "id Software"
+released  = "1994 (Shadow of the Serpent Riders expanded edition, 1996)"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Heretic** is a dark-fantasy **first-person shooter** built on a modified version of id Software's **Doom engine**. It was an early FPS to add an **inventory system** and the ability to look up and down, along with features like flight and translucency. **'Shadow of the Serpent Riders'** is the 1996 expanded edition that bundled the original three episodes with two additional ones. Well received as a cult classic, the DOS original was delisted from Steam after **Nightdive Studios** released a modern 'Heretic + Hexen' remaster."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Fixing DOSBox and mouse for Heretic (without sourceport)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1666438676"
+
+[[links.guides]]
+title = "Running Heretic on modern operating systems (source ports)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=487092473"
+
+[[links.guides]]
+title = "ProtonDB reports for Heretic: Shadow of the Serpent Riders (appid 2390)"
+url   = "https://www.protondb.com/app/2390"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Delisted Steam release (appid 2390) replaced by Nightdive's 'Heretic + Hexen' — **original no longer for sale**. This is a single-player DOS game run through bundled DOSBox, no DRM or GFWL.
+
+**Proton:** ProtonDB **platinum** on appid 2390. (The **Steam Deck Verified** badge is for Nightdive's `Heretic + Hexen` remaster, not this DOS release.)
+
+**Controller:** DOSBox itself has no gamepad support, so either apply a `Steam Input` keyboard/mouse layout (the working hack) or swap in a source port (`GZDoom` / `Crispy Heretic`) for native controller + mouselook.
+
+**Install:** Binary set to `heretic.bat` (the DOSBox launcher); confirm against your install path."""

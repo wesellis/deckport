@@ -1,0 +1,76 @@
+[game]
+title       = "OpenXcom (X-COM: UFO Defense Open Engine)"
+slug        = "openxcom"
+aliases     = ["OpenXcom", "X-COM UFO Defense Open Source", "UFO Enemy Unknown Open"]
+type        = "native"        # native Linux binary — no Proton needed
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "openxcom"   # native Linux binary from openxcom.org/downloads/
+launch_options = ""
+requires_files = ["X-COM: UFO Defense game files (cheap on GOG or Steam as 'X-COM: Enemy Unknown')"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** OpenXcom is an open-source reimplementation of the original **X-COM: UFO Defense** (known in Europe as UFO: Enemy Unknown), the 1994 turn-based tactics and base management classic developed by Mythos Games and published by MicroProse. The project was founded by SupSuper and has been in active community development since 2011.
+
+**Proton:** **No Proton layer is involved** — this is a fully native Linux binary. Native Linux builds are available from `openxcom.org/downloads/`; for the Deck the easiest path is the Linux **AppImage** from `openxcom.org/git-builds/` — mark it executable (right-click → Properties → Permissions → Is executable) and run it. The executable is named `openxcom`.
+
+**Data files:** OpenXcom requires the X-COM: UFO Defense data files, which are available very cheaply on GOG (sold under the name 'X-COM: Enemy Unknown') and also on Steam. On Deck, GOG via `Heroic Games Launcher` is the recommended purchase and download path.
+
+**Install:** After downloading OpenXcom, **copy your vanilla X-COM data subfolders (GEODATA, GEOGRAPH, MAPS, ROUTES, SOUND, TERRAIN, UFOGRAPH, UFOINTRO, UNITS) into a `UFO` subfolder** inside OpenXcom's data or user directory, then launch. Use unmodified data — XcomUtil/modded copies can cause crashes. OpenXcom also supports X-COM: Terror from the Deep: copy its data into a `TFTD` subfolder using the same process.
+
+**OXCE:** A popular fork called OpenXcom Extended (OXCE) adds significant additional features: expanded modding support, extended gameplay options, new tactical AI behaviors, many quality-of-life improvements, and a broader base of mods. OXCE is available at openxcom.org/forum and is worth considering as the primary install over base OpenXcom for most players.
+
+**Controller:** Add as a non-Steam shortcut to access from Game Mode.
+"""
+
+[about]
+developer = "OpenXcom team (SupSuper and contributors)"
+publisher = "Open source / community release"
+released  = "X-COM: UFO Defense original 1994 (Mythos Games / MicroProse); OpenXcom v2.x 2011–2026 (active)"
+genre     = "Turn-based tactics / strategy"
+modes     = "Single-player"
+summary   = "**OpenXcom** is an open-source reimplementation of **X-COM: UFO Defense**, the 1994 **turn-based tactics** and strategic base-management game that became one of the most influential strategy games ever made. Players manage XCOM, a multinational organization defending Earth from an alien invasion, alternating between strategic base management (research, manufacturing, base defense, Skyranger intercept missions) and squad-level tactical combat in **destructible tile-based environments**. OpenXcom rebuilds the engine from scratch to run on modern hardware while remaining **fully compatible with the original game data**. It also supports **X-COM: Terror from the Deep**. The **OpenXcom Extended (OXCE)** fork extends the engine further with modding infrastructure and gameplay options."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "OpenXcom Official Downloads"
+url   = "https://openxcom.org/downloads/"
+
+[[links.guides]]
+title = "OpenXcom Extended (OXCE) Forum"
+url   = "https://openxcom.org/forum/index.php?topic=5029.0"
+
+[[links.guides]]
+title = "OpenXcom GitHub"
+url   = "https://github.com/OpenXcom/OpenXcom"
+
+[[links.guides]]
+title = "Running OpenXcom on Steam Deck (Steam Community Guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2973533616"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires X-COM: UFO Defense data files — GOG sells it cheaply as 'X-COM: Enemy Unknown'; use `Heroic Games Launcher` on Deck to download from GOG. Also supports Terror from the Deep data files for the TFTD campaign.
+
+**OXCE:** Consider OpenXcom Extended (OXCE) over base OpenXcom — it has more features and the same compatibility.
+
+**Controller:** OpenXcom uses a mouse-driven UI; set up a `Steam Input` gamepad layout with right trackpad as mouse for comfortable play.
+"""

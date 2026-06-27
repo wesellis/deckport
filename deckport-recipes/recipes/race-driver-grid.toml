@@ -1,0 +1,77 @@
+[game]
+title       = "Race Driver: GRID"
+slug        = "race-driver-grid"
+aliases     = ["GRID", "Race Driver Grid 2008"]
+type        = "proton"
+engine      = "other"
+steam_appid = "12750"      # GRID / Race Driver: GRID 2008 (appid 44310 is F1 2010, not this game)
+sgdb_id     = "1406"        # https://www.steamgriddb.com/game/1406 (GRID 2008)
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2008"
+genre     = "Racing (simcade)"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Race Driver: GRID** is a 2008 racing game developed and published by Codemasters, and the first entry in the **GRID** sub-series of the long-running **TOCA Race Driver** line. It was the first Codemasters title built on their **EGO engine** and spans disciplines from touring cars and muscle cars to Le Mans-style endurance and drift events, with a damage model and a **Flashback** rewind feature.
+
+It was well received, winning a **BAFTA** in the Sports category and earning a Racing Game of the Year nomination at the Interactive Achievement Awards. The game was **delisted from sale in late 2016**; its single-player career remains fully playable while the original online multiplayer servers are no longer active."""
+
+[launch]
+binary         = "grid.exe"   # confirmed game executable
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Codemasters' 2008 racer (the first GRID, Steam appid `12750`), delisted end of 2016.
+
+**DRM:** This title does **NOT** use GFWL, so no GFWL service is needed for single-player. The original retail/Steam build shipped with SecuROM; on the delisted Steam copy this is handled by Steam's own wrapper. If you run an offline DVD/disc copy instead, prefer the v1.3-patched build (the publisher's own update that removed the disc-DRM layer).
+
+**Proton:** Runs well under Proton — use a recent `GE-Proton` or `proton_experimental`.
+
+**Fix:** On modern multi-core CPUs the engine can crash or stutter; a community **6/8-thread CPU fix** (and matching resolution fix) resolves this.
+
+**Display:** Widescreen/FOV can be corrected with the PCGamingWiki FOV utility.
+
+**Controller:** Gamepad works (partial native controller support); the Steam Deck controls map cleanly with the default Steam Input gamepad profile."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Race Driver: Grid - 6 & 8 thread CPU fix & Resolution Fix (GridMTFix)"
+url   = "https://community.pcgamingwiki.com/files/file/2579-race-driver-grid-6-8-thread-cpus-fix-resolution-fix/"
+
+[[links.guides]]
+title = "GridMTFix source (multithread + resolution fix)"
+url   = "https://github.com/xatornet/GridMTFix"
+
+[[links.guides]]
+title = "ProtonDB reports - GRID (appid 12750)"
+url   = "https://www.protondb.com/app/12750"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (appid `12750`).
+
+**DRM:** No GFWL service is involved. The retail/Steam build used SecuROM disc-DRM; the Steam copy launches through Steam's wrapper, so no extra shim is required for single-player.
+
+**Fix:** On 6+ core / high-thread-count CPUs (incl. the Deck) apply the community **6/8-thread CPU fix** plus the resolution fix to avoid crashes/stutter; use the FOV utility for correct `16:10` widescreen.
+
+**Controller:** Controller support is partial-native and the default Steam Input gamepad layout covers the rest, so input works on Deck.
+
+**Links:** deckport links nothing."""

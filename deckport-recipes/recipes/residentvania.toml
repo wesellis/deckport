@@ -1,0 +1,73 @@
+[game]
+title       = "Residentvania"
+slug        = "residentvania"
+aliases     = ["Resident Evil Village Castlevania"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[about]
+developer = "OcO"
+publisher  = "OcO"
+released   = "2021"
+genre      = "Action platformer"
+modes      = "Single-player"
+summary    = """
+**Residentvania** is a free fan game that reimagines **Resident Evil Village** as a 2D demake in the style of the original NES **Castlevania**. Protagonist Ethan Winters fights through a pixel-art version of Lady Dimitrescu's castle, blending the first level of Castlevania with the Castle Dimitrescu section of RE: Village.
+
+Built in **GameMaker** by solo developer OcO over roughly two months with custom-made assets, it released in October 2021 and earned wide coverage for its inventive **crossover** concept. As an unofficial **Capcom/Konami mash-up** it is distributed for free and was never sold commercially."""
+
+[launch]
+binary         = "Re8.exe"   # ships inside Re8.zip (33MB); GameMaker export — confirm exact exe name after extracting
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**About:** Free fan mash-up of Resident Evil Village and the original NES Castlevania by OcO (~5-10 min, 33MB).
+
+**Install:** GameMaker Windows build distributed as `Re8.zip` — **extract it and point Steam at the `.exe` inside** (named `Re8.exe` / project export).
+
+**Proton:** GameMaker games run extremely well under Proton. `GE-Proton` or `proton_experimental` both work; latest stable Proton is fine.
+
+**DRM:** No DRM/GFWL/installer.
+
+**Controller:** The itch.io page lists an Xbox-pad mapping — D-Pad move, `A` jump, `X` knife, `Y` shoot (keyboard: `WASD`, `Space` jump, `K` knife, `L` shoot). In practice gamepad input is unreliable: a commenter reported neither an Xbox nor a PS4 pad did anything, and the dev never confirmed working pad support. Plan on a **Steam Input keyboard layout** mapping the Deck face buttons to `WASD`/`Space`/`K`/`L` (treat native pad as a bonus, not a given)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Residentvania by OcO — official itch.io page (free download + controls)"
+url   = "https://oco.itch.io/residentvania"
+
+[[links.guides]]
+title = "PC Gamer — Resident Evil Village demake turns Castle Dimitrescu into Castlevania"
+url   = "https://www.pcgamer.com/resident-evil-village-demake-castlevania/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Free fan game (not Capcom/Konami), itch.io only — **never on Steam**, so add as a Non-Steam shortcut.
+
+**Install:** Add via `Add a Game > Non-Steam` after extracting `Re8.zip`; force a recent Proton/`GE-Proton` in Compatibility.
+
+**ProtonDB:** No official ProtonDB entry; tier expected gold/platinum since it's a vanilla GameMaker Windows export with no DRM.
+
+**Binary:** Exact `.exe` name inside the zip is unconfirmed (likely `Re8.exe`).
+
+**Controller:** Don't rely on native pad support — the itch.io page advertises an Xbox mapping but at least one user reported no controller (Xbox or PS4) registered, and the dev never confirmed it. Use a Steam Input keyboard layout (`WASD`/`Space`/`K`/`L`).
+
+**Length:** Very short (~5-10 min)."""

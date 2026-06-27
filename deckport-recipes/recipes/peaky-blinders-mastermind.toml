@@ -1,0 +1,74 @@
+[game]
+title       = "Peaky Blinders: Mastermind"
+slug        = "peaky-blinders-mastermind"
+aliases     = []
+type        = "proton"
+engine      = "unreal"
+steam_appid = "1013310"
+sgdb_id     = ""
+
+[about]
+developer = "FuturLab"
+publisher = "Curve Digital"
+released  = "2020"
+genre     = "Puzzle / Strategy"
+modes     = "Single-player"
+summary   = "**Peaky Blinders: Mastermind** is a puzzle-strategy game based on the **Peaky Blinders** TV series, set just before the events of Series 1. The player controls members of the Shelby crime family and solves levels using a **time-manipulation mechanic**: actions performed by one character are recorded on a timeline that can be rewound and replayed, then layered with the actions of other characters to execute coordinated heists.\n\nBuilt in **Unreal Engine 4** by **FuturLab**, it received mixed reviews praising the clever tactical loop but criticizing its short campaign. It was delisted in 2024 after the show's **TV licence** expired."
+
+[launch]
+binary         = "PeakyBlinders.exe"   # Unreal Engine 4 shipping exe, under <install>/Binaries/Retail/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `1013310`), removed Aug 2024 when the Peaky Blinders TV-licence from Banijay/Netflix expired — **no longer for sale**.
+
+**Game:** Unreal Engine 4 puzzle/stealth game by FuturLab.
+
+**Proton:** ProtonDB rates it **platinum**: runs out of the box on Linux/Proton with no `DRM`, `GFWL`, or `SecuROM` to bypass. Use `GE-Proton` (or stock `proton_experimental` / `Proton 7.0+`); **no launch options or winetricks needed**.
+
+**Install:** The shipping exe is `PeakyBlinders.exe` inside `<install>\\Binaries\\Retail\\` — **point Steam at that, not any outer launcher stub**.
+
+**Controller:** Full native controller support, so the Deck gamepad works without a Steam Input remap. Valve also rates the title **Steam Deck Verified**.
+
+**Supply your own copy:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Peaky Blinders: Mastermind (platinum)"
+url   = "https://www.protondb.com/app/1013310"
+
+[[links.guides]]
+title = "Delisted Games - Peaky Blinders: Mastermind"
+url   = "https://delistedgames.com/peaky-blinders-mastermind/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Removed Aug 2024 (TV-licence expiry), **not for sale anymore**.
+
+**Compatibility:** ProtonDB **platinum**; single-player only, so no server/online concerns.
+
+**Controller:** Full native controller support — Deck gamepad works as-is, no Steam Input layout required.
+
+**Binary:** The exe lives at `Binaries\\Retail\\PeakyBlinders.exe` (`UE4`) — if Steam launches the wrong stub, set this recipe's `binary` explicitly.
+
+**Verification:** Tier/binary confirmed from community + PCGamingWiki; specific Deck run still **NEEDS-TEST**.
+"""

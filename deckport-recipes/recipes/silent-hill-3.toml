@@ -1,0 +1,74 @@
+[game]
+title       = "Silent Hill 3"
+slug        = "silent-hill-3"
+aliases     = ["Silent Hill 3", "SH3"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "sh3.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2003 Team Silent / Konami survival horror, PC port. Never sold on modern digital storefronts — **bring your own copy**.
+
+**Proton:** Use `GE-Proton`: recent Proton GE builds added a patch for SH3's pre-rendered video playback, which is the main thing that breaks under stock Proton.
+
+**DRM:** The retail PC port ships with `SecuROM 4.85` (CD check) — **apply a no-CD/clean-exe so the game launches without the disc**, or it will fail under Proton.
+
+**Fix:** Then layer the community PC fix (`Steam006`'s WidescreenFixesPack-based patch / `SH3proxy` dx8 wrapper) for widescreen, manual FOV, borderless, window positioning and forced VSync.
+
+**Controller:** The native XInput handling is incomplete (right stick / triggers / D-pad don't map cleanly), so add the game as a non-Steam shortcut and apply a **Steam Input** gamepad layout — that fully covers input and is the recommended path on Deck."""
+
+[about]
+developer = "Team Silent (Konami Computer Entertainment Tokyo)"
+publisher = "Konami"
+released = "2003"
+genre = "Survival horror"
+modes = "Single-player"
+summary = "**Silent Hill 3** is a survival horror game and the third entry in Konami's **Silent Hill** series, a direct sequel to the original 1999 game. Players control **Heather Mason**, an ordinary teenager pulled into the town's cult and its plan to revive a malevolent deity. Originally a PlayStation 2 title, it was ported to Windows in late 2003 and is widely praised for its **atmosphere**, sound design, and grotesque creature and environment art. It is **no longer sold on modern digital storefronts**, making the retail PC release the only way to play it on PC."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+# No ProtonDB rating exists (non-Steam game, no Steam appid). Community reports
+# (added as a non-Steam shortcut) say it runs well on recent GE-Proton once the
+# FMV patch + community PC fix are in place, but this is unverified, not a tier.
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Not sold digitally; configuration only, no links.
+
+**DRM:** Retail port has `SecuROM 4.85` (disc/CD check) — needs a no-CD/clean exe to launch under Proton.
+
+**Proton:** Use `GE-Proton` (its SH3 video-playback patch fixes the FMV stutter/black-screen seen on stock Proton).
+
+**Fix:** Apply the community PC fix (`Steam006` / `SH3proxy`) for widescreen, FOV, borderless and VSync.
+
+**Controller:** Input is incomplete natively — apply a **Steam Input** layout via a non-Steam shortcut for full gamepad support.
+
+**Binary:** `sh3.exe` confirmed."""
+
+[[links.guides]]
+title = "Silent Hill 3 - PCGamingWiki (fixes, DRM, controller notes)"
+url   = "https://www.pcgamingwiki.com/wiki/Silent_Hill_3"
+
+[[links.guides]]
+title = "Silent Hill 3 PC Fix by Steam006 (widescreen / FOV / VSync)"
+url   = "https://community.pcgamingwiki.com/files/file/1331-silent-hill-3-pc-fix-by-steam006/"
+
+[[links.guides]]
+title = "Proton GE update adds Silent Hill 3 video-playback fix"
+url   = "https://steamdeckhq.com/news/proton-ge-11-1-releases-optiscaler-support/"

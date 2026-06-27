@@ -1,0 +1,113 @@
+---
+import "../styles/global.css";
+import { SUPPORT_URL } from "../lib/site";
+
+interface Props {
+  title: string;
+  description?: string;
+  current?: string;
+}
+
+const {
+  title,
+  description = "Drop a portable game on your PC and have it land on your Steam Deck — unlocked, registered, dressed in real box art, ready to play.",
+  current,
+} = Astro.props;
+
+// Same-origin /api in production (nginx proxies it); override at build time with
+// PUBLIC_API_BASE. Exposed as a meta tag so any client script can read one value.
+const apiBase = import.meta.env.PUBLIC_API_BASE || "/api";
+
+// Community-verified threshold: this many 👍 (with a positive majority) lights up
+// a "Community-verified" badge. Separate from the author's honest `status` (D7).
+const verifyThreshold = import.meta.env.PUBLIC_VERIFY_THRESHOLD || "10";
+
+const nav = [
+  { href: "/recipes", label: "Recipes", key: "recipes" },
+  { href: "/proton-packs", label: "Proton setup", key: "proton" },
+  { href: "/suggest", label: "Suggest", key: "suggest" },
+  { href: "/contribute", label: "Contribute", key: "contribute" },
+  { href: "/about", label: "About", key: "about" },
+  { href: "https://github.com/wesellis/deckport", label: "GitHub", key: "gh" },
+];
+
+const supportUrl = SUPPORT_URL;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0c1016" />
+    <meta name="color-scheme" content="dark" />
+    <!-- Critical theme: makes the very first paint already dark, so the bundled
+         stylesheet loading a beat later can't show a flash of the unstyled
+         (light canvas / default-blue links / borderless cards) page. -->
+    <style is:inline>
+      :root {
+        color-scheme: dark;
+        --ink: #0c1016; --panel: #141b24; --panel2: #1b2530; --line: #2a3644;
+        --text: #e7eef6; --sub: #8595a8; --amber: #ffb454; --cyan: #46c8f0;
+        --green: #5fd882; --mag: #cf7fe0; --red: #c0392b; --radius: 10px;
+      }
+      html { background: #0c1016; }
+      body { margin: 0; background: #0c1016; color: #e7eef6; min-height: 100vh; }
+      a { color: inherit; }
+      .site-header { background: rgba(12, 16, 22, 0.85); }
+      .recipe-card { background: #141b24; border: 1px solid #2a3644; border-radius: 10px; }
+    </style>
+    <meta name="deckport-api" content={apiBase} />
+    <meta name="deckport-verify-threshold" content={verifyThreshold} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/">deck<span class="dot">port</span></a>
+        <nav class="nav">
+          {
+            nav.map((n) => (
+              <a
+                href={n.href}
+                aria-current={current === n.key ? "page" : undefined}
+              >
+                {n.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>
+          deckport — a portable game lands on your Deck, dressed and ready.<br />
+          <span class="mono" style="font-size:.82rem;"
+            >MIT code · open recipe data · not affiliated with Valve</span
+          >
+        </span>
+        <span style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+          <a href="/recipes">Recipes</a>
+          <a href="/contribute">Contribute</a>
+          <a href="/about">About</a>
+          <a href="https://github.com/wesellis/deckport">GitHub</a>
+          {supportUrl && (
+            <a class="support-link" href={supportUrl} rel="noopener" target="_blank">☕ Support</a>
+          )}
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

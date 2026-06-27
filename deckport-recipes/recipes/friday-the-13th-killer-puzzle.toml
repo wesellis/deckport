@@ -1,0 +1,67 @@
+[game]
+title       = "Friday the 13th: Killer Puzzle"
+slug        = "friday-the-13th-killer-puzzle"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "795100"
+sgdb_id     = ""
+
+[launch]
+binary         = "F13.exe"   # Unity build; confirmed via Steam launch config (Win exe = F13.exe; macOS = F13.app)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Delisted:** Blue Wizard Digital (appid `795100`) lost the *Friday the 13th* license; the game was set free on Steam shortly before being pulled from sale around **Jan 2023**. Prior owners keep it in their library, and it still receives occasional patches (e.g. an Oct 2025 Unity security update).
+
+**Engine:** Unity engine; lightweight 2D-ish puzzler that runs cleanly under Proton with **no DRM, GFWL, or special tweaks**. ProtonDB **gold** (20 reports, good confidence).
+
+**Proton:** `proton_experimental` or `GE-Proton` both work; pick whatever is current. No launch options needed.
+
+**Install:** The Steam launch config lists the Windows executable as `F13.exe` (macOS is `F13.app`). Confirm it in your install folder if it differs. deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Blue Wizard Digital"
+publisher = "Blue Wizard Digital"
+released  = "2018"
+genre     = "Puzzle / Horror"
+modes     = "Single-player"
+summary   = """
+**Friday the 13th: Killer Puzzle** is a 2018 grid-based **sliding puzzle** game built on **Unity** in which players guide Jason Voorhees across isometric levels, sliding him until he hits an obstacle, to reach and dispatch victims in over-the-top **'Kill Scenes'**. The campaign spans many themed episodes - from classic campgrounds to icy tundras and even outer space - with hazards like water, traps, campfires and cops adding strategic depth.
+
+It shares its DNA with developer Blue Wizard Digital's earlier **Slayaway Camp** and drew generally positive reviews for its addictive, gory charm. The Steam version was delisted in early 2023 over **Friday the 13th licensing issues**, though prior owners retain it in their libraries."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 795100)"
+url   = "https://www.protondb.com/app/795100"
+
+[[links.guides]]
+title = "Friday the 13th: Killer Puzzle on PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Friday_the_13th:_Killer_Puzzle"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Windows binary is `F13.exe` per Steam's launch config; confirm it in your install. deckport links nothing.
+
+**Compatibility:** Delisted (licensing) but ProtonDB **gold** — community reports confirm it runs on Linux/Proton, so it should be smooth on the Deck.
+
+**Controller:** Native gamepad support (the game even has a hidden Jason unlocked via a gamepad button sequence), so it's fully playable with Deck controls out of the box; no Steam Input layout needed.
+
+**Offline:** Single-player puzzle game — no online servers to worry about."""

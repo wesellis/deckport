@@ -1,0 +1,68 @@
+[game]
+title       = "Clicker Heroes 2"
+slug        = "clicker-heroes-2"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "629910"
+sgdb_id     = ""
+
+[launch]
+binary         = "Clicker Heroes 2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `629910`, removed from sale `2024-03-14` — the discontinued Adobe Flash/AIR toolchain made further builds impossible). Built on **Adobe AIR**, not Unity; the captive-runtime launcher executable is `Clicker Heroes 2.exe`.
+
+**Proton:** ProtonDB rates it **silver** (best-reported platinum) and community reports confirm it runs on Linux/Proton, so it plays on the Deck. Use `proton_experimental`; `GE-Proton` is a fine fallback if you see a launch hang.
+
+**DRM:** No GFWL/SecuROM/DRM steps needed.
+
+**Controller:** This is a mouse-driven idle/clicker — **no native gamepad support**, so use a Steam Input layout that maps the right trackpad (and/or gyro) to mouse cursor + a button to left-click; that makes it fully playable on the Deck.
+
+**Install:** deckport only configures the prefix; it never bundles or links game files.
+"""
+
+[about]
+developer = "Playsaurus"
+publisher = "Playsaurus"
+released  = "2018"
+genre     = "Idle / incremental clicker action RPG"
+modes     = "Single-player"
+summary   = "**Clicker Heroes 2** is the sequel to Playsaurus's popular browser idle game **Clicker Heroes**, blending **incremental clicker** mechanics with an action-RPG-style gear and skill system. It is notable for famously rejecting the **free-to-play microtransaction** model of the original in favor of a single paid purchase, a decision the developer framed in ethical terms. The game launched in Steam Early Access in July 2018 and supports **offline progression**. It was delisted from Steam in March 2024 because it depended on the discontinued **Adobe Flash/AIR** toolchain, which made further builds impossible."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 629910)"
+url   = "https://www.protondb.com/app/629910"
+
+[[links.guides]]
+title = "Clicker Heroes 2 — Delisted Games (history & status)"
+url   = "https://delistedgames.com/clicker-heroes-2/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Verification:** ProtonDB silver; community reports confirm it runs on Linux/Proton/Deck, but this specific recipe is **not yet hands-on Deck-verified**.
+
+**Controller:** No native controller support — map the right trackpad/gyro to mouse + a click button via Steam Input (works because it's an idle/clicker, not a precision game).
+
+**Offline:** Largely offline/single-player idle game, so server shutdown is not a concern.
+"""

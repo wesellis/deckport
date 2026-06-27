@@ -1,0 +1,60 @@
+[game]
+title       = "PokeWilds"
+slug        = "pokewilds"
+aliases     = ["PokeWilds", "Pokemon Wilds", "Pokemon Open World"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "PokeWilds-x64"   # native Linux executable from pokewilds-linux64.zip (github.com/SheerSt/pokewilds/releases). This packr-bundled build ships its own JRE — no separate Java install needed. Mark it executable (chmod +x) and add it as a non-Steam game.
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[about]
+developer = "SheerSt and community"
+publisher = "Independently released (free fan project)"
+released  = "Active 2021-2026; available at pokewilds.com and GitHub"
+genre     = "Open-world RPG (Pokemon fan game with survival/crafting)"
+modes     = "Single-player"
+summary   = """
+**PokeWilds** is a **Pokemon fan game** that blends **open-world exploration** with **survival and crafting** mechanics inspired by Minecraft and Animal Crossing. It features a procedurally generated world, 300+ Pokemon, base building, and **Gen 2 Game Boy Color-style graphics**. Completely standalone — no ROM files or original Pokemon games required.
+
+Built with **Java and libGDX**. For Steam Deck, grab **`pokewilds-linux64.zip`** from GitHub releases (github.com/SheerSt/pokewilds/releases) or pokewilds.com — it extracts to a folder containing the native **`PokeWilds-x64`** executable with a **bundled JRE**, so no separate Java install is required."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "GitHub: SheerSt/pokewilds releases (pokewilds-linux64.zip)"
+url   = "https://github.com/SheerSt/pokewilds/releases"
+
+[[links.guides]]
+title = "Official site: PokeWilds (download for Linux)"
+url   = "https://www.pokewilds.com/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Standalone:** Completely standalone — **no original Pokemon files required.**
+
+**Use the linux64 build:** Download **`pokewilds-linux64.zip`** (NOT `pokewilds-otherplatforms.zip`). The linux64 build is a packr-bundled native binary that **ships its own JRE** — no separate Java/JDK install is needed. Only the `otherplatforms` / 32-bit builds require Java to be installed manually.
+
+**Install:** Extract the zip, `chmod +x PokeWilds-x64`, then add `PokeWilds-x64` as a non-Steam game (leave Compatibility/Proton OFF — it is native Linux) for a clean Game Mode launch.
+
+**Controller:** No native gamepad support is documented; the game is keyboard-driven (with remappable keys), so map the Deck's controls to keyboard via Steam Input."""

@@ -1,0 +1,69 @@
+[game]
+title       = "Mike Dies"
+slug        = "mike-dies"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "696200"
+sgdb_id     = ""
+
+[about]
+developer = "Psydra Games"
+publisher = "Psydra Games"
+released  = "2018"
+genre     = "Puzzle-platformer"
+modes     = "Single-player"
+summary   = """
+**Mike Dies** is a challenging **Metroidvania-style** puzzle-platformer built in **Unity**, following Spaceman Mike after he crashes into an asteroid field and must survive hostile aliens, a ruthless kingpin, and his own personal demons while trying to reunite with his partner Gregory. It pairs tight, bite-sized level design with **brutal, dynamic death scenes** and a synth soundtrack, and tells an **LGBT-themed** story across a roughly 3-5 hour campaign.
+
+Critics praised its clever level design, creative bosses, and heart. It was delisted from Steam in early 2023 after developer **Psydra Games** announced (Jan 26, 2023) it was shutting down."""
+
+[launch]
+binary         = "Mike Dies.exe"   # Unity 2018 player exe; verify the exact name/spacing in your install dir
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `696200`), a Unity 2018 puzzle-platformer by Psydra Games. ProtonDB rates it gold.
+
+**Proton:** Unity titles like this run cleanly under Proton on the Deck with no `DRM`/`GFWL` hoops — `GE-Proton` or `proton_experimental` both work; **pick `GE-Proton` if you hit any Unity input/render quirk.**
+
+**Install:** Launch the install's `Mike Dies.exe` (Unity player). No special winetricks or launch options required.
+
+**DRM:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Mike Dies (appid 696200)"
+url   = "https://www.protondb.com/app/696200"
+
+[[links.guides]]
+title = "Delisted Games — Psydra Games shutting down, Mike Dies delisted"
+url   = "https://delistedgames.com/psydra-games-shutting-down-mike-dies-to-be-delisted-on-steam-soon/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted in early 2023 when Psydra Games announced its shutdown (Jan 26, 2023); owners keep library access (single-player, no servers needed).
+
+**Controller:** Steam lists 'Partial Controller Support' — gamepad works in-game, but a couple of users reported the in-game controller-config screen being finicky; if a button won't bind, set a Steam Input gamepad (or keyboard/mouse) layout on the Deck as a fallback.
+
+**Proton:** ProtonDB gold; runs as a standard Unity Proton title.
+
+**NEEDS-TEST:** confirm the exact `Mike Dies.exe` name in your install and that controller mapping behaves on a real Deck."""

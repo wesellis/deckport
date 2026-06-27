@@ -1,0 +1,68 @@
+[game]
+title       = "Streets of Rage X"
+slug        = "streets-of-rage-x"
+aliases     = ["SORX", "Streets of Rage X"]
+type        = "proton"
+engine      = "openbor"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "OpenBOR.exe"   # OpenBOR Windows runtime that ships in the pack (root folder, alongside Paks/)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** A free Streets of Rage fan game by **Kratus** on the Beats of Rage (`OpenBOR`) engine — recreations of the classic trilogy plus a huge roster (including playable enemies and bosses). Current build at time of writing is **Beta 35** (June 2026), distributed for **Windows and Android** via ChronoCrash.
+
+**Proton:** The Windows build (`OpenBOR.exe`) runs under `Proton Experimental` on Deck; **add it as a Non-Steam game**.
+
+**Controller:** `OpenBOR` has built-in gamepad support, so the Deck controller works out of the box (configure pads in the in-engine **Controls** menu) — no Steam Input mapping required.
+
+**Native (recommended):** Recent Kratus releases also ship a **native Linux `AppImage`** built from the same source. On Deck this is the smoother path: in Desktop Mode, right-click the AppImage → Properties → allow executing (or `chmod +x`), run it once so it generates its `paks` folder, then add it as a Non-Steam game. This skips the Proton layer entirely.
+
+**Layout:** `OpenBOR` is an engine, not an emulator — the pack is portable: `OpenBOR.exe` lives in the root folder next to a `Paks/` folder (plus `Saves/`, `Logs/`, `ScreenShots/`). **Point the shortcut at the `.exe` that ships inside this pack** rather than a separate standalone `OpenBOR`."""
+
+[about]
+developer = "Kratus"
+publisher = "Kratus (independent fan project)"
+released  = "2023"
+genre     = "Beat 'em up"
+modes     = "Single-player, local co-op"
+summary   = "**Streets of Rage X** is a free, fan-made beat 'em up built by the developer **Kratus** on the **Beats of Rage / OpenBOR** engine. It recreates and expands SEGA's classic **Streets of Rage** trilogy as **branching routes**, pairing remade stages with a large playable roster that includes former enemies and bosses. Widely regarded by the OpenBOR community as one of the most ambitious Streets of Rage fan games, it builds on the developer's earlier **Streets of Rage 2X**. As an **unofficial fan project** it was never sold commercially and is unaffiliated with SEGA."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Streets of Rage X (Windows / Android) — official ChronoCrash release thread by Kratus"
+url   = "https://www.chronocrash.com/forum/resources/streets-of-rage-x-windows-android.274/"
+
+[[links.guides]]
+title = "OpenBOR on Steam Deck — ChronoCrash (native AppImage vs Proton, setup tips)"
+url   = "https://www.chronocrash.com/forum/threads/openbor-on-steam-deck.5989/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Free fan game:** Not SEGA, never on Steam.
+
+**Install:** Add as a Non-Steam game and force `Proton Experimental`.
+
+**Binary:** The pack ships the `OpenBOR` runtime — typically `OpenBOR.exe` in the root folder next to `Paks/`. **Point the shortcut at whatever single `.exe` is inside the game folder.**
+
+**Fix:** Known `OpenBOR`-on-Deck gotcha — **it can crash right after the title logo**; fix by giving the game folder read/write permissions (set it in Desktop Mode), or use the native Linux `OpenBOR` build/`AppImage` instead.
+
+**Controller:** Works natively via `OpenBOR`'s built-in pad support."""

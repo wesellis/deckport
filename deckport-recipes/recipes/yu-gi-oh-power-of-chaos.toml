@@ -1,0 +1,54 @@
+[game]
+title       = "Yu-Gi-Oh! Power of Chaos"
+slug        = "yu-gi-oh-power-of-chaos"
+aliases     = ["Yu-Gi-Oh Power of Chaos", "Yu-Gi-Oh! Power of Chaos: Yugi the Destiny", "Yu-Gi-Oh! Power of Chaos: Kaiba the Revenge", "Yu-Gi-Oh! Power of Chaos: Joey the Passion", "Power of Chaos Trilogy"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Yugi_Pc.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Run with GE-Proton. These are DirectX-era games from 2003-2004. The series consists of three separate titles, each a standalone install with its own executable: Yugi the Destiny (Yugi_Pc.exe, 2003), Kaiba the Revenge (Kaiba_Pc.exe, 2003), and Joey the Passion (Joey_Pc.exe, 2004). The recipe's default binary targets Yugi the Destiny — point the binary at Kaiba_Pc.exe or Joey_Pc.exe to launch the other two. All three are mouse-driven card games, so the right trackpad in mouse mode works perfectly; no native gamepad support, set the Steam controller layout to a mouse/desktop config. These were retail CD releases and the original discs used copy protection that fails under Proton, so the playable copy must already be a disc-check-free install. A community project, the Power of Chaos Trilogy AiO mod (ModDB), rebuilds the games as a separate modded client with an expanded card pool; it is its own install, not an official patch to the retail games."
+
+[about]
+developer = "Konami"
+publisher = "Konami"
+released  = "2003"
+genre     = "Card game"
+modes     = "Single-player"
+summary   = "Yu-Gi-Oh! Power of Chaos is a set of three PC card game titles developed and published by Konami between 2003 and 2004. Each entry — Yugi the Destiny, Kaiba the Revenge, and Joey the Passion — lets players duel against a specific character from the Yu-Gi-Oh! animated series using a deck built from that character's card pool. The games faithfully implement the Yu-Gi-Oh! Trading Card Game rules of that era. They were budget retail CD releases for Windows and were never sold on Steam; the long-running fan project Power of Chaos Trilogy AiO rebuilds the three games into a single modded client with an expanded card pool."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki - Yu-Gi-Oh! Power of Chaos: Yugi the Destiny"
+url   = "https://www.pcgamingwiki.com/wiki/Yu-Gi-Oh!_Power_of_Chaos:_Yugi_the_Destiny"
+
+[[links.guides]]
+title = "Power of Chaos Trilogy AiO mod (ModDB)"
+url   = "https://www.moddb.com/mods/yu-gi-oh-power-of-chaos-trilogy-aio"
+
+[[links.guides]]
+title = "Yu-Gi-Oh! Power of Chaos: Yugi the Destiny (Yu-Gi-Oh! Wiki)"
+url   = "https://yugioh.fandom.com/wiki/Yu-Gi-Oh!_Power_of_Chaos:_Yugi_the_Destiny"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Not a Steam title, so there is no official ProtonDB rating; these simple DirectX card games generally run under GE-Proton but should be treated as untested. Three separate installs/executables: Yugi_Pc.exe (Yugi the Destiny), Kaiba_Pc.exe (Kaiba the Revenge), Joey_Pc.exe (Joey the Passion) — set the binary to whichever you are launching. Mouse-only: no native gamepad, use the right trackpad as a mouse and a desktop/mouse controller layout. Original retail discs used CD copy protection that does not work under Proton, so the install must already be disc-check-free. For a combined card pool, the community Power of Chaos Trilogy AiO mod (ModDB) is a separate modded client, not a patch to the retail games."

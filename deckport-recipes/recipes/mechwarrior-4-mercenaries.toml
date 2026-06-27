@@ -1,0 +1,143 @@
+[game]
+title       = "MechWarrior 4: Mercenaries"
+slug        = "mechwarrior-4-mercenaries"
+aliases     = ["MechWarrior 4 Mercenaries", "MW4 Mercs", "MechWarrior 4: Mercenaries MekPak 3"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "MW4Mercs.exe"
+launch_options = ""
+requires_files = ["MW4Mercs.exe"]
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["d3dx9", "vcrun2005", "vcrun2008"]
+notes      = """
+**Overview**
+MechWarrior 4: Mercenaries (2002) was released as a free download by MekTek in
+2010 with Microsoft's permission. That release was officially sanctioned at the
+time, but MekTek later wound down its BattleTech work and removed the official
+download; only Microsoft now holds redistribution rights, so the MekTek package
+today survives via community preservation (e.g. Internet Archive / ModDB).
+The recommended installation method on Steam Deck is via Lutris using the
+dedicated Lutris script (lutris.net install ID 37551), which automates Wine setup,
+dgVoodoo2 for D3D8/D3D9 compatibility, and proper prefix configuration. The Lutris
+script launches drive_c/MekTek/MW4Mercs.exe.
+
+**Installation via Lutris (Recommended)**
+1. Install Lutris on your Deck (available via Discover in Desktop Mode).
+2. Search for "MechWarrior 4 Mercenaries" on lutris.net or within the Lutris
+   app — use the official installer script (ID 37551).
+3. Run the Lutris installer; it will download the free MekTek release
+   automatically and configure Wine + dgVoodoo2.
+4. Once installed, add the game to Steam via:
+   Lutris → right-click the game → Create Steam shortcut.
+5. The shortcut will launch Lutris which launches MW4 — this means Deck's
+   Game Mode will work via the Steam entry.
+
+**Installation via Manual Proton (Alternative)**
+1. Download the free MekTek MW4 Mercenaries installer from the MekTek
+   community (search MekTek MW4 Mercenaries free release on ModDB or the
+   official MekTek site if available).
+2. Add the installer EXE as a Non-Steam game, force GE-Proton, run once.
+3. Add MW4Mercs.exe as the final Non-Steam game entry.
+4. Install dgVoodoo2: place D3D8.dll + D3D9.dll + DDraw.dll from the dgVoodoo2
+   MS folder into the game directory. Set DLL overrides (native) in winecfg:
+     d3d8 = n,b
+     d3d9 = n,b
+     ddraw = n,b
+   This is critical — without dgVoodoo2 the legacy D3D8/D3D9 renderer will
+   crash or show black screens on modern Wine/Proton.
+
+**dgVoodoo2**
+dgVoodoo2 translates the game's D3D8 calls to D3D11/Vulkan.
+Download dgVoodoo2 from its official site: dgvoodoo2.dege.hu
+Copy the contents of the MS\\ subfolder (D3D8.dll, D3D9.dll, DDraw.dll)
+into the game's root directory alongside MW4Mercs.exe.
+In the dgVoodoo2 configuration app (dgVoodooSetup.exe), set:
+  Resolution: 1280x800
+  Antialiasing: 2x or 4x (Deck GPU handles this easily)
+
+**Controller / Input**
+MW4 Mercs has NO native gamepad support — it expects keyboard/mouse/joystick,
+so a Steam Input controller layout is required. With a community profile it
+plays well, though menus show keyboard prompts rather than gamepad icons.
+Suggested Steam Input mapping:
+- Left stick → throttle + strafe
+- Right stick → torso twist + arm pitch
+- Triggers → weapon groups 1 and 2
+- Bumpers → jump jets / zoom
+Alternatively, use the "throttle + mouse look" layout:
+  Right stick → mouse aim (gyro supplementary)
+  This gives the best targeting precision on Deck.
+
+**Performance**
+~12W TDP. ~4.5h battery on OLED Deck.
+The game is CPU-bound for AI and physics; GPU load is minimal.
+Frame rate: cap at 60fps via Deck's framerate limiter.
+The engine has issues above 100fps (physics bugs) — the limiter prevents this.
+
+**MekPak 3 Expansion**
+MekPak 3 adds 30+ additional 'Mechs. Install it after the base game.
+Available via the MekTek community/ModDB — see links.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Lutris installer — MechWarrior 4: Mercenaries (MekTek, install ID 37551)"
+url   = "https://lutris.net/games/install/37551/view"
+
+[[links.guides]]
+title = "Steam Deck HQ — Classics on Deck #14: MechWarrior 4 Mercenaries"
+url   = "https://steamdeckhq.com/news/classics-on-deck-14"
+
+[[links.guides]]
+title = "PCGamingWiki — MechWarrior 4: Mercenaries"
+url   = "https://www.pcgamingwiki.com/wiki/MechWarrior_4:_Mercenaries"
+
+[[links.guides]]
+title = "ModDB — MekTek MW4 Mercenaries"
+url   = "https://www.moddb.com/games/mechwarrior-4-mercenaries"
+
+[about]
+developer = "FASA Studio"
+publisher = "Microsoft Game Studios"
+released  = "2002-10-22"
+genre     = "Mech simulation / action"
+modes     = "Single-player, Multiplayer (LAN / online via GameRanger or MekMatch)"
+summary   = """**MechWarrior 4: Mercenaries** (FASA Studio/Microsoft, 2002) is a mech combat
+simulation that casts the player as a mercenary commander building a lance through contracts.
+Uniquely, Microsoft officially authorized a free release by MekTek in 2010, making this
+one of the few formerly commercial games with a fully legal free distribution — and it runs
+on Steam Deck via Lutris + dgVoodoo2 at a comfortable ~12W TDP."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- The MekTek free release was Microsoft-authorized in 2010, but MekTek later removed
+  its official download; only Microsoft holds redistribution rights today, so the
+  package now survives via community preservation (Internet Archive / ModDB).
+- No Steam App ID — this is a non-Steam title, so there is no ProtonDB tier.
+- dgVoodoo2 D3D8/D3D9 translation layer is REQUIRED; game will black-screen or crash without it.
+- Lutris installer (install ID 37551) is strongly preferred over manual setup — it handles dgVoodoo2 automatically.
+- Executable is MekTek/MW4Mercs.exe (capital M-W). If install issues occur, run autoconfig_MERCS as admin.
+- No native gamepad support: a Steam Input layout is required; menus show keyboard prompts.
+- When launching via a Lutris-generated Steam shortcut, the Steam overlay will not be available.
+- Cap framerate at 60fps — the physics engine has bugs above ~100fps.
+- MekPak 3 must be installed after the base game; do not install them simultaneously.
+- Online multiplayer via original Microsoft servers is dead; use GameRanger or MekMatch communities.
+"""

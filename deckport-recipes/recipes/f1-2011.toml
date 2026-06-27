@@ -1,0 +1,78 @@
+[game]
+title       = "F1 2011"
+slug        = "f1-2011"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "44360"
+sgdb_id     = ""
+
+[launch]
+binary         = "F1_2011.exe"
+launch_options = ""
+requires_files = []
+
+[about]
+developer = "Codemasters Birmingham"
+publisher = "Codemasters"
+released  = "2011"
+genre     = "Racing simulation"
+modes     = "Single-player, online and split-screen multiplayer, co-op championship"
+summary   = "**F1 2011** is the official racing simulation of the 2011 **Formula One** season, built on Codemasters' **EGO 2.0** engine as the sequel to **F1 2010**. It features a five-season **career mode** along with time trial, split-screen, and an online co-operative championship for up to sixteen players. The game was well received by critics for its handling and presentation. It was **delisted** from digital storefronts in 2021, likely due to **expired Formula One licensing**."
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["xact"]
+notes      = """
+**Game:** Delisted Steam game (`appid 44360`), a Codemasters racing title. ProtonDB tier: silver.
+
+**GFWL:** The main blocker is **Games for Windows Live** (GFWL): **the game won't launch until GFWL is handled.** Install the bundled GFWL client by running `gfwlivesetup.exe` from the game's `GFWL` subfolder (set it to Windows 7 compatibility), or use the `xlive.dll` + `xlive.ini` stub bypass dropped into the `F1_2011.exe` directory.
+
+**Proton:** Best path on Deck is `GE-Proton`, which has the best GFWL handling.
+
+**Audio:** Run `xact` via `winetricks` if audio is missing.
+
+**Controller:** Works natively — F1 2011 has built-in gamepad support, so the Deck controls work without a Steam Input hack. You do have to enable it in-game (My F1 → Driving Control → set the control profile to gamepad/controller); a gamepad Steam Input template still works as a fallback.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - F1 2011 (appid 44360) reports"
+url   = "https://www.protondb.com/app/44360"
+
+[[links.guides]]
+title = "Steam Guide - Running F1 2011 (and 2010) on Windows 8/10 (GFWL fix)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=708998588"
+
+[[links.guides]]
+title = "Steam discussion - xlive.dll GFWL bypass for F1 2011"
+url   = "https://steamcommunity.com/app/44360/discussions/0/1734336452576141315/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Key fix:** **Games for Windows Live** must be installed (run `gfwlivesetup.exe` from the `GFWL` subfolder in Win7 compat mode) or stubbed (`xlive.dll` + `xlive.ini` bypass) or **the game won't start**.
+
+**Proton:** ProtonDB silver — community reports it running under Proton once GFWL is dealt with. Use `GE-Proton` for the best GFWL behavior; run `xact` if audio is missing. Binary is `F1_2011.exe`.
+
+**Online:** Online/Live features and leaderboards are dead (GFWL servers shut down) — single-player and local play only.
+
+**Controller:** Works natively.
+
+**Status:** Needs a hands-on Deck confirmation.
+"""

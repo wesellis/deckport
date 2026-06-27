@@ -1,0 +1,158 @@
+[game]
+title       = "Bully: Scholarship Edition"
+slug        = "bully-scholarship-edition"
+aliases     = ["Bully", "Canis Canem Edit"]
+type        = "proton"
+engine      = "other"
+steam_appid = "12200"
+sgdb_id     = ""
+
+[launch]
+binary         = "Bully.exe"
+launch_options = "WINEDLLOVERRIDES=\"dinput8=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Step 1 — Install SilentPatch (strongly recommended for stability)**
+The Steam build of Bully (the same retail .exe, v1.200) is notoriously
+unstable on modern systems: it can hard-crash on the opening "Welcome to
+Bullworth" cutscene, lock up on certain loading screens, and leak memory
+in the audio code until it runs out of memory. Historically players needed
+a "Bully Fix" / patched data set to get past missing-content and intro
+crashes — today the maintained replacement is SilentPatch by CookiePLMonster.
+It fixes the collision-load crash, the audio/handle leaks, and improves
+frame pacing, which is what makes the game stable on Deck.
+
+SilentPatch loads as an ASI plugin, so you need two pieces in the game root:
+  1. The ASI Loader (ThirteenAG's Ultimate-ASI-Loader), renamed to
+     dinput8.dll — this is the proxy DLL Wine/Proton loads at startup.
+  2. SilentPatch itself: SilentPatchBully.asi (+ SilentPatchBully.ini).
+
+Get SilentPatch from the official GitHub releases:
+  https://github.com/CookiePLMonster/SilentPatchBully/releases
+And the ASI Loader from:
+  https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases
+
+Place all of those files directly into the game's root directory (the
+folder that already contains Bully.exe):
+  ~/.steam/steam/steamapps/common/Bully Scholarship Edition/
+
+If you still crash on the very first cutscene even with SilentPatch, the
+common community workaround is to drop a pre-made post-intro save into the
+Rockstar Games save folder to skip the opening sequence.
+
+**Step 2 — Set launch option for DLL override**
+The ASI Loader hooks in via dinput8.dll. Tell Wine/Proton to prefer the
+native copy you placed in the game folder:
+  WINEDLLOVERRIDES="dinput8=n,b" %command%
+
+Add this in Steam → right-click Bully → Properties → Launch Options.
+
+**Step 3 — Unlock FPS in the config**
+The game ships with a 30 fps cap. To raise it:
+1. Find the config file inside the Proton prefix under:
+   ~/.steam/steam/steamapps/compatdata/12200/pfx/drive_c/users/steamuser/
+   My Documents/Rockstar Games/Bully Scholarship Edition/
+2. Open the settings file and set FPSLimit=60 (or FPSLimit=40 for battery
+   savings on Deck).
+Note: SilentPatch also contains its own frame-rate handling improvements,
+so physics will remain stable at higher frame rates.
+
+**Step 4 — Proton version**
+Use GE-Proton 9-12 or newer. As of GE-Proton 9-12 (Sept 2024) a
+Bully-specific fix was merged upstream, which improves out-of-the-box
+behaviour on Deck. Stock Proton Experimental also works for many users.
+Avoid Proton 7 and earlier — the game's DirectX 9 path has known audio
+and timing issues on older Wine builds.
+
+**Step 5 — Controls**
+Bully has native gamepad support (it shipped on consoles), so the Deck's
+built-in controls map correctly out of the box — no custom controller
+layout is required. If you find the right analogue stick sensitivity too
+high in combat, adjust it in the in-game options.
+
+**Community guide reference**
+A thorough step-by-step guide covering SilentPatch installation, launch
+options, and config tweaks for Steam Deck is available as Steam Community
+Guide ID 3616094281. Note: do not combine SilentPatch with the separate
+"60FPS exe" mod — community reports say the two are incompatible; let
+SilentPatch handle the frame limiter instead.
+
+**Install method**
+Standard Steam install of the official app (AppID 12200). The .exe is DRM
+-free in the install folder; SilentPatch and the ASI Loader are free,
+open-source community fixes installed alongside it. No other launcher or
+storefront is required.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SilentPatch for Bully (official GitHub releases)"
+url   = "https://github.com/CookiePLMonster/SilentPatchBully/releases"
+
+[[links.guides]]
+title = "Ultimate ASI Loader (dinput8.dll proxy)"
+url   = "https://github.com/ThirteenAG/Ultimate-ASI-Loader/releases"
+
+[[links.guides]]
+title = "Steam store page"
+url   = "https://store.steampowered.com/app/12200/"
+
+[[links.guides]]
+title = "ProtonDB entry"
+url   = "https://www.protondb.com/app/12200"
+
+[[links.guides]]
+title = "PCGamingWiki — Bully: Scholarship Edition"
+url   = "https://www.pcgamingwiki.com/wiki/Bully:_Scholarship_Edition"
+
+[[links.guides]]
+title = "Steam Community setup guide (Steam Deck)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3616094281"
+
+[about]
+developer = "Rockstar Vancouver"
+publisher = "Rockstar Games"
+released  = "2008"
+genre     = "Action-Adventure, Open World"
+modes     = "Single-player"
+summary   = """**Bully: Scholarship Edition** by Rockstar Games (2008) is a darkly comedic
+open-world game set in the fictional Bullworth Academy. It plays like a compact
+GTA with a school setting, and while the Steam port is notoriously unstable
+vanilla, SilentPatch transforms it into a smooth, crash-free experience on Deck."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Binary is Bully.exe in the game root (steamapps/common/Bully Scholarship Edition/).
+- SilentPatch is strongly recommended; the vanilla Steam build (v1.200) can crash on
+  the intro "Welcome to Bullworth" cutscene, on some loading screens, and from audio
+  memory leaks during long sessions.
+- SilentPatch loads via an ASI Loader proxy named dinput8.dll, so the
+  WINEDLLOVERRIDES="dinput8=n,b" %command% launch option is mandatory.
+- Put dinput8.dll + SilentPatchBully.asi (+ .ini) in the game root, NOT the Proton
+  prefix documents folder.
+- If the opening cutscene still crashes, a pre-made post-intro save is the common
+  community bypass.
+- Do NOT combine SilentPatch with the separate "60FPS exe" mod — they conflict.
+- FPSLimit in config can be raised manually (game defaults to 30 fps); cap around 60
+  since physics can get erratic at very high frame rates.
+- Use GE-Proton 9-12 or newer (Bully-specific fix added Sept 2024); Proton Experimental
+  also works. Avoid Proton 7 and older.
+- Native gamepad support; Deck controls work out of the box, no custom layout needed.
+- ProtonDB tier reported by the community; not yet locally verified (status: needs-test).
+"""

@@ -1,0 +1,72 @@
+[game]
+title       = "Towaga: Among Shadows"
+slug        = "towaga-among-shadows"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "907600"
+sgdb_id     = ""
+
+[launch]
+binary         = "Towaga.exe"   # Unity 2020.3.44f1 Windows build; confirm exact name in your install dir
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `907600`, removed `2025-01-24` when the publishing deal ended; owners keep it in their library). Unity `2020.3.44f1` 2D shoot'em-up.
+
+**Proton:** ProtonDB rates it **platinum** (small sample — only a handful of reports) and it runs out of the box on Proton — `GE-Proton` or `proton_experimental` both work, **no winetricks needed**.
+
+**DRM:** Windows build requires Steam DRM, so **launch it through Steam** (the wrapper) rather than the bare `.exe`.
+
+**Controller:** Native controller support is full, so no Steam Input layout is required; a controller is also **mandatory for the local co-op mode**.
+"""
+
+[about]
+developer = "Sunnyside Games"
+publisher = "Noodlecake Studios"
+released  = "2020"
+genre     = "Action"
+modes     = "Single-player, local multiplayer"
+summary   = "**Towaga: Among Shadows** is a stylized **2D action** game where the player stays planted in a fixed spot and aims a beam of light to vaporize incoming waves of shadow creatures, with ability and upgrade systems layered on top. It follows the masked hero Chimu using the power of light against the villain Metnal across a phase-based **story mode**, plus a **survival mode** and a simple **local co-op** brawler where two players fly around and blast each other. Developed by **Sunnyside Games** and published on PC and consoles by **Noodlecake Studios**, it is an expanded follow-up to the earlier mobile title **Towaga**, praised for its **hand-drawn art** and music. The PC version was **delisted from Steam in 2025** after its publishing agreement ended."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Towaga: Among Shadows (appid 907600)"
+url   = "https://www.protondb.com/app/907600"
+
+[[links.guides]]
+title = "Delisted Games — Towaga: Among Shadows (delisting details)"
+url   = "https://delistedgames.com/towaga-among-shadows/"
+
+[[links.guides]]
+title = "Developer closure post — delisting + OST link"
+url   = "https://steamcommunity.com/app/907600/discussions/0/599642934595299870/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** Delisted from Steam on `2025-01-24` (publishing agreement ended); still owned in libraries of prior purchasers.
+
+**Proton:** ProtonDB **platinum** — community reports it running cleanly on Proton/Deck with no tweaks.
+
+**Controller:** Full native controller support (controller **required for local co-op**).
+
+**DRM:** Steam DRM on the Windows build, so **run it via Steam**, not the raw `.exe`.
+
+**Install:** Binary name (`Towaga.exe`) is the expected Unity build name; **verify it against your install**.
+"""

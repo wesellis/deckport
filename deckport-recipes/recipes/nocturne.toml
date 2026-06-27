@@ -1,0 +1,54 @@
+[game]
+title       = "Nocturne"
+slug        = "nocturne"
+aliases     = ["Nocturne 1999", "Nocturne Terminal Reality"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Nocturne.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "The original 1999 Nocturne was never re-released digitally (the Steam title app 1374860 is an unrelated modern game), so install your own copy and add Nocturne.exe as a non-Steam game, set to GE-Proton. The game's old DirectDraw/Direct3D renderer needs a wrapper to launch and to reach Deck-friendly resolutions: use dgVoodoo 2, most easily via the community 'Nocturne Windows 10 Fix' (https://github.com/silentgameplays/Nocturne-Fix-Windows-10), which drops preconfigured dgVoodoo files into the game folder and raises the internal resolution (note: ThirteenAG's WidescreenFixesPack does NOT cover Nocturne). Retail discs used SafeDisc copy protection (SECDRV.SYS), which neither modern Windows nor Wine load — apply the community no-disc/launch patch so the exe starts. The game is keyboard+mouse only, so configure a Steam Input gamepad layout or use the right trackpad for mouse-style aiming."
+
+[about]
+developer = "Terminal Reality"
+publisher = "Gathering of Developers"
+released  = "1999"
+genre     = "Survival horror / action-adventure"
+modes     = "Single-player"
+summary   = "Nocturne is a third-person survival horror game developed by Terminal Reality and published by Gathering of Developers in 1999. Players control a government agent known as The Stranger, battling werewolves, vampires, and other supernatural creatures across four episodes set in the 1930s. The game features a cinematic fixed-camera perspective and a dark, pulpy horror atmosphere. It is a cult classic of the late-1990s PC horror genre."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "silentgameplays — Nocturne Windows 10 Fix (dgVoodoo 2, GitHub)"
+url   = "https://github.com/silentgameplays/Nocturne-Fix-Windows-10"
+
+[[links.guides]]
+title = "PCGamingWiki — Nocturne"
+url   = "https://www.pcgamingwiki.com/wiki/Nocturne"
+
+[[links.guides]]
+title = "GOG Forum — Nocturne (1999, PC) running on modern Windows"
+url   = "https://www.gog.com/forum/general/nocturne_1999_pc_running_on_windows_7_and_10"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Supply your own legally obtained copy; the original 1999 game has no digital re-release and therefore no ProtonDB rating. Retail discs use SafeDisc (SECDRV.SYS) DRM that modern Windows and Wine refuse to load, so a community no-disc/launch patch is needed for the exe to start. The old DirectDraw/Direct3D renderer needs dgVoodoo 2 (most easily via the community Nocturne Windows 10 Fix) to launch reliably and to reach Deck-friendly resolutions — ThirteenAG's WidescreenFixesPack does NOT support this game. Keyboard+mouse only: configure a Steam Input gamepad layout or use the right trackpad and on-screen keyboard."

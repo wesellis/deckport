@@ -1,0 +1,78 @@
+[game]
+title       = "Grand Theft Auto: Vice City"
+slug        = "grand-theft-auto-vice-city"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "12110"
+sgdb_id     = ""
+
+[launch]
+binary         = "gta-vc.exe"
+launch_options = "WINEDLLOVERRIDES=\"d3d8=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted classic Steam game (appid `12110`) — the modern store page is the separate Definitive Edition (appid `1546990`); this recipe targets the original. ProtonDB rates it gold and it plays well on Deck. Real binary is `gta-vc.exe`.
+
+**Proton:** Use `GE-Proton` (or Proton 10+); **Proton versions before 10.0 had mouse-aim lag.**
+
+**Fix:** The launch option `WINEDLLOVERRIDES="d3d8=n,b" %command%` lets the `d3d8`-based widescreen/`d3d8to9` fix wrappers load under Wine.
+
+**Display:** For widescreen, drop ThirteenAG's `d3d8` widescreen fix into the game folder (works on the 1.0 exe; the Steam build ships 1.1, so some mods may need the 1.0 downgrade).
+
+**Controller:** Works via XInput; GInput improves native gamepad button prompts, or use a Steam Input layout.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Grand Theft Auto: Vice City (appid 12110)"
+url   = "https://www.protondb.com/app/12110"
+
+[[links.guides]]
+title = "Steam Community — Essential Fixes for GTA Vice City"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2621513855"
+
+[[links.guides]]
+title = "PCGamingWiki — Grand Theft Auto: Vice City"
+url   = "https://www.pcgamingwiki.com/wiki/Grand_Theft_Auto:_Vice_City"
+
+[about]
+developer = "Rockstar North"
+publisher = "Rockstar Games"
+released  = "2002 (PlayStation 2); 2003 (Windows)"
+genre     = "Action-adventure, open world"
+modes     = "Single-player"
+summary   = "**Grand Theft Auto: Vice City** is an open-world action-adventure game and the sixth title in the **Grand Theft Auto** series, built on the **RenderWare** engine. Set in a 1986 Miami-inspired city, it follows mob enforcer **Tommy Vercetti** as he builds a criminal empire across a neon-soaked, 80s-themed map. A critical and commercial landmark, it was widely praised for its setting, **soundtrack**, and voice cast. The original classic release was delisted from Steam after Rockstar replaced it with the separately listed **Definitive Edition** remaster."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Original classic GTA: Vice City (delisted appid `12110`; the in-store Definitive Edition is a different game).
+
+**Display:** ProtonDB gold; community reports it running on Deck at ~60fps (try 720p + FSR upscale to 1080p docked).
+
+**Frame-rate quirk:** An FPS cap of 30/60 breaks mouse aiming — **set FPS to unlimited and enable vsync.**
+
+**Controller:** Works (XInput; GInput for proper prompts, or a Steam Input layout).
+
+**Fix:** Needs the `d3d8` launch override above for the widescreen fix wrapper.
+"""

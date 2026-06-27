@@ -1,0 +1,72 @@
+[game]
+title       = "Tony Hawk's Pro Skater 2"
+slug        = "tony-hawks-pro-skater-2"
+aliases     = ["THPS2", "Tony Hawk Pro Skater 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "THawk2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Title:** Neversoft's 2000 skater (original PC release), never sold on Steam; the `2395210` Steam listing is the separate **2020 remaster**. The original .exe is `THawk2.exe`.
+
+**Fix:** **Install DCxDemo's community Cumulative Patch** (replaces `THawk2.exe` and hooks via `dinput.dll`) for native widescreen at 32-bit color, uncapped FPS, **XInput controller support**, custom-soundtrack support and the restored rail balance bar.
+
+**Install:** After patching, launch `th2patchlauncher.exe` to set resolution/options, or point the binary at the patched `THawk2.exe`. On Deck the established Pat Hartl guide pairs the patch with **dgVoodoo2** (the original DirectDraw renderer often needs it to display) and recommends **Proton 7.0-4**; `GE-Proton`/`proton_experimental` are also worth trying.
+
+**Alternative fix:** **PARTYMOD (partymanx)** is a newer rewrite (Vulkan renderer + SDL input) with strong modern-controller support, if the Cumulative Patch gives graphics trouble.
+
+**DRM:** No GFWL/SecuROM concerns on this title."""
+
+[about]
+developer = "Neversoft"
+publisher = "Activision"
+released  = "2000"
+genre     = "Skateboarding / Sports"
+modes     = "Single-player, local multiplayer"
+summary   = "**Tony Hawk's Pro Skater 2** is the second entry in Neversoft's landmark **skateboarding series**, with the PC version ported by **LTI Gray Matter** and featuring sharper textures and higher resolution than the PlayStation original. It introduced the **manual**, cash rewards, and the **Create-a-Skater** and **Park Editor** tools, and remains one of the most critically acclaimed games ever made. This recipe covers the **original 2000 PC release**, which is distinct from the separate 2020 **Pro Skater 1 + 2 remaster**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "DCxDemo THPS2 Cumulative Patch (GitHub)"
+url   = "https://github.com/DCxDemo/THPS2-Cumulative-Patch"
+
+[[links.guides]]
+title = "Pat Hartl - Running THPS2 on Steam Deck"
+url   = "https://pathar.tl/steam-deck/thps2"
+
+[[links.guides]]
+title = "PARTYMOD THPS2 (alternative patch, GitHub)"
+url   = "https://github.com/PARTYMANX/partymod-thps2"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**No ProtonDB rating:** This is the original 2000 PC release, which was never on Steam (`steam_appid` intentionally blank), so it has **no ProtonDB tier** of its own — ProtonDB only covers Steam appids (the `2395210` listing is the separate 2020 remaster). Tier marked `n/a`; treat playability as community-reported via the guides below.
+
+**Supply your own copy:** Original 2000 PC release. The exe is `THawk2.exe`.
+
+**Controller:** The stock build runs **4:3 only with no XInput**. The DCxDemo Cumulative Patch adds XInput, but on Deck most community setups (e.g. the Pat Hartl guide) still drive it via a **Steam Input keyboard layout** plus **dgVoodoo2** for the renderer rather than relying on raw XInput. PARTYMOD instead provides a native modern-controller path.
+
+**Fix:** DCxDemo's Cumulative Patch gives widescreen, uncapped FPS and XInput; pair with dgVoodoo2 on Deck if graphics fail to render. PARTYMOD is the Vulkan-based alternative.
+
+**DRM:** No GFWL or DRM on this release."""

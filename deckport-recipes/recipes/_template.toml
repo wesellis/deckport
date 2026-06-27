@@ -1,0 +1,45 @@
+# Copy this to recipes/<slug>.toml and fill it in.
+# Keep status honest: leave it "unverified" until a real Deck confirms it.
+
+[game]
+title       = ""
+slug        = ""
+aliases     = []
+type        = "native"          # native | proton
+engine      = "other"           # godot | love | unity | gamemaker | renpy | native | other
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = ""
+launch_options = ""
+requires_files = []
+
+[proton]                        # only used when type = "proton"
+version    = ""                 # e.g. "GE-Proton9-20"
+winetricks = []                 # e.g. ["vcrun2022", "dxvk", "d3dcompiler_47"]
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+# Optional outbound links. We host NOTHING — these point users at the real sources.
+protondb    = ""    # ProtonDB report URL; leave blank to derive from steam_appid
+steamgriddb = ""    # SteamGridDB game page; leave blank to derive from sgdb_id / title
+
+# Community write-ups: Reddit threads, blog posts, videos. Add as many as help.
+# [[links.guides]]
+# title = "r/SteamDeck: getting it to run"
+# url   = "https://www.reddit.com/r/SteamDeck/comments/..."
+
+[meta]
+status        = "unverified"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""              # platinum | gold | silver | bronze | borked | pending
+                                # (cached community hint; only for games on Steam)
+caveats       = ""

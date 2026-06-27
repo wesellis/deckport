@@ -1,0 +1,73 @@
+[game]
+title       = "WWE 2K16"
+slug        = "wwe-2k16"
+aliases     = ["WWE 2K16", "WWE2K16"]
+type        = "proton"
+engine      = "other"
+steam_appid = "385730"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/Retail/WWE2K16.exe"   # exe lives in the Binaries\Retail subfolder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2016 Yuke's / 2K wrestling game. Large install (~40 GB), Steam appid `385730`.
+
+**DRM:** Delisted (WWE games get pulled as new editions ship + roster/likeness licenses) — only 2K23/2K24/Battlegrounds remain on the store; **bring your own copy**.
+
+**Install:** The real executable sits in `Binaries\\Retail\\WWE2K16.exe`.
+
+**Proton:** Community reports it runs well on Deck — works out of the box under `GE-Proton` (stock `Proton 7+`/`Experimental` also fine).
+
+**Fix:** One common gotcha — the game does NOT install its own Visual C++ redistributable, so **if it fails to launch run the bundled VC++ 2012 redist** under `_CommonRedist/vcredist/2012/vcredist_x64.exe` before first launch. This is the most-reported launch fix in the community.
+
+**Controller:** Native Xbox-pad input works, so the Deck controller maps directly with no extra layout.
+"""
+
+[about]
+developer = "Yuke's"
+publisher = "2K"
+released  = "2016"
+genre     = "Sports / professional wrestling fighting"
+modes     = "Single-player, local multiplayer"
+summary   = "**WWE 2K16** is a professional wrestling game developed by Yuke's and published by 2K, the sequel to WWE 2K15 in the long-running **WWE 2K series**. It launched on PC in March 2016 with 'Stone Cold' Steve Austin as its cover star and boasted what was then the **largest roster in WWE video game history** at roughly 120 playable wrestlers. Modes include exhibition matches, MyCareer, the create-a-wrestler suite, and Universe mode. As an annual licensed sports title it was eventually **delisted** from sale once newer editions shipped and roster/likeness licenses rolled over, and its online services were retired in 2017, leaving single-player and local play."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted annual sports title (no longer sold on Steam — only 2K23/2K24/Battlegrounds remain); configuration only, no links.
+
+**Online:** Servers were shut down in 2017, so this is a single-player / local-multiplayer experience only.
+
+**Fix:** If it won't launch, run the bundled VC++ 2012 redist (`_CommonRedist/vcredist/2012/vcredist_x64.exe`) — the installer skips it.
+
+**Controller:** Deck controller works natively as an Xbox pad; no Steam Input layout needed.
+
+**Licensing:** Wrestler-likeness licensing makes this a rights-heavy entry even as documentation.
+"""
+
+[[links.guides]]
+title = "ProtonDB reports — WWE 2K16 (385730)"
+url   = "https://www.protondb.com/app/385730"
+
+[[links.guides]]
+title = "PCGamingWiki — WWE 2K16 (fixes & launch issues)"
+url   = "https://www.pcgamingwiki.com/wiki/WWE_2K16"
+
+[[links.guides]]
+title = "Steam Community — WWE 2K16 discussions"
+url   = "https://steamcommunity.com/app/385730"

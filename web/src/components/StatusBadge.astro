@@ -1,0 +1,17 @@
+---
+import { STATUS_LABEL, type RecipeStatus } from "../lib/recipes";
+
+interface Props {
+  status: RecipeStatus;
+  verifiedOn?: string;
+}
+
+const { status, verifiedOn } = Astro.props;
+const label = STATUS_LABEL[status];
+---
+
+<span class="badge" data-status={status} title={verifiedOn || undefined}>
+  <span class="led"></span>{label}{
+    status === "working" && verifiedOn ? ` · ${verifiedOn}` : ""
+  }
+</span>

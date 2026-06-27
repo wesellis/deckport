@@ -1,0 +1,72 @@
+[game]
+title       = "Shrine (+ Shrine II)"
+slug        = "shrine"
+aliases     = ["Shrine GZDoom", "Shrine standalone", "Scumhead Shrine"]
+type        = "native"
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "gzdoom"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** Dark Lovecraftian horror games built on `GZDoom` that ship their own assets — **no commercial Doom WAD required**.
+
+**Native Linux builds (recommended):** scumhead publishes self-contained **Linux** ports of both games on itch.io. Each download (e.g. `Shrine_Linux.tar.xz` for Shrine, the "shrine2 Linux Port" zip for Shrine II) bundles its own GZDoom binary plus the game assets — no separate GZDoom install and no file shuffling. Extract the archive, then add the bundled `gzdoom` executable inside the extracted folder as a non-Steam shortcut. Set **Start In** to that folder so it finds its assets.
+
+**Steam Deck note:** add `--no-sandbox` to the launch options when running the bundled GZDoom through Steam, otherwise Steam can hang on launch.
+
+**Alternative (system GZDoom):** you can also run the Windows `.ipk3`/`.pk3` assets through a separately installed GZDoom Flatpak (`org.zdoom.GZDoom`) loaded with `-file`, but the native Linux build is simpler and is the intended path on Deck.
+
+**Two separate games:** Shrine and Shrine II are distinct downloads — add each as its own non-Steam shortcut."""
+
+[about]
+developer = "scumhead"
+publisher = "Independently released (free / pay-what-you-want, itch.io; also ModDB)"
+released  = "Shrine ~2019; Shrine II ~2020 (1.5 standalone ~2021)"
+genre     = "Eldritch horror first-person shooter (standalone GZDoom)"
+modes     = "Single-player"
+summary   = "**Shrine** and **Shrine II** are short, intensely atmospheric **Lovecraftian horror** first-person shooters built on the **GZDoom** engine by solo developer **scumhead**. Both ship as standalone games with their own assets — no commercial Doom WAD is required — and both have native **Linux** builds that bundle GZDoom. The games are defined by a suffocating alien aesthetic, grotesque enemy designs, and oppressive **environmental storytelling**. Both are free / pay-what-you-want on itch.io. Each runs about one to two hours and is among the most distinctive standalone GZDoom releases."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Shrine on itch.io (free / pay-what-you-want, Windows + Linux builds)"
+url   = "https://scumhead.itch.io/shrine"
+
+[[links.guides]]
+title = "Shrine II on itch.io (free / pay-what-you-want, Windows + Linux builds)"
+url   = "https://scumhead.itch.io/shrine-ii"
+
+[[links.guides]]
+title = "GamingOnLinux: scumhead retro FPS titles now have Linux builds"
+url   = "https://www.gamingonlinux.com/2020/12/retro-fps-titles-shrine-lycanthorn-and-lycanthorn-ii-all-now-have-linux-builds/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Two separate free games. Download Shrine from itch.io (scumhead.itch.io/shrine) and Shrine II from itch.io (scumhead.itch.io/shrine-ii); both are free / pay-what-you-want. A Shrine II 1.5 standalone is also mirrored on ModDB. **deckport links nothing for download.**
+
+**Native Linux is the easy path:** Grab the **Linux** build of each (the itch.io desktop client sometimes hides the Linux files — download them from the game page in a browser if so). Extract, then add the bundled `gzdoom` binary inside the extracted folder as a non-Steam shortcut, with **Start In** set to that folder.
+
+**Steam Deck:** add `--no-sandbox` to the launch options so Steam doesn't hang when launching the bundled GZDoom.
+
+**No Doom II needed** for either game — the assets ship in the download.
+
+**Length:** Very short but highly atmospheric — each runs about 1-2 hours."""

@@ -1,0 +1,78 @@
+[game]
+title       = "GRID Autosport"
+slug        = "grid-autosport"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "255220"
+sgdb_id     = ""
+
+[launch]
+binary         = "GRIDAutosport.exe"
+launch_options = "PROTON_DISABLE_NVAPI=1 %command%"
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Status:** Steam Deck **Verified** by Valve and **ProtonDB gold** — runs well on the Deck. Delisted from Steam July 2020 (appid `255220`) over expired car/music licensing, but still launches/plays for owners. Real Windows binary is `GRIDAutosport.exe` (there is also an AVX build, `GRIDAutosport_avx.exe`).
+
+**Run it via Proton, not the native build:** GRID Autosport has a native Linux port by Feral Interactive, but that port is **Nvidia-GPU only** (AMD/Intel GPUs are explicitly unsupported), so it will not run on the Deck's AMD APU. On Deck you run the **Windows build through Proton**, which is why `[game].type = "proton"`.
+
+**Proton:** `Proton Experimental` is the safe default — the July 31 2024 Experimental update fixed the 9.0 regression that had broken GRID Autosport and GRID 2. **Some users still hit startup crashes on Proton 9**; the reliable fix is the `PROTON_DISABLE_NVAPI=1 %command%` launch option (already set above). If it still misbehaves, fall back to `Proton 8.0-5` (reported stable).
+
+**Controller:** Native gamepad/wheel support, so the Deck controls work out of the box without a Steam Input remap.
+
+**DRM:** No GFWL or always-online DRM.
+
+**Other fix:** If it sticks on the launch logo, try `LANG=C %command%` instead.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2014"
+genre     = "Racing"
+modes     = "Single-player, multiplayer (online and splitscreen)"
+summary   = "**GRID Autosport** is a racing game and the third main entry in Codemasters' **GRID series**, built on the **EGO 3.0 engine**. It strips back the spectacle of GRID 2 to refocus on serious **circuit racing**, organized into five disciplines: Touring, Endurance, Open Wheel, Tuner, and Street. The PC version was praised as a return to form and is widely regarded as one of the better mainstream racing games of its era. It was delisted from Steam in July 2020 due to **expired car and music licensing**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — GRID Autosport reports (gold)"
+url   = "https://www.protondb.com/app/255220"
+
+[[links.guides]]
+title = "Steam discussion — Proton 9 crash fix (PROTON_DISABLE_NVAPI=1)"
+url   = "https://steamcommunity.com/app/255220/discussions/0/4361250750310569412/"
+
+[[links.guides]]
+title = "PCGamingWiki — GRID Autosport"
+url   = "https://www.pcgamingwiki.com/wiki/GRID_Autosport"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam July 2020 (appid `255220`) — no longer for sale, but owners can still install and play. deckport links nothing.
+
+**Compatibility:** Steam Deck **Verified** and ProtonDB **gold** — native gamepad support, so no controller remap needed.
+
+**Don't use the native Linux build on Deck:** The Feral native port is Nvidia-GPU only and won't run on the Deck's AMD APU. Run the Windows build through Proton instead (recipe `type = "proton"`).
+
+**Proton:** Some users hit Proton 9 startup crashes. The `PROTON_DISABLE_NVAPI=1 %command%` launch option (set in this recipe) is the reliable fix; otherwise drop to `Proton 8.0-5`.
+
+**Fix:** Logo-stuck startup is also fixable with `LANG=C %command%`.
+
+**Binary:** `GRIDAutosport.exe` (Codemasters), confirmed; an AVX variant `GRIDAutosport_avx.exe` also exists."""

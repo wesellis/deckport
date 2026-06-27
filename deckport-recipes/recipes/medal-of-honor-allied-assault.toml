@@ -1,0 +1,154 @@
+[game]
+title       = "Medal of Honor: Allied Assault"
+slug        = "medal-of-honor-allied-assault"
+aliases     = ["MoH:AA", "MOHAA", "Medal of Honor Allied Assault"]
+type        = "proton"
+engine      = "other"
+steam_appid = "47790"
+sgdb_id     = "35422"
+
+[launch]
+binary         = "MOHAA.exe"
+launch_options = "MESA_EXTENSION_MAX_YEAR=2002 %command%"
+requires_files = []
+
+[proton]
+version    = "Proton Experimental"
+winetricks = []
+notes      = """
+**ProtonDB Tier & Deck Status**
+ProtonDB reports a Silver/Gold-leaning tier (app 47790). The game runs but needs the
+launch-option workaround below to avoid a gray-screen freeze. It is not Valve "Verified";
+treat it as Playable with the fix applied. Reports note it launches reliably from Desktop
+mode and that Gaming Mode can be finicky on first launch.
+
+**Main Executable**
+The game launches via **MOHAA.exe** (the OpenGL/Quake III "id Tech 3" client). Steam,
+GOG ("Medal of Honor - Allied Assault War Chest"), and Origin/EA installs all ship the
+same MOHAA.exe. Note: Steam app 47790 is now listed simply as "Medal of Honor™" — it is
+the same Allied Assault War Chest package.
+
+**CRITICAL: Required Launch Option**
+Medal of Honor: Allied Assault uses older OpenGL extensions that conflict with modern
+Mesa drivers on Linux, causing a completely gray or frozen screen on launch without
+the workaround. You MUST add the following launch option in Steam:
+
+  MESA_EXTENSION_MAX_YEAR=2002 %command%
+
+To set it: Right-click the game in Steam → Properties → General → Launch Options.
+Paste the above line exactly. This caps Mesa's advertised OpenGL extension year and
+prevents the gray-screen freeze.
+
+**Proton Version**
+Proton Experimental is the recommended build. Proton 7.0-3 also works well if you
+prefer a stable fixed version. Avoid Proton 8 on this title — some users report
+audio crackling; Proton 9+ or Experimental resolves this.
+
+The GOG version installed via Heroic Launcher also works with the same Mesa workaround
+applied inside Heroic's per-game environment variable settings.
+
+**Resolution & Widescreen**
+The game natively supports only 4:3 resolutions. For widescreen on the Deck's 1280x800
+screen, the community recommends the widescreen patch from PCGamingWiki. Without it,
+set in-game resolution to 1024x768 and accept letterboxing.
+
+**Performance**
+Allied Assault is a very light load on the Deck. Expect rock-solid 60fps even at
+maximum settings. TDP can be locked as low as 5–6W. Excellent battery life, well
+above 4 hours.
+
+**Steam Deck OLED Setup (July 2024 Guide)**
+A dedicated YouTube guide covering Steam Deck OLED-specific setup (brightness, color
+profile, launch option verification) was published in July 2024. Search YouTube for
+"Medal of Honor Allied Assault Steam Deck OLED" for the most current walkthrough.
+
+**Multiplayer**
+Original EA servers are offline. Community servers still exist — the game's multiplayer
+scene has a small but active community running their own dedicated servers accessible
+via the in-game server browser. Master-server lists (e.g. the 333networks project) keep
+the browser populated.
+
+**Controller / Steam Input**
+There is no native gamepad support — Allied Assault is keyboard + mouse only. On the Deck,
+apply a Steam Input "FPS / Gamepad with Mouse-Trackpad" layout: right trackpad as mouse
+look, triggers for fire/aim, and map WASD + reload/jump/use/lean/sprint to the face and
+grip buttons. Several community templates are shared in the Steam controller-config browser.
+
+**Open-Source Engine Reimplementation (OpenMoHAA)**
+For the smoothest modern experience, the community-maintained **OpenMoHAA** project is an
+open re-implementation of the Allied Assault engine (built on ioquake3 + the F.A.K.K. SDK,
+covering Allied Assault plus the Spearhead and Breakthrough expansions). It runs natively
+on Linux (so no Proton or Mesa workaround needed), adds widescreen, higher resolutions,
+and bug fixes. It requires you to own and copy the original game's data files (pak files)
+from your legitimate Steam/GOG install; it ships no game content of its own. Still pre-1.0
+but the single-player campaign is reported working end to end. See the guide links below.
+
+**Install Method**
+Easiest path: install through Steam and run with Proton + the Mesa launch option. The GOG
+"War Chest" build works equally well via Heroic Launcher (set the Mesa env var per-game) or
+via the official Lutris installer. For a native Linux client, install OpenMoHAA and point it
+at your purchased game's data files.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Medal of Honor: Allied Assault on Steam (app 47790)"
+url   = "https://store.steampowered.com/app/47790/Medal_of_Honor_Allied_Assault_War_Chest/"
+
+[[links.guides]]
+title = "ProtonDB — Medal of Honor: Allied Assault"
+url   = "https://www.protondb.com/app/47790"
+
+[[links.guides]]
+title = "PCGamingWiki — Medal of Honor: Allied Assault"
+url   = "https://www.pcgamingwiki.com/wiki/Medal_of_Honor:_Allied_Assault"
+
+[[links.guides]]
+title = "OpenMoHAA — open-source engine reimplementation (GitHub)"
+url   = "https://github.com/openmoh/openmohaa"
+
+[[links.guides]]
+title = "Steam Community — MoH:AA mostly working on Steam Deck (setup thread)"
+url   = "https://steamcommunity.com/app/1675200/discussions/0/5267542371396281732/"
+
+[[links.guides]]
+title = "Lutris — Medal of Honor: Allied Assault War Chest (OpenMoHAA) installer"
+url   = "https://lutris.net/games/install/39396/view"
+
+[about]
+developer = "2015 Inc"
+publisher = "Electronic Arts"
+released  = "2002-01-22"
+genre     = "First-Person Shooter"
+modes     = "Singleplayer, Multiplayer"
+summary   = """**Medal of Honor: Allied Assault** by 2015 Inc and EA (2002) is the \
+landmark World War II first-person shooter whose lead developers went on to create the \
+original Call of Duty, making it a historically significant piece of the FPS genre. \
+Available on Steam (app 47790) and GOG. On the Steam Deck it runs beautifully under \
+Proton Experimental with one required launch option to prevent a gray-screen freeze, \
+and draws only ~5–6W for exceptional battery life."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+- Binary is MOHAA.exe (same across Steam/GOG/Origin); Steam app 47790 is now listed as "Medal of Honor™".
+- REQUIRED launch option: MESA_EXTENSION_MAX_YEAR=2002 %command% — game will freeze gray without it.
+- Launches reliably from Desktop mode; Gaming Mode can be finicky on first launch.
+- No native gamepad support — apply a Steam Input FPS layout (right trackpad mouse-look + WASD/face-button mapping).
+- No native widescreen; apply PCGamingWiki widescreen patch for proper 16:10 display.
+- Proton 8 may cause audio crackling; use Proton Experimental or Proton 7.0-3.
+- Original multiplayer servers offline; community servers available via in-game browser (master lists exist).
+- GOG version via Heroic also works; set the Mesa env var in Heroic's per-game settings.
+- OpenMoHAA is a native-Linux open-source engine reimplementation (no Proton needed); requires copying your own legally-owned game data files.
+"""

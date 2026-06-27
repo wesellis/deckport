@@ -1,0 +1,70 @@
+[game]
+title       = "Shin Megami Tensei: Synchronicity Prologue"
+slug        = "shin-megami-tensei-synchronicity-prologue"
+aliases     = ["SMT Synchronicity Prologue", "Synchronicity Prologue", "SMT25 Prologue"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "synchronicity.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 6.3-8"
+winetricks = []
+notes      = """
+Binary is synchronicity.exe (the launcher). You MUST run the launcher at least \
+once to configure the gamepad — controllers are NOT detected automatically in-game \
+until the launcher's gamepad setup has been done. After that, data/megaten.exe can be \
+added as a second non-Steam shortcut to skip the launcher.
+
+Community Steam Deck guides recommend Proton 6.3-8; newer GE-Proton builds run but have \
+been reported as less stable. Performance is uneven even when tuned (an unstable ~60fps \
+in places). Recommended in-game: View mode = Windowed, V-Sync = On, and on first launch \
+click the "1x" window button (top-right) with the mouse; set Scaling Filter = pixel in \
+the per-game Steam profile.
+
+Originally Japanese-only; the English release is an unofficial fan translation (by \
+Brento_Bento) applied by dropping its dial.dat into data/font/. Short game, ~2-3 hours. \
+Developed by the Ladybug Team (Den-fami Nico Game Magazine) and published by Atlus as a \
+free anniversary release; the official Atlus download closed on 24 Dec 2017.
+"""
+
+[about]
+developer = "Ladybug Team (Den-fami Nico Game Magazine)"
+publisher = "Atlus"
+released  = "2017"
+genre     = "Action Platformer (Metroidvania)"
+modes     = "Single-player"
+summary   = "Shin Megami Tensei: Synchronicity Prologue is a free 2D action platformer with Metroidvania exploration, developed by the Ladybug Team (Den-fami Nico Game Magazine) and published by Atlus in October 2017 to celebrate the SMT franchise's 25th anniversary. Players control the SMT mascots Jack Frost and Jack-o'-Lantern across a side-scrolling adventure. The game runs approximately 2-3 hours and was originally released only in Japanese; an unofficial English fan translation exists. It was distributed free on Atlus's site as a limited-time download, which closed on 24 December 2017."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Megaten on Deck (Steam Deck setup guide — Synchronicity Prologue section)"
+url   = "https://gist.github.com/moodyssbm/6f7e0bab6b4ebc0afdc6c1c726a67a55"
+
+[[links.guides]]
+title = "Megami Tensei Wiki entry"
+url   = "https://megamitensei.fandom.com/wiki/Shin_Megami_Tensei:_Synchronicity_Prologue"
+
+[[links.guides]]
+title = "PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Shin_Megami_Tensei:_Synchronicity_Prologue"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Free SMT 25th-anniversary release (published by Atlus, developed by Ladybug Team); the official limited-time download closed 24 Dec 2017. Not on Steam, so there is no ProtonDB rating. Binary is synchronicity.exe — you MUST run the launcher once to set up the gamepad before controllers work in-game. Community guides recommend Proton 6.3-8 (GE-Proton reported less stable); performance is uneven (~60fps, dips). Originally Japanese-only; English is an unofficial fan translation. Short, ~2-3 hours."

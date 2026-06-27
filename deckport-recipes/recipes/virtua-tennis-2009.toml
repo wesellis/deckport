@@ -1,0 +1,72 @@
+[game]
+title       = "Virtua Tennis 2009"
+slug        = "virtua-tennis-2009"
+aliases     = ["Virtua Tennis"]
+type        = "proton"
+engine      = "other"
+steam_appid = "10690"
+sgdb_id     = ""
+
+[launch]
+binary         = "VirtuaTennis2009.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Sumo Digital's 2009 tennis game (SEGA), former Steam app `10690`, now delisted.
+
+**Proton:** Sparse ProtonDB data — overall tier is **`pending`** (only one report on record, which rated it platinum), so treat the platinum as unconfirmed. **`GE-Proton` handles the older SecuROM-era exe most reliably**.
+
+**Install:** Add the `.exe` as a non-Steam shortcut and force `GE-Proton` in its compatibility settings.
+
+**Fix:** If you hit a missing `XInput1_3.dll` error, drop that DLL into the prefix's `system32` (the game also expects DirectX 9 / Legacy DirectPlay components, which Proton provides).
+
+**Controller:** Full controller support (native XInput) — connect a pad, then pick the controller in Options.
+
+**Display:** Settings/language are set in `Config.exe`; extra tweaks live in `VT2009.ini` in the install folder."""
+
+[about]
+developer = "Sumo Digital"
+publisher = "SEGA"
+released  = "2009"
+genre     = "Sports (arcade-style tennis)"
+modes     = "Single-player and local 2-player; online play on consoles"
+summary   = "**Virtua Tennis 2009** is an arcade-style tennis game developed by Sumo Digital and published by SEGA, the fourth main entry in SEGA's long-running **Virtua Tennis** series. It builds on **Virtua Tennis 3's match engine** with a **World Tour career mode** where you create and progress a custom player from amateur ranks to the professional tour, plus a set of court mini-games. Reviews were mixed-to-positive (around 70 on PC), with critics praising the accessible gameplay but noting it felt familiar to series veterans. The PC version was later **delisted from Steam** (former app 10690) and is no longer sold there."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Virtua Tennis 2009 (app 10690) reports"
+url   = "https://www.protondb.com/app/10690"
+
+[[links.guides]]
+title = "PCGamingWiki — Virtua Tennis 2009 (DRM, fixes, config)"
+url   = "https://www.pcgamingwiki.com/wiki/Virtua_Tennis_2009"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (former Steam app `10690`).
+
+**DRM:** The European release used SecuROM that misbehaves on modern systems and under Proton — **the Polish/Czech release was DRM-free, the practical choice**.
+
+**Status:** Barely any ProtonDB data — overall tier is `pending` (a single report, which was positive/platinum), so treat it as untested here, hence `needs-test`.
+
+**Fix:** If you hit a missing `XInput1_3.dll` error, drop that DLL into the prefix's `system32`.
+
+**Controller:** Full native XInput pad support; PC version has local 2-player only.
+
+**Binary:** `VirtuaTennis2009.exe`. deckport links nothing."""

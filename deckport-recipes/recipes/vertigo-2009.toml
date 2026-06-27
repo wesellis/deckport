@@ -1,0 +1,74 @@
+[game]
+title       = "Vertigo"
+slug        = "vertigo-2009"
+aliases     = ["Vertigo Spinout", "Spinout"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Vertigo.exe"   # best guess — single-exe DX9 title; verify against your install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["d3dx9", "vcrun2008"]
+notes      = """
+**Game:** Icon Games' 2009 sci-fi rolling-ball game (a Wii/PSP-era 'Spinout' port, Marble Madness / Super Monkey Ball style), published by Playlogic. Small DirectX 9 budget title; never sold on Steam.
+
+**Proton:** Use `GE-Proton` (`proton_experimental` also works).
+
+**Fix:** If it fails to start, add the `d3dx9` + `vcrun2008` winetricks above.
+
+**Display:** Widescreen is a hex-edit on the NoCD exe: at offset `1D9528` replace bytes `AB AA AA 3F` with `39 8E E3 3F` for 16:9 (see the WSGF entry for other ratios).
+
+**Controller:** It's pure directional ball-steering, so a Steam Input layout mapping the left stick to the movement keys plays well even though the PC port has no native gamepad config.
+
+**Install:** Disc/ISO release — normal-install the game in the prefix (or copy an installed folder in) and add the resulting `.exe` as a non-Steam shortcut; no ProtonDB Deck reports exist yet, so this is `needs-test`."""
+
+[about]
+developer = "Icon Games"
+publisher = "Playlogic Entertainment"
+released  = "2009"
+genre     = "Action puzzle / rolling-ball"
+modes     = "Single-player (Arcade, Practice, Time Trial, Career) and local multiplayer for up to 4 players (Time Trial, Xorb Football, Xorb Bowling, Death Match)"
+summary   = "**Vertigo** is a futuristic ball-rolling action-puzzle game in the vein of **Marble Madness** and **Super Monkey Ball**. Players guide a sphere called **Xorber** across 54 suspended courses spread over nine themed worlds, navigating traps, gaps, and precision obstacles. Developed by Icon Games and published by Playlogic, it launched in 2009 for Wii, PSP, and PC. The PC version was a low-budget **DirectX 9** release that never appeared on **Steam**, leaving it long out of print."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "WSGF — Vertigo widescreen hex-edit (offset 1D9528)"
+url   = "https://www.wsgf.org/dr/vertigo"
+
+[[links.guides]]
+title = "Vertigo (2009) — MobyGames entry (platforms, screenshots, credits)"
+url   = "https://www.mobygames.com/game/36483/vertigo/"
+
+[[links.guides]]
+title = "How to add non-Steam games to Steam Deck and assign Proton"
+url   = "https://github.com/GloriousEggroll/proton-ge-custom"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Not on Steam:** No appid and no ProtonDB entry (the 'Vertigo' on ProtonDB is the unrelated Alfred Hitchcock title) — `protondb_tier` is 'pending' / `status` 'needs-test' on the Deck.
+
+**Fix:** Old DX9 title — if it won't launch try the `d3dx9` + `vcrun2008` winetricks.
+
+**Display:** Default 4:3 needs the offset-`1D9528` hex-edit for 16:9 (WSGF).
+
+**Controller:** No native gamepad support — bind a Steam Input keyboard layout (left stick to steering).
+
+**Verify your copy:** Binary name `Vertigo.exe` is a best-guess (single-exe DX9 title; no public file listing found to confirm it) — check your install folder and point the shortcut at the real `.exe`."""

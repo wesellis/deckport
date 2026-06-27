@@ -1,0 +1,74 @@
+[game]
+title       = "Assassin's Creed III"
+slug        = "assassin-s-creed-iii"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "208480"
+sgdb_id     = ""
+
+[launch]
+binary         = "AC3SP.exe"   # single-player exe (AC3MP.exe = multiplayer; uses Uplay/Ubisoft Connect)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Target:** Original 2012 Assassin's Creed III, delisted from Steam in 2019 when the Remastered edition (a SEPARATE appid, still for sale) launched. This recipe targets the delisted original, appid `208480`. ProtonDB gold; community confirms it runs on Deck.
+
+**DRM:** Launches through Uplay / Ubisoft Connect. On first run it wants to register on Ubisoft servers, and the legacy in-game browser is unsupported. **If the launcher window hangs or shows a blank/black panel, do a full Deck restart and relaunch.**
+
+**Proton:** Most reliable path is `GE-Proton` (better Ubisoft Connect overlay/login handling than stock). If the bundled launcher fails, install Ubisoft Connect as its own non-Steam game and point that prefix at `AC3SP.exe`.
+
+**Controller:** Reports describe a recurring gamepad-detection issue: the game/Ubisoft Connect can fail to see the controller, and on some Proton builds it's only fixed by **disabling Steam Input** (game Properties → Controller → Disable Steam Input) and selecting the X360 controller in the in-game options. Proton 8.0-5 works with Steam Input off; Proton Experimental has shown the detection failure. The game does NOT cleanly hand off to a native gamepad out of the box — expect to toggle Steam Input. If the pad isn't recognised after launch, set a Desktop controller layout before starting.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Ubisoft Montreal"
+publisher = "Ubisoft"
+released  = "2012"
+genre     = "Action-adventure, stealth"
+modes     = "Single-player (original multiplayer servers are dead)"
+summary   = "The fifth main entry in the **Assassin's Creed** series, built on Ubisoft's new **AnvilNext** engine. Set in Colonial America from 1754-1783, it follows Haytham Kenway and his son Ratonhnhaké:ton (Connor), a half-Mohawk Assassin caught up in the events of the American Revolution. It introduced large-scale **wilderness exploration**, **naval combat**, and a frontier setting to the franchise. Released to strong sales but a mixed-to-positive critical reception, partly due to numerous launch glitches; the original 2012 release was later **delisted from Steam** following the 2019 Remastered edition."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Assassin's Creed III (appid 208480)"
+url   = "https://www.protondb.com/app/208480"
+
+[[links.guides]]
+title = "Proton issue #8492 — AC III gamepad detection on Steam Deck"
+url   = "https://github.com/ValveSoftware/Proton/issues/8492"
+
+[[links.guides]]
+title = "Delisted Games — Assassin's Creed III (original vs Remastered)"
+url   = "https://delistedgames.com/assassins-creed-iii/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Right appid:** Targets the DELISTED original (appid `208480`), NOT the Remastered edition (appid `911400`) which remains for sale on Steam — don't confuse them.
+
+**DRM:** Ubisoft Connect / Uplay is required and can be the only friction point on Deck: first-launch server registration plus the dead legacy in-game browser may need a full Deck restart, and `GE-Proton` handles the launcher login most reliably (fallback: run Ubisoft Connect as a non-Steam game and launch `AC3SP.exe` from it).
+
+**Controller:** Not plug-and-play on Deck. Community reports show the controller can go undetected; the common fix is to DISABLE Steam Input and pick the X360 controller in the in-game options. Proton 8.0-5 + Steam Input off is a known-good combo (Proton Experimental had detection failures).
+
+**Modes:** Multiplayer servers for the original are long dead — single-player only.
+"""

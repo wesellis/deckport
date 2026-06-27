@@ -1,0 +1,77 @@
+[game]
+title       = "F1 2012"
+slug        = "f1-2012"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "208500"
+sgdb_id     = ""
+
+[about]
+developer = "Codemasters Birmingham"
+publisher = "Codemasters"
+released  = "2012"
+genre     = "Racing simulation"
+modes     = "Single-player, online multiplayer"
+summary   = """
+**F1 2012** is an officially licensed Formula One racing simulation based on the 2012 FIA Formula One World Championship, the fourth entry in **Codemasters' F1 series** and the first released under the Codemasters Racing label. Built on the studio's **EGO engine**, it features all of the season's circuits, teams and drivers, plus a **Young Driver Test** tutorial, a quick Season Challenge mode and a multi-year **Career mode**. It was well received for its handling and presentation.
+
+The game was later **delisted from Steam** after Codemasters' Formula One licence expired and moved on to newer titles."""
+
+[launch]
+binary         = "f1_2012.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `208500`). ProtonDB gold; community reports a stable 60fps experience on Deck with graphics on High + 4xMSAA + Vsync.
+
+**Binary:** Main exe is `f1_2012.exe` (some builds use `GameStart.exe`).
+
+**GFWL:** Unlike F1 2011, **F1 2012 does NOT require fighting Games for Windows Live** — it generally just opens and plays under Proton.
+
+**Proton:** `GE-Proton` is the most reliable; stock `proton_experimental` also works for most.
+
+**Fix:** If the title hangs at launch, a 64-bit prefix with `dxvk` + `esync` (the usual `GE-Proton` defaults) clears it.
+
+**Controller:** Works natively — Steam should map the Deck as an Xbox pad out of the box.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — F1 2012 (appid 208500) reports"
+url   = "https://www.protondb.com/app/208500"
+
+[[links.guides]]
+title = "SteamDB — F1 2012 (appid 208500)"
+url   = "https://steamdb.info/app/208500/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Status:** Delisted from Steam (appid `208500`) but ProtonDB-gold with multiple Deck/Linux reports of a stable 60fps experience, so it should play well — flagged `needs-test` until confirmed on a real Deck.
+
+**Display:** Tends to default to `1280x720` rather than `1920x1080`; bump resolution in-game if you want native.
+
+**Cosmetic:** Minor menu screen-tearing reported (no gameplay impact).
+
+**Controller:** Native (maps as Xbox pad).
+
+**Multiplayer:** Online play is largely dead — treat this as a single-player/career recipe."""

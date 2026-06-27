@@ -1,0 +1,76 @@
+[game]
+title       = "Velocity 2X"
+slug        = "velocity-2x"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "337180"
+sgdb_id     = ""
+
+[launch]
+binary         = "Velocity2X.exe"   # Windows build; a native Linux build also ships (no Proton needed if you launch that)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 337180`, pulled `2021-09-21` when the Sierra/FuturLab publishing deal lapsed; library owners keep access).
+
+**Proton:** ProtonDB tier gold — runs well under Proton on the Deck. `GE-Proton` is a safe pick for the Windows build; `proton_experimental` or `Proton 9.0` also work.
+
+**DRM:** No DRM/GFWL hoops.
+
+**Native build:** FuturLab also shipped an **OFFICIAL native Linux build** via Steam Play, so if your copy includes it you can launch that natively and skip Proton entirely.
+
+**Setup:** No special launch options or winetricks needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "FuturLab"
+publisher = "Sierra Entertainment (Activision)"
+released  = "2014"
+genre     = "Top-down shoot 'em up with 2D platforming"
+modes     = "Single-player"
+summary   = "**Velocity 2X** is a fast-paced top-down shoot 'em up built around the **Quarp Drive** teleport mechanic, where the player warps a ship through hazards and drops teleport beacons to backtrack, alternating with on-foot **2D platforming** sections inside enemy bases. Developed by British studio **FuturLab** as the sequel to **Velocity Ultra**, it launched in 2014 and was met with critical acclaim for its blend of arcade shooting, puzzle-platforming, and tight score-chasing design. The PC version was published under Activision's **Sierra** brand and was later **delisted from Steam** after that publishing arrangement lapsed."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 337180)"
+url   = "https://www.protondb.com/app/337180"
+
+[[links.guides]]
+title = "Velocity 2X on PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Velocity_2X"
+
+[[links.guides]]
+title = "Velocity 2X delisting details (Delisted Games)"
+url   = "https://delistedgames.com/velocity-2x/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Delisted from Steam `2021-09-21` (publishing deal lapsed); single-player, no servers to worry about.
+
+**Proton:** ProtonDB gold — community reports confirm it runs on Linux/Proton, so it should play well on the Deck, but **this exact recipe hasn't been hardware-verified**.
+
+**Controller:** Native gamepad support (X-input); plays great with the Deck's built-in controls — the only quirk is you can't rebind controls in-game and a non-X-input pad won't be detected, neither of which affects the Deck.
+
+**Native build:** An official native Linux build also exists if your copy has it.
+
+**Install:** Confirm the actual binary name from your install."""

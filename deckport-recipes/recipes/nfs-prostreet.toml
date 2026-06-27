@@ -1,0 +1,69 @@
+[game]
+title       = "Need for Speed: ProStreet"
+slug        = "nfs-prostreet"
+aliases     = ["NFS ProStreet", "ProStreet", "nfsps.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "nfsps.exe"   # the retail launcher exe lives in the game root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** 2007 EA Black Box racer (delisted — bring your own copy).
+
+**Proton:** Boots under Proton Experimental. If it refuses to launch on a newer Proton, fall back to `GE-Proton 9-25`, which community reports as reliable for this title.
+
+**Patch first:** Apply the official **patch 1.1** to the retail install before playing — several issues (including crashes) occur on an unpatched copy.
+
+**Fix:** Install ThirteenAG's Fusion Fix into the game root (next to `nfsps.exe`) for proper widescreen, HUD/FOV correction, FMV fixes and crash fixes; edit `NFSProStreet.FusionFix.ini` to taste. The bundled `NFSProStreet.GenericFix` component adds stability and save handling.
+
+**Display:** Force a 16:9 resolution (e.g. `1280x800` on the Deck panel) and cap to `60fps` for a smooth ride.
+"""
+
+[about]
+developer = "EA Black Box"
+publisher = "Electronic Arts"
+released  = "2007"
+genre     = "Racing"
+modes     = "Single-player career, online multiplayer (official servers shut down; offline play unaffected)"
+summary   = "The eleventh main **Need for Speed** title, ProStreet trades the **series'** open-world police chases for **legal, closed-track racing** across four disciplines: Grip, Drag, Drift, and Speed Challenge. The career follows newcomer Ryan Cooper climbing organized street-racing tiers to dethrone five reigning kings. Praised for its deep **car customization** and **damage modeling** but criticized for repetitive events and the loss of open-world freedom, it drew mixed reviews yet still sold over five million copies. It was **delisted** from digital storefronts and is no longer sold."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted — configuration only, no links.
+
+**Known bug:** Choosing any language other than English causes an **infinite load before races** — keep the language English.
+
+**Display:** Apply Fusion Fix for modern displays.
+
+**Controller:** The game speaks `XInput`, so the Steam Deck gamepad works once it's seen as an Xbox pad. For rock-solid gamepad support add the `NFS_XtendedInput` mod (Fusion Fix also enables right-stick free-look).
+
+**Tier note:** Marked **silver** — this is a non-Steam EA title added to Steam as a shortcut, so there is little public ProtonDB data, and a smooth experience depends on patch 1.1, the Fusion Fix mod, picking a working Proton (Experimental or GE-Proton) and the English-language workaround. Treat **gold** as optimistic until reports confirm it.
+
+**Steam:** `steam_appid` left blank — ProStreet has a dormant SteamDB record (`220380`) but no purchasable Steam store page; it ships via the EA App. Run it on the Deck by adding `nfsps.exe` as a non-Steam shortcut and forcing Proton.
+"""
+
+[[links.guides]]
+title = "ThirteenAG Fusion Fix release (NFS ProStreet)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/nfsps"
+
+[[links.guides]]
+title = "PCGamingWiki: Need for Speed: ProStreet"
+url   = "https://www.pcgamingwiki.com/wiki/Need_for_Speed:_ProStreet"

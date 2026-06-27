@@ -1,0 +1,82 @@
+[game]
+title       = "Thief II: The Metal Age"
+slug        = "thief-2"
+aliases     = ["Thief 2", "Thief 2 Metal Age", "Thief II Metal Age"]
+type        = "proton"
+engine      = "other"
+steam_appid = "211740"
+sgdb_id     = ""
+
+[launch]
+binary         = "thief2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Thief II: The Metal Age (2000, Looking Glass Studios / Eidos) — stealth masterpiece. Sold on **Steam** (AppID 211740) and on **GOG** (~$7 on sale).
+
+**Install:** The simplest route on Deck is the **Steam** version run through **GE-Proton**. The GOG copy works too via **Heroic Launcher** with **GE-Proton**.
+
+**Patch:** Install **T2Fix** (the community comprehensive patch by **Xanfre**, current ~v1.27d on ModDB / GitHub). It bundles **NewDark** plus the official 1.19 patch, adding bug fixes and widescreen/high-res support. If the Inno-Setup installer EXE misbehaves under Proton, extract its files manually instead. Do **not** install Thief 2 inside a protected folder (Program Files) and do not set any Windows compatibility modes on the executable.
+
+**Overlay:** **Disable the Steam overlay** for Thief II — the DarkEngine renderer causes flickering with the overlay enabled. Right-click the game in Steam → Properties → uncheck "Enable the Steam Overlay while in-game."
+
+**Controller:** No native gamepad support — use a Steam Input keyboard/mouse mapping layout. Community profiles exist for the Deck."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Thief II: The Metal Age — GOG page"
+url   = "https://www.gog.com/en/game/thief_2_the_metal_age"
+
+[[links.guides]]
+title = "T2Fix — ModDB"
+url   = "https://www.moddb.com/mods/t2fix"
+
+[[links.guides]]
+title = "T2Fix — GitHub (Xanfre)"
+url   = "https://github.com/Xanfre/T2Fix"
+
+[[links.guides]]
+title = "ProtonDB — Thief II: The Metal Age"
+url   = "https://www.protondb.com/app/211740"
+
+[[links.guides]]
+title = "PCGamingWiki — Thief II"
+url   = "https://www.pcgamingwiki.com/wiki/Thief_II:_The_Metal_Age"
+
+[about]
+developer = "Looking Glass Studios"
+publisher = "Eidos Interactive"
+released  = "2000"
+genre     = "Stealth / first-person"
+modes     = "Single-player"
+summary   = "**Thief II: The Metal Age** is a **stealth game** developed by **Looking Glass Studios** in 2000 — the sequel to Thief: The Dark Project, shifting the setting to a more industrialised city and introducing high-tech enemies. It is widely considered one of the finest stealth games ever made, emphasising shadow, sound and patience over combat. Available on **Steam** (AppID 211740) and **GOG**, and playable on Steam Deck via GE-Proton with the community T2Fix patch."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Paid game:** on Steam (AppID 211740) and ~$7 on GOG.
+
+**ProtonDB:** Gold trending (Platinum best-reported, ~53 reports) — runs well with GE-Proton once patched.
+
+**Patch required:** Install T2Fix (Xanfre, ~v1.27d on ModDB / GitHub). It bundles NewDark + the official 1.19 patch, adding widescreen, bug fixes and quality-of-life improvements. If the installer EXE misbehaves under Proton, extract its files manually instead.
+
+**Overlay:** Disable the Steam overlay — causes flickering on DarkEngine games.
+
+**Controller:** No native gamepad support. Apply a community Steam Input layout for keyboard/mouse emulation.
+
+**Install location:** Install outside Program Files to avoid permission issues."""

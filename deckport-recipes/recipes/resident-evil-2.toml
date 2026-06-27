@@ -1,0 +1,71 @@
+[game]
+title       = "Resident Evil 2: Seamless HD Project"
+slug        = "resident-evil-2"
+aliases     = ["Biohazard 2", "RE2", "Resident Evil 2 Seamless HD"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5465779"       # https://www.steamgriddb.com/game/5465779
+
+[launch]
+binary         = "RE2Launcher.exe"   # GOG 1998 release; Classic REbirth's ddraw.dll hooks this and opens its config window
+launch_options = "WINEDLLOVERRIDES=\"dinput.dll,ddraw.dll=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"     # FMVs only play correctly under Proton-GE
+winetricks = []
+notes      = """
+**Mod:** The Seamless HD Project — a community full-game mod that overhauls the 1998 PC Resident Evil 2 with HD pre-rendered backgrounds and seamless room transitions, built on Gemini's `Classic REbirth`. Needs the base game (bring your own legally-owned classic 90s PC copy).
+
+**Patch on Windows first:** **the Seamless HD Project / Classic REbirth patcher uses Windows APIs and will NOT run under Linux/Proton.** Once the game folder is fully patched it copies over and runs fine on Deck.
+
+**Install:** On Deck, install the base via `Heroic`, patch on Windows (`Classic REbirth` then the Seamless HD Project), copy the patched folder over, add the `ddraw` override above, and run under `Proton-GE` so the FMVs play.
+
+**Config:** `Classic REbirth` replaces `ddraw.dll` and opens its own config window at launch — set `Color` to `RGB888` (required by Seamless HD), leave `Legacy Framerate` unchecked; `F8` toggles resolutions.
+
+**Filenames:** Linux is case-sensitive, so keep all file/folder names exact."""
+
+[about]
+developer = "Capcom"
+publisher = "Capcom"
+released  = "1998"
+genre     = "Survival horror"
+modes     = "Single-player"
+summary   = "**Resident Evil 2** is a **survival horror** game in which rookie cop Leon S. Kennedy and college student Claire Redfield fight to escape a Raccoon City overrun by zombies during a viral outbreak. A landmark of the genre, it uses **fixed pre-rendered camera angles**, **tank controls**, and a two-scenario **'Zapping System'** that interlocks the two characters' stories. Originally a 1998 PlayStation hit, it was ported to Windows 9x; that classic PC version went **unsold and unavailable for decades**. This recipe targets that 1998 PC version overhauled by the community **Seamless HD Project** mod, not the separate **2019 remake**."
+
+[[links.guides]]
+title = "Seamless HD Project — official site (RE2SHDP)"
+url   = "https://www.reshdp.com/re2/"
+
+[[links.guides]]
+title = "Classic REbirth (Gemini) — patch home"
+url   = "https://classicrebirth.com/"
+
+[[links.guides]]
+title = "How to run RE2 (1998) GOG with Classic Rebirth + Seamless HD Project (GBAtemp)"
+url   = "https://gbatemp.net/threads/how-to-run-resident-evil-2-1998-gog-with-classic-rebirth-and-seamless-hd-project.660172/"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** The Seamless HD Project is a free community mod that needs the base game — bring your own legally-owned classic 90s PC copy.
+
+**Patch on Windows:** The patcher is Windows-only, so patch the folder on a Windows PC, then copy it to the Deck (it runs fine under Proton afterward).
+
+**Launcher:** `Classic REbirth` replaces the launcher with `ddraw.dll`; the in-folder exe is `RE2Launcher.exe` on the GOG release but may differ on other classic releases — confirm yours.
+
+**Known-good base:** `Classic REbirth` + the `ddraw` override + `Proton-GE` (for FMVs), `Color` set to `RGB888`.
+
+**Controller:** Works through the launcher, but the 'aim' button rebind resets each launch, so rebind it once per session.
+
+**Not the remake:** appid `883710` is the 2019 remake (a different, still-for-sale game) — this recipe is the classic 1998 version, which is not on Steam."""

@@ -1,0 +1,79 @@
+[game]
+title       = "FUEL"
+slug        = "fuel"
+aliases     = ["FUEL", "GameSetup.exe", "Fuel.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = "12800"
+sgdb_id     = ""
+
+[launch]
+binary         = "GameSetup.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 9.0-4"
+winetricks = []
+notes      = """
+**Game:** 2009 Asobo Studio / Codemasters open-world racer (a record-holdingly huge map).
+
+**Install:** Delisted — bring your own copy.
+
+**Proton:** Force `Proton 9.0x` in `Properties > Compatibility` (`proton_experimental` also works).
+
+**Launcher / binary:** Steam launches `GameSetup.exe` (the FUEL config/startup loader) by default — that is the correct launch target, not `Fuel.exe` directly. The core engine exe is `Fuel.exe`, but launching it bare skips required setup.
+
+**SecuROM (DRM blocker #1):** The Steam build ships with SecuROM. `SecuLauncher.exe` does an online activation against your Steam CD key (`Manage > CD keys`) before it hands off to the game. Activation often fails on the old SecuROM servers; the community workaround swaps the SecuLauncher in for the setup launcher (rename `GameSetup.exe` to `GameSetup.original.exe`, then copy `SecuLauncher.exe` to `GameSetup.exe`) so the game starts without the broken activation gate.
+
+**GFWL (DRM blocker #2):** **After SecuROM, FUEL still hangs at a black 'Loading...' because the bundled Games for Windows LIVE service is dead.** The clean fix is the Xliveless GFWL bypass — **drop the replacement `xlive.dll` and `xlive.ini` into the game folder** so the game launches AND can still save/load without GFWL (no GFWL client install needed under Proton this way). Edit the `Player1` name in `xlive.ini` to keep matching an existing save.
+
+**Cosmetic:** Optional polish — Vetron's Unofficial Patch #5 and the 'FUEL: REFUELED' overhaul, installed via `JSGME` (Generic Mod Enabler); `DXVK` is already provided by Proton.
+
+**Controller:** Native gamepad support is good (game was console-released), so the Steam Deck controller works out of the box; if menus mis-map, apply a community Steam Input layout.
+"""
+
+[about]
+developer = "Asobo Studio"
+publisher  = "Codemasters"
+released   = "2009"
+genre      = "Open-world arcade racing"
+modes      = "Single-player, online multiplayer"
+summary    = "**FUEL** is an **open-world arcade racing** game set in a post-apocalyptic United States ravaged by extreme weather, where players freely roam an **enormous seamless map** driving cars, trucks, buggies, ATVs and motorcycles across deserts, forests and mountains. Its roughly 5,560-square-mile world (about the size of Connecticut) earned it a **Guinness World Record** for the largest playable area in a console game. Developed by Asobo Studio and published by Codemasters in 2009, it received mixed-to-favorable reviews praising its scale but criticizing repetitive events. It was later **delisted** from digital storefronts."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = """
+**Supply your own copy:** Delisted — configuration only, no links.
+
+**Two DRM blockers, both must be handled:** This is why the recipe is fiddly. (1) **SecuROM** — its online activation via `SecuLauncher.exe` frequently fails; community fix swaps SecuLauncher in as `GameSetup.exe`. (2) **GFWL** — the Xliveless bypass (`xlive.dll` + `xlive.ini`) is mandatory or the game hangs at Loading; saves work once it's in place.
+
+**Binary:** Launch `GameSetup.exe` (Steam's default), not `Fuel.exe` directly.
+
+**Proton:** Force `Proton 9.0x`.
+
+**Controller:** Native controller support works on Deck.
+
+**Cosmetic:** Optional Unofficial Patch #5 + FUEL: REFUELED via `JSGME`.
+"""
+
+[[links.guides]]
+title = "Play FUEL on the Steam Deck (community guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3007886375"
+
+[[links.guides]]
+title = "How to Play FUEL without GFWL while still being able to Save"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=268031297"
+
+[[links.guides]]
+title = "Fuel — PCGamingWiki (DRM, fixes, mods)"
+url   = "https://www.pcgamingwiki.com/wiki/Fuel"

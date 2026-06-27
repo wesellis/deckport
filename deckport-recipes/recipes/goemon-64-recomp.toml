@@ -1,0 +1,54 @@
+[game]
+title       = "Goemon 64: Recompiled"
+slug        = "goemon-64-recomp"
+aliases     = ["Mystical Ninja Starring Goemon Recompiled", "Goemon64Recomp", "Goemon N64 Recomp"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Goemon64Recompiled"
+launch_options = ""
+requires_files = ["Mystical Ninja Starring Goemon (USA) N64 ROM dump"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = "Native Linux binary — no Proton needed. Uses the RT64 renderer with Vulkan backend, which runs well on Steam Deck's RDNA2 GPU. Grab the Goemon64Recompiled-Linux-X64 build (or the Flatpak) from the Releases page; the executable is named Goemon64Recompiled. In Desktop Mode, right-click it and 'Add to Steam', then return to Gaming Mode. On first launch, browse to your Mystical Ninja Starring Goemon (USA) .z64 N64 ROM file. Runs at 60fps with 16:9 widescreen. Native gamepad support (deadzone + gyro options); for gyro aiming set Controller Settings > Gyro Behavior to 'As Mouse'. Download from GitHub: github.com/klorfmorf/Goemon64Recomp. Built on the N64Recomp framework by Mr-Wiseguy."
+
+[about]
+developer = "klorfmorf (fan port; N64Recomp framework by Mr-Wiseguy)"
+publisher = "klorfmorf"
+released  = "2025"
+genre     = "Action-Adventure / Platformer 3D"
+modes     = "Single-player"
+summary   = "Goemon 64: Recompiled is a native PC port of Mystical Ninja Starring Goemon (N64, 1997) built using the N64Recomp framework by Mr-Wiseguy. First released in early 2025 (latest dev build v0.2.0-dev, January 2026), it delivers a native Linux binary with Vulkan rendering via RT64, 60fps gameplay, 16:9 widescreen, and full controller support. On first run the game prompts for a Mystical Ninja Starring Goemon (USA) N64 ROM file. No emulator or Proton layer is required."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "GitHub: klorfmorf/Goemon64Recomp"
+url   = "https://github.com/klorfmorf/Goemon64Recomp"
+
+[[links.guides]]
+title = "N64Recomp framework by Mr-Wiseguy"
+url   = "https://github.com/Mr-Wiseguy/N64Recomp"
+
+[[links.guides]]
+title = "Releases (Linux X64 / Flatpak / Steam Deck builds)"
+url   = "https://github.com/klorfmorf/Goemon64Recomp/releases"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Not a Steam title and not run via Proton, so there is no ProtonDB rating — it's a native Linux ELF binary. Requires a Mystical Ninja Starring Goemon (USA) .z64 N64 ROM — browse to it on first launch (US ROM only; the game is not an emulator and won't accept other ROMs). Vulkan renderer runs on Steam Deck RDNA2 GPU. 60fps and 16:9 widescreen supported. Native gamepad support; gyro aiming needs Gyro Behavior set to 'As Mouse' in Steam controller settings."

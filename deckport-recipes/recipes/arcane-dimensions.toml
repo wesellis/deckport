@@ -1,0 +1,83 @@
+[game]
+title       = "Arcane Dimensions (Quake Total Conversion)"
+slug        = "arcane-dimensions"
+aliases     = ["Arcane Dimensions Quake", "AD Quake", "Quake AD"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "ironwail"
+launch_options = "-game ad"
+requires_files = [
+  "Quake PAK files (pak0.pak and pak1.pak from Quake — Steam, GOG, or any legally-owned copy)",
+  "Arcane Dimensions mod folder — free download from ModDB",
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Overview:** Widely considered the best Quake content ever made — **30+ new maps**, new monsters, new weapons, and a massive expansion of the original Quake formula.
+
+**Requires:** Quake PAK files plus the free AD mod folder from ModDB.
+
+**Proton:** Recommended engine is **Ironwail**, a high-performance GLQuake fork with native Linux binaries that auto-detects a Steam Quake installation.
+
+**Install:** Install `Ironwail`, create an `ad` subdirectory inside the Quake data folder, extract the Arcane Dimensions files there, and launch Ironwail with `-game ad`.
+
+**Alternative:** `vkQuake` works and has a Flatpak package available on Flathub. Both engines have native Linux binaries.
+
+**Controller:** These source ports (Ironwail / vkQuake, both Quakespasm-based) have limited built-in gamepad handling. On Steam Deck, add the engine as a non-Steam game and apply a Steam Input layout (sticks mapped to movement + mouselook) for a smooth controller experience — do not assume full native gamepad support.
+
+**Optional:** The Copper mod pairs well with AD for extra QoL improvements but is optional."""
+
+[about]
+developer = "SimonOC and 20+ community contributors"
+publisher = "Independently released (free, SimonOC / func_msgboard / ModDB)"
+released  = "2016 (first release); AD 1.8.1 and ongoing updates"
+genre     = "First-person shooter (Quake total conversion)"
+modes     = "Single-player"
+summary   = "**Arcane Dimensions** is a **total conversion** mod for **Quake** developed by SimonOC with contributions from over twenty community mappers. It is widely regarded as the finest Quake content ever produced: **30+ new maps** ranging from gothic castles to alien towers, new enemy types, new weapons, new game mechanics, and a sweeping expansion of everything the original Quake engine can do. Released for free, it requires a legal copy of Quake's PAK files and a modern source port — **Ironwail** is the community-recommended engine on Linux and Steam Deck."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Arcane Dimensions mod page (ModDB) — official free download"
+url   = "https://www.moddb.com/mods/arcane-dimensions"
+
+[[links.guides]]
+title = "Ironwail releases (andrei-drexler/ironwail) — native Linux source port"
+url   = "https://github.com/andrei-drexler/ironwail/releases"
+
+[[links.guides]]
+title = "How I play Quake in the current year — use Ironwail or Quakespasm-Spiked"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=732999296"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires owned Quake game files (`pak0.pak` + `pak1.pak` from Steam, GOG, or any legal copy — **not included**).
+
+**Mod:** Download Arcane Dimensions mod folder for free from ModDB.
+
+**Engine:** Use `Ironwail` or `vkQuake` as the engine — both have native Linux binaries.
+
+**Controller:** Built-in gamepad support is limited. Add the engine as a non-Steam game and apply a Steam Input layout for proper Steam Deck controls.
+
+**Install:** Place the AD files in a subfolder named `ad` inside the Quake data directory (e.g., `~/.steam/steam/steamapps/common/Quake/ad/`). Launch Ironwail with `-game ad`.
+
+**Optional:** The Copper mod pairs well with AD for QoL improvements.
+
+**Note:** deckport links nothing."""

@@ -1,0 +1,83 @@
+[game]
+title       = "Fall Guys"
+slug        = "fall-guys"
+aliases     = ["Fall Guys: Ultimate Knockout", "FallGuys_client.exe"]
+type        = "proton"
+engine      = "unreal"
+steam_appid = ""
+sgdb_id     = "5173422"
+
+[launch]
+binary         = "FallGuys_client.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Delisting:** Fall Guys was delisted from Steam in June 2022 and is now free-to-play exclusively via the Epic Games Store.
+
+**Install:** On Steam Deck, install `Heroic Games Launcher` from Discover (Desktop Mode), log in to your Epic Games account, then install Fall Guys through Heroic.
+
+**Proton:** In the game settings within Heroic, **force `Proton Experimental`** as the compatibility tool. `GE-Proton` is an alternative if Experimental has issues.
+
+**Anti-Cheat:** Easy Anti-Cheat (`EAC`) is Proton-compatible for this title, but setup is fiddly and game updates have intermittently broken it (reports of the EAC runtime not initializing). If you hit an "Anti-cheat not initialized" error, in Heroic's settings use **Run EXE on Prefix** to run `EpicOnlineServices/EpicOnlineServicesInstaller.exe` and `EasyAntiCheat/EasyAntiCheat_Setup.exe` from the install folder, and toggle the **EasyAntiCheat Runtime** option (uncheck/recheck) in Heroic's settings.
+
+**Gaming Mode:** Add Heroic to Steam as a non-Steam game to launch from Gaming Mode.
+"""
+
+[about]
+developer = "Mediatonic (acquired by Epic Games)"
+publisher = "Epic Games"
+released  = "2020-08-04 (Steam); went free-to-play on Epic 2022-06-21"
+genre     = "Party battle royale, Platformer"
+modes     = "Multiplayer (up to 60 players)"
+summary   = """
+**Fall Guys** is a massively multiplayer **party battle royale** where up to **60 players** compete through rounds of escalating chaos until one jellybean-shaped contestant is crowned winner. Developed by **Mediatonic** and originally released on Steam in August 2020, it was a massive hit and one of **PlayStation Plus**'s most downloaded games.
+
+**Epic Games** acquired Mediatonic in 2021, then moved the game to the **Epic Games Store** as a **free-to-play** title in June 2022, **delisting it from Steam**. Despite the platform switch, Fall Guys remains popular with frequent seasonal content and cosmetic updates. Proton compatibility via **Heroic Games Launcher** makes it accessible on Steam Deck.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = "https://www.protondb.com/app/1097150"
+steamgriddb = "https://www.steamgriddb.com/game/5173422"
+
+[[links.guides]]
+title = "How to Install Non-Steam Games on Steam Deck with Heroic Games Launcher"
+url   = "https://dadwithadeck.com/2025/10/27/how-to-install-non-steam-games-on-steam-deck-with-heroic-games-launcher/"
+
+[[links.guides]]
+title = "Steam Community: Setting up Fall Guys via Epic on Steam Deck (steps inside)"
+url   = "https://steamcommunity.com/app/1097150/discussions/0/3942399078926975414/"
+
+[[links.guides]]
+title = "Heroic Games Launcher"
+url   = "https://heroicgameslauncher.com/"
+
+[[links.guides]]
+title = "SteamDeckLife: How To Play Free-To-Play Fall Guys On The Steam Deck"
+url   = "https://steamdecklife.com/2022/06/22/how-to-play-fall-guys-on-the-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Not on Steam:** No longer on Steam — must install via `Heroic Games Launcher` (Epic Games account required, free game).
+
+**Proton:** Force `Proton Experimental` in Heroic's game settings.
+
+**Anti-Cheat:** `EAC` is Proton-compatible but finicky — updates have broken it before. If it won't initialize, run the `EpicOnlineServicesInstaller.exe` / `EasyAntiCheat_Setup.exe` on the prefix via Heroic and toggle the EasyAntiCheat Runtime option.
+
+**Gaming Mode:** Add Heroic as a non-Steam game to reach Gaming Mode.
+
+**Controller:** If gamepad input breaks after a Heroic update, check for `Flatpak` runtime regressions — `Heroic 2.18.0` had a revert for this.
+"""

@@ -1,0 +1,79 @@
+[game]
+title       = "THUG Pro"
+slug        = "thug-pro"
+aliases     = ["THUGPro", "Tony Hawk's Underground Pro", "THUG Pro Launcher", "THUGProLauncher.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5209450"
+
+[launch]
+binary         = "THUGProLauncher.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton9-20"
+winetricks = ["dotnet46"]
+notes      = """
+**Prerequisite:** THUG Pro requires an existing installation of Tony Hawk's Underground 2 (THUG2). Install THUG2 first (GOG or disc copy).
+
+**Install:** Run the THUG Pro installer/patcher from thugpro.com (setup is `THUGProSetup.exe`); when prompted, point it at your THUG2 `Game` folder. `dotnet46` must be installed into the prefix via `protontricks` for the launcher/installer to run.
+
+**Launch:** **Launch with `THUGProLauncher.exe`, NOT `THUGPro.exe` directly** — the bare `.exe` will not work.
+
+**Proton:** `Proton-GE` (latest stable) is recommended; the `Caffe` runner in Bottles has also been reported working.
+
+**Display:** Expect a black screen for ~60 seconds on first launch before the game appears.
+
+**Controller:** Set your gamepad bindings in the launcher's `Gamepad Binding` tab BEFORE booting the actual game, or you won't be able to control it. From that same tab, pressing `CTRL+ALT+D` enables Debug mode, which can also disable the launcher's auto-update check so it stops hanging on each run."""
+
+[about]
+developer = "THUG Pro Team (fan mod)"
+publisher = "Free fan project (requires Tony Hawk's Underground 2)"
+released  = "2015"
+genre     = "Skateboarding, Action Sports"
+modes     = "Single-player, Online multiplayer"
+summary   = "**THUG Pro** is a free fan-made mod for **Tony Hawk's Underground 2** that reunites nearly all levels, skaters, and game modes from the **Tony Hawk's Pro Skater 1 through Tony Hawk's Underground 2** series in a single package. Built by a dedicated community over many years, it adds **online multiplayer**, level editor features, and regular updates. It requires an owned installation of THUG2 to run and is distributed as a patch from thugpro.com. The project has been one of the most active Tony Hawk fan communities for over a decade."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5209450"
+
+[[links.guides]]
+title = "How To Install Tony Hawk's Underground 2 + THUG Pro On The Steam Deck / Linux (YouTube)"
+url   = "https://www.youtube.com/watch?v=aJjSMVkbzBU"
+
+[[links.guides]]
+title = "THUG Pro official download page"
+url   = "https://thugpro.com/download/"
+
+[[links.guides]]
+title = "Classics on Deck #2: Tony Hawk's Underground 2 on Steam Deck — SDHQ"
+url   = "https://steamdeckhq.com/news/classics-on-deck-diablo-tony-hawks-underground-2-steam-deck/"
+
+[[links.guides]]
+title = "THUGPro install info & requirements (thpsX)"
+url   = "https://thpsx.com/thugpro-info/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a legitimately owned copy of Tony Hawk's Underground 2 (THUG2) — available on GOG or from original disc.
+
+**Install:** Install THUG2 under the same Proton prefix first, then apply the THUG Pro patch. `dotnet46` via `protontricks` is mandatory.
+
+**Launch:** Always launch via `THUGProLauncher.exe`, not the bare exe.
+
+**Display:** Black screen on startup for ~60 seconds is normal.
+
+**Controller:** Debug mode (`CTRL+ALT+D` in `Gamepad Binding`) prevents update-check hang on each boot."""

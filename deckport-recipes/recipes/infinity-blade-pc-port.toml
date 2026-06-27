@@ -1,0 +1,75 @@
+[game]
+title       = "Infinity Blade (PC Port)"
+slug        = "infinity-blade-pc-port"
+aliases     = ["Infinity Blade 1", "Infinity Blade I", "IB1", "Infinity Blade"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""              # iOS-exclusive, delisted 2018 / removed 2020 — never on PC officially
+sgdb_id     = ""
+
+[launch]
+binary         = "Infinity Blade Launcher.exe"   # the standalone launcher; run it from Binaries/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_8"
+winetricks = ["d3dx9", "vcrun2010"]   # optional UE3 DirectX 9 / runtime adds; not strictly required
+notes      = """
+**Port:** Community preservation port of the iOS-exclusive **Infinity Blade I** (ChAIR Entertainment / Epic, **Unreal Engine 3**) to Windows — the originals were delisted in 2018 and pulled in 2020.
+
+**Proton:** Community guides confirm it runs on the Steam Deck. Add `Infinity Blade Launcher.exe` (in `Binaries/`) as a non-Steam shortcut and **force `Proton 8.0-5`** in its compatibility tab.
+
+**Display:** Set the resolution to **`1280x800`** in the launcher/in-game options — it defaults to 4K, which must be lowered.
+
+**Controller:** **No native gamepad support.** Use **Steam Input** with a controller layout — the community preset maps sword swings to the right stick / D-pad, dodge to `LB`/`RB`, and specials to `ABXY`; some touchscreen input is still used. Attacks can also be bound to keys in the launcher.
+
+**Fix:** `v1.0.4` dropped the old `PhysX`/`APEX` dependencies.
+
+**Display:** Reported `~60fps` at under `9W` on the Deck."""
+
+[about]
+developer = "ChAIR Entertainment / Epic Games"
+publisher = "Epic Games"
+released  = "2010"
+genre     = "Action role-playing"
+modes     = "Single-player"
+summary   = """
+**Infinity Blade** is an **action RPG** originally released for iOS in December 2010, developed by ChAIR Entertainment with Epic Games. It was the first iOS game powered by **Unreal Engine 3** and became the **fastest-grossing app in App Store history** at launch, built around touch-based **one-on-one sword duels** through a roguelike loop of bloodlines.
+
+Epic delisted the **trilogy** from the App Store in December 2018 citing the difficulty of updating it for newer hardware, and the titles became fully unobtainable in 2020 after **Apple terminated Epic's developer account**. This entry covers a community preservation port of the iOS-exclusive first game to Windows on Unreal Engine 3."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Steam Deck HQ — Infinity Blade PC Port on Steam Deck"
+url   = "https://steamdeckhq.com/news/someone-brought-infinity-blade-to-steam-deck/"
+
+[[links.guides]]
+title = "Steam Community guide — Infinity Blade port to PC"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3262817167"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Source:** A fan preservation port of the iOS-exclusive first game — the original is no longer obtainable from the App Store.
+
+**DRM:** None — this standalone port has no DRM or activation. (If a UE3 DirectX 9 issue appears, `d3dx9`/`vcrun2010` via `protontricks` is a safe add, but it is not normally required.)
+
+**Resolution:** Defaults to 4K — set `1280x800` in the launcher/in-game options on the Deck.
+
+**Controller:** No native gamepad support; configure a **Steam Input** layout (use the community preset). Some touchscreen input is still used.
+
+**Saves:** Saves live in `My Games/Infinity Blade/SwordGame/Saves`.
+
+**Proton:** Force `Proton 8.0-5` for the launcher shortcut."""

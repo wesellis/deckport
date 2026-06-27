@@ -1,0 +1,78 @@
+[game]
+title       = "Marvel Ultimate Alliance"
+slug        = "marvel-ultimate-alliance"
+aliases     = ["MUA", "Marvel: Ultimate Alliance", "Marvel Ultimate Alliance 1"]
+type        = "proton"
+engine      = "other"
+steam_appid = "433300"
+sgdb_id     = ""
+
+[launch]
+binary         = "MUA.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**About:** The 2006 action-RPG (Raven Software; Beenox PC port) — the first in the series, before Ultimate Alliance 2. This recipe targets the 2016 Steam remaster (Zoë Mode, appid 433300); installs to `steamapps/common/Marvel - Ultimate Alliance/` with `MUA.exe` in the root.
+
+**DRM:** Steam DRM; delisted in 2018 (the 2016 re-release was pulled too). Supply your own copy.
+
+**ProtonDB:** **Gold**. Use `proton_experimental` — it clears up the audio crackling some reports see on default Proton. (WineGE-8-26 also works for those using Lutris.)
+
+**Controller:** Native gamepad, but Steam Input bindings are flaky. Switch the controller config to the default **Gamepad** template ("Zoë Mode Official Layout"). Press **Start** at the main menu to activate the pad. The game may register a phantom second controller — open in-game Options right after launch and set **Player 2** input to **Keyboard** so pressing Start doesn't add an extra player.
+
+**Display:** Game defaults to a low resolution (800x600 / 1280x720); raise it to `1280x720` in Video Options and enable **V-Sync** to stop battery drain from an uncapped framerate.
+
+**Cosmetic:** Minor stutter the first time each cutscene loads; smooth otherwise.
+
+**Install method:** Normal Steam install of an owned copy — no extra files needed for the base game.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Marvel: Ultimate Alliance"
+url   = "https://www.protondb.com/app/433300"
+
+[[links.guides]]
+title = "SteamDeckHQ — Classics on Deck: Marvel: Ultimate Alliance 1 & 2"
+url   = "https://steamdeckhq.com/news/classics-on-deck-15"
+
+[[links.guides]]
+title = "Steam Community — Definitive Controller Fix (Nov 2023)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3095349183"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial Steam game (DRM) — supply your own copy. `deckport` links nothing for downloading it.
+
+**Controller:** Expect to set the Gamepad template + fix the phantom Player 2 (see proton notes); not plug-and-play.
+
+**Binary:** `MUA.exe` confirmed from the Steam install folder; Proton version still needs an on-Deck test.
+"""
+
+[about]
+developer = "Raven Software (PC port by Beenox)"
+publisher = "Activision"
+released  = "2006"
+genre     = "Action role-playing"
+modes     = "Single-player, local co-op (up to 4 players)"
+summary   = """
+**Marvel: Ultimate Alliance** is a 2006 **action role-playing game** in which players assemble a team of four Marvel superheroes from a large roster and battle through a story spanning the Marvel Universe. It was the third and final Marvel title from **Raven Software**, following **X-Men Legends** and its sequel, and shares their **squad-based, isometric brawler-RPG** gameplay.
+
+The original release was well received and spawned a long-running **series**. A **2016 remaster** returned the game to Steam, but both it and the sequel were **delisted in 2018** after Activision's Marvel publishing license expired.
+"""

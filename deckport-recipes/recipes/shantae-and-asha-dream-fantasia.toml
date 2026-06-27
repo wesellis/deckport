@@ -1,0 +1,71 @@
+[game]
+title       = "Shantae and Asha: Dream Fantasia"
+slug        = "shantae-and-asha-dream-fantasia"
+aliases     = ["Shantae Asha Dream Fantasia", "Monster World IV-2"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "shantae-and-asha.exe"   # stated by the release
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** A free fan crossover (XBuster / Wonder x Boy) of Shantae and Monster World IV's Asha, built in **GameMaker Studio** — a 30+ hour open-world 2D action-RPG. Latest build is `v2.1.0` (the older `v2.0.1` is what most mods/guides target).
+
+**Proton:** As a GameMaker Windows `.exe` it runs reliably under Proton on Deck (the official Shantae titles are Gold/Platinum). **Add as a Non-Steam game** pointing at `shantae-and-asha.exe` and force `proton_experimental` (or `GE-Proton` if a menu fails to render).
+
+**Display:** `F4` toggles fullscreen.
+
+**DRM:** No DRM/GFWL — it's a free fan game."""
+
+[about]
+developer = "XBuster Zero (Wonder x Boy)"
+publisher = "XBuster Zero (Wonder x Boy)"
+released  = "2020"
+genre     = "Open-world 2D action-platformer / RPG"
+modes     = "Single-player"
+summary   = """
+**Shantae and Asha: Dream Fantasia** is a free fan-made crossover between WayForward's **Shantae** and SEGA's **Monster World IV**, built in **GameMaker Studio** by solo developer XBuster Zero. It is an **open-world 2D action-platformer** with RPG elements, letting players control both **Asha** (a weapons-and-Pepelogoo fighter) and **Shantae** (who relies on magic and transformations) across a large interconnected map.
+
+Set a year after the events of Monster World IV, the two heroines team up to gather ingredients for an elixir. Version 1.0 launched in February 2020 and the project has continued to receive substantial content updates."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official download (itch.io) — Wonder x Boy"
+url   = "https://xbuster-zero.itch.io/shantae-and-asha-dream-fantasia"
+
+[[links.guides]]
+title = "Official download (Game Jolt)"
+url   = "https://gamejolt.com/games/Shantae_and_Asha_Dream_Fantasia/293793"
+
+[[links.guides]]
+title = "Mods / community hub (GameBanana — v2.0.1)"
+url   = "https://gamebanana.com/games/9254"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Free fan game:** Not WayForward/SEGA. No dedicated ProtonDB entry yet (tier pending), but GameMaker exes run well under Proton on Deck.
+
+**Controller:** Don't count on native gamepad detection — multiple players report the pad **isn't recognised at all** in this fan game. Plan on a **Steam Input keyboard layout** as the reliable path (default keys cover everything: arrows/`WASD` move, `Z`/jump, with menu confirm split between `Enter` and `Z`).
+
+**Fix:** If it refuses to launch (a GameMaker Direct3D issue), dropping `dgVoodoo 2` (`D3D8.dll`/`D3DImm.dll`) into the game folder can stabilise it.
+
+**Binary:** `shantae-and-asha.exe` (as stated by the release; the exact GameMaker exe name should be confirmed against your downloaded build before marking working)."""

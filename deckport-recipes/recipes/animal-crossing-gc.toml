@@ -1,0 +1,74 @@
+[game]
+title       = "Animal Crossing (GameCube PC Port)"
+slug        = "animal-crossing-gc"
+aliases     = ["ACGC PC Port", "Animal Crossing GC Port", "Doubutsu no Mori Plus PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "AnimalCrossing.exe"   # Windows executable run through Proton; place your disc image in the rom/ folder next to it
+launch_options = ""
+requires_files = ["Animal Crossing GameCube USA disc image (GAFE01, ISO/GCM/CISO) placed in the rom/ folder"]
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Port:** Animal Crossing (GameCube PC Port) is an unofficial PC port built on top of the `ac-decomp` decompilation (by `ACreTeam`), with the native build maintained by `flyngmt` (repo: `flyngmt/ACGC-PC-Port`). The original C is recompiled to run on x86 with a custom translation layer replacing the GameCube GX graphics API with OpenGL 3.3. As of mid-2026 it is in **playtest** (latest v0.9.1.1), not a final 1.0.
+
+**Windows-only build:** The released builds ship a Windows executable (`AnimalCrossing.exe`) only — there is **no native Linux or macOS binary**. On Steam Deck you run the `.exe` through Proton.
+
+**Steam Deck:** Confirmed working per SteamDeckHQ. Add `AnimalCrossing.exe` as a non-Steam game and **force Proton compatibility** (SteamDeckHQ used GE-Proton 10-32). Reported running at 60 FPS, ~7-8W. The default resolution is 640x480 — bump it to 1280x720 for the Deck screen.
+
+**Install:** Extract the release zip, place your disc image in the `rom/` subfolder next to the executable, add the `.exe` as a non-Steam game, and enable a Proton/GE-Proton version in its compatibility settings.
+
+**Controller:** SDL2 controllers are supported with automatic hotplug detection using the standard GameCube layout; the Deck's built-in controls work without remapping.
+
+**Disc image:** Supply your own **USA** copy (game ID `GAFE01`, Rev 0). To dump your GameCube disc, use `CleanRip` on a Wii, which can read both GameCube and Wii discs."""
+
+[about]
+developer = "Nintendo EAD (original 2001 GameCube game); decomp by ACreTeam, PC port by flyngmt and contributors"
+publisher = "Nintendo (original); fan-made PC port"
+released  = "2001 (GameCube — Japan as Doubutsu no Mori+; 2002 NTSC-U / 2004 PAL); PC port playtest 2026"
+genre     = "Life simulation"
+modes     = "Single-player"
+summary   = "**Animal Crossing** is a 2001 **life simulation** game developed and published by Nintendo for the GameCube, originally released in Japan as **Doubutsu no Mori+** before its international ports. Players move into a village populated by anthropomorphic animal neighbours and engage in open-ended daily activities including fishing, fossil hunting, bug catching, home decoration, and paying off loans to the raccoon entrepreneur **Tom Nook**, all governed by a **real-time clock**. The **GameCube PC Port** (flyngmt's `ACGC-PC-Port`, built on the ACreTeam `ac-decomp` decompilation) recompiles the original GameCube code to run on PC. The released builds are Windows-only, so on Steam Deck the executable is run through Proton."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ACGC-PC-Port — GitHub repository (flyngmt)"
+url   = "https://github.com/flyngmt/ACGC-PC-Port"
+
+[[links.guides]]
+title = "Animal Crossing Native PC Port on Steam Deck — SteamDeckHQ"
+url   = "https://steamdeckhq.com/news/animal-crossing-native-pc-port-on-steam-deck/"
+
+[[links.guides]]
+title = "ac-decomp decompilation — GitHub (ACreTeam)"
+url   = "https://github.com/ACreTeam/ac-decomp"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires an Animal Crossing GameCube **USA** disc image (`GAFE01`, Rev 0; ISO/GCM/CISO) placed in the `rom/` folder — **this is not compatible with PAL/JP discs, nor the DS, Wii, or Switch Animal Crossing games.** Use `CleanRip` on a Wii to dump your GameCube disc.
+
+**Windows .exe via Proton (NOT native Linux):** Despite the "PC port" name, the releases provide only a Windows executable. On Deck you must add `AnimalCrossing.exe` as a non-Steam game and force a Proton version (GE-Proton recommended). There is no native Linux/macOS build to run directly.
+
+**Playtest, not 1.0:** As of mid-2026 the project is in playtest (latest v0.9.1.1). Some original features are still being implemented (e.g. GBA connectivity, town visiting, in-game NES emulation). Expect rough edges and frequent updates; the `.exe`/release layout may change between builds.
+
+**Resolution:** Default is 640x480 — raise it (e.g. 1280x720) for a proper Deck display.
+
+**Troubleshooting:** Check the GitHub releases/issues pages for the current build and any Proton-specific problems."""

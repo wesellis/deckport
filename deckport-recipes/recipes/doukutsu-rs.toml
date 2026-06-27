@@ -1,0 +1,77 @@
+[game]
+title       = "doukutsu-rs (Cave Story Engine)"
+slug        = "doukutsu-rs"
+aliases     = ["Cave Story PC", "Cave Story Open Source", "doukutsu rs", "Cave Story Freeware PC"]
+type        = "native"        # native Linux via Flatpak — no Proton needed
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "io.github.doukutsu_rs.doukutsu-rs"   # Flatpak ID; install via Discover in Desktop Mode
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** doukutsu-rs is a Rust rewrite of the original Cave Story engine by Daisuke 'Pixel' Amaya, developed actively from 2020 onward by the doukutsu-rs community. It adds decoupled framerate (`60fps` and above), widescreen support, and optional multiplayer while preserving faithful gameplay.
+
+**Install:** The cleanest Deck path is **NATIVE via Flathub**. Open `Discover` in Desktop Mode, search for `doukutsu-rs`, and install the Flatpak (`io.github.doukutsu_rs.doukutsu-rs`).
+
+**Data:** doukutsu-rs ships **no game data of its own** — the Flatpak does not bundle or auto-download anything. You must supply Cave Story data yourself. The original **freeware** data is free (no purchase) from the Cave Story Tribute Site. On the Flatpak you **cannot** drop `Doukutsu.exe` next to the binary; place extracted data under `~/.var/app/io.github.doukutsu_rs.doukutsu-rs/data/doukutsu-rs/data`, or use the project's `vanilla-extractor` utility to pull resources out of `Doukutsu.exe`. Cave Story+ and Switch data also work if pointed at the data directory.
+
+**Game Mode:** Once installed, add the Flatpak as a **non-Steam game** in Steam so it appears in Game Mode.
+
+**Proton:** No Proton layer is involved; this is a **fully native Linux binary**.
+
+**Note:** doukutsu-rs is generally considered superior to `NXEngine-evo` for modern hardware due to its higher framerate support and ongoing maintenance."""
+
+[about]
+developer = "doukutsu-rs community (Rust rewrite of Cave Story engine by Daisuke 'Pixel' Amaya)"
+publisher = "Open source / community release"
+released  = "Cave Story original 2004 (Daisuke 'Pixel' Amaya); doukutsu-rs engine 2020–2026 (active)"
+genre     = "Action-adventure, Metroidvania"
+modes     = "Single-player; optional local multiplayer"
+summary   = """
+**doukutsu-rs** is a community-built **Rust** reimplementation of the **Cave Story** game engine. Cave Story, originally released for free in 2004 by solo developer Daisuke 'Pixel' Amaya after five years of solo development, is a beloved **action-platformer** following a robot who wakes up with no memories inside a cave colony.
+
+doukutsu-rs reimplements the engine from scratch in Rust, decoupling the framerate from the original **50fps lock** and adding **widescreen rendering**, a **multiplayer mode**, and modern platform support — all while remaining compatible with the original freeware game data. The engine itself ships no game data; the freeware version of Cave Story remains freely available from the Cave Story Tribute Site (cavestory.org) and is the primary data set used."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "doukutsu-rs on Flathub"
+url   = "https://flathub.org/apps/io.github.doukutsu_rs.doukutsu-rs"
+
+[[links.guides]]
+title = "doukutsu-rs GitHub"
+url   = "https://github.com/doukutsu-rs/doukutsu-rs"
+
+[[links.guides]]
+title = "doukutsu-rs FAQ (data files & Flatpak data path)"
+url   = "https://doukutsu-rs.gitbook.io/docs/faq"
+
+[[links.guides]]
+title = "Cave Story freeware (Cave Story Tribute Site)"
+url   = "https://www.cavestory.org/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Install:** Install via Flathub (`Discover` app in Desktop Mode) — search `doukutsu-rs` and install. The Flatpak is the **recommended install method** for Deck; building from source is possible but unnecessary.
+
+**Data:** doukutsu-rs ships **no game data** — the Flatpak does not bundle or auto-download it. Supply your own: the original **freeware** Cave Story data is free (no purchase) from the Cave Story Tribute Site. Because the Flatpak can't run `Doukutsu.exe` next to its binary, put extracted data in `~/.var/app/io.github.doukutsu_rs.doukutsu-rs/data/doukutsu-rs/data`, or use the project's `vanilla-extractor` to pull resources from `Doukutsu.exe`. Cave Story+ / Switch data also work when placed in that directory.
+
+**Game Mode:** After installing from Discover, add the app as a **non-Steam shortcut** in Steam so it launches from Game Mode."""

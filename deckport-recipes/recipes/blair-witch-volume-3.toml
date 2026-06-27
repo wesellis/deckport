@@ -1,0 +1,58 @@
+[game]
+title       = "Blair Witch Volume III: The Elly Kedward Tale"
+slug        = "blair-witch-volume-3"
+aliases     = ["Blair Witch Vol 3", "Blair Witch Elly Kedward", "Blair Witch Volume 3"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "bw3.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add bw3.exe as a non-Steam game (default install path: C:/Program Files (x86)/Ritual Entertainment/Blair Witch Volume Three - Elly Kedward) and set Proton version to GE-Proton. Built on Terminal Reality's Nocturne engine (an enhanced version), the same engine family used for Blair Witch Volume I — it is NOT a separate isometric engine. Developed by Ritual Entertainment (SiN, Quake mission packs), not Black Isle. This is a 3dfx/Voodoo-era DirectX 7 title, so it needs a dgVoodoo wrapper for the legacy renderer and runs at a fixed low internal resolution; see the community Windows-modern fix below. Cinematic third-person survival horror with fixed/dynamic camera angles, so map the right stick/trackpad for camera and use Steam Input for the keyboard+mouse controls this 2000-era title expects. Note: this is the 2000 PC game, NOT the 2019 Bloober Team game (Steam App 1149640)."
+
+[about]
+developer = "Ritual Entertainment"
+publisher = "Gathering of Developers"
+released  = "2000"
+genre     = "Action survival horror"
+modes     = "Single-player"
+summary   = "Blair Witch Volume III: The Elly Kedward Tale is an action survival horror game developed by Ritual Entertainment and published by Gathering of Developers (Take-Two in Europe) in 2000. Set in 1785, it tells the origin story of Elly Kedward, the woman who would become the Blair Witch, following Jonathan Prye, a former priest turned witch-hunter who investigates supernatural events in the early Blair township. It is the third and final entry in the 2000 Blair Witch anthology trilogy and, like Volume I, is built on Terminal Reality's Nocturne engine (here in an enhanced form with real-time dynamic lighting and shadows), played from a cinematic third-person perspective. Combat leans heavily on spell-based magic alongside period weapons such as a flintlock pistol."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Blair Witch Volume III: The Elly Kedward Tale"
+url   = "https://www.pcgamingwiki.com/wiki/Blair_Witch_Volume_III:_The_Elly_Kedward_Tale"
+
+[[links.guides]]
+title = "GitHub — Blair Witch Volume 3 (Elly Kedward) modern-Windows fix (dgVoodoo, bw3.exe)"
+url   = "https://github.com/fkortsagin/The-Blair-Witch-Project-Volume-3-Elly-Kedward-Windows-10-Fix"
+
+[[links.guides]]
+title = "Wikipedia — Blair Witch Volume III: The Elly Kedward Tale (Ritual Entertainment, 2000)"
+url   = "https://en.wikipedia.org/wiki/Blair_Witch_Volume_III:_The_Elly_Kedward_Tale"
+
+[[links.guides]]
+title = "Blair Witch (2019) on Steam — Bloober Team game, NOT this one"
+url   = "https://store.steampowered.com/app/1149640/Blair_Witch/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = "Supply your own legally obtained copy of the game. This is NOT the 2019 Bloober Team Blair Witch game (Steam App 1149640). This is Volume III of the 2000 PC anthology trilogy, developed by Ritual Entertainment. Cinematic third-person survival horror built on Terminal Reality's Nocturne engine (the same engine family as Volume I, not a separate isometric engine). It expects keyboard + mouse, so configure Steam Input on Deck; not on Steam, so add the executable as a non-Steam game."

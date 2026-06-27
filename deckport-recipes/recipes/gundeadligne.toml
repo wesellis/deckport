@@ -1,0 +1,74 @@
+[game]
+title       = "GundeadliGne"
+slug        = "gundeadligne"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "92220"
+sgdb_id     = ""
+
+[launch]
+binary         = "gundead.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam shmup (appid `92220`), part of the **Gundemonium** series by Platine Dispositif.
+
+**Proton:** ProtonDB gold; community confirms it running on `Proton 7.0-5+` and `GE-Proton` on the Deck.
+
+**Display:** By default it can launch in a tiny window using the fullscreen resolution, so **only the top-left ~1/4 of the image is visible**.
+
+**Fix:** Edit `gundead.ini` in the install dir: set `Resize=-1` and set `Width`/`Height` to the Deck's native `1280x800` (or your target res). **Do not force in-game fullscreen.**
+
+**Controller:** The overseas/Steam build has native XInput (D-pad) support, but **Steam Input can make one pad register as BOTH Player 1 and Player 2**, starting an unplayable 2-player game. Fix: set Steam Input Per-Game Settings to `Force Off` for this title; the Deck controls then map to a single XInput pad. Keyboard also works as a fallback.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Platine Dispositif"
+publisher = "Rockin' Android"
+released  = "2011"
+genre     = "Shoot 'em up (bullet hell)"
+modes     = "Single-player, 2-player co-op"
+summary   = "**GundeadliGne** is a 2D side-scrolling **bullet-hell** shoot 'em up and the second entry in Platine Dispositif's **Gundemonium** trilogy, continuing a story of humanity's alchemy-fueled war with hell. It offers three playable characters with distinct abilities, four difficulty tiers (Novice, Standard, Advanced, Demonic), and a signature **Flip Turn** mechanic for grazing and deflecting fire. Originally a 2004 Japanese doujin release, it was localized in English and published on Steam by Rockin' Android on September 27, 2011. It was **delisted at the developer's request in July 2019** and is no longer sold, though it remains a single-player and local co-op offline title with no online dependencies."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - GundeadliGne (reports + gundead.ini resolution fix)"
+url   = "https://www.protondb.com/app/92220"
+
+[[links.guides]]
+title = "PCGamingWiki - GundeadliGne"
+url   = "https://www.pcgamingwiki.com/wiki/GundeadliGne"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Removed at the developer's request (July 2019), so it is **no longer for sale**.
+
+**Proton:** ProtonDB gold; multiple community reports run it on `Proton 7.0-5+`/`GE-Proton`, so it should play on the Deck.
+
+**Display:** Tiny-window-on-fullscreen-res — fix in `gundead.ini` via `Resize=-1` + `Width`/`Height` set to native res.
+
+**Controller:** Double-binding (one pad seen as P1 and P2) — set Steam Input Per-Game Settings to `Force Off`.
+
+**Offline:** Single-player offline shmup, no servers to worry about.
+
+**Status:** Specific Deck recipe still **NEEDS-TEST**."""

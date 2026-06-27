@@ -1,0 +1,50 @@
+[game]
+title       = "Castlevania II: Simon's Quest - Revamped"
+slug        = "castlevania-simons-quest-revamped"
+aliases     = ["Simon's Quest Revamped", "Castlevania SQ Revamped"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Simons Quest Revamped.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "GameMaker Studio fan game (ships an exe + data.win, e.g. from the v2.3.5 'Simons Quest Revamped_2_3_5.zip'). Exact exe name varies by release — confirm it against the extracted folder and point [launch].binary at the actual GameMaker runner exe. GameMaker titles run well under Proton/GE-Proton; use Steam Input for the gamepad if buttons aren't picked up natively. Free standalone release — no original NES files required. This is a separate fan project from Castlevania Chronicles II: Simon's Quest."
+
+[about]
+developer = "Fan Development Team"
+publisher = "Fan Development Team"
+released  = "2020"
+genre     = "Platformer 2D / Action-Adventure"
+modes     = "Single-player"
+summary   = "Castlevania II: Simon's Quest - Revamped is a free fan remake of the notoriously cryptic NES Castlevania II that addresses the original's major pain points. It fixes the infamous bad hints and broken day/night cycle, while adding enhanced graphics and quality-of-life improvements. Completely standalone — no Konami files required. This is a different project from Castlevania Chronicles II: Simon's Quest, developed by a separate fan team."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official MetroidQuest project page (free download)"
+url   = "https://metroidquest.angelfire.com/cv2revamped/index.html"
+
+[[links.guides]]
+title = "PortMaster entry (confirms GameMaker engine)"
+url   = "https://portmaster.games/detail.html?name=simonsqrev"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Not on Steam, so there is no ProtonDB tier — it's a free standalone GameMaker fan game (latest v2.3.5). As a GameMaker title it generally runs well under Proton/GE-Proton, but verify on-device. No Konami/NES files needed. Different from the Castlevania Chronicles II project (separate fan team). Fixes original Simon's Quest's cryptic hints and broken day/night cycle. Binary name varies by release — set [launch].binary to the actual exe in the extracted folder."

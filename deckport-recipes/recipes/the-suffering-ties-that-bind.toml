@@ -1,0 +1,77 @@
+[game]
+title       = "The Suffering: Ties That Bind"
+slug        = "the-suffering-ties-that-bind"
+aliases     = ["The Suffering Ties That Bind", "Ties That Bind", "The Suffering 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "TiesThatBind.exe"   # GOG release; some builds name it Suffering2.exe — verify in your copy
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["d3dx9"]
+notes      = """
+**Game:** 2005 Surreal Software sequel (published by Midway/WB). DX9-era third/first-person action-horror.
+
+**DRM:** GOG release was DRM-free (no StarForce activation), so it runs cleanly under Proton.
+
+**Proton:** `GE-Proton` recommended, `proton_experimental` also works.
+
+**Fix:** If you hit a `'DirectX 9.0c is not installed'` error on launch, **install the `d3dx9` runtime via `protontricks`** (`winetricks d3dx9`).
+
+**Controller:** Native gamepad support exists (console-era port); if it misbehaves, set a Steam Input gamepad layout.
+
+**Display:** Optional — a community AiO/widescreen patch fixes the 4:3 lock and FOV/HUD stretch for the Deck's 16:10 panel (config only — supply your own files).
+
+**ProtonDB:** No ProtonDB rating exists — the game was never on Steam (GOG-only, no Steam appid), so there is no aggregated community tier. Treat compatibility as untested and run it via a non-Steam shortcut with a Proton tool."""
+
+[about]
+developer = "Surreal Software"
+publisher = "Midway Games"
+released  = "2005"
+genre     = "Survival horror, action shooter"
+modes     = "Single-player"
+summary   = "**The Suffering: Ties That Bind** is a 2005 first- and third-person **psychological survival-horror shooter**, the sequel to 2004's **The Suffering**. Players return as **Torque**, confronting the violent demons of his past on the streets of Baltimore as the story bridges the events of the first game. Built with input from special-effects designer **Stan Winston**, it earned solid reviews for its grim atmosphere and **creature design**. The PC version became hard to find after later being **delisted**, leaving it out of print on storefronts."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Never sold on Steam (was a GOG exclusive, delisted Sept 1 2024 at WB's request) — fully out of print. Configuration only, no links.
+
+**DRM:** GOG build is DRM-free so it runs under Proton without StarForce trouble.
+
+**Fix:** Watch for a `'DirectX 9.0c not installed'` launch error → install `d3dx9` via `protontricks`.
+
+**Controller:** Native gamepad works; fall back to a Steam Input layout if needed.
+
+**Display:** Game is 4:3-locked by default — a community widescreen patch corrects aspect/FOV for the Deck panel.
+
+**Install:** Exe name `TiesThatBind.exe` is the GOG default (some builds use `Suffering2.exe`); verify in your copy.
+
+**ProtonDB:** Not on Steam, so there is no ProtonDB tier — compatibility is untested community-wide. Add it as a non-Steam game and force a Proton/GE-Proton tool."""
+
+[[links.guides]]
+title = "PCGamingWiki — The Suffering: Ties That Bind (fixes, widescreen, DirectX)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Suffering:_Ties_That_Bind"
+
+[[links.guides]]
+title = "GOG Support — Ties That Bind: 'DirectX 9.0c is not installed' fix"
+url   = "https://support.gog.com/hc/en-us/articles/115001933733-The-Suffering-Ties-That-Bind-DirectX-9-0c-is-not-installed"
+
+[[links.guides]]
+title = "The Suffering Series AiO Patch (widescreen/FOV/bug fixes) — ModDB"
+url   = "https://www.moddb.com/games/the-suffering-ties-that-bind/downloads/the-suffering-series-aio-patch"

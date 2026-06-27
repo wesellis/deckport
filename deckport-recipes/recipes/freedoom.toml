@@ -1,0 +1,85 @@
+[game]
+title       = "Freedoom"
+slug        = "freedoom"
+aliases     = ["Freedoom Phase 1", "Freedoom Phase 2", "FreeDM", "freedoom1.wad", "freedoom2.wad"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5273735"
+
+[launch]
+binary         = "gzdoom"
+launch_options = "-iwad freedoom1.wad"
+requires_files = ["freedoom1.wad"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** Native Linux via `GZDoom` (Flatpak: `org.zdoom.GZDoom` on Flathub/Discover).
+
+**Install:** Download Freedoom WADs from freedoom.github.io and place them at `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/` (the Flatpak config path). `GZDoom` **auto-detects IWAD files at launch**.
+
+**Launcher:** Alternatively use `GZDeck` (github.com/flegald/GZDeck), a launcher built specifically for `GZDoom` on Steam Deck that simplifies mod/IWAD launching and adds the `--no-sandbox` launch argument **required by the Flatpak**. (Note: GZDeck is no longer actively maintained, but still works; community forks exist.)
+
+**Non-Steam game:** For adding to Steam as a non-Steam game, set launch options to: `--no-sandbox -iwad freedoom1.wad` (or `freedoom2.wad` / `freedm.wad`).
+
+**Alternative:** RetroDECK also bundles `GZDoom` and supports Freedoom WADs.
+
+**WADs:** Phase 1 replaces Doom 1, Phase 2 replaces Doom 2, FreeDM is a deathmatch-focused standalone WAD.
+"""
+
+[about]
+developer = "Freedoom contributors (open source community)"
+publisher = "Free/open source — CC BY"
+released  = "2001 (ongoing)"
+genre     = "First-person shooter"
+modes     = "Single-player, Multiplayer (via source ports)"
+summary   = "**Freedoom** is a completely free and open-source set of **DOOM-engine** game data created entirely by community volunteers, licensed under **Creative Commons**. It provides two full single-player campaigns (Phase 1 and Phase 2) and a deathmatch-focused WAD (FreeDM), all designed to be fully compatible with any **DOOM source port**. Because Freedoom replaces the commercial **id Software IWADs**, players can experience the full DOOM engine experience without owning the original games. It also acts as a base for the vast library of community-made DOOM maps and mods, most of which run against Freedoom without modification."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5273735"
+
+[[links.guides]]
+title = "Freedoom official site and WAD downloads"
+url   = "https://freedoom.github.io/"
+
+[[links.guides]]
+title = "GZDoom on Flathub"
+url   = "https://flathub.org/apps/org.zdoom.GZDoom"
+
+[[links.guides]]
+title = "GZDeck — GZDoom launcher for Steam Deck (GitHub)"
+url   = "https://github.com/flegald/GZDeck"
+
+[[links.guides]]
+title = "GZDoom general guide — RetroDECK Wiki"
+url   = "https://retrodeck.readthedocs.io/en/latest/wiki_engine_guides/gzdoom/gzdoom-guide/"
+
+[[links.guides]]
+title = "Steam Community guide — Linux/Deck setup for Doom with GZDoom"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3158654153"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free download:** Freedoom WADs are completely free — download from freedoom.github.io directly.
+
+**Source port:** Requires a DOOM source port (`GZDoom` recommended via Flatpak in Discover).
+
+**Install:** Place WADs at `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/` for automatic detection. The `GZDeck` launcher simplifies Deck-specific setup.
+
+**Artwork:** `sgdb_id` here points to Phase 1; Phase 2 is at steamgriddb.com/game/5273736.
+
+**Controller:** Multiple local-multiplayer controllers may conflict with **Steam Input** — use single controller or external KB+M.
+"""

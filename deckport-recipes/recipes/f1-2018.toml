@@ -1,0 +1,70 @@
+[game]
+title       = "F1 2018"
+slug        = "f1-2018"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "737800"
+sgdb_id     = ""
+
+[launch]
+binary         = "F1_2018.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 737800`) — EA pulled seven F1 titles off Steam in March 2022 after the FIA license lapsed.
+
+**Proton:** `DX11` engine, ProtonDB gold: runs out of the box for most on Proton (`Experimental` or `GE-Proton`), with **`GE-Proton` the safest pick**. Main executable is `F1_2018.exe` in the F1 2018 install folder.
+
+**Controller:** Controllers work — DualShock 4 is plug-and-play and a G29 wheel works with force feedback. If the triggers don't respond, **enable `Steam Input`** in the title's controller settings.
+
+**Cosmetic:** Known annoyances: alt-tab can drop framerate to ~20fps, occasional cut-scene artifacts in Career Mode, and Xbox controller rumble can be constant or crash on mid-race pause (**disable vibration if it acts up**).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2018"
+genre     = "Racing simulation"
+modes     = "Single-player, multiplayer"
+summary   = "**F1 2018** is the official video game of the 2018 Formula One World Championship, developed and published by **Codemasters** on the **EGO engine**. It features all twenty-one circuits, twenty drivers, and ten teams from the season, with a deep **Career mode**, classic cars, and online racing. The game was well received for its handling model and presentation. It was delisted from Steam in early 2022 after the publishing arrangement lapsed and the **FIA license** moved on, leaving the title unavailable for new purchase."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — F1 2018"
+url   = "https://www.protondb.com/app/737800"
+
+[[links.guides]]
+title = "Proton issue tracker — F1 2018 (#1567)"
+url   = "https://github.com/ValveSoftware/Proton/issues/1567"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Proton:** ProtonDB gold; community confirms it runs on Linux/Proton, so it should play well on the Deck — still needs a hands-on Deck confirmation. Use `GE-Proton` (`Experimental` also works). Binary is `F1_2018.exe`.
+
+**Controller:** Triggers may need `Steam Input` enabled; disable controller vibration if it rumbles constantly or crashes on mid-race pause.
+
+**Cosmetic:** Alt-tab can tank the framerate; Career-mode cut-scenes show occasional artifacts.
+
+**Online:** Online/multiplayer features may be dead post-delisting — single-player is the focus.
+"""

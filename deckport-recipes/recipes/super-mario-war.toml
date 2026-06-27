@@ -1,0 +1,68 @@
+[game]
+title       = "Super Mario War"
+slug        = "super-mario-war"
+aliases     = ["SMW deathmatch", "SuperMarioWar", "Mario War"]
+type        = "native"        # native Linux binary — no Proton needed
+engine      = "other"         # custom C++ engine (mmatyas open source fork)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "smw"   # native Linux binary from github.com/mmatyas/supermariowar/releases
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[about]
+developer = "mmatyas and contributors (github.com/mmatyas/supermariowar)"
+publisher = "Independently released (free, open source)"
+released  = "2004 (original); maintained open source fork 2013-2026"
+genre     = "Competitive platformer / deathmatch"
+modes     = "Local multiplayer (up to 4 players), single-player"
+summary   = """
+**Super Mario War** is a 4-player competitive **Mario deathmatch** game with a wide variety of game modes including **CTF**, **King of the Hill**, **Race**, and more. Over 1,000 community-made maps are available as a separate download. The game is completely **standalone**, **free**, and **open source**.
+
+The **mmatyas fork** is the actively maintained version. A prebuilt **Linux binary** ships in the `..._linux.zip` archive on GitHub releases (latest tag `2026-05`); the executable inside is named `smw`. A **nightly Flatpak** is also available at mmatyas.github.io/supermariowar-flatpak/ for an easier install. A dedicated Steam Deck setup guide covering controller configuration for multiple local players is available at jofroyo.com/smw-deck-guide/. Add the Linux binary as a non-Steam game."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Super Mario War on the Steam Deck (jofroyo)"
+url   = "https://jofroyo.com/smw-deck-guide/"
+
+[[links.guides]]
+title = "mmatyas/supermariowar — GitHub releases (Linux binary)"
+url   = "https://github.com/mmatyas/supermariowar/releases"
+
+[[links.guides]]
+title = "Super Mario War nightly Flatpak"
+url   = "https://mmatyas.github.io/supermariowar-flatpak/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Standalone:** Completely standalone and free — **no other game required**.
+
+**Multiplayer:** 4-player local multiplayer is the main draw; **multiple controllers are needed** for the full experience. The Deck guide at jofroyo.com/smw-deck-guide/ covers multi-controller local setup.
+
+**Maps:** The community map archive (1,000+ maps) is a separate download from the base binary.
+
+**Binary:** Native Linux build — download the `..._linux.zip` from GitHub releases (`github.com/mmatyas/supermariowar/releases`) and add the `smw` executable as a non-Steam game. A nightly **Flatpak** (`mmatyas.github.io/supermariowar-flatpak/`) is an easier alternative install.
+
+**Build-from-source:** The jofroyo Deck guide compiles SMW from source via CMake/make; note that a SteamOS update can wipe the pacman-installed build dependencies, so the prebuilt zip or Flatpak is more durable.
+
+**Links:** guides link to the jofroyo Deck guide, the GitHub releases page, and the nightly Flatpak."""

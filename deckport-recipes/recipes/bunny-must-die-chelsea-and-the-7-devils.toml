@@ -1,0 +1,74 @@
+[game]
+title       = "Bunny Must Die! Chelsea and the 7 Devils."
+slug        = "bunny-must-die-chelsea-and-the-7-devils"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "250660"
+sgdb_id     = ""
+
+[launch]
+binary         = "bunnymustdie.exe"   # install folder: steamapps/common/Bunny Must Die/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `250660`, retired from the store July 31 2019 / price zeroed Aug 1 — owners keep library access; not for sale). No always-online or store-side DRM that blocks Proton.
+
+**Proton:** Old DirectX 2D Metroidvania, **runs essentially out-of-the-box under Proton**; ProtonDB platinum (small sample, low confidence). `GE-Proton` or `proton_experimental` both work.
+
+**Display:** Fullscreen/widescreen quirk — the game stores resolution in `bunny.ini` (`[Display]` section) in the game directory. If it opens to a black screen or wrong size, edit `bunny.ini` and set `Resize=1` with `Width=640 Height=480 WideWidth=640 WideHeight=360` (or set every `[Display]` value except `Resize` to `0`); deleting `bunny.ini` lets the game regenerate defaults.
+
+**Controller:** Partial XInput support (D-pad works); if a gamepad mis-behaves, force a Steam Input layout (gamepad-with-camera-controls or a keyboard layout) via the controller settings.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Platine Dispositif"
+publisher = "Rockin' Android"
+released  = "2006 (Japan, doujin); 2013 international Steam release"
+genre     = "Metroidvania, action-platformer"
+modes     = "Single-player"
+summary   = "**Bunny Must Die! Chelsea and the 7 Devils** is a 2D exploration-platformer from Japanese **doujin** studio **Platine Dispositif**, originally released at Comiket in 2006 and localized for the West by Rockin' Android. Players control the bunny-eared Chelsea through the sprawling Cave of Devils, in the post-Symphony-of-the-Night **Metroidvania** tradition, switching weapons and gaining power-ups. Its signature mechanic is **time manipulation**, letting Chelsea stop time and rewind it to solve puzzles, open timed gates, and dodge boss attacks. It is well regarded as a cult favorite of the doujin scene and was later ported to consoles."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 250660)"
+url   = "https://www.protondb.com/app/250660"
+
+[[links.guides]]
+title = "Windows fullscreen / black-screen fix (bunny.ini Display settings)"
+url   = "https://steamcommunity.com/app/250660/discussions/0/541906989416597377/"
+
+[[links.guides]]
+title = "Steam retirement announcement (July 31 2019)"
+url   = "https://steamcommunity.com/games/BunnyMustDie/announcements/detail/1618398566702106432"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam July 31 2019 (single-player, no servers needed).
+
+**Proton:** ProtonDB platinum (small sample, low confidence) — community reports it running cleanly under Proton, so it should run on Deck; **not yet confirmed on a real Deck** (needs-test).
+
+**Binary:** `bunnymustdie.exe` in `steamapps/common/Bunny Must Die/` — verify against your install.
+
+**Display:** Fullscreen/black-screen — edit `bunny.ini` `[Display]` (`Resize=1`, or set all but `Resize` to `0`).
+
+**Controller:** Partial (XInput D-pad); set a Steam Input layout if the gamepad misbehaves."""

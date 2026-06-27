@@ -1,0 +1,76 @@
+[game]
+title       = "Hexen: Deathkings of the Dark Citadel"
+slug        = "hexen-deathkings-of-the-dark-citadel"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "2370"
+sgdb_id     = ""
+
+[launch]
+binary         = "DOSBox.exe"   # stock Steam build launches the DOS version through bundled DOSBox
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `2370`), the only official expansion for **Hexen: Beyond Heretic**.
+
+**Proton:** The stock Steam build is the DOS game wrapped in bundled DOSBox (`DOSBox.exe`) — Raven never shipped a native Windows port. It runs under **Proton**/`GE-Proton` on the Deck and is community-rated **ProtonDB Gold** (appid `2370`). Note: the official **Steam Deck Verified** badge applies to the 2025 Nightdive *Heretic + Hexen* re-release, not this delisted DOSBox standalone.
+
+**Recommended:** Modern path — drop a `GZDoom` build into the install folder, rename the bundled `dosbox` folder to `dosboxold` and the `GZDoom` folder/exe to `dosbox` so the Steam entry boots `GZDoom` instead — gives mouselook, widescreen and a built-in Xbox-style gamepad layout.
+
+**WADs:** `GZDoom` needs `HEXDD.WAD` (the expansion) alongside the base `HEXEN.WAD`.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Raven Software"
+publisher = "id Software"
+released  = "1996"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer co-op and deathmatch (up to 8 players)"
+summary   = "**Deathkings of the Dark Citadel** is the only official expansion pack for **Hexen: Beyond Heretic**, the 1995 dark-fantasy FPS that Raven Software built on a heavily modified **Doom engine** and the second entry in the **Serpent Riders** trilogy. It adds 20 new single-player levels across three hubs plus six deathmatch maps, retaining the three playable classes (Fighter, Cleric, Mage) and the non-linear **hub-based progression** Hexen helped popularize. The base game was well received for its level design and class variety. This standalone Steam release (appid 2370) is **delisted**, ships the DOS version wrapped in DOSBox, and is superseded for new buyers by a 2025 Nightdive remaster bundle."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Launching Deathkings through GZDoom via the Steam library entry (Steam guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2856739830"
+
+[[links.guides]]
+title = "ProtonDB reports — Hexen: Deathkings of the Dark Citadel (appid 2370)"
+url   = "https://www.protondb.com/app/2370"
+
+[[links.guides]]
+title = "Doom Wiki — Hexen: Deathkings of the Dark Citadel"
+url   = "https://doomwiki.org/wiki/Hexen:_Deathkings_of_the_Dark_Citadel"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Status:** Delisted Steam game (appid `2370`); community **ProtonDB Gold** reports confirm it runs on Deck. (The official **Steam Deck Verified** badge belongs to the 2025 Nightdive *Heretic + Hexen* re-release, not this old DOSBox standalone.)
+
+**Controller:** Stock build = DOS game in bundled DOSBox under Proton; works but the DOS controls are keyboard-centric — for proper Deck input either bind a Steam Input keyboard/mouse layout to the DOSBox build, or switch to the `GZDoom` path (rename `dosbox` -> `dosboxold`, `GZDoom` -> `dosbox`) which has a native Xbox-style controller layout, mouselook and widescreen.
+
+**WADs:** Launch the expansion with `-iwad HEXDD.WAD`; the base `HEXEN.WAD` assets must also be present (Deathkings is an expansion to the base game).
+
+**Music note:** The Steam build ships the v1.0 `HEXDD.WAD`, which lacks the music-track links — expansion levels play silently. Communities note a v1.1 update fixes this; applying it is the common remedy.
+
+**DRM:** No DRM/GFWL (DOS-era game).
+
+**Note:** A 2025 Nightdive 'definitive' Heretic+Hexen re-release exists with modern controller support built in."""

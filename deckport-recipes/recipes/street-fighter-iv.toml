@@ -1,0 +1,72 @@
+[game]
+title       = "Street Fighter IV"
+slug        = "street-fighter-iv"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "21660"
+sgdb_id     = ""
+
+[launch]
+binary         = "StreetFighterIV.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Title:** Delisted Steam game (`appid 21660`) — the original Games for Windows LIVE (**GFWL**) edition, removed from sale. The later **Ultra Street Fighter IV** (`appid 45760`) is a separate title.
+
+**Proton:** Use `GE-Proton`: it bundles the GFWL components and handles this title far better than vanilla `Proton`/`Experimental` (older vanilla Proton has been reported black-screening at the GFWL launcher). ProtonDB's current aggregate tier is **gold** (some recent reports trend platinum, but gold is the honest baseline). Main binary is `StreetFighterIV.exe`.
+
+**GFWL:** At launch the GFWL overlay will try to connect and fail. **Create a LOCAL profile (offline sign-in)** or, if it demands a serial key, dismiss the prompt with `Escape` to reach the game — single-player works fully offline. A more permanent community fix is to neutralize the bundled GFWL DLL with a no-op stub so the overlay never blocks startup.
+
+**Install:** No download links here; **supply your own copy**."""
+
+[about]
+developer = "Capcom, Dimps"
+publisher = "Capcom"
+released  = "2009"
+genre     = "Fighting"
+modes     = "Single-player, local versus, online multiplayer"
+summary   = "**Street Fighter IV** is a 2D fighting game developed by Capcom and Dimps, marking the mainline **series'** return after a long hiatus. It renders fighters with **3D models** while keeping the traditional 2D plane and competitive mechanics, and introduced systems like **Focus Attacks** and **Ultra Combos**. The game was a critical and commercial success, earning universal acclaim and revitalizing the fighting-game genre. This original **Games for Windows LIVE** PC edition was delisted from Steam in 2021 due to its **outdated GFWL backend** and has not returned to sale."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Street Fighter IV (appid 21660) reports"
+url   = "https://www.protondb.com/app/21660"
+
+[[links.guides]]
+title = "Getting the GFWL edition of Street Fighter IV running again (offline / serial-key bypass)"
+url   = "https://www.nafcom.eu/2023/07/09/how-to-get-street-fighter-iv-working-again-in-windows-11/"
+
+[[links.guides]]
+title = "Proton issue #4074 — Street Fighter IV (21660) launcher behavior"
+url   = "https://github.com/ValveSoftware/Proton/issues/4074"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted GFWL edition (`appid 21660`). ProtonDB gold, community reports it running on Linux/Proton.
+
+**Proton:** Use `GE-Proton` — vanilla `Proton`/`Experimental` can choke on the GFWL sign-in.
+
+**GFWL:** Needs the offline-profile / `Escape`-past-key-prompt workaround for single player. **Online ranked matchmaking is long dead**, so treat this as a local/offline + couch-versus title.
+
+**Controller:** Works out of the box (built for gamepads); if the in-game pad mapping is awkward, apply a Steam Input layout.
+
+**Status:** Binary `StreetFighterIV.exe` not Deck-confirmed in this exact recipe — needs a hands-on test."""

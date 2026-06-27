@@ -1,0 +1,70 @@
+[game]
+title       = "The Crew"
+slug        = "the-crew"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "241560"
+sgdb_id     = ""
+
+[launch]
+binary         = "TheCrew.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted always-online Steam game (appid `241560`). Ubisoft killed the servers on March 31, 2024, so the retail game alone is **dead** — there is no offline mode and it will not connect. **Without the emulator this game cannot be launched at all.**
+
+**Fix:** It is only playable again through the fan-made `The Crew Unlimited` (TCU) server emulator (offline mode, released Sept 2025), which runs the game against a local server. With TCU the game runs on the Deck (ProtonDB gold).
+
+**Proton:** Use `GE-Proton`. The TCU launcher needs `dotnet 8.0` in the prefix (`winetricks dotnet8` / `dotnetdesktop8`), and the game/local server communicate over port `443` on `localhost`.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Ubisoft Ivory Tower and Ubisoft Reflections"
+publisher = "Ubisoft"
+released  = "2014"
+genre     = "Open-world racing"
+modes     = "Originally always-online single-player and multiplayer; offline single-player restored via the fan-made The Crew Unlimited"
+summary   = "**The Crew** is a 2014 **open-world racing** game set in a scaled-down recreation of the **continental United States**, letting players drive freely coast to coast with **RPG-style car progression**. It was built as an **always-online** title with persistent shared-world multiplayer. Ubisoft delisted it in December 2023 and shut down its servers on March 31, 2024, which made the retail game unplayable because it had no offline mode. A community preservation project, **The Crew Unlimited**, restored offline single-player access in September 2025."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Steam guide: The Crew revival / Unlimited (offline emulator)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3570264764"
+
+[[links.guides]]
+title = "Level1Techs: TCU (The Crew) on Linux + Steam Deck"
+url   = "https://forum.level1techs.com/t/tcu-the-crew-on-linux-steamdeck/251041"
+
+[[links.guides]]
+title = "The Crew Unlimited (official fan project)"
+url   = "https://thecrewunlimited.com/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Retail game is dead solo — Ubisoft shut the always-online servers on March 31, 2024 with no official offline mode. Only playable via the fan-made `The Crew Unlimited` (TCU) offline server emulator (Sept 2025).
+
+**Install:** The community confirms it works on the Deck after a fiddly setup: install the game's latest version, install `dotnet 8.0` into the prefix for the TCU launcher, and allow the local server on port `443`.
+
+**Controller:** This is a console racer, so gamepad is native. Community tip is to remove the arrow-key bindings from accelerate/decelerate so the Deck's left stick doesn't double-register Up/Down as throttle; a few users had to disable Steam Input to get the pad working, results vary.
+
+**NEEDS-TEST:** confirm this exact `GE-Proton` + TCU setup on a Deck."""

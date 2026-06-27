@@ -1,0 +1,63 @@
+[game]
+title       = "ECWolf (Wolfenstein 3D)"
+slug        = "ecwolf"
+aliases     = ["Wolfenstein 3D", "Wolf3D", "Spear of Destiny", "ECWolf"]
+type        = "native"
+engine      = "other"
+steam_appid = "2270"
+sgdb_id     = ""
+
+[launch]
+binary         = "ecwolf"
+launch_options = ""
+requires_files = ["Wolfenstein 3D game data (.wl6 files from Steam app 2270 or supply your own copy)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ECWolf official site"
+url   = "https://maniacsvault.net/ecwolf/"
+
+[[links.guides]]
+title = "Wolfenstein 3D on Steam (buy game data)"
+url   = "https://store.steampowered.com/app/2270/"
+
+[[links.guides]]
+title = "Luxtorpeda on GitHub (Steam compatibility layer)"
+url   = "https://github.com/luxtorpeda-dev/luxtorpeda"
+
+[about]
+developer = "id Software / Apogee Software (original); Braden 'Blzut3' Thomas (ECWolf)"
+publisher = "Apogee Software"
+released  = "1992 (original); ECWolf actively maintained"
+genre     = "First-person shooter"
+modes     = "Single-player"
+summary   = """**Wolfenstein 3D** (id Software/Apogee, 1992) is the grandfather of the first-person shooter \
+genre, and its Steam release (app 2270) shows only a scrolling black screen on Steam Deck — making \
+**ECWolf** the required fix. ECWolf is a modern source port supporting Wolf3D, Spear of Destiny, and all \
+mission packs, installable via Luxtorpeda directly from your Steam library."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- The Steam version of Wolf3D (app 2270) shows a scrolling black screen on Steam Deck — ECWolf is the fix.
+- EASIEST path: install Luxtorpeda, then in Steam set Wolf3D's compatibility tool to Luxtorpeda; it will download and wire ECWolf automatically.
+- MANUAL path: download the ECWolf binary from the official site (maniacsvault.net/ecwolf/download.php), place it alongside the .wl6 data files extracted from the Steam install (found in steamapps/common/Wolfenstein 3D/).
+- Supports Wolf3D shareware/registered, Spear of Destiny, and all three Spear mission packs.
+- Shareware episode 1 data is freely distributable — supply your own copy for the full game.
+"""

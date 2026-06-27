@@ -1,0 +1,81 @@
+[game]
+title       = "Dark Void Zero"
+slug        = "dark-void-zero"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "45730"
+sgdb_id     = ""
+
+[about]
+developer = "Other Ocean Interactive"
+publisher = "Capcom"
+released  = "2010"
+genre     = "Action platformer / shooter"
+modes     = "Single-player"
+summary   = """
+**Dark Void Zero** is a retro **8-bit-style 2D action platformer** and **Metroidvania**-flavored spin-off of Capcom's 2010 jetpack shooter **Dark Void**. It began as an **April Fools' parody** presented through fake lore as a lost late-1980s **NES PlayChoice-10** prototype 'rediscovered' in Capcom's vault, and was then released for real on DSiWare, iOS, and PC via Steam in 2010. Developed by Other Ocean Interactive and published by Capcom, it was well received for its deliberately old-school design.
+
+The PC version was delisted from Steam in May 2024 because its **SecuROM DRM** could no longer be supported, with Capcom unable to generate valid activation keys going forward."""
+
+[launch]
+binary         = "DarkVoidZero.exe"   # verify against your install folder ("Dark Void Zero")
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `45730`, removed May 2024). Retro NES-style side-scrolling platform/shooter.
+
+**Proton:** Runs under Proton — community compatibility reports confirm it launching on Linux (originally seen working as far back as `Proton 3.7`, with a Steam restart needed after first run); `GE-Proton` or `proton_experimental` is the safe modern pick.
+
+**DRM:** Main hazard is DRM, not the renderer: the Steam build ships `SecuROM PA` with a 5-machine activation limit and Capcom's keys are reported as no longer activating, so **the SecuROM check is the thing most likely to block first launch** — if it stalls on activation, try `proton_experimental` and restart Steam.
+
+**Activation slots:** SecuROM allows only 5 lifetime machine activations. Before moving the game off a machine, run it once with the `/revoke` launch option (Properties → Set Launch Options → `/revoke`, then launch and choose "Revoke activation online") to hand the activation slot back rather than burning it permanently.
+
+**GFWL:** None.
+
+**Controller:** Keyboard is the native input; analog-stick gamepads work but aren't officially bound, so use a Steam Input gamepad/keyboard layout — trivial since it's a simple 2D platformer.
+
+**Display:** Low-res title with poor scaling and a `~31fps` cap; consider integer/non-stretched scaling on the Deck."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Dark Void Zero (appid 45730)"
+url   = "https://www.protondb.com/app/45730"
+
+[[links.guides]]
+title = "Revoking the SecuROM activation limit (/revoke)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=317925006"
+
+[[links.guides]]
+title = "Delisted Games — Dark Void Zero (delisting + DRM history)"
+url   = "https://delistedgames.com/dark-void-zero/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Delisted:** Removed from Steam May 2024 (no longer for sale).
+
+**Untested:** Community reports confirm it runs under Proton, but this specific recipe is untested on a Deck — **the binary name is a best guess, verify it against your install**.
+
+**DRM risk:** Biggest risk is the `SecuROM PA` DRM: 5-machine activation limit and Capcom activation keys are reported as broken, so **first-launch activation may fail** even though the game itself is Proton-friendly. If activation does work, run with the `/revoke` launch option before retiring/reimaging a machine to give the activation slot back instead of losing one of the five.
+
+**Controller:** Works via a Steam Input layout (gamepad not natively bound).
+
+**Offline:** Singleplayer/offline — no servers to worry about.
+
+**Display:** Low-res with `~31fps` cap and weak scaling; set non-stretched scaling on the Deck."""

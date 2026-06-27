@@ -1,0 +1,67 @@
+[game]
+title       = "Game of Thrones: A Telltale Games Series"
+slug        = "game-of-thrones-telltale"
+aliases     = ["Game of Thrones Telltale", "GoT Telltale"]
+type        = "proton"
+engine      = "other"         # Telltale Tool
+steam_appid = "330840"
+sgdb_id     = ""
+
+[launch]
+binary         = "Thrones.exe"   # Steam/GOG install root: ...common/Game of Thrones/Thrones.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** 2014 Telltale episodic adventure (all six episodes; **Telltale Tool** engine).
+
+**Proton:** ProtonDB **Platinum** (current + trending) — runs out of the box under `proton_experimental`. Most reports describe smooth high-framerate play with no tweaks; one report even ran it at 4K/60.
+
+**Display:** The in-game Settings menu (resolution / fullscreen) is **only reachable AFTER starting an episode**, so launch a chapter first to set display options. A couple of reports note it can open in an unfocused, low-res window on multi-monitor setups (mouse not confined to the window) — running single-monitor / Gaming Mode avoids this.
+
+**Controller:** Native controller support — the game auto-switches to gamepad when one is detected, so no Steam Input hack is needed.
+
+**DRM:** Delisted after Telltale's closure and the HBO/GoT license lapse — owners keep library access, no new purchases.
+
+**Glitch:** If you hit the occasional between-scene freeze or audio-only load, retry the scene.
+
+**Install:** Main executable is `Thrones.exe` (Steam/GOG install root: `Game of Thrones/Thrones.exe`)."""
+
+[[links.guides]]
+title = "ProtonDB reports (AppID 330840)"
+url   = "https://www.protondb.com/app/330840"
+
+[[links.guides]]
+title = "PCGamingWiki — Game of Thrones: A Telltale Games Series"
+url   = "https://www.pcgamingwiki.com/wiki/Game_of_Thrones:_A_Telltale_Games_Series"
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2014"
+genre     = "Episodic graphic adventure"
+modes     = "Single-player"
+summary   = "**Game of Thrones: A Telltale Games Series** is a choice-driven **episodic adventure** set in the world of HBO's Game of Thrones, told across six episodes. Players control members of **House Forrester**, a noble family loyal to the Starks, as their decisions ripple across multiple characters and storylines following the Red Wedding. Built on the **Telltale Tool** engine, it features the studio's signature **branching-dialogue** and quick-time-event gameplay. It was delisted from storefronts following Telltale's 2018 closure and the lapse of the HBO licensing agreement."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Delisted:** Telltale closure / HBO license — previous owners still have library access, but **it can't be bought new**.
+
+**Deck status:** Steam Deck Verified status is **Unsupported** (Valve never validated it), but ProtonDB community reports it as **Platinum** / fully playable.
+
+**Display:** Set resolution from the in-game Settings menu, which **only appears once an episode is running**.
+
+**Install:** Executable confirmed as `Thrones.exe`."""

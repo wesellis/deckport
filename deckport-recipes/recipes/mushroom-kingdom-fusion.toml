@@ -1,0 +1,68 @@
+[game]
+title       = "Mushroom Kingdom Fusion"
+slug        = "mushroom-kingdom-fusion"
+aliases     = ["MKFusion", "MKF"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "MKFusion.exe"   # GameMaker exe; matches the MKFusion.ini config it writes
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**ProtonDB / Deck:** Not on Steam (free fan game), so no ProtonDB rating. The creators state on itch.io that it is **confirmed fully playable in Wine and Proton, including on Steam Deck**. `GE-Proton` is the safest pick for an older GameMaker title; stock `proton_experimental` also works.
+
+**Install method (portable, no installer):** Download from itch.io as `.7z` archives and extract with 7-Zip. You **must grab BOTH** the *"GAME ONLY"* archive and the *"MUSIC ONLY"* archive — extract the Music folder into the game directory or you get no music. Then add the extracted **MKFusion.exe** to Steam as a non-Steam game and force a Proton version.
+
+**Controller:** Native gamepad support (the in-game options menu has controller config). No Steam Input mapping required, though you can add a layout if you want menu navigation on the Deck.
+
+**Note:** The base game name is confirmed via the `MKFusion.ini` settings file it generates; the launcher executable is `MKFusion.exe`.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official Mushroom Kingdom Fusion download (itch.io — Fusion Fangaming)"
+url   = "https://fusion-fangaming.itch.io/mushroom-kingdom-fusion"
+
+[[links.guides]]
+title = "How to install GE-Proton on Steam Deck (GamingOnLinux)"
+url   = "https://www.gamingonlinux.com/guides/view/how-to-install-ge-proton-on-steam-deck-steamos-linux/"
+
+[about]
+developer = "Fusion Fangaming"
+publisher = "Fusion Fangaming"
+released  = "2008"
+genre     = "Platformer"
+modes     = "Single-player"
+summary   = """
+**Mushroom Kingdom Fusion** is a free, non-profit **Mario** fan game that crosses the **Super Mario** formula over with elements from more than 30 other video game franchises, featuring numerous playable characters, hundreds of levels, and a large roster of bosses. Started in 2007 by the developer known as **EddyMRA** (formerly JudgeSpear) and built in **GameMaker** on a heavily modified open-source **Super Mario Bros. 3 'Hello Engine 3'**, it grew into a long-running community project under **Fusion Fangaming**.
+
+The game has had a famously troubled, on-and-off development history but resumed yearly updates, with later builds released through **itch.io**. It is **unofficial and unaffiliated with Nintendo**, and was never sold commercially.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free fan game:** by **Fusion Fangaming** (creator **EddyMRA**), distributed on `itch.io` — **unofficial and not affiliated with Nintendo**, never sold commercially.
+
+**Two downloads required:** the *GAME ONLY* archive plus the *MUSIC ONLY* archive (current build V0.93, Rev D hotfix). Missing the music archive = silent game.
+
+**Portable:** No installer — extract the `.7z` and launch `MKFusion.exe`. Add it as a non-Steam game and force `GE-Proton`.
+"""

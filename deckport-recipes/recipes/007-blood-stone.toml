@@ -1,0 +1,81 @@
+[game]
+title       = "James Bond 007: Blood Stone"
+slug        = "007-blood-stone"
+aliases     = ["007 Blood Stone", "Blood Stone", "James Bond Blood Stone"]
+type        = "proton"
+engine      = "other"
+steam_appid = "42730"          # on Steam (delisted) → ProtonDB + appid art lookup
+sgdb_id     = "10045"          # SteamGridDB game id → derives the artwork page
+
+[launch]
+binary         = "Bond.exe"  # confirmed via PCGamingWiki — the launcher/game exe is Bond.exe, not BloodStone.exe
+launch_options = "%command%"
+requires_files = []
+
+[about]
+developer = "Bizarre Creations"
+publisher = "Activision"
+released  = "2010"
+genre     = "Third-person shooter"
+modes     = "Single-player campaign, online multiplayer"
+summary   = """
+**James Bond 007: Blood Stone** is a 2010 **third-person shooter** in the **Bond series**, built on Bizarre Creations' in-house **Bespoke engine** (originally created for *The Club*). It features an original story (written by Bond screenwriter Bruce Feirstein) set in the Daniel Craig film era, with Craig, Judi Dench and Joss Stone providing likenesses and voices.
+
+It was the final title developed by **Bizarre Creations** before the studio closed in early 2011. The PC version was **delisted** from sale after Activision's James Bond license lapsed."""
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2010 third-person Bond shooter (Bizarre Creations' Bespoke engine), delisted from Steam. Community reports (ProtonDB Gold, low confidence / few reports) it runs well on Deck.
+
+**Proton:** Use `GE-Proton` — it bundles the Games for Windows Live (GFWL) workarounds this title needs.
+
+**DRM:** The retail build ships with `GFWL` plus `SecuROM`, so a **DRM-free / no-DVD `Bond.exe` is the smoothest path** under Proton. Otherwise the GFWL sign-in prompt and SecuROM checks can block launch.
+
+**Controller:** Works out of the box — the game has native Xbox-style gamepad support, so the Deck pad maps without a custom layout.
+
+**Crash fix:** On native Windows the known fix is Win7 compatibility mode / unchecking `CPU0` affinity; under Proton this generally isn't needed.
+
+**Install:** `deckport` configures the prefix only — it does not bundle or link the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+# ProtonDB link derives from steam_appid (42730). SteamGridDB derives from sgdb_id.
+# Add a steamgriddb override here only if you want to point at a specific page.
+steamgriddb = "https://www.steamgriddb.com/game/10045"
+
+[[links.guides]]
+title = "r/SteamDeck: 007 Blood Stone on Steam Deck"
+url   = "https://www.reddit.com/r/SteamDeck/comments/wsvnni/james_bond_007_blood_stone_on_steam_deck/"
+
+[[links.guides]]
+title = "r/SteamDeck: 007 Blood Stone runs pretty well"
+url   = "https://www.reddit.com/r/SteamDeck/comments/yhwbun/007_blood_stone_runs_pretty_well/"
+
+[[links.guides]]
+title = "Steam Community hub (appid 42730)"
+url   = "https://steamcommunity.com/app/42730/"
+
+[[links.guides]]
+title = "PCGamingWiki: James Bond 007: Blood Stone (DRM, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/James_Bond_007:_Blood_Stone"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Being a delisted title, you must supply your own legally-obtained game files; this recipe only describes the prefix.
+
+**DRM:** Main hurdle is the original DRM stack — Games for Windows Live (`GFWL`) plus `SecuROM`. `GE-Proton` handles GFWL best; if you hit a GFWL sign-in wall or SecuROM disc check, a **DRM-free / no-DVD `Bond.exe` sidesteps both**.
+
+**Controller:** Support is native (Xbox gamepad), so the Deck pad works without a Steam Input layout.
+
+**Test status:** ProtonDB Gold is community data, not our own Deck test (hence `needs-test`)."""

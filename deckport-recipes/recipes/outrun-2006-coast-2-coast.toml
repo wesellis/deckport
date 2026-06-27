@@ -1,0 +1,76 @@
+[game]
+title       = "OutRun 2006: Coast 2 Coast"
+slug        = "outrun-2006-coast-2-coast"
+aliases     = ["OutRun 2006", "OR2006C2C"]
+type        = "proton"
+engine      = "other"
+steam_appid = "4730"
+sgdb_id     = ""
+
+[about]
+developer = "Sumo Digital"
+publisher = "Sega"
+released  = "2006"
+genre     = "Arcade racing"
+modes     = "Single-player, local network and online multiplayer (up to six players)"
+summary   = "**OutRun 2006: Coast 2 Coast**, known as OutRun 2 SP in Japan, is an arcade racing game by Sumo Digital and Sega. It bundles a conversion of the OutRun 2 SP arcade game (which also contains the original OutRun 2 stages) with a new **Coast 2 Coast** career mode of missions and challenge events such as drift, slipstream and elimination races. Known for its **drift-heavy handling**, branching stage routes and licensed **Ferrari cars**, it is regarded as one of the strongest entries in the **OutRun** series. The PC version was pulled from sale in 2010 when **Sega's Ferrari licence expired**."
+
+[launch]
+binary         = "OR2006C2C.EXE"   # stated by the release
+launch_options = "WINEDLLOVERRIDES=\"dinput8=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** SEGA's 2006 arcade racer, delisted (the Ferrari licence lapsed).
+
+**Proton:** Community-confirmed working on Deck under Proton; `GE-Proton` recommended for the gamepad.
+
+**Fix:** Pair it with emoose's community `OutRun2006Tweaks` (`dinput8.dll` wrapper) for widescreen, high frame rate, UI scaling and rumble fixes. **Copy the tweaks files into the install dir alongside `OR2006C2C.EXE`.**
+
+**Wrapper:** For the wrapper to load under Proton, set the launch option `WINEDLLOVERRIDES="dinput8=n,b" %command%`. The tweaks `dinput8.dll` needs a recent x86 Visual C++ runtime (a 2024-era redist) to load, so install `vcrun2022` via `protontricks`/`winetricks` if the wrapper fails to start.
+
+**Cosmetic:** The 0.5+ tweaks default `UIScalingMode=1` so the in-game HUD no longer stretches at 16:10.
+
+**Performance:** Runs at 800p/60fps with low battery drain; AA can stay on.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "OutRun2006Tweaks (emoose)"
+url   = "https://github.com/emoose/OutRun2006Tweaks/releases"
+
+[[links.guides]]
+title = "ProtonDB reports (app 4730)"
+url   = "https://www.protondb.com/app/4730"
+
+[[links.guides]]
+title = "PCGamingWiki - OutRun 2006: Coast 2 Coast"
+url   = "https://www.pcgamingwiki.com/wiki/OutRun_2006:_Coast_2_Coast"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** Delisted commercial game.
+
+**Controller:** The game has native gamepad support, but if accelerate/brake don't respond, open the Steam overlay and **disable Steam controller support** (or apply a Steam Input gamepad layout) so the game's built-in input takes over.
+
+**Rumble:** The `OutRun2006Tweaks` INI can restore XInput rumble (off by default since 0.4.2 due to Bluetooth lag).
+
+**Install:** Apply `OutRun2006Tweaks` into the install dir and keep the `WINEDLLOVERRIDES` launch option so the wrapper loads.
+
+**Test on hardware before marking working.**
+"""

@@ -1,0 +1,70 @@
+[game]
+title       = "Angry Birds Space"
+slug        = "angry-birds-space"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "210550"
+sgdb_id     = ""
+
+[launch]
+binary         = "AngryBirdsSpace.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `210550`). ProtonDB rates it **gold** and community reports confirm it runs on Linux/Proton.
+
+**Proton:** `GE-Proton` (or `proton_experimental`) launches cleanly, with no DRM/GFWL middleware to bypass.
+
+**Controller:** The slingshot gameplay is pure point-and-click mouse, so it has **NO native controller support**. On the Deck, add a Steam Input layout that drives the cursor with the right trackpad (or gyro) and binds left-click to a trigger; aiming the slingshot then works fine.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Rovio Entertainment"
+publisher = "Rovio Entertainment"
+released  = "2012"
+genre     = "Physics-based puzzle"
+modes     = "Single-player"
+summary   = "**Angry Birds Space** is a 2012 physics-based puzzle game and the fifth main entry in Rovio's **Angry Birds** series, notable as the first to move the slingshot gameplay into **outer space** where varied planetary **gravity fields** bend each bird's trajectory. It launched in a partnership with **NASA** and was a major commercial hit, passing 50 million downloads within weeks of release. Like the rest of the classic Angry Birds catalog, it was later **delisted** and is no longer sold, leaving the PC/Mac version unsupported."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Angry Birds Space (appid 210550)"
+url   = "https://www.protondb.com/app/210550"
+
+[[links.guides]]
+title = "Steam Community Hub — Angry Birds Space"
+url   = "https://steamcommunity.com/app/210550"
+
+[[links.guides]]
+title = "Steam Input on Steam Deck (mapping mouse to trackpad/gyro)"
+url   = "https://partner.steamgames.com/doc/features/steam_controller"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Compatibility:** ProtonDB **gold**; runs on Linux/Proton per community reports (delisted, no longer purchasable on Steam).
+
+**Controller:** No native gamepad support — the slingshot is mouse-only, so on the Deck you **MUST** set up a Steam Input layout using the right trackpad/gyro as the mouse with a trigger bound to left-click; without that the game is unplayable on a controller.
+
+**Online:** Single-player/offline, so no server-shutdown risk.
+
+**Needs-test:** Binary (`AngryBirdsSpace.exe`) and Steam Input layout still need a hands-on Deck pass to confirm."""

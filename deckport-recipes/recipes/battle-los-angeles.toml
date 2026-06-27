@@ -1,0 +1,71 @@
+[game]
+title       = "Battle: Los Angeles"
+slug        = "battle-los-angeles"
+aliases     = ["Battle LA", "Battle: Los Angeles"]
+type        = "proton"
+engine      = "other"
+steam_appid = "61220"
+sgdb_id     = "17526"       # https://www.steamgriddb.com/game/17526
+
+[launch]
+binary         = "BattleLA.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2011 Saber Interactive / Konami movie tie-in FPS (short, budget console port; appid 61220). Main binary is `BattleLA.exe` (in the game's `bin` folder).
+
+**Proton:** Force-install a recent Proton via the game's Compatibility tab; `GE-Proton` is the safest starting point. There is **no Games for Windows Live** on this title, so no login/DRM wrapper to fight — the binary boots toward the menu directly.
+
+**DRM (StarForce):** Per PCGamingWiki the PC release ships **StarForce** disc-style copy protection, which installs a kernel-mode driver and is the real compatibility risk here. StarForce's own `SFUPDATE` driver utility is the documented Windows-side fix on the native machine; under Proton the driver is the usual culprit if the game refuses to start, so this is the first thing to suspect rather than any GFWL fix. **Treat as needs-test** — confirm it actually launches under Proton before trusting it.
+
+**Display:** If you hit a D3D11 black screen on first launch, try the launch option `PROTON_NO_D3D11=1 %command%`.
+
+**Controller:** Being a 360-era port it has native XInput gamepad support, so the Deck controller should be recognized once the game is running; otherwise apply a Steam Input gamepad layout.
+"""
+
+[about]
+developer = "Saber Interactive"
+publisher = "Konami"
+released  = "2011"
+genre     = "First-person shooter"
+modes     = "Single-player"
+summary   = "**Battle: Los Angeles** is a 2011 **first-person shooter** developed by **Saber Interactive** (via its Live Action Studios division) and published by **Konami** as a downloadable tie-in to the 2011 **alien-invasion film** of the same name. Released on the same day as the movie for Windows, Xbox 360, and PlayStation 3, it casts the player as a Marine fighting extraterrestrial forces across a short, linear campaign. It was a low-budget, console-focused release that received unfavorable reviews from critics, who criticized its brevity and generic shooting. It is notable today mainly as a **delisted** licensed movie tie-in that is no longer sold."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted from Steam since Dec 2016 (film license expired) — **owned-library only, not for sale.**
+
+**DRM (StarForce):** The real Deck hurdle is **StarForce** copy protection (per PCGamingWiki), a kernel-mode disc-protection driver — **not** Games for Windows Live, which this title does not use. StarForce v5 needs a manual driver update via StarForce's `SFUPDATE` utility even on plain Windows 10/11, so under Proton it is the most likely reason the game would fail to start. No verified Proton workaround on record — this is the main reason to **treat as needs-test.**
+
+**Display:** If you get a black screen at launch, try `PROTON_NO_D3D11=1 %command%`.
+
+**Status:** ProtonDB has effectively no reports for appid 61220 (tier pending). Bootability under Proton is unconfirmed pending the StarForce question — **needs-test.** Short, budget title.
+
+**Controller:** Native XInput controller support, so the Deck pad should work once the game runs; if not, apply a Steam Input gamepad layout.
+"""
+
+[[links.guides]]
+title = "PCGamingWiki — Battle: Los Angeles (DRM, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Battle:_Los_Angeles"
+
+[[links.guides]]
+title = "ProtonDB — Battle: Los Angeles (appid 61220)"
+url   = "https://www.protondb.com/app/61220"
+
+[[links.guides]]
+title = "PCGamingWiki — StarForce DRM (driver update / SFUPDATE)"
+url   = "https://www.pcgamingwiki.com/wiki/StarForce"

@@ -1,0 +1,74 @@
+[game]
+title       = "Doom 3: BFG Edition"
+slug        = "doom-3-bfg-edition"
+aliases     = ["Doom 3 BFG", "Doom III BFG Edition"]
+type        = "proton"
+engine      = "other"
+steam_appid = "208200"
+sgdb_id     = ""
+
+[launch]
+binary         = "Doom3BFG.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Doom 3: BFG Edition (2012, id Software / Bethesda) — enhanced remaster of Doom 3 with both expansion packs (Resurrection of Evil + The Lost Mission), plus the original Doom 1 and Doom 2. On Steam (app 208200).
+
+**Direct Proton path:** Works at solid 60fps out of the box with GE-Proton. Known visual issue: **MSAA causes white smearing on glass and transparent surfaces** — disable MSAA in the in-game video settings as a workaround.
+
+**Recommended path — RBDoom3BFG via Luxtorpeda:** Install **Luxtorpeda** (via ProtonUp-Qt) and set game compatibility to Luxtorpeda in Steam. Luxtorpeda automatically installs the `rbdoom3bfg` community engine which eliminates the MSAA glitch entirely and adds Vulkan support.
+
+**Controller:** Has a built-in Xbox controller layout, but gamepad support is **NOT enabled by default** — the game boots into mouse/keyboard mode. On first launch use the Deck's right trackpad to open **Options > Controls** and set **Controller Input** to **Enabled**, then the Deck's gamepad works. (The included classic Doom 1/2 may still need keyboard binds for menus.)
+
+**Included games:** BFG Edition includes Doom 1 and Doom 2 — these are extracted to the `base/` directory and can also be used with other source ports."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Doom 3: BFG Edition — Steam page"
+url   = "https://store.steampowered.com/app/208200/Doom_3_BFG_Edition/"
+
+[[links.guides]]
+title = "Luxtorpeda — GitHub"
+url   = "https://github.com/luxtorpeda-dev/luxtorpeda"
+
+[[links.guides]]
+title = "ProtonDB — Doom 3: BFG Edition"
+url   = "https://www.protondb.com/app/208200"
+
+[[links.guides]]
+title = "Steam discussion — using a controller (enable Controller Input)"
+url   = "https://steamcommunity.com/app/208200/discussions/0/810922320187978979/"
+
+[about]
+developer = "id Software"
+publisher = "Bethesda Softworks"
+released  = "2012"
+genre     = "First-person shooter / horror"
+modes     = "Single-player, co-op (Lost Souls)"
+summary   = "**Doom 3: BFG Edition** is a **2012 enhanced remaster** by **id Software / Bethesda** of the 2004 survival-horror FPS, bundling the base game, Resurrection of Evil expansion, the new Lost Mission campaign, and the original **Doom 1 and Doom 2**. On Steam (app 208200), it runs well on Steam Deck via GE-Proton or via Luxtorpeda with the RBDoom3BFG engine for better visuals."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**MSAA glitch:** MSAA causes white smearing on glass surfaces — disable it in video settings, or use the Luxtorpeda/RBDoom3BFG path which fixes this.
+
+**Luxtorpeda path:** Install Luxtorpeda via ProtonUp-Qt, set game's compatibility tool to Luxtorpeda in Steam. This installs RBDoom3BFG automatically and is the cleanest experience.
+
+**Controller not on by default:** Gamepad input is disabled at first launch (game starts in mouse/keyboard mode). Use the trackpad to go to **Options > Controls** and turn **Controller Input** to **Enabled**; restart if mappings don't take. Disabling Steam Input can avoid input conflicts.
+
+**Included WADs:** Doom 1 and Doom 2 WADs are included — can be extracted from `base/` and used with other source ports like GZDoom."""

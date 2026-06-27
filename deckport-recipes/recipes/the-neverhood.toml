@@ -1,0 +1,65 @@
+[game]
+title       = "The Neverhood"
+slug        = "the-neverhood"
+aliases     = ["Neverhood", "nhc.exe"]
+type        = "proton"        # the Windows build + compatibility patch; see the ScummVM note
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "nhc.exe"    # the classic Neverhood executable; verify in your copy
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** 1996 claymation point-and-click adventure (DreamWorks Interactive).
+
+**DRM:** Out of print, rights now held by EA, never officially re-released (8,600+ GOG wishlist votes, no plans) — **bring your own copy**.
+
+**Fix:** The cleanest Deck path is **NATIVE via ScummVM**, which officially supports The Neverhood (`DEV` engine, fully completable, only minor non-blocking issues): install the ScummVM Flatpak (flathub `org.scummvm.ScummVM`), point it at your own game-data folder, and skip Proton entirely. ScummVM runs the original CD content directly with no modern-compatibility patch needed.
+
+**Proton:** If you instead force the raw Windows `nhc.exe` under Proton (`proton_experimental` / `GE-Proton`), it needs an unofficial modern-compatibility patch and is far more fragile than ScummVM, so **ScummVM is strongly preferred**.
+
+**Controller:** No native controller support (point-and-click), so use a Steam Input layout: trackpad-as-mouse plus button binds for left/right click and `ESC`.
+"""
+
+[[links.guides]]
+title = "ScummVM Compatibility — The Neverhood (DEV engine, support level Good)"
+url   = "https://www.scummvm.org/compatibility/DEV/neverhood:neverhood/"
+
+[[links.guides]]
+title = "Running ScummVM games on SteamOS / Steam Deck (EmuDeck)"
+url   = "https://emudeck.github.io/emulators/steamos/scummvm/"
+
+[about]
+developer = "The Neverhood, Inc."
+publisher = "DreamWorks Interactive"
+released  = "1996"
+genre     = "Point-and-click adventure"
+modes     = "Single-player"
+summary   = "**The Neverhood** is a 1996 **point-and-click adventure** conceived by **Doug TenNapel** (creator of **Earthworm Jim**) in which the player guides a character named **Klaymen** through a surreal world built and animated entirely from **clay**. Its hand-built **claymation** sets and characters reportedly used over three tons of clay, giving it a distinctive stop-motion look unlike anything else of its era. It was named best adventure game of 1996 by Computer Games Strategy Plus and CNET Gamecenter and has retained a strong **cult following**. The rights are now held by **EA** and the game has never received an official modern re-release, leaving it long out of print."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Out of print, EA-held rights, not for sale on Steam/GOG — configuration only, no links.
+
+**Prefer ScummVM:** PREFER ScummVM (native Flatpak, officially supported, fully completable) over Proton; ScummVM runs natively on Deck so no Proton/protondb tier applies on the recommended path.
+
+**Proton:** If you force the raw Windows `nhc.exe` under Proton it needs the unofficial modern-compatibility patch and is **fragile**.
+
+**Controller:** Mouse-driven point-and-click — set up a Steam Input trackpad-as-mouse layout with left/right-click and `ESC` binds.
+"""

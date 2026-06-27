@@ -1,0 +1,78 @@
+[game]
+title       = "Need for Speed: Most Wanted (2005)"
+slug        = "nfs-most-wanted"
+aliases     = ["NFS Most Wanted", "NFSMW", "Most Wanted 2005", "speed.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[about]
+developer = "EA Black Box"
+publisher = "Electronic Arts"
+released  = "2005"
+genre     = "Racing"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Need for Speed: Most Wanted (2005)** is an open-world arcade racer set in the fictional city of Rockport, developed by **EA Black Box**. It blends the **Underground** series' street racing and car customization with a **Blacklist** career mode in which the player works up a roster of 15 rival drivers, and it reintroduced high-stakes **police pursuits** to the series.
+
+Widely regarded as a high point of the franchise, it was a major critical and commercial success, selling over 18 million copies. The 2005 original was **never sold on Steam** and is no longer offered for new digital purchase, so it remains a fan-favorite that players run from their own copies."""
+
+[launch]
+binary         = "speed.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2005 EA Black Box racer (the original Most Wanted; delisted — **bring your own copy**). Note the Steam appid `1262560` is the unrelated **2012 Criterion reboot**, so this recipe carries no appid.
+
+**Disc check:** The retail release uses **SafeDisc** copy protection, whose disc check no longer functions on modern Windows (and therefore under Proton). Apply EA's **official v1.3 patch** and run the resulting patched `speed.exe`; that is the standard legitimate fix for an owned copy.
+
+**Install:** Add `speed.exe` as a non-Steam game and force `GE-Proton` (`Proton Experimental` also reported working).
+
+**Mod loader / controller:** ThirteenAG's Widescreen Fix loads through a proxy `dinput8.dll` placed next to `speed.exe`. Tell Proton to load it by setting the launch option `WINEDLLOVERRIDES="dinput8=n,b" %command%` (native, then builtin); otherwise the fix — and its improved **XInput** gamepad support — will not load.
+
+**Binary choice:** `speed.exe` is the main launcher; the v1.3 patch updates it in place.
+
+**Community fixes:** ThirteenAG's Widescreen Fix (adds XInput gamepad support, FOV/HUD fixes), NFSMW Unlimiter, Extra Options, HD Reflections, Zolika's Limit Adjuster.
+
+Reported to run about as well as on Windows once set up."""
+
+[[links.guides]]
+title = "ThirteenAG Widescreen Fix (NFS:MW 2005) — release & install"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/nfsmw"
+
+[[links.guides]]
+title = "PCGamingWiki — Need for Speed: Most Wanted (fixes, DRM, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/Need_for_Speed:_Most_Wanted"
+
+[[links.guides]]
+title = "Official v1.3 patch (PCGamingWiki Community files)"
+url   = "https://community.pcgamingwiki.com/files/file/1066-need-for-speed-most-wanted-patch/"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**No official ProtonDB rating:** The 2005 original was never on Steam, so there is no ProtonDB entry for it (appid `1262560` rates the unrelated 2012 reboot). Community reports say it runs well, but it needs manual setup, so this is tracked as Silver rather than borrowing the reboot's tier.
+
+**Supply your own copy:** The 2005 original (not the 2012 Criterion reboot); never sold on Steam, so no appid. Configuration only, no links.
+
+**DRM:** Retail copies use SafeDisc, whose disc check fails on modern systems. The official v1.3 patch's executable is the standard fix for an owned copy.
+
+**Controller:** Vanilla DirectInput pad detection is unreliable; the recommended path is the ThirteenAG Widescreen Fix's XInput gamepad support plus a Steam Input layout. Enable Gamepad in the in-game Controller settings as well.
+
+**Display:** If the window drops to windowed mode on focus loss, re-set the resolution in `Options` to restore fullscreen.
+
+**Cosmetic:** ThirteenAG Widescreen Fix is recommended for the Deck's 16:10 output; Unlimiter + Limit Adjuster fix vanilla framerate/physics quirks."""

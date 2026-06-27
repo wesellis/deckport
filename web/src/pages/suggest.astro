@@ -1,0 +1,382 @@
+---
+import Base from "../layouts/Base.astro";
+
+// The GitHub repo the "propose new file" flow targets. Keep in sync with
+// RECIPES_REPO in src/lib/recipes.ts.
+const REPO = "wesellis/deckport";
+const BRANCH = "main";
+const RECIPE_DIR = "deckport-recipes/recipes";
+---
+
+<Base title="Suggest a recipe — deckport" current="suggest">
+  <section class="section">
+    <div class="wrap prose" style="max-width:820px;">
+      <p class="eyebrow">contribute</p>
+      <h2>Suggest a recipe</h2>
+      <p class="rf-lead">
+        No git, no account setup, no waiting on a maintainer. Fill this in and it
+        builds a valid recipe and hands off to GitHub's "propose new file" flow —
+        you commit it under <em>your</em> GitHub account, which opens a pull
+        request. CI checks it automatically <span class="rf-mut">(including the
+        no-game-files rule)</span>, then a maintainer merges it.
+      </p>
+      <div class="callout warn">
+        <p class="label">the one hard rule</p>
+        <p style="margin:0;">
+          Describe how to <strong>configure</strong> the game only. Never link to
+          where to download a game, or anything about defeating copy protection —
+          those are <strong>rejected automatically</strong>. Linking a creator's
+          own free/official page <span class="rf-mut">(itch.io, GameJolt, GOG,
+          Steam, the dev's site)</span> is fine.
+        </p>
+      </div>
+
+      <form
+        id="recipe-form"
+        class="rf"
+        autocomplete="off"
+        data-repo={REPO}
+        data-branch={BRANCH}
+        data-recipedir={RECIPE_DIR}
+      >
+        <div class="rf-section">
+          <h3 class="rf-h"><span class="rf-n">1</span> The basics</h3>
+          <div class="rf-grid">
+            <label>Game title *
+              <input name="title" required placeholder="Mighty Final Fight Forever" />
+            </label>
+            <label>Slug (auto)
+              <input name="slug" placeholder="mighty-final-fight-forever" />
+            </label>
+            <label>Type *
+              <select name="type">
+                <option value="native">native (Linux build — runs directly)</option>
+                <option value="proton">proton (Windows .exe — runs via Proton)</option>
+              </select>
+            </label>
+            <label>Engine
+              <select name="engine">
+                <option>other</option>
+                <option>godot</option>
+                <option>love</option>
+                <option>unity</option>
+                <option>gamemaker</option>
+                <option>renpy</option>
+                <option>openbor</option>
+                <option>native</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="rf-section">
+          <h3 class="rf-h"><span class="rf-n">2</span> How it launches</h3>
+          <div class="rf-grid">
+            <label>Binary * <span class="hint">the .x86_64 / .love / .exe to run</span>
+              <input name="binary" required placeholder="PLAY Mighty Final Fight Forever.exe" />
+            </label>
+            <label>Required files <span class="hint">comma-separated, beside the binary</span>
+              <input name="requires" placeholder="Paks/MFF4ever.pak" />
+            </label>
+            <label>Launch options
+              <input name="launch_options" placeholder="%command%" />
+            </label>
+          </div>
+        </div>
+
+        <div class="rf-section proton-only">
+          <h3 class="rf-h"><span class="rf-n">3</span> Proton setup <span class="rf-mut">— for proton titles</span></h3>
+          <div class="rf-grid">
+            <label>Proton version <span class="hint">e.g. proton_experimental, GE-Proton</span>
+              <input name="proton_version" placeholder="proton_experimental" />
+            </label>
+            <label>Winetricks <span class="hint">comma-separated</span>
+              <input name="winetricks" placeholder="vcrun2022, dxvk" />
+            </label>
+          </div>
+        </div>
+
+        <div class="rf-section">
+          <h3 class="rf-h"><span class="rf-n">4</span> Art &amp; links</h3>
+          <div class="rf-grid">
+            <label>Steam AppID <span class="hint">if it's on Steam</span>
+              <input name="steam_appid" placeholder="42730" />
+            </label>
+            <label>SteamGridDB <span class="hint">game id or URL</span>
+              <input name="sgdb" placeholder="10045" />
+            </label>
+            <label>Community guide — URL <span class="hint">Reddit thread, blog, video</span>
+              <input name="guide_url" placeholder="https://www.reddit.com/r/SteamDeck/..." />
+            </label>
+            <label>Community guide — title
+              <input name="guide_title" placeholder="r/SteamDeck: getting it to run" />
+            </label>
+          </div>
+        </div>
+
+        <div class="rf-section">
+          <h3 class="rf-h"><span class="rf-n">5</span> Honesty &amp; credit</h3>
+          <div class="rf-grid">
+            <label>Honest status *
+              <select name="status">
+                <option value="unverified">unverified — guessed, never run</option>
+                <option value="needs-test" selected>needs-test — structure checked, not launched</option>
+                <option value="working">working — I ran it on a real Deck</option>
+                <option value="borked">borked — confirmed it does NOT run</option>
+              </select>
+            </label>
+            <label class="working-only">Verified on <span class="hint">SteamOS build + date (required for working)</span>
+              <input name="verified_on" placeholder="SteamOS 3.6.19, 2026-06" />
+            </label>
+            <label>Your name / handle
+              <input name="contributor" placeholder="optional" />
+            </label>
+          </div>
+          <label class="rf-wide">Caveats <span class="hint">the one thing the next person needs to know (required for borked)</span>
+            <textarea name="caveats" rows="3" placeholder="Native OpenBOR build; keep the Paks/ folder beside the exe."></textarea>
+          </label>
+        </div>
+
+        <div id="rf-errors" class="rf-errors" hidden></div>
+
+        <div class="btn-row">
+          <button type="submit" class="btn primary">Build recipe + open PR on GitHub ↗</button>
+          <button type="button" id="rf-preview" class="btn">Preview TOML</button>
+        </div>
+      </form>
+
+      <div id="rf-out" hidden style="margin-top:1.5rem;">
+        <p class="eyebrow">generated recipe</p>
+        <pre><code id="rf-toml"></code></pre>
+        <div class="btn-row">
+          <a id="rf-gh" class="btn primary" href="#" rel="noopener">Open "propose new file" on GitHub ↗</a>
+          <button type="button" id="rf-copy" class="btn">Copy TOML</button>
+        </div>
+        <p class="note">
+          On GitHub: scroll down, click <strong>Commit changes</strong> →
+          <strong>Create a new branch and start a pull request</strong>. That's it.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .rf-lead {
+    font-size: 1.1rem;
+    color: var(--text);
+  }
+  .rf-mut {
+    color: var(--sub);
+    font-weight: 400;
+    font-size: 0.85em;
+  }
+  .callout.warn {
+    margin: 1.1rem 0 0.5rem;
+  }
+
+  /* numbered form sections */
+  .rf-section {
+    margin: 1.7rem 0;
+    padding-top: 1.3rem;
+    border-top: 1px solid var(--line);
+  }
+  .rf-section:first-of-type {
+    border-top: none;
+    padding-top: 0.5rem;
+  }
+  .rf-h {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.08rem;
+    margin: 0 0 1rem;
+  }
+  .rf-n {
+    display: inline-grid;
+    place-items: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    flex: none;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--amber) 15%, transparent);
+    border: 1px solid var(--amber);
+    color: var(--amber);
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  // External (bundled) script — no inline `define:vars` — so a strict CSP can
+  // forbid inline scripts. Config comes from the form's data-* attributes.
+  const form = document.getElementById("recipe-form");
+  const REPO = form.dataset.repo || "wesellis/deckport";
+  const BRANCH = form.dataset.branch || "main";
+  const RECIPE_DIR = form.dataset.recipedir || "deckport-recipes/recipes";
+
+  // A representative slice of the server-side denylist for a friendly pre-warn.
+  // CI is the real gate (deckport.recipe.FORBIDDEN_TOKENS).
+  const DENY = [
+    "myabandonware", "abandonware", "emuparadise", "romsmania", "coolrom",
+    "vimm.net", "fitgirl", "igg-games", "oceanofgames", "skidrow", "thepiratebay",
+    "1337x", "rarbg", "nyaa.si", "magnet:?", ".torrent", "keygen", "warez",
+  ];
+
+  const out = document.getElementById("rf-out");
+  const tomlEl = document.getElementById("rf-toml");
+  const ghEl = document.getElementById("rf-gh");
+  const errBox = document.getElementById("rf-errors");
+
+  const slugify = (s) =>
+    s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "game";
+  const q = (v) =>
+    '"' + String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+  const arr = (items) => "[" + items.map(q).join(", ") + "]";
+  const splitList = (s) =>
+    (s || "").split(",").map((x) => x.trim()).filter(Boolean);
+
+  // keep slug synced to title until the user edits slug themselves
+  const titleEl = form.title, slugEl = form.slug;
+  let slugDirty = false;
+  slugEl.addEventListener("input", () => (slugDirty = true));
+  titleEl.addEventListener("input", () => {
+    if (!slugDirty) slugEl.value = slugify(titleEl.value);
+  });
+
+  // show/hide conditional fields
+  function syncConditional() {
+    const proton = form.type.value === "proton";
+    document.querySelectorAll(".proton-only").forEach((e) => (e.style.display = proton ? "" : "none"));
+    const working = form.status.value === "working";
+    document.querySelectorAll(".working-only").forEach((e) => (e.style.display = working ? "" : "none"));
+  }
+  form.type.addEventListener("change", syncConditional);
+  form.status.addEventListener("change", syncConditional);
+  syncConditional();
+
+  function collect() {
+    const f = form;
+    const slug = (f.slug.value.trim() || slugify(f.title.value)).trim();
+    const guides = [];
+    if (f.guide_url.value.trim()) {
+      guides.push({ title: f.guide_title.value.trim() || f.guide_url.value.trim(), url: f.guide_url.value.trim() });
+    }
+    return {
+      title: f.title.value.trim(),
+      slug,
+      type: f.type.value,
+      engine: f.engine.value,
+      steam_appid: f.steam_appid.value.trim(),
+      sgdb: f.sgdb.value.trim(),
+      binary: f.binary.value.trim(),
+      launch_options: f.launch_options.value.trim(),
+      requires: splitList(f.requires.value),
+      proton_version: f.proton_version.value.trim(),
+      winetricks: splitList(f.winetricks.value),
+      guides,
+      status: f.status.value,
+      verified_on: f.verified_on.value.trim(),
+      contributor: f.contributor.value.trim(),
+      caveats: f.caveats.value.trim(),
+    };
+  }
+
+  function validate(d) {
+    const errs = [];
+    if (!d.title) errs.push("Game title is required.");
+    if (!d.binary) errs.push("Binary is required.");
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(d.slug)) errs.push("Slug must be lowercase words separated by hyphens.");
+    if (d.type === "proton" && !d.proton_version) errs.push("Proton titles need a Proton version.");
+    if (d.status === "working" && !d.verified_on) errs.push("Status 'working' requires a 'verified on' SteamOS build (the honest rule).");
+    if (d.status === "borked" && !d.caveats) errs.push("Status 'borked' requires caveats saying why.");
+    // content line
+    const blob = JSON.stringify(d).toLowerCase();
+    for (const tok of DENY) {
+      if (blob.includes(tok)) { errs.push(`Remove the forbidden source/term "${tok}" — recipes never link to game files.`); break; }
+    }
+    return errs;
+  }
+
+  function toToml(d) {
+    const sgdbUrl =
+      d.sgdb === "" ? "" :
+      /^https?:\/\//.test(d.sgdb) ? d.sgdb :
+      `https://www.steamgriddb.com/game/${d.sgdb}`;
+    let t = "";
+    t += "[game]\n";
+    t += `title       = ${q(d.title)}\n`;
+    t += `slug        = ${q(d.slug)}\n`;
+    t += `aliases     = []\n`;
+    t += `type        = ${q(d.type)}\n`;
+    t += `engine      = ${q(d.engine)}\n`;
+    t += `steam_appid = ${q(d.steam_appid)}\n`;
+    t += `sgdb_id     = ${q(/^\d+$/.test(d.sgdb) ? d.sgdb : "")}\n`;
+    t += `\n[launch]\n`;
+    t += `binary         = ${q(d.binary)}\n`;
+    t += `launch_options = ${q(d.launch_options)}\n`;
+    t += `requires_files = ${arr(d.requires)}\n`;
+    if (d.type === "proton") {
+      t += `\n[proton]\n`;
+      t += `version    = ${q(d.proton_version)}\n`;
+      t += `winetricks = ${arr(d.winetricks)}\n`;
+      t += `notes      = ""\n`;
+    }
+    t += `\n[art]\n`;
+    t += `cover = "auto"\nhero  = "auto"\nlogo  = "auto"\nicon  = "auto"\n`;
+    if (sgdbUrl || d.guides.length) {
+      t += `\n[links]\n`;
+      t += `protondb    = ""\n`;
+      t += `steamgriddb = ${q(sgdbUrl)}\n`;
+      for (const g of d.guides) {
+        t += `\n[[links.guides]]\n`;
+        t += `title = ${q(g.title)}\n`;
+        t += `url   = ${q(g.url)}\n`;
+      }
+    }
+    t += `\n[meta]\n`;
+    t += `status        = ${q(d.status)}\n`;
+    t += `verified_on   = ${q(d.verified_on)}\n`;
+    t += `contributor   = ${q(d.contributor)}\n`;
+    t += `protondb_tier = ""\n`;
+    t += `caveats       = ${q(d.caveats)}\n`;
+    return t;
+  }
+
+  function showErrors(errs) {
+    if (!errs.length) { errBox.hidden = true; return false; }
+    errBox.hidden = false;
+    errBox.innerHTML = "<strong>Fix these first:</strong><ul>" + errs.map((e) => `<li>${e}</li>`).join("") + "</ul>";
+    errBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    return true;
+  }
+
+  function build() {
+    const d = collect();
+    if (showErrors(validate(d))) { out.hidden = true; return null; }
+    const toml = toToml(d);
+    tomlEl.textContent = toml;
+    const url =
+      `https://github.com/${REPO}/new/${BRANCH}` +
+      `?filename=${encodeURIComponent(`${RECIPE_DIR}/${d.slug}.toml`)}` +
+      `&value=${encodeURIComponent(toml)}`;
+    ghEl.href = url;
+    out.hidden = false;
+    return url;
+  }
+
+  document.getElementById("rf-preview").addEventListener("click", () => {
+    if (build()) out.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const url = build();
+    if (url) window.open(url, "_blank", "noopener");
+  });
+
+  document.getElementById("rf-copy").addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(tomlEl.textContent || ""); } catch {}
+  });
+</script>

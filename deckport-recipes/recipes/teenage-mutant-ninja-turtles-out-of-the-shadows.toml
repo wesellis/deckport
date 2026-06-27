@@ -1,0 +1,78 @@
+[game]
+title       = "Teenage Mutant Ninja Turtles: Out of the Shadows"
+slug        = "teenage-mutant-ninja-turtles-out-of-the-shadows"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "228560"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/Win32/TMNT-OotS.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 228560`), pulled in Jan 2017 when Activision did not renew the TMNT license; a brief 2023 relisting was a Valve error and was refunded/revoked.
+
+**Proton:** ProtonDB rates it platinum and community threads confirm it runs on the Steam Deck (tested on `Proton 7.0-5`; `GE-Proton` or `proton_experimental` also fine).
+
+**Controller:** Unreal Engine 3 beat-em-up with native Xbox-style controller support **in-game**, but the **menus are awkward with a pad**. Community Deck reports note the title/menus need a keyboard key (map `Enter`/Start via Steam Input), and after selecting "controller" in the in-game settings the confirm button may need remapping. Add a Steam Input layout (gamepad-with-mouse/keyboard fallback) to navigate the front-end smoothly.
+
+**Install:** Real launch binary is `Binaries\\Win32\\TMNT-OotS.exe`.
+
+**DRM:** Uses Steam DRM only (no Games for Windows Live), so **no DRM bypass is needed**.
+
+**Display:** If the game launches at the wrong resolution, edit the UE3 ini at `<prefix>/.../DamageGame/Config` (or `Engine/Config`) and set `ResX`/`ResY` to the Deck's `1280x800`.
+
+**Cosmetic:** Some users report main-menu/cutscene flicker on certain Proton builds — switching Proton version usually clears it.
+
+deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Red Fly Studio"
+publisher = "Activision"
+released  = "2013"
+genre     = "Beat 'em up / hack and slash"
+modes     = "Single-player, two-player local co-op, four-player online co-op"
+summary   = "A 2013 brawler based on the Nickelodeon **Teenage Mutant Ninja Turtles** cartoon, built on **Unreal Engine 3**. Players control the four turtles through a **combo-driven, skill-based combat system** across linear stages, alone or in co-op. It received generally negative reviews and was **delisted in early 2017** after Activision's TMNT license lapsed, making it unavailable for sale."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 228560)"
+url   = "https://www.protondb.com/app/228560"
+
+[[links.guides]]
+title = "Steam community: running on Steam Deck (menu/controller notes)"
+url   = "https://steamcommunity.com/app/228560/discussions/0/3397427506587605479/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Delisted since Jan 2017 (license lapsed), confirmed not for sale on Steam — **passes the not-for-sale rule**.
+
+**Proton:** ProtonDB platinum with community Deck reports confirming it runs (`Proton 7.0-5` / `GE-Proton`), so marked needs-test rather than fully verified.
+
+**Controller:** Native pad support in-game, but **menus need Steam Input help** (map a keyboard key for the title/front-end; remap confirm after enabling controller in settings). No GFWL/DRM hacks required.
+
+**Quirks:** Occasional main-menu/cutscene flicker on some Proton builds (swap Proton version) and a manual resolution edit if it does not pick `1280x800`.
+
+**Co-op:** The 4-player co-op was online-only and those servers are gone; single-player works fully.
+"""

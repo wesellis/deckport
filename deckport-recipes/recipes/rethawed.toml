@@ -1,0 +1,69 @@
+[game]
+title       = "reTHAWed (Tony Hawk's American Wasteland mod)"
+slug        = "rethawed"
+aliases     = ["reTHAWed", "Tony Hawk's American Wasteland", "THAW"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "reTHAWed.exe"   # mod launcher in the THAW `Game` folder (Lutris install guides set this as the launch target)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Mod:** A community full-game mod for Tony Hawk's American Wasteland (Neversoft, 2005) — adds a big roster of skaters, custom gear, classic levels from THPS through Project 8, restored/improved online, bug fixes, built-in widescreen, adjustable physics, and a custom launcher.
+
+**Base game:** **Needs the base game** — Tony Hawk's American Wasteland, the 2006 Aspyr PC port. THAW was **never sold on Steam** (no Steam appid; the 207210 appid belongs to *Tony Hawk's Pro Skater HD*), so you **bring your own copy** of the retail PC release.
+
+**Performance:** Community reports it runs very well on Deck (60fps, ~6h on OLED).
+
+**Install:** Practical path — drop your THAW PC files into a Lutris wine prefix, run the mod's **reTHAWed Updater** (`updater.exe`) against them to fetch/unpack the mod (**keep the game out of `Program Files`**), then point the launch target at `reTHAWed.exe` in the `Game` folder.
+
+**Proton:** `GE-Proton` is the known-good runtime; you can also run it as a Lutris/non-Steam shortcut.
+
+**Display:** Widescreen is handled by the mod, so no separate `WidescreenFixesPack` patch is needed.
+"""
+
+[about]
+developer = "reTHAWed mod team (base game by Neversoft)"
+publisher = "Community mod (base game published by Activision; PC port by Aspyr)"
+released  = "2017 (mod; base game 2005, PC port 2006)"
+genre     = "Skateboarding / extreme sports"
+modes     = "Single-player, online multiplayer"
+summary   = "**reTHAWed** is a large community **total-conversion mod** for **Tony Hawk's American Wasteland**, the 2005 Neversoft skateboarding game (PC port by Aspyr in 2006). It rebuilds the game for modern systems and folds in content from across the franchise, with levels spanning **Tony Hawk's Pro Skater** through **Project 8**, an expanded roster and Create-A-Skater gear, a rewritten randomized soundtrack system, and an expanded **Classic Mode**. Technically it adds built-in **widescreen**, flexible controller handling, bug fixes, and restored online multiplayer via **OpenSpy**. It has been actively maintained with frequent updates since its 2017 beta."
+
+[[links.guides]]
+title = "reTHAWed — official site (mod + Updater downloads, install requirements)"
+url   = "https://rethawed.com/"
+
+[[links.guides]]
+title = "Installing reTHAWed via Lutris on Steam Deck/Linux (sets reTHAWed.exe as launch target)"
+url   = "https://gist.github.com/gfriesen98/33a8d2a657f92582fb00695f6960b714"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** A free community mod that needs the base Tony Hawk's American Wasteland — the 2006 Aspyr PC port, which was never on Steam and is out of print — supply your own copy; configuration only, no links.
+
+**Launch:** Launch via the `reTHAWed.exe` custom launcher (set the Lutris/Proton launch target to it, **not the original THAW exe**).
+
+**Controller:** The mod adds flexible controller handling, so a gamepad works out of the box; if inputs misbehave, set the Steam Input layout to `Gamepad with trackpad joystick` to force an Xbox-style mapping.
+
+**Install:** Easiest install route on Deck is a Lutris wine prefix under `GE-Proton` — keep the game outside `Program Files` (e.g. a plain `Tony Hawk's American Wasteland` folder).
+
+**protondb tier:** Marked `unknown` on purpose. THAW isn't on Steam (the 207210 appid is *Tony Hawk's Pro Skater HD*, a different game), and the mod runs via Lutris/non-Steam shortcut, so there is no real ProtonDB rating to cite. Community reports nonetheless describe it running well on Deck under `GE-Proton`/Lutris.
+"""

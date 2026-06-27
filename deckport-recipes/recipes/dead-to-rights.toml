@@ -1,0 +1,80 @@
+[game]
+title       = "Dead to Rights"
+slug        = "dead-to-rights"
+aliases     = ["Dead to Rights PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "DTRPC.exe"   # stock exe; launcher is dtrsetup.exe. With the WSGF widescreen fix applied you launch from DTRPC_WS.exe instead.
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Namco's 2003 PC port of the 2002 third-person action game, delisted. Runs under Proton once StarForce DRM is dealt with.
+
+**DRM:** **Critical** — the retail disc uses StarForce DRM, whose kernel driver does not load under Wine/Proton (or any modern Windows), so the game **will not start from the stock disc exe**. You must replace the executable with a StarForce-free / no-CD one. Jackfuste's WSGF widescreen fix ships such a `DTRPC.exe` (copy it into the game folder) and adds a separate `DTRPC_WS.exe` that you actually launch — so the widescreen fix doubles as the DRM/run fix.
+
+**Widescreen + launch flow:** Copy the fixed `DTRPC.exe` into the install folder, run `dtrsetup.exe` to pick your resolution, then launch the game from **`DTRPC_WS.exe`** (not the stock exe).
+
+**60 FPS bug (important):** Game scripts break above ~60 FPS, which can make the tutorial unplayable. Run the launcher `dtrsetup.exe`, set a **60 Hz** refresh rate and enable **Vsync** before playing. On the Deck cap the framerate to 60 to be safe.
+
+**Proton:** `GE-Proton` recommended for the cleanest run on Steam Deck; `proton_experimental` also works.
+
+**GFWL:** No GFWL is involved (the game predates it).
+
+**Controller:** Native gamepad support (console port) — an XInput pad like the Deck's built-in controller works directly. If the pad is not detected, `XInputPlus` is the known PCGamingWiki fallback; otherwise a Steam Input gamepad layout drives the menus/keys fine.
+"""
+
+[about]
+developer = "Namco"
+publisher = "Hip Games"
+released  = "2003"
+genre     = "Third-person shooter, action"
+modes     = "Single-player"
+summary   = "**Dead to Rights** is a **third-person action shooter** in which framed police officer Jack Slate and his dog Shadow fight to clear his name. It features a cinematic cover-and-combat style with **bullet-time** slow-motion, disarms, and hand-to-hand brawling, in the vein of **Max Payne**. Originally a 2002 Xbox title from Namco Hometek, this is the 2003 Windows port published by Hip Games. It received mixed-to-positive reviews and is no longer sold; the PC release is notable for shipping with **StarForce DRM** that fails on modern systems."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Dead to Rights - PCGamingWiki (DRM, widescreen, 60 FPS bug fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Dead_to_Rights"
+
+[[links.guides]]
+title = "Dead to Rights Widescreen Fix by Jackfuste - WSGF / PCGW Community"
+url   = "https://community.pcgamingwiki.com/files/file/1704-dead-to-rights-widescreen-fix/"
+
+[[links.guides]]
+title = "Dead to Rights - Widescreen Gaming Forum (WSGF) details"
+url   = "https://www.wsgf.org/dr/dead-rights/en"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game.
+
+**DRM:** StarForce DRM on the retail disc **will block launch under Proton**; you must run a StarForce-free / no-CD executable. Jackfuste's WSGF widescreen fix provides one: copy its `DTRPC.exe` into the folder and launch from `DTRPC_WS.exe`, which is StarForce-free and fixes modern resolutions.
+
+**Display:** Apply the widescreen hack for non-4:3 displays.
+
+**60 FPS bug:** Scripts break above ~60 FPS (tutorial can become unplayable). In `dtrsetup.exe` set 60 Hz + Vsync, and cap the Deck framerate to 60.
+
+**Controller:** Native gamepad works; `XInputPlus` or a Steam Input layout if the pad isn't seen.
+
+**Note:** deckport links nothing.
+"""

@@ -1,0 +1,76 @@
+[game]
+title       = "Gundemonium Recollection"
+slug        = "gundemonium-recollection"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "92200"
+sgdb_id     = ""
+
+[launch]
+binary         = "gundrec.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Steam game (appid `92200`) — the overseas Rockin' Android release was pulled at the developer's request on `2019-07-31`.
+
+**Proton:** Runs cleanly — `GE-Proton` recommended, stock `proton_experimental` also fine. Lightweight 2D DirectX danmaku shmup.
+
+**DRM:** **No GFWL/SecuROM/DRM** and no widescreen hack needed.
+
+**Config:** Executable is `gundrec.exe`; per-key remaps not covered in-game can be edited in `gundrec.ini` in the install folder.
+
+**Controller:** Native XInput/D-pad support, so the Deck gamepad works out of the box (no Steam Input layout required).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Platine Dispositif"
+publisher = "Rockin' Android"
+released  = "2010"
+genre     = "Danmaku (bullet hell) shoot 'em up"
+modes     = "Single-player"
+summary   = "**Gundemonium Recollection** is a vertically-scrolling **danmaku (bullet hell)** shoot 'em up by Japanese doujin circle Platine Dispositif. It is a 2007 remake of the 2003 original, rebuilt on the updated **GundeadliGne engine** with overhauled graphics, revised bullet patterns, and customizable **Earl character types**, and is the first entry in the three-game **Gundemonium series**. Rockin' Android localized and published the English version for Windows and PlayStation 3 in 2010. The Steam release was **delisted on 2019-07-31** at the developer's request, though existing owners keep library access."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Gundemonium Recollection (appid 92200)"
+url   = "https://www.protondb.com/app/92200"
+
+[[links.guides]]
+title = "PCGamingWiki - Gundemonium Recollection"
+url   = "https://www.pcgamingwiki.com/wiki/Gundemonium_Recollection"
+
+[[links.guides]]
+title = "SteamDB - Gundemonium Recollection (appid 92200)"
+url   = "https://steamdb.info/app/92200/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Removed from Steam `2019-07-31` (overseas version, by developer request) — owners keep library access; no longer for sale on Steam.
+
+**Proton:** ProtonDB **gold**; community reports it running fine on Linux/Proton, and as a simple offline 2D shmup it should play well on the Deck.
+
+**Controller:** Native XInput support (Steam tags it Partial Controller Support — menus may need touch/trackpad in spots).
+
+**Config:** Binary is `gundrec.exe`; tweak `gundrec.ini` for unmappable keys.
+
+**Note:** Single-player only, so no server-shutdown concern. **Not yet confirmed on a physical Deck.**"""

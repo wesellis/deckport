@@ -1,0 +1,81 @@
+[game]
+title       = "Corruption Cards"
+slug        = "corruption-cards"
+aliases     = ["Corruption Cards Doom Mod", "CorruptionCards"]
+type        = "native"        # native Linux via GZDoom Flatpak — no Proton needed
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run org.zdoom.GZDoom -file CorruptionCards-v6.3b.pk3 -iwad doom2.wad"
+requires_files = [
+  "Corruption Cards PK3 from ModDB (latest v6.3b, May 2025) — the download keeps its versioned name, e.g. CorruptionCards-v6.3b.pk3",
+  "Any Doom IWAD (Doom 1, Doom II, Heretic, Hexen, or Freedoom — even the free Freedoom works)",
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Install:** GZDoom is installed via Flatpak: `flatpak install flathub org.zdoom.GZDoom`.
+
+**Files:** Drop the Corruption Cards PK3 (e.g. `CorruptionCards-v6.3b.pk3`) and any compatible IWAD into `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/` — the GZDoom Flatpak looks for files there, not in the bare app folder. Match the `-file` name to the PK3 you downloaded.
+
+**IWAD:** Swap `-iwad doom2.wad` for whichever IWAD you own — `freedoom2.wad`, `doom.wad`, `heretic.wad`, or `hexen.wad` are all supported.
+
+**Controller:** GZDeck (`github.com/flegald/GZDeck`) is a controller-friendly launcher for managing GZDoom mods in Steam Game Mode."""
+
+[about]
+developer = "Mike Hill (Cutmanmike) and contributors"
+publisher = "Independently released (free mod)"
+released  = "2021 (first release, 2021 Cacoward winner); v6.3b May 2025"
+genre     = "First-person shooter (Doom roguelite mod)"
+modes     = "Single-player"
+summary   = "**Corruption Cards** is a **2021 Cacoward winner** (Doomworld's top annual awards for outstanding Doom content). At the start of each level, it presents the player with a choice of three cards drawn from a **pool of 200+** — cards that can make enemies deadlier, grant powerful new weapons, add environmental hazards, or completely transform how the game plays. The **randomized card selection** means no two runs through a campaign play out the same way. Compatible with any Doom-engine IWAD including the free **Freedoom**, it functions as a **roguelite** modifier layered over any Doom campaign or megawad. Latest release v6.3b, May 2025."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ModDB: Corruption Cards download page"
+url   = "https://www.moddb.com/mods/corruption-cards"
+
+[[links.guides]]
+title = "GZDeck — controller-friendly GZDoom launcher for Steam Deck"
+url   = "https://github.com/flegald/GZDeck"
+
+[[links.guides]]
+title = "Freedoom — free legal Doom IWAD suite"
+url   = "https://freedoom.github.io"
+
+[[links.guides]]
+title = "DoomWiki: Corruption Cards (author, versions, card sets)"
+url   = "https://doomwiki.org/wiki/Corruption_Cards"
+
+[[links.guides]]
+title = "ZDoom forums — official Corruption Cards thread"
+url   = "https://forum.zdoom.org/viewtopic.php?t=67939"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** A **gameplay mod** requiring any Doom-engine IWAD — even the free Freedoom works.
+
+**Install:** Install GZDoom via Flatpak (`flatpak install flathub org.zdoom.GZDoom`), download the Corruption Cards PK3 (v6.3b, May 2025, e.g. `CorruptionCards-v6.3b.pk3`) from ModDB, and drop it plus your IWAD into `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/`.
+
+**IWAD:** Adjust the `-iwad` flag to match whichever IWAD you own (`doom2.wad`, `freedoom2.wad`, `doom.wad`, `heretic.wad`, or `hexen.wad`).
+
+**Pairs with megawads:** Pairs extremely well with megawads — stack it on top of any campaign for a roguelite twist.
+
+**Controller:** Use GZDeck (`github.com/flegald/GZDeck`) for a Game Mode-friendly launcher."""

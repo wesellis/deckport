@@ -1,0 +1,58 @@
+[game]
+title       = "Eternal Daughter"
+slug        = "eternal-daughter"
+aliases     = ["Eternal Daughter Freeware", "Eternal Daughter Blackeye"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Eternal Daughter.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Run with GE-Proton. Very lightweight 2002 freeware game built in Clickteam Multimedia Fusion (the archive ships Cncs232.dll alongside the exe) — these MMF titles generally run fine under Proton, though there is no Steam page so no real ProtonDB data exists. The executable is named 'Eternal Daughter.exe' (with a space), not EternalDaughter.exe. Keyboard-only — no native gamepad support; use a Steam Input controller layout to map an Xbox or other controller to the keyboard controls. The original blackeyesoftware.com site is defunct; download the freeware release from Derek Yu's site (derekyu.com) or the Internet Archive. Created by Derek Yu (later creator of Spelunky) and Jon Perry as Blackeye Software."
+
+[about]
+developer = "Derek Yu and Jon Perry (Blackeye Software)"
+publisher = "Blackeye Software"
+released  = "2002"
+genre     = "Metroidvania"
+modes     = "Single-player"
+summary   = "Eternal Daughter is a 2002 freeware Metroidvania action platformer developed by Derek Yu and Jon Perry under the Blackeye Software label, predating the release of Cave Story and standing as one of the earliest polished indie Metroidvania games. Players guide Mia through an interconnected world of exploration, combat, and ability unlocks in the classic Metroid/Castlevania tradition. Derek Yu went on to create Spelunky, making Eternal Daughter a notable piece of indie game history. The game is completely free and available from the developer's website and archive.org."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Derek Yu — Official Site (developer)"
+url   = "http://www.derekyu.com/"
+
+[[links.guides]]
+title = "Internet Archive — Eternal Daughter (free download)"
+url   = "https://archive.org/details/Eternal_Daughter"
+
+[[links.guides]]
+title = "Wikipedia — Eternal Daughter"
+url   = "https://en.wikipedia.org/wiki/Eternal_Daughter"
+
+[[links.guides]]
+title = "PCGamingWiki — Eternal Daughter"
+url   = "https://www.pcgamingwiki.com/wiki/Eternal_Daughter"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Completely free freeware — download from Derek Yu's site (derekyu.com) or the Internet Archive; the original blackeyesoftware.com site is now defunct. Not a Steam title, so there is no ProtonDB entry (protondb_tier left empty). Built in Clickteam Multimedia Fusion; the executable is 'Eternal Daughter.exe' (with a space) and ships with Cncs232.dll — these old MMF games generally run fine under Proton but should be tested on the Deck. No native gamepad support — keyboard-only, so use a Steam Input controller layout to map controller buttons to keyboard inputs. Created by Derek Yu and Jon Perry; Derek Yu later made Spelunky. One of the earliest polished Metroidvania indie games, predating Cave Story."

@@ -1,0 +1,70 @@
+[game]
+title       = "Clive Barker's Jericho"
+slug        = "clive-barkers-jericho"
+aliases     = ["Jericho", "Clive Barker's Jericho"]
+type        = "proton"
+engine      = "other"
+steam_appid = "11420"
+sgdb_id     = ""
+
+[launch]
+binary         = "Jericho.exe"   # main exe in the install root; a Bin/ subfolder holds mod hooks
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** 2007 **MercurySteam** / **Codemasters** squad horror shooter (DirectX 9).
+
+**DRM:** Delisted from Steam — **bring your own copy** (installs only if it was on your Steam account before delisting).
+
+**ProtonDB:** Reported in the **Silver/Gold** range. Users report it running well on Steam Deck at full graphics, **practically locked to 60fps**. The main caveat is that it **hammers one CPU thread (~99%)**, which can cause occasional drops. Proton Experimental (or a recent GE-Proton) works; no special tinkering required.
+
+**Controller:** No native gamepad support (keyboard/mouse era PC shooter) — **use a Steam Input controller layout / the gamepad template** on Deck.
+
+**Install:** **No special setup** beyond installing it. `Jericho.exe` sits in the install root."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "MercurySteam, Alchemic Productions"
+publisher = "Codemasters"
+released  = "2007"
+genre     = "Horror first-person shooter"
+modes     = "Single-player"
+summary   = """
+**Clive Barker's Jericho** is a 2007 horror first-person shooter conceived and written by horror author **Clive Barker**. The player leads a seven-member paranormal special-forces squad called the **Jericho Team**, switching between characters to use their distinct **supernatural abilities** against grotesque enemies in a reality warped by an entity known as the **Firstborn**.
+
+It was the second game to carry Barker's name after **Undying** and is noted for its grisly atmosphere and squad-swapping combat, though it received mixed reviews. The PC version was later **delisted** from digital storefronts after its **licensing rights lapsed**."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted — configuration only, no links.
+
+**Exe:** `Jericho.exe` (in the install root; a `Bin/` subfolder holds mod hooks).
+
+**Controller:** Needs a Steam Input layout — no native gamepad support.
+
+**Performance:** Pins one CPU thread; expect occasional dips around the locked 60fps."""
+
+[[links.guides]]
+title = "ProtonDB — Clive Barker's Jericho (app 11420)"
+url   = "https://www.protondb.com/app/11420"
+
+[[links.guides]]
+title = "Steam Community — works flawlessly on Steam Deck (discussion)"
+url   = "https://steamcommunity.com/app/11420/discussions/0/3413182128735925974/"
+
+[[links.guides]]
+title = "PCGamingWiki — Clive Barker's Jericho (fixes & tweaks)"
+url   = "https://www.pcgamingwiki.com/wiki/Clive_Barker's_Jericho"

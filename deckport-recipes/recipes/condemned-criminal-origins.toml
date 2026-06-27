@@ -1,0 +1,78 @@
+[game]
+title       = "Condemned: Criminal Origins"
+slug        = "condemned-criminal-origins"
+aliases     = ["Condemned", "Condemned Criminal Origins"]
+type        = "proton"
+engine      = "other"
+steam_appid = "4720"
+sgdb_id     = ""
+
+[launch]
+binary         = "Condemned.exe"   # confirmed — in the game's root install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Overview:** Monolith / SEGA 2006 first-person psychological horror (LithTech Jupiter EX engine).
+
+**DRM:** Delisted from Steam — **bring your own copy**. Launch `Condemned.exe` from the game's root folder.
+
+**Proton:** Confirmed strong on Deck — officially Deck-**Playable** and ProtonDB **Platinum**. `proton_experimental` or `GE-Proton` both work.
+
+**Essential fixes (unpack into the game folder):** ThirteenAG's **Condemned Widescreen Fix** adds real widescreen and fixes the stretched menu / low framerate. Pair it with the **Missing Steam Files Fix** — the Steam release ships a smaller archive with missing and reversed sound effects.
+
+**Controller:** The base game has **no native gamepad support**. ThirteenAG's fix adds full gamepad support (via Xidi), **but on Steam Deck specifically, rebinding keys through the fix can crash** (a WINEDLLOVERRIDE quirk) — so the reliable route on Deck is a **Steam Input** layout. A community "Simple Steam Deck Configuration" profile (Xbox-360 style) works well; set the analog axes in-game after applying it.
+"""
+
+[about]
+developer = "Monolith Productions"
+publisher = "Sega"
+released  = "2006"
+genre     = "First-person survival horror"
+modes     = "Single-player"
+summary   = """
+**Condemned: Criminal Origins** is a first-person **survival horror** game built on Monolith's **LithTech Jupiter EX engine**, first released on Xbox 360 in 2005 and on PC in 2006. Players take the role of FBI agent **Ethan Thomas** investigating a string of serial killings, with brutal, **melee-focused close-quarters combat** against deranged enemies in decaying urban environments.
+
+It is widely regarded as one of the standout survival horror titles of the mid-2000s, praised for its oppressive atmosphere, sound design, and improvised weapon combat. It was **delisted from Steam in October 2025**, following Warner Bros. Games' closure of Monolith Productions earlier that year.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ThirteenAG Condemned Widescreen Fix (widescreen + gamepad via Xidi)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/condemned"
+
+[[links.guides]]
+title = "Simple Steam Deck controller config for Condemned"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3276725639"
+
+[[links.guides]]
+title = "Fixes guide — missing files / aspect ratio / FPS / gamepad"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1593741074"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** Delisted from Steam.
+
+**Binary:** Confirmed — `Condemned.exe` in the game's root folder.
+
+**Proton:** ProtonDB Platinum, officially Deck-Playable (`proton_experimental` / `GE-Proton`).
+
+**Fixes:** Apply ThirteenAG's Widescreen Fix + the Missing Steam Files Fix (the Steam version is missing/has reversed sounds).
+
+**Controller:** No native gamepad. On Deck use a Steam Input layout — the fix's in-game gamepad rebinding can crash on Deck. A community "Simple Steam Deck Configuration" profile exists.
+"""

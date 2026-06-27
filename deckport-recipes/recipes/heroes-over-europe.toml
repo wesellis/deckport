@@ -1,0 +1,83 @@
+[game]
+title       = "Heroes Over Europe"
+slug        = "heroes-over-europe"
+aliases     = ["Heroes Over Europe 2009"]
+type        = "proton"
+engine      = "other"
+steam_appid = "33260"
+sgdb_id     = ""
+
+[launch]
+binary         = "heroes2.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["directplay"]
+notes      = """
+**Game:** Transmission Games' 2009 arcade WWII air-combat shooter (Ubisoft), Steam app `33260`, delisted.
+
+**DRM:** Shipped DRM-free.
+
+**Fix:** **Install both official patches (`v1.01` then `v1.02`) FIRST** — they fix the broken DirectInput joystick-axis mapping (default axes can't be remapped) and add native Xbox 360 / generic gamepad support, so the Deck controller works out of the box afterward.
+
+**DirectPlay:** The game uses DirectPlay, so add the `directplay` winetricks verb (or use a Proton-GE build that ships it).
+
+**Proton:** `GE-Proton` is the safest bet; `proton_experimental` also works.
+
+**Controller:** In-game Controls menu: press `End` to rebind.
+
+**Display:** Force Steam Deck Game Mode to 16:9 if the menu/HUD looks stretched."""
+
+[about]
+developer = "Transmission Games"
+publisher = "Ubisoft"
+released  = "2009"
+genre     = "Arcade flight combat"
+modes     = "Single-player, online multiplayer"
+summary   = """
+**Heroes Over Europe** is a 2009 **arcade-style WWII air-combat shooter** developed by Transmission Games and published by Ubisoft, serving as the sequel to **Heroes of the Pacific**. Its 14-mission single-player campaign follows three Allied pilots through the air war over Europe between 1940 and 1945, featuring **over 40 historical aircraft**.
+
+Online multiplayer supported up to 16 players in Dogfight and Survivor modes. The game was later **delisted** from digital storefronts."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Heroes Over Europe — Wikipedia (overview)"
+url   = "https://en.wikipedia.org/wiki/Heroes_Over_Europe"
+
+[[links.guides]]
+title = "Official patch v1.01 (DirectInput axis / gamepad fix) — gamepressure download"
+url   = "https://www.gamepressure.com/download.asp?ID=25220"
+
+[[links.guides]]
+title = "Joystick/gamepad selection (Options > Controls, press End) — GameFAQs Q&A"
+url   = "https://gamefaqs.gamespot.com/pc/944340-heroes-over-europe/answers/118709-how-do-i-select-a-joypad-or-joystick-"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game (Steam app `33260`) — it's DRM-free.
+
+**Patches:** **Apply both official patches (`v1.01` then `v1.02`) before playing** — they fix the unremappable DirectInput joystick axes and enable Xbox 360 / gamepad support, which makes the Deck controller usable.
+
+**DirectPlay:** Game needs DirectPlay: add the `directplay` winetricks verb or use a Proton-GE build.
+
+**Proton:** Use `GE-Proton` (`proton_experimental` also works).
+
+**Controller:** Rebind in-game via Controls > `End` key.
+
+**Display:** May need a forced 16:9 resolution if the UI stretches.
+
+**Binary:** `heroes2.exe`. deckport links nothing."""

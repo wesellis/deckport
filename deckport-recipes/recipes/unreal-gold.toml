@@ -1,0 +1,82 @@
+[game]
+title       = "Unreal Gold"
+slug        = "unreal-gold"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "13250"
+sgdb_id     = ""
+
+[launch]
+binary         = "System/Unreal.exe"   # Steam "Gold" build launches via System/Unreal.exe (there is no UnrealGold.exe; the OldUnreal-patched build uses System64/Unreal.exe)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** No intrusive DRM. Delisted Steam game (`appid 13250`, removed from sale 2022-12-14 alongside the rest of the Unreal series; GOG followed on 2022-12-23). Owners keep access in their library.
+
+**Proton:** Runs well under Proton on Deck — ProtonDB tier gold, community confirms single- and multiplayer working. Force a Steam Play compatibility tool in the game's `Properties > Compatibility`; `GE-Proton` is the safest, but stock `proton_experimental` also works.
+
+**Launch:** Launch `System/Unreal.exe` (this is the Unreal / Return to Na Pali launcher; there is no `UnrealGold.exe`).
+
+**Fix:** **Strongly recommended:** install the OldUnreal 227 community patch, which adds modern renderers and many fixes; under Proton select the `OpenGL` or `Direct3D 9` renderer (**the default Direct3D/Glide path can show a black screen on AMD**).
+
+**Controller:** The 1998 engine is keyboard+mouse first with no native gamepad menus, but a Steam Input gamepad-as-KBM layout drives it fine on Deck (right pad = aim/mouse, face buttons mapped to fire/jump/use).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Epic MegaGames, Digital Extremes"
+publisher = "GT Interactive"
+released  = "1998"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Unreal** is a 1998 **first-person shooter** and the debut title built on the original **Unreal Engine**, developed by Epic MegaGames and Digital Extremes. Players are a prisoner who crash-lands on the alien world Na Pali and must escape, with the game praised at release for its detailed environments, **lighting**, and advanced graphics.
+
+The **Unreal Gold** edition bundles the base game with its expansion **Return to Na Pali**. The title launched the long-running **Unreal franchise** and the Unreal Engine that powers countless later games, but the Unreal series was **pulled from Steam in December 2022**.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Unreal Gold (appid 13250)"
+url   = "https://www.protondb.com/app/13250"
+
+[[links.guides]]
+title = "OldUnreal: Unreal Gold on a Steam Deck"
+url   = "https://www.oldunreal.com/phpBB3/viewtopic.php?t=10414"
+
+[[links.guides]]
+title = "OldUnreal 227 patch (renderers, modern fixes)"
+url   = "https://www.oldunreal.com/downloads/unreal/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam 2022-12-14 (whole Unreal series; GOG followed 2022-12-23). In late 2024 OldUnreal received Epic's permission to distribute an official free installer for Unreal Gold, so an existing library copy or that authorized free release is fine.
+
+**Status:** Community reports confirm it runs on Deck via Proton (gold), but this specific recipe has not been Deck-verified yet — left at `needs-test`.
+
+**Display:** If you hit a black screen on AMD, install the OldUnreal 227 patch and switch the renderer to `OpenGL` or `Direct3D 9`.
+
+**Controller:** No native controller support; uses a Steam Input keyboard/mouse layout on Deck.
+
+**Multiplayer:** Multiplayer master server is gone, but LAN/direct-IP and singleplayer (incl. Return to Na Pali) work.
+
+**Install:** deckport links nothing.
+"""

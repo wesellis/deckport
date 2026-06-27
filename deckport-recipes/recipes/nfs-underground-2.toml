@@ -1,0 +1,69 @@
+[game]
+title       = "Need for Speed: Underground 2"
+slug        = "nfs-underground-2"
+aliases     = ["NFS Underground 2", "NFSU2", "speed2.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "speed2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2004 EA Black Box racer (delisted — **bring your own copy**).
+
+**Binary:** Launch `speed2.exe` from the install dir (note the `2` — the original Underground uses `speed.exe`, this sequel does not).
+
+**Proton:** Use `GE-Proton` (`GE-Proton11-1` or newer; Wine-GE 8-26 is also confirmed working by community guides).
+
+**Disc check:** The retail/disc release ships with **SafeDisc**, which does not run on modern Windows or under Proton. The ThirteenAG Widescreen Fix includes a **No Optical Drive** option that lets the game start without the disc present — install that fix (below) and the disc check is satisfied.
+
+**Display:** Runs great on Deck — holds a locked 60/90 fps with no frame drops, settings can be maxed.
+
+**Controller:** The game has **NO native pad support**. Either (a) install the `ImproveGamepadSupport` mod (native XInput; DualSense/DualShock should use Steam's controller support as an XInput wrapper) — note this mod has been reported to crash the game in some setups — or (b) just bind a Steam Input layout — the `SteamDeckHQ Layout` is available under the Community Layouts tab in SteamOS controller settings, which is the most reliable option.
+
+**Fix:** Recommended fixes: ThirteenAG Widescreen Fix (extract its contents — `dinput8.dll` + the `scripts` folder — directly into the same folder as `speed2.exe`, then edit `scripts/NFSUnderground2.WidescreenFix.ini` for resolution), plus ExOpts Extra Options, HD Reflections, and the Unlimiter."""
+
+[about]
+developer = "EA Black Box"
+publisher = "Electronic Arts"
+released  = "2004"
+genre     = "Arcade racing"
+modes     = "Single-player, online multiplayer (original servers shut down in 2006)"
+summary   = "**Need for Speed: Underground 2** is the eighth entry in the **Need for Speed** series and the direct sequel to Underground. It traded the first game's menu-based events for a **free-roaming open world**, the night-time city of Bayview, and dramatically expanded the **tuner-culture car customization** that defined the era. Critically well received and still regarded by many as one of the best games in the series, it is no longer sold digitally after being **delisted by EA**. The full single-player career remains playable offline; only the online multiplayer servers are gone."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted EA title — configuration only, no links. Never sold on Steam (no appid).
+
+**Binary:** Launch `speed2.exe` (not `speed.exe` — that's the first Underground).
+
+**Disc check:** Retail/disc copies use SafeDisc, which fails on modern systems and under Proton. ThirteenAG's Widescreen Fix has a built-in "No Optical Drive" option that satisfies the check.
+
+**Controller:** No native controller support — use the `SteamDeckHQ` Community Layout in Steam Input (most reliable) OR the `ImproveGamepadSupport` XInput mod (can crash in some setups). DualSense/DualShock owners need Steam's controller support acting as an XInput wrapper.
+
+**Display:** Apply ThirteenAG Widescreen Fix + Extra Options for a modern display."""
+
+[[links.guides]]
+title = "SteamDeckHQ — Classics on Deck: NFS Underground 2"
+url   = "https://steamdeckhq.com/news/classics-on-deck-13/"
+
+[[links.guides]]
+title = "ThirteenAG Widescreen Fix — NFS Underground 2 release"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/nfsu2"

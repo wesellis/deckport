@@ -1,0 +1,69 @@
+[game]
+title       = "Yume Nikki"
+slug        = "yume-nikki"
+aliases     = ["Dream Diary", "ゆめにっき"]
+type        = "proton"
+engine      = "other"
+steam_appid = "650700"
+sgdb_id     = ""
+
+[launch]
+binary         = "RPG_RT.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+Yume Nikki is published FREE on Steam (App 650700) by PLAYISM — it is the original RPG Maker 2003 game (build 0.10a), not a port, so just add it from the Steam store and run it through Proton. The binary inside is RPG_RT.exe.
+
+Two known Deck quirks: (1) MIDI music does not play out of the box because SteamOS ships no MIDI synth, and (2) the controller often needs Steam Input forced ON for the D-pad to work.
+
+Cleanest fix for both: set the game's compatibility tool to Luxtorpeda and pick the EasyRPG runtime — EasyRPG is a native reimplementation of the RPG Maker 2003 runtime that plays the MIDI music itself and handles input cleanly, no Wine needed.
+
+Music-on-Proton alternative: install Qsynth from Discover, load a SoundFont, then use the launch option to start the synth alongside the game:
+LD_PRELOAD=/usr/lib/libcurl.so.4 flatpak run org.rncbc.qsynth & %command% ; killall -9 qsynth
+
+Note: Yume Nikki -Dream Diary- (App 524190) is a separate paid 3D remake and is NOT this game.
+"""
+
+[about]
+developer = "Kikiyama"
+publisher = "PLAYISM"
+released  = "2004 (Steam release 2018)"
+genre     = "Exploration / surreal / freeware RPG"
+modes     = "Single-player"
+summary   = "Yume Nikki is a 2004 freeware exploration game created in RPG Maker 2003 by the anonymous developer Kikiyama. Players navigate the surreal dreamworld of a hikikomori girl named Madotsuki, collecting 24 'effects' hidden across interconnected dream realms with no traditional combat or dialogue. The game is celebrated for its atmospheric, unsettling visual design and has inspired a large community of fan games and tributes. It is published free on Steam (App 650700) by PLAYISM."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Yume Nikki on Steam (free, App 650700)"
+url   = "https://store.steampowered.com/app/650700/Yume_Nikki/"
+
+[[links.guides]]
+title = "Steam Deck: Get Music Working and Other Fixes (community guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2809933598"
+
+[[links.guides]]
+title = "ProtonDB — Yume Nikki reports"
+url   = "https://www.protondb.com/app/650700"
+
+[[links.guides]]
+title = "PCGamingWiki — Yume Nikki"
+url   = "https://www.pcgamingwiki.com/wiki/Yume_Nikki"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = "Completely free on Steam (App 650700, PLAYISM) — install it normally. MIDI music is silent OOTB on Deck (SteamOS has no MIDI synth) and the controller usually needs Steam Input forced ON. Cleanest fix: set compatibility tool to Luxtorpeda + EasyRPG runtime (plays MIDI natively, handles input). Or install Qsynth from Discover and add the synth launch option. Yume Nikki -Dream Diary- (App 524190) is a separate paid 3D remake, not this game."

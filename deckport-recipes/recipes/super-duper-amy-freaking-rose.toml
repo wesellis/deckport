@@ -1,0 +1,65 @@
+[game]
+title       = "Super Duper Amy Freaking Rose"
+slug        = "super-duper-amy-freaking-rose"
+aliases     = ["Amy Freaking Rose", "Super Duper Amy Rose"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Super Duper Amy Freaking Rose.exe"   # best guess: Construct 3 / NW.js export names the .exe after the game title; point at the .exe inside the zip if it differs
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Free 2.5D platformer Sonic fan game by `fractalcherries` (Witchcart steals Amy's birthday cake), shown at **SAGE 2025**. Short (~15 min, 5 levels + boss).
+
+**Engine:** Built in **Construct 3**; the Windows download is an **NW.js** wrapper (Chromium-based), which runs well under Proton.
+
+**Proton:** The Windows `.zip` build (`Super Duper Amy Freaking Rose (v1-1-0 Windows).zip`) runs under Proton on Deck — **`GE-Proton` is the safe pick** for the NW.js/Chromium build. Not on Steam, so no ProtonDB report exists.
+
+**Controller:** Native gamepad input works; if the Deck controls don't bind, force a **Gamepad (with Joystick)** Steam Input layout. Note: a button-swap (Homing Attack / Light Speed Dash) was reported in the **browser/HTML5** version on Firefox — another reason to prefer the Windows build.
+
+**Install:** Add the unzipped Windows folder as a **non-Steam game** and point Steam at the `.exe`. Prefer this downloadable Windows build under Proton over the in-browser HTML5 version, which had controller-mapping quirks on Linux."""
+
+[about]
+developer = "fractalcherries"
+publisher = "fractalcherries"
+released  = "2025"
+genre     = "2.5D platformer"
+modes     = "Single-player"
+summary   = "**Super Duper Amy Freaking Rose** is a free fan-made **Sonic** platformer starring **Amy Rose**, who must recover her stolen birthday cake from Witchcart before the night ends. Made by fractalcherries and shown at **SAGE 2025** (the Sonic Amateur Games Expo), it runs about 15 minutes across five **2.5D** levels capped by a boss fight. It draws on the **Sonic Advance** and **Sonic Battle** look, and was well received for its sprite art, music, and fast but forgiving level design. As an unofficial fan game it is not a **SEGA** product, was never sold commercially, and the developer has marked it complete with no further content planned."
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official page — fractalcherries (itch.io)"
+url   = "https://fractalcherries.itch.io/amy"
+
+[[links.guides]]
+title = "Sonic Fan Games HQ showcase (SAGE 2025)"
+url   = "https://sonicfangameshq.com/forums/showcase/super-duper-amy-freaking-rose.2661/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free fan game (not SEGA / not for sale), distributed via itch.io and Sonic Fan Games HQ.
+
+**Not on Steam:** Never on Steam, so `steam_appid` stays empty and no ProtonDB entry exists.
+
+**Binary:** Built in Construct 3 (NW.js Windows export); the `.exe` is named after the game title. If the exact name inside the `v1-1-0` Windows `.zip` differs, point the binary at whatever launcher `.exe` the archive contains.
+
+**Install:** **Prefer the downloadable Windows build under Proton** over the in-browser HTML5 version, which had controller-mapping issues on Linux.
+
+**Links:** deckport links nothing."""

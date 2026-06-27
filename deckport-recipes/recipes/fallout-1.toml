@@ -1,0 +1,130 @@
+[game]
+title       = "Fallout"
+slug        = "fallout-1"
+aliases     = ["Fallout 1", "Fallout: A Post Nuclear Role Playing Game"]
+type        = "proton"
+engine      = "other"
+steam_appid = "38400"
+sgdb_id     = "8280"
+
+[launch]
+binary         = "FALLOUTW.EXE"
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "Proton 7.0-6"
+winetricks = []
+notes      = """
+**ProtonDB / Deck status (Steam appid 38400)**
+The 1997 original is rated highly on ProtonDB (Gold-class for most reporters) and the
+core game runs out of the box under Proton on the Steam Deck. The few rough edges are
+the fixed low resolution, an occasionally glitchy intro cinematic, and a mouse-cursor
+visibility issue on some newer Proton builds. Treat this recipe as needs-test until a
+contributor confirms on hardware.
+
+**Binary / launcher note**
+The actual game executable is FALLOUTW.EXE. The Steam build also ships a thin
+FalloutLauncher.exe wrapper; pointing Proton straight at FALLOUTW.EXE (or letting the
+high-res config write its own launcher) is the most reliable path. The GOG build runs
+FALLOUTW.EXE directly.
+
+**Essential community patch (Fallout Fixt or the High Resolution Patch)**
+Vanilla runs at a fixed low resolution that looks tiny on the 1280x800 Deck panel, so a
+community fix is strongly recommended:
+  - Fallout Fixt — a bug-fix + quality-of-life package that bundles the High Resolution
+    Patch and a resolution configurator. A common workflow is to keep only FALLOUTW.EXE,
+    MASTER.DAT and CRITTER.DAT, run the Fixt installer with protontricks against the
+    game's wineprefix, copy the resulting files back into the game folder, then use the
+    bundled high-res config tool to set DirectX 9, 32-bit colour and a Deck-friendly
+    resolution (1280x720 / 1280x800 work well). A ddraw library override (native,
+    builtin) via winecfg in the same prefix is often needed.
+  - The standalone Fallout 1 High Resolution Patch modifies FALLOUTW.EXE in memory to
+    raise the resolution and enable windowed mode if you only want the resolution fix.
+
+**Proton version / cursor bug**
+Some reporters hit an invisible / missing mouse cursor on newer Proton builds. If the
+cursor disappears in menus or on the world map, pin an older Proton (Proton 7.0-6 is a
+known-good fallback) in the game's Properties > Compatibility. Test the current default
+Proton first; only downgrade if you actually see the cursor bug.
+
+**Controller / input (no native gamepad)**
+Fallout 1 is mouse-and-keyboard only with no native controller support. Use a Steam Input
+mouse-style layout: right trackpad as the mouse, right trackpad click = left mouse button,
+a button mapped to right-click for the context/skill menu, and the D-pad or left stick for
+common keys (Esc, Tab/inventory, F6 quick-save). Community "Fallout" layouts in the Steam
+Input picker cover this well.
+
+**Install method**
+Install the game normally on a desktop/Deck Steam install (or GOG) so the full data files
+and FALLOUTW.EXE are present, then copy the installed game folder onto the Deck if you set
+it up elsewhere. Apply the Fixt/high-res patch into that same folder before first launch.
+
+**Fallout Et Tu (optional alternative)**
+Et Tu replays Fallout 1's content inside the Fallout 2 engine, gaining F2's fixes, higher
+resolutions and quality-of-life features. It requires a separate Fallout 2 install and a
+different runtime (GE-Proton-class) and is a distinct setup from vanilla Fallout 1.
+Project: https://github.com/rotators/Fo1in2
+
+**Save often**
+The original engine can be unstable on long sessions; quick-save (F6) frequently.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Fallout on ProtonDB (appid 38400)"
+url   = "https://www.protondb.com/app/38400"
+
+[[links.guides]]
+title = "Fallout on GOG"
+url   = "https://www.gog.com/game/fallout"
+
+[[links.guides]]
+title = "Simple instructions for installing Fallout Fixt (Steam Community)"
+url   = "https://steamcommunity.com/app/38400/discussions/0/6893400166985989040/"
+
+[[links.guides]]
+title = "Fallout Fixt integration with Steam + hours counter (Steam Community guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2279323171"
+
+[[links.guides]]
+title = "Fallout Et Tu (F1 in F2 engine) on GitHub"
+url   = "https://github.com/rotators/Fo1in2"
+
+[about]
+developer = "Black Isle Studios / Interplay"
+publisher = "Interplay"
+released  = "1997"
+genre     = "Isometric RPG"
+modes     = "Single-player"
+summary   = """
+**Fallout** by **Black Isle Studios / Interplay** (1997) is the landmark isometric
+post-apocalyptic RPG that defined the SPECIAL system and the tone of the entire series.
+Set in a retro-futuristic California wasteland, it offers radical player agency with
+multiple solutions to every quest, including talking your way through the entire game.
+Available on Steam (appid 38400) and GOG; the core game runs well on Steam Deck under
+Proton, and a community fix (Fallout Fixt or the High Resolution Patch) is recommended
+to raise the resolution for the Deck's screen.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Game executable is FALLOUTW.EXE; the Steam build adds a thin FalloutLauncher.exe wrapper.
+- Vanilla resolution is tiny on the Deck — apply Fallout Fixt or the High Resolution Patch.
+- Some Proton builds cause a missing/invisible cursor; if so, pin an older Proton (7.0-6 known good).
+- No native controller support; use a Steam Input mouse layout (trackpad as mouse).
+- Et Tu is an optional alternative needing a separate Fallout 2 install and a GE-Proton runtime.
+- Save frequently — the original engine can be unstable on long sessions.
+"""

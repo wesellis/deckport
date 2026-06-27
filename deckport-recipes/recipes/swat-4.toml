@@ -1,0 +1,126 @@
+[game]
+title       = "SWAT 4 Gold Edition"
+slug        = "swat-4"
+aliases     = ["SWAT 4", "SWAT4"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "ContentExpansion/System/Swat4X.exe"
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "Wine-GE-Proton8-26"
+winetricks = []
+notes      = """
+**Install method (GOG)**
+SWAT 4 is no longer sold on Steam — buy SWAT 4: Gold Edition on GOG. Install it with
+Heroic Games Launcher (or Lutris). In the game's settings within Heroic, set the Wine
+version to Wine-GE-Proton8-26 (download it via Heroic's Wine manager if not already
+installed). Stock Proton Experimental also works for many users.
+
+**Which executable**
+The Gold Edition installs two separate executables in the GOG folder:
+  - Base game:  Content/System/Swat4.exe
+  - Stetchkov Syndicate expansion:  ContentExpansion/System/Swat4X.exe  (set as the binary here)
+The expansion (Swat4X.exe) loads its own front-end and includes everything from the
+base game plus the seven Stetchkov missions, melee, VoIP, and extra gear — so it is the
+recommended launch target. To play only the original campaign, point the binary at
+Content/System/Swat4.exe instead.
+
+**ProtonDB / Deck status**
+Reported as Gold/Platinum-class — the game runs very well under Proton/Wine-GE with no
+major workarounds. Save/settings write issues that plague modern Windows are generally
+not present under Proton's per-prefix filesystem.
+
+**First Launch**
+On first run the game may show a compatibility warning — dismiss it and proceed.
+It should reach the main menu without further configuration.
+
+**Controller**
+SWAT 4 has no native controller support. Add Heroic (or SWAT 4 directly) as a non-Steam
+game and apply a community Steam Input layout, e.g. the SteamDeckHQ-recommended
+"SWAT 4 Keyboard (WASD) and Mouse" by skatebakethreash, found under the Community Layouts
+tab. It maps the many keyboard bindings onto the Deck's buttons and trackpads. Takes a
+little adjustment but plays well.
+
+**Display / Performance**
+Holds 60-90 fps easily on Deck at very low power (~8W) thanks to the game's age. SWAT 4
+is a 4:3-era title; 1280x1024 with Render Quality "Very High" is a good preset. Native
+1280x800 (16:10) also works. No TDP lock needed; long battery life (6+ hours on OLED).
+
+**Optional: SWAT: Elite Force mod**
+The community "SWAT: Elite Force" overhaul (and its successor the SEF Community Mod) is
+the most popular way to play. Install over the GOG copy: drop the SEF folder into the
+SWAT 4 install directory WITHOUT overwriting your existing Content/ContentExpansion
+folders, then launch via "Launch SEFMod.bat" / "LaunchSEF.exe". On Deck you would point
+the Heroic/non-Steam launch target at that launcher instead of Swat4X.exe. See the
+eezstreet/SWATEliteForce and SEFCommunityMod GitHub repos.
+
+**Multiplayer**
+The in-game GameSpy master server is dead; online play today goes through GameRanger or
+direct/LAN connect. In GameRanger point SWAT 4: Stetchkov Syndicate at Swat4X.exe.
+Online play on Deck is untested here — the single-player/co-op campaign is the focus.
+
+**Audio**
+If voice-over audio is missing or crackling, prepend to launch options in Heroic:
+  PULSE_LATENCY_MSEC=60 %command%
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SWAT 4 Gold Edition on GOG"
+url   = "https://www.gog.com/game/swat_4_gold_edition"
+
+[[links.guides]]
+title = "Classics On Deck: SWAT 4 Gold Edition (Steam Deck setup)"
+url   = "https://steamdeckhq.com/news/classics-on-deck-5-swat-4-transformers/"
+
+[[links.guides]]
+title = "SWAT: Elite Force mod (eezstreet) on GitHub"
+url   = "https://github.com/eezstreet/SWATEliteForce"
+
+[[links.guides]]
+title = "SWAT 4 Gold Edition multiplayer instructions (GOG Support)"
+url   = "https://support.gog.com/hc/en-us/articles/115000914729-SWAT-4-Gold-Edition-Multiplayer-Instructions"
+
+[about]
+developer = "Irrational Games"
+publisher = "Vivendi Universal Games"
+released  = "2005"
+genre     = "Tactical Shooter"
+modes     = "Single-player, Co-op, Multiplayer"
+summary   = """
+**SWAT 4 Gold Edition** by **Irrational Games** (2005) is a tactical police procedural
+shooter that puts you in command of a SWAT team responding to hostage situations and
+armed standoffs. It demands patience, coordination, and proper use of less-lethal
+equipment to resolve incidents with minimal casualties. Includes the Stetchkov
+Syndicate expansion. A landmark of the genre that holds up remarkably well on Steam Deck
+via Heroic + Wine-GE-Proton8-26 with a community controller layout.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Not sold on Steam (no Steam App ID) — purchase SWAT 4: Gold Edition on GOG; install via Heroic or Lutris.
+- Binary points at the Stetchkov Syndicate expansion (ContentExpansion/System/Swat4X.exe), which includes the base content; use Content/System/Swat4.exe for the original campaign only.
+- Wine-GE-Proton8-26 recommended; stock Proton Experimental also reported working.
+- No native controller support — must use a Steam Input community layout (e.g. by skatebakethreash).
+- Online multiplayer untested on Deck; GameSpy is dead, so online play needs GameRanger or LAN/direct connect.
+- Optional SWAT: Elite Force / SEF Community Mod changes the launch target to LaunchSEF.exe / Launch SEFMod.bat.
+- If audio crackles, set PULSE_LATENCY_MSEC=60 in launch options.
+"""

@@ -1,0 +1,82 @@
+[game]
+title       = "Magic: The Gathering - Duels of the Planeswalkers 2012"
+slug        = "magic-the-gathering-duels-of-the-planeswalkers-2012"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "49470"
+sgdb_id     = ""
+
+[launch]
+binary         = "Magic_2012.exe"   # confirm against your install folder (steamapps/common/Magic the Gathering DotP 2012)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `49470`). ProtonDB rates it gold and the older Duels of the Planeswalkers titles (2012/2013/2014/2015) all run on the Deck.
+
+**Proton:** Prefer `GE-Proton` over stock Proton: it bundles the media codecs Valve can't ship, which **fixes the most common black-video/intro issues** on these DotP games.
+
+**DRM / Games for Windows Live:** This is a 2011 GFWL-era title and the Steam build still ships the **Games for Windows Live** component. The campaign/single-player path can usually be reached, but GFWL's online activation/sign-in is unreliable on modern systems. The standard community remedy is the **GFWL replacement (xlive) shim** that lets the game boot past the LIVE prompt; install only the legitimate community shim into the game folder — do not defeat or remove any paid-content licensing. Some reports also use `PROTON_NO_D3D11=1 %command%` as a launch option if rendering misbehaves. Treat the GFWL hurdle as the main thing to confirm on a hands-on pass.
+
+**Display:** No widescreen hack required.
+
+**Controller:** The UI is fundamentally pointer-driven (clicking/targeting cards and menus), so on the Deck **use a Steam Input layout that drives a mouse cursor** (right trackpad as mouse) as the primary control method. The game does expose some native gamepad navigation, but mouse-style control is the reliable path for a card game like this.
+
+**Install:** Confirm the binary name (`Magic_2012.exe`) against your install; deckport only configures the prefix and bundles/links nothing.
+"""
+
+[about]
+developer = "Stainless Games"
+publisher = "Wizards of the Coast"
+released  = "2011"
+genre     = "Digital collectible card game / strategy"
+modes     = "Single-player campaign, local hot-seat, online multiplayer"
+summary   = """
+**Magic: The Gathering - Duels of the Planeswalkers 2012** is the second entry in the digital adaptation of **Wizards of the Coast**'s collectible card game, developed by **Stainless Games** and released in 2011 for PC, Xbox 360, and PlayStation 3. It pits the player against AI or human opponents using preconstructed decks unlocked through three eleven-mission campaigns, and introduces the cooperative **Archenemy** mode where up to three players team up against boss characters with doubled life totals.
+
+Reception was generally positive, with reviewers praising the refined interface over the 2009 original while noting deck-balance quibbles. It is **delisted from Steam**, having been superseded by later annual Duels titles.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports - Duels of the Planeswalkers 2012 (appid 49470)"
+url   = "https://www.protondb.com/app/49470"
+
+[[links.guides]]
+title = "PCGamingWiki - Duels of the Planeswalkers 2012 (GFWL / fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Magic:_The_Gathering_-_Duels_of_the_Planeswalkers_2012"
+
+[[links.guides]]
+title = "Steam community - Magic Duels / DotP titles on Steam Deck"
+url   = "https://steamcommunity.com/app/316010/discussions/0/4330853607899893153/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Confirm the binary name (`Magic_2012.exe`, in `steamapps/common/Magic the Gathering DotP 2012`) against your own install.
+
+**Status:** Delisted Steam game (appid `49470`), ProtonDB gold (low-confidence, ~10 reports); community confirms the DotP 2012/13/14/15 titles run on the Deck under Proton, so this **needs a hands-on Deck pass to finalize**.
+
+**Proton:** Use `GE-Proton` (carries the codecs that fix black-video on these titles).
+
+**DRM / GFWL:** This is a GFWL-era (2011) title and the Steam build ships **Games for Windows Live**; its online sign-in is flaky on modern setups. Expect to apply the legitimate community GFWL/xlive shim to boot past the LIVE prompt — confirm this on the hands-on pass. `PROTON_NO_D3D11=1 %command%` is a sometimes-needed launch option.
+
+**Controller:** The card-game UI is pointer-driven, so use a Steam Input mouse-cursor (trackpad-as-mouse) layout as the primary control; native gamepad navigation is partial.
+
+**Multiplayer:** The single-machine 2-player hot-seat mode requires a second physical gamepad and isn't relevant on a handheld. Online multiplayer servers may be long dead — **campaign/AI play is the durable path**.
+"""

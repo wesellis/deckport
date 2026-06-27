@@ -1,0 +1,66 @@
+[game]
+title       = "Pulstar"
+slug        = "pulstar"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "280460"
+sgdb_id     = ""
+
+[launch]
+binary         = "Pulstar.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Delisted Steam game (appid `280460`) — a lightweight 2D arcade twin-stick shooter with local co-op. **ProtonDB rates it platinum** and it shipped with a native Linux/Mac build, so it runs effortlessly on the Deck.
+
+**Proton:** Use stock Proton (`GE-Proton` or `proton_experimental` both work) and just hit Install/Play. **No launch options required.**
+
+**Native:** If you own the native Linux build it will launch directly without Proton at all.
+
+**DRM:** No DRM, GFWL, or `winetricks` needed.
+
+**Install:** Confirm the binary name against your install — the Windows build ships as `Pulstar.exe`."""
+
+[about]
+developer = "Concave Studio / Colorful Media / Emagica"
+publisher = "Indietopia Games"
+released  = "2014"
+genre     = "Action, Indie, Twin-stick shooter"
+modes     = "Single-player, local co-op multiplayer"
+summary   = "**Pulstar** is a fast-paced 2D arcade **twin-stick shooter** in which players pilot a ship through waves of enemies, blending **bullet-hell** action with retro arcade scoring. It supports both solo play and **local co-op**. Released in 2014 by indie developers Concave Studio, Colorful Media and Emagica, it is unrelated to the 1995 SNK **Neo Geo** arcade shoot-'em-up of the same name. The game was **delisted from Steam** in early 2024 after publisher Indietopia Games wound down its publishing operations, though previously-purchased copies remain installable."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Pulstar (appid 280460)"
+url   = "https://www.protondb.com/app/280460"
+
+[[links.guides]]
+title = "SteamDB — Pulstar (platform/build info)"
+url   = "https://steamdb.info/app/280460/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** Delisted from Steam (removed by the publisher); previously-purchased copies still install. **deckport links nothing.**
+
+**Compatibility:** ProtonDB platinum, and the game has a native Linux build, so Deck compatibility is excellent — no DRM/GFWL, no widescreen hack, no `winetricks`.
+
+**Controller:** It is a twin-stick shooter and plays naturally on the Deck's sticks; if the build does not auto-detect the gamepad, apply a **Steam Input** gamepad/keyboard layout.
+
+**status=needs-test:** Not yet confirmed on a physical Deck by a contributor, and the `Pulstar.exe` binary name should be double-checked against your install."""

@@ -1,0 +1,87 @@
+[game]
+title       = "Daggerfall Unity"
+slug        = "daggerfall-unity"
+aliases     = ["Daggerfall Unity", "DaggerfallUnity", "The Elder Scrolls II: Daggerfall Unity"]
+type        = "native"
+engine      = "unity"
+steam_appid = "1812390"
+sgdb_id     = "5335938"
+
+[launch]
+binary         = "DaggerfallUnity.x86_64"
+launch_options = ""
+requires_files = ["ARENA2"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Proton:** Not needed — a **native Linux build** is available. Use the native Linux build.
+
+**Install:** Download the Linux 64-bit zip from the `Interkarma/daggerfall-unity` releases — the binary inside is `DaggerfallUnity.x86_64`. Extract the zip into your Daggerfall Steam data directory (`steamapps/common/The Elder Scrolls Daggerfall/`).
+
+**Launch:** In Steam, set the launch options for the Daggerfall entry to: `"/path/to/DaggerfallUnity.x86_64" %command%` — this wraps it in Steam for overlay and playtime tracking.
+
+**Data:** On first launch, the settings screen asks you to point at the Daggerfall game data (the `ARENA2` folder). Since Daggerfall is free on Steam (app `1812390`), the data files are freely available — **just install the Steam game first**.
+
+**Luxtorpeda:** `Luxtorpeda` also supports Daggerfall Unity and can automate the installation and data wiring.
+
+**Wayland note:** On a pure Wayland session the native build can fail to start; if that happens, launch with `SDL_VIDEODRIVER=x11` (e.g. `SDL_VIDEODRIVER=x11 "/path/to/DaggerfallUnity.x86_64" %command%`). Game Mode on Steam Deck is unaffected.
+"""
+
+[about]
+developer = "Gavin Clayton (Interkarma) and contributors"
+publisher = "Independently released (free, open source)"
+released  = "2022 (v1.0); ongoing development"
+genre     = "Open-source engine, RPG"
+modes     = "Single-player"
+summary   = "**Daggerfall Unity** is an open-source reimplementation of **The Elder Scrolls II: Daggerfall** (1996) built in the **Unity engine** by Gavin Clayton (Interkarma). Work began around 2009 and reached version 1.0 in 2022. Bethesda made the original Daggerfall **free on Steam**, so the required data files cost nothing to acquire legally. The project dramatically improves the original's stability, adds modern resolutions and rendering options, and supports a rich **modding** ecosystem through DFMods. It is now the standard way to experience Daggerfall on modern systems."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = "https://www.protondb.com/app/1812390"
+steamgriddb = "https://www.steamgriddb.com/game/5335938"
+
+[[links.guides]]
+title = "How to run Daggerfall Unity via Steam on Linux + Steam Deck — Steam Community"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3035819866"
+
+[[links.guides]]
+title = "Daggerfall Unity on Steam Deck — Complete Walkthrough and Setup Guide (video)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2865131304"
+
+[[links.guides]]
+title = "Configuring Daggerfall Unity for Steam — Steam Community"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2800142536"
+
+[[links.guides]]
+title = "Using the Steam Release of Daggerfall with Daggerfall Unity — dfworkshop.net"
+url   = "https://www.dfworkshop.net/using-steam-release-of-daggerfall-with-daggerfall-unity/"
+
+[[links.guides]]
+title = "Daggerfall Unity Linux via Steam — GitHub Gist (launch options walkthrough)"
+url   = "https://gist.github.com/gabrielmscampos/b12aab140acde07abe72e27367134aa9"
+
+[[links.guides]]
+title = "Installing Daggerfall Unity Cross Platform — Interkarma/daggerfall-unity Wiki"
+url   = "https://github.com/Interkarma/daggerfall-unity/wiki/Installing-Daggerfall-Unity-Cross-Platform"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Get the data first:** Daggerfall is free on Steam (app `1812390`) — **install it first** to get the `ARENA2` data folder.
+
+**Separate download:** Daggerfall Unity is a separate download from GitHub releases; it is **NOT a Steam game itself**. Extract the Linux build into the Daggerfall Steam directory, then override the Steam launch command.
+
+**First run:** The settings screen on first run must be used to point at the `ARENA2` folder before gameplay starts.
+
+**Luxtorpeda:** `Luxtorpeda` can automate this entire process.
+"""

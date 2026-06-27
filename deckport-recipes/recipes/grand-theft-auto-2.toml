@@ -1,0 +1,74 @@
+[game]
+title       = "Grand Theft Auto 2"
+slug        = "grand-theft-auto-2"
+aliases     = ["GTA2", "GTA 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = "12180"
+sgdb_id     = ""
+
+[launch]
+binary         = "gta2.exe"
+launch_options = """WINEDLLOVERRIDES="dinput=n,b" %command%"""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** DMA Design's 1999 top-down GTA, built on the GTA2 v9.6 engine; `gta2.exe` is the standard launcher of an official v9.6 install.
+
+**Recommended setup:** The community `GTA2DeckEdition` modpack (by btpf) is the easiest path on Deck. Extract it into the root of an existing GTA2 v9.6 install — it bundles `FrontendFix`, ThirteenAG's `Widescreen Fix`, `GInput2` controller support, a quicksave function and a map/mod manager via `Ultimate ASI Loader` (placed as `dinput.dll`). Add either `gta2.exe` or the modpack's `GTA 2 Launcher.exe` as a non-Steam game.
+
+**Launch options:** `WINEDLLOVERRIDES="dinput=n,b" %command%` so the ASI loader's `dinput.dll` is honored under Proton.
+
+**Display:** Set screen type to **borderless windowed** at the Deck's native 1280x800 in `settings.xml` — fullscreen tends to crash on launch.
+
+**Controller:** `GInput2` gives the game native XInput gamepad handling; the Deck pad works without Steam Input once the modpack is applied. Vanilla `gta2.exe` alone has weaker/no controller support.
+
+**Proton:** Runs under Proton Experimental (or a recent GE-Proton).
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "GTA2DeckEdition — Steam Deck & Windows 11 ready GTA2 modpack (btpf)"
+url   = "https://github.com/btpf/GTA2DeckEdition"
+
+[[links.guides]]
+title = "FrontendFix for GTA2 (gennariarmando)"
+url   = "https://github.com/gennariarmando/gta2-frontend-fix"
+
+[[links.guides]]
+title = "ProtonDB — Grand Theft Auto 2 (app 12180)"
+url   = "https://www.protondb.com/app/12180"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** GTA2 was delisted from Steam in 2026. Use a GTA2 v9.6 install you legitimately own; the modpack and fixes are applied on top of it.
+
+**Version-locked:** FrontendFix and the Deck Edition modpack only work with GTA2 **v9.6** — older builds will not load the ASI plugins.
+
+**Fix needed:** Vanilla `gta2.exe` runs but is awkward on Deck (display crashes in fullscreen, weak controller). Apply the `GTA2DeckEdition` modpack + the `WINEDLLOVERRIDES="dinput=n,b" %command%` launch option and set borderless windowed for a smooth experience.
+
+**Binary:** `gta2.exe` confirmed as the standard v9.6 launcher; modpack alternatively ships `GTA 2 Launcher.exe`.
+"""
+
+[about]
+developer = "DMA Design"
+publisher = "Rockstar Games"
+released  = "1999"
+genre     = "Top-down action"
+modes     = "Single-player, local multiplayer"
+summary   = "**Grand Theft Auto 2** is the 1999 **top-down action** sequel from DMA Design (later Rockstar North), set in a retro-futuristic city where the player completes missions for rival criminal gangs while building respect with each one. It refined the open-ended, free-roaming **sandbox** style of the original and introduced the **gang respect system** and a **save-by-payment** mechanic. The game was later offered as a free download by Rockstar and was **delisted from the Steam store in 2026**, leaving no remaster or current sale; it remains playable offline for those who own it."

@@ -1,0 +1,58 @@
+[game]
+title       = "Panzer Dragoon"
+slug        = "panzer-dragoon-pc"
+aliases     = ["Panzer Dragoon PC", "Panzer Dragoon 1996"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "PANZERDG.EXE"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add PANZERDG.EXE as a non-Steam game. Use GE-Proton. The 1996/97 PC port renders purely in software at 640x480 and does not require a 3D accelerator. If the game crashes on launch or picks the wrong resolution, set the mode explicitly in panzerdg.ini by adding a [Screen] section with VMode=640*480*16. dgVoodoo2 is OPTIONAL and can help wrap the game's DirectDraw fullscreen if you hit blank-screen or scaling issues — place dgVoodoo2 DLLs in the game directory. No widescreen; fixed 640x480 resolution. NOTE: The 2020 Panzer Dragoon Remake (Steam App ID 715890) is a full remake available on Steam and is the recommended way to play this game on Deck."
+
+[about]
+developer = "Sega"
+publisher = "Sega"
+released  = "1996"
+genre     = "Rail Shooter"
+modes     = "Single-player"
+summary   = "Panzer Dragoon is the 1996 PC port of the classic Sega Saturn on-rails shooter, in which the player rides a dragon through a post-apocalyptic world, battling bio-engineered creatures and enemy forces. The game uses an auto-scrolling rail system where players rotate their camera 360 degrees to shoot down enemies. A 2020 full remake (Steam App ID 715890) is available and is the recommended modern option for Steam Deck players."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Panzer Dragoon"
+url   = "https://www.pcgamingwiki.com/wiki/Panzer_Dragoon"
+
+[[links.guides]]
+title = "Panzer Dragoon Remake on Steam (App 715890)"
+url   = "https://store.steampowered.com/app/715890/Panzer_Dragoon_Remake/"
+
+[[links.guides]]
+title = "dgVoodoo2 (DirectX wrapper)"
+url   = "http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/"
+
+[[links.guides]]
+title = "Steam Community — resolution / aspect-ratio fix tutorial"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1936963724"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Supply your own copy of the 1996 PC port. The 2020 Panzer Dragoon Remake (Steam App 715890) is available on Steam and is the strongly recommended modern alternative. dgVoodoo2 recommended for DirectX 5 compatibility. No widescreen; fixed 640x480 resolution."

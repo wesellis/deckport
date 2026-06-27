@@ -1,0 +1,62 @@
+[game]
+title       = "American McGee's Alice"
+slug        = "american-mcgees-alice"
+aliases     = ["Alice 2000", "American McGee Alice", "Alice"]
+type        = "proton"
+engine      = "other"
+steam_appid = "19680"
+sgdb_id     = ""
+
+[launch]
+binary         = "Alice1/bin/alice.exe"
+launch_options = "-RunningFromAlice2"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "On Steam, American McGee's Alice is NOT a standalone app — it ships as the 2011 HD remaster bundled with Alice: Madness Returns (App 19680). The remaster's launcher is Alice1/bin/alice.exe. The recipe's steam_appid points at 19680 because that is the product that delivers the game. Two ways to run the bundled Alice1: (a) launch alice.exe with the -RunningFromAlice2 flag, or (b) install VorpalFix (github.com/Wemino/VorpalFix), which lets alice.exe launch independently and fixes the id Tech 3 widescreen crop, FOV, HUD stretch and FMV warping. VorpalFix is the recommended path on the Deck. For Proton/Linux, add WINEDLLOVERRIDES=\"winmm.dll=n,b\" %command% to the launch options when using VorpalFix's winmm injector. Known quirks running Alice1 standalone: the title screen can appear zoomed/upside-down until you tab through the menu, and some users hit a hang on quit. Xbox controller works via a community Steam Input layout — recommended for this third-person platformer."
+
+[about]
+developer = "Rogue Entertainment"
+publisher = "Electronic Arts"
+released  = "2000"
+genre     = "Action-platformer"
+modes     = "Single-player"
+summary   = "American McGee's Alice is a dark psychological horror action-platformer developed by Rogue Entertainment and published by Electronic Arts in 2000, built on the id Tech 3 (Quake III) engine. The game reimagines Lewis Carroll's Alice in Wonderland as a twisted nightmare, following a traumatized Alice who returns to a corrupted Wonderland to confront the Queen of Hearts and restore her sanity. Featuring imaginative level design, disturbing character redesigns, and fluid platforming combat, it became a cult classic. On Steam there is no standalone listing — the game is delivered as the 2011 HD remaster bundled inside Alice: Madness Returns (App 19680), launched from Alice1/bin/alice.exe."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Alice: Madness Returns on Steam (includes Alice 1 free)"
+url   = "https://store.steampowered.com/app/19680/Alice_Madness_Returns/"
+
+[[links.guides]]
+title = "PCGamingWiki - American McGee's Alice"
+url   = "https://www.pcgamingwiki.com/wiki/American_McGee%27s_Alice"
+
+[[links.guides]]
+title = "ProtonDB - Alice: Madness Returns (App 19680, delivers Alice 1)"
+url   = "https://www.protondb.com/app/19680"
+
+[[links.guides]]
+title = "VorpalFix - widescreen/FOV/HUD fix + standalone launch (GitHub)"
+url   = "https://github.com/Wemino/VorpalFix"
+
+[[links.guides]]
+title = "Steam guide - American McGee's Alice / Alice1 on Steam Deck"
+url   = "https://steamcommunity.com/app/19680/discussions/0/5267542371380624484/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = "Not a standalone Steam app: American McGee's Alice ships as the 2011 HD remaster bundled with Alice: Madness Returns (App 19680), launched from Alice1/bin/alice.exe. To run Alice1 by itself either launch alice.exe with -RunningFromAlice2, or install VorpalFix (github.com/Wemino/VorpalFix) which enables standalone launch and fixes the id Tech 3 widescreen crop/FOV/HUD; VorpalFix is the recommended path. For Proton add WINEDLLOVERRIDES=\"winmm.dll=n,b\" %command% when using VorpalFix. Quirks: title screen can show zoomed/upside-down until you tab through the menu; some users report a hang on quit. Madness Returns itself is Platinum on ProtonDB; tier kept at gold here to reflect the rougher Alice1-standalone experience. Xbox controller works via a community Steam Input layout."

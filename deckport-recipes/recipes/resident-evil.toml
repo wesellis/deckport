@@ -1,0 +1,76 @@
+[game]
+title       = "Resident Evil: Seamless HD Project"
+slug        = "resident-evil"
+aliases     = ["Biohazard", "Resident Evil 1", "RE1", "Resident Evil Seamless HD", "Biohazard.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5465778"       # https://www.steamgriddb.com/game/5465778
+
+[launch]
+binary         = "japanese/Biohazard.exe"   # Japanese MediaKite/Sourcenext exe used by Classic REbirth + Seamless HD Project (in the GOG release's "japanese" subfolder)
+launch_options = "WINEDLLOVERRIDES=\"dinput.dll,ddraw.dll=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"     # FMVs only play correctly under Proton-GE (or Proton-CachyOS)
+winetricks = []
+notes      = """
+**Mod:** The Seamless HD Project — a community full-game mod that overhauls the classic 1996 PC Resident Evil with HD pre-rendered backgrounds and seamless room transitions, built on Gemini's `Classic REbirth`. Confirmed running on Steam Deck (GBAtemp/GOG community guides).
+
+**Base game:** Needs the base game (the classic RE 1/2/3 bundle is sold on GOG — supply your own copy; deckport only describes how to run it).
+
+**Setup order:** **The `REbirth`/SHDP patcher relies on Windows APIs and will NOT run under Proton**, so patch the install on a Windows PC first, then copy the fully-patched game folder to the Deck. Install the base via Heroic/GOG, apply `Classic REbirth` (+ the Sourcenext 1.01 patch) then the Seamless HD Project on Windows.
+
+**Deck:** Add the patched folder as a non-Steam game, set the `ddraw` override above, force `Proton-GE` (`GE 9.25+` or recent `proton_experimental`) and **make sure `DXVK` is enabled or the HD backgrounds won't load**. `Proton-GE`/recent Experimental also fixes the FMV cutscenes.
+
+**Config:** In the `REbirth` config disable `Force 240p Backgrounds` or the HD assets are bypassed, and set `Color` to `RGB888` (required for Seamless HD Project compatibility).
+
+**Binary:** The Seamless HD Project targets the Japanese MediaKite/Sourcenext build, so the launch exe is `Biohazard.exe`. On the 2024 GOG release this lives in the `japanese` subfolder (install Japanese as the language in GOG/Heroic); the patched `Biohazard.exe` should be ~940 KB after the Classic REbirth/Sourcenext 1.01 patch.
+
+**Controller:** `Classic REbirth` replaces the legacy gamepad module with XInput/DirectInput/RawInput, so the Deck's built-in gamepad works natively — no Steam Input layout required for normal play."""
+
+[about]
+developer = "Capcom (original game); Gemini and the Seamless HD Project team (mods)"
+publisher = "Capcom"
+released  = "1996 (original PlayStation); 1997 PC port"
+genre     = "Survival horror"
+modes     = "Single-player"
+summary   = """
+**Resident Evil** is the 1996 Capcom **survival horror** game that coined the genre's name, casting S.T.A.R.S. members Chris Redfield and Jill Valentine in a zombie-infested mansion built around **fixed-camera angles**, pre-rendered backgrounds, tank controls, and limited inventory and saves.
+
+The **Seamless HD Project** is a free community overhaul of the classic PC version that adds machine-learning upscaled **HD backgrounds**, seamless room transitions, and upscaled FMVs, layered on top of Gemini's **Classic REbirth** patch which makes the old Japanese Sourcenext PC release run on modern systems. The classic 90s PC originals are **no longer sold as standalone Capcom releases**, so the mod targets community and GOG-bundle copies of the game."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** The Seamless HD Project is a free community mod that needs the base game — bring your own legally-owned copy (GOG sells the classic 90s PC bundle; note `appid 304240` on Steam is the unrelated 2015 HD Remaster, **not this classic original**).
+
+**Patch on Windows:** The `REbirth`/SHDP patcher only runs on Windows — patch the game on a PC first, then transfer the folder to the Deck.
+
+**Binary:** The exe name varies by release — confirm it against your install.
+
+**Known-good base:** `Classic REbirth` + `ddraw` override + `Proton-GE` (`GE 9.25+` / recent Experimental) with `DXVK` enabled and `Force 240p Backgrounds` disabled.
+
+**Controller:** Controllers work well with the GOG/REbirth build; with the classic games you may need to rebind the aim button after each launch."""
+
+[[links.guides]]
+title = "Classic REbirth — Resident Evil 1 patch & downloads (Gemini, official)"
+url   = "https://classicrebirth.com/index.php/downloads/resident-evil-classic-rebirth/"
+
+[[links.guides]]
+title = "Steam Community — Fixing Resident Evil (1996): SourceNext Conversion + Classic REbirth"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3699616228"
+
+[[links.guides]]
+title = "GOG forum — Seamless HD Project Steam Deck installation guide"
+url   = "https://www.gog.com/forum/resident_evil_series/seamless_hd_project_steamdeck_installation_guide"

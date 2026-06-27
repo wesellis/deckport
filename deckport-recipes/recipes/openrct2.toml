@@ -1,0 +1,82 @@
+[game]
+title       = "OpenRCT2 (RollerCoaster Tycoon 2 Open Engine)"
+slug        = "openrct2"
+aliases     = ["OpenRCT2", "RCT2 Open Source", "RollerCoaster Tycoon 2 Open"]
+type        = "native"        # native Linux binary — no Proton needed
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "openrct2"   # native Linux binary from GitHub releases or package manager
+launch_options = ""
+requires_files = ["RollerCoaster Tycoon 2 game files (cheap on GOG or Steam)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** OpenRCT2 is an open-source reimplementation of RollerCoaster Tycoon 2, developed by Ted John and a large community of contributors since 2014. **No Proton is needed; this is a fully native Linux binary.**
+
+**Install:** It ships native Linux binaries on GitHub at github.com/OpenRCT2/OpenRCT2/releases — download the latest `AppImage` for Linux. It is also on Flathub as `io.openrct2.OpenRCT2` (`flatpak install flathub io.openrct2.OpenRCT2`), which is the easiest path on Deck and bundles `innoextract` to auto-extract RCT2 data from a GOG install.
+
+**DRM:** No DRM in OpenRCT2 itself, but it **requires the original RollerCoaster Tycoon 2 game data files**, which are sold very cheaply on GOG and Steam (RollerCoaster Tycoon Classic data also works). On Deck, GOG via `Heroic Games Launcher` is an easy purchase/download path; the Flatpak can extract the GOG files automatically.
+
+**Setup:** After downloading the OpenRCT2 binary and obtaining the RCT2 game data, launch `openrct2` once on the desktop and point it to the directory containing your RCT2 data files.
+
+**Features:** OpenRCT2 adds online multiplayer, a scenario editor, higher resolutions, widescreen, UI scaling, and a large number of quality-of-life improvements over the original game.
+
+**Game Mode:** Add it as a non-Steam shortcut to access it from Game Mode.
+
+**Controller:** The classicsondeck.com website has a dedicated step-by-step setup guide for the Steam Deck specifically, including controller configuration.
+"""
+
+[about]
+developer = "OpenRCT2 team (Ted John and contributors)"
+publisher = "Open source / community release"
+released  = "RollerCoaster Tycoon 2 original 2002 (Chris Sawyer / Atari); OpenRCT2 2014–2026 (active)"
+genre     = "Theme park management simulation"
+modes     = "Single-player; online multiplayer"
+summary   = """
+**OpenRCT2** is an open-source reimplementation of **Chris Sawyer's RollerCoaster Tycoon 2**, the 2002 **theme park management simulation** classic. Using the original game's data files, OpenRCT2 rebuilds the **game engine** with modern enhancements: widescreen and high-resolution support, an in-game **scenario editor**, **online multiplayer**, custom content support, and a long list of quality-of-life changes that the original game lacked.
+
+The project has been in active development since 2014 and is widely regarded as the definitive way to play RCT2 on modern hardware. The original RCT2 data files remain required and are available cheaply from GOG and Steam.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Classics on Deck — OpenRCT2 Steam Deck Setup Guide"
+url   = "https://www.classicsondeck.com/openrct2-rollercoaster-tycoon-2-open-source/"
+
+[[links.guides]]
+title = "OpenRCT2 GitHub Releases"
+url   = "https://github.com/OpenRCT2/OpenRCT2/releases"
+
+[[links.guides]]
+title = "OpenRCT2 Official Site"
+url   = "https://openrct2.io"
+
+[[links.guides]]
+title = "OpenRCT2 Docs — Installing on Linux/BSD"
+url   = "https://docs.openrct2.io/en/latest/installing/installing-on-linux-bsd.html"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** **Requires RollerCoaster Tycoon 2 data files** — GOG and Steam versions both work. On Deck, use `Heroic Games Launcher` to purchase and download the GOG version.
+
+**Controller:** Follow the classicsondeck.com guide for controller setup; a **Steam Input profile** is recommended for comfortable play. Touchscreen input also works in the OpenRCT2 UI.
+
+**Install:** The Flathub build (`io.openrct2.OpenRCT2`) is the easiest path on Deck and can auto-extract RCT2 data from a GOG install; the `AppImage` from GitHub is a self-contained alternative.
+"""

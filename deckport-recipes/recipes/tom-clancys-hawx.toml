@@ -1,0 +1,77 @@
+[game]
+title       = "Tom Clancy's H.A.W.X."
+slug        = "tom-clancys-hawx"
+aliases     = ["HAWX", "Tom Clancy's HAWX", "H.A.W.X."]
+type        = "proton"
+engine      = "other"
+steam_appid = "21900"
+sgdb_id     = ""
+
+[launch]
+binary         = "HAWX.exe"   # D3D9 build; HAWX_dx10.exe is the D3D10 variant
+launch_options = "PROTON_NO_D3D11=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["xact"]
+notes      = """
+**Game:** 2009 Ubisoft arcade flight-combat game (Steam appid 21900), delisted by Ubisoft.
+
+**Binaries:** Ships two executables: `HAWX.exe` (DirectX 9) and `HAWX_dx10.exe` (DirectX 10) — **use the D3D9 build on Deck**.
+
+**Proton:** `GE-Proton` handles the title best; vanilla `proton_experimental` also reported working.
+
+**Display:** Launch with `PROTON_NO_D3D11=1 %command%` to avoid a renderer crash.
+
+**GFWL:** Wraps Games for Windows Live, which is the main hurdle. If `GFWL` blocks startup or won't save progress/settings, install an `xlive.dll` bypass into the game folder and clear the `GFWL`/`compatdata` Live folder so the game runs an offline profile.
+
+**Patch:** Apply the unofficial `1.02` patch for stability.
+"""
+
+[about]
+developer = "Ubisoft Romania (Ubisoft Bucharest)"
+publisher = "Ubisoft"
+released  = "2009"
+genre     = "Arcade flight combat"
+modes     = "Single-player campaign; online co-op and competitive multiplayer (servers discontinued)"
+summary   = """
+**Tom Clancy's H.A.W.X.** is an arcade-leaning aerial combat game from **Ubisoft Bucharest**, the first entry in the **H.A.W.X. series**. Players fly real-world military jets through a near-future campaign, with an **Assistance Off** mode that loosens flight aids for tighter, more agile maneuvering.
+
+It originally featured four-player drop-in co-op and eight-player dogfighting via **Games for Windows Live**, but those online services were shut down in 2015 along with the game's removal from Steam, leaving the single-player campaign as the playable content. The delisting is widely attributed to the **expiration of its aircraft manufacturer licenses**.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "ProtonDB: Tom Clancy's H.A.W.X. (appid 21900)"
+url   = "https://www.protondb.com/app/21900"
+
+[[links.guides]]
+title = "PCGamingWiki: Tom Clancy's H.A.W.X. (DRM, GFWL, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Tom_Clancy's_H.A.W.X"
+
+[[links.guides]]
+title = "Steam Community hub (appid 21900)"
+url   = "https://steamcommunity.com/app/21900/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted Steam title (appid 21900) — configuration only, no links.
+
+**GFWL:** Games for Windows Live is the main pain point: it can install and let the game run, but **progression/settings won't persist** without an `xlive.dll` bypass and clearing the Live folder in `compatdata`.
+
+**Display:** Launch with `PROTON_NO_D3D11=1 %command%`; prefer the D3D9 `HAWX.exe` over the D3D10 build on Deck.
+
+**Controller:** Native gamepad support — arcade flight model plays well on the Deck's built-in controls (Steam Input layout not required).
+
+**DRM:** The Steam build's DRM/online layer is `GFWL` (the first H.A.W.X. is a Games for Windows LIVE title; the sequel moved to Uplay). Some 2009 Ubisoft retail discs of this era also shipped with `SecuROM` activation, but that is unconfirmed for this title and does not apply to the Steam copy.
+"""

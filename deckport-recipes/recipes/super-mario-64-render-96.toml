@@ -1,0 +1,82 @@
+[game]
+title       = "Super Mario 64 Render 96 (PC)"
+slug        = "super-mario-64-render-96"
+aliases     = ["SM64 Render96", "Super Mario 64 PC", "sm64ex"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "sm64.us.f3dex2e"   # Render96ex US build, in build/us_pc/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Build:** Native Linux SDL2 build of Super Mario 64 from the community decompilation, with the Render96 enhancement pack — widescreen, 60fps, free camera, new models/textures and a DynOS mod menu.
+
+**Proton:** Runs directly on the Deck with **no Proton** (type `native`).
+
+**Install:** The real executable is `build/us_pc/sm64.us.f3dex2e` (US ROM); add it to Steam as a **Non-Steam Game**. Most Deck users build it in an Ubuntu Distrobox (deps: `build-essential`, `pkg-config`, `libsdl2-dev`, `libusb-1.0-0-dev`, `libglew-dev`), or use a community Steam Deck builder/launcher that handles the fork for you.
+
+**Controller:** Works natively via SDL (`libusb`) — the Deck gamepad is detected automatically; if anything is off, set a Steam Input Gamepad layout.
+
+**Config:** First launch generates `sm64config.txt` (enable Show Hidden in the file manager) for rebinding/resolution.
+
+**In-game:** pause + `R` for Options, pause + `Z` for the DynOS menu.
+"""
+
+[about]
+developer = "Nintendo EAD"
+publisher = "Nintendo"
+released  = "1996"
+genre     = "3D platformer"
+modes     = "Single-player"
+summary   = """
+**Super Mario 64** is the 1996 **Nintendo 64** launch title that took the **series** into **3D**, sending Mario through open painting-worlds in Princess Peach's castle to collect Power Stars using an analog-stick moveset of jumps, dives and ground-pounds. It is widely regarded as one of the most influential and acclaimed video games ever made, defining conventions for 3D platforming and camera control.
+
+This recipe targets the community **decompilation** PC port (sm64ex / Render96ex) rather than any official release, which is what makes it relevant on the Deck. The **Render96** enhancement pack layers on widescreen, 60fps, a **free camera**, HD models/textures and a DynOS mod menu while leaving the original levels and gameplay intact.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Render96ex (community decompilation fork)"
+url   = "https://github.com/Render96/Render96ex"
+
+[[links.guides]]
+title = "Render96ex Help FAQ & build wiki"
+url   = "https://github.com/Render96/Render96ex/wiki/Help-FAQ"
+
+[[links.guides]]
+title = "SM64 PC Port builder/launcher for Steam Deck"
+url   = "https://github.com/the-outcaster/sm64-steam-deck-builder"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires your own US SM64 ROM (`sm64.us.z64`) to build/run — **none is bundled**.
+
+**Proton:** Native Linux build — **no Proton**, so no ProtonDB tier applies.
+
+**DRM / legality:** Built from the Super Mario 64 decompilation, a fan project Nintendo has issued takedowns against; its availability is unstable, so obtain it only from a source you judge legitimate.
+
+**Install:** Real binary confirmed: `build/us_pc/sm64.us.f3dex2e`. Easiest path on Deck is a community SM64 builder/launcher or an Ubuntu Distrobox compile; the binary then runs as a **Non-Steam Game**.
+
+**Controller:** Supported natively via SDL; a Steam Input Gamepad layout fixes any binding quirks.
+
+**Links:** deckport links nothing.
+"""

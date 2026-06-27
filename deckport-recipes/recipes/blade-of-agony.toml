@@ -1,0 +1,76 @@
+[game]
+title       = "Wolfenstein: Blade of Agony"
+slug        = "blade-of-agony"
+aliases     = ["Blade of Agony", "BoA", "Wolfenstein BoA", "realm667 BoA"]
+type        = "native"
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run com.realm667.Wolfenstein_Blade_of_Agony"
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Game:** Massive 3-chapter WWII FPS built on `GZDoom` with fully original assets — **completely standalone, no Doom or Wolfenstein files needed.**
+
+**Install:** Available on Flathub as `com.realm667.Wolfenstein_Blade_of_Agony` — open `Discover` in Desktop Mode and install it directly. **This is the cleanest GZDoom game to install on Deck:** fully packaged Flatpak, no manual file management at all. Current Flathub build is `v3.1`.
+
+**Shortcut:** After installing from Discover, add as a non-Steam shortcut pointing to the `flatpak` binary with the `run com.realm667.Wolfenstein_Blade_of_Agony` launch options.
+
+**Controller:** GZDoom does **not** present the Deck as a native gamepad, so it doesn't auto-bind. Set the non-Steam shortcut to a **gamepad/community Steam Input layout** (or bind a controller config in GZDoom's options) for proper stick/button play.
+
+**Heads-up:** The Deck's on-screen keyboard does **not** render over GZDoom, so typing (e.g. naming manual saves) is awkward without a physical keyboard — a `quicksave` bind works around it.
+
+**Content:** Three full chapters with cutscenes, original music, and custom art."""
+
+[about]
+developer = "Tormentor667 and the Blade of Agony team (realm667.com)"
+publisher = "Independently released (free, Flathub + realm667.com)"
+released  = "v3.0 (2021); v3.1 maintenance update is the current Flathub build"
+genre     = "World War II first-person shooter (standalone GZDoom game)"
+modes     = "Single-player"
+summary   = "**Wolfenstein: Blade of Agony** is a massive, three-chapter WWII first-person shooter built on the **GZDoom** engine by Tormentor667 and a large community team at realm667.com. It is **completely standalone** — all assets are original, and no copy of Doom, Wolfenstein, or any other commercial game is required. The game spans three full chapters with a linear story told through **in-engine cutscenes**, features original music and artwork, and is considered one of the most ambitious and polished GZDoom **total conversions** ever produced. v3.0 (2021) was the major complete release, with `v3.1` shipping as a later maintenance update (the current Flathub build). Non-commercial fan project, not affiliated with id Software or MachineGames."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Flathub — Wolfenstein: Blade of Agony"
+url   = "https://flathub.org/apps/com.realm667.Wolfenstein_Blade_of_Agony"
+
+[[links.guides]]
+title = "Realm667 — official Blade of Agony site & F.A.Q."
+url   = "https://boa.realm667.com/index.php/help/f-a-q"
+
+[[links.guides]]
+title = "ZDoom forums — Steam Deck support thread"
+url   = "https://forum.zdoom.org/viewtopic.php?f=54&t=75180"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Install:** Install via `Discover` in Desktop Mode (Flathub: `com.realm667.Wolfenstein_Blade_of_Agony`) — **this is the easiest GZDoom game to install on Deck, no files needed at all.** After install, add as a non-Steam shortcut.
+
+**Release:** `v3.0` (2021) is the major complete, polished 20+ hour release; `v3.1` is the current Flathub build.
+
+**Controller:** GZDoom does **not** expose the Deck as a native gamepad — apply a gamepad/community **Steam Input** layout (or set a controller config in GZDoom options) so the sticks/buttons work.
+
+**Keyboard:** The Deck on-screen keyboard does **not** overlay GZDoom, so naming manual saves is awkward without a physical keyboard; lean on a `quicksave` bind.
+
+**Legal:** Non-commercial fan game — **not affiliated with id Software or MachineGames.**
+
+**Note:** deckport links nothing."""

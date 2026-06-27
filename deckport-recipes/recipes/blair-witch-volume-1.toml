@@ -1,0 +1,54 @@
+[game]
+title       = "Blair Witch Volume I: Rustin Parr"
+slug        = "blair-witch-volume-1"
+aliases     = ["Blair Witch Vol 1", "Blair Witch Rustin Parr", "Blair Witch Volume 1"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "nocturne.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add the game executable (nocturne.exe — the game runs on Terminal Reality's Nocturne engine and ships under that name) as a non-Steam game and set Proton version to GE-Proton. Because it is a 2000-era DirectDraw/3dfx-era title, a DirectDraw wrapper such as dgVoodoo2 or DDrawCompat is generally needed for it to render correctly; the community Windows 10/11 fix (silentgameplays GitHub repo) bundles a preconfigured dgVoodoo2 setup and ini, which carries over under Proton. Primary input is mouse and keyboard; configure Steam Input or use the trackpads and virtual keyboard. Note: this is the 2000 PC game, NOT the 2019 Bloober Team game (Steam App 1149640)."
+
+[about]
+developer = "Terminal Reality"
+publisher = "Gathering of Developers"
+released  = "2000"
+genre     = "Third-person survival horror"
+modes     = "Single-player"
+summary   = "Blair Witch Volume I: Rustin Parr is a third-person survival horror game developed by Terminal Reality and published by Gathering of Developers in 2000. Set in 1941, it follows Elspeth 'Doc' Holliday, a research scientist for the Spookhouse (a fictional classified government agency that investigates the paranormal), as she travels to Burkittsville to look into the case of Rustin Parr — a hermit who abducted eight children and murdered all but one in his basement. It is the first entry in a three-game Blair Witch anthology released in 2000, each developed by a different studio. The game runs on Terminal Reality's Nocturne engine, using static camera angles with 3D characters over pre-rendered backgrounds."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Blair Witch Volume I: Rustin Parr"
+url   = "https://www.pcgamingwiki.com/wiki/Blair_Witch_Volume_1:_Rustin_Parr"
+
+[[links.guides]]
+title = "silentgameplays — Rustin Parr Windows 10/11 fix (dgVoodoo2 + ini)"
+url   = "https://github.com/silentgameplays/The-Blair-Witch-Project-Volume-1-Rustin-Parr-Windows-10-Fix"
+
+[[links.guides]]
+title = "Blair Witch (2019) on Steam — Bloober Team game, NOT this one"
+url   = "https://store.steampowered.com/app/1149640/Blair_Witch/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = "Supply your own legally obtained copy of the game (never officially re-released digitally; disc only). This is NOT the 2019 Bloober Team Blair Witch game (Steam App 1149640). This is Volume I of the 2000 PC anthology trilogy (I: Rustin Parr, II: Coffin Rock, III: Elly Kedward). The executable is nocturne.exe (Nocturne engine). Old DirectDraw/3dfx-era title — expect to need a DirectDraw wrapper (dgVoodoo2 / DDrawCompat); the community Windows 10/11 fix bundles a ready setup. Mouse and keyboard primary; use trackpads and Steam Input virtual keyboard on Deck. GE-Proton required."

@@ -1,0 +1,84 @@
+[game]
+title       = "Grand Theft Auto: Episodes from Liberty City"
+slug        = "grand-theft-auto-episodes-from-liberty-city"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "12220"
+sgdb_id     = ""
+
+[launch]
+binary         = "LaunchEFLC.exe"   # the EFLC launcher; it spawns EFLC.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted standalone Steam game (`appid 12220`); the original release shipped with SecuROM + Games for Windows Live + Social Club. Content was later folded into GTA IV: The Complete Edition (which dropped SecuROM/GFWL for the Rockstar launcher). ProtonDB rates it silver and the community runs it on the Deck.
+
+**Proton:** `GE-Proton` works well; `proton_experimental` is also reported fine.
+
+**Install:** Launch via `LaunchEFLC.exe`, which spawns `EFLC.exe`.
+
+**Fix:** The **key fix is bypassing Games for Windows Live** — without it you hit `EFLC: FATAL ERROR`. Drop an xliveless build (`xlive.dll`) into the EFLC game folder so you never reach the GFWL sign-in, and set Social Club to play offline. Several Deck reports also add `127.0.0.1 tv.rockstargames.com` to `/etc/hosts` to stop the launcher hanging on the Social Club connect. On AMD/Deck no `nvapi` is needed (that's an Nvidia-only step).
+
+**Display:** If perf is rough, lower visibility/view range, turn shadows down, and run 1080p; keep Esync disabled if you see instability.
+
+**Controller:** The game has native XInput gamepad support, so the Deck controller works in-menu and in-game. It's an older title, so applying Steam Input (the community Gamepad layout) is still recommended for the cleanest mapping.
+
+deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Rockstar North"
+publisher = "Rockstar Games"
+released  = "2010"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "**Episodes from Liberty City** is a standalone compilation of the two **GTA IV** expansions, **The Lost and Damned** and **The Ballad of Gay Tony**, packaged so it runs without the base game. Built on Rockstar's **RAGE engine**, both episodes return to GTA IV's Liberty City with new protagonists, storylines, weapons, and vehicles. It was well received as a substantial follow-up to GTA IV. The standalone PC release (appid 12220) was later **delisted from Steam** after its content was folded into GTA IV: The Complete Edition."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Episodes from Liberty City (appid 12220)"
+url   = "https://www.protondb.com/app/12220"
+
+[[links.guides]]
+title = "Steam community: getting EFLC working with xliveless"
+url   = "https://steamcommunity.com/app/12220/discussions/0/2592234299554004389/"
+
+[[links.guides]]
+title = "ThirteenAG GTAIV.EFLC.FusionFix (optional fixes/controller icons)"
+url   = "https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** The standalone EFLC was delisted from Steam (`appid 12220`); supply your own copy.
+
+**ProtonDB:** silver — playable on Deck but expect setup.
+
+**Mandatory fix:** apply an xliveless build (`xlive.dll` in the EFLC game dir) to skip Games for Windows Live (otherwise `EFLC: FATAL ERROR`), and set Social Club to offline. Some setups also add `127.0.0.1 tv.rockstargames.com` to `/etc/hosts`.
+
+**Launch:** through `LaunchEFLC.exe`, not `EFLC.exe` directly.
+
+**Perf:** can be sub-30fps in dense areas — drop view distance, lower shadows, and run 1080p; disable Esync if you hit crashes.
+
+**Controller:** Native XInput support, so the Deck gamepad works; applying the community Steam Input layout is still recommended for the cleanest mapping.
+
+**Multiplayer:** Online multiplayer servers are dead; treat this as single-player only.
+
+deckport links nothing.
+"""

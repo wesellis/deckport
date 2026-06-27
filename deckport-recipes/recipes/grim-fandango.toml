@@ -1,0 +1,62 @@
+[game]
+title       = "Grim Fandango"
+slug        = "grim-fandango"
+aliases     = ["Grim Fandango Remastered"]
+type        = "native"
+engine      = "other"
+steam_appid = "316790"
+sgdb_id     = ""
+
+[launch]
+binary         = "GrimFandango"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "native"
+winetricks = []
+notes      = "RECOMMENDED PATH: Purchase Grim Fandango Remastered (App 316790) on Steam. It ships a NATIVE Linux build (32-bit ELF binary 'GrimFandango'), which Steam selects automatically on Deck — leave compatibility (Proton) OFF. Double Fine's own Steam Deck guidance lists it as 'Optimal using Linux (Proton version crashes on launch)', so do NOT force Proton/GE-Proton on this title; the native build is the correct and stable path. Proton 10.0-3 improved the Windows build on AMD/Intel GPUs, but native remains recommended. For the original 1998 release with your own data files: install ScummVM via Flatpak (org.scummvm.ScummVM) and use its GrimE engine (formerly ResidualVM) via 'Add Game' pointing to the original data files. The steam_appid above references the Remastered for library linking purposes."
+
+[about]
+developer = "LucasArts / Double Fine Productions"
+publisher = "LucasArts / Double Fine Productions"
+released  = "1998"
+genre     = "Point-and-click adventure"
+modes     = "Single-player"
+summary   = "Grim Fandango is a landmark 1998 adventure game directed by Tim Schafer at LucasArts, blending film noir and Mexican folklore in the Land of the Dead. Players control travel agent Manny Calavera as he uncovers a conspiracy spanning four years of the afterlife journey. The 2015 Remastered edition by Double Fine adds high-resolution backgrounds, reorchestrated music, and tank-free controls. The Remastered version is the recommended way to play and ships a native Linux build that runs directly on the Steam Deck."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Grim Fandango Remastered on Steam (App 316790)"
+url   = "https://store.steampowered.com/app/316790/Grim_Fandango_Remastered/"
+
+[[links.guides]]
+title = "PCGamingWiki — Grim Fandango Remastered"
+url   = "https://www.pcgamingwiki.com/wiki/Grim_Fandango_Remastered"
+
+[[links.guides]]
+title = "ProtonDB — Grim Fandango Remastered"
+url   = "https://www.protondb.com/app/316790"
+
+[[links.guides]]
+title = "ScummVM GrimE engine wiki"
+url   = "https://wiki.scummvm.org/index.php/Grim_Fandango"
+
+[[links.guides]]
+title = "Double Fine — Games Supported on Steam Deck (native Linux note)"
+url   = "https://www.doublefine.com/news/steam-deck-doublefine"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Grim Fandango Remastered (App 316790) ships a NATIVE Linux build that Steam runs automatically on Deck — keep compatibility/Proton OFF. Double Fine notes the Proton (Windows) version crashes on launch, so do NOT force GE-Proton on this title; use the native build. For the original 1998 release: supply your own data files and run via ScummVM Flatpak (org.scummvm.ScummVM) using the GrimE engine."

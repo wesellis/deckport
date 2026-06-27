@@ -1,0 +1,117 @@
+[game]
+title       = "Manhunt"
+slug        = "manhunt"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "12130"
+sgdb_id     = ""
+
+[launch]
+binary         = "manhunt.exe"
+launch_options = "WINEDLLOVERRIDES=\"d3d8,ddraw=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "Proton Experimental"
+winetricks = []
+notes      = """
+ProtonDB: SILVER overall, but trending and best-reported tier is PLATINUM
+once patched (~33 reports). Not Steam Deck Verified. The crashes and
+soft-locks are NOT Linux/Proton problems — Rockstar shipped the Steam
+release with leftover copy-protection/anti-tamper code that game-breaks
+even on a legitimately purchased copy (looping audio, AI freezing, the
+"Born Again" completion crash). The community fixer patches these out of
+your own installed files; once patched the game runs smoothly (~60 FPS,
+6-7 h battery on Deck).
+
+**Step 1 — Patch your installed copy with the open-source fixer**
+Use ermaccer's Manhunt.Fixer (open source, GitHub):
+  https://github.com/ermaccer/Manhunt.Fixer
+Download a release, point it at your install directory:
+  ~/.steam/steam/steamapps/common/Manhunt/
+and apply the patches. The auto-locate often fails on Deck — navigate to
+the folder manually. Enable "Install Intro Skip".
+
+**Step 2 — MHP option — do NOT enable on Steam Deck**
+Check every fixer box EXCEPT "MHP (Recommended)". MHP swaps the renderer
+(and is what enables a widescreen menu/HUD on desktop), but on Deck it
+turns all in-game textures black and makes the game unplayable. Leaving
+MHP off means the game renders 4:3 — that is the correct trade-off here.
+
+**Step 3 — Set DLL overrides (required)**
+Add to the game's Steam launch options:
+  WINEDLLOVERRIDES="d3d8,ddraw=n,b" %command%
+This forces Wine's built-in d3d8/ddraw translation instead of any system
+DLL, preventing a black screen at startup. The game runs from its normal
+Steam entry (binary manhunt.exe) — no Non-Steam shortcut is required once
+the files are patched in place.
+
+**Step 4 — Proton version**
+Proton Experimental is recommended (its legacy DirectX 8 / ddraw handling
+is the most reliable). GE-Proton also works as a fallback.
+
+**Step 5 — Controller**
+Manhunt has NO native gamepad support and its XInput mapping is broken, so
+a gamepad does nothing out of the box. Enable Steam Input and apply a
+community controller layout (Manage Game > Controller Layout > browse
+community configs, e.g. "FGSFDS's Config"), or rebind to taste. This is
+mandatory for handheld play.
+
+**Step 6 — Resolution / widescreen**
+Set in-game resolution to 1280x800 for the Deck. The game is 4:3 native;
+at 16:9 it pillarboxes, which is expected. A separate fan widescreen fix
+(dinput8.dll + scripts, placed next to manhunt.exe) exists but is optional
+and interacts with the MHP renderer — verify before relying on it.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Steam store page"
+url   = "https://store.steampowered.com/app/12130/"
+
+[[links.guides]]
+title = "Manhunt.Fixer (open-source patcher, GitHub)"
+url   = "https://github.com/ermaccer/Manhunt.Fixer"
+
+[[links.guides]]
+title = "Manhunt Steam Deck setup guide (Steam Community)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2968832110"
+
+[[links.guides]]
+title = "ProtonDB entry"
+url   = "https://www.protondb.com/app/12130"
+
+[about]
+developer = "Rockstar North"
+publisher = "Rockstar Games"
+released  = "2004"
+genre     = "Stealth, Survival Horror"
+modes     = "Single-player"
+summary   = """**Manhunt** by Rockstar North (2004) is a brutal stealth-horror game in which a
+death-row prisoner is forced to execute gang members on camera for a snuff-film
+director. Despite being one of Rockstar's most controversial titles, it remains a
+tightly designed stealth game — though the Steam release requires a community fixer
+to bypass anti-piracy code that breaks legitimate copies."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+- Leftover copy-protection/anti-tamper code in the Steam release causes softlocks, looping audio, AI freezes and a "Born Again" completion crash even on a legit purchase — patch your installed files with Manhunt.Fixer first.
+- Do NOT enable the MHP option on Steam Deck — it blacks out all textures. The cost of leaving it off is 4:3 rendering.
+- DLL override launch option (WINEDLLOVERRIDES="d3d8,ddraw=n,b" %command%) is required or you get a black screen on startup.
+- No native gamepad support — enable Steam Input and apply a community controller layout, otherwise the pad does nothing.
+- Game is 4:3 native; expect pillarboxing at 16:9. An optional fan dinput8.dll widescreen fix exists but interacts with MHP — verify before use.
+- Proton Experimental is preferred over stable Proton for the game's DirectX 8 / ddraw paths; GE-Proton is a fallback.
+"""

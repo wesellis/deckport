@@ -1,0 +1,79 @@
+[game]
+title       = "Sonic Unleashed Recompiled"
+slug        = "sonic-unleashed-recomp"
+aliases     = ["Sonic Unleashed Recomp", "UnleashedRecomp", "Sonic Unleashed"]
+type        = "native"        # hedge-dev's recomp ships native Linux builds (great on Deck)
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "UnleashedRecomp"   # confirmed — native Linux build / Flatpak; add as a non-Steam game and pick "UnleashedRecomp"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Overview:** Unofficial static recompilation of the 2008 Xbox 360 game Sonic Unleashed to PC, by hedge-dev (the open-source `UnleashedRecomp` project).
+
+**Proton:** Ships native Linux builds (a Flatpak is provided) that run well on the Steam Deck with **no Proton** — community reports treat it as a near-Verified handheld experience.
+
+**DRM:** The recomp is only the engine — **you provide your own game files at first-run setup**.
+
+**Install:** Do the install in **Desktop Mode** — the first-run file picker isn't reliably available in Game Mode. After install, add the `UnleashedRecomp` binary as a non-Steam game.
+
+**Controller:** Full controller support (native; Steam Input correctly detects the controller type).
+
+**Display:** Performance improves noticeably by manually pinning the Deck GPU clock to max in the Gamescope/Steam Deck performance menu.
+
+**Requirements:** Needs an `AVX` CPU and a `Direct3D 12` / `Vulkan` GPU (the Deck qualifies).
+"""
+
+[about]
+developer = "Sonic Team (original 2008 game); recompilation by hedge-dev"
+publisher = "Sega (original 2008 game)"
+released  = "2008 (Xbox 360/PS3); UnleashedRecomp first released 2025"
+genre     = "Platformer, action-adventure"
+modes     = "Single-player"
+summary   = """
+**Sonic Unleashed** is a 2008 platform game developed by Sonic Team and published by Sega, originally released on Xbox 360, PlayStation 3, Wii and PS2. It debuted Sega's **Hedgehog Engine** and split play between high-speed daytime platforming stages and slower nighttime beat-em-up sections starring the transformed **Werehog**.
+
+**UnleashedRecomp** is an unofficial static recompilation by the hedge-dev community team that ports the Xbox 360 version to modern PC and Linux, adding widescreen, uncapped frame rates and other enhancements. The original console release was never sold on PC storefronts, so the recompilation requires the player to supply their own game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "UnleashedRecomp — open-source recomp project (hedge-dev)"
+url   = "https://github.com/hedge-dev/UnleashedRecomp"
+
+[[links.guides]]
+title = "Sonic Unleashed native PC port runs on the Steam Deck (Steam Deck HQ)"
+url   = "https://steamdeckhq.com/news/sonic-unleashed-native-pc-port-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** The recomp is the engine only — it requires you to provide your own legally-owned Sonic Unleashed (Xbox 360) game files plus DLC, supplied during its first-run setup.
+
+**Proton:** Use the native Linux build / Flatpak for the Deck (type `native`, no Proton); a Windows build also exists if you'd rather use Proton.
+
+**Install:** Run the installer in **Desktop Mode** — the file picker can be missing in Game Mode. Binary is `UnleashedRecomp`; add it as a non-Steam game.
+
+**Controller:** Works natively (Steam Input detects the pad type); if you play docked with an external controller the first-run file picker can be awkward with Steam Input disabled.
+
+**Display:** For best framerate, pin the GPU clock to max in the performance menu.
+
+**Storage:** `~6 GiB` without DLC, `~10 GiB` with.
+"""

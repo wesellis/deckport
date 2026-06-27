@@ -1,0 +1,78 @@
+[game]
+title       = "Monopoly Plus"
+slug        = "monopoly-plus"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "562810"
+sgdb_id     = ""
+
+[launch]
+binary         = "Monopoly.exe"   # Ubisoft Connect title; exe lives under the game install dir
+launch_options = "PROTON_NO_ESYNC=1 PROTON_NO_FSYNC=1 %command%"
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `562810`) — removed from sale 2 Oct 2024 after Monopoly (2024) shipped, so it is no longer purchasable through Steam.
+
+**Uplay:** This is a Ubisoft Connect (Uplay) title, so the Steam Proton prefix **must also have Ubisoft Connect installed**: launching from Steam pushes the digital license to your linked Ubisoft account on first run, then Ubisoft Connect starts the game.
+
+**Proton:** Use `proton_experimental` (or `GE-Proton`); experimental tends to handle the Ubisoft Connect handshake best on SteamOS.
+
+**Fix:** If the game hangs at launch, the esync/fsync-off launch options above (`PROTON_NO_ESYNC=1 PROTON_NO_FSYNC=1 %command%`) usually clear it.
+
+**Controller:** Works out of the box — the game ships a console-style gamepad UI, no Steam Input keyboard layout needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Asobo Studio"
+publisher = "Ubisoft"
+released  = "2014"
+genre     = "Board game / Strategy"
+modes     = "Single-player (vs AI), local multiplayer, online multiplayer (up to 6 players)"
+summary   = "**Monopoly Plus** is a digital adaptation of Hasbro's classic Monopoly board game, developed by Asobo Studio and published by Ubisoft. It features a 3D animated **'Living Board'** where the city comes to life as players buy property and build, supporting up to six players via AI, local, and online play. A successor to **Monopoly Streets**, it was **delisted** from Steam and other PC storefronts in early October 2024 following the release of the newer **Monopoly (2024)**, and is no longer purchasable."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Fix Uplay/Ubisoft Connect issues on Steam Deck/Proton/Linux"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3108805139"
+
+[[links.guides]]
+title = "My solution to fix the launch issue with Monopoly Plus (Steam discussions)"
+url   = "https://steamcommunity.com/app/562810/discussions/1/3110278728385351383/"
+
+[[links.guides]]
+title = "ProtonDB - MONOPOLY PLUS (appid 562810)"
+url   = "https://www.protondb.com/app/562810"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Delisted from Steam on 2 Oct 2024 (succeeded by Monopoly 2024) — no longer for sale.
+
+**Uplay:** Ubisoft Connect (Uplay) dependency is the main hurdle — you **must install Ubisoft Connect into the Proton prefix** and let it link the digital license on first launch, otherwise the game will not start.
+
+**Proton:** Community reports confirm it runs on Linux/Proton (ProtonDB silver); `proton_experimental` or `GE-Proton` recommended, with esync/fsync disabled if it hangs.
+
+**Multiplayer:** Online multiplayer was flaky even at launch and may be dead — local/AI play is the safe path.
+
+**Controller:** Natively supported (console-style pad UI).
+"""

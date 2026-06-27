@@ -1,0 +1,58 @@
+[game]
+title       = "Streets of Rage Remake"
+slug        = "streets-of-rage-remake"
+aliases     = ["SoRR", "Streets of Rage Remake v5.2", "SOR Remake"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SorR.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add SorR.exe as a non-Steam game and run with Proton/GE-Proton. XInput controls are enabled by default in v5.2, so Xbox-style pads work without extra setup; if a controller isn't detected, use Steam Input. Supports 2-player local co-op. 16:9 widescreen support. All assets are original fan-made work; no Sega ROM files required. This is a different project from Streets of Rage X and the official Streets of Rage 4."
+
+[about]
+developer = "Bomber Games"
+publisher = "Bomber Games"
+released  = "2011"
+genre     = "Beat-em-up / Brawler"
+modes     = "Single-player, Local co-op (2 players)"
+summary   = "Streets of Rage Remake (SoRR) v5.2 is a fan game by Bomber Games that recreates the original Streets of Rage trilogy in a single unified engine with fully original fan-made assets. It features 19 playable characters, multiple game modes (story, Survival, Boss Rush, Events, Volleyball), and 2-player local co-op, and is widely regarded as one of the greatest fan projects ever made. The v5 release dates to 2011, with v5.2 released in November 2020. Completely standalone — all assets are original fan creations, no Sega files required. This is a separate project from Streets of Rage X and the official Streets of Rage 4."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB community reports"
+url   = "https://www.protondb.com/"
+
+[[links.guides]]
+title = "PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Streets_of_Rage_Remake"
+
+[[links.guides]]
+title = "SorR Community (Bomber Games official forum)"
+url   = "https://sorr.forumotion.net/"
+
+[[links.guides]]
+title = "Streets of Rage Remake (Wikipedia)"
+url   = "https://en.wikipedia.org/wiki/Streets_of_Rage_Remake"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Free standalone fan game — not on Steam, so add SorR.exe as a non-Steam game (no real ProtonDB page; tier unknown). All assets are fan-made originals, no Sega files needed. DIFFERENT from Streets of Rage X (separate project, already in list) and from the official Streets of Rage 4. 19 characters, 2-player local co-op. XInput on by default for Xbox-style pads; fall back to Steam Input if a pad isn't detected."

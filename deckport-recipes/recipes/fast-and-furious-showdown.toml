@@ -1,0 +1,64 @@
+[game]
+title       = "Fast & Furious: Showdown"
+slug        = "fast-and-furious-showdown"
+aliases     = ["Fast and Furious Showdown", "Fast & Furious Showdown"]
+type        = "proton"
+engine      = "other"
+steam_appid = "224340"
+sgdb_id     = ""
+
+[about]
+developer = "Firebrand Games"
+publisher = "Activision"
+released  = "2013"
+genre     = "Racing / vehicular combat"
+modes     = "Single-player, local co-op"
+summary   = """
+**Fast & Furious: Showdown** is a 2013 racing and car-combat game developed by **Firebrand Games** and published by **Activision** as a tie-in to the **film franchise**, bridging the story between Fast Five and Fast & Furious 6. Its **31 missions** center on driving, turret gunning, and car-hijacking, playable solo with an AI partner or in **local split-screen co-op** (there is no online play).
+
+The game received broadly negative reviews for poor graphics, framerate issues, and weak AI, and the PC version was later **delisted** from sale tied to the film license."""
+
+[launch]
+binary         = "Fast and Furious Showdown.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 7.0-6"
+winetricks = []
+notes      = """
+**Game:** 2013 `Firebrand Games` / `Activision` movie tie-in racer (Steam `appid 224340`), delisted over the film license.
+
+**Proton:** Use `Proton 7.0-6` — it runs as expected. **Do NOT use `Proton Experimental` or `8.0`** — they fail at first launch with a `C:\\Windows\\System32\\OpenAL32.dll is read-only` error (Abort/Retry/Ignore all dead-end).
+
+**DRM:** Game uses Steam DRM, so it needs Steam to launch — no extra DRM bypass required.
+
+**Controller:** Console-port arcade racer with native gamepad support; the Steam Deck controls work out of the box, fall back to a Steam Input gamepad layout if needed."""
+
+[[links.guides]]
+title = "ProtonDB community reports (appid 224340)"
+url   = "https://www.protondb.com/app/224340"
+
+[[links.guides]]
+title = "SteamDB app page (appid 224340)"
+url   = "https://steamdb.info/app/224340/"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Delisted (film license):** configuration only, no links.
+
+**Proton:** Must run on `Proton 7.0-6`; `Experimental`/`8.0` hard-fail on the `OpenAL32.dll` read-only error.
+
+**Multiplayer:** Single-player runs fine; **the game crashes to desktop after every multiplayer race**, so treat it as single-player on Deck.
+
+**DRM:** Requires Steam DRM (launches through Steam)."""

@@ -1,0 +1,78 @@
+[game]
+title       = "Silent Hill 2: Enhanced Edition"
+slug        = "silent-hill-2-enhanced-edition"
+aliases     = ["SH2 Enhanced Edition", "Silent Hill 2 Directors Cut Enhanced"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "sh2pc.exe"   # stated: launch sh2pc.exe (configure via SH2EEconfig.exe)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 7.0-4"
+winetricks = []
+notes      = """
+**Overview:** The community Enhanced Edition for the PC version of Silent Hill 2: Director's Cut — a full audio/visual overhaul: HD resolutions, widescreen fixes, 60 FPS, restored fog/shadows/post-processing and better controller support, on top of the original 2001 PC release (**NOT the 2024 remake**).
+
+**Install:** Install the original unmodified SH2 PC game first, then run the Enhanced Edition Setup Tool (`SH2EEsetup.exe`).
+
+**DRM:** The original 2001/2002 PC release ships with SecuROM disc-check DRM and the stock `sh2pc.exe` should not be launched directly on modern systems. Installing the Enhanced Edition replaces it with the project's Enhanced Executable (`sh2pc.exe`), which is the version you add to Steam — so the SecuROM disc check is no longer the launch path.
+
+**Proton:** Add the Enhanced `sh2pc.exe` to Steam as a non-Steam game and **force `Proton 7.0-4`** (community-confirmed known-good; newer Proton/Experimental has also worked, but `7.0-4` is the safe default).
+
+**Config:** Run `SH2EEconfig.exe` to set resolution/options. Community reports it runs brilliantly on Deck.
+
+**Display:** In `SH2EEconfig.exe` the renderer can be set to Direct3D 11 or Direct3D 12 — DX11 is the safer default under Proton, DX12 also works for some; some users pair window mode + FSR/lossless scaling to smooth occasional stutter. (These are config options, not Steam launch flags — leave `launch_options` empty.)
+"""
+
+[about]
+developer = "Team Silent / Creature Labs (PC port); Enhanced Edition by the SH2 Enhanced Edition community team"
+publisher = "Konami"
+released  = "2002 (PC); Enhanced Edition community mod, ongoing releases (1.0 in 2021)"
+genre     = "Survival horror"
+modes     = "Single-player"
+summary   = "**Silent Hill 2** is a **survival horror** game originally developed by **Team Silent** and published by Konami, with the PC version (a port of the **Director's Cut / Restless Dreams** content) handled by Creature Labs. The **Enhanced Edition** is a free fan-made compilation of mods that overhauls the dated PC release, restoring the original PlayStation 2 **fog**, audio quality and post-processing while adding **widescreen** and HD resolution support, 60 FPS, upscaled FMVs, improved controller support and a large number of bug fixes. It is notable as the definitive way to experience the 2001 classic on modern hardware, and is layered on top of an unmodified copy of the original PC game rather than the **2024 remake**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Silent Hill 2: Enhanced Edition - Official Download & Install"
+url   = "https://enhanced.townofsilenthill.com/SH2/install.htm"
+
+[[links.guides]]
+title = "Silent Hill 2: Enhanced Edition - Configuration (SH2EEconfig.exe)"
+url   = "https://enhanced.townofsilenthill.com/SH2/config.htm"
+
+[[links.guides]]
+title = "How to Play Silent Hill 2: Enhanced Edition on Steam Deck (guide)"
+url   = "https://retroresolve.com/guides/how-to-play-silent-hill-2-enhanced-edition-on-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**No ProtonDB page:** The original 2001/2002 PC release was a retail disc product and was **never sold on Steam**, so there is no Steam AppID or ProtonDB rating for it (the Steam AppID 2124490 is the unrelated **2024 remake**). Community reports for the Enhanced Edition on Deck are positive — it runs well under `Proton 7.0-4` — but tier is left **unrated** rather than claiming a Gold/Platinum it can't be measured at.
+
+**Supply your own copy:** Needs the base Silent Hill 2 (2001) PC game — North American "Restless Dreams" or European "Director's Cut" both work — bring your own copy; the Enhanced Edition is a free community package layered on top, and this targets the original PC release, **not the 2024 remake**.
+
+**Setup:** Configure with `SH2EEconfig.exe`, launch the Enhanced `sh2pc.exe` under `Proton 7.0-4`.
+
+**Controller:** Enhanced Edition adds improved controller support (works on Deck's built-in controls; a Steam Input gamepad/keyboard layout covers any gaps).
+
+**Performance:** Watch for occasional stutter/frame drops — mitigate with the Direct3D 11 renderer (in `SH2EEconfig.exe`), window mode, and FSR/lossless scaling.
+
+**Note:** deckport links nothing.
+"""

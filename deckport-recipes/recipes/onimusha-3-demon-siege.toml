@@ -1,0 +1,60 @@
+[game]
+title       = "Onimusha 3: Demon Siege"
+slug        = "onimusha-3-demon-siege"
+aliases     = ["Onimusha 3", "Onimusha Demon Siege"]
+type        = "proton"
+engine      = "other"
+steam_appid = "6570"          # 2005 PC release, delisted (Steam page lives at app/6570)
+sgdb_id     = ""
+
+[launch]
+binary         = "oni3launcher.exe"  # launcher auto-scales to desktop res; widescreen-patched copies expose oni3_ws.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2005 PC port of the 2004 Capcom action game; delisted Steam release (`app 6570`). Community reports it runs well on Deck.
+
+**Launch:** Start via `oni3launcher.exe` — pick `800x600` in the launcher and it auto-scales to the Deck panel.
+
+**Display:** The community ThirteenAG widescreen fix (dropped next to the exe) adds 16:9 via the `oni3_ws.exe` entry.
+
+**Controller:** **The on-screen Start button does not register on Deck** — map `R3` to Start in the Steam Input layout as a workaround. XInput pad support comes from the community `OnimushaEnhanced` wrapper.
+
+**Install:** deckport only configures the prefix."""
+
+[about]
+developer = "Capcom"
+publisher = "Capcom (PS2); Sourcenext, Ubisoft (PC)"
+released  = "2004 (PS2); 2005 PC (Japan), 2006 PC (West)"
+genre     = "Action-adventure / hack-and-slash"
+modes     = "Single-player"
+summary   = "**Onimusha 3: Demon Siege** is the third mainline entry in Capcom's **Onimusha** series, an action-adventure game built around fast melee combat and the signature **Issen** counter-kill. It moved the series from pre-rendered backdrops to fully **3D real-time environments** and split its story across two heroes: samurai Samanosuke Akechi, voiced and modeled on actor Takeshi Kaneshiro, fighting the demonic Genma in modern-day Paris, and French soldier Jacques Blanc, played by Jean Reno, transported back to feudal Japan. Well reviewed as a high point for the series, the 2005 Sourcenext-developed Windows port was later published in the West by Ubisoft and is **no longer sold digitally**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Runs on Deck:** Community reports confirm it runs on Steam Deck (well-behaved with `GE-Proton`); rate it Deck 'Playable'/Gold.
+
+**Controller:** Two control caveats — **the Start button does not register on Deck**, so bind `R3` to Start in your Steam Input layout; and native controls are stiff, so XInput pad support relies on the `OnimushaEnhanced` wrapper (a Steam Input gamepad/keyboard layout also works as a fallback).
+
+**Display:** Optional ThirteenAG widescreen fix gives 16:9 via `oni3_ws.exe`.
+
+**Proton:** Historic Proton versions could show a black window/save crash; **`GE-Proton` is the known-good pick**.
+
+**Install:** Recipe describes setup only."""

@@ -1,0 +1,76 @@
+[game]
+title       = "Peter Jackson's King Kong"
+slug        = "peter-jacksons-king-kong"
+aliases     = ["King Kong", "Peter Jackson's King Kong", "Signature Edition"]
+type        = "proton"
+engine      = "other"
+steam_appid = "209910"
+sgdb_id     = ""
+
+[about]
+developer = "Ubisoft Montpellier"
+publisher = "Ubisoft"
+released  = "2005"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = """
+**Peter Jackson's King Kong: The Official Game of the Movie** is a 2005 tie-in to the King Kong film, developed by **Ubisoft Montpellier** under director Michel Ancel in collaboration with Peter Jackson. It splits play between near-HUD-less **first-person survival** sequences as journalist Jack Driscoll on Skull Island and **third-person rampage** sections controlling Kong.
+
+Built on Ubisoft's **Jade engine**, it was widely praised for its cinematic presentation and **minimal-interface design** and is often cited as one of the best movie tie-in games. The PC version was later **delisted** as the film license lapsed."""
+
+[launch]
+binary         = "KingKong.exe"   # Signature Edition fix ships a "King Kong.bat" launcher — point Steam at the .bat
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2005 Ubisoft Montpellier movie tie-in (Jade engine). Steam `appid 209910`, now delisted (film license) — supply your own copy.
+
+**DRM:** The original release ships **StarForce 3 DRM**, which does **NOT** run under Proton on its own.
+
+**Fix:** Apply **WIFIDarthMaul's Signature Edition Fix** first: it strips the StarForce driver dependency and fixes the `King Kong not properly installed` error, and ships a `King Kong.bat` launcher.
+
+**Install:** On Deck (Desktop Mode), add that `King Kong.bat` as a non-Steam game, then force `GE-Proton` (or `proton_experimental`) in its compatibility settings.
+
+**Display:** Add **ThirteenAG's Widescreen Fix** — copy the `KingKong.WidescreenFix` ASI/files into the game dir and overwrite — for correct aspect ratio, HUD/FMV scaling and a built-in frame-limiter (`InitFramelimit`) that avoids the high-framerate run-speed bug.
+
+**Controller:** The game's own gamepad handling is rough (reports of a black screen with some Xbox pads) and there is no in-game way to swap between the Jack and Kong control sets. Use the fix author's Steam Input **Community Layout** ("Modernized Control Layout") — it maps the left touchpad-click to swap between Jack & Kong. Apply it from the controller settings rather than relying on native input."""
+
+[[links.guides]]
+title = "WIFIDarthMaul — King Kong Signature Edition Fix (StarForce removal + Steam Deck)"
+url   = "https://github.com/WIFIDarthMaul/Peter-Jackson-s-King-Kong-Signature-Edition-Fix"
+
+[[links.guides]]
+title = "ThirteenAG — Widescreen Fixes Pack (King Kong widescreen + frame-limiter)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack"
+
+[[links.guides]]
+title = "Widescreen Fix at Peter Jackson's King Kong Nexus Mods"
+url   = "https://www.nexusmods.com/peterjacksonskingkong/mods/2"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted (film license, `appid 209910`) — configuration only.
+
+**DRM:** The **StarForce 3 DRM** on the Signature/Standard Edition will **NOT** launch under Proton until you apply **WIFIDarthMaul's Signature Edition Fix** (it removes the StarForce dependency and fixes the directory-detection error).
+
+**Install:** Add the bundled `King Kong.bat` as a non-Steam game and force `GE-Proton`.
+
+**Display:** Add **ThirteenAG's Widescreen Fix** and use its built-in frame-limiter to avoid the high-framerate speed-up bug.
+
+**Controller:** Native gamepad handling is unreliable (black-screen reports with some Xbox pads, and no in-game Jack/Kong control-swap). Apply the fix author's Steam Input **Community Layout** instead of relying on native input.
+
+**Unverified:** ProtonDB tier inferred from community reports, not yet Deck-verified — confirm on hardware."""

@@ -1,0 +1,50 @@
+[game]
+title       = "The House of the Dead"
+slug        = "the-house-of-the-dead"
+aliases     = ["HOTD", "HOTD1", "House of the Dead 1"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "thotd.exe"
+launch_options = "-d3d -d3d_setup"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add thotd.exe (the game executable for the 1998 Windows port) as a non-Steam game. Use GE-Proton. Pass the launch flags -d3d -d3d_setup to force Direct3D rendering, which the port needs to render correctly on modern hardware. The game uses mouse-based aiming — map the Steam Deck's right trackpad as a mouse pointer for aiming. No native gamepad support; create a Steam Input layout that maps the right trackpad to mouse movement and triggers/face buttons to fire and reload. NOTE: The House of the Dead 1 Remake (2022) is available on GOG and is the recommended modern option."
+
+[about]
+developer = "Sega AM1"
+publisher = "Sega"
+released  = "1997"
+genre     = "Light-gun Shooter / Rail Shooter"
+modes     = "Single-player"
+summary   = "The House of the Dead is the 1997 PC port of Sega's iconic arcade light-gun rail shooter, pitting agents Thomas Rogan and G against hordes of zombies and mutant creatures in a cursed mansion. Players shoot on-rails through branching paths to rescue hostages and defeat Dr. Curien. On PC and Steam Deck, mouse aiming replaces the light gun. A 2022 remake is available on GOG for a modern experience."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — The House of the Dead"
+url   = "https://www.pcgamingwiki.com/wiki/The_House_of_the_Dead"
+
+[[links.guides]]
+title = "The House of the Dead 1 Remake on GOG"
+url   = "https://www.gog.com/en/game/the_house_of_the_dead_remake"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Supply your own copy of the 1997 PC port. Use the right trackpad as a mouse for aiming — no native gamepad support; build a Steam Input layout. The 2022 House of the Dead 1 Remake on GOG is the recommended modern alternative."

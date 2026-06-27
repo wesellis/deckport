@@ -1,0 +1,67 @@
+[game]
+title       = "007: Quantum of Solace"
+slug        = "007-quantum-of-solace"
+aliases     = ["Quantum of Solace", "007 Quantum of Solace", "Bond"]
+type        = "proton"
+engine      = "other"         # Call of Duty / IW engine
+steam_appid = "10080"         # was on Steam (app 10080), now delisted
+sgdb_id     = ""
+
+[launch]
+binary         = "JB_Launcher_s.exe"   # the game launcher; sits in the install root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2008 Beenox / Activision James Bond shooter (built on the Call of Duty 4 / IW engine). Delisted once Activision's Bond license lapsed. Steam appid `10080`. The launcher exe is `JB_Launcher_s.exe`.
+
+**GFWL:** **All versions hard-require Games for Windows LIVE, which is dead — drop an `Xliveless` build into the install folder (next to `JB_Launcher_s.exe`) to bypass GFWL before it will launch** (per PCGamingWiki).
+
+**Fix:** Also recommended: the community 'James Bond Quantum of Solace PC Fix' wrapper (by Chip-Biscuit, on GitHub), dropped into the install folder next to `JB_Launcher_s.exe` — it adds custom X-Input controller support (the original was keyboard/mouse only), FOV control, uncapped framerate and a windowed-mode option.
+
+**Proton:** Run under `GE-Proton` (best results on Deck; some users hit a crash at the Activision logo on stock Proton/Proton-GE until the GFWL bypass + fix are applied)."""
+
+[about]
+developer = "Beenox"
+publisher = "Activision"
+released  = "2008"
+genre     = "First-person shooter"
+modes     = "Single-player"
+summary   = "**007: Quantum of Solace** is a **James Bond** shooter tied to the 2008 film (and elements of Casino Royale). The PC and Wii versions were developed by **Beenox**, while Treyarch handled the PS3 and Xbox 360 releases. It is played mostly in **first person** with occasional third-person cover sequences, and was built on the **IW 3.0 engine** that powered Call of Duty 4: Modern Warfare. It was delisted from digital storefronts after Activision's **James Bond license lapsed**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted (lapsed Bond license) — configuration only, no links.
+
+**GFWL:** **KEY dependency: drop `Xliveless` next to `JB_Launcher_s.exe` or it won't start.** Use `GE-Proton`.
+
+**Fix:** Recommended: the community 'James Bond Quantum of Solace PC Fix' wrapper (Chip-Biscuit, GitHub) in the install folder for custom X-Input controller support + FOV/framerate/windowed fixes.
+
+**Controller:** The original game is keyboard/mouse only — proper gamepad support requires the PC Fix wrapper's custom XInput (a Steam Input layout also covers menus).
+
+**Status:** Mixed Deck reports — some users hit a crash at the Activision logo on stock Proton until the GFWL bypass + fix are in place, so this is needs-test rather than verified. ProtonDB tier is genuinely 'pending' (only ~2 reports on app 10080), left pending."""
+
+[[links.guides]]
+title = "James Bond Quantum of Solace PC Fix (controller/FOV/FPS wrapper) - GitHub"
+url   = "https://github.com/Chip-Biscuit/James-Bond-Quantum-of-Solace-PC-Fix-Controller-Support"
+
+[[links.guides]]
+title = "007: Quantum of Solace - PCGamingWiki (GFWL, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/007:_Quantum_of_Solace"
+
+[[links.guides]]
+title = "Quantum of Solace - ProtonDB (app 10080)"
+url   = "https://www.protondb.com/app/10080"

@@ -1,0 +1,68 @@
+[game]
+title       = "Final Fantasy (Renaissance)"
+slug        = "final-fantasy-renaissance"
+aliases     = ["FF Renaissance", "Final Fantasy 1 Renaissance"]
+type        = "proton"
+engine      = "unity"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Final Fantasy Renaissance.exe"   # Unity build; exact name varies by release — set to the .exe in the extracted folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Free fan reimagining of the original 1987 `Final Fantasy` by Ozmo (Renaissance Games), rebuilt from scratch in `Unity` — **not RPG Maker**. Two modes: Classic (faithful, bugs fixed) and Renaissance (new job classes like Evoker/Lancer/Blue Mage + new mechanics).
+
+**Get it:** Download the latest playable build from the official Renaissance Games page (`rengames.us/ffr`), which links the FFR Project Discord where builds are posted. **Install:** Add the `.exe` as a non-Steam game and force Proton (`GE-Proton` recommended; `proton_experimental` also works).
+
+**Proton:** As a Unity title it runs cleanly under Proton on the Deck's AMD GPU — **no DRM, no GFWL, no SecuROM**. Needs **4GB+ RAM**, which the Deck has.
+
+**Native:** A **native Linux build also exists** — if you grab that instead, mark it as a native shortcut and run the Linux binary directly (no Proton).
+
+**Display:** If text/UI looks small at `1280x800`, set the launcher to **Fullscreen**; some Unity builds expose resolution via a startup config dialog (`Alt+Tab` to it after launch)."""
+
+[about]
+developer = "Ozmo (Renaissance Games)"
+publisher = "Renaissance Games"
+released  = "2021"
+genre     = "Turn-based RPG"
+modes     = "Single-player"
+summary   = "**Final Fantasy Renaissance** is a free fan-made reimagining of the original 1987 **Final Fantasy**, rebuilt entirely from the ground up in the **Unity engine** rather than emulated. It offers two ways to play: a **Classic mode** that faithfully recreates the NES original with its longstanding bugs fixed, and a **Renaissance mode** that layers on new job classes drawn from later series entries (such as Lancer, Blue Mage, Time Mage, Evoker, Dark Knight and Bard) plus new field and combat mechanics. As an unofficial tribute project it has never been a commercial product and is **not affiliated with Square Enix**, so it has no Steam listing and no DRM."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Final Fantasy Renaissance — official page (Renaissance Games)"
+url   = "https://www.rengames.us/ffr"
+
+[[links.guides]]
+title = "RetroGameTalk: Final Fantasy Renaissance [PC]"
+url   = "https://retrogametalk.com/threads/final-fantasy-1-final-fantasy-renaissance-pc.11328/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free fan game (not Square Enix / not for sale on Steam — never had an appid).
+
+**Binary:** Unity engine; the Windows `.exe` runs under Proton and a native Linux build is also available (run that directly, no Proton). Exact `.exe` name varies by release — set `[launch].binary` to whatever `.exe` is in the extracted folder.
+
+**ProtonDB:** No entry (not a Steam app); Deck-readiness is inferred from it being a standard Unity title with no DRM, **not a verified community report**.
+
+**Controller:** Classic FF menu RPG — if a release lacks built-in gamepad support, apply a Steam Input keyboard/mouse layout (Deck buttons map to arrows/`Enter`/`Esc`), which makes it fully playable.
+
+**Links:** deckport links nothing."""

@@ -1,0 +1,56 @@
+[game]
+title       = "Banjo-Kazooie"
+slug        = "banjo-kazooie"
+aliases     = ["Banjo Kazooie", "BanjoRecomp", "Banjo Recompiled", "BanjoRecompiled"]
+type        = "native"        # a native static recompilation — no emulation, no Proton
+engine      = "other"         # N64: Recompiled (RT64 renderer)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "BanjoRecompiled"   # the native build's executable
+launch_options = ""
+requires_files = []
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "Rare"
+publisher = "Nintendo"
+released  = "1998"
+genre     = "3D platformer"
+modes     = "Single-player"
+summary   = """
+**Banjo-Kazooie** is a 1998 Nintendo 64 **3D platform-collectathon** developed by **Rare** and published by **Nintendo**. The player controls the bear Banjo and his backpack-dwelling bird Kazooie as they journey through nine themed worlds to rescue Banjo's sister Tooty from the witch Gruntilda, collecting jiggies, musical notes, and other items to progress. It launched to wide critical acclaim and is regarded as one of the defining platformers of its era, spawning the **Banjo-Kazooie series**.
+
+This recipe is for **Banjo: Recompiled**, a community **static recompilation** that turns the original game into a native PC build with high frame rates, widescreen support, improved camera controls, and **mod support**; you must supply your own original game **ROM**."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** It ships **NO game assets** — you provide your own **US 1.0 N64** Banjo-Kazooie `ROM` (the project accepts **only that specific revision**); deckport links nothing.
+
+**Port:** Rare's 1998 N64 classic as a native PC port via **Banjo: Recompiled** (`N64: Recompiled` / `RT64`) — **GPL open source**.
+
+**Not emulation:** The original game code is translated to native and the assets are pulled from a `ROM` you supply.
+
+**Install:** Runs directly on the Deck — extract the Linux build, add `BanjoRecompiled` to Steam.
+
+**Enhancements:** Adds high frame rate, widescreen/ultrawide, dual-analog camera, and mod support.
+
+**Steam Deck:** Confirmed to run **excellently** on the Steam Deck (per Steam Deck HQ and GamingOnLinux) — ~90 FPS under 7W with full **native gamepad** support (no Steam Input config needed); binary is `BanjoRecompiled`."""
+
+[[links.guides]]
+title = "BanjoRecomp project (GitHub, GPL-3.0) — source, releases, ROM/setup instructions"
+url   = "https://github.com/BanjoRecomp/BanjoRecomp"
+
+[[links.guides]]
+title = "Steam Deck HQ — Banjo-Kazooie native PC port on Steam Deck setup guide"
+url   = "https://steamdeckhq.com/news/banjo-kazooie-native-pc-port-steam-deck/"

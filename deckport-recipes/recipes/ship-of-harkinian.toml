@@ -1,0 +1,85 @@
+[game]
+title       = "Ship of Harkinian"
+slug        = "ship-of-harkinian"
+aliases     = ["SoH", "Zelda OoT PC Port", "Ocarina of Time PC Port", "soh"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5335518"
+
+[launch]
+binary         = "soh.appimage"
+launch_options = ""
+requires_files = ["oot.otr"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** Fully native Linux via AppImage — **no Proton needed**.
+
+**Install:** Download the Linux Performance or Linux Compatibility zip from GitHub Releases (`HarbourMasters/Shipwright`). Extract it; the AppImage is named `soh.appimage`.
+
+**OTR:** On first launch, use the built-in OTR generation tool to produce `oot.otr` from your legally dumped OoT ROM (any supported region). The `.otr` file **must sit in the same directory as the AppImage**.
+
+**Executable:** Mark the AppImage executable (`chmod +x` or Properties > Permissions) before adding to Steam.
+
+**Controller:** Full controller support out of the box.
+"""
+
+[about]
+developer = "HarbourMasters (community developers)"
+publisher = "Independently released (free, open source)"
+released  = "2022"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "**Ship of Harkinian** is a native PC port of **The Legend of Zelda: Ocarina of Time**, built by the community group HarbourMasters on top of the Zelda Reverse Engineering Team's **decompilation**, which reached completion in November 2021. First released for Windows in March 2022 and expanded to Linux, macOS, Wii U, and Nintendo Switch shortly after, it adds widescreen support, **unlocked framerates** (up to 60 FPS and beyond), a randomizer, cosmetic mods, and dozens of quality-of-life improvements not present in any official release. The project name is a pun on the Ship of Theseus philosophical paradox and King Harkinian from the infamous CD-i Zelda games. A sister project, **2 Ship 2 Harkinian**, extends the same approach to Majora's Mask."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5335518"
+
+[[links.guides]]
+title = "Official Linux Setup Guide — shipofharkinian.com"
+url   = "https://www.shipofharkinian.com/setup-guide/linux"
+
+[[links.guides]]
+title = "Steam Deck Guide — Linux Gaming Central"
+url   = "https://linuxgamingcentral.org/posts/ship-of-harkinian-steam-deck-guide/"
+
+[[links.guides]]
+title = "How to Set Up OoT PC Port on Steam Deck — Steam Deck HQ"
+url   = "https://steamdeckhq.com/tips-and-guides/how-to-set-up-zelda-ocarina-of-time-pc-port-on-steam-deck/"
+
+[[links.guides]]
+title = "Full Installation Tutorial on Deck (YouTube)"
+url   = "https://www.youtube.com/watch?v=sETZH_VN0ao"
+
+[[links.guides]]
+title = "SoH Updater script for Steam Deck — GitHub"
+url   = "https://github.com/the-outcaster/ship-of-harkinian-updater"
+
+[[links.guides]]
+title = "EmuDeck Third-Party Emulation Wiki — SoH section"
+url   = "https://emudeck.github.io/community-creations/steamos/third-party-emulation/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a legally owned dump of Ocarina of Time (N64 ROM). First run generates `oot.otr` from the ROM — keep the ROM handy for this step, then the ROM is no longer needed.
+
+**Flavours:** Two AppImage flavours exist: Performance (recommended for Deck) and Compatibility (fallback for older Mesa).
+
+**Cosmetic:** If the main menu has missing video cutscenes, that is normal on the Performance build with some Mesa versions.
+
+**ROMs:** deckport links nowhere to obtain ROMs.
+"""

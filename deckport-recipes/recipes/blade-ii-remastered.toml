@@ -1,0 +1,76 @@
+[game]
+title       = "Blade II: Remastered (Fan Made)"
+slug        = "blade-ii-remastered"
+aliases     = ["Blade 2 Remastered", "Blade II"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "B2RemasteredSetup.exe"   # installer (from the creator) — run it first; then verify the launched .exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**What it is:** Fan 'remaster' of the 2002 PS2 game Blade II by Mattmatt — the PS2 game running through a bundled portable `PCSX2`, packaged plug-and-play.
+
+**Install:** It installs via `B2RemasteredSetup.exe` (it expects a fixed install path), so **run the installer once before first launch**, then point the recipe at the launched executable.
+
+**Proton:** The Windows wrapper runs under Proton; `GE-Proton` is the most reliable for this kind of bundled-`PCSX2` package.
+
+**Compatibility:** Because it is just `PCSX2` under the hood, the underlying PS2 game itself is highly Deck-compatible (`PCSX2` also runs natively on SteamOS, so an alternative is to skip the wrapper and run the PS2 ISO directly in `PCSX2`).
+
+**Display:** Inside the bundled emulator set the renderer to `Vulkan` and internal resolution to ~2x native (720p) for smooth handheld performance; if the wrapper's GPU renderer struggles under Proton, switch its renderer to `Vulkan` or software."""
+
+[about]
+developer = "Mucky Foot Productions"
+publisher = "Activision"
+released  = "2002"
+genre     = "Action beat 'em up"
+modes     = "Single-player"
+summary   = "**Blade II** is a 2002 **action beat 'em up** based on the Marvel/New Line film, in which the player controls the vampire hunter **Blade** through a story set between the film's events and **Blade: Trinity**. It was the only game produced by UK studio **Mucky Foot Productions** for this license and shipped on **PlayStation 2** and **Xbox**. The game championed a **melee combat system** but was met with largely negative reviews and was a commercial failure, leaving it **long out of print**. This recipe covers a fan-made package that runs the original PS2 release through a bundled portable **PCSX2** emulator."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Blade II: Remastered — release trailer (Mattmatt)"
+url   = "https://www.youtube.com/watch?v=Tys0Gxb_I3o"
+
+[[links.guides]]
+title = "Mattmatt — Blade II: Remastered release announcement"
+url   = "https://x.com/Mattmatt10111/status/1806982826111193193"
+
+[[links.guides]]
+title = "Blade II — PCSX2 Wiki (underlying PS2 game compatibility)"
+url   = "https://wiki.pcsx2.net/Blade_II"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Unofficial fan project:** A community remaster by Mattmatt (`@Mattmatt10111`) built on a bundled portable `PCSX2`; install it via `B2RemasteredSetup.exe` before first launch (it expects a fixed install path).
+
+**No ProtonDB entry:** This is a fan package with no Steam app, so there is no real ProtonDB tier — `unrated`. The underlying PS2 Blade II emulates well, but the wrapper itself is untested here; do not assume a rating until someone runs it on Deck.
+
+**Verify binary:** The installer is `B2RemasteredSetup.exe`; the real launched `.exe` after install is **unconfirmed** — verify it and correct `[launch].binary`.
+
+**Controller:** Expected to map the Deck's gamepad to a standard PS2 pad in `PCSX2` with no Steam Input keyboard layout — but this is unverified on Deck; confirm during testing.
+
+**Compatibility:** The underlying PS2 Blade II is well-emulated and Deck-friendly; the wrapper may have an occasional first-launch renderer hiccup, typically fixed by forcing `Vulkan`.
+
+**Fallback:** If the Windows wrapper misbehaves under Proton, run the PS2 ISO directly in native `PCSX2` on SteamOS.
+
+**Note:** deckport describes configuration only."""

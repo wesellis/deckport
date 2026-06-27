@@ -1,0 +1,76 @@
+[game]
+title       = "REKKR"
+slug        = "rekkr"
+aliases     = ["Rekkr", "REKKR Sunken Land", "REKKR standalone"]
+type        = "native"        # native Linux via GZDoom Flatpak — no Proton needed
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run org.zdoom.GZDoom -iwad REKKRSA.iwad"
+requires_files = [
+  "REKKRSA.iwad — the free standalone REKKR IWAD, from manbitesshark.org",
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Install:** GZDoom is installed via Flatpak: `flatpak install flathub org.zdoom.GZDoom`.
+
+**IWAD:** Download the free standalone zip from manbitesshark.org and drop `REKKRSA.iwad` into `~/.var/app/org.zdoom.GZDoom/.config/gzdoom` (the GZDoom Flatpak config dir). **Because REKKR is its own IWAD (not a mod), it is passed via `-iwad` rather than `-file`** — no separate Doom WAD is needed. The standalone zip also bundles a copy of Chocolate Doom and a launch script.
+
+**Controller:** `GZDeck` (github.com/flegald/GZDeck) is a controller-friendly launcher for GZDoom games in Steam Game Mode. As a non-Steam game it needs `--no-sandbox` as a launch argument; place IWADs in `~/.var/app/org.zdoom.GZDoom/.config/gzdoom`.
+
+**Alternative:** Also playable in `Chocolate Doom` for a more faithful retro rendering path."""
+
+[about]
+developer = "Revae / Manbitesshark team"
+publisher = "Independently released (free IWAD; optional commercial DLC on Steam/itch.io)"
+released  = "2018; standalone IWAD version free on manbitesshark.org"
+genre     = "First-person shooter (Viking/Norse fantasy IWAD — standalone)"
+modes     = "Single-player"
+summary   = "**REKKR** is a **Viking and Celtic fantasy** total conversion distributed as its own **standalone IWAD**, meaning it requires no Doom or other commercial game whatsoever. The free standalone version offers **3 episodes** (E1–E3) plus separate bonus maps, with completely original monster designs, weapons, music, and atmosphere built on the **Doom engine**. The base game is entirely free via download from manbitesshark.org. A separate commercial release, **REKKR: Sunken Land** (Steam/GOG/itch.io), reworks the project as a standalone game bundled with GZDoom and adds a fourth canonical story episode (plus the free VR-3KKR challenge maps). Also compatible with **Chocolate Doom** for players who prefer a faithful retro rendering path."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "REKKR official site — free standalone IWAD download"
+url   = "https://manbitesshark.org/downloads/"
+
+[[links.guides]]
+title = "itch.io: REKKR page"
+url   = "https://manbitesshark.itch.io/rekkr"
+
+[[links.guides]]
+title = "GZDeck — controller-friendly GZDoom launcher for Steam Deck"
+url   = "https://github.com/flegald/GZDeck"
+
+[[links.guides]]
+title = "DoomWiki: REKKR (versions, episodes, source ports)"
+url   = "https://doomwiki.org/wiki/REKKR"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Completely standalone:** `REKKRSA.iwad` IS the game, no Doom or other IWAD required. Download the free standalone zip from manbitesshark.org and drop `REKKRSA.iwad` into `~/.var/app/org.zdoom.GZDoom/.config/gzdoom`.
+
+**Launch:** Pass it via `-iwad` (not `-file`) since it is an IWAD, not a mod PK3.
+
+**Separate commercial release:** `REKKR: Sunken Land` is a separate paid game (Steam/GOG/itch.io), not DLC for this free IWAD — it ships its own bundled GZDoom and adds a fourth canonical story episode.
+
+**Controller:** Use `GZDeck` (github.com/flegald/GZDeck) for a Game Mode-friendly launcher; it needs `--no-sandbox` as a launch argument when added as a non-Steam game.
+
+**Alternative:** Also playable in `Chocolate Doom` for a more faithful retro experience."""

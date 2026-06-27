@@ -1,0 +1,80 @@
+[game]
+title       = "Riff Racer: Race Your Music!"
+slug        = "riff-racer-race-your-music"
+aliases     = []
+type        = "proton"
+engine      = "unity"
+steam_appid = "351990"
+sgdb_id     = ""
+
+[launch]
+binary         = "game.exe"   # Unity build; the launcher exe is literally game.exe (sits next to game_Data) — Steam crash logs show "Application Name: game.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `351990`; pulled from sale 2022-12-01, official servers shut down late 2022 — owners can still install from their Steam library).
+
+**Install:** Unity engine title; the launcher is `game.exe`, sitting next to the `game_Data` folder.
+
+**Proton:** ProtonDB **silver** — runs on Proton; use `GE-Proton` (or `proton_experimental`) for the smoothest start.
+
+**DRM:** Steam DRM only — no GFWL/SecuROM gates.
+
+**IMPORTANT — track generation is server-side:** Riff Racer's MEGA track generator (and the score/leaderboard backend) ran on FOAM's official servers, which are gone. Out of the box you can launch the game but **cannot generate new tracks**. A community fix restores this: patch the game's `ParseOctane.dll` to point at the fan-run server (the rebane2001/hobune project — upload `ParseOctane.dll` to `riffapi.hobune.stream`, swap in the patched copy) or self-host the open-source Flask server locally. The community servers are read-only for scores but DO restore track generation and let you view pre-shutdown leaderboards.
+
+**Controller:** Native XInput support (Xbox 360 / Xbox One pads), so the Deck's built-in gamepad maps directly without Steam Input remapping; older DirectInput pads are unsupported.
+
+**Fix:** If launch hangs, add `%command%` with `PROTON_NO_ESYNC=1` or force a fresh prefix. For the no-tracks problem, apply the `ParseOctane.dll` community-server patch above.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "FOAM Entertainment"
+publisher = "FOAM Entertainment"
+released  = "2016"
+genre     = "Arcade music racing"
+modes     = "Single-player (online leaderboards retired)"
+summary   = "**Riff Racer** (originally released as **Drive Any Track**) is an arcade racing game built in **Unity** by FOAM Entertainment. Its **MEGA system** (Musical Environment Gaming Algorithm) analyzes any audio file and procedurally builds a race track from the song's structure, turning verses, choruses and drops into checkpoints while styling the cars and environment to the music's genre. Conceptually similar to **Audiosurf** but with full arcade car handling, it scores players on staying in sync with the track plus drifts, jumps and barrel rolls. After about seven years FOAM shut down the game's servers (late 2022) and **delisted** it from sale on December 1, 2022, citing revenue and hosting costs. Because the MEGA track generator was server-side, the official shutdown disabled new track generation until the community built replacement servers; existing owners restore the feature by patching `ParseOctane.dll` to a fan-run server."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "How to play Riff Racer after shutdown (custom server guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2907945906"
+
+[[links.guides]]
+title = "Riff Racer: Race Your Music! — Delisted Games (shutdown history)"
+url   = "https://delistedgames.com/riff-racer-race-your-music/"
+
+[[links.guides]]
+title = "ProtonDB — Riff Racer (appid 351990)"
+url   = "https://www.protondb.com/app/351990"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing — the launcher is `game.exe` (Steam crash logs confirm it); verify the name in your install.
+
+**Availability:** Delisted 2022-12-01 but remains installable for existing Steam library owners (passes the not-for-sale rule).
+
+**Status:** ProtonDB **silver** (≈0.33 score over ~24 reports; trends gold, best-reported platinum, but silver is the honest overall tier); this exact deckport recipe is not yet Deck-confirmed, so it's `needs-test`.
+
+**Core feature needs the community fix:** Official servers are gone and the MEGA track generator was server-side — out of the box you can launch but **cannot generate tracks**. Apply the community-server patch (`ParseOctane.dll` → `riffapi.hobune.stream` or a local self-hosted Flask server) to restore track generation; community servers are read-only for new score submissions.
+
+**Controller:** Native XInput support means the Deck gamepad just works with no Steam Input remapping; no DRM/GFWL steps needed.
+"""

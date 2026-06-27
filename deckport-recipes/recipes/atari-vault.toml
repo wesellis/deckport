@@ -1,0 +1,72 @@
+[game]
+title       = "Atari Vault"
+slug        = "atari-vault"
+aliases     = []
+type        = "native"
+engine      = "unity"
+steam_appid = "400020"
+sgdb_id     = ""
+
+[launch]
+binary         = "AtariVault.x86_64"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "native"
+winetricks = []
+notes      = """
+**Native Linux:** Atari Vault ships an official **native Linux/SteamOS build** (added May 2016) — this is what Steam installs on the Deck by default, so no Proton is needed. The native binary is the Unity executable `AtariVault.x86_64` (a 32-bit `AtariVault.x86` may also be present) at the install root.
+
+**DRM:** Delisted Steam game (appid `400020`) — pulled from sale Nov 2022 to make way for **Atari 50**, but existing owners keep access. Standard Steam wrapper only; no GFWL.
+
+**Proton (optional):** If you prefer the Windows build, force a Steam Play tool (Properties > Compatibility) and use `AtariVault.exe`; ProtonDB reports for the Windows build are positive. The native build is the recommended path.
+
+**Controller:** The native build detects the Deck gamepad in menus and supports controllers.
+
+**Cosmetic:** Input glyphs can show the wrong button (e.g. shows 'Y' for what is really 'A').
+
+**Fix:** A handful of Atari 5200 / arcade titles can be fussy with in-game input — **if a game doesn't respond, fall back to a Steam Input gamepad layout.** In Gaming Mode you may have to scroll through many per-game action sets to remap.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Code Mystics"
+publisher = "Atari"
+released  = "2016"
+genre     = "Compilation, Arcade, Retro"
+modes     = "Single-player, Local multiplayer, Online multiplayer"
+summary   = "**Atari Vault** is a compilation of 100 classic Atari titles drawn from the **Atari 2600** home console and arcade cabinets of the 1970s, 1980s, and 1990s, including Asteroids, Centipede, Missile Command, Tempest, and Warlords. Developed by **Code Mystics**, who previously handled the **Atari Greatest Hits** series, it adds modern conveniences such as local and online multiplayer plus **online leaderboards**. Built in Unity, it shipped on Windows (Mar 2016), Linux/SteamOS (May 2016) and macOS (2017). The collection was expanded over time via DLC and a 150-game 'Atari Vault Collection' bundle. Atari delisted it from Steam in November 2022 to make way for **Atari 50: The Anniversary Celebration**, though existing owners retain access."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Atari Vault (appid 400020)"
+url   = "https://www.protondb.com/app/400020"
+
+[[links.guides]]
+title = "GamingOnLinux — Atari Vault launches on Linux & SteamOS"
+url   = "https://www.gamingonlinux.com/2016/05/atari-vault-the-100-game-collection-officially-launches-on-linux-steamos/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy.** Native Linux binary is `AtariVault.x86_64` at the install root (Unity build). deckport links nothing.
+
+**Native build:** Steam installs the official native Linux version on the Deck by default — no Proton required. Marked `native`; tier `protondb_tier = "native"`.
+
+**DRM:** Delisted from Steam Nov 2022 (appid `400020`); owners retain access, no longer for sale.
+
+**Status:** Native Linux reports run well on Linux/Deck — set to `needs-test` pending a hands-on Deck confirmation.
+
+**Controller:** Game detects the Deck pad in menus. Input prompts may display the wrong button glyph, and in-game input for a handful of Atari 5200/arcade titles can be unreliable — **a Steam Input gamepad layout is the fallback.**"""

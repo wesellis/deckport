@@ -1,0 +1,54 @@
+[game]
+title       = "Hype: The Time Quest"
+slug        = "hype-the-time-quest"
+aliases     = ["Hype the Time Quest", "Hype"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "MaiDFXvr_bleu.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Run with GE-Proton. This is a 1999 disc-based title. Note: the retail CD-ROM uses SafeDisc copy protection — the shipped MaiDFXvr_bleu.exe is just the SafeDisc shell and the real game is in an encrypted .icd file that will not launch on modern Windows or under Proton; the community installers (e.g. SuiMachine's Hype installer) provide a clean, runnable build of the executables. The two real launch executables are MaiDFXvr_bleu.exe (3dfx/Glide renderer, recommended — pair it with the nGlide wrapper, which works well over Vulkan) and MaiD3Dvr_bleu.exe (Direct3D renderer, needs a wrapper such as dgVoodoo2 or DDrawCompat to avoid glitches). Apply the Hype: The Time Quest Widescreen & FPS fix from PCGamingWiki / the Rayman Pirate-Community to get proper 16:9 resolution and unlocked framerate on the Steam Deck display. The game has no native gamepad support — create a Steam Input layout mapping the controller to keyboard/mouse, and use the right trackpad for mouse-look and camera control. The game is often called the French answer to The Legend of Zelda: Ocarina of Time."
+
+[about]
+developer = "Ubi Soft Montreal"
+publisher = "Ubi Soft"
+released  = "1999"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "Hype: The Time Quest is a third-person fantasy action-adventure game developed by Ubi Soft Montreal and published by Ubi Soft in 1999. The player controls Hype, a brave knight who is cursed and flung back in time, and must fight his way forward through four historical eras to defeat the evil sorcerer Barnak. Often described as the French equivalent of The Legend of Zelda: Ocarina of Time, the game features puzzle-solving, melee combat, and time-travel mechanics. It was well-received in Europe and has a devoted cult following."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki - Hype: The Time Quest"
+url   = "https://www.pcgamingwiki.com/wiki/Hype:_The_Time_Quest"
+
+[[links.guides]]
+title = "Hype: The Time Quest Widescreen Fix (PCGamingWiki community)"
+url   = "https://community.pcgamingwiki.com/files/file/3672-hype-the-time-quest-widescreen-fix/"
+
+[[links.guides]]
+title = "Hype Widescreen & FPS fix thread (Rayman Pirate-Community)"
+url   = "https://raymanpc.com/forum/viewtopic.php?t=31049"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Supply your own copy. Not sold on Steam or GOG, so there is no Steam appid and no ProtonDB rating — treat compatibility as unverified. The retail disc uses SafeDisc copy protection (encrypted .icd); the shipped executable will not start on modern Windows or under Proton, so a clean community build of the binaries is required to run it at all. Launch via MaiDFXvr_bleu.exe (3dfx/Glide, recommended with nGlide over Vulkan) or MaiD3Dvr_bleu.exe (Direct3D, needs dgVoodoo2/DDrawCompat). Apply the Hype: The Time Quest Widescreen & FPS fix for correct Steam Deck resolution (16:9) and unlocked framerate. No native gamepad support in the 1999 build — create a Steam Input layout to map controller inputs to keyboard/mouse; right trackpad recommended for mouse/camera control."

@@ -1,0 +1,73 @@
+[game]
+title       = "Project CARS 2"
+slug        = "project-cars-2"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "378860"
+sgdb_id     = ""
+
+[about]
+developer = "Slightly Mad Studios"
+publisher = "Bandai Namco Entertainment"
+released  = "2017"
+genre     = "Racing simulation"
+modes     = "Single-player, online multiplayer"
+summary   = """
+**Project CARS 2** is a motorsport racing simulator and the second entry in the **Project CARS** series. Built on Slightly Mad Studios' proprietary **Madness Engine**, it features the **LiveTrack 3.0** system that dynamically simulates weather, seasons, and evolving track surface conditions across a race weekend.
+
+It shipped with a large roster of cars and circuits spanning many motorsport disciplines and was well received for its depth and physics. It was delisted from Steam in 2022 after the **car and track licenses** underpinning its content expired."""
+
+[launch]
+binary         = "pcars2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 378860`), retired from Steam `2022-09-21` over expired car/track licensing. No invasive DRM (no GFWL/Denuvo). Windows racing sim, ProtonDB Platinum.
+
+**Proton:** **Use `proton_experimental`** — other Proton branches have been reported to mis-launch the game (Steam shows "running" with a spinning logo and no window).
+
+**Launcher:** A separate `Launcher.exe` splash may show first; the main game executable is `pcars2.exe` — let the splash pass through to the game.
+
+**Controller:** Native XInput gamepad and racing-wheel support, so the Deck's built-in gamepad works out of the box for driving. A Steam Input layout is not required to play, though paddle/touchpad bindings and in-game Steam Controller config are limited.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Project CARS 2 — ProtonDB reports"
+url   = "https://www.protondb.com/app/378860"
+
+[[links.guides]]
+title = "Project CARS 2 — PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Project_CARS_2"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Removed from Steam `2022-09-21` (publisher retired it over expired licensing — no longer for sale).
+
+**Status:** Community ProtonDB reports rate it Platinum (156+ reports, strong confidence) and confirm it runs on Linux/Proton; **not yet verified on a Deck for this exact recipe**.
+
+**Proton:** Requires `proton_experimental`; other Proton versions have been reported to fail to launch (spinning Steam logo, no window).
+
+**Controller:** Native XInput controller + wheel support, so the Deck gamepad works for driving without a custom Steam Input layout (paddle/touchpad bindings are limited).
+
+**Online:** Multiplayer/leaderboards may be degraded post-delisting; single-player and career are unaffected."""

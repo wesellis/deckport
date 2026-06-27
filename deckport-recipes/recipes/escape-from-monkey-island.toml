@@ -1,0 +1,68 @@
+[game]
+title       = "Escape from Monkey Island"
+slug        = "escape-from-monkey-island"
+aliases     = ["Monkey Island 4", "EMI"]
+type        = "proton"
+engine      = "other"
+steam_appid = "730830"
+sgdb_id     = ""
+
+[launch]
+binary         = "Monkey4.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+The Steam release (App 730830) ships the original GrimE-engine game, not a ScummVM build. It launches via start.bat, which runs Monkey4.exe. The game runs well under Proton (ProtonDB gold), but by default cutscenes can be invisible and the game may fail to initialize hardware acceleration.
+
+Recommended fix: edit start.bat in the install folder (right-click the game, Properties, Installed Files, Browse) and add the -gl flag so the line reads Monkey4.exe -gl. The -gl flag forces OpenGL and fixes invisible/missing cutscenes and hardware-init errors. Add -w for windowed mode (Monkey4.exe -gl -w). Steam may revert start.bat once after a verify, so re-apply if needed.
+
+Controller: the game has no native gamepad support, so use Steam Input with a mouse/keyboard layout (left stick or trackpad as cursor, A = left click) for the point-and-click interface.
+
+Alternative: ScummVM also supports this title via its GrimE engine and can be more stable than the original launcher, but it needs a recent/daily ScummVM build and still has a known glitch where Monkey Kombat health bars do not display correctly. ScummVM needs the original game data files; supply your own copy.
+
+Note: Return to Monkey Island (App 2146530) is a separate, unrelated modern release.
+"""
+
+[about]
+developer = "LucasArts"
+publisher = "LucasArts"
+released  = "2000"
+genre     = "Point-and-click adventure"
+modes     = "Single-player"
+summary   = "Escape from Monkey Island is the fourth entry in the classic Monkey Island series, released by LucasArts in 2000. Guybrush Threepwood returns to Melee Island only to find his home being demolished and a suspicious new villain threatening pirate culture across the Caribbean. It was the last Monkey Island game developed by LucasArts and the first to use 3D characters on pre-rendered backgrounds via the GrimE engine."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Escape from Monkey Island (App 730830)"
+url   = "https://www.protondb.com/app/730830"
+
+[[links.guides]]
+title = "Steam Guide — Fix launching, cutscenes not playing, and windowed mode (-gl / -w)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1569000238"
+
+[[links.guides]]
+title = "ScummVM compatibility — Escape from Monkey Island (GrimE)"
+url   = "https://www.scummvm.org/compatibility/grim:monkey4/"
+
+[[links.guides]]
+title = "PCGamingWiki — Escape from Monkey Island"
+url   = "https://www.pcgamingwiki.com/wiki/Escape_from_Monkey_Island"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = "By default cutscenes can be invisible under Proton; add -gl to Monkey4.exe in start.bat to fix (and -w for windowed). No native gamepad support, so use a Steam Input mouse/keyboard layout. ScummVM is a viable alternative but needs a recent build and has a Monkey Kombat health-bar display glitch. Return to Monkey Island (App 2146530) is a separate modern game."

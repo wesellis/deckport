@@ -1,0 +1,79 @@
+[game]
+title       = "Teenage Mutant Ninja Turtles: Mutants in Manhattan"
+slug        = "tmnt-mutants-in-manhattan"
+aliases     = ["TMNT Mutants in Manhattan", "Mutants in Manhattan", "TMNT"]
+type        = "proton"
+engine      = "other"
+steam_appid = "338400"
+sgdb_id     = ""
+
+[launch]
+binary         = "TMNT_MiM.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2016 PlatinumGames / Activision hack-and-slash (Steam appid `338400`).
+
+**Supply your own copy:** Removed from sale in Jan 2017 (~8 months after launch) when the TMNT license lapsed — **bring your own copy**.
+
+**DRM:** Uses Steam DRM only (no `GFWL` / Denuvo / SecuROM), so it runs under Proton with **no DRM workaround**.
+
+**Proton:** `GE-Proton` is the safe pick; stock `proton_experimental` also reported working.
+
+**Controller:** Native controller support — gamepad works out of the box, no Steam Input layout needed.
+
+**Display:** Community reports confirm playable 60fps gameplay on the Deck. Note: the PC build is **hard-locked to 30fps** by default. A community 60fps unlock (jackfuste's Cheat Engine trainer, run alongside `TMNT_MiM.exe`) is the known fix if you want uncapped framerate — optional, no links.
+
+**Exe:** Launch executable confirmed as `TMNT_MiM.exe` (the Steam process display name is the full game title).
+"""
+
+[about]
+developer = "PlatinumGames"
+publisher = "Activision"
+released  = "2016"
+genre     = "Hack and slash, beat 'em up"
+modes     = "Single-player (offline); up to four-player online co-op"
+summary   = """
+A 2016 hack-and-slash brawler **Teenage Mutant Ninja Turtles: Mutants in Manhattan**, developed by **PlatinumGames** (Bayonetta, Metal Gear Rising) and published by **Activision**, starring Leonardo, Donatello, Raphael and Michelangelo across nine stages of fast, **combo-driven combat** against classic TMNT villains. Players control one turtle and **swap between all four mid-fight**, with the others AI-controlled offline or human-controlled in four-player online co-op.
+
+It drew mixed-to-unfavorable reviews for repetitive mission and level design and the absence of local co-op. The game was pulled from all digital storefronts on January 3, 2017, less than eight months after launch, when the **TMNT license expired**, leaving it unavailable for sale.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted (lapsed TMNT license) — **supply your own copy**; configuration only, no links.
+
+**DRM:** Steam DRM only — no `GFWL`/DRM workaround needed.
+
+**Controller:** Native gamepad support, no Steam Input layout required.
+
+**Display:** Default 30fps hard cap on PC; optional community 60fps unlock (jackfuste Cheat Engine trainer) if desired.
+
+**Exe:** Launch executable is `TMNT_MiM.exe`.
+"""
+
+[[links.guides]]
+title = "ProtonDB — Mutants in Manhattan (app 338400)"
+url   = "https://www.protondb.com/app/338400"
+
+[[links.guides]]
+title = "Steam Deck: Mutants in Manhattan (60fps report) — Steam Discussions"
+url   = "https://steamcommunity.com/app/338400/discussions/0/5560306947039801531/"
+
+[[links.guides]]
+title = "60FPS trainer works!! — Steam Discussions"
+url   = "https://steamcommunity.com/app/338400/discussions/0/364042703855825448/"

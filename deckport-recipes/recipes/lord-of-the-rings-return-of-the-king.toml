@@ -1,0 +1,72 @@
+[game]
+title       = "The Lord of the Rings: The Return of the King"
+slug        = "lord-of-the-rings-return-of-the-king"
+aliases     = ["LOTR Return of the King", "Return of the King", "ROTK"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""              # delisted
+sgdb_id     = ""
+
+[launch]
+binary         = "ROTK.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2003 hack-and-slash (EA Redwood Shores), delisted; runs as a non-Steam shortcut.
+
+**DRM blocker:** The retail disc uses **SafeDisc** copy protection. SafeDisc is disabled on Windows 10/11 and is not emulated by Wine/Proton, so the original `ROTK.exe` will **not** launch. The legitimate community fix is to replace it with a SafeDisc-free `ROTK.exe` (a fixed executable for the version you own) so the game starts without the disc check.
+
+**Display / widescreen:** Default resolution caps at 1024x768. Apply the **Nemesis2000 widescreen fix** (drops `LOTRW.dll` + `LOTR.ini` next to `ROTK.exe`) for proper widescreen. For modern systems add the **d3d8 wrapper** from Chip-Biscuit's "Return of the King PC Fix" (`d3d8.dll` + `d3d8.ini`) — set the target resolution in `LOTR.ini`, FPS cap/FOV in `d3d8.ini`. Use only that wrapper's `d3d8.dll`, not the one bundled with Nemesis2000.
+
+**Controller:** The game expects DirectInput. On Deck use **Steam Input** (map the gamepad to keyboard/mouse, or use a community ROTK controller template) since native XInput is not present.
+
+**Install:** Normal-install (or copy an installed folder), then drop the fixed `ROTK.exe`, widescreen fix, and d3d8 wrapper into the game folder beside the exe. **deckport only configures the prefix** — copy the patched game files in yourself.
+"""
+
+[about]
+developer = "EA Redwood Shores"
+publisher = "Electronic Arts"
+released  = "2003"
+genre     = "Hack-and-slash action"
+modes     = "Single-player, 2-player local co-op"
+summary   = "A 2003 **hack-and-slash action** game based on Peter Jackson's film **The Lord of the Rings: The Return of the King**, built using **digital assets from the movies**. A direct follow-up to EA's **The Two Towers** game, it splits its levels across three story paths from the film: Aragorn/Legolas/Gimli, Gandalf, and Frodo/Sam. It is fondly remembered for its **drop-in two-player local co-op** and remains a **delisted**, no-longer-sold title."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — The Lord of the Rings: The Return of the King (fixes, SafeDisc, widescreen)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Lord_of_the_Rings:_The_Return_of_the_King"
+
+[[links.guides]]
+title = "Chip-Biscuit — Return of the King PC Fix (d3d8 wrapper, resolution/FPS/FOV)"
+url   = "https://github.com/Chip-Biscuit/Lord-of-the-Rings-the-Return-of-the-King-PC-Fix"
+
+[[links.guides]]
+title = "PCGamingWiki Community — Return of the King Widescreen Fix (Nemesis2000)"
+url   = "https://community.pcgamingwiki.com/files/file/2541-the-lord-of-the-rings-the-return-of-the-king-widescreen-fix/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial title. Recipe describes setup only, not where to get the game — you must own it.
+
+**DRM blocker:** Retail discs use **SafeDisc**, which does not run on modern Windows or under Proton. The game will not start until the original `ROTK.exe` is swapped for a SafeDisc-free fixed executable for your version. Recipe does not provide that file.
+
+**Status:** **needs-test** — `ROTK.exe` and the fixes below are confirmed from PCGamingWiki, but nobody has hardware-tested this on the Deck.
+
+**Community fixes (drop into the game folder next to `ROTK.exe`):** Nemesis2000 widescreen fix (`LOTRW.dll` + `LOTR.ini`) and the d3d8 wrapper from Chip-Biscuit's PC Fix (`d3d8.dll` + `d3d8.ini`) for resolution/FPS/FOV. Controller needs Steam Input (no native XInput).
+"""

@@ -1,0 +1,76 @@
+[game]
+title       = "Sega Rally Revo"
+slug        = "sega-rally-revo"
+aliases     = ["Sega Rally", "Sega Rally Revo PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = "4790"
+sgdb_id     = ""
+
+[launch]
+binary         = "SEGARallylauncher.exe"   # launcher in SEGA/SEGA Rally; sets resolution, then starts SEGA Rally_SSE1.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["d3dx9_35"]
+notes      = """
+**Overview:** Sega Racing Studio's 2007 rally racer (Steam appid `4790`), delisted.
+
+**DRM:** This is a **Games for Windows – LIVE (GFWL)** title that *also* shipped with SafeDisc disc protection — so there are two hurdles, not one. GFWL is dead and the SafeDisc check fails under Proton, so the stock build will not launch as-is. The community fix is to apply the publisher's later **DRM-free / NoDVD update** plus a GFWL-disabler so the game boots offline without the dead LIVE service. (Earlier note here claiming "not GFWL" was wrong — GFWL is present.)
+
+**Install:** Add it as a non-Steam game (or via the SEGA Rally entry) and force `GE-Proton`. Install `d3dx9_35` into the prefix with `protontricks` (the launcher and renderer need the legacy D3DX9 runtime).
+
+**Display:** Launch `SEGARallylauncher.exe` first, set resolution to `1280x800` (Deck) or `1280x720`, then start the race. The launcher lives in `SEGA/SEGA Rally`; if it crashes, run `SEGA Rally_SSE1.exe` directly.
+
+**Compatibility:** Once it launches, reports describe it running well on Deck/Deck OLED (good frame pacing); one known quirk is missing audio on the SEGA intro logo.
+"""
+
+[about]
+developer = "Sega Racing Studio"
+publisher = "Sega"
+released  = "2007"
+genre     = "Arcade rally racing"
+modes     = "Single-player, local split-screen (2 players), online multiplayer (up to 6)"
+summary   = "**Sega Rally Revo** is a 2007 arcade rally racer developed at Sega Racing Studio in Solihull, England, reviving the classic **Sega Rally** arcade series. Its standout feature is the **GeoDeformation** engine, which carves dynamically deformable ruts into the track surface as cars pass, progressively altering grip and handling over a race. It earned generally favorable reviews across PC, PS3, Xbox 360 and PSP, and the PC version has since been **delisted** from digital storefronts."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - SEGA Rally Revo (appid 4790) reports"
+url   = "https://www.protondb.com/app/4790"
+
+[[links.guides]]
+title = "Steam Community - SEGA Rally Revo discussions (launcher / GFWL / Win10 fixes)"
+url   = "https://steamcommunity.com/app/4790/discussions/0/"
+
+[[links.guides]]
+title = "Lutris - SEGA Rally Revo (installer notes, works on Steam Deck)"
+url   = "https://lutris.net/games/sega-rally-revo/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted commercial game.
+
+**DRM:** Two blockers, not one — this is a **GFWL** title that also shipped with **SafeDisc** disc protection. The dead LIVE service and the disc check both stop the stock build from launching under Proton, so you need the publisher's **DRM-free / NoDVD update** plus a GFWL-disabler so it boots offline. (Do not trust older notes that said "not GFWL".)
+
+**Proton:** Force `GE-Proton` and `protontricks d3dx9_35`.
+
+**Display:** Set resolution in `SEGARallylauncher.exe` (`1280x800` on Deck) — the launcher may not detect the Deck panel automatically. If the launcher itself crashes, run `SEGA Rally_SSE1.exe` in the `SEGA/SEGA Rally` folder directly.
+
+**Controller:** Gamepad input works in community reports ("controls well"); if the GFWL-era pad handling acts up, apply a Steam Input gamepad layout and verify mapping in the in-game settings.
+
+**Status:** `protondb` tier estimated from community reports — runs once the DRM is dealt with, so kept at `silver` pending an on-Deck test pass. deckport links nothing.
+"""

@@ -1,0 +1,78 @@
+[game]
+title       = "The Golf Club 2"
+slug        = "the-golf-club-2"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "554510"
+sgdb_id     = ""
+
+[launch]
+binary         = "HB_Golf.exe"   # Unity game exe (HB Studios golf engine); confirm against your install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 554510`, removed from sale July 1 2020). Unity title from HB Studios; the game exe is `HB_Golf.exe` in the install root.
+
+**Proton:** ProtonDB tier is Silver with a Deck status of Playable — it installs and runs on Proton. `GE-Proton` is the safest pick; stock `proton_experimental` and older official builds (`5.0-8` / `4.11`) have also worked for users.
+
+**Display:** Some reports note slow load/start and uneven framerate on the menus, so cap to 40fps via the Deck performance overlay if it stutters.
+
+**Controller:** Gamepad input works, but **not cleanly out of the box** — the default mapping is awkward (swing defaults to the right pad / wrong stick) and players report misaligned bindings or missing actions like shot-shaper and practice swing. Open the in-game controller settings and switch the swing to the left stick; if bindings are wrong, toggle Steam Input (or set the controller up once in Big Picture) for that title.
+
+**Online:** **Online play is dead** (servers shut down Feb 28 2025) — keep to the offline single-player / course-designer modes.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "HB Studios"
+publisher = "Maximum Games"
+released  = "2017"
+genre     = "Sports / golf simulation"
+modes     = "Single-player, online multiplayer (servers shut down Feb 28 2025; offline play remains)"
+summary   = "**The Golf Club 2** is a golf simulation by Nova Scotia studio **HB Studios**, the sequel to the 2014 surprise hit **The Golf Club**. Built in **Unity**, it pairs a tempo-based swing system with a powerful **procedural course designer** that let players build and share thousands of community courses. Its career mode centered on player-run online 'Societies' that hosted tournaments. The game was **delisted from Steam** on July 1 2020, and its online servers were shut down on February 28 2025, ending course sharing and multiplayer while leaving offline rounds and the course designer playable."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — The Golf Club 2 (tier + reports)"
+url   = "https://www.protondb.com/app/554510"
+
+[[links.guides]]
+title = "Server shutdown (Feb 28 2025) — Delisted Games"
+url   = "https://delistedgames.com/servers-shutting-down-on-february-28th-for-the-golf-club-1-2/"
+
+[[links.guides]]
+title = "Steam controller setup discussion (in-game swing remap)"
+url   = "https://steamcommunity.com/app/554510/discussions/0/1457328927831894474/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted from Steam (`appid 554510`) on July 1 2020 — not for sale. deckport links nothing.
+
+**Proton:** ProtonDB Silver / Deck Playable — runs under Proton (`GE-Proton` recommended).
+
+**Controller:** Gamepad is supported but needs in-game setup — the default scheme is awkward and some Deck users hit misaligned bindings / missing actions. In the in-game controller settings switch the swing to the left stick, and toggle Steam Input for the title if bindings come up wrong. Not a clean out-of-the-box remap.
+
+**Online:** **ONLINE IS DEAD** — servers shut down Feb 28 2025, so online tours, the in-game store and progression rewards no longer work; offline rounds and the course designer still play.
+
+**Display:** Some users report slow loading and occasional menu stutter — cap framerate via the Deck overlay if needed.
+
+**Binary:** `HB_Golf.exe` should be confirmed against your own install.
+"""

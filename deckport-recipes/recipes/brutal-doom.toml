@@ -1,0 +1,81 @@
+[game]
+title       = "Brutal Doom"
+slug        = "brutal-doom"
+aliases     = ["Brutal Doom v21", "BrutalDoom", "Brutal Doom v22"]
+type        = "native"        # native Linux via GZDoom Flatpak — no Proton needed
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run org.zdoom.GZDoom -file brutalv22.pk3 -iwad doom2.wad"
+requires_files = [
+  "Brutal Doom PK3 from ModDB (brutalv22.pk3 or similar)",
+  "Doom II WAD file (DOOM2.WAD — from Steam, GOG, or any legally-owned copy) OR Freedoom Phase 2 (free substitute from freedoom.github.io)",
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Install:** GZDoom is installed via Flatpak: `flatpak install flathub org.zdoom.GZDoom`.
+
+**Files:** Drop `brutalv22.pk3` and your `DOOM2.WAD` (or `freedoom2.wad`) into the GZDoom config folder: `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/`. This is the directory GZDoom searches for IWADs and PWADs by default — files placed in the bare `~/.var/app/org.zdoom.GZDoom/` will NOT be found.
+
+**Heads-up:** The GZDoom Flathub package still runs fine but is no longer actively maintained; the ZDoom team now points to **UZDoom** (AppImage) as the successor port. The Flatpak remains the simplest Game-Mode-friendly option on Deck for now.
+
+**Controller:** GZDeck is a controller-friendly launcher for all GZDoom mods in Steam Game Mode — **highly recommended** for managing WAD+mod combos on Deck."""
+
+[about]
+developer = "SGtMarkIV (Sergeant_Mark_IV)"
+publisher = "Independently released (free mod)"
+released  = "2010 (first release); v21 stable; v22 Beta ongoing 2025–2026"
+genre     = "First-person shooter (Doom mod)"
+modes     = "Single-player, co-op (with Zandronum)"
+summary   = "The most downloaded **Doom** mod of all time with over 10 million downloads. **Brutal Doom** dramatically overhauls **Doom II**'s gameplay with brutal **kill animations**, new weapons, enhanced enemy behaviors, and completely reworked combat mechanics. Active since 2010 and still receiving updates — v22 Beta is ongoing as of 2025–2026. Works as a **gameplay mod** layered on top of any Doom II-compatible IWAD or mapset, and pairs especially well with large megawads like **Eviternity II**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ModDB: Brutal Doom download page"
+url   = "https://www.moddb.com/mods/brutal-doom"
+
+[[links.guides]]
+title = "GZDeck — controller-friendly GZDoom launcher for Steam Deck"
+url   = "https://github.com/flegald/GZDeck"
+
+[[links.guides]]
+title = "Freedoom Phase 2 — free legal Doom II IWAD substitute"
+url   = "https://freedoom.github.io"
+
+[[links.guides]]
+title = "RetroDECK Wiki — GZDoom on Steam Deck: WAD placement & search paths"
+url   = "https://retrodeck.readthedocs.io/en/latest/wiki_engine_guides/gzdoom/gzdoom-guide/"
+
+[[links.guides]]
+title = "Doomworld — Brutal Doom v22 development thread (latest test builds)"
+url   = "https://www.doomworld.com/forum/topic/128760-brutal-doom-general-thread-and-v22-development-news-v22-test-4-is-out/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** This is a **GAMEPLAY MOD, not a standalone game** — it requires a Doom II IWAD (`DOOM2.WAD`) or Freedoom Phase 2 as a free substitute.
+
+**Install:** Install GZDoom via Flatpak (`flatpak install flathub org.zdoom.GZDoom`), download `brutalv22.pk3` from ModDB, and drop both the PK3 and your WAD into the GZDoom config folder `~/.var/app/org.zdoom.GZDoom/.config/gzdoom/` (the default IWAD/PWAD search path — the bare app folder won't work).
+
+**Versions:** v21 is the latest finished (Gold) release; v22 is still in public Beta/Test (v22 Test 6, April 2026) and adds new features. Both are freely available on ModDB. Compatible with any Doom/Doom II-compatible mapset.
+
+**Maintenance note:** The GZDoom Flathub package is no longer actively maintained (UZDoom is the successor port), but it still runs Brutal Doom and remains the easiest Steam Deck setup today.
+
+**Controller:** Use GZDeck for a Game Mode-friendly launcher that manages WAD+mod combos. Controller support works well via GZDoom's built-in bindings."""

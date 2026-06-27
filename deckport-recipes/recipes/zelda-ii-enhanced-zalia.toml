@@ -1,0 +1,69 @@
+[game]
+title       = "Zelda Again: Link is Adventuresome (Zelda II Enhanced)"
+slug        = "zelda-ii-enhanced-zalia"
+aliases     = ["ZALiA", "Zelda II Enhanced", "Zelda Again"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[about]
+developer = "HoverBat"
+publisher = "HoverBat"
+released  = "2023"
+genre     = "Action-adventure, RPG"
+modes     = "Single-player"
+summary   = """
+**Zelda Again: Link is Adventuresome (ZALiA)** is a free fan-made enhanced PC remake of Nintendo's 1987 Famicom/NES title **Zelda II: The Adventure of Link**. Built in **GameMaker Studio**, its gameplay is highly faithful because the logic is a **direct translation of the original's assembly code**, while adding new content and quality-of-life features such as a modern save system, overworld and dungeon maps, **widescreen** presentation, faster dialogue, and partial experience retention after a game over.
+
+Because it is an **unofficial Nintendo fan project**, it was never sold commercially and is distributed only as a free community download. It was well received by retro Zelda fans and gaming press for its polish and faithful recreation of the original action-RPG."""
+
+[launch]
+binary         = "ZALiA.exe"   # best guess: GMS 1.4 project is ZALiA.project.gmx and the download is ZALiA_x.x.x.x.zip, so output exe = ZALiA.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**About:** A free Zelda II: The Adventure of Link fan game by HoverBat, built in `GameMaker Studio 1.4` as a faithful re-creation (a direct translation of the original's assembly) with extra content and quality-of-life improvements. Distributed as a **portable Windows zip** (e.g. `ZALiA_1.0.0.2.zip`, ~286 MB; a current beta build is also offered) on the creator's itch.io page under the title **ZIIAOL** — there is no Steam release and no Linux build.
+
+**Install:** Extract the zip on the Deck, then add the `ZALiA.exe` inside the extracted folder as a non-Steam game and set its "Start In" to that folder. Force `GE-Proton` (or `proton_experimental`).
+
+**Proton:** No ProtonDB entry exists (it is not on Steam). GameMaker Studio 1.4 Windows games generally run well under Proton with no tweaks; try stock first and only switch to GE-Proton / experimental if it fails. No special winetricks confirmed as required.
+
+**Controller:** `GameMaker` provides native `XInput` controller support and the game has a controller-mapping menu (in builds beyond 1.0.0.2), so the Deck gamepad should work without a Steam Input layout.
+
+**Display:** Has a built-in widescreen presentation."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ZIIAOL (ZALiA) official download — HoverBat on itch.io"
+url   = "https://hoverbat.itch.io/ziiaol"
+
+[[links.guides]]
+title = "ZALiA source & project (ZA-LiA/ZALiA) on GitHub"
+url   = "https://github.com/ZA-LiA/ZALiA"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Free fan game:** Not Nintendo, never sold on Steam — distributed only as a free portable Windows zip on the creator's itch.io page (title **ZIIAOL** by HoverBat). Built in `GameMaker Studio 1.4`. No ProtonDB entry exists since it is not a Steam title.
+
+**Install:** It is a portable build, not an installer — extract the zip and run `ZALiA.exe` from the extracted folder (add that exe as a non-Steam game). Try stock Proton first; GMS 1.4 games usually run without tweaks. No special winetricks confirmed.
+
+**Controller:** Native `XInput` controller support with an in-game mapping menu (builds beyond 1.0.0.2), so the Deck gamepad should work without a Steam Input layout.
+
+**Binary best-guess:** The exe name `ZALiA.exe` is inferred from the GMS 1.4 project name (`ZALiA.project.gmx`) and the zip naming (`ZALiA_x.x.x.x.zip`); confirm against the actual extracted files."""

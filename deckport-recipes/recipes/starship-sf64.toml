@@ -1,0 +1,75 @@
+[game]
+title       = "Starship (Star Fox 64 PC Port)"
+slug        = "starship-sf64"
+aliases     = ["Starship SF64", "Star Fox 64 PC", "HarbourMasters SF64", "SF64 Recomp"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5474284"
+
+[launch]
+binary         = "Starship"
+launch_options = ""
+requires_files = ["Star Fox 64 USA ROM dump (US 1.0 or US 1.1 Rev A, .z64)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Proton:** `Starship` `v2.0.0` and newer include a native Linux build — **no Proton needed**.
+
+**Version:** **Always use `v2.0.0` or newer.** `v1.0` was Windows-only and **will not run natively on Steam Deck**.
+
+**Install:** Download the latest release from GitHub, extract it, and add the `Starship` binary (or `AppImage` if provided) as a non-Steam game in **Desktop Mode**.
+
+**Assets:** On first run Starship prompts for your Star Fox 64 ROM and the built-in `O2R` asset generator (added in `v2.0.0`) extracts game assets directly from it — **no separate extraction tool is required**. Supply a **US 1.0** or **US 1.1 Rev A** ROM in `.z64` format; the hash is verified against the expected checksum.
+
+**Features:** The port features **HD widescreen**, upscaling, **5.1 surround sound** output, and built-in cheat support.
+
+**Guide:** A setup guide is available at Steam Deck HQ."""
+
+[about]
+developer = "HarbourMasters"
+publisher = "HarbourMasters (community project)"
+released  = "1997 (Nintendo 64 original); PC port first released December 2024; v2.0.0 'Barnard Alfa' May 25 2025 added native Linux and Steam Deck support"
+genre     = "Rail shooter"
+modes     = "Single-player"
+summary   = """
+**Starship** is an unofficial native PC port of **Star Fox 64** for Nintendo 64, developed by the **HarbourMasters** community team — the group behind **Ship of Harkinian** and **2Ship2Harkinian**. The port adds **HD widescreen** rendering, upscaling, **5.1 surround sound** output, built-in cheats, and a built-in **O2R asset generator** that extracts game assets directly from the ROM without needing a separate extraction step.
+
+`v1.0` launched in December 2024 for Windows only; `v2.0.0` 'Barnard Alfa' (May 25 2025) added a **native Linux AppImage build** (and fixed Linux/macOS audio crackle). It requires the player to supply a **Star Fox 64 USA** ROM dump — either **US 1.0** or **US 1.1 Rev A** in `.z64` format."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Starship — GitHub releases"
+url   = "https://github.com/HarbourMasters/Starship/releases"
+
+[[links.guides]]
+title = "Steam Deck HQ — How to play the Star Fox 64 PC port on Steam Deck"
+url   = "https://steamdeckhq.com/tips-and-guides/how-to-play-the-star-fox-64-pc-port-on-steam-deck/"
+
+[[links.guides]]
+title = "Starship — README / Quick Start (supported ROMs + SHA-1)"
+url   = "https://github.com/HarbourMasters/Starship/blob/main/README.md"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a **Star Fox 64 USA** ROM dump — **US 1.0 or US 1.1 Rev A** (`.z64`) are both accepted; the hash is verified on import. The ROM provides game assets; the port provides the engine.
+
+**Gamepad:** The Deck's built-in controller works natively — no Steam Input mapping is required. (Some guides suggest binding a back button to `F1` to open the in-game enhancement menu.)
+
+**Version:** **Always use `v2.0.0` or newer** — `v1.0` is Windows-only and **will not run natively on Steam Deck**.
+
+**Assets:** The built-in `O2R` asset generator extracts assets from the ROM directly — **no separate extraction tool needed**."""

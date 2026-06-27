@@ -1,0 +1,89 @@
+[game]
+title       = "FreeSpace 2 Open"
+slug        = "freespace-2-open"
+aliases     = ["FreeSpace 2 Open", "FSO", "Freespace 2 Open", "fs2_open", "FreeSpace Open"]
+type        = "native"
+engine      = "other"
+steam_appid = "273620"
+sgdb_id     = "3719"
+
+[launch]
+binary         = "fs2_open"
+launch_options = ""
+requires_files = ["root_fs2.vp", "smarty_fs2.vp", "sparky_fs2.vp", "stu_fs2.vp", "tango1_fs2.vp", "tango2_fs2.vp", "tango3_fs2.vp", "warble_fs2.vp"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Launcher:** Native Linux builds are available via `Knossos.NET`, the recommended cross-platform launcher and mod manager for FSO. Download the Linux `AppImage` or package from the `Knossos.NET` GitHub releases page.
+
+**Install:** On first run, point `Knossos.NET` at your FreeSpace 2 data directory (from your Steam install at `steamapps/common/Freespace2/` or your GOG install). `Knossos.NET` downloads the FSO engine builds, the MediaVPs (high-quality asset pack), and any additional campaigns automatically. The resulting `fs2_open` binary is placed inside the `Knossos.NET` managed directory.
+
+**Steam Deck:** To add FSO to Steam as a non-Steam game on Deck, point the entry at the `Knossos.NET` `AppImage` or the `fs2_open` binary directly.
+
+**Data:** FreeSpace 2 (app `273620`) is available on Steam; the data files from GOG are also compatible.
+
+**Proton:** **No Proton needed** for the native Linux path via `Knossos.NET`.
+"""
+
+[about]
+developer = "Volition Inc. (original); Hard Light Productions (FSO open-source engine)"
+publisher = "Interplay Entertainment (original 1999); community-maintained open source"
+released  = "1999 (original); FSO ongoing since 2002"
+genre     = "Space combat simulator"
+modes     = "Single-player, Multiplayer (via standalone servers)"
+summary   = """
+**FreeSpace 2 Open** (FSO) is the community-maintained **open-source** continuation of the **FreeSpace 2** (1999) engine, stewarded by **Hard Light Productions** since Volition released the source code in 2002. FSO brings modern rendering (**OpenGL/Vulkan**), widescreen support, high-resolution assets (**MediaVPs**), and an active modding scene to what is widely regarded as one of the finest **space combat simulators** ever made.
+
+The retail FreeSpace 2 data files are required and are available on Steam and GOG. Dozens of full-length fan campaigns and total conversions have been released over the years. **Knossos.NET** is the standard launcher for managing FSO builds and mods.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = "https://www.protondb.com/app/273620"
+steamgriddb = "https://www.steamgriddb.com/game/3719"
+
+[[links.guides]]
+title = "Manually Installing FreeSpace 2 Open — FreeSpace Wiki"
+url   = "https://wiki.hard-light.net/index.php/Manually_Installing_FreeSpace_2_Open"
+
+[[links.guides]]
+title = "Fs2 Open on Linux / Acquiring the Game Data — FreeSpace Wiki"
+url   = "https://wiki.hard-light.net/index.php/Fs2_open_on_Linux/Acquiring_the_Game_Data"
+
+[[links.guides]]
+title = "Getting Started with Knossos — PXO"
+url   = "https://pxo.nottheeye.com/support/how-to/knossos"
+
+[[links.guides]]
+title = "Knossos.NET launcher for FreeSpace Open (video overview) — YouTube"
+url   = "https://www.youtube.com/watch?v=2cpMEhLgqV4"
+
+[[links.guides]]
+title = "Steam Deck — I will pay a nerd to get Knossos working (HLP forum thread)"
+url   = "https://www.hard-light.net/forums/index.php?topic=98407.0"
+
+[[links.guides]]
+title = "Guide to portable FreeSpace 1 & 2 FSO installation — Steam discussions"
+url   = "https://steamcommunity.com/app/273620/discussions/0/1744518601281555506/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires FreeSpace 2 retail data `.vp` files from your own purchase (Steam app `273620` or GOG).
+
+**Setup:** `Knossos.NET` is the recommended setup path — it downloads and manages the FSO engine build, MediaVPs, and mods. **Do not attempt to manually wire the engine without it** unless you know what you are doing.
+
+**Steam Deck:** The HLP forums thread above is the main reference for Steam Deck-specific `Knossos.NET` quirks.
+
+**MediaVPs:** The high-res asset pack is a separate download inside `Knossos.NET` and highly recommended.
+"""

@@ -1,0 +1,72 @@
+[game]
+title       = "Mini Motor Racing EVO"
+slug        = "mini-motor-racing-evo"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "209520"
+sgdb_id     = ""
+
+[launch]
+binary         = "Mini Motor Evo.exe"   # Unity build; data folder is "Mini Motor Evo_Data"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (`appid 209520`, removed `2019-12-10`; owners were granted **Mini Motor Racing X** for free).
+
+**Engine:** Modified-Unity engine, Windows-only — runs through Proton.
+
+**Proton:** ProtonDB rates it **platinum** (no DRM/GFWL, no special workarounds). Use `GE-Proton` (or stock `proton_experimental`); no winetricks needed.
+
+**Controller:** Native controller support is built in — full in-game gamepad remapping, all pads recognized, so it plays with the Deck controls out of the box.
+
+**Install:** The launcher exe is `Mini Motor Evo.exe` (folder `The Binary Mill/Mini Motor Racing EVO/`, data in `Mini Motor Evo_Data`). deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "The Binary Mill"
+publisher = "The Binary Mill"
+released  = "2013"
+genre     = "Arcade racing"
+modes     = "Single-player, online multiplayer"
+summary   = "**Mini Motor Racing EVO** is an **arcade racing** game with an **isometric camera** over fully 3D cars and tracks, expanded from The Binary Mill's mobile hit **Mini Motor Racing**. It offers Career, Quick Race and online **Multiplayer** modes (up to four players over a network), with vehicle upgrades and day/night tracks. The original mobile game was well received for its graphics, depth and pick-up-and-play handling, with criticism aimed mostly at occasionally buggy terrain and collision physics. EVO was **delisted from Steam in December 2019**, after which existing owners were granted the successor title **Mini Motor Racing X**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Mini Motor Racing EVO (Platinum)"
+url   = "https://www.protondb.com/app/209520"
+
+[[links.guides]]
+title = "Delisted Games — Mini Motor Racing EVO (delisting + free X upgrade)"
+url   = "https://delistedgames.com/mini-motor-racing-evo/"
+
+[[links.guides]]
+title = "PCGamingWiki — Mini Motor Racing EVO"
+url   = "https://www.pcgamingwiki.com/wiki/Mini_Motor_Racing_EVO"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** Delisted from Steam `2019-12-10` (`appid 209520`); base EVO is no longer for sale. deckport links nothing.
+
+**Proton:** ProtonDB **platinum** — runs cleanly under Proton (`GE-Proton` or experimental), no DRM/GFWL, no winetricks.
+
+**Controller:** Native controller support with full in-game gamepad remapping, works with Deck controls out of the box.
+
+**Unverified:** **NOT yet hands-on verified on a Deck.** Launcher exe is `Mini Motor Evo.exe`; confirm it in your install folder.
+
+**Note:** Mini Motor Racing X is a separate, still-for-sale game; this recipe is only the delisted EVO."""

@@ -1,0 +1,70 @@
+[game]
+title       = "Total Chaos"
+slug        = "total-chaos"
+aliases     = ["Total Chaos GZDoom", "Total Chaos standalone", "Total Chaos Director's Cut"]
+type        = "native"
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run com.moddb.TotalChaos"
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Standalone:** Survival horror game built on `GZDoom` — ships its own assets, **no Doom WAD required**. The standalone release bundles its own copy of GZDoom plus Freedoom, so you do **not** install or point at a separate GZDoom.
+
+**Install (easiest):** Available on Flathub as a self-contained Flatpak under the app ID `com.moddb.TotalChaos`. Open `Discover` in Desktop Mode and search 'Total Chaos', or install from a terminal with `flatpak install flathub com.moddb.TotalChaos`. The current Flathub build is the **Director's Cut (1.40)** and is ~1 GB.
+
+**Launch:** Run the Flatpak directly — `flatpak run com.moddb.TotalChaos`. It starts its own bundled GZDoom; there is no separate `-iwad` argument to set.
+
+**Install (ModDB alternative):** The standalone (and PK3-only) releases are also on ModDB. The PK3-only build requires your own `DOOM2.WAD` + a GZDoom install; the standalone build bundles GZDoom and Freedoom so no commercial WAD is needed. Prefer the Flathub package on Steam Deck for the simplest setup.
+
+**Shortcut:** Set as a non-Steam shortcut after installing from Discover. If launching the Flatpak via Steam fails to stay running, it may need the `org.freedesktop.Flatpak` permission granted (e.g. via Flatseal) or a `flatpak-spawn` wrapper.
+
+**Note:** Widely considered one of the finest technical showcases of the `GZDoom` engine."""
+
+[about]
+developer = "Wadaholic (Sam Prebble) / The Total Chaos team"
+publisher = "Independently released (free, ModDB + Flathub)"
+released  = "Standalone 1.0 released 2018; Director's Cut 1.40 (Flathub) ~2021"
+genre     = "Survival horror (standalone GZDoom game)"
+modes     = "Single-player"
+summary   = "**Total Chaos** is a standalone **survival horror** game built on the **GZDoom engine** that ships entirely with its own assets — no copy of Doom or any other commercial game is required. Set on a remote, fog-drenched island (Fort Oasis), it features full **3D models**, a **physical inventory system**, melee and ranged combat, and atmospheric sound design that push GZDoom far beyond its Doom-engine origins. Originally released as a **Doom II total-conversion mod**, a polished standalone version (now the **Director's Cut**) was packaged and published on **Flathub**, making it one of the most accessible GZDoom titles on the **Steam Deck**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Total Chaos on Flathub"
+url   = "https://flathub.org/en/apps/com.moddb.TotalChaos"
+
+[[links.guides]]
+title = "Total Chaos downloads (ModDB)"
+url   = "https://www.moddb.com/mods/total-chaos/downloads"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Standalone:** Completely standalone — **no Doom II or other commercial game needed**. The Flathub build bundles its own GZDoom + Freedoom.
+
+**Install (easiest):** Install directly from Flathub via `Discover` in Desktop Mode (search 'Total Chaos', app ID `com.moddb.TotalChaos`), then add the Flatpak as a non-Steam shortcut with launch options `run com.moddb.TotalChaos`. No file management required.
+
+**Launch:** The Flatpak runs its own bundled GZDoom — launch it directly (`flatpak run com.moddb.TotalChaos`). Do **not** pass `-iwad`/a separate pk3; that only applies to the PK3-only ModDB build paired with your own GZDoom.
+
+**Steam shortcut quirk:** Launching a Flatpak from Steam can flicker and exit; if so, grant `org.freedesktop.Flatpak` permission (Flatseal) or wrap with `flatpak-spawn`.
+
+**Note:** deckport links nothing; it is native (no Proton)."""

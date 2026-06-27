@@ -1,0 +1,78 @@
+[game]
+title       = "007 Legends"
+slug        = "007-legends"
+aliases     = ["James Bond 007 Legends"]
+type        = "proton"
+engine      = "other"
+steam_appid = "211670"        # was on Steam (app 211670), now delisted
+sgdb_id     = ""
+
+[launch]
+binary         = "Bond2012PC.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Eurocom's 2012 James Bond FPS (Unreal Engine 3), delisted when the Bond game licence moved on. The launcher executable is `Bond2012PC.exe` (confirmed via PCGamingWiki / file databases).
+
+**Proton:** Community reports it runs under `Proton 8.0+`/`GE-Proton`; older Proton builds were borked, so **use a recent `GE-Proton`**.
+
+**GFWL:** Game uses Games for Windows Live (GFWL), whose Marketplace/online sign-in has been dead since 2022. Install the offline GFWL redistributable, then apply an `xliveless`-style local-replacement fix (drop the replacement `xlive.dll` alongside the game) to launch offline and skip the dead sign-in overlay; **otherwise the GFWL login prompt can stall on first launch**. PCGamingWiki's GFWL page documents the legitimate fix.
+
+**Controller:** No native controller support and very strong, non-disable-able mouse acceleration — you must build a Steam Input gamepad layout (gyro + right trackpad as mouse). There is no in-game FOV slider either (per WSGF).
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "007 Legends — PCGamingWiki (fixes, controller, FOV)"
+url   = "https://www.pcgamingwiki.com/wiki/007_Legends"
+
+[[links.guides]]
+title = "Games for Windows - LIVE — PCGamingWiki (offline install + xliveless fix)"
+url   = "https://www.pcgamingwiki.com/wiki/Games_for_Windows_-_LIVE"
+
+[[links.guides]]
+title = "007 Legends — ProtonDB reports"
+url   = "https://www.protondb.com/app/211670"
+
+[about]
+developer = "Eurocom"
+publisher = "Activision"
+released  = "November 2012 (PC)"
+genre     = "First-person shooter"
+modes     = "Single-player; 4-player split-screen + online (servers dead)"
+summary   = """
+**007 Legends** is a James Bond shooter that runs 007 through one mission from each film era — Goldfinger, On Her Majesty's Secret Service, Moonraker, Licence to Kill and Die Another Day, with **Skyfall** added as DLC — all framed as a dying flashback while Bond sinks into a river after Eve's errant sniper shot.
+
+Built on **Unreal Engine 3** by **Eurocom**, the studio behind the 2010 **GoldenEye 007** remake; it reuses that game's feel but was critically panned and was one of the last projects before the studio closed. **Daniel Craig's** likeness is used for Bond across every era.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (licence expired).
+
+**Launcher:** `Bond2012PC.exe` is the game executable.
+
+**GFWL:** Needs the offline GFWL redistributable plus an `xliveless`-style local-replacement fix to launch reliably and skip the dead sign-in; use a recent `GE-Proton`.
+
+**Controller:** No native controller support and very strong mouse acceleration — bind a Steam Input gamepad layout (gyro + right trackpad as mouse) for a playable FPS control scheme.
+
+**Display:** No in-game FOV slider (per WSGF); a community config tweak is the only way to widen it.
+
+**Note:** deckport links nothing.
+"""

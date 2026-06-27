@@ -1,0 +1,78 @@
+[game]
+title       = "Turok (2008)"
+slug        = "turok-2008"
+aliases     = ["Turok 2008"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "TurokGame.exe"   # real exe lives in Turok/Binaries/
+launch_options = "PROTON_USE_WINED3D=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["physx"]
+notes      = """
+**Install:** Propaganda Games' 2008 Turok reboot; never sold on Steam. Real executable is `TurokGame.exe` inside the `Turok/Binaries/` folder.
+
+**Fix:** **Requires the NVIDIA PhysX Legacy driver v9.12.1031** (winetricks `physx`) or the game won't start.
+
+**Display:** DXVK causes pixel-bleeding/garbled cutscenes — set launch option `PROTON_USE_WINED3D=1 %command%` to fix video.
+
+**Proton:** `GE-Proton` is the safest build; `proton_experimental` also works.
+
+**Cosmetic:** If a repeating update-config popup appears, click **No**.
+
+**Controller:** No native gamepad support on PC — bind a Steam Input gamepad layout (controller -> keyboard/mouse) for Deck controls.
+"""
+
+[about]
+developer = "Propaganda Games"
+publisher = "Disney Interactive Studios (Touchstone Games)"
+released  = "2008"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Turok** is a 2008 first-person shooter and a reboot of the **Turok series**, loosely based on the Acclaim comic books. Developed by Propaganda Games on a heavily modified **Unreal Engine 3**, it pits the player against soldiers and dinosaurs on a hostile alien planet, emphasizing **knife stealth kills** and using one enemy type against another.
+
+It launched on Xbox 360 and PlayStation 3 in February 2008 with a Windows port following in April; reviews were mixed but it sold over a million copies. The PC version was never offered on Steam and the studio was later shut down, leaving it out of digital storefronts.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki - Turok (2008): fixes, PhysX legacy driver, mods"
+url   = "https://www.pcgamingwiki.com/wiki/Turok_(2008)"
+
+[[links.guides]]
+title = "DXVK issue #5080 - WineD3D fixes garbled cutscenes/pixel bleeding"
+url   = "https://github.com/doitsujin/dxvk/issues/5080"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Commercial game that was never sold on Steam. Launch `TurokGame.exe` from the `Turok/Binaries/` folder.
+
+**Fix:** **Must install the NVIDIA PhysX Legacy driver v9.12.1031** (winetricks `physx`) or it won't start.
+
+**Display:** Set launch option `PROTON_USE_WINED3D=1 %command%` to fix DXVK pixel-bleeding/garbled cutscenes.
+
+**Proton:** `GE-Proton` recommended.
+
+**Controller:** The PC version has no native controller support, so add a Steam Input gamepad-to-keyboard/mouse layout for handheld play; the WSGF community `PostFix+` tool tames heavy motion blur/post effects.
+
+**Cosmetic:** If an update-config popup repeats, click **No**.
+"""

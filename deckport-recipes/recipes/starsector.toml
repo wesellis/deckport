@@ -1,0 +1,92 @@
+[game]
+title       = "Starsector"
+slug        = "starsector"
+aliases     = ["Starfarer"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "starsector.sh"
+launch_options = ""
+requires_files = ["Starsector Linux installer from fractalsoftworks.com (purchase required, ~$15 USD)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** Starsector is a Java-based open-world space strategy/RPG by **Fractal Softworks**. The game bundles its own JRE, so no system Java installation is required and no Proton is needed — the Linux build runs natively.
+
+**Purchase and install:** Starsector has never been released on Steam. Purchase the DRM-free Linux installer directly from `fractalsoftworks.com` (~$15 USD). Download and run the Linux `.run` installer, which places the game under your chosen directory (e.g., `~/starsector`).
+
+**Adding to Steam:** In Desktop Mode, open Steam and choose *Add a Non-Steam Game*, browse to `starsector.sh` inside your install directory, and add it. This makes the game launchable from Game Mode.
+
+**Resolution (important):** By default the game may launch at a resolution that does not match the Deck screen. Open `vmparams` in the Starsector install directory and add (or adjust) the `-Dcom.fs.starfarer.screenWidth=1280 -Dcom.fs.starfarer.screenHeight=800` flags. Also set the in-game display settings to **1280×800** to match the Deck's native display.
+
+**Memory:** The default JVM heap in `vmparams` is often set to `-Xss2048k -Xms1536m -Xmx1536m`. This is adequate for vanilla. If running a large mod pack, increase `-Xmx` to `2048m` or `3072m` (the Deck has 16 GB of unified memory so headroom is available).
+
+**Performance in large fleet battles:** CPU governor matters. Install **Decky Loader** and the **PowerTools** plugin, then set the CPU governor to **Performance** before large fleet engagements. This can be the difference between a smooth fight and heavy stuttering as the governor throttles cores during burst computation.
+
+**Mods:** Mods are delivered as ZIP archives extracted into the `mods/` subdirectory of the install. The mod ecosystem is large and actively maintained; the same mod ZIPs work on Linux as on Windows. The community wiki at `starsector.fandom.com` and the official forums at `fractalsoftworks.com/forum` list vetted mods. Enable mods via the in-game mod manager on the title screen.
+
+**Saves:** Saves are stored in `~/.starsector/saves` (or inside the install directory depending on version). Back up this folder before major mods or game updates.
+
+**Deck UI:** The game's UI was designed for mouse and keyboard. Bind the right trackpad as a mouse in **Steam Input** (the default Deck mouse trackpad layout works well). The on-screen keyboard is rarely needed after initial configuration.
+
+**Controller (optional fix):** The base game's bundled controller code (`jinput`) has bugs interpreting the Steam Deck's integrated gamepad under SteamOS/Linux. The community mod **SSMSControllerEx** (github.com/katemonster33/SSMSControllerEx, actively maintained) adds proper gamepad support for the title screen, campaign and combat and ships fixed native input libraries that resolve the Deck button/axis bugs. Install it like any mod (extract into `mods/`; it depends on LazyLib and LunaLib). For most players, mapping the right trackpad as a mouse via Steam Input remains the simplest setup, but SSMSControllerEx is the go-to option if you want true controller play.
+"""
+
+[about]
+developer = "Fractal Softworks"
+publisher = "Fractal Softworks"
+released  = "Early Access 2012; ongoing development (no formal v1.0 as of 2026)"
+genre     = "Space strategy RPG"
+modes     = "Single-player"
+summary   = "**Starsector** is a deep open-world space strategy and RPG by **Fractal Softworks**, in development since 2012 and sold DRM-free exclusively at `fractalsoftworks.com`. Players command a fleet across a procedurally-generated sector, engaging in real-time fleet combat, colonizing worlds, trading, and managing officers and crew, all within a rich lore-heavy setting. The game has one of the most active modding communities in PC gaming and is one of the most-discussed non-Steam Deck setups, with its bundled JRE making the Linux version run without Proton or DOSBox."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Starsector Official Site (Purchase Here)"
+url   = "https://fractalsoftworks.com"
+
+[[links.guides]]
+title = "Starsector on Reddit – Steam Deck Setup Megathread"
+url   = "https://www.reddit.com/r/SteamDeck/search/?q=starsector"
+
+[[links.guides]]
+title = "SteamDeckHQ – Starsector on Steam Deck"
+url   = "https://steamdeckhq.com/game-reviews/starsector/"
+
+[[links.guides]]
+title = "Fractal Softworks Forums"
+url   = "https://fractalsoftworks.com/forum/"
+
+[[links.guides]]
+title = "SSMSControllerEx – Steam Deck/Linux controller fix mod"
+url   = "https://github.com/katemonster33/SSMSControllerEx"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**DRM-free only — supply your own copy:** Starsector is never sold on Steam or GOG. Purchase from `fractalsoftworks.com` and download the Linux `.run` installer.
+
+**Resolution must be set manually:** Edit `vmparams` and in-game display settings to `1280×800` or the game may launch at the wrong resolution or off-screen.
+
+**Large fleet battles:** Use Decky PowerTools to set CPU governor to **Performance** to prevent throttling stutters during combat.
+
+**Controller:** No usable built-in controller support out of the box (the bundled gamepad code is buggy on the Deck under Linux). Easiest path: use the right trackpad as a mouse via Steam Input. For real gamepad control, install the **SSMSControllerEx** mod, which fixes the Deck input bugs and adds full controller mappings. Keyboard shortcuts still matter — keep the on-screen keyboard shortcut handy.
+
+**Mod memory:** If running heavy mod packs, raise `-Xmx` in `vmparams` to `2048m`+. Default 1536m may cause GC stutter with large mod lists.
+"""

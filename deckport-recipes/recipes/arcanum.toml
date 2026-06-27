@@ -1,0 +1,138 @@
+[game]
+title       = "Arcanum: Of Steamworks and Magick Obscura"
+slug        = "arcanum"
+aliases     = ["Arcanum", "Arcanum of Steamworks and Magick Obscura"]
+type        = "proton"
+engine      = "other"
+steam_appid = "500810"
+sgdb_id     = ""
+
+[launch]
+binary         = "Arcanum.exe"
+launch_options = "-no3d -doublebuffer"
+requires_files = []
+
+[proton]
+version    = "Proton Experimental"
+winetricks = []
+notes      = """
+**ProtonDB / Valve Rating vs. Reality**
+ProtonDB community reports place Arcanum around the Silver tier — playable, but only
+after manual tweaks (launch options, a ddraw.dll swap, and the community patches
+below). Valve officially rates it "Unsupported" on Steam Deck. In practice the game
+is playable once configured. You can install either the Steam version (app 500810) or
+the GOG version via Heroic Launcher; GOG-via-Heroic tends to be the easiest to patch.
+
+**Binary / Launcher Note**
+The actual game executable is **Arcanum.exe**. The Steam build normally boots through
+**SierraLauncher.exe**, a config front-end that is awkward under Proton. Point the
+launch target directly at Arcanum.exe (run config.exe once first if you need to set
+resolution, then switch back to Arcanum.exe). Use launch options `-no3d -doublebuffer`
+to avoid the 3D-acceleration path that stutters badly under Proton.
+
+**Recommended Install Path: GOG via Heroic**
+1. Install Heroic Games Launcher from the Discover software center in Desktop Mode.
+2. Log in with your GOG account and install Arcanum.
+3. In Heroic, set the Wine/Proton version for Arcanum to Proton Experimental
+   (or Wine-GE latest).
+4. Launch once to generate the Wine prefix, then close.
+
+**Unofficial Arcanum Patch (UAP) — essential**
+The UAP (current builds are 1.5.1+) is effectively mandatory for a stable experience.
+It fixes hundreds of bugs including quest-breaking crashes, dialogue errors, and the
+infinite loading screen issue, and it bundles the high-resolution patch. Links and
+install instructions are documented on PCGamingWiki (see Guides). Install the patch
+executable inside the game's prefix — through Heroic's "Run EXE in Wine prefix" option,
+or for the Steam version by running it via Proton against the install folder.
+
+**High-Resolution Patch — essential**
+The default 800x600 resolution is tiny on the Deck screen. The high-res patch (shipped
+with the UAP, also covered on PCGamingWiki) unlocks higher resolutions; apply it via
+its `_install.bat`/config, then set resolution to 1280x720 or 1280x800 in the launcher.
+
+**ddraw.dll Fix for Frame Drops**
+The original DirectDraw renderer causes significant frame drops and stuttering.
+Replace ddraw.dll in the game directory with the Wine-provided version:
+  cp ~/.wine/drive_c/windows/system32/ddraw.dll <game_dir>/ddraw.dll
+Or use DDrawCompat from GitHub as an alternative — copy DDrawCompat's ddraw.dll
+into the game folder.
+
+**Infinite Loading Screen Workaround**
+Occasional infinite loading screens occur even with UAP. If stuck, Alt+F4 the game
+and relaunch — saves are preserved. This is a known engine issue without a clean fix.
+
+**Steam Community Linux/Deck Guide**
+Steam Community guide ID 3198444292 covers the full Linux and Steam Deck UAP
+installation flow step by step.
+
+**Controls on Deck**
+Arcanum has no native gamepad support — it is entirely mouse-and-keyboard driven, so
+you rely entirely on Steam Input. Use the right trackpad as a mouse with left-click on
+R2 and right-click on L2. The on-screen keyboard (Steam button + X) is needed only for
+character naming. Community controller layouts are available in the Steam Input browser.
+
+**Install Method**
+Either install the Steam copy (app 500810) and force Proton via the title's
+Compatibility settings, or install the GOG copy through Heroic Games Launcher in
+Desktop Mode. Apply the UAP + high-res patch into the prefix/install folder before
+your first real playthrough.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Arcanum on GOG"
+url   = "https://www.gog.com/game/arcanum_of_steamworks_and_magick_obscura"
+
+[[links.guides]]
+title = "PCGamingWiki — Arcanum (UAP, high-res patch, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Arcanum:_Of_Steamworks_%26_Magick_Obscura"
+
+[[links.guides]]
+title = "ProtonDB — Arcanum (app 500810)"
+url   = "https://www.protondb.com/app/500810"
+
+[[links.guides]]
+title = "Steam Community Guide — Arcanum on Linux/Deck"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3198444292"
+
+[[links.guides]]
+title = "ValveSoftware/Proton — Arcanum tracking issue #4401"
+url   = "https://github.com/ValveSoftware/Proton/issues/4401"
+
+[about]
+developer = "Troika Games"
+publisher = "Sierra Entertainment"
+released  = "2001-08-21"
+genre     = "Role-Playing Game"
+modes     = "Singleplayer"
+summary   = """**Arcanum: Of Steamworks and Magick Obscura** by Troika Games (2001) is \
+a deep, sprawling cRPG set in a Victorian-era steampunk world where technology and magic \
+are in constant tension, featuring extraordinary character build freedom and a branching \
+narrative. Available on GOG and Steam. On the Steam Deck it requires the Unofficial \
+Arcanum Patch, a ddraw.dll swap, and Heroic Launcher for the smoothest experience, \
+but rewards the setup effort with dozens of hours of rich RPG gameplay."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+- Not yet verified on hardware — status is needs-test.
+- ProtonDB ~Silver: playable, but only after launch options + patches. Valve rates it "Unsupported".
+- Binary is Arcanum.exe; the Steam build's SierraLauncher.exe is awkward under Proton — target Arcanum.exe directly.
+- Use launch options `-no3d -doublebuffer` to avoid the stuttering 3D-accel path.
+- UAP (Unofficial Arcanum Patch, 1.5.1+) is essential; it also bundles the high-res patch (see PCGamingWiki).
+- High-res patch needed for comfortable text/UI readability on the Deck screen (set 1280x720/800).
+- Replace ddraw.dll with the Wine or DDrawCompat version to fix frame drops.
+- No native gamepad support — entirely mouse/keyboard, so Steam Input + right trackpad is essential.
+- Occasional infinite loading screens are a known engine bug; save frequently.
+"""

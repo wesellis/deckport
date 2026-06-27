@@ -1,0 +1,80 @@
+[game]
+title       = "Carnivores: Dinosaur Hunter Reborn"
+slug        = "carnivores-dinosaur-hunter-reborn"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "293520"
+sgdb_id     = ""
+
+[launch]
+binary         = "Reborn.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 293520`, pulled 2023-01-31 when it was replaced by the Unity-based 'Carnivores: Dinosaur Hunt', which existing owners got free).
+
+**Engine:** The original Reborn build is a Windows DirectX title; it installs to the `CarnivoresReborn` folder. The launcher is most likely `Reborn.exe` — confirm the exact name against your own install (see caveats).
+
+**Proton:** ProtonDB tier is gold and **it runs cleanly under Proton** — `GE-Proton` is the safe pick; stock `proton_experimental` also works.
+
+**DRM:** No GFWL/SecuROM/DRM gymnastics needed.
+
+**Controller:** The game ships with **FULL controller support** (Steam records confirm), so it plays on the Deck gamepad out of the box; force a Steam Input layout only if the in-game pad mapping feels off.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Digital Dreams Entertainment, Tatem Games"
+publisher = "Digital Dreams Entertainment"
+released  = "2015"
+genre     = "First-person hunting simulator / shooter"
+modes     = "Single-player"
+summary   = """
+**Carnivores: Dinosaur Hunter Reborn** is a **first-person dinosaur-hunting simulator** released on Steam in 2015, a PC revamp of the mobile Carnivores HD built on the long-running **Carnivores series**. Players travel to an alien planet and stalk prehistoric creatures across open islands, managing **scent, cover and weapon choice** before summoning a dropship to evacuate.
+
+It earned a **Very Positive** reception for its realistic creatures, atmospheric environments and nostalgic ties to the classic late-1990s Carnivores games. It was pulled from Steam on 2023-01-31 when it was effectively **superseded by the newer Unity-based Carnivores: Dinosaur Hunt**, which existing owners received for free.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (app 293520)"
+url   = "https://www.protondb.com/app/293520"
+
+[[links.guides]]
+title = "Carnivores: Dinosaur Hunter Reborn (official site)"
+url   = "https://carnivoresreborn.com/"
+
+[[links.guides]]
+title = "Steam Community discussions (app 293520)"
+url   = "https://steamcommunity.com/app/293520"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** The original Reborn is no longer for sale — delisted from Steam 2023-01-31 (replaced by the free Unity remaster 'Carnivores: Dinosaur Hunt'). **deckport links nothing.**
+
+**Compatibility:** ProtonDB gold, no reported AMD/Deck showstoppers, no GFWL/DRM workaround required.
+
+**Controller:** Full native controller support, so it is gamepad-playable on the Deck without a hack.
+
+**Verify binary:** Verify the binary name (`Reborn.exe`) against your own install before first launch.
+
+**Servers:** This is a single-player hunting sim — no live servers to worry about.
+"""

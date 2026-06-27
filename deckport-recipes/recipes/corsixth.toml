@@ -1,0 +1,84 @@
+[game]
+title       = "CorsixTH (Theme Hospital Open Engine)"
+slug        = "corsixth"
+aliases     = ["CorsixTH", "Theme Hospital Open Source", "Theme Hospital PC remaster"]
+type        = "native"        # native Linux binary — no Proton needed
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "corsixth"   # native Linux binary; on Deck the Flatpak (com.corsixth.corsixth) is recommended
+launch_options = ""
+requires_files = ["Theme Hospital game data files (cheap on GOG)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** CorsixTH is an open-source reimplementation of Bullfrog Productions' Theme Hospital, the 1997 hospital management simulation originally published by Electronic Arts. The project name comes from its original author, **Corsix** ("Corsix's Theme Hospital" → CorsixTH), and the engine has been in active community development for years; recent releases (e.g. `0.69.2`, Jan 2026) continue to improve UI, resolution, and input handling.
+
+**Install:** The easiest path on Deck is the official **Flatpak** from Flathub (app id `com.corsixth.corsixth`). Native Linux release builds are also available from the official site `corsixth.com` (download page). Install in Desktop Mode.
+
+**Game data:** CorsixTH **requires the original Theme Hospital game data files** (it does not include them). They are available cheaply on GOG; on Deck, GOG via **Heroic Games Launcher** is the recommended purchase and download path. A free demo data set is also offered on `corsixth.com` for a limited trial, but the full GOG data is needed for the complete game.
+
+**Setup:** Once installed, launch CorsixTH and point it at the directory containing your Theme Hospital data files on first run.
+
+**No DOSBox:** CorsixTH runs the original game data through its own modern engine — **no DOSBox installation is needed at any point**, unlike many other classic DOS game re-releases.
+
+**Modernization:** The engine adds higher resolutions, widescreen support, modern OS compatibility, and a range of bug fixes for issues that existed in the original 1997 release. Active development continues with ongoing improvements to the UI and input handling.
+
+**Deck:** Add as a non-Steam shortcut to access from Game Mode.
+"""
+
+[about]
+developer = "CorsixTH team (started by Corsix; community contributors)"
+publisher = "Open source / community release (MIT licence)"
+released  = "Theme Hospital original 1997 (Bullfrog Productions / Electronic Arts); CorsixTH 2009–2026 (active; v0.69.2 Jan 2026)"
+genre     = "Hospital management simulation"
+modes     = "Single-player"
+summary   = "**CorsixTH** is an open-source reimplementation of Bullfrog Productions' 1997 hospital management simulation **Theme Hospital**. Players manage increasingly complex hospitals, hiring doctors, nurses, and handymen; laying out rooms; researching treatments for absurd fictional illnesses (Bloaty Head, Slack Tongue, Broken Heart); and balancing profit against patient welfare under time pressure. CorsixTH rebuilds the **game engine** to run natively on modern operating systems with higher resolutions, widescreen support, and **no DOSBox dependency**, while remaining fully compatible with the original 1997 game data files available from GOG. The project has been in active development since 2011 and is widely considered the definitive way to play Theme Hospital on modern hardware."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "CorsixTH Official Site"
+url   = "https://corsixth.com"
+
+[[links.guides]]
+title = "CorsixTH on Flathub"
+url   = "https://flathub.org/apps/com.corsixth.corsixth"
+
+[[links.guides]]
+title = "CorsixTH GitHub Releases"
+url   = "https://github.com/CorsixTH/CorsixTH/releases"
+
+[[links.guides]]
+title = "Getting Started (CorsixTH Wiki)"
+url   = "https://github.com/CorsixTH/CorsixTH/wiki/Getting-Started"
+
+[[links.guides]]
+title = "Theme Hospital on GOG"
+url   = "https://www.gog.com/game/theme_hospital"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires Theme Hospital data files (not bundled) — GOG is the recommended source; use **Heroic Games Launcher** on Deck to purchase and download from GOG. A free demo data set from `corsixth.com` works for a trial but the full GOG data is needed for the complete game.
+
+**No DOSBox:** CorsixTH runs the data through its own native engine.
+
+**Flatpak data access:** If installed via Flatpak, you may need to grant it read access to your game data, e.g. `flatpak override com.corsixth.corsixth --filesystem=/path/to/data:ro`.
+
+**Controller:** CorsixTH is a mouse-driven point-and-click game with no native gamepad scheme — on Deck use **Steam Input** (right trackpad as mouse, a button mapped to left-click) for comfortable play.
+"""

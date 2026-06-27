@@ -1,0 +1,134 @@
+[game]
+title       = "Quake 4"
+slug        = "quake-4"
+aliases     = ["Q4"]
+type        = "proton"
+engine      = "other"
+steam_appid = "2210"
+sgdb_id     = ""
+
+[launch]
+binary         = "Quake4.exe"
+launch_options = 'WINEDLLOVERRIDES="dinput=n,b" %command%'
+requires_files = []
+
+[proton]
+version    = "Proton 10.0"
+winetricks = []
+notes      = """
+**ProtonDB / Deck Status**
+Quake 4 (app 2210) reports a Gold tier on ProtonDB and runs well on the Steam Deck.
+The id Tech 4 engine (shared with Doom 3) is mature under Proton and needs little tinkering
+beyond the launch option and a controller layout.
+
+**Launch Option (required)**
+Set `WINEDLLOVERRIDES="dinput=n,b" %command%` in Steam → Properties → General → Launch
+Options. This forces Wine's native dinput handling, which the community Deck guide recommends
+for reliable mouse/input behavior under Proton.
+
+**Proton Version — 10.0-3**
+The Steam store entry runs Quake 4 under Proton 10.0-3 by default, which is the recommended
+version. If you want to run the community Quake4Tweaker tool, forcing Proton 9 can help with
+its compatibility — otherwise Proton 10.0-3 is the simplest choice. Set this via Steam →
+Right-click Quake 4 → Properties → Compatibility → Force a specific Steam Play compatibility tool.
+
+**Frame Rate — Cap at 62 fps**
+Quake 4's game logic (physics, animations, scripted sequences) is tied to frame rate. Running
+above ~62 fps can break in-game logic. Use the Deck's performance overlay to create a per-game
+profile and lock the refresh/frame rate to 62 Hz / 62 fps.
+
+**Patch 1.4.2**
+1.4.2 is the final official Quake 4 patch. The current Steam release (app 2210) already ships
+fully patched, so no separate patch install is needed. (The community Quake4Tweaker is optional
+and separate — it raises the FPS cap, fixes texture quality on modern GPUs, and skips intros.)
+
+**Mouse Smoothing**
+If aiming feels uneven during on-rails or vehicle/mech sections, raise the in-game
+Options → Mouse → "Smooth Mouse" setting to 8, as recommended by the Deck community guide.
+
+**Deck Resolution**
+Quake 4 does not natively list 1280x800 (the Deck's native 16:10 resolution). Set
+resolution manually by editing Quake4Config.cfg:
+
+  seta r_customWidth "1280"
+  seta r_customHeight "800"
+  seta r_mode "-1"
+
+Alternatively, use 1280x720 (16:9) widescreen which is listed in-game under
+Options → System → Screen Resolution. This is the recommended hassle-free option.
+
+**Config File Location**
+Quake4Config.cfg is found at:
+  ~/.steam/steam/steamapps/compatdata/2210/pfx/drive_c/users/steamuser/
+  My Documents/My Games/Quake 4/q4base/Quake4Config.cfg
+
+Open via Desktop Mode → Dolphin file manager with hidden files shown.
+
+**Performance**
+Quake 4 runs very well on the Deck. Expect 60+ fps at 1280x720 with high settings.
+Lower shadow quality if you see dips during large combat encounters. TDP lock at
+10–12W is sufficient for smooth gameplay.
+
+**Steam Community Deck Guide**
+A dedicated Steam Community guide (ID 3520367974) covers Deck-specific config in detail,
+including the mouse fix, resolution hack, and controller layout recommendations.
+
+**Controller Layout**
+The game has no native gamepad support, so it relies entirely on Steam Input. Enable the Steam
+overlay, then in the controller settings browse community layouts and apply
+"Best Steam Deck Controls for Quake 4 (PC)" by BaddAss=(, or configure manually with a standard
+FPS template: right stick/trackpad = look (gyro optional), triggers = fire / alt-fire,
+face buttons = jump / use / reload.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Quake 4 on Steam (app 2210)"
+url   = "https://store.steampowered.com/app/2210/Quake_4/"
+
+[[links.guides]]
+title = "Steam Community Deck Guide — Quake 4"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3520367974"
+
+[[links.guides]]
+title = "ProtonDB — Quake 4"
+url   = "https://www.protondb.com/app/2210"
+
+[[links.guides]]
+title = "PCGamingWiki — Quake 4 (fixes, config, widescreen)"
+url   = "https://www.pcgamingwiki.com/wiki/Quake_4"
+
+[about]
+developer = "Raven Software / id Software"
+publisher = "Bethesda Softworks"
+released  = "2005-10-18"
+genre     = "First-Person Shooter"
+modes     = "Singleplayer, Multiplayer"
+summary   = """**Quake 4** by Raven Software and id Software (2005) is the direct sequel \
+to Quake II, built on the id Tech 4 engine (the same engine as Doom 3), following a \
+marine's fight against the Strogg alien collective. It returned to Steam (app 2210) after \
+a delisting period. On the Steam Deck it runs smoothly under Proton (Gold tier) with a launch-option \
+input fix and a 62 fps cap, making it a great portable single-player shooter."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Add the launch option WINEDLLOVERRIDES="dinput=n,b" %command% for reliable input under Proton.
+- Cap the frame rate at ~62 fps — higher rates break Quake 4's frame-rate-tied game logic.
+- Proton 10.0-3 is the default/recommended build; force Proton 9 only if using Quake4Tweaker.
+- 1280x800 (Deck native) not listed in-game; manually edit Quake4Config.cfg or use 1280x720.
+- Config file is buried in the Proton prefix; use Desktop Mode to edit.
+- No native controller support — requires a Steam Input layout (e.g. the community Deck preset).
+- Steam release ships pre-patched to 1.4.2; the optional Quake4Tweaker is a separate add-on.
+"""

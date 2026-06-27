@@ -1,0 +1,70 @@
+[game]
+title       = "WipeOut Phantom Edition"
+slug        = "wipeout-phantom-edition"
+aliases     = ["wipEout Phantom Edition", "Wipeout PS1 Port"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5296247"     # https://www.steamgriddb.com/game/5296247 (wipEout)
+
+[launch]
+binary         = "wipeout.exe"   # Windows source-port executable (no native Linux build)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Port:** Enhanced closed-source PC (Windows) source port of the 1995 PlayStation wipEout. Adds widescreen, uncapped frame rate, high-res rendering and built-in gamepad support while keeping the original PSX look.
+
+**Proton:** There is **NO native Linux build** (source is not public), so on the Deck you run the Windows `wipeout.exe` under Proton.
+
+**Install:** Add the extracted folder to Steam as a non-Steam game, then in `Properties > Compatibility` tick 'Force the use of a specific Steam Play compatibility tool' and pick `Proton Experimental` (`GE-Proton` also works).
+
+**Data:** It needs the original PS1 wipEout data from the **USA-region** disc: drop the bin/cue disc image (the README expects 9 `.bin` files and one `.cue`, MODE2/2352) into the port's `diskimages` folder and it will auto-extract the game data and music on first launch — **official PC-version data will not work**.
+
+**DRM:** No GFWL/SecuROM/DRM and no widescreen patch needed; those are handled by the port itself.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "WipeOut Phantom Edition (source port + README setup)"
+url   = "https://github.com/wipeout-phantom-edition/wipeout-phantom-edition"
+
+[[links.guides]]
+title = "How To Install WipEout Phantom Edition On Steam Deck (Time Extension)"
+url   = "https://www.timeextension.com/guides/how-to-install-wipeout-phantom-edition-on-steam-deck"
+
+[about]
+developer = "Psygnosis (original game); WipeOut Phantom Edition development team (source port)"
+publisher = "Psygnosis"
+released  = "1995 (original wipEout); 2023 (Phantom Edition source port)"
+genre     = "Futuristic anti-gravity racing"
+modes     = "Single-player"
+summary   = """
+**wipEout** is a 1995 **futuristic anti-gravity racing** game developed and published by **Psygnosis**, originally a **PlayStation launch title** in Europe and one of the console's defining releases, celebrated for its stylized visuals, designer-led art direction and **electronic music soundtrack**.
+
+**WipeOut Phantom Edition** is an unofficial, closed-source enhanced PC port of the original PlayStation version that adds **widescreen** support, an uncapped and decoupled frame rate, high-resolution rendering, increased draw distance and built-in gamepad support while preserving the original PSX look. It ships no game assets, so it requires data files from the player's own original USA-region PlayStation copy of wipEout. The original 1995 release is **long out of print and not sold digitally**, making the port a common way to revisit the game.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** You must supply your own original wipEout (PS1, **USA-region**) data files — the port ships no game assets and **PC-version data won't work**.
+
+**Proton:** Despite shipping as a source port there is no public source and no native Linux build, so it runs as the Windows `wipeout.exe` under `Proton Experimental` (set via Force Compatibility Tool), not natively.
+
+**Status:** Community guides (Time Extension) and user videos confirm it runs and is playable on the Deck with built-in controller support; no ProtonDB entry exists since it's not a Steam title, so tier left blank and status is `needs-test` until verified on-device.
+"""

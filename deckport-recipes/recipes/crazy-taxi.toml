@@ -1,0 +1,66 @@
+[game]
+title       = "Crazy Taxi"
+slug        = "crazy-taxi"
+aliases     = ["Crazy Taxi 1", "Crazy Taxi PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = "71230"
+sgdb_id     = ""
+
+[launch]
+binary         = "Crazy Taxi.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+Run with GE-Proton. The main binary is "Crazy Taxi.exe" (note the space in the filename). This is the 2011 Steam re-release (App 71230) of the original Crazy Taxi.
+
+Controller: the stock Steam build reads analog sticks/triggers DIGITALLY, so steering and acceleration feel on/off. CookiePLMonster's SilentPatch restores proper analog steering and pressure-sensitive triggers (it replaces "Crazy Taxi.exe"); install it for a good gamepad experience. On Steam Deck you can otherwise use Steam Input to map the pad, but it will still be digital without the patch. Some users add DXVK to smooth out the game's uneven performance.
+
+Note: the Steam port does NOT include the original arcade/Dreamcast punk soundtrack (The Offspring, Bad Religion) — those tracks were licensed only for the original release and are absent here. The "Dreamcast Restoration" mod brings back the original brand logos and locations (Pizza Hut, KFC, Levi's, Tower Records, etc.) that were swapped for generic ones, but it does not restore that licensed music.
+
+This game and the rest of Sega's Dreamcast Collection were delisted from Steam on 6 December 2024 (the broad Sega classics delisting); existing owners keep access. Supply your own copy of the game.
+"""
+
+[about]
+developer = "Sega AM3 / Hitmaker"
+publisher = "Sega"
+released  = "1999"
+genre     = "Arcade Racing"
+modes     = "Single-player"
+summary   = "Crazy Taxi is Sega's landmark 1999 arcade racing game in which players race against the clock to deliver passengers across a sprawling open city for maximum fares and tips. Originally developed by Sega AM3/Hitmaker for arcades and the Dreamcast, it was re-released on Steam in 2011 (App 71230). That PC version omits the original licensed punk soundtrack and swaps real-world brands for generic ones; community mods restore the brands and locations, while the soundtrack remains unavailable for licensing reasons. The game was delisted from Steam in December 2024 as part of Sega's broad Dreamcast Collection delisting."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Crazy Taxi"
+url   = "https://www.protondb.com/app/71230"
+
+[[links.guides]]
+title = "PCGamingWiki — Crazy Taxi (Steam)"
+url   = "https://www.pcgamingwiki.com/wiki/Crazy_Taxi_(Steam)"
+
+[[links.guides]]
+title = "SilentPatch for Crazy Taxi (analog controls + fixes)"
+url   = "https://github.com/CookiePLMonster/SilentPatchCT"
+
+[[links.guides]]
+title = "Dreamcast Restoration & SilentPatch write-up"
+url   = "https://silentsblog.com/2021/08/08/crazy-taxi-dreamcast-restoration-silentpatch/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = "Supply your own copy — delisted from Steam in December 2024 as part of Sega's Dreamcast Collection delisting (existing owners keep access). Stock build reads analog input digitally; install SilentPatch (CookiePLMonster) for proper analog steering, or expect on/off controls. The original Offspring/Bad Religion soundtrack is NOT in the Steam version and cannot be restored (licensing); the Dreamcast Restoration mod only restores the original brand logos and locations. This is the 2011 Steam re-release of the original Crazy Taxi (App 71230) — separate from Crazy Taxi 3 (different game)."

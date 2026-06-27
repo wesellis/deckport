@@ -1,0 +1,84 @@
+[game]
+title       = "Syndicate (2012)"
+slug        = "syndicate-2012"
+aliases     = ["Syndicate", "Syndicate 2012"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Syndicate.exe"   # in System/Win32_x86_Release/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Starbreeze's 2012 FPS reboot of the **Syndicate** series (codename Project RedLime), delisted. EA/Origin-exclusive — never released on Steam, so there is no Steam appid.
+
+**DRM:** All retail copies use **EA App DRM** plus **SecuROM 8** (file-consistency checking), which is the main thing that fights Wine/Proton.
+
+**Proton:** `GE-Proton` handles the DirectX 9 renderer and EA-era prerequisites best, and recent stock Proton (`8.0-2`, `Proton Experimental`, `Proton 11 Beta`) added EA App launcher workarounds that also help.
+
+**Display:** The game is DX9 under the hood, so Proton's built-in `DXVK` (d3d9 to Vulkan) is what carries it; **keep DXVK enabled rather than forcing WineD3D**.
+
+**Install:** Launch the real binary at `System\\Win32_x86_Release\\Syndicate.exe` — at runtime it spawns `System\\Win32_x86_Release\\Syndicate.bin` as the actual game process (the Autorun/Setup just launch the obsolete EA installer).
+
+**Fix:** **Do NOT delete `System\\Environment.cfg`** — the game crashes on launch without it.
+
+**Cosmetic:** The community `SynAdvCFG` Advanced Config Tool exposes hidden graphics settings, and the `DeBloom` HelixMod tones down the heavy bloom (if you stack DeBloom on top of DXVK, rename DXVK's `d3d9.dll` and point DeBloom's `DX9Settings.ini` `ProxyLib` at it).
+
+**Controller:** Native Xbox-style gamepad support, so the Deck controls work out of the box (default `gamepad` input layout).
+
+**Cosmetic:** If launch hangs, **disable the Steam overlay** (in-game overlays like FRAPS/RTSS are a known crash cause).
+"""
+
+[about]
+developer = "Starbreeze Studios"
+publisher = "Electronic Arts"
+released  = "2012"
+genre     = "First-person shooter"
+modes     = "Single-player campaign, four-player online co-op"
+summary   = "**Syndicate** is a 2012 cyberpunk **first-person shooter** from **Starbreeze Studios**, a reboot of **Bullfrog's 1993 real-time tactics series** of the same name, set as a prequel in a corporate-controlled dystopia where agents are augmented with a **neural chip implant**. It departed sharply from the original strategy format, pairing a single-player campaign with a separate **four-player co-op mode** that drew the strongest praise from critics. Reviews of the campaign were mixed, but the co-op was widely acclaimed. Published by EA exclusively on Origin and never sold on Steam, it has since been **delisted** and is no longer available for purchase."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Syndicate (2012) - PCGamingWiki (fixes, Wine/Proton notes, Environment.cfg)"
+url   = "https://www.pcgamingwiki.com/wiki/Syndicate_(2012)"
+
+[[links.guides]]
+title = "Syndicate 2012 Private Server Emulator (restores co-op missions)"
+url   = "https://github.com/kadrim/Syndicate2012PSE"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game (EA/Origin-only, never on Steam). No ProtonDB tier exists because the game was never on Steam (no appid to track).
+
+**DRM / activation (biggest real blocker):** The PC version used **SecuROM 8 online activation** plus **EA App DRM**, and the **SecuROM activation servers are now shut down**, so even legitimate owners often cannot re-activate/reinstall on a fresh machine — players report "this product can't be activated on this computer." This is a bigger practical hurdle than Proton itself; get a fully installed, already-activated copy onto the Deck rather than running the EA App installer in Proton, and keep the install untouched. Online co-op also requires EA's retired servers — the community `Syndicate2012PSE` private-server emulator restores the co-op missions.
+
+**AMD iGPU crash (relevant to Deck):** On modern AMD APUs like the ROG Ally X (same hardware class as the Deck) the game crashes right after the intro cutscene (the tied-to-a-chair scene) on WineD3D/native D3D9; **the fix is `DXVK` translating D3D9 to Vulkan, which Proton provides by default, so keep DXVK on**. Only if you hit that crash, drop the x32 `d3d9.dll` + `dxgi.dll` from a current DXVK release into `System\\Win32_x86_Release`.
+
+**Known hard bug:** Some players hit a crash at Milestone 7 (the New York chapter, after the big explosion) — reported on RDNA2/RTX-class GPUs even on legitimate copies, with **no reliable fix yet**, so the Deck may be affected too.
+
+**Fix:** Do not delete `System\\Environment.cfg` or the game will not start.
+
+**Install:** Launch `System\\Win32_x86_Release\\Syndicate.exe`; the live process is `System\\Win32_x86_Release\\Syndicate.bin`.
+
+**Controller:** Native gamepad support, no controller hack needed.
+
+**Status:** Marked `needs-test` — AMD-APU community reports confirm it runs with the DXVK path, but no direct Deck verification yet.
+"""

@@ -1,0 +1,70 @@
+[game]
+title       = "Hydra Castle Labyrinth"
+slug        = "hydra-castle-labyrinth"
+aliases     = ["Meikyuujou Hydra", "Hydra Castle"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "hydra.exe"   # confirmed: original Windows freeware build ships hydra.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** E. Hashimoto's (Buster) 2011 freeware action-platformer metroidvania, with Gary the Krampus's English translation patch. Tiny self-contained SDL Windows app — no installer.
+
+**Proton:** Runs under Proton with `GE-Proton`; `proton_experimental` also works.
+
+**DRM:** No DRM, no GFWL.
+
+**Controller:** The game has built-in joypad support, but button mapping is done through the bundled `IniKaeru` config tool (ships with the download), not auto-detected. On the Deck the most reliable path is a **Steam Input** controller layout (keyboard mapping) — the documented keys are arrows (D-pad), SPACE (attack), E (jump), F (throw), S/D (prev/next weapon), TAB (items), ENTER/ESC (pause). You can instead map a joypad via `IniKaeru` if you prefer.
+
+**Install:** The English patch swaps in its own `hydra.exe` (built for v1.00) — **keep that as the launch target**. The patched `.exe` is the right binary to point Steam at; **do not aim Proton at the Japanese v1.03 build if you applied the patch**."""
+
+[about]
+developer = "E. Hashimoto (Buster)"
+publisher  = "E. Hashimoto (Buster)"
+released   = "2011"
+genre      = "Action-platformer metroidvania"
+modes      = "Single-player"
+summary    = "**Hydra Castle Labyrinth** (originally **Meikyuujou Hydra**) is a **freeware** action-platformer **metroidvania** by Japanese developer E. Hashimoto, known as **Buster**. You play a knight exploring the Hydra's sprawling castle to recover a stolen royal crown, gaining new powers and clearing sub-dungeons along the way. Inspired by **The Maze of Galious** and **La-Mulana**, it is more approachable than either, and it built a cult following among fans after an **English fan-translation patch** made the originally Japanese-only release accessible worldwide. It was distributed free on the developer's own site and **never sold commercially**, which is why it has no Steam page."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "RomHacking.net: Hydra Castle Labyrinth English translation patch (Gary the Krampus)"
+url   = "https://www.romhacking.net/translations/1700/"
+
+[[links.guides]]
+title = "ptitSeb/hydracastlelabyrinth — native Linux/handheld port (SDL)"
+url   = "https://github.com/ptitSeb/hydracastlelabyrinth"
+
+[[links.guides]]
+title = "OpenHCL — open-source cross-platform port (JeffRuLz)"
+url   = "https://github.com/JeffRuLz/OpenHCL"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Freeware game (never sold on Steam, so no appid) with a fan English patch — the patch replaces `hydra.exe` (built for v1.00, still works).
+
+**Proton:** No DRM/GFWL, so it runs cleanly under Proton. Built-in joypad support exists but is mapped via the bundled `IniKaeru` tool; a **Steam Input** keyboard layout is the simplest way to get the Deck's controls working.
+
+**Display:** Known quirk (Windows + Wine/Proton) — the game window can spawn offset toward the right edge of the screen rather than centered. **Cosmetic, not game-breaking**; if it lands off-screen, force `Borderless`/`Fullscreen` via the in-game options or relaunch.
+
+**Native option:** A native Linux/SDL port also exists (`ptitSeb`) if you'd rather skip Proton entirely."""

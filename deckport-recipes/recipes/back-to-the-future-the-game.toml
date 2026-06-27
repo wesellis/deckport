@@ -1,0 +1,74 @@
+[game]
+title       = "Back to the Future: The Game"
+slug        = "back-to-the-future-the-game"
+aliases     = ["BTTF The Game", "Back to the Future Telltale"]
+type        = "proton"
+engine      = "other"
+steam_appid = "31290"         # was on Steam (app 31290), now delisted
+sgdb_id     = ""
+
+[launch]
+binary         = "BackToTheFuture101.exe"   # Episode 1 — the Steam launch target for app 31290
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Telltale's 2010-11 episodic adventure (all five episodes) with Christopher Lloyd reprising Doc Brown. Telltale Tool engine.
+
+**Proton:** Valve rates app `31290` Steam Deck Playable; Telltale Tool adventures run cleanly under Proton — `GE-Proton` or `proton_experimental` both work.
+
+**DRM:** No `GFWL`/`SecuROM`/DRM steps and no winetricks needed.
+
+**Controller:** Native `XInput` controller support — from Episode 2 on the prompts auto-switch to an Xbox button layout.
+
+**Binary / episodes:** This original 2010-11 release installs each episode as its own executable — `BackToTheFuture101.exe` through `BackToTheFuture105.exe` (folders `Episode 1`..`Episode 5`). App `31290` is "Ep 1 - It's About Time" and Steam launches `BackToTheFuture101.exe`; the later episodes are separate Steam app IDs (94500/94510/94520/94530) and have their own `BackToTheFuture10x.exe`. To run a later episode from the same library entry, point the binary at the matching `BackToTheFuture10x.exe`.
+
+**Caveat:** One mouse-only step — **the digital-watch puzzle in Episode 3 can't be solved on the gamepad alone**, so use the Deck touchscreen/trackpad as a mouse for that one step."""
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2010"
+genre     = "Episodic graphic adventure"
+modes     = "Single-player"
+summary   = "**Back to the Future: The Game** is a five-episode **point-and-click adventure** built on Telltale's own engine, made under license from Universal as an official continuation of the film trilogy. Set six months after the third movie, it follows Marty McFly and a returned DeLorean as they rescue Doc Brown from 1931, with co-creator Bob Gale assisting the story and Christopher Lloyd reprising Doc. Critics praised the **voice acting** (A.J. LoCascio's Marty impression in particular) while finding the puzzles easy; it was Telltale's most successful series before **The Walking Dead**. It is no longer sold because Telltale's catalogue was pulled after the studio's **2018 closure**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Back to the Future: The Game (app 31290)"
+url   = "https://www.protondb.com/app/31290"
+
+[[links.guides]]
+title = "PCGamingWiki — Back to the Future: The Game"
+url   = "https://www.pcgamingwiki.com/wiki/Back_to_the_Future:_The_Game"
+
+[[links.guides]]
+title = "SteamDB — Back to the Future: Ep 1 (app 31290)"
+url   = "https://steamdb.info/app/31290/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (Telltale's catalogue was pulled).
+
+**Compatibility:** Steam Deck Playable per Valve; ProtonDB tier is solid (`gold`).
+
+**Controller:** Native controller support works, but keep the Deck trackpad/touchscreen handy for Episode 3's digital-watch puzzle (mouse-only).
+
+**Binary:** Confirmed — Episode 1 launches `BackToTheFuture101.exe`; episodes 2-5 are `BackToTheFuture102.exe`..`BackToTheFuture105.exe` in their own folders.
+
+**Links:** ProtonDB page and PCGamingWiki entry below."""

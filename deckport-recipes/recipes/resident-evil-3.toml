@@ -1,0 +1,77 @@
+[game]
+title       = "Resident Evil 3: Seamless HD Project"
+slug        = "resident-evil-3"
+aliases     = ["Biohazard 3", "RE3", "Nemesis", "Resident Evil 3 Nemesis", "Resident Evil 3 Seamless HD"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5465780"       # https://www.steamgriddb.com/game/5465780
+
+[launch]
+binary         = "bio3.exe"   # the SourceNext exe (Classic REbirth replaces/wraps it)
+launch_options = "WINEDLLOVERRIDES=\"ddraw,dinput8=n,b\" %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"     # need DXVK 2.5.3+ for the HD mod; GE-Proton 9.25 or Proton 9.0 (Beta)
+winetricks = []
+notes      = """
+**Mod:** The Seamless HD Project — a community full-game mod that overhauls the 1999 PC Resident Evil 3 with HD pre-rendered backgrounds and seamless room transitions, built on Gemini's `Classic REbirth`.
+
+**Base game:** Needs the base game (the classic RE bundle is sold on GOG — **supply your own copy**). Confirmed working on Steam Deck by multiple users.
+
+**Install:** Install the base 1999 RE3 (SourceNext/GOG) via Heroic, apply `Classic REbirth` then the Seamless HD Project, and force a Proton with DXVK 2.5.3 — `GE-Proton 9.25` or `Proton 9.0 (Beta)`.
+
+**Patch on Windows first:** The Seamless HD Project patcher relies on Windows APIs and will NOT run under Linux/SteamOS. Run the patcher on a Windows PC, then copy the fully-patched game folder onto the Deck. Launch the patched `bio3.exe` (rename to `4249120_Launcher.exe` if you want Steam playtime/overlay; some packagings use a custom R.P.D. Terminal launcher for the same purpose).
+
+**Proton:** **DXVK MUST be enabled or the HD mod silently won't render.** Use the `ddraw,dinput8` DLL override above (`WINEDLLOVERRIDES="ddraw,dinput8=n,b" %command%`).
+
+**Display:** In `Classic REbirth` Settings > Advanced, **DISABLE 'Force 240p Backgrounds'** so the HD backgrounds show on Deck.
+
+**Controller:** `Classic REbirth` swaps the old DirectInput 5 input for XInput / DirectInput 8 / Raw Input, so the Deck gamepad is recognised for tank or alternate controls. A Steam Input gamepad layout is still the most reliable on Deck; the optional `Modern Controls Plus` add-on gives RE1-Remake-style analog movement for those who dislike tank controls.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "Capcom"
+publisher = "Capcom"
+released  = "1999"
+genre     = "Survival horror"
+modes     = "Single-player"
+summary   = "**Resident Evil 3: Nemesis** is the third main installment in Capcom's **survival horror** series, following Jill Valentine's escape from a zombie-overrun Raccoon City as she is relentlessly hunted by the bio-weapon **Nemesis**. Built on the same engine as its predecessors, it uses 3D character models over **pre-rendered backgrounds** with fixed camera angles. Originally a PlayStation hit in 1999, it was later ported to Windows and received critical acclaim. This recipe targets the classic 1999 PC release enhanced by the community **Seamless HD Project** mod, built on Gemini's Classic REbirth."
+
+[links]
+
+[[links.guides]]
+title = "Classic REbirth — Resident Evil 3 (official downloads & install)"
+url   = "https://classicrebirth.com/index.php/downloads/resident-evil-3-classic-rebirth/"
+
+[[links.guides]]
+title = "RE Seamless HD Project — RE3 (official)"
+url   = "https://www.reshdp.com/re3/"
+
+[[links.guides]]
+title = "GBAtemp: Run RE3 (1999) SourceNext/GOG + Classic Rebirth + Seamless HD on Linux/Steam Deck"
+url   = "https://gbatemp.net/threads/how-to-run-resident-evil-3-1999-sourcenext-gog-with-classic-rebirth-and-seamless-hd-project-on-linux-systems.668573/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**ProtonDB:** The classic 1999 RE3 (SourceNext/GOG) is not a Steam title, so there is no ProtonDB entry — `protondb_tier` left empty. Community reports (GBAtemp / GOG forums) say plain `Classic REbirth` runs well on Deck, while the Seamless HD layer is the fragile part.
+
+**Supply your own copy:** The Seamless HD Project is a free community mod that needs the base game — bring your own legally-owned copy (GOG sells the classic 90s PC bundle).
+
+**Finicky HD mod:** Confirmed working on Steam Deck, but the HD mod is finicky: it needs DXVK 2.5.3 (`GE-Proton 9.25` / `Proton 9.0 Beta`) AND **'Force 240p Backgrounds' disabled** in `Classic REbirth`'s Advanced settings, or you get graphical glitches / no HD backgrounds.
+
+**Stability:** Plain `Classic REbirth` alone is rock-solid; the HD layer is the only fragile part.
+
+**Controller:** Controller works (`Classic REbirth` modern controls + Steam Input).
+"""

@@ -1,0 +1,68 @@
+[game]
+title       = "Skylar & Plux: Adventure On Clover Island"
+slug        = "skylar-plux-adventure-on-clover-island"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "452540"
+sgdb_id     = ""
+
+[launch]
+binary         = "SkylarAndPlux/Binaries/Win64/SkylarAndPlux.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `452540`, sales closed Aug 2021). Unreal Engine 4 3D platformer — UE4 titles run cleanly on Proton/Deck with **no DRM, no GFWL, and no special tweaks**.
+
+**Launch:** Launch the real game binary under `SkylarAndPlux/Binaries/Win64/SkylarAndPlux.exe` (the top-level exe is just the UE4 shipping launcher).
+
+**Proton:** `GE-Proton` is a safe default; stock `proton_experimental` also works. No winetricks or launch options required.
+
+**Controller:** Full native controller support, so the Deck gamepad works out of the box.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Right Nice Games"
+publisher = "Grip Digital"
+released  = "2017"
+genre     = "3D platformer"
+modes     = "Single-player"
+summary   = "**Skylar & Plux: Adventure on Clover Island** is a third-person **3D platformer** built in **Unreal Engine 4** by the small Swedish studio Right Nice Games. Players control Skylar, a cat-rabbit hybrid accompanied by an owl named Plux, as she explores Clover Island to stop the villain CRT. It is an unabashed love letter to **PS2-era mascot platformers** like Jak and Daxter and Ratchet & Clank, drawing largely positive but mixed reviews that praised its level design and feel while noting its short length and lack of innovation. The game was **delisted from Steam in August 2021**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB community reports (appid 452540)"
+url   = "https://www.protondb.com/app/452540"
+
+[[links.guides]]
+title = "Steam Community hub"
+url   = "https://steamcommunity.com/app/452540"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted from Steam (sales closed Aug 2021); single-player UE4 platformer, no servers to worry about.
+
+**Status:** Community reports confirm it runs on Linux/Proton, so it should play on the Deck — status `needs-test` (binary path inferred from the standard UE4 layout, **verify the exact `SkylarAndPlux.exe` name against your install**).
+
+**Controller:** Full controller support is built in.
+
+**ProtonDB:** Tier shown as `silver` but UE4 + no-DRM usually means a smoother run; confirm on hardware."""

@@ -1,0 +1,80 @@
+[game]
+title       = "Driver: San Francisco"
+slug        = "driver-san-francisco"
+aliases     = ["Driver SF", "Driver 5", "Driver San Francisco"]
+type        = "proton"
+engine      = "other"
+steam_appid = "33440"         # delisted Dec 2016 (licensed music); servers closed Oct 2022
+sgdb_id     = ""
+
+[launch]
+binary         = "Driver.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 7.0-6"
+winetricks = []
+notes      = """
+Ubisoft Reflections' 2011 open-world driving game with the 'Shift' body-jumping mechanic, delisted.
+
+**Proton:** On Deck, force a compatibility tool and use `Proton 7` — **NOT** `Experimental`, which boots to a black screen for many users.
+
+**Install:** On first launch, let `Uplay`/`Ubisoft Connect` run its updates; it ends with a cryptic error window — **close the game there**, then relaunch and after a couple of launcher windows the game starts.
+
+**Performance:** Cap TDP to ~6W and it runs flawlessly per ProtonDB.
+
+**Controller:** The PC version has **no native gamepad support** (it's notoriously keyboard-only on PC) — on Deck it only works because Steam Input emulates a controller. Set the Steam Input layout to a standard gamepad: the default community layout maps the e-brake to fully pulling the left trigger, which fights the throttle.
+
+**Story-mode crash:** A `DirectX 9` compatibility issue (not DRM). Proton's `DXVK` (`d3d9` → Vulkan) normally handles it; if it still crashes entering story mode, drop a `dgVoodoo2` `d3d9.dll` next to `Driver.exe`.
+
+**Cosmetic:** Recommended community mods: `Post Process Re-Enabled` (restores the console post-FX missing from the PC port) and the `Uplay & Deluxe Events` mod (restores the Deluxe/Uplay challenges lost when the servers closed).
+"""
+
+[about]
+developer = "Ubisoft Reflections"
+publisher = "Ubisoft"
+released  = "2011"
+genre     = "Arcade racing, action-adventure"
+modes     = "Single-player, multiplayer"
+summary   = "**Driver: San Francisco** is the fifth main entry in the **Driver** series, an open-world arcade driving game set across a recreated San Francisco. Its signature mechanic, **'Shift'**, lets protagonist John Tanner instantly teleport between any vehicle in the city while in a coma-induced dream state. Critically well received for its sense of speed and inventive design, the PC version was delisted in December 2016 due to expiring **licensed-music rights**, and its always-online Ubisoft Connect servers were shut down in October 2022, removing online play and Uplay challenges."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Guide: Fix Launch Issues — Driver San Francisco"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2565037054"
+
+[[links.guides]]
+title = "Steam Deck setup / Uplay update workaround (community discussion)"
+url   = "https://steamcommunity.com/app/33440/discussions/0/3830914078561699797/"
+
+[[links.guides]]
+title = "Fix Uplay issues on Steam Deck/Proton/Linux"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3108805139"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"   # aggregate tier is Silver; recent/trending reports run Platinum once Uplay+Proton 7 are sorted
+caveats       = """
+**Supply your own copy:** Bring your own copy. deckport links nothing and does not describe defeating DRM.
+
+**DRM:** The real blocker: the game required always-online `Ubisoft Connect`, and the official servers closed on 1 Oct 2022 — so online play, Uplay challenges and the Deluxe events are gone unless restored by community mods.
+
+**Proton:** Use `Proton 7` (`Experimental` black-screens for many); first launch needs you to let `Uplay` update, **close at its error window**, then relaunch.
+
+**Controller:** The PC game has **no native gamepad support** — it works on Deck only via Steam Input emulating a controller. Switch the Steam Input layout to a standard gamepad: the default community layout binds the e-brake to a full left-trigger pull, which conflicts with throttle.
+
+**Performance:** Cap TDP to ~6W for smooth performance.
+
+**Display:** If you get a black screen in fullscreen, set `Fullscreen = 0` in `Documents/Ubisoft/Driver San Francisco/graphics.ini` and use a borderless-window tool.
+"""

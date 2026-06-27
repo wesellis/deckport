@@ -1,0 +1,75 @@
+[game]
+title       = "Impact Winter"
+slug        = "impact-winter"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "468000"
+sgdb_id     = ""
+
+[launch]
+binary         = "Impact Winter.exe"   # Unity build; sits beside "Impact Winter_Data" in the install dir
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `468000`), Unity survival title by **Mojo Bones** / **Bandai Namco**.
+
+**Proton:** ProtonDB rates it **gold** and it runs well on Deck; `GE-Proton` is the safe pick (stock `Proton Experimental` also works).
+
+**DRM:** **No GFWL/SecuROM/DRM hoops** — it's a plain Unity `.exe`.
+
+**Install:** Launches via `Impact Winter.exe` next to the `Impact Winter_Data` folder.
+
+**Controller:** Support is native (Xbox/DualShock/Logitech `F310`/`F710` all supported per the v2.0 PC controls update), so **no Steam Input keyboard hack needed** — just leave the Deck on the default gamepad layout.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Mojo Bones"
+publisher = "Bandai Namco Entertainment"
+released  = "2017"
+genre     = "Survival adventure"
+modes     = "Single-player"
+summary   = """
+**Impact Winter** is a **survival adventure** game set thirty days after a devastating asteroid strike has buried the world in snow. You play as **Jacob Solomon**, leader of a small group sheltering in a ruined church, scavenging the frozen wasteland and managing your companions while a **countdown** ticks toward a possible rescue.
+
+Built in **Unity**, it began as a **Kickstarter** project that was later picked up and published by Bandai Namco. It was **delisted from Steam in December 2020** after the publishing agreement between Mojo Bones and Bandai Namco ended."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Impact Winter (appid 468000)"
+url   = "https://www.protondb.com/app/468000"
+
+[[links.guides]]
+title = "Impact Winter — PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Impact_Winter"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Removed from Steam (appid `468000`); ProtonDB **gold**, community reports confirm it runs on Linux/Proton/Deck.
+
+**Online:** Single-player survival game — **no online servers to worry about**.
+
+**Controller:** Native full controller support, so the default Deck gamepad layout is fine.
+
+**Status:** Recipe is config-only and **not yet hand-verified** on a specific Deck (hence `needs-test`).
+
+**Install:** The `Impact Winter.exe` binary name assumes the standard Unity install layout; adjust if your copy differs."""

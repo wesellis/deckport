@@ -1,0 +1,74 @@
+[game]
+title       = "HITMAN 2"
+slug        = "hitman-2"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "863550"
+sgdb_id     = ""
+
+[launch]
+binary         = "Retail/HITMAN2.exe"   # DX11 build; DX12 build is dx12Retail/HITMAN2.exe (launcher is Launcher.exe at the install root)
+launch_options = "-skip_launcher"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** **Denuvo** anti-tamper. Also a delisted Steam game (appid `863550`) — **HITMAN 1 & 2** were folded into **HITMAN: World of Assassination** and pulled from sale, so it is not purchasable new. Denuvo does not block Proton: the single-player campaign runs offline; the known limitation is reaching the IOI online servers. ProtonDB rates it **platinum** overall (best reported), though recent reports trend **gold**, and Deck users confirm it plays well.
+
+**Proton:** **Force a Windows Proton version** (`GE-Proton`, or `Proton 7.0-x` — community reports `7.0-1` specifically) under `Properties > Compatibility`; this also makes Steam pull the Windows build whose input layer sees the Deck gamepad.
+
+**Launcher:** Use the `-skip_launcher` launch option to bypass the IOI launcher and boot straight into the game.
+
+**Binary:** `Retail/HITMAN2.exe` (DX11); `dx12Retail/HITMAN2.exe` is the DX12 build (**DX11 is the more reliable default** under Proton).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "IO Interactive"
+publisher = "Warner Bros. Interactive Entertainment"
+released  = "2018"
+genre     = "Stealth"
+modes     = "Single-player, online co-op (Sniper Assassin) and competitive Ghost Mode"
+summary   = "**HITMAN 2** is a 2018 stealth game by IO Interactive, the seventh entry in the long-running **Hitman series** and the second chapter of the **World of Assassination** trilogy. Built on the studio's **Glacier engine**, it sends Agent 47 through large, intricately simulated **sandbox levels** where players improvise creative assassinations using disguises, the environment, and emergent AI. It was praised for its level design and replayability. The standalone release was later **delisted** and folded into **HITMAN: World of Assassination**, so it is no longer sold as a separate product."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — HITMAN 2 (863550) reports"
+url   = "https://www.protondb.com/app/863550"
+
+[[links.guides]]
+title = "Steam guide — Hitman 2 skip-intro / launcher options"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1561260746"
+
+[[links.guides]]
+title = "Proton issue #1972 — HITMAN 2 Denuvo / offline play"
+url   = "https://github.com/ValveSoftware/Proton/issues/1972"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** **Denuvo** anti-tamper, plus delisted (**HITMAN 1 & 2** merged into **HITMAN: World of Assassination**) — not for sale new. Denuvo does not stop Proton; the offline single-player campaign runs fine.
+
+**Status:** ProtonDB **platinum** (best reported; recent reports trend gold) and Deck users report it running well, but this exact recipe is **not yet hands-on verified**.
+
+**Controller:** Works once a Windows Proton version is forced (the native Linux input path can leave the gamepad option greyed out, so forcing Proton pulls the Windows build that reads the Deck pad correctly).
+
+**Launcher:** If the launcher hangs, the `-skip_launcher` launch option boots the game directly.
+
+**Online:** Online co-op/Ghost Mode servers may be retired; the **single-player campaign** is the target."""

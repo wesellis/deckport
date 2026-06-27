@@ -1,0 +1,66 @@
+name: deploy
+
+# Builds the static site on every push to main (so a merged recipe is proven to
+# build), then deploys to the droplet — but ONLY once you opt in. The deploy job
+# is gated on the repo variable DEPLOY_ENABLED == 'true', so until the droplet
+# exists and secrets are set, this workflow just builds and stops. Nothing to
+# undo, nothing breaks.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "deckport-recipes/recipes/**"
+      - "api/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build site
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: web/dist
+          retention-days: 7
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # Opt-in switch: set repo variable DEPLOY_ENABLED=true once the droplet is up.
+    if: ${{ vars.DEPLOY_ENABLED == 'true' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: web/dist
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+      - name: Rsync site to droplet
+        run: |
+          rsync -az --delete -e "ssh -i ~/.ssh/id_deploy" \
+            web/dist/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_SITE_PATH }}/"
+      - name: Sync API + restart service
+        run: |
+          rsync -az --delete --exclude votes.db --exclude .venv -e "ssh -i ~/.ssh/id_deploy" \
+            api/ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:${{ secrets.DEPLOY_API_PATH }}/"
+          ssh -i ~/.ssh/id_deploy "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" \
+            "${{ secrets.DEPLOY_RESTART_CMD }}"

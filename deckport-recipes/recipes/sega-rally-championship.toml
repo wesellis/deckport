@@ -1,0 +1,66 @@
+[game]
+title       = "Sega Rally Championship"
+slug        = "sega-rally-championship"
+aliases     = ["Sega Rally", "Sega Rally Championship PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SRALLY.EXE"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+Use GE-Proton for best compatibility with this 1997 Windows port of the 1995 Sega Model 2 arcade title. The main executable is SRALLY.EXE.
+
+dgVoodoo2 is required to wrap the game's Direct3D 5 / DirectDraw rendering calls — unzip dgVoodoo2 and copy DDraw.dll, D3DImm.dll, D3D8.dll and D3D9.dll (from the MS\\x86 folder) into the game directory, then configure via dgVoodooCpl.exe. Without dgVoodoo2 the game typically crashes or renders incorrectly under modern Proton.
+
+DRM: retail discs use SafeDisc, which relies on a kernel driver that does not function under Proton/Wine (and is also disabled on modern Windows). Applying the official v2.1 update / community no-disc executable patch is the standard legitimate way to launch without the original disc spinning. Apply any patch to a copy you legally own.
+
+This is the original 1995/1997 PC release and is NOT Sega Rally Revo (Steam App 351920), which is a separate, later game.
+"""
+
+[about]
+developer = "Sega AM3"
+publisher = "Sega"
+released  = "1997"
+genre     = "Arcade Racing"
+modes     = "Single-player, Local 2-player"
+summary   = "Sega Rally Championship is the PC port of Sega's celebrated 1995 Model 2 arcade rally racer. Players race on classic dirt and tarmac stages including Desert, Forest, Mountain, and Lakeside in a Toyota Celica or Lancia Delta. The game is known for its responsive handling model and iconic soundtrack. This is the original mid-1990s PC release, distinct from the 2007 sequel Sega Rally Revo."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Sega Rally Championship"
+url   = "https://www.pcgamingwiki.com/wiki/Sega_Rally_Championship"
+
+[[links.guides]]
+title = "dgVoodoo2 Setup Guide"
+url   = "http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2.html"
+
+[[links.guides]]
+title = "VOGONS — Sega Rally Championship (running on modern Windows)"
+url   = "https://www.vogons.org/viewtopic.php?t=60524"
+
+[[links.guides]]
+title = "VOGONS — Sega Rally Championship unofficial Direct3D patch & mod"
+url   = "https://www.vogons.org/viewtopic.php?p=1351360"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = "You must supply your own legally obtained copy of the game — it is not available on Steam or any current storefront. Launch SRALLY.EXE. dgVoodoo2 is required for the game's Direct3D 5 / DirectDraw rendering; place its DLLs (DDraw.dll, D3DImm.dll, D3D8.dll, D3D9.dll) in the game directory before launching. Retail discs use SafeDisc, whose driver does not work under Proton/Wine, so the official v2.1 update or a community no-disc patch is needed to launch without the original disc spinning. The game natively supports legacy gamepads (e.g. Microsoft SideWinder) and steering wheels, but modern controllers are not recognised directly; use Steam Input to map a virtual pad. This is the original 1995/1997 Sega Rally Championship, NOT Sega Rally Revo (Steam App 351920)."

@@ -1,0 +1,73 @@
+[game]
+title       = "The Legend of Zelda: Link's Awakening DX HD"
+slug        = "zelda-links-awakening-dx-hd"
+aliases     = ["Link's Awakening DX HD", "LADXHD", "Zelda LA DX HD"]
+type        = "native"        # the project's patcher produces a native Linux x86-64 build
+engine      = "other"         # MonoGame (XNA successor)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Link's Awakening DX HD"   # native Linux build; the launcher binary must stay in the same directory
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**MonoGame / `.NET 8` fan port.** Two ways to run it on Deck:
+
+**1) Proton + .NET (the community-tested path).** This is the route that Steam Deck reports actually describe as working. Add the **Windows DirectX build** as a non-Steam game, force a compatibility tool (**Proton Experimental**, `Proton 8`, or a recent **GE-Proton** all reported working), then install the **.NET Desktop Runtime** into the prefix with `protontricks` BEFORE first launch — the game shows a "needs .NET files to run" dialog otherwise. For a fully native binary set `type='proton'`. (`.NET Desktop 6` vs newer matters depending on build version; match it to whatever .NET the build targets.)
+
+**2) Native Linux build (newer, less widely confirmed on Deck).** BigheadSMZ's Patcher can output a native Linux `x86-64` (OpenGL) binary that runs without Proton — `chmod +x` it, keep it in its own folder, add as a non-Steam game. This avoids the .NET prefix step, but the widely-shared "runs flawlessly" Deck reports below were on the Proton path, not this one.
+
+**Controller:** Reports indicate the gamepad is read without a manual **Steam Input** remap once the game launches. If buttons don't respond, apply a Gamepad layout in Steam Input.
+
+**Display:** Users report it running on Deck at **90Hz** and **16:10**.
+
+**Caveat:** Do NOT run the game fullscreen in Desktop Mode — there's no in-game way to quit and you can get stuck."""
+
+[about]
+developer = "linksawakeningdxhd (anonymous fan developer); updated/ported builds by BigheadSMZ"
+publisher  = "Fan project (no commercial publisher)"
+released   = "2023"
+genre      = "Action-adventure"
+modes      = "Single-player"
+summary    = "A fan-made, from-scratch HD remake of **The Legend of Zelda: Link's Awakening DX**, the 1998 Game Boy Color title from Nintendo. Built in **MonoGame** (a .NET/XNA-successor framework), it rebuilds the original top-down action-adventure with high-resolution art, widescreen **16:10** support, high refresh rates, and **seamless screen transitions** in place of the GBC's room-by-room scrolling. The project drew wide attention before Nintendo issued a **DMCA takedown** in December 2023, after which its source code circulated and community forks added Linux and other platform builds."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "BigheadSMZ Patcher + Linux build instructions (GitHub)"
+url   = "https://github.com/BigheadSMZ/Zelda-LA-DX-HD-Updated/blob/main/LINUX.md"
+
+[[links.guides]]
+title = "Time Extension: How To Play Link's Awakening DX HD On Steam Deck"
+url   = "https://www.timeextension.com/guides/how-to-play-zelda-links-awakening-dx-hd-on-steam-deck"
+
+[[links.guides]]
+title = "itch.io community: Steam Deck thread (Proton + .NET, 90Hz/16:10)"
+url   = "https://itch.io/t/3358326/steam-deck"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Nintendo issued a **DMCA takedown** of this port (Dec 2023), so official itch.io downloads were removed and availability is unstable; **obtain it only from a source you judge legitimate**. The source code remained available, and BigheadSMZ's Patcher project rebuilds/ports the game from a base copy.
+
+**What it is:** A free, from-scratch fan PORT of Link's Awakening built in **MonoGame**. Steam Deck reports describe it running well with the gamepad working without a manual remap, at **90Hz** and **16:10** — but those reports are on the **Proton + .NET (Protontricks)** path, NOT the newer native Linux binary. Treat the native build as "should work, less confirmed."
+
+**Type:** `type` is set `'native'` because BigheadSMZ's Patcher can emit a native Linux binary. If you instead run the Windows DirectX build (the more widely tested route on Deck), switch `type` to `'proton'`, force **Proton Experimental** / `Proton 8` / recent **GE-Proton**, and install the **.NET Desktop Runtime** into the prefix via `protontricks` first.
+
+**Don't fullscreen in Desktop Mode:** there is no in-game quit, so a fullscreen Desktop-Mode session can trap you.
+
+**ProtonDB:** `protondb_tier` left blank — this is a non-Steam fan port with no Steam appid, so it has no ProtonDB listing.
+
+**Note:** deckport describes configuration only and links nothing it does not have a right to."""

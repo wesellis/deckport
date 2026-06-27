@@ -1,0 +1,79 @@
+[game]
+title       = "Star Wars: The Clone Wars - Republic Heroes"
+slug        = "star-wars-the-clone-wars-republic-heroes"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "32420"
+sgdb_id     = ""
+
+[launch]
+binary         = "Republic Heroes.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["xact"]
+notes      = """
+**DRM:** Delisted from Steam 2025-01-31 (appid `32420`) because it depends on the deprecated Games for Windows - LIVE (GFWL) client. The real launcher is `Republic Heroes.exe`.
+
+**GFWL Fix:** On Deck, GFWL sign-in does **NOT** work and **will block startup** — the game errors that `xlive.dll` is missing. Use the community no-GFWL bypass: drop a stub `xlive.dll` into the game folder (per PCGamingWiki, or place a renamed Ultimate-ASI-Loader DLL as `xlive.dll`) so the title launches straight to gameplay while keeping local saves. If the install itself fails on the GFWL marketplace step, removing the `GFWL-Marketplace` key from `installscript.vdf` lets the install complete (see the Proton issue).
+
+**Proton:** `GE-Proton` handles this most reliably; `proton_experimental` also works for many.
+
+**Audio:** Add `xact` via winetricks if audio/voices are missing.
+
+**ProtonDB:** Tier is silver — runs after the GFWL workaround, but expect some menu/cutscene quirks.
+
+**Controller:** Native gamepad support is present, so the Deck controller works once in-game."""
+
+[about]
+developer = "Krome Studios"
+publisher = "LucasArts"
+released  = "2009"
+genre     = "Action-adventure platformer / third-person shooter"
+modes     = "Single-player, two-player co-op (drop-in/drop-out, online or offline)"
+summary   = """
+**Star Wars: The Clone Wars - Republic Heroes** is a 2009 **action game** set during the **Clone Wars** animated series, spanning 40 missions split between **platforming** sections led by Jedi and **third-person shooting** led by clone troopers. Playing solo lets you swap between the paired characters while the AI handles the other; two players can also play together in **drop-in/drop-out co-op**.
+
+It was widely panned at release for dull combat, story and camera problems (IGN 4.8, GameSpot 3.5), though the co-op was generally considered the high point. The PC version relies on the deprecated **Games for Windows - LIVE** service, which led to its delisting from Steam."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: STAR WARS: The Clone Wars - Republic Heroes (appid 32420)"
+url   = "https://www.protondb.com/app/32420"
+
+[[links.guides]]
+title = "ValveSoftware/Proton issue #7991 — xlive.dll + GFWL install fix"
+url   = "https://github.com/ValveSoftware/Proton/issues/7991"
+
+[[links.guides]]
+title = "PCGamingWiki: Star Wars: The Clone Wars - Republic Heroes"
+url   = "https://www.pcgamingwiki.com/wiki/Star_Wars:_The_Clone_Wars_-_Republic_Heroes"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam 2025-01-31; the leftover reseller key listings are not the live Steam store. Single-player game, so no dead-server concern.
+
+**Hard blocker:** On Deck, Games for Windows - LIVE means you **MUST** apply the `xlive.dll` no-GFWL bypass (PCGamingWiki) or the game won't start. Binary is `Republic Heroes.exe`.
+
+**Controller:** Supported natively, so no Steam Input layout is required.
+
+**ProtonDB:** Silver — playable but not flawless (occasional cutscene/menu glitches; install the `xact` winetricks verb if audio drops).
+
+**Needs-test:** ProtonDB confirms it runs, but this exact recipe hasn't been verified on a physical Deck."""

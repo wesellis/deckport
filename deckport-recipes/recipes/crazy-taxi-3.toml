@@ -1,0 +1,67 @@
+[game]
+title       = "Crazy Taxi 3: High Roller"
+slug        = "crazy-taxi-3"
+aliases     = ["Crazy Taxi 3", "High Roller"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "CT3.exe"   # confirmed: the launcher/game exe is CT3.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2004 Hitmaker / Sega PC port of the arcade game. The real executable is `CT3.exe` (`CT3Config.exe` is the controller/display config tool).
+
+**Install:** Out of print (only the original Crazy Taxi was ever on Steam, app 71230, and it is now delisted too) — **bring your own copy**.
+
+**DRM:** The retail disc uses `SafeDisc` DRM, which does **NOT** work on modern Windows or under Proton, so **a no-CD/no-DVD executable is required for it to launch at all**.
+
+**Proton:** Use `GE-Proton` (`proton_experimental` also works). Set the prefix Windows version to `Vista` (`winecfg`) if you hit launch issues.
+
+**Fix:** Install the community `ct3tweaks` (by stashymane) for custom resolution, a higher frame-rate cap (up to 60 FPS) and adjustable FOV — i.e. widescreen + smoother gameplay. (ct3tweaks is graphics/resolution only; it does **not** itself swap music or fix the controller — soundtrack and music modding are still on its roadmap.)
+
+**Display:** On Deck it runs well at `1280x800`; community reports note the higher 60fps cap can run the sim at half-speed on some setups, so `1280x720` @ 30fps is a safer fallback.
+
+**Controller (the trigger-crash fix):** An Xbox-style pad crashes `CT3Config.exe` because of the analog triggers. Apply the community `XInput Plus` fix targeting `CT3.exe`, then **run `CT3Config.exe` to set the controller FIRST, then apply `ct3tweaks`**. If the pad still isn't detected, in `XInput Plus` select `CT3.exe` as the target, go to `DirectInput > Advanced`, click `Detect` and press a button. Multiple users confirm it running on Steam Deck.
+"""
+
+[about]
+developer = "Hitmaker"
+publisher = "Sega"
+released  = "2004"
+genre     = "Racing / arcade driving"
+modes     = "Single-player"
+summary   = """
+**Crazy Taxi 3: High Roller** is the third entry in Sega's **Crazy Taxi** series, developed by **Hitmaker**. It first appeared on Xbox and in arcades in 2002 before reaching Microsoft Windows in 2004. Players drive a cab around **open-world cities**, picking up fares and racing the clock for the biggest tips, with the returning West Coast and Small Apple maps joined by a new Las Vegas-inspired city, **Glitter Oasis**.
+
+The PC version received mixed reviews (roughly 69 on Metacritic), praised for its arcade fun but criticized for performance issues, and the game was **never re-released digitally**.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Out of print (Crazy Taxi 3 was never re-released and was never sold on Steam) — configuration only, no links.
+
+**DRM:** Retail `SafeDisc` does not run on modern Windows/Proton, so **a no-CD executable is required to launch**. Exe is `CT3.exe`.
+
+**Fix:** Install `ct3tweaks` for custom resolution / higher frame-rate cap / FOV (widescreen + smoother). It is graphics-only — it does not restore the soundtrack or fix the controller.
+
+**Controller:** The analog triggers crash `CT3Config.exe` on an Xbox-style pad; apply the community `XInput Plus` fix targeting `CT3.exe`, run `CT3Config.exe` first, then `ct3tweaks`. If 60fps runs the sim at half-speed, drop to `1280x720` @ 30fps.
+
+**Display:** Set prefix to `Vista` if launch fails.
+"""

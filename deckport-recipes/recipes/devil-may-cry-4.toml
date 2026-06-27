@@ -1,0 +1,82 @@
+[game]
+title       = "Devil May Cry 4"
+slug        = "devil-may-cry-4"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "45700"
+sgdb_id     = ""
+
+[launch]
+binary         = "DevilMayCry4_DX9.exe"   # confirmed exe; the title also ships DevilMayCry4_DX10.exe and a front-end DMC4Launcher.exe — the DX9 build is the most Proton-friendly
+launch_options = ""   # no launch option is required; if intro/tutorial videos are black or audio is missing, simply switch the Proton version to GE-Proton (see notes). Keep %command% if you add overrides.
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Original Devil May Cry 4 (Steam appid `45700`), delisted from Steam on 2024-01-31. ProtonDB tier **gold** (18 reports, moderate confidence; best individual reports reach platinum) — community reports playing through start to finish on Proton/Deck.
+
+**Executables:** The title ships a front-end launcher (`DMC4Launcher.exe`) plus two game builds, `DevilMayCry4_DX9.exe` and `DevilMayCry4_DX10.exe`. **Point the prefix at the DX9 build (`DevilMayCry4_DX9.exe`)** — it is the most Proton-friendly; the DX10 build is less stable.
+
+**Proton / known fix:** Use a recent **GE-Proton** build. The most common issue is that the engine's bundled FMV cutscenes (intro / tutorial videos) play black or with no audio under stock Valve Proton; switching to GE-Proton (which ships the extra media codecs) restores them. `proton_experimental` also works for most users.
+
+**DRM:** This is a **'Games for Windows'** branded title, but the Steam release has **no Games for Windows Live (GFWL) integration** — there is no GFWL sign-in or activation step to bypass. (The original 2008 retail disc used SecuROM; that does not apply to the Steam copy.)
+
+**Display:** First launch opens a config/benchmark front-end; pick `1280x800` (16:10) or `1920x1080`, Fullscreen, then start the game.
+
+**Controller:** Native Xbox-style gamepad support, so the default Steam Input gamepad layout works out of the box.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Capcom"
+publisher = "Capcom"
+released  = "2008"
+genre     = "Action hack-and-slash"
+modes     = "Single-player"
+summary   = "**Devil May Cry 4** is the fourth main entry in Capcom's stylish **action** series, built on the studio's **MT Framework** engine and originally released for PC in 2008 under the Games for Windows brand. It introduces newcomer **Nero** alongside series icon **Dante**, mixing fast combo-driven sword-and-gun combat with a flashy **style-rating system**. The original release (Steam appid 45700) was **delisted** from Steam on 2024-01-31, superseded by the still-sold **Special Edition** (appid 329050). It is well regarded for its tight combat despite criticism of backtracking and reused level layouts."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Devil May Cry 4 (45700) reports & fixes"
+url   = "https://www.protondb.com/app/45700"
+
+[[links.guides]]
+title = "ValveSoftware/Proton issue #1227 — Devil May Cry 4 compatibility"
+url   = "https://github.com/ValveSoftware/Proton/issues/1227"
+
+[[links.guides]]
+title = "Steam store page — Devil May Cry 4 (delisted, appid 45700)"
+url   = "https://store.steampowered.com/app/45700/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisting:** Original DMC4 was delisted from Steam on 2024-01-31, so it is no longer purchasable there (existing owners keep it in their library). This recipe is for the **original** (appid `45700`), not the still-sold Special Edition (appid `329050`).
+
+**Status:** ProtonDB **gold** (18 reports, best reaching platinum); community reports full playthroughs on Proton/Deck, but this specific recipe is **not yet Deck-verified**.
+
+**Cutscenes:** The most common problem is black/silent intro and tutorial FMV videos on stock Valve Proton — fix by switching the title to **GE-Proton**, which bundles the needed media codecs.
+
+**Executable:** Point the prefix at `DevilMayCry4_DX9.exe` (the launcher is `DMC4Launcher.exe`); the DX10 build (`DevilMayCry4_DX10.exe`) can be flaky under Proton.
+
+**DRM:** No Games for Windows Live — 'Games for Windows' here is branding only, so there is no GFWL sign-in to bypass on the Steam copy.
+
+**Controller:** Native controller support; the default Steam Input gamepad layout works.
+
+**Modes:** Single-player only, so no server concerns."""

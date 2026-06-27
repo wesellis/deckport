@@ -1,0 +1,74 @@
+[game]
+title       = "Halo: Combat Evolved"
+slug        = "halo-combat-evolved"
+aliases     = ["Halo CE", "Halo Combat Evolved", "halo"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""              # the 2003 standalone PC release; on Steam only via MCC now
+sgdb_id     = ""
+
+[launch]
+binary         = "halo.exe"   # retail PC build (Halo Custom Edition would be haloce.exe)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Release:** 2003 standalone retail PC release (never on Steam itself; only the Master Chief Collection is sold there).
+
+**Proton:** Runs well under Proton — `GE-Proton` recommended by the Linux/Deck community; Proton's bundled `DXVK` gives the best framerate, **no manual `d3d9` winetrick needed**.
+
+**Patch:** **Apply the official `v1.10` patch first** — it's required for modern hardware and replaces the dead GameSpy master server, and it's the build Chimera targets.
+
+**Chimera:** Add **Chimera** (SnowyMouse, https://github.com/SnowyMouse/chimera) — it's "the update to Halo PC that never was": 60+ port fixes, FOV/descope fixes, object interpolation past 30 FPS, widescreen, and full **gamepad support with aim assist**. Copy `strings.dll`, `chimera.ini`, and the `fonts` folder into the **main game directory** (the folder containing `halo.exe`, **NOT** a subfolder); back up the original `strings.dll` first.
+
+**Install:** deckport only configures the prefix.
+"""
+
+[about]
+developer = "Bungie (original); Gearbox Software (Windows port)"
+publisher = "Microsoft Game Studios"
+released  = "2003 (standalone Windows PC release; original Xbox game 2001)"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Halo: Combat Evolved** is the first entry in the **Halo** series and the launch title that defined the original Xbox, built by **Bungie** on the **Halo engine** and widely credited with popularizing **console FPS** design. **Gearbox Software** produced the standalone Windows port in 2003, which added **LAN/online multiplayer** and higher-resolution graphics. It is critically acclaimed as one of the most influential shooters ever made. The standalone PC version was effectively superseded by the **Master Chief Collection** rerelease, and its original **GameSpy**-based multiplayer servers are long defunct."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Chimera — modern fix/QoL mod for Halo PC (install guide)"
+url   = "https://snowymouse-chimera.mintlify.app/"
+
+[[links.guides]]
+title = "Chimera releases (SnowyMouse, GitHub)"
+url   = "https://github.com/SnowyMouse/chimera/releases"
+
+[[links.guides]]
+title = "Halo: Combat Evolved — PCGamingWiki (patches, fixes, widescreen)"
+url   = "https://www.pcgamingwiki.com/wiki/Halo:_Combat_Evolved"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Compatibility:** Community confirms the retail PC build runs on Linux/Deck under Proton (`GE-Proton` + `DXVK`).
+
+**Patch order:** **Install `v1.10` BEFORE Chimera** or you'll hit a version/patch-mismatch error on launch (Chimera targets Retail `v1.10`).
+
+**Controller:** Vanilla retail has **no gamepad support** — get controller input EITHER from the **Chimera** mod (copy its files into the **main game folder** next to `halo.exe`, not a subfolder; it is not a winetrick) OR from a Steam Input keyboard/mouse layout.
+
+**ProtonDB:** No tier exists because this is the standalone release, not a Steam app (`appid 976730` is the unrelated Master Chief Collection).
+
+**Scope:** Recipe describes setup only.
+"""

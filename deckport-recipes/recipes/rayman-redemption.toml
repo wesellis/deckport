@@ -1,0 +1,72 @@
+[game]
+title       = "Rayman Redemption"
+slug        = "rayman-redemption"
+aliases     = ["Rayman Redemption fan game", "RaymanRedemption"]
+type        = "proton"        # Windows-only Game Maker Studio 2 binary — run under Proton
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "RaymanRedemption.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 9.0"
+winetricks = []
+notes      = """
+**Install:** Free standalone fan game — download from **GameJolt**. **No original Rayman game required.**
+
+**Proton:** Default Steam Proton works well; `Proton 9.0` or latest recommended.
+
+**Status:** Confirmed working on **Steam Deck** by multiple community reports.
+
+**Alternative:** A **Lutris** install script also exists as an alternative.
+"""
+
+[about]
+developer = "Ryemanni (GameJolt/itch.io)"
+publisher = "Independently released (free fan game)"
+released  = "2020 (initial release); post-launch updates, now a finished/complete project"
+genre     = "Platformer (Rayman fan game)"
+modes     = "Single-player"
+summary   = """
+**Rayman Redemption** is a full fan reimagination of the original **Rayman 1** by Ryemanni, built in **Game Maker Studio 2**. It expands the base game with **new worlds**, minigames, quality-of-life improvements, and additional content while staying faithful to the spirit of the original. The game is free and completely standalone — no original Rayman game is required.
+
+Released in 2020 and updated post-launch into a finished, complete project (the developer has stated it is done). Runs under **Proton** on Steam Deck and is reported playable by the Linux community. This is a **fan project** with no affiliation with Ubisoft.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Rayman Redemption (official free download) - GameJolt"
+url   = "https://gamejolt.com/games/raymanredemption/340532"
+
+[[links.guides]]
+title = "Rayman Redemption - Lutris install script (Linux/Wine)"
+url   = "https://lutris.net/games/rayman-redemption/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free standalone download from **GameJolt**; completely standalone fan game, no original Rayman game needed.
+
+**Proton:** Windows-only binary (Game Maker Studio 2) — run under Proton (`Proton 9.0` or latest works well; default Steam Proton also confirmed).
+
+**Fan project:** No Ubisoft affiliation.
+
+**Alternative:** A **Lutris** install script exists as an alternative setup path.
+
+**Art:** deckport links nothing.
+"""

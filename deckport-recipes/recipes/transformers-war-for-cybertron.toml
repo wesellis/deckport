@@ -1,0 +1,73 @@
+[game]
+title       = "Transformers: War for Cybertron"
+slug        = "transformers-war-for-cybertron"
+aliases     = ["War for Cybertron", "Transformers WfC", "TWFC"]
+type        = "proton"
+engine      = "other"         # Unreal Engine 3
+steam_appid = "42650"
+sgdb_id     = ""
+
+[launch]
+binary         = "TWFC.exe"   # in Binaries/ subfolder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2010 High Moon Studios / Activision third-person shooter (UE3).
+
+**DRM:** Delisted Dec 2017 when Activision's Hasbro license lapsed — **bring your own copy**.
+
+**Install:** Real executable is `Binaries/TWFC.exe`. Bundled PhysX redist (in the game's `redist/` folder) **must be present for the game to launch**; `Proton` normally installs it on first run.
+
+**Proton:** Runs well on Deck under `GE-Proton`.
+
+**GFWL:** Uses Games for Windows Live (GFWL) — single-player works without signing in; GFWL overlay/save can prompt, just cancel/skip it.
+
+**Display:** If gaming-mode cutscenes/fullscreen flicker, run the game in windowed mode (`alt+enter` toggles fullscreen; `alt-tab` out and back to clear a stuck cutscene)."""
+
+[[links.guides]]
+title = "Linux/Steam Deck Multiplayer and QOL Guide (WfC)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3135174317"
+
+[[links.guides]]
+title = "Proton whitelist report (App 42650)"
+url   = "https://github.com/ValveSoftware/Proton/issues/683"
+
+[[links.guides]]
+title = "PCGamingWiki — Transformers: War for Cybertron"
+url   = "https://www.pcgamingwiki.com/wiki/Transformers:_War_for_Cybertron"
+
+[about]
+developer = "High Moon Studios"
+publisher = "Activision"
+released  = "2010"
+genre     = "Third-person shooter"
+modes     = "Single-player, online multiplayer (co-op campaign and competitive; official servers shut down 2020)"
+summary   = "**Transformers: War for Cybertron** is a 2010 third-person shooter built on **Unreal Engine 3**, telling an original story of the Autobot/Decepticon civil war on the Transformers' home planet of Cybertron before their arrival on Earth. Developed by High Moon Studios and published by Activision, it was well received for its faithful take on the **Generation 1** fiction and its mix of campaign and **class-based multiplayer**. It was delisted at the end of 2017 after **Activision's Hasbro license lapsed**, and its online multiplayer servers were shut down in 2020, leaving the single-player campaign as the main draw."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted (lapsed Hasbro license) — configuration only, no links.
+
+**Controller:** Native controller input works on Deck out of the box (console-origin third-person shooter), but the game shows **keyboard button prompts** by default; an optional community gamepad-UI mod (GameBanana / Nexus) adds proper controller glyphs.
+
+**GFWL:** Present but campaign plays fine without an account.
+
+**Multiplayer:** Official multiplayer master server was shut down April 2020 (a community server-restore setup exists, Steam copy required); the single-player campaign is the draw.
+
+**ProtonDB:** Tier is *gold* but on a small/low-confidence sample (~6 reports, best-reported platinum, trending gold) — treat as promising-but-unconfirmed until tested.
+
+**Display:** Use windowed mode in gaming mode to avoid fullscreen/cutscene flicker."""

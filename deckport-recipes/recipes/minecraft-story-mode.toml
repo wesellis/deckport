@@ -1,0 +1,73 @@
+[game]
+title       = "Minecraft: Story Mode"
+slug        = "minecraft-story-mode"
+aliases     = ["Minecraft Story Mode", "MCSM"]
+type        = "proton"
+engine      = "other"         # Telltale Tool
+steam_appid = "376870"
+sgdb_id     = ""
+
+[launch]
+binary         = "MinecraftStoryMode.exe"   # confirmed: install dir "Minecraft Story Mode - A Telltale Game Series"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2015 Telltale Games episodic adventure (Telltale Tool engine). Delisted in 2019 after Telltale's closure pulled the licensed content.
+
+**DRM:** The Steam build is DRM-free (no `GFWL`/`SecuROM`), so it runs cleanly under `Proton`.
+
+**Proton:** ProtonDB Gold; the original game was marked **Steam Deck Verified** by Valve. Runs well on default `GE-Proton`/`proton_experimental` with **no special launch options or winetricks needed**.
+
+**Controller:** Native Xbox-style gamepad support, but it is finicky — the controller **MUST be active/plugged in before the game launches**, or it falls back to keyboard+mouse. On Deck the built-in controller registers as a gamepad; if button prompts/input are wrong, apply a Steam Input gamepad (or a community Telltale) layout.
+
+**Install:** Normal Steam install, then copy the `Minecraft Story Mode - A Telltale Game Series` folder to the Deck (game is delisted, so you must own/have it before it left the store).
+"""
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2015"
+genre     = "Episodic point-and-click graphic adventure"
+modes     = "Single-player"
+summary   = """
+**Minecraft: Story Mode** is an episodic narrative adventure developed and published by **Telltale Games** under license from Mojang, set in the world of Minecraft and built on the **Telltale Tool** engine. Released across five main episodes from October 2015 through March 2016, with three additional DLC episodes, it follows a customizable hero named Jesse and a band of friends in a comedy-drama where **player choices shape the branching story**.
+
+A second season of five episodes followed in 2017. Both seasons were pulled from digital storefronts in 2019 after the **closure of Telltale Games** ended the licensing arrangement, leaving the game unavailable for purchase.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted (Telltale closure / licensing) — configuration only, no links.
+
+**DRM:** DRM-free Steam build, runs under `Proton`; ProtonDB rates it Playable on Deck.
+
+**Controller:** Supported but **must be connected/active BEFORE launch** or it reverts to keyboard+mouse; if input/prompts are off, use a Steam Input gamepad layout.
+
+**Install:** Steam appid `376870`. Launcher exe is `MinecraftStoryMode.exe` in `steamapps/common/Minecraft Story Mode - A Telltale Game Series/`.
+"""
+
+[[links.guides]]
+title = "ProtonDB — Minecraft: Story Mode (app 376870)"
+url   = "https://www.protondb.com/app/376870"
+
+[[links.guides]]
+title = "PCGamingWiki — Minecraft: Story Mode"
+url   = "https://www.pcgamingwiki.com/wiki/Minecraft:_Story_Mode_-_A_Telltale_Games_Series"
+
+[[links.guides]]
+title = "Steam Controller DB — Minecraft: Story Mode gamepad bindings"
+url   = "https://www.steamcontrollerdb.com/config/minecraft-story-mode-a-telltale-games-series/ttg-minecraft-bindings/3629/"

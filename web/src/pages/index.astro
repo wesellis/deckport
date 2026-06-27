@@ -1,0 +1,569 @@
+---
+import Base from "../layouts/Base.astro";
+import RecipeCard from "../components/RecipeCard.astro";
+import GridCascade from "../components/GridCascade.astro";
+import StatusBadge from "../components/StatusBadge.astro";
+import ProtonBadge from "../components/ProtonBadge.astro";
+import { getAllRecipes, statusCounts, normalizeTier } from "../lib/recipes";
+
+const recipes = getAllRecipes();
+const counts = statusCounts();
+
+const TIER_RANK: Record<string, number> = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
+const atLeast = (min: string) =>
+  recipes.filter((r) => {
+    const k = normalizeTier(r.protondbTier);
+    return k !== null && TIER_RANK[k] >= TIER_RANK[min];
+  }).length;
+const goldPlus = atLeast("gold");
+const nativeN = recipes.filter((r) => r.type === "native").length;
+const protonN = recipes.filter((r) => r.type === "proton").length;
+
+// Feature recognizable headliners first (when present), then fill with the
+// strongest remaining by ProtonDB tier — so the row reads as games people know.
+const HEADLINERS = [
+  "crysis", "crysis-3", "spec-ops-the-line", "devil-may-cry-4", "jet-set-radio",
+  "riddick-assault-on-dark-athena", "the-last-remnant", "grid-autosport",
+  "dirt-rally", "need-for-speed-shift", "lost-planet-2", "deadpool",
+  "blur", "burnout-paradise", "dark-souls-prepare-to-die-edition",
+];
+const score = (r: (typeof recipes)[number]) =>
+  (r.status === "working" ? 1000 : 0) + (TIER_RANK[normalizeTier(r.protondbTier) ?? ""] ?? 0);
+const bySlug = new Map(recipes.map((r) => [r.slug, r]));
+const picked = HEADLINERS.map((s) => bySlug.get(s)).filter(Boolean) as typeof recipes;
+const pickedSet = new Set(picked.map((r) => r.slug));
+const fill = recipes
+  .slice()
+  .filter((r) => !pickedSet.has(r.slug))
+  .sort((a, b) => score(b) - score(a) || a.title.localeCompare(b.title));
+const featured = [...picked, ...fill].slice(0, 8);
+
+// Tier distribution for the little stacked bar (colours match PROTON_TIERS).
+const tierCount = (t: string) => recipes.filter((r) => normalizeTier(r.protondbTier) === t).length;
+const tierBar = [
+  { label: "Platinum", n: tierCount("platinum"), color: "#b8c6db" },
+  { label: "Gold", n: tierCount("gold"), color: "#cfb53b" },
+  { label: "Silver", n: tierCount("silver"), color: "#aab2bd" },
+  { label: "Bronze", n: tierCount("bronze"), color: "#cd7f32" },
+  {
+    label: "Unknown",
+    n: recipes.filter((r) => {
+      const k = normalizeTier(r.protondbTier);
+      return k === null || k === "pending";
+    }).length,
+    color: "#cf7fe0",
+  },
+].filter((t) => t.n > 0);
+
+const statusLegend: { s: "working" | "needs-test" | "unverified" | "borked"; v: string; d: string }[] = [
+  { s: "working", v: "", d: "ran on a real Deck — the SteamOS build is recorded" },
+  { s: "needs-test", v: "", d: "structure checked, but not launched here yet" },
+  { s: "unverified", v: "", d: "auto-generated or guessed; never run" },
+  { s: "borked", v: "", d: "confirmed it does NOT run, with notes on why" },
+];
+const tierLegend = ["platinum", "gold", "silver", "bronze"];
+---
+
+<Base title="deckport — delisted, abandoned & modded PC games on your Steam Deck">
+  <section class="hero hero--cascade">
+    <GridCascade />
+    <div class="wrap">
+      <p class="eyebrow">delisted & abandoned PC games · full-game mods · fan ports</p>
+      <h1>
+        Full-game mods, delisted classics, and abandoned PC games —<br />
+        installed on your <span class="amber">Steam Deck</span>.
+      </h1>
+      <p class="lead">
+        deckport is a recipe book for the games you can't just buy and install
+        anymore. Each recipe is the tested know-how to get one running on the Deck —
+        the right Proton or native setup, the binary, the launch tweaks, and real
+        artwork — so it lands in Game Mode looking like it belongs. It tells you how
+        to set a game up; <strong>never where to download it.</strong>
+      </p>
+      <form class="hero-search" action="/recipes" method="get" role="search">
+        <input
+          type="search"
+          name="q"
+          placeholder={`Search ${recipes.length} games — Crysis, GRID, Riddick…`}
+          aria-label="Search recipes"
+        />
+        <button class="btn primary" type="submit">Search</button>
+      </form>
+      <div class="btn-row" style="margin-top:.85rem;">
+        <a class="btn" href="/recipes">Browse all {recipes.length} →</a>
+        <a class="btn" href="/proton-packs">Install Proton first</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card"><b>{recipes.length}</b><span>recipes</span></div>
+        <div class="stat-card"><b>{goldPlus}</b><span>rated Gold+ on ProtonDB</span></div>
+        <div class="stat-card"><b>{protonN}<span class="sc-sep">/</span>{nativeN}</b><span>Proton / native</span></div>
+        <div class="stat-card"><b>100%</b><span>config-only — no sources</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="feat-head">
+        <div>
+          <p class="eyebrow">the recipe book</p>
+          <h2 style="margin:0;">Games worth the extra coaxing</h2>
+        </div>
+        <a href="/recipes">See all {recipes.length} recipes →</a>
+      </div>
+      <p class="muted" style="max-width:640px;">
+        A taste of what's inside — sorted to the strongest first. Each card shows
+        deckport's own <strong>honest status</strong> and the community
+        <strong>ProtonDB tier</strong>, two signals that never pretend to be each
+        other.
+      </p>
+      {
+        featured.length > 0 ? (
+          <div class="grid cols-2" style="margin-top:1rem;">
+            {featured.map((r) => (
+              <RecipeCard recipe={r} />
+            ))}
+          </div>
+        ) : (
+          <p class="empty">No recipes yet — be the first to contribute one.</p>
+        )
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">how you use a recipe</p>
+      <h2>From "I miss this game" to playing it</h2>
+      <p class="muted" style="max-width:680px;">
+        The recipe does the research; you do the clicking. Four steps, no terminal
+        required.
+      </p>
+      <ol class="journey">
+        <li class="jstep">
+          <span class="jnum">1</span>
+          <span class="jicon" aria-hidden="true">🔎</span>
+          <h3>Find your game</h3>
+          <p>Search the book for a delisted, abandoned or modded title.</p>
+          <a href="/recipes">Browse recipes →</a>
+        </li>
+        <li class="jstep">
+          <span class="jnum">2</span>
+          <span class="jicon" aria-hidden="true">📦</span>
+          <h3>Install the Proton pack</h3>
+          <p>The recipe names the build — GE-Proton, Experimental, CachyOS. Add it once.</p>
+          <a href="/proton-packs">Proton setup →</a>
+        </li>
+        <li class="jstep">
+          <span class="jnum">3</span>
+          <span class="jicon" aria-hidden="true">⚙️</span>
+          <h3>Configure &amp; launch</h3>
+          <p>Point Steam at the binary, paste the launch options, apply the tweaks.</p>
+        </li>
+        <li class="jstep">
+          <span class="jnum">4</span>
+          <span class="jicon" aria-hidden="true">🎮</span>
+          <h3>Play in Game Mode</h3>
+          <p>Real box art, controller-ready — it lands looking like it belongs.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <p class="eyebrow">scope</p>
+      <h2>Knows exactly what it is</h2>
+      <div class="scope">
+        <div class="panel yes">
+          <h3>What it helps you run</h3>
+          <p class="muted" style="margin:0 0 .75rem;">
+            The games you can't just click "buy" on anymore — set up properly for
+            the Deck, in Proton or natively, with the right launch tweaks and real
+            artwork in Game Mode.
+          </p>
+          <ul class="feature-list">
+            <li>delisted &amp; abandoned PC games</li>
+            <li>full-game mods &amp; HD remasters</li>
+            <li>fan ports &amp; recompilations</li>
+            <li>native indies (godot / löve / elf)</li>
+          </ul>
+        </div>
+        <div class="panel no">
+          <h3>Configuration, never sources</h3>
+          <p class="muted" style="margin:0 0 .75rem;">
+            A recipe describes how to make a game you already own run — the Proton
+            version, the binary, the launch options. It never says where to download
+            a game, and it never bypasses DRM.
+          </p>
+          <ul class="feature-list">
+            <li>no download links</li>
+            <li>no DRM bypass</li>
+            <li>honest, tested status</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow">reading a recipe</p>
+      <h2>Two signals on every card</h2>
+      <p class="muted" style="max-width:680px;">
+        deckport's status is <em>our</em> honesty about whether the recipe is
+        confirmed. The ProtonDB tier is the <em>community's</em> read on how the
+        game runs under Proton. They're shown separately, on purpose.
+      </p>
+      <div class="legend">
+        <div class="panel">
+          <h3>deckport status</h3>
+          {
+            statusLegend.map((x) => (
+              <div class="legend-row">
+                <StatusBadge status={x.s} verifiedOn={x.v} />
+                <span class="ld">{x.d}</span>
+              </div>
+            ))
+          }
+        </div>
+        <div class="panel">
+          <h3>ProtonDB tier</h3>
+          {
+            tierLegend.map((t) => (
+              <div class="legend-row">
+                <ProtonBadge tier={t} showNote={true} />
+              </div>
+            ))
+          }
+          <div class="legend-row">
+            <span class="medal" style="--medal:#cf7fe0"><span class="coin" />Unknown</span>
+            <span class="ld">no rating yet — pending, or not a Steam game</span>
+          </div>
+        </div>
+      </div>
+      <p class="eyebrow" style="margin-top:1.75rem;margin-bottom:.5rem;">the book by ProtonDB tier</p>
+      <div class="tierbar" role="img" aria-label="ProtonDB tier distribution">
+        {
+          tierBar.map((t) => (
+            <span
+              class="tierbar-seg"
+              style={`width:${(t.n / recipes.length) * 100}%;background:${t.color}`}
+              title={`${t.label}: ${t.n}`}
+            />
+          ))
+        }
+      </div>
+      <div class="tierbar-key">
+        {
+          tierBar.map((t) => (
+            <span class="tk">
+              <span class="tk-dot" style={`background:${t.color}`} />
+              {t.label} <b>{t.n}</b>
+            </span>
+          ))
+        }
+      </div>
+      <p class="mono muted" style="font-size:.85rem;margin-top:1rem;">
+        deckport status — {counts.working} working · {counts["needs-test"]} needs-test ·{" "}
+        {counts.unverified} unverified · {counts.borked} borked
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <p class="eyebrow">there's a CLI too</p>
+      <h2>One transfer, one command, into Game Mode</h2>
+      <p class="muted" style="max-width:680px;">
+        Beyond the recipes, deckport ships a tiny importer for getting any
+        non-Steam game onto the Deck the tedious-by-hand way: it fetches artwork on
+        your PC, then on the Deck writes the shortcut and files the art under the
+        IDs Steam expects — so the game shows up controller-ready, in real box art.
+      </p>
+      <div class="pipeline">
+        <div class="stage pc">
+          <h4>Your PC</h4>
+          <ol>
+            <li>Fetch artwork by name (SteamGridDB)</li>
+            <li>Bundle it into <code>.deckport-art/</code></li>
+          </ol>
+        </div>
+        <div class="transit">
+          <span class="arrow">→</span>
+          <span>one SSH<br />transfer</span>
+        </div>
+        <div class="stage deck">
+          <h4>Steam Deck</h4>
+          <ol>
+            <li>Detect binary + <code>chmod +x</code></li>
+            <li>Write <code>shortcuts.vdf</code> entry</li>
+            <li>Install art into <code>config/grid/</code></li>
+            <li>Restart Steam → Game Mode</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta" style="border-top:1px solid var(--line);">
+    <div class="wrap" style="text-align:center;">
+      <h2 style="margin-bottom:.5rem;">Find a game and get it running.</h2>
+      <p class="muted" style="margin:0 auto 1.5rem;max-width:560px;">
+        {recipes.length} recipes for delisted, abandoned and modded games — with the
+        Proton setup, the tweaks, and real artwork worked out for you.
+      </p>
+      <div class="btn-row" style="justify-content:center;">
+        <a class="btn primary" href="/recipes">Browse the recipe book</a>
+        <a class="btn" href="/proton-packs">Install Proton packs</a>
+        <a class="btn" href="/contribute">Add a recipe</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* The hero clips the tilted cascade; its content sits above it. */
+  .hero--cascade {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero--cascade > .wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* real-number stat strip under the hero copy */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.85rem;
+    margin-top: 1.9rem;
+    max-width: 740px;
+  }
+  .stat-card {
+    background: color-mix(in srgb, var(--panel) 72%, transparent);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    backdrop-filter: blur(4px);
+  }
+  .stat-card b {
+    display: block;
+    font-family: var(--mono);
+    font-size: 1.65rem;
+    line-height: 1.05;
+    color: var(--amber);
+  }
+  .stat-card .sc-sep {
+    color: var(--sub);
+    margin: 0 0.1rem;
+  }
+  .stat-card span {
+    font-size: 0.82rem;
+    color: var(--sub);
+  }
+
+  .feat-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* two-signal legend */
+  .legend {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .legend .panel h3 {
+    margin: 0 0 0.6rem;
+    font-size: 1.02rem;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .legend .panel > .legend-row:last-child {
+    border-bottom: none;
+  }
+  .legend-row .ld {
+    font-size: 0.85rem;
+    color: var(--sub);
+  }
+  @media (max-width: 640px) {
+    .legend {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cta h2 {
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+  }
+
+  /* hero search box */
+  .hero-search {
+    display: flex;
+    gap: 0.6rem;
+    max-width: 540px;
+    margin-top: 0.5rem;
+  }
+  .hero-search input {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--sans);
+    font-size: 1rem;
+    background: color-mix(in srgb, var(--panel) 80%, transparent);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    padding: 0.65rem 0.9rem;
+    backdrop-filter: blur(4px);
+  }
+  .hero-search input:focus {
+    outline: none;
+    border-color: var(--amber);
+  }
+  .hero-search .btn {
+    flex: none;
+  }
+
+  /* alternating section tint for rhythm */
+  .section--alt {
+    background: color-mix(in srgb, var(--panel) 30%, transparent);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* ProtonDB tier distribution bar */
+  .tierbar {
+    display: flex;
+    height: 14px;
+    border-radius: 7px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--panel);
+  }
+  .tierbar-seg {
+    height: 100%;
+    min-width: 2px;
+  }
+  .tierbar-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--sub);
+  }
+  .tk {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .tk-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  .tk b {
+    color: var(--text);
+    font-family: var(--mono);
+  }
+
+  /* "how you use a recipe" journey — 4 across on desktop, stacks on mobile */
+  .journey {
+    list-style: none;
+    padding: 0;
+    margin: 1.4rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .jstep {
+    position: relative;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 1.2rem 1rem 1.1rem;
+  }
+  .jnum {
+    position: absolute;
+    top: -0.85rem;
+    left: 1rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .jicon {
+    font-size: 1.7rem;
+    display: block;
+    line-height: 1;
+    margin: 0.2rem 0 0.55rem;
+  }
+  .jstep h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.02rem;
+  }
+  .jstep p {
+    margin: 0 0 0.6rem;
+    color: var(--sub);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .jstep a {
+    font-size: 0.85rem;
+  }
+  /* connector arrow between steps (horizontal on desktop) */
+  .jstep:not(:last-child)::after {
+    content: "→";
+    position: absolute;
+    right: -0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--amber);
+    font-weight: 700;
+    font-size: 1.05rem;
+    z-index: 2;
+  }
+  /* tablets: 2 × 2 grid */
+  @media (max-width: 900px) {
+    .journey {
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem 1rem;
+    }
+    /* drop the horizontal arrows in 2-col to avoid pointing into the gutter */
+    .jstep:not(:last-child)::after {
+      display: none;
+    }
+  }
+  /* phones: single column with a downward connector */
+  @media (max-width: 560px) {
+    .journey {
+      grid-template-columns: 1fr;
+      gap: 1.7rem;
+    }
+    .jstep:not(:last-child)::after {
+      display: block;
+      content: "↓";
+      right: auto;
+      left: 50%;
+      top: auto;
+      bottom: -1.35rem;
+      transform: translateX(-50%);
+    }
+  }
+</style>

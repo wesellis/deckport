@@ -1,0 +1,68 @@
+[game]
+title       = "Castlevania: The Lecarde Chronicles 2"
+slug        = "castlevania-lecarde-chronicles-2"
+aliases     = ["Lecarde Chronicles 2", "Castlevania Lecarde Chronicles 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Lecarde Chronicles 2.exe"   # normal mode; Ring of Fury exe ends in "c" (e.g. "Lecarde Chronicles 2c.exe")
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Free, well-regarded **Castlevania** fan game by Mig Perez / **Migami Games** (2017) — classic-style 2D action-platformer with a full campaign and an **Alucard Boss Rush**.
+
+**Engine:** Built in **Clickteam Fusion 2.5** (the reworked builds bumped to `Fusion 2.5+ rev 296.9`). Clickteam Fusion titles run reliably under Proton on Deck (DirectX, **no DRM/GFWL** since it's freeware).
+
+**Install:** Portable — download the latest **`Game.Binary.zip`** from the developer's official GitHub releases (`katriellucas/lecarde-2`, the source the dev mirrors), unzip anywhere, and add the **`Lecarde Chronicles 2.exe`** to Steam as a Non-Steam game. The bundle ships **two exes**: the normal-mode build (name does **not** end in `c`) and the **Ring of Fury** mode build (name ends in `c`, e.g. `Lecarde Chronicles 2c.exe`). Force a recent Proton (`GE-Proton` or `proton_experimental`). **No launch options or winetricks required.**
+
+**Controller:** Native gamepad support — Xbox/XInput pads are detected and both controller and keyboard are fully remappable in the in-game control config, so the Deck's built-in controller maps straight through. (Older builds had a mapping-loss bug if you skipped control config on first boot; fixed in the reworked/latest release.)
+
+**Display:** Stretched/native fullscreen aspect-ratio builds for DX9 and DX11 are provided as separate downloads if the default window opens in a small box; otherwise toggle fullscreen in the in-game options."""
+
+[about]
+developer = "Mig Perez / Migami Games"
+publisher = "Migami Games"
+released  = "2017"
+genre     = "2D action-platformer"
+modes     = "Single-player"
+summary   = "**Castlevania: The Lecarde Chronicles 2** is a free, fan-made **Castlevania** tribute released in May 2017 by independent developer Mig Perez under the **Migami Games** banner. It is a classic-style **2D action-platformer** built in **Clickteam Fusion 2.5**, following Efraim Lecarde across a full campaign of exploration, whip-and-subweapon combat, and boss fights, plus an **Alucard Boss Rush** mode. It was widely praised in retro and Castlevania communities as one of the most polished entries in the series' fan-game scene. As an unofficial **freeware** project not affiliated with **Konami**, it was never sold and exists only as a free download."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official source / releases (Game.Binary.zip + Ring of Fury build) — katriellucas/lecarde-2"
+url   = "https://github.com/katriellucas/lecarde-2/releases"
+
+[[links.guides]]
+title = "Castlevania: The Lecarde Chronicles 2 — Castlevania Fan Wiki"
+url   = "https://castlevaniafan.fandom.com/wiki/Castlevania:_The_Lecarde_Chronicles_2"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free fan game:** Not affiliated with **Konami**; never sold on Steam, so no Steam appid. Download the official `Game.Binary.zip` for free from the developer's GitHub releases (`katriellucas/lecarde-2`).
+
+**Two builds:** The download contains two exes — the normal-mode `Lecarde Chronicles 2.exe` and a **Ring of Fury** harder-mode build whose name ends in `c`. Point the launch at the normal-mode exe unless you want Ring of Fury.
+
+**Proton:** Clickteam Fusion 2.5 build — runs through Proton on Deck with no special fixes; use `GE-Proton` or `proton_experimental`.
+
+**Controller:** Native support (DS4 D-pad, fully remappable), so **no Steam Input layout needed**.
+
+**ProtonDB:** No ProtonDB entry exists (it's a Non-Steam title), so the tier is left blank; runnability is inferred from the Clickteam Fusion 2.5 / Proton track record rather than a verified per-title report. deckport links nothing."""

@@ -1,0 +1,73 @@
+[game]
+title       = "The Godfather Part II"
+slug        = "the-godfather-part-ii"
+aliases     = ["Godfather 2", "The Godfather Part II", "godfather2"]
+type        = "proton"
+engine      = "other"
+steam_appid = "24830"
+sgdb_id     = ""
+
+[launch]
+binary         = "godfather2.exe"   # confirmed: game's startup executable is godfather2.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2009 EA Redwood Shores open-world crime game (Steam appid `24830`), delisted over the Paramount film license — **bring your own copy**.
+
+**Proton:** Reports are thin — only one ProtonDB report exists (Proton 9.0-1), and it describes the game installing and opening but **getting stuck in an endless boot loop after character creation**. Treat this as not-yet-working; try `GE-Proton` and older/newer Proton builds to get past the loop.
+
+**DRM:** The retail copy is SecuROM PA (product activation) protected with an activation limit, and EA's activation servers may be unreachable. If the launcher hangs or refuses to authenticate, the game won't boot under Proton until the activation step is satisfied with a legitimate community fix for this delisted title.
+
+**Install:** The startup binary is `godfather2.exe` (the game also ships a `The Godfather 2 The Game_code.exe` code wrapper).
+
+**Controller:** This is an EA RenderWare-style engine; controller mapping is not guaranteed to bind cleanly, so enable **Steam Input** with a Gamepad layout rather than relying on the game's native pad handling.
+
+**Cosmetic:** For modern compatibility some players drop a `d3d9.dll` + `dxwrapper.dll` wrapper into the game folder; remove it again if it introduces visual glitches or crashes. Add `PROTON_USE_WINED3D=0` only if you hit the wrapper path."""
+
+[about]
+developer = "EA Redwood Shores"
+publisher = "Electronic Arts"
+released  = "2009"
+genre     = "Action-adventure, open-world crime"
+modes     = "Single-player"
+summary   = "**The Godfather II** is a 2009 third-person **open-world action** game by **EA Redwood Shores**, based on the 1974 film and a sequel to 2006's **The Godfather**. The single-player story moves between New York, Miami, and Havana as the player builds a crime family using a strategic **'Don's View'** map layer to manage rackets and crews. It earned mixed reviews, often compared to **Grand Theft Auto**. It was delisted from Steam in 2014 over the expiry of the **Paramount film license**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "ProtonDB: The Godfather 2 (appid 24830) — reports & tier"
+url   = "https://www.protondb.com/app/24830"
+
+[[links.guides]]
+title = "PCGamingWiki: The Godfather II (DRM, fixes, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Godfather_II"
+
+[[links.guides]]
+title = "Steam Community hub (appid 24830)"
+url   = "https://steamcommunity.com/app/24830/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "borked"
+caveats       = """
+**Supply your own copy:** Delisted (film license) — configuration only, no links.
+
+**Compatibility:** Reports are very thin. The lone ProtonDB report (Proton 9.0-1) has the game installing and opening but then **looping endlessly after character creation**, so it is not confirmed playable through to gameplay. Marked accordingly until someone gets past the boot loop.
+
+**DRM:** SecuROM PA with an activation limit. EA's activation servers may be down and offline activation isn't supported, so the retail launcher can fail to authenticate under Proton; the game won't boot until the activation step is satisfied.
+
+**Install:** Launch exe is `godfather2.exe` (confirm against your install).
+
+**Controller:** Don't assume native pad support binds correctly — enable Steam Input with a Gamepad layout.
+
+**Cosmetic:** Optional `d3d9.dll` + `dxwrapper.dll` wrapper helps on modern setups but remove it if it causes visual glitches/crashes."""

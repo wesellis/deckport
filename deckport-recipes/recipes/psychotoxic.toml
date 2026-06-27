@@ -1,0 +1,69 @@
+[game]
+title       = "Psychotoxic"
+slug        = "psychotoxic"
+aliases     = ["Psychotoxic"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Psychotoxic.exe"   # best guess — Vision-engine title names its exe after the game; verify in your copy
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2004 Nuclearvision Entertainment first-person shooter built on the Vulpine/Havok **Vision** engine — an obscure cult title, long out of print with no active rightsholder presence. Never on Steam, so there is no ProtonDB entry (tier pending).
+
+**Install:** Bring your own copy. Install normally under Proton (`GE-Proton` recommended), then apply fixes below. No native Linux build exists.
+
+**DRM:** **CRITICAL** — the disc release ships `StarForce` DRM, which does not work on modern Windows OR under Proton (the developer wanted to disable it for a patch but the publisher refused). **You must run a DRM-free/no-CD executable** of the same version, and apply the official `1.04` patch first for the weapon-pickup bug and minor fixes.
+
+**Cutscenes:** the FMV intros use the On2 `VP3`/`VP4` codecs and tend to **black-screen / flicker under Proton** (on Windows the DxWnd "ForceClipChildren" tweak helps, but that does not carry over to Proton). Simplest fix on Deck: move or delete the cutscene video files from the game folder so playback is skipped and the game proceeds normally.
+
+**Widescreen:** a community `1680x1050` widescreen fix exists (Vision-engine `vbase.dll`/`vision.dll` swap) if you want a non-stretched image on the Deck's display.
+"""
+
+[[links.guides]]
+title = "Psychotoxic — PCGamingWiki (DRM, patches, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Psychotoxic"
+
+[[links.guides]]
+title = "Psychotoxic Widescreen Fix 1680x1050 — WSGF / PCGamingWiki Files"
+url   = "https://community.pcgamingwiki.com/files/file/1821-psychotoxic-widescreen-fix-1680x1050/"
+
+[[links.guides]]
+title = "DxWnd thread — Psychotoxic VP3/VP4 cutscene playback"
+url   = "https://sourceforge.net/p/dxwnd/discussion/general/thread/fa988ed6/"
+
+[about]
+developer = "Nuclearvision Entertainment"
+publisher = "Vidis (Germany/Austria/Russia); Whiptail Interactive (North America)"
+released  = "2004 (Europe), 2005 (North America)"
+genre     = "First-person shooter"
+modes     = "Single-player"
+summary   = "**Psychotoxic** is a **first-person shooter** in which players control Angela 'Angie' Prophet, a **half-angel** woman who battles a devil-worshipping cult to stop the **Fourth Horseman** from triggering an apocalypse. Originally to be published by **CDV** before that deal collapsed, it shipped in a rough, unfinished state and was widely panned by critics as one of the era's worst shooters. The poor reception and weak sales contributed to developer **Nuclearvision Entertainment** shutting down in 2009, and the game was **never released on Steam** or other digital storefronts, leaving it a long-obscure cult oddity."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** obscure, out of print — configuration only, no links. Never released on Steam (no appid).
+
+**DRM:** must use a DRM-free exe — `StarForce` DRM is broken on modern systems and under Proton. Apply official `1.04` patch.
+
+**Cutscenes:** remove the On2 `VP3`/`VP4` cutscene videos to avoid black-screen/flickering FMVs under Proton.
+
+**Controller:** no native controller support — it's a keyboard+mouse FPS, so bind a Steam Input gamepad-to-keyboard/mouse layout (right stick = mouse-look, face/trigger buttons = `WASD` + fire) to play with the Deck's built-in controls.
+"""

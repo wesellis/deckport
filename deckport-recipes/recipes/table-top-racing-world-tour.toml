@@ -1,0 +1,71 @@
+[game]
+title       = "Table Top Racing: World Tour"
+slug        = "table-top-racing-world-tour"
+aliases     = []
+type        = "proton"
+engine      = "unity"
+steam_appid = "450670"
+sgdb_id     = ""
+
+[launch]
+binary         = "TableTopRacing.exe"   # Unity game exe; some references also show TableTopRacingWorldTour.exe — confirm in your install dir
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Install:** Delisted Steam game (appid `450670`; pulled from the store Nov 2025 after the studio ceased operations — owners keep it in their library). **Unity 5** combat racer, ProtonDB **gold**.
+
+**Proton:** Runs on `proton_experimental` (community reports of it running on Linux/Proton). Most reports are positive (gold/platinum trend), but a few note controller detection trouble — see Controller below.
+
+**DRM:** Steamworks only — no **GFWL**/**SecuROM** DRM to work around. Just install and launch.
+
+**Controller:** A post-launch patch fixed detection for most standard pads (the dev tested Xbox 360/One, DualShock 4, Logitech F310/F710, Speedlink) and claimed roughly 95% of controllers fixed; racing wheels are not supported. The Deck's built-in gamepad generally works, but a minority of Linux/Proton reports mention the pad not being detected — if so, try forcing a Steam Input controller layout (e.g. Gamepad with Joystick Trackpad) so Proton presents an XInput device.
+
+deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Playrise Digital"
+publisher = "Playrise Digital"
+released  = "2016"
+genre     = "Combat racing"
+modes     = "Single-player, online multiplayer"
+summary   = """
+**Table Top Racing: World Tour** is a **combat racing** game in which miniaturized toy cars zip around tracks built on everyday surfaces such as kitchen tables, garage workbenches and arcade machines. It is the console and PC follow-up to the 2013 mobile hit **Table Top Racing**, developed by a studio founded by Nick Burcombe, co-creator of the **WipEout** series, and it pairs tight kart-style handling with **power-ups and wheel-mounted weapons** across a single-player championship and time trials.
+
+Reviews were mixed but the game built a steady following, and it was **delisted from Steam in November 2025** after the studio wound down operations. The online multiplayer servers are no longer active, but the single-player championship and time trials remain fully playable offline."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Table Top Racing: World Tour (450670)"
+url   = "https://www.protondb.com/app/450670"
+
+[[links.guides]]
+title = "Steam discussion — controller detection fix (dev: ~95% of pads)"
+url   = "https://steamcommunity.com/app/450670/discussions/0/333656722962469200/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam Nov 2025 (studio shut down); no longer for sale, but owners keep it in their library. deckport links nothing.
+
+**Proton:** ProtonDB **gold**, runs on `proton_experimental` with no DRM workaround needed.
+
+**Controller:** A patch fixed most standard pads (~95% per the dev), but some Linux/Proton reports note the gamepad isn't detected. If the Deck pad doesn't work, force a Steam Input controller layout so Proton exposes an XInput device.
+
+**Binary:** Unity build; name (`TableTopRacing.exe` vs `TableTopRacingWorldTour.exe`) still needs a quick confirm against your install dir.
+
+**Multiplayer:** Was online-only — verify whether servers are still up; single player / time trials are unaffected."""

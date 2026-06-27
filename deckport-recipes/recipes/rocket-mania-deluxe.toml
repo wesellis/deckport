@@ -1,0 +1,77 @@
+[game]
+title       = "Rocket Mania! Deluxe"
+slug        = "rocket-mania-deluxe"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "3440"
+sgdb_id     = ""
+
+[launch]
+binary         = "RocketMania.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** A lightweight 2003 PopCap tile-rotation puzzle game (`RocketMania.exe`, ~47 MB) — trivially light for the Deck's APU and a strong Proton case; PopCap 2D titles are routinely platinum.
+
+**DRM:** Delisted Steam game (appid `3440`, removed 2019-12-12; still launchable from existing libraries).
+
+**Proton:** `GE-Proton` is the safe default; stock `Proton 8`/`9` or `proton_experimental` also work.
+
+**Controller:** **No native gamepad.** Gameplay is pure point-and-click (rotate fuse tiles to connect matches to rockets), so use a Steam Input layout with the right trackpad as `Mouse` plus a click bind (or gyro-as-mouse) — fully playable handheld with that layout.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Rocket Mania! Deluxe (appid 3440)"
+url   = "https://www.protondb.com/app/3440"
+
+[[links.guides]]
+title = "SteamDB — Rocket Mania! Deluxe (appid 3440)"
+url   = "https://steamdb.info/app/3440/"
+
+[[links.guides]]
+title = "Wikipedia — Rocket Mania!"
+url   = "https://en.wikipedia.org/wiki/Rocket_Mania!"
+
+[about]
+developer = "Nuclide Games"
+publisher = "PopCap Games"
+released  = "2003"
+genre     = "Tile-matching puzzle"
+modes     = "Single-player"
+summary   = """
+**Rocket Mania! Deluxe** is a 2003 **tile-rotation puzzle game** developed by Belgian studio **Nuclide Games** and published by **PopCap Games**. Players rotate fuse tiles on a grid to build an unbroken path connecting lit matches on the left edge to **fireworks rockets** on the right, launching them for points, with **branching tiles** enabling multiple simultaneous launches plus bombs, gems, and other pickups.
+
+A representative casual PopCap title of its era, it was praised for being easy to pick up and addictive (GameZone Editor's Choice) and earned a Computer Gaming World 2003 Puzzle Game of the Year nomination. It was **delisted from Steam** (appid 3440) on 2019-12-12 and is no longer sold there."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam 2019-12-12 (appid `3440`); **not for sale, playable only from libraries that already own it.**
+
+**Binary:** Real binary is `RocketMania.exe`.
+
+**Proton:** Tiny 2003 PopCap puzzle game, so Proton compatibility is essentially a non-issue. ProtonDB lists it platinum, though on a small sample (~5 reports, low confidence) — expected for such a lightweight 2D title.
+
+**Controller:** **No native controller support** — set up a Steam Input mouse/trackpad (or gyro-as-mouse) layout, since the whole game is point-and-click; it is fully playable that way.
+
+**Needs-test:** This exact recipe hasn't been confirmed on a Deck."""

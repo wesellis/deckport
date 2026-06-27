@@ -1,0 +1,68 @@
+[game]
+title       = "Bio Evil 4"
+slug        = "bio-evil-4"
+aliases     = ["Bio Evil 4 demake", "Resident Evil 4 demake"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "BioEvil4.exe"   # best guess: Construct 2 NW.js export names the .exe after the project; if absent use nw.exe in the extracted folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Free fan 'demake' of Resident Evil 4 by Gypopothomas and AwesEmz, a 2D action-platformer built in `Construct 2`. Distributed on itch.io as both an in-browser HTML5 build and a downloadable Windows zip (`BioEvil4-0.2.5a.zip`, ~67 MB). The Windows build is a Construct 2 `NW.js` (node-webkit) wrapper.
+
+**Proton:** Add the `.exe` as a Non-Steam game and force `GE-Proton` (`proton_experimental` also works). **The `NW.js` wrapper is lightweight, so no winetricks are needed.**
+
+**Install:** Portable/standalone — download the Windows zip from itch.io and extract anywhere, then add the executable. Construct 2 NW.js exports name the launcher after the project (e.g. `BioEvil4.exe`); **if the project-named .exe is absent, the `nw.exe` in the extracted folder is the launcher.** Browser-only players can skip Proton entirely and run the HTML5 version.
+
+**Controller:** Native gamepad support works through Proton. Community updates added a controls screen and fixed a controller rapid-fire bug, so a standard Steam Input Gamepad layout is all that's needed.
+"""
+
+[about]
+developer = "Gypopothomas and AwesEmz"
+publisher  = "Gypopothomas (self-published, free)"
+released   = "2018"
+genre      = "2D run-and-gun action platformer"
+modes      = "Single-player"
+summary    = "**Bio Evil 4** is a free fan-made 2D demake of Capcom's **Resident Evil 4**, reimagining the third-person survival horror classic as a **NES-style run-and-gun** side-scrolling platformer. Built by Gypopothomas and AwesEmz for the **Demake 2018** competition, it casts players as Leon shooting through two zombie-filled levels across three difficulty settings to rescue Ashley before a final boss. It drew attention from outlets like Game Rant and Nintendo Life for its retro pixel-art take on a modern classic, and runs as a lightweight **NW.js** Windows build rather than a Steam release."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Bio Evil 4 — official itch.io page (free, by Gypopothomas & AwesEmz)"
+url   = "https://gypopothomas.itch.io/bioevil4"
+
+[[links.guides]]
+title = "Game Rant: Resident Evil 4 Players Are Loving This Fan-Made 'Demake'"
+url   = "https://gamerant.com/resident-evil-4-demake-bio-evil/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free fan game (not Capcom), never on Steam — `steam_appid` stays empty.
+
+**Proton:** `Construct 2` / `NW.js` Windows build runs fine under Proton (`GE-Proton` recommended).
+
+**Install:** Portable Windows zip from itch.io — extract and run, no installer. **Exact `.exe` name varies by release version, so confirm the actual filename in the extracted folder** (the launcher may be `nw.exe`). A browser HTML5 version is also offered and needs no Proton.
+
+**Controller:** Native keyboard + gamepad support; a default Steam Input Gamepad layout covers it.
+
+**ProtonDB:** No ProtonDB entry exists for this fan game (it is not a Steam title), so `protondb_tier` left empty.
+"""

@@ -1,0 +1,73 @@
+[game]
+title       = "Old School RuneScape (RuneLite via Bolt)"
+slug        = "osrs-runelite"
+aliases     = ["OSRS", "Old School RuneScape", "RuneLite", "RuneScape Classic"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run com.adamcake.Bolt"
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "OSRS Wiki — Guide: OSRS on Steam Deck"
+url   = "https://oldschool.runescape.wiki/w/Guide:OSRS_on_Steam_Deck"
+
+[[links.guides]]
+title = "Bolt Launcher (Codeberg — current source)"
+url   = "https://codeberg.org/Adamcake/Bolt"
+
+[[links.guides]]
+title = "RuneLite Official Site"
+url   = "https://runelite.net"
+
+[about]
+developer = "Jagex"
+publisher = "Jagex"
+released  = "2013 (OSRS relaunch)"
+genre     = "MMORPG, Fantasy"
+modes     = "Multiplayer (MMO), Free-to-play with optional membership"
+summary   = """**Old School RuneScape** is the free-to-play revival of the iconic 2007-era \
+RuneScape by **Jagex**, relaunched in 2013 and actively maintained with community-voted content. \
+The Steam Deck path uses the **Bolt Launcher** (Flathub) paired with the RuneLite open-source \
+client, delivering a native Linux experience with plugin support, HD options, and far better \
+performance than the default launcher. No Proton is required — Bolt and RuneLite both ship \
+true native Linux builds."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Native Linux path via Bolt + RuneLite — no Proton needed. Do NOT use the official Jagex \
+  Launcher; it requires Wine/Proton and has historically broken on Deck updates.
+- Install Bolt Launcher from Flathub in Desktop Mode via Discover before adding to Steam.
+- Bolt's source repo moved from GitHub (archived Nov 2025) to Codeberg; the Flathub build \
+  (com.adamcake.Bolt) remains the install path and is unaffected.
+- Add Bolt as a non-Steam game: binary = flatpak, launch options = run com.adamcake.Bolt.
+- Community controller layout "Simple OSRS" by G00dspeed is widely recommended — search for \
+  it under community layouts after adding the non-Steam shortcut.
+- OSRS is free-to-play; members content requires a paid subscription from jagex.com.
+- The OSRS Wiki Steam Deck guide is kept up to date by the community — check it for any \
+  Bolt or RuneLite version-specific changes before first setup.
+- On-screen keyboard is occasionally needed for chat; bind a button to bring up the Steam \
+  keyboard overlay.
+"""

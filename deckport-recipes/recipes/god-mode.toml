@@ -1,0 +1,82 @@
+[game]
+title       = "God Mode"
+slug        = "god-mode"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "227480"
+sgdb_id     = ""
+
+[launch]
+binary         = "bin/Godmode.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (`appid 227480`) — a 2013 co-op arena third-person shooter (Saber Interactive / Old School Games, pub. Atlus), removed from sale ~2019 over an expired license.
+
+**DRM:** ProtonDB rates it **platinum**; it runs cleanly under Proton with **no DRM wrapper (no GFWL)**.
+
+**Proton:** Recommended `GE-Proton` or `proton_experimental` — both work; **start with `GE-Proton`** if you hit any input/launch quirks.
+
+**Install:** Executable is `Godmode.exe`, inside the install's `bin/` subfolder (`steamapps/common/GodMode/bin/Godmode.exe`).
+
+**Controller:** Full controller support carries over from its XBLA/PSN console roots (4 control presets: Default, Lefty, FPS, FPS Lefty), so it plays well on the Deck with the default gamepad mapping. Note: in-game remapping isn't available.
+
+**FPS cap:** The game ships locked to 45 FPS. To uncap, edit `bin/game.cfg` and add `LockFps = 0` on a new line inside the `Video = {` block.
+
+**Startup crash:** If it crashes on launch, install the bundled DirectX/VC++ redistributables from the game's `_CommonRedist` folder into the prefix first.
+
+**Online:** Online/LAN co-op servers appear defunct, but solo and offline play work fine.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Saber Interactive / Old School Games"
+publisher  = "Atlus"
+released   = "2013"
+genre      = "Third-person arena shooter"
+modes      = "Single-player, online co-op (up to 4 players)"
+summary    = "**God Mode** is a 2013 arena-based **third-person shooter** where players fight through the procedurally arranged **Maze of Hades** using firearms and **god-inspired special powers**. Developed by **Saber Interactive** with Old School Games and published by **Atlus**, it shipped on PC, Xbox 360 and PlayStation 3 as a downloadable title and supported up to **four-player online co-op**. It received mixed reviews (Metacritic around 58) and was pulled from digital storefronts beginning in **March 2019** after its **publishing licenses expired**, leaving it unavailable for new purchase."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - God Mode (227480)"
+url   = "https://www.protondb.com/app/227480"
+
+[[links.guides]]
+title = "PCGamingWiki - God Mode"
+url   = "https://www.pcgamingwiki.com/wiki/God_Mode"
+
+[[links.guides]]
+title = "Steam Discussions - Unlock the 45 FPS cap (game.cfg LockFps)"
+url   = "https://steamcommunity.com/app/227480/discussions/0/864973123149986729"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Compatibility:** ProtonDB **platinum**, **no DRM/GFWL** — runs out of the box under `GE-Proton` / `proton_experimental` with full controller support, so it should be Deck-friendly.
+
+**Status:** Not yet verified on a physical Deck (`needs-test`).
+
+**Online:** Online and LAN co-op servers appear to be gone; play it solo/offline.
+
+**FPS cap:** Locked to 45 FPS by default; uncap via `bin/game.cfg` (`LockFps = 0` under `Video = {`).
+
+**Binary:** `bin/Godmode.exe` (confirm against your install's folder)."""

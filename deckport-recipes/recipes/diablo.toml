@@ -1,0 +1,54 @@
+[game]
+title       = "Diablo"
+slug        = "diablo"
+aliases     = ["Diablo 1", "DevilutionX", "diablo.exe"]
+type        = "native"        # DevilutionX is a native-Linux engine — no Proton
+engine      = "other"         # DevilutionX (open-source Diablo engine)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "devilutionx"        # the DevilutionX engine binary
+launch_options = ""
+requires_files = ["DIABDAT.MPQ"]      # the game data, from YOUR own copy (see caveats)
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "Blizzard North"
+publisher = "Blizzard Entertainment"
+released  = "1996"
+genre     = "Action role-playing"
+modes     = "Single-player, online co-op and PvP (up to 4 players)"
+summary   = """
+**Diablo** is the 1996 **action-RPG** that defined the genre, sending a lone hero down sixteen randomly generated dungeon levels beneath the town of Tristram to face the Lord of Terror. Built by **Blizzard North** on an **isometric engine** with a **click-to-kill loot loop**, it launched alongside **Battle.net**, one of the first free online multiplayer services. It earned widespread critical acclaim and multiple Game of the Year awards, and inspired the entire **ARPG** lineage that followed.
+
+The game is still sold, but this recipe runs it natively via the open-source **DevilutionX** engine using the player's own data files."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** deckport hosts no game files. Supply `DIABDAT.MPQ` from your own CD or your GOG / Battle.net purchase (Diablo is still sold) and place it beside the `DevilutionX` binary.
+
+**Engine:** the Deck-native way to run it is `DevilutionX` — an open-source re-implementation of the Diablo engine (also on Flathub), so it runs directly, **no Proton**.
+
+**Hellfire:** for the Hellfire expansion also add `hellfire.mpq`, `hfmonk.mpq`, `hfmusic.mpq`, `hfvoice.mpq`.
+
+**Controller:** works great on Deck out of the box (full gamepad via `SDL2`).
+
+**Install:** easiest install is the Flatpak `org.diasurgical.DevilutionX`, then drop `DIABDAT.MPQ` in `~/.var/app/org.diasurgical.DevilutionX/data/diasurgical/devilution`. Binary path depends on the install."""
+
+[[links.guides]]
+title = "DevilutionX — Installation guide (data files & paths)"
+url   = "https://github.com/diasurgical/DevilutionX/blob/master/docs/installing.md"
+
+[[links.guides]]
+title = "DevilutionX MPQ instructions (supplying your own data)"
+url   = "https://devilutionx.com/mpq"

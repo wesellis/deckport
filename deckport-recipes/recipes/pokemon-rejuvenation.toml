@@ -1,0 +1,60 @@
+[game]
+title       = "Pokémon Rejuvenation"
+slug        = "pokemon-rejuvenation"
+aliases     = ["Pokemon Rejuvenation", "Rejuvenation", "Reborn companion game"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "mkxp-z.Appimage"   # native Linux MKXP-Z runtime shipped in the official Linux download
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+Native Linux — no Proton. The official Linux download (v13.5.x) ships a native MKXP-Z AppImage (`mkxp-z.Appimage`); add it as a Non-Steam game and run it directly on SteamOS. (The Windows build uses `Game.exe` + `updater.exe` and would need Proton, but the Linux build is preferred on Deck.) Gamepad works natively through MKXP-Z; the recommended Steam Input layout maps back-grip buttons (M/turbo, F12 soft-reset, Enter, Shift). Install method: download the Linux zip and extract; in Steam "Add a Non-Steam Game" you may have to type `mkxp-z.Appimage` manually since the file browser can hide it.
+"""
+
+[about]
+developer = "Jan and the Reborn Evolved team (rebornevo.com)"
+publisher = "Independently released (free fan project)"
+released  = "v13.x current; companion to Pokemon Reborn"
+genre     = "RPG (fan-made Pokemon game)"
+modes     = "Single-player"
+summary   = "**Pokémon Rejuvenation** is a companion fan **RPG** to **Pokémon Reborn**, developed by Jan and the **Reborn Evolved** community at rebornevo.com. It features its own story, region, and characters while sharing the same **RPG Maker XP** Linux runtime and community infrastructure as Reborn. Free standalone download — no original Pokemon game required. The rebornevo.com Steam Deck setup guide covers both Reborn and Rejuvenation, including the **directional input fix** that is required on Deck for both games."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Reborn Evolved: Setting up Reborn and Rejuvenation on Steam Deck"
+url   = "https://www.rebornevo.com/forums/topic/62240-setting-up-reborn-and-rejuvenation-on-steam-deck/"
+
+[[links.guides]]
+title = "Reborn Evolved: Rejuvenation official download (Windows / Mac / Linux)"
+url   = "https://www.rebornevo.com/rejuvdown/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Native Linux:** Use the official **Linux** download — it runs as a native **MKXP-Z AppImage** (`mkxp-z.Appimage`), no Proton needed. Add it as a Non-Steam game.
+
+**Add-to-Steam quirk:** Steam's file browser may not show the AppImage; type `mkxp-z.Appimage` manually in the filename field.
+
+**Free download:** Free standalone from `rebornevo.com`; no original Pokemon files needed.
+
+**Separate game:** A separate game from Reborn with its own story and region.
+"""

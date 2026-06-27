@@ -1,0 +1,68 @@
+[game]
+title       = "Boris and the Dark Survival"
+slug        = "boris-and-the-dark-survival"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "1236990"
+sgdb_id     = ""
+
+[launch]
+binary         = "Boris.exe"   # Unreal Engine launcher; the real shipping binary is Boris/Binaries/Win64/Boris-Win64-Shipping.exe — confirm from your install
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** Stock Proton works — this title is **Steam Deck Verified** and ProtonDB Platinum. If you hit any FMV cutscene rendering glitch (a common Proton issue on Unreal Engine titles, though not consistently reported for this game), try a recent `GE-Proton` build.
+
+**Performance:** Unreal Engine 4 title, ProtonDB Platinum (small sample, ~5 reports) and reported running 40-60 FPS on the Deck.
+
+**Exit:** On exit the process can hang; **use Steam's 'Stop' button** if it doesn't close.
+
+**DRM:** Delisted Steam game (appid 1236990; removed from Steam early-mid Aug 2025 ahead of Bendy: Lone Wolf — existing owners keep it, no longer for sale). deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Joey Drew Studios Inc."
+publisher = "Joey Drew Studios Inc."
+released  = "2020"
+genre     = "Survival horror with roguelike elements"
+modes     = "Single-player"
+summary   = "**Boris and the Dark Survival** is a free standalone spin-off in the **Bendy** franchise, serving as a side prequel to Bendy and the Ink Machine. Players control Boris the Wolf as he scavenges a **randomly generated studio** for items while evading the Ink Demon, blending survival horror with roguelike runs. Built in **Unreal Engine 4**, it released in February 2020 on the third anniversary of Bendy and the Ink Machine. It was **removed from Steam in August 2025** ahead of its replacement, Bendy: Lone Wolf; existing owners keep access to it."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Boris and the Dark Survival (appid 1236990)"
+url   = "https://www.protondb.com/app/1236990"
+
+[[links.guides]]
+title = "Delisted Games — Boris and the Dark Survival (delist + Bendy: Lone Wolf details)"
+url   = "https://delistedgames.com/boris-and-the-dark-survival/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam Aug 2025 (no longer for sale; existing owners retain it).
+
+**Performance:** ProtonDB Platinum (small sample) and Steam Deck Verified, with Deck reports around 40-60 FPS.
+
+**Controller:** Full native controller support (Steam lists "Full controller support") — no Steam Input hack needed.
+
+**Known issues:** Process can hang on exit (use Steam's 'Stop' button). If FMV cutscenes glitch, switch to a recent `GE-Proton` build; this is not consistently reported for this game and stock Proton is generally fine.
+
+**Binary:** `Boris.exe` / `Boris-Win64-Shipping.exe` is the standard UE4 layout but should be confirmed against an actual install."""

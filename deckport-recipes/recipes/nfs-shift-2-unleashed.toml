@@ -1,0 +1,79 @@
+[game]
+title       = "Need for Speed: Shift 2 Unleashed"
+slug        = "nfs-shift-2-unleashed"
+aliases     = ["NFS Shift 2", "Shift 2 Unleashed", "Shift 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = "47920"
+sgdb_id     = "12120"        # https://www.steamgriddb.com/game/12120 (Shift 2 Unleashed)
+
+[launch]
+binary         = "shift2u.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["physx"]
+notes      = """
+**Game:** 2011 Slightly Mad Studios / EA sim-style racer (Steam appid `47920`, delisted 2021-05-31). Main exe is `shift2u.exe`.
+
+**Proton:** Runs under Proton; `GE-Proton` recommended for the PhysX/older-EA stack.
+
+**DRM:** Game shipped with **TAGES SolidShield** DRM tied to EA online activation servers that are now defunct — **a clean offline-capable executable is required or the game will fail activation**; this is a copy/DRM issue, not a Proton issue.
+
+**Install:** Install bundled PhysX (`9.10.0513`), DirectX, and `vcredist_x86` redistributables into the prefix (`protontricks physx d3dx9 vcrun2008`).
+
+**Fix:** If it fails to launch, `GE-Proton` plus those redists usually resolves it.
+
+**Controller:** Gamepad support works for driving and menu navigation, so the Deck's built-in controls are usable without a custom Steam Input layout. Note two quirks reported by players: the menus keep showing **keyboard** button prompts even on a pad, and the pad has noticeable **input lag/sensitivity** out of the box — both are cosmetic/tunable, not blockers (lag is improved by setting `DampeningEnabled` to `0` in `vehicleset_pc_custom_pad.xml` and reselecting the in-game *Custom* control scheme).
+"""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 47920) — Gold"
+url   = "https://www.protondb.com/app/47920"
+
+[[links.guides]]
+title = "Shift 2 Unleashed — PCGamingWiki (fixes, DRM, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/Shift_2_Unleashed"
+
+[[links.guides]]
+title = "Proton issue #1677 — Shift 2 Unleashed"
+url   = "https://github.com/ValveSoftware/Proton/issues/1677"
+
+[about]
+developer = "Slightly Mad Studios"
+publisher = "Electronic Arts"
+released  = "2011"
+genre     = "Racing (simulation)"
+modes     = "Single-player, online multiplayer"
+summary   = """
+**Shift 2 Unleashed** (also branded **Need for Speed: Shift 2 Unleashed**) is the seventeenth **Need for Speed** title and a direct sequel to **Need for Speed: Shift**, built by **Slightly Mad Studios**. It is a **simulation-leaning** racer noted for its cockpit-mounted **helmet camera** and visceral first-person crash effects, covering road, circuit, and drift events with licensed cars and real-world tracks.
+
+The game was **removed from Steam on 2021-05-31** and its online services were retired on 2021-08-31, but offline single-player remains playable. Its **TAGES SolidShield** DRM and former EA online activation can complicate launching a stock retail copy.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted 2021-05-31 (Steam appid `47920`) — config only, no links.
+
+**DRM:** The original DRM (**TAGES SolidShield**) phoned home to EA activation servers that no longer exist, so a stock retail/Steam install may refuse to launch on Deck; **a copy that does not require online re-activation is needed**.
+
+**Proton:** Use `GE-Proton`.
+
+**Install:** Install PhysX `9.10.0513`, DirectX, and `vcredist_x86` into the prefix; add `shift2u.exe` to a clean launch (compatibility tweaks like 'run as admin' are Windows-only and not needed under Proton).
+
+**Controller:** Gamepad works for menus and driving without a custom Steam Input layout, but menus show keyboard prompts and the pad has input lag until you set `DampeningEnabled=0` in `vehicleset_pc_custom_pad.xml`.
+
+**Tier:** Estimated gold pending Deck retest.
+"""

@@ -1,0 +1,71 @@
+[game]
+title       = "Undertale Yellow"
+slug        = "undertale-yellow"
+aliases     = ["UndertaleYellow", "Undertale Yellow", "Undertale Yellow.exe", "UndertaleYellow.exe"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = "5260619"
+
+[launch]
+binary         = "Undertale Yellow.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Build:** Windows `GameMaker` build; runs under Proton on Steam Deck.
+
+**Install:** Download the **ZIP** (the page ships a `.zip`, e.g. `Undertale Yellow v1_1PatchFr213.zip` — there is no installer) from the itch.io page (`taediumbreak.itch.io/undertale-yellow`), extract it, and add the extracted **`Undertale Yellow.exe`** (note the space in the filename) as a non-Steam game.
+
+**Proton:** Set `Proton Experimental` in `Properties > Compatibility`. Community reports confirm it runs without problems under `Proton Experimental`.
+
+**Controller:** The GameMaker build has only partial built-in gamepad support (analog-stick mapping is awkward). For a clean Deck experience, configure a controller layout in Steam Input — e.g. map the left stick / D-pad to the arrow keys and face buttons to Z/X/C — rather than relying on the game's native pad handling.
+
+**Note:** If the `.exe` name in the extracted archive differs from a future build, use the main `.exe` at the root of the extracted folder.
+"""
+
+[about]
+developer = "Master Sword and the Undertale Yellow Team"
+publisher = "Undertale Yellow Team (free fan project)"
+released  = "2023"
+genre     = "RPG, Bullet Hell, Fan Game"
+modes     = "Single-player"
+summary   = "**Undertale Yellow** is a free, fan-made **prequel** to Toby Fox's **Undertale**, following the journey of Clover, the first human to fall into the Underground before the events of the original game. Developed over approximately seven years by a community team led by Master Sword, the full game released on December 9, 2023 to widespread praise from the Undertale fanbase. Built in **GameMaker: Studio**, it features original music from noted composers including **NoteBlock**, and expands meaningfully on the lore and world of Undertale. It is widely considered one of the highest-quality Undertale fan projects ever released."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5260619"
+
+[[links.guides]]
+title = "Undertale Yellow — Official itch.io Page"
+url   = "https://taediumbreak.itch.io/undertale-yellow"
+
+[[links.guides]]
+title = "How to Get Undertale Yellow Running on Steam Deck — Nerdburglars"
+url   = "https://nerdburglars.net/question/how-can-i-get-undertale-yellow-running-on-my-steam-deck/"
+
+[[links.guides]]
+title = "Undertale Yellow (1.1.0) — Lutris install script (confirms exe path)"
+url   = "https://lutris.net/games/install/38105/view"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Install:** Download the **ZIP** release from itch.io (the only Windows download — there is no installer). Add the extracted **`Undertale Yellow.exe`** (filename contains a space) as a non-Steam game and force `Proton Experimental`.
+
+**No owned data:** No owned data files required; fully self-contained free game.
+
+**Unofficial:** Unofficial **Undertale** fan prequel — not affiliated with Toby Fox or Fangamer.
+"""

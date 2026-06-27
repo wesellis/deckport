@@ -1,0 +1,87 @@
+[game]
+title       = "Dr. Robotnik's Ring Racers"
+slug        = "dr-robotniks-ring-racers"
+aliases     = ["Ring Racers", "RingRacers", "SRB2Kart 2"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5450143"
+
+[launch]
+binary         = "ringracers"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Platform:** **Native Linux** — no Proton needed.
+
+**Install:** The official recommended install on Steam Deck is the Flatpak (`org.kartkrew.RingRacers`) available on Flathub and installable via Discover in Desktop Mode. After install, **add it as a non-Steam game** in Gaming Mode.
+
+**Controller:** Full controller/gamepad support is built in.
+
+**Addons:** Addon files (custom tracks, characters) live at `~/.var/app/org.kartkrew.RingRacers/.ringracers/addons/` — enable hidden files in Dolphin to access.
+
+**DRM:** No owned data files required.
+"""
+
+[about]
+developer = "Kart Krew Dev"
+publisher = "Kart Krew Dev (free fan project)"
+released  = "2024 (launched at v2.0 on Apr 24, 2024; v2.1 added Linux/Flatpak Apr 26, 2024; latest v2.4 Nov 2025)"
+genre     = "Kart racing, fan game"
+modes     = "Single-player, Online multiplayer"
+summary   = """
+**Dr. Robotnik's Ring Racers** is a free, fan-made **kart racing** game and spiritual successor to **SRB2Kart**, developed by Kart Krew Dev on the same modified **Doom Legacy engine** that powers Sonic Robo Blast 2. The game launched at **v2.0** on April 24, 2024 (there was no v1.0 release) to widespread enthusiasm, featuring a massive roster of Sonic-franchise characters, a deep progression system, and 200+ circuits.
+
+**Linux support** via a native Flatpak arrived shortly after launch in **v2.1** (April 26, 2024), making it a first-class citizen on Steam Deck. The game has since been updated through v2.4 (November 2025). Online multiplayer is fully supported with a built-in server browser, and an active modding scene continues to add new content.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5450143"
+
+[[links.guides]]
+title = "Official Kart Krew Website"
+url   = "https://www.kartkrew.org/"
+
+[[links.guides]]
+title = "Ring Racers Flatpak on Flathub"
+url   = "https://flathub.org/en/apps/org.kartkrew.RingRacers"
+
+[[links.guides]]
+title = "v2.1 Linux Release Announcement — GamingOnLinux"
+url   = "https://www.gamingonlinux.com/2024/05/dr-robotniks-ring-racers-v21-out-with-linux-support-now-available/"
+
+[[links.guides]]
+title = "Flatpak Addon Directory Location (SRB2 Message Board)"
+url   = "https://mb.srb2.org/threads/where-does-the-flatpak-version-of-ring-racers-have-its-addon-directory.41780/"
+
+[[links.guides]]
+title = "PCGamingWiki — Dr. Robotnik's Ring Racers"
+url   = "https://www.pcgamingwiki.com/wiki/Dr._Robotnik%27s_Ring_Racers"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free fan game:** No purchase needed.
+
+**Install:** Install via Discover (Flatpak `org.kartkrew.RingRacers`) for the smoothest Deck experience.
+
+**Linux:** Native Linux support arrived in v2.1; **make sure the Flatpak is up to date**.
+
+**Addons:** Addon/mod data lives in `~/.var/app/org.kartkrew.RingRacers/.ringracers/addons/`.
+
+**Legal:** No SEGA affiliation.
+"""

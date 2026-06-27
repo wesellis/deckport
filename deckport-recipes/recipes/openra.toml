@@ -1,0 +1,83 @@
+[game]
+title       = "OpenRA"
+slug        = "openra"
+aliases     = ["Open Red Alert", "OpenRA Red Alert", "OpenRA Tiberian Dawn", "OpenRA Dune 2000"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5284111"
+
+[launch]
+binary         = "flatpak run net.openra.OpenRA"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Install:** Native Linux via Flatpak (`net.openra.OpenRA` on Flathub). Install through `Discover` in Desktop Mode — search for OpenRA and click Install.
+
+**Assets:** Game assets are not bundled, but the first time you launch each mod (Red Alert, Tiberian Dawn, Dune 2000) OpenRA **automatically downloads the free original game assets** from its servers — **no purchased files or original disks are required to play**.
+
+**Launch:** Launch from the Discover app, the desktop shortcut, or add to Steam as a non-Steam game. When adding to Steam, point the launch command at `flatpak run net.openra.OpenRA`.
+
+**Flatpak note:** The Flatpak sandbox can interfere with switching between the official mods and downloaded community mods; if you need community mods, the official AppImage release is the recommended alternative.
+
+**Controller:** Controller support on Deck is limited — **the game is designed for mouse and keyboard**. The right trackpad works as a mouse cursor and is the recommended primary input on Deck; left trackpad can be mapped to hotkeys.
+"""
+
+[about]
+developer = "OpenRA developers (open source community)"
+publisher = "Open source — free"
+released  = "2007 (ongoing)"
+genre     = "Real-time strategy"
+modes     = "Single-player, Multiplayer (LAN/online)"
+summary   = """
+**OpenRA** is an **open-source** real-time strategy game **engine** that faithfully recreates and modernises the classic **Westwood Studios Command & Conquer** games from the 1990s. It includes fully playable versions of **Red Alert**, **Tiberian Dawn**, and **Dune 2000** with overhauled **netcode**, widescreen support, map editor, and extensive multiplayer.
+
+The project has been in active development since 2007 and is one of the most complete open-source RTS projects available. The free original game assets are downloaded automatically on first launch, making it **fully free to download and play** with no ownership requirements.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5284111"
+
+[[links.guides]]
+title = "OpenRA on Flathub (Flatpak install)"
+url   = "https://flathub.org/en/apps/net.openra.OpenRA"
+
+[[links.guides]]
+title = "OpenRA official download page"
+url   = "https://www.openra.net/download/"
+
+[[links.guides]]
+title = "OpenRA GitHub — source and releases"
+url   = "https://github.com/OpenRA/OpenRA"
+
+[[links.guides]]
+title = "Steam Deck controller support issue thread (OpenRA GitHub)"
+url   = "https://github.com/OpenRA/OpenRA/issues/21630"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**No owned game files required:** OpenRA auto-downloads the free original assets for each mod on first launch — no purchase or disks needed.
+
+**Install:** via `Discover` (Flatpak `net.openra.OpenRA`); launch with `flatpak run net.openra.OpenRA`.
+
+**Flatpak limitation:** the sandbox can break community-mod switching; use the official AppImage if you need that.
+
+**Controller:** controller/gamepad support is limited by design; the right trackpad as mouse is the most practical Deck input. Full keyboard + mouse via a USB hub is the ideal setup for campaigns and multiplayer.
+
+**Proton:** No Proton needed.
+"""

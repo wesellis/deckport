@@ -1,0 +1,75 @@
+[game]
+title       = "Forza Horizon 4"
+slug        = "forza-horizon-4"
+aliases     = ["Forza Horizon 4", "FH4"]
+type        = "proton"
+engine      = "other"
+steam_appid = "1293830"
+sgdb_id     = ""
+
+[launch]
+binary         = "ForzaHorizon4.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** 2018 Playground Games / Microsoft open-world racer.
+
+**DRM:** Delisted in Dec 2024 (expiring car/music licenses) — **bring your own copy**.
+
+**Install:** The Steam build (`appid 1293830`) is the one that behaves under Proton.
+
+**Proton:** As of the May 2026 `Proton Experimental` update, the long-standing SteamOS black-screen-on-boot bug is **FIXED** — use `Proton Experimental` and it should launch straight into Game Mode without Desktop tinkering; it runs ~60fps.
+
+**Fix:** If you hit the black screen on an older Proton: launch once in Desktop Mode, sign into your Microsoft account with an external keyboard/mouse, set the in-game display to Windowed mode, exit, then return to Game Mode. `GE-Proton` or `Proton 7.0-6` also work and are the fallback if multiplayer/login misbehaves.
+
+**Controller:** Native gamepad support — controller works out of the box, no Steam Input layout needed.
+
+**Display:** Initial load can be long, give it time.
+"""
+
+[[links.guides]]
+title = "Proton Experimental gets fixes for Forza Horizon 4, 5 and 6 (GamingOnLinux)"
+url   = "https://www.gamingonlinux.com/2026/05/proton-experimental-gets-fixes-for-forza-horizon-4-5-and-6-plus-other-games/"
+
+[[links.guides]]
+title = "New Proton Experimental Update Fixes Forza Horizon 4, 5, and 6 (Steam Deck HQ)"
+url   = "https://steamdeckhq.com/news/proton-experimental-update-forza-horizon-4-5-6/"
+
+[[links.guides]]
+title = "ProtonDB - Forza Horizon 4 reports (Steam Deck)"
+url   = "https://www.protondb.com/app/1293830?device=steamDeck"
+
+[about]
+developer = "Playground Games"
+publisher = "Xbox Game Studios"
+released  = "2018"
+genre     = "Open-world racing"
+modes     = "Single-player, online multiplayer"
+summary   = "**Forza Horizon 4** is an open-world racing game set in a fictionalised representation of Great Britain, the fourth entry in the **Horizon** spin-off series built on the **ForzaTech** engine. It introduced **dynamic, shared seasons** that change the map and driving conditions, and was widely praised for its scale, visuals and progression. The Steam release in 2018 followed an initial Windows Store launch, and the game was **delisted** from digital stores in December 2024 over **expiring car and music licences**, though existing owners retain offline, online and multiplayer access."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted (licensing); configuration only, no links.
+
+**Install:** Prefer the Steam build (`appid 1293830`) over the old Microsoft Store/UWP build for Proton.
+
+**Account:** Requires a one-time online Microsoft account sign-in.
+
+**Proton:** Large download; needs a recent `Proton Experimental` (or `GE-Proton`) — the May 2026 Experimental fixed the SteamOS black-screen-on-boot. Older Proton needs the Desktop-Mode + Windowed-mode workaround.
+
+**Controller:** Native controller support.
+"""

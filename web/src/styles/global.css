@@ -1,0 +1,1371 @@
+/* deckport site styles — palette lifted from deckport_pipeline.jsx so the site
+   and the flow diagram feel like one product. Plain CSS, no framework: small,
+   robust, nothing to break on a CDN version bump. */
+
+:root {
+  --ink: #0c1016;
+  --panel: #141b24;
+  --panel2: #1b2530;
+  --line: #2a3644;
+  --text: #e7eef6;
+  --sub: #8595a8;
+  --amber: #ffb454;
+  --amber-dim: #7a5a2a;
+  --cyan: #46c8f0;
+  --green: #5fd882;
+  --mag: #cf7fe0;
+  --pink: #ff2a6d;
+  --red: #c0392b;
+
+  --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", "SF Mono", Consolas,
+    monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+
+  --maxw: 1040px;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--ink);
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  /* subtle drop shadow on all text for a little depth on the dark theme */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  /* sticky footer: short pages (e.g. the recipes list) still fill the viewport
+     so the footer never floats mid-page over a big empty area */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+.site-footer {
+  flex-shrink: 0;
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+.mono {
+  font-family: var(--mono);
+  font-size: 0.92em;
+}
+
+code {
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 0.08em 0.4em;
+  color: var(--amber);
+}
+
+pre {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
+}
+pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--text);
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---- header / nav ---- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(12, 16, 22, 0.85);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 60px;
+}
+.brand {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.brand .dot {
+  color: var(--amber);
+}
+.nav {
+  display: flex;
+  gap: 1.25rem;
+  margin-left: auto;
+  font-size: 0.95rem;
+}
+.nav a {
+  color: var(--sub);
+}
+.nav a:hover,
+.nav a[aria-current="page"] {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* ---- footer ---- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+  padding: 2rem 0;
+  color: var(--sub);
+  font-size: 0.88rem;
+}
+.site-footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+/* footer links read in canary/amber, not blue */
+.site-footer a {
+  color: var(--amber);
+}
+.site-footer a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+/* footer tip-jar link — a small amber pill so it reads as an action, not a nav item */
+.support-link {
+  border: 1px solid var(--amber-dim);
+  border-radius: 999px;
+  padding: 0.12rem 0.7rem;
+  background: color-mix(in srgb, var(--amber) 10%, transparent);
+}
+.support-link:hover {
+  background: color-mix(in srgb, var(--amber) 20%, transparent);
+  color: var(--amber);
+}
+/* About-page support card */
+.support-card {
+  border: 1px solid var(--amber-dim);
+  background: color-mix(in srgb, var(--amber) 7%, transparent);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.25rem;
+  margin: 1.75rem 0 0;
+}
+.support-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+.support-card p {
+  margin: 0 0 0.75rem;
+  color: var(--sub);
+}
+
+/* ---- hero ---- */
+.hero {
+  padding: 4rem 0 2.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+.hero p.lead {
+  font-size: 1.15rem;
+  color: var(--sub);
+  max-width: 680px;
+  margin: 0 0 1.75rem;
+}
+.hero .amber {
+  color: var(--amber);
+}
+
+/* ---- buttons ---- */
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: var(--panel2);
+  cursor: pointer;
+}
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--sub);
+}
+.btn.primary {
+  background: var(--amber);
+  color: #2a1c06;
+  border-color: var(--amber);
+}
+.btn.primary:hover {
+  filter: brightness(1.08);
+}
+.btn-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ---- section headings ---- */
+.section {
+  padding: 2.5rem 0;
+}
+.section h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem;
+}
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  margin: 0 0 0.5rem;
+}
+
+/* ---- panels / cards ---- */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+/* colour-accented panel: a left bar + matching header, tinted by --accent */
+.panel.accent {
+  border-left: 3px solid var(--accent, var(--amber));
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--accent, var(--amber)) 6%, var(--panel)),
+    var(--panel) 55%
+  );
+}
+.panel.accent > .eyebrow {
+  color: var(--accent, var(--amber));
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+.grid.cols-2 {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.grid.cols-3 {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+/* strict 2-up (e.g. the home page how-it-works steps): always two columns */
+.grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ---- long-form prose (about / contribute) ---- */
+/* Primary copy stays crisp --text like the home page; only genuinely
+   secondary lines are muted via .muted / .note. */
+.prose p {
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+.prose h3 {
+  color: var(--text);
+  font-size: 1.15rem;
+  margin: 1.9rem 0 0.6rem;
+}
+.prose ul,
+.prose ol {
+  color: var(--text);
+  padding-left: 1.2rem;
+  margin: 0 0 1.1rem;
+}
+.prose li {
+  margin: 0.3rem 0;
+}
+.prose .muted,
+.prose .note {
+  color: var(--sub);
+}
+.prose .note {
+  font-size: 0.85rem;
+}
+
+/* ---- suggest-a-recipe form ---- */
+.rf {
+  margin-top: 1.5rem;
+}
+.rf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.rf label,
+.rf .rf-wide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.rf .rf-wide {
+  margin-top: 1rem;
+}
+.rf .hint {
+  font-weight: 400;
+  color: var(--sub);
+  font-size: 0.8rem;
+}
+.rf input,
+.rf select,
+.rf textarea {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 0.5rem 0.65rem;
+}
+.rf textarea {
+  resize: vertical;
+}
+.rf input:focus,
+.rf select:focus,
+.rf textarea:focus {
+  outline: none;
+  border-color: var(--amber);
+}
+.rf-errors {
+  margin-top: 1rem;
+  border-left: 3px solid var(--red);
+  background: var(--panel);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+}
+.rf-errors ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+}
+@media (max-width: 640px) {
+  .rf-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- recipe card ---- */
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  transition: border-color 0.12s ease;
+}
+.recipe-card:hover {
+  text-decoration: none;
+  border-color: var(--sub);
+}
+.recipe-card .title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.recipe-card .meta {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--sub);
+}
+.recipe-card .rc-votes {
+  color: var(--sub);
+}
+.recipe-card .rc-votes .rc-up {
+  color: var(--green);
+}
+.recipe-card .rc-votes .rc-down {
+  color: var(--red);
+}
+/* unverified / borked recipes read quieter so the site never overstates */
+.recipe-card[data-status="unverified"],
+.recipe-card[data-status="borked"] {
+  opacity: 0.78;
+}
+
+/* ---- status badge ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--sub);
+  white-space: nowrap;
+}
+.badge .led {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sub);
+}
+.badge[data-status="working"] {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 40%, transparent);
+}
+.badge[data-status="working"] .led {
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+}
+.badge[data-status="needs-test"] {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 40%, transparent);
+}
+.badge[data-status="needs-test"] .led {
+  background: var(--amber);
+}
+.badge[data-status="borked"] {
+  color: var(--red);
+  border-color: color-mix(in srgb, var(--red) 50%, transparent);
+}
+.badge[data-status="borked"] .led {
+  background: var(--red);
+}
+
+/* ---- recipe detail ---- */
+.recipe-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 2.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.recipe-head h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+/* Recipe detail hero: lettermark tile + title + at-a-glance fact pills */
+.recipe-hero {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+/* poster-style hero: the game's real artwork behind the title */
+.recipe-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 210px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center 30%;
+}
+.recipe-banner.no-art {
+  background: linear-gradient(150deg, var(--panel2), var(--panel));
+}
+.recipe-banner-scrim {
+  position: absolute;
+  inset: 0;
+}
+.recipe-banner.has-art .recipe-banner-scrim {
+  background:
+    linear-gradient(90deg, rgba(8, 10, 14, 0.96) 0%, rgba(8, 10, 14, 0.78) 42%, rgba(8, 10, 14, 0.34) 100%),
+    linear-gradient(0deg, rgba(8, 10, 14, 0.92) 0%, rgba(8, 10, 14, 0.08) 55%);
+}
+.recipe-banner-body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.3rem 1.4rem;
+}
+.recipe-banner h1 {
+  margin: 0 0 0.55rem;
+  line-height: 1.1;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+}
+.recipe-banner .fact {
+  background: rgba(20, 27, 36, 0.82);
+  backdrop-filter: blur(2px);
+}
+.lettermark {
+  flex: none;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--amber);
+  background: linear-gradient(150deg, var(--panel2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px rgba(255, 180, 84, 0.07);
+}
+.recipe-hero-text {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+.recipe-hero-text h1 {
+  margin: 0 0 0.6rem;
+  line-height: 1.1;
+}
+.recipe-hero-badges {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-end;
+  justify-content: flex-end;
+  max-width: 62%;
+}
+.recipe-banner .recipe-hero-badges .badge,
+.recipe-banner .recipe-hero-badges .medal {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+}
+.fact {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--sub);
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.22rem 0.62rem;
+  white-space: nowrap;
+}
+.fact.amber {
+  color: var(--amber);
+  border-color: var(--amber-dim);
+}
+.fact.green {
+  color: var(--green);
+  border-color: #2f5f3f;
+}
+.fact.proton {
+  color: var(--cyan);
+  border-color: #25556a;
+}
+/* Recipe detail: exactly three equal columns (no phantom auto-fill track),
+   collapsing to two then one as the viewport narrows. */
+.recipe-cols {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+/* right column stacks Launch over Proton and fills to match the left column */
+.recipe-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.recipe-col-right > .panel:last-child {
+  flex: 1;
+}
+@media (max-width: 640px) {
+  .recipe-cols {
+    grid-template-columns: 1fr;
+  }
+}
+/* ProtonDB cell: medal on its own line, the note underneath */
+.tier-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+.tier-note {
+  font-size: 0.85rem;
+  color: var(--sub);
+}
+
+/* full-width Identity "spec sheet" — wrapping cells fill the row, so there's no
+   mismatched-column gap regardless of how much metadata a game has */
+.spec {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0.9rem 1.5rem;
+}
+.spec-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.spec-wide {
+  grid-column: 1 / -1;
+}
+.spec-k {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--sub);
+}
+.spec-v {
+  color: var(--text);
+  font-size: 0.95rem;
+  word-break: break-word;
+}
+.spec-v.amber {
+  color: var(--amber);
+  font-weight: 600;
+}
+.spec-v.green {
+  color: var(--green);
+  font-weight: 600;
+}
+.spec-v.mono {
+  font-family: var(--mono);
+  font-size: 0.88rem;
+}
+/* highlight the Proton version — it's the thing people copy into Steam */
+.kv .proton-ver {
+  color: var(--amber);
+}
+
+/* screenshot reel — slow infinite left-scroll, pause on hover, click to preview */
+.shot-reel {
+  overflow: hidden;
+  border-radius: 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.shot-track {
+  display: flex;
+  width: max-content;
+  animation: shot-scroll 55s linear infinite;
+  will-change: transform;
+}
+.shot-reel:hover .shot-track {
+  animation-play-state: paused;
+}
+@keyframes shot-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.shot {
+  flex: none;
+  width: 300px;
+  aspect-ratio: 16 / 9;
+  margin-right: 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel);
+  cursor: pointer;
+}
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.18s ease;
+}
+.shot:hover img {
+  transform: scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .shot-track {
+    animation: none;
+  }
+  .shot-reel {
+    overflow-x: auto;
+  }
+}
+
+/* screenshot lightbox preview */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(5, 7, 10, 0.86);
+  backdrop-filter: blur(4px);
+}
+.lightbox[hidden] {
+  display: none;
+}
+.lb-card {
+  margin: 0;
+  max-width: 1100px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+}
+.lb-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 82vh;
+  object-fit: contain;
+  background: #000;
+}
+.lb-btn {
+  position: absolute;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(20, 27, 36, 0.92);
+  color: var(--text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.lb-btn:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+.lb-close {
+  top: 1.1rem;
+  right: 1.2rem;
+}
+.lb-nav {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.lb-prev {
+  left: 1.2rem;
+}
+.lb-next {
+  right: 1.2rem;
+}
+@media (max-width: 560px) {
+  .lb-nav {
+    top: auto;
+    bottom: 1.2rem;
+    transform: none;
+  }
+}
+.about-summary {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+.setup-notes {
+  margin: 0;
+  color: var(--sub);
+  line-height: 1.65;
+}
+.cav-text {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.6;
+}
+/* fmtProse() renders prose as <p> blocks with **bold** + `code` markup */
+.about-summary p,
+.setup-notes p,
+.cav-text p {
+  margin: 0 0 0.7rem;
+}
+.about-summary p:last-child,
+.setup-notes p:last-child,
+.cav-text p:last-child {
+  margin-bottom: 0;
+}
+/* bold key terms read brighter than the body so they pop, even inside the
+   muted setup-notes; `code` stays amber via the global code rule */
+.about-summary strong,
+.setup-notes strong,
+.cav-text strong {
+  color: var(--pink);
+  font-weight: 650;
+}
+.proton-ver {
+  color: var(--cyan);
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1.25rem;
+  margin: 0;
+}
+.kv dt {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--sub);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.kv dd {
+  margin: 0;
+}
+
+.callout {
+  border-left: 3px solid var(--amber);
+  background: var(--panel);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1.1rem;
+}
+.callout.warn {
+  border-left-color: var(--red);
+}
+.callout .label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  margin: 0 0 0.3rem;
+}
+.callout.warn .label {
+  color: var(--red);
+}
+
+/* ---- filter bar (recipes index) ---- */
+.toolbar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 1.5rem;
+}
+.toolbar input[type="search"] {
+  flex: 1 1 240px;
+  min-width: 200px;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  padding: 0.55rem 0.8rem;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+}
+.toolbar input[type="search"]:focus {
+  outline: none;
+  border-color: var(--amber);
+}
+.chip {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--sub);
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] {
+  color: var(--ink);
+  background: var(--amber);
+  border-color: var(--amber);
+}
+.muted {
+  color: var(--sub);
+}
+.empty {
+  color: var(--sub);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Alphabetical letter dividers on the recipes index */
+.alpha-group {
+  margin: 0;
+}
+.alpha-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--amber);
+  margin: 2.25rem 0 1.1rem;
+  scroll-margin-top: 1rem;
+}
+.alpha-group:first-child .alpha-head {
+  margin-top: 0.5rem;
+}
+.alpha-head::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+ul.clean {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.clean li {
+  padding: 0.15rem 0;
+}
+
+/* ---- hero stat strip ---- */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.75rem 0 0;
+}
+.stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--sub);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  background: var(--panel);
+}
+.stat b {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+/* ---- flat mono pipeline diagram (the core idea, at a glance) ---- */
+.pipeline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-family: var(--mono);
+}
+.pipeline .stage {
+  padding: 1.1rem 1.25rem;
+  background: var(--panel);
+}
+.pipeline .stage h4 {
+  margin: 0 0 0.6rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.pipeline .stage.pc h4 {
+  color: var(--amber);
+}
+.pipeline .stage.deck h4 {
+  color: var(--green);
+}
+.pipeline .stage ol {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  color: var(--sub);
+  line-height: 1.7;
+}
+.pipeline .transit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0 1rem;
+  background: var(--panel2);
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  color: var(--cyan);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pipeline .transit .arrow {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* ---- the linchpin code block (appid -> files) ---- */
+.id-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: center;
+}
+.id-map .files .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--line);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+.id-map .files .row:last-child {
+  border-bottom: none;
+}
+.id-map .files .row span:first-child {
+  color: var(--amber);
+}
+.id-map .files .row span:last-child {
+  color: var(--sub);
+}
+
+/* ---- scope columns ---- */
+.scope {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.scope .panel h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+.scope .yes h3 {
+  color: var(--green);
+}
+.scope .no h3 {
+  color: var(--sub);
+}
+
+/* ---- ProtonDB medal ---- */
+.medal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  color: var(--medal, var(--sub));
+  border: 1px solid color-mix(in srgb, var(--medal, var(--sub)) 45%, transparent);
+  background: color-mix(in srgb, var(--medal, var(--sub)) 9%, transparent);
+  white-space: nowrap;
+}
+.medal .coin {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--medal, var(--sub));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--medal, var(--sub)) 25%, transparent);
+}
+.medal-note {
+  color: var(--sub);
+  font-weight: 400;
+}
+.medal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* ---- community-verified badge (vote-driven, distinct from author status) ---- */
+.cverified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  color: var(--green);
+  border: 1px solid color-mix(in srgb, var(--green) 50%, transparent);
+  background: color-mix(in srgb, var(--green) 12%, transparent);
+  white-space: nowrap;
+}
+.cverified .check {
+  font-weight: 900;
+}
+/* small green check on a recipe card when community-verified */
+.recipe-card .rc-verified {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ---- vote bar (does it run on your Deck?) ---- */
+.votebar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin: 1.5rem 0 0;
+}
+.votebar .vb-label {
+  font-weight: 600;
+}
+.votebar .vb-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+.vb-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.vb-btn .vb-thumb {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+.vb-btn .vb-count {
+  min-width: 1.2ch;
+  text-align: right;
+  color: var(--sub);
+}
+.vb-btn.up:hover {
+  border-color: color-mix(in srgb, var(--green) 55%, transparent);
+}
+.vb-btn.down:hover {
+  border-color: color-mix(in srgb, var(--red) 55%, transparent);
+}
+.vb-btn.up[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--green) 16%, transparent);
+  border-color: var(--green);
+  color: var(--green);
+}
+.vb-btn.up[aria-pressed="true"] .vb-count {
+  color: var(--green);
+}
+.vb-btn.down[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--red) 16%, transparent);
+  border-color: var(--red);
+  color: var(--red);
+}
+.vb-btn.down[aria-pressed="true"] .vb-count {
+  color: var(--red);
+}
+.votebar .vb-status {
+  font-size: 0.82rem;
+  color: var(--sub);
+}
+.votebar.offline {
+  opacity: 0.85;
+}
+.votebar.offline .vb-btn {
+  cursor: default;
+}
+
+/* ---- community guide links ---- */
+.guides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.guides li a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel2);
+  color: var(--text);
+}
+.guides li a:hover {
+  text-decoration: none;
+  border-color: var(--sub);
+}
+.guides .src {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cyan);
+  flex: none;
+}
+.guides .arr {
+  margin-left: auto;
+  color: var(--sub);
+}
+
+/* ---- link CTA buttons (artwork / protondb / download) ---- */
+.btn.cyan {
+  border-color: color-mix(in srgb, var(--cyan) 45%, transparent);
+  color: var(--cyan);
+}
+.btn.cyan:hover {
+  border-color: var(--cyan);
+}
+.btn.green {
+  border-color: color-mix(in srgb, var(--green) 45%, transparent);
+  color: var(--green);
+}
+.btn.green:hover {
+  border-color: var(--green);
+}
+
+/* feature chips reuse .stat styling but as a list */
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.feature-list li {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--sub);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  background: var(--panel);
+}
+
+/* =====================================================================
+   Responsive
+   ===================================================================== */
+@media (max-width: 760px) {
+  .wrap {
+    padding: 0 1rem;
+  }
+  .site-header .wrap {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+  }
+  .nav {
+    width: 100%;
+    margin-left: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+  .hero {
+    padding: 2.5rem 0 1.75rem;
+  }
+  .section {
+    padding: 2rem 0;
+  }
+  .btn-row {
+    width: 100%;
+  }
+  .btn-row .btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  /* pipeline + scope + kv stack vertically on small screens */
+  .pipeline {
+    grid-template-columns: 1fr;
+  }
+  .pipeline .transit {
+    flex-direction: row;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 0.6rem 1rem;
+  }
+  .pipeline .transit .arrow {
+    transform: rotate(90deg);
+  }
+  .scope {
+    grid-template-columns: 1fr;
+  }
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+  .kv {
+    grid-template-columns: 1fr;
+    gap: 0.1rem 0;
+  }
+  .kv dt {
+    margin-top: 0.6rem;
+  }
+  .recipe-head {
+    padding-top: 1.75rem;
+  }
+  .site-footer .wrap {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+  .brand {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

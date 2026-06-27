@@ -1,0 +1,76 @@
+[game]
+title       = "Crysis"
+slug        = "crysis"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "17300"
+sgdb_id     = ""
+
+[launch]
+binary         = "Bin64/Crysis.exe"   # must be the c1-launcher 64-bit replacement, NOT the stock SecuROM stub
+launch_options = "PROTON_FORCE_LARGE_ADDRESS_AWARE=1 PROTON_NO_ESYNC=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 17300`, 2007 original — distinct from Crysis Remastered `1715130`). ProtonDB gold and community-confirmed to finish on Deck, but it needs setup.
+
+**Key fix:** **Install the `c1-launcher`** (open-source exe replacement) over the stock executables. The stock `Bin64/Crysis.exe` is actually a **32-bit SecuROM launcher** that crashes under Proton — c1-launcher bypasses SecuROM and starts the real 64-bit game, so **the game usually won't start without it**.
+
+**Fix:** Disable ESync — `PROTON_NO_ESYNC=1` is the load-bearing flag, paired with `PROTON_FORCE_LARGE_ADDRESS_AWARE=1` (every working Deck report uses both, and the game often won't launch without ESync off). `PROTON_NO_FSYNC=1` is optional — not required in most reports.
+
+**Stability:** For stability use the DX9 renderer — pass `-dx9` as a launch argument (c1-launcher accepts `-dx9`/`-dx10`), or set `r_Driver \"DX9\"` in `system.cfg`. Clearing out old/unneeded save files also helps avoid crashes.
+
+**Audio:** If cutscene/audio breaks, add `WINEDLLOVERRIDES=\"xaudio2_7=n,b\"` to the launch options (optional, not always needed).
+
+**Proton:** `GE-Proton` works well; `proton_experimental` also reported working with the same fixes.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Crytek"
+publisher = "Electronic Arts"
+released  = "2007"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Crysis** is a 2007 first-person shooter from **Crytek**, the German studio behind **Far Cry**, published by Electronic Arts for Windows. The player controls a special-forces soldier wearing a **Nanosuit** that grants switchable powers (armor, strength, speed, cloak) across an open-ended tropical island battlefield against North Korean forces and an alien threat. Built on the then-new **CryEngine 2**, it became famous as a graphics benchmark that punished even high-end hardware, spawning the meme 'But can it run Crysis?'. It launched a series including Crysis 2, Crysis 3, and later remasters."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "c1-launcher — the SecuROM-bypass exe replacement (essential)"
+url   = "https://github.com/ccomrade/c1-launcher"
+
+[[links.guides]]
+title = "ProtonDB: Crysis (appid 17300)"
+url   = "https://www.protondb.com/app/17300"
+
+[[links.guides]]
+title = "Steam guide — Crysis launch & crash fixes"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2864588120"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted from Steam (`appid 17300`) — the 2007 original, not Crysis Remastered.
+
+**Setup:** ProtonDB gold with community reports of full playthroughs on Deck, but **it is NOT a clean out-of-box run**: requires the `c1-launcher` exe replacement (stock exe is a SecuROM stub), `PROTON_FORCE_LARGE_ADDRESS_AWARE=1` + `PROTON_NO_ESYNC=1`, and the DX9 renderer (`-dx9`) for stability; clear old saves to avoid crashes.
+
+**Controller:** The original Crysis is keyboard/mouse-first with no real native gamepad support, so use a Steam Input layout (the community 'gamepad/FPS' template) to map Deck controls — playable, but expect to tune the binding.
+
+**Binary:** `binary` path may differ depending on whether you run stock exes or `c1-launcher`."""

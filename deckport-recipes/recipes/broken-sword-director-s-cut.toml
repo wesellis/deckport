@@ -1,0 +1,74 @@
+[game]
+title       = "Broken Sword: Director's Cut"
+slug        = "broken-sword-director-s-cut"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "57640"
+sgdb_id     = ""
+
+[launch]
+binary         = "bs1dc.exe"   # Director's Cut launcher in the install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = ["openal"]
+notes      = """
+**Delisted:** Removed from Steam Nov 2024 (appid `57640`) when the 'Reforged' remake replaced it; it's a custom 2D point-and-click adventure (Revolution Software).
+
+**Proton:** ProtonDB platinum and it was Steam Deck Verified, so it runs out of the box on the Deck with `proton_experimental`. Launcher binary is `bs1dc.exe` in the install folder.
+
+**DRM:** No GFWL/SecuROM DRM (plain Steam wrapper, ships `openal32.dll`).
+
+**Fix:** Most common issue is no-launch/silent audio because **OpenAL isn't installed** (the game ships `oalinst.exe` but doesn't auto-run it) — install the `openal` winetricks verb, or run `oalinst.exe` from the game folder inside the prefix. If the game launches but has no sound, the documented workaround is a Steam launch option picking a sound backend, e.g. `--sounddevice "Generic Hardware"` (other values: `"DirectSound Software"`, `"Generic Software"`, `"MMSYSTEM"`).
+
+**Controller:** Pointer-driven gameplay maps cleanly to the right trackpad as a mouse; the Verified default layout works, no custom hack needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Revolution Software"
+publisher = "Ubisoft"
+released  = "2009"
+genre     = "Point-and-click adventure"
+modes     = "Single-player"
+summary   = "**Broken Sword: Shadow of the Templars - The Director's Cut** is a 2009 enhanced remake of **Revolution Software**'s classic 1996 **point-and-click adventure**. Players guide American tourist George Stobbart and now-playable French journalist Nico Collard as they unravel a murder mystery tied to a modern-day conspiracy surrounding the **Knights Templar** across locations in Paris and beyond. The Director's Cut adds new puzzles, fully **repainted hand-drawn artwork**, and additional story sequences centered on Nico. It was well received as a definitive version of a landmark adventure game and was nominated for Best Story at the 2009 British Academy Video Games Awards."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 57640)"
+url   = "https://www.protondb.com/app/57640"
+
+[[links.guides]]
+title = "Steam Community: fix if the game won't launch (run oalinst.exe / install OpenAL)"
+url   = "https://steamcommunity.com/app/57640/discussions/0/1640927348814282503/"
+
+[[links.guides]]
+title = "Steam Community: no-sound fix (--sounddevice launch option)"
+url   = "https://steamcommunity.com/app/57640/discussions/0/624076851070522841/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Removed from Steam Nov 2024 in favor of the 'Reforged' remake; this is the original 2009 Director's Cut (appid `57640`).
+
+**Proton:** ProtonDB platinum and previously Steam Deck Verified, so community reports confirm it runs on Deck under `proton_experimental`. Launcher is `bs1dc.exe`.
+
+**Fix:** If the game won't start, install **OpenAL** (`openal` winetricks verb, or run `oalinst.exe` from the install folder inside the prefix). If it launches but has no sound, set a Steam launch option such as `--sounddevice "Generic Hardware"`.
+
+**Controller:** Single-player point-and-click; right trackpad as mouse with the default Verified layout is plenty, no controller hack required."""

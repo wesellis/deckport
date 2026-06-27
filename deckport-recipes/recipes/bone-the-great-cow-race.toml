@@ -1,0 +1,72 @@
+[game]
+title       = "Bone: The Great Cow Race"
+slug        = "bone-the-great-cow-race"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "8320"
+sgdb_id     = ""
+
+[launch]
+binary         = "Bone2v20.exe"   # Telltale Tool engine; main launcher is Bone2v20.exe (Bone1v20.exe is the intro/older build)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `8320`), a Telltale Tool point-and-click adventure. **ProtonDB lists platinum, but on low confidence (only a handful of reports)** — treat as promising rather than proven; this is why status is `needs-test`.
+
+**Proton:** Run with `GE-Proton` (`proton_experimental` also works). Binary is `Bone2v20.exe` (the install folder also contains a `Bone2.exe`, but `Bone2v20.exe` is the v2.0 launcher).
+
+**DRM:** The English release ships with **SoftwarePassport/Armadillo** copy protection; that DRM doesn't run on modern Windows/Proton, so a community no-CD/loader fix placed beside the exe is **the usual way to get it launching**. (Some non-English builds, e.g. the Czech/Polish releases, shipped without it.)
+
+**Display:** Native game is 4:3 only — use the **Telltale Custom Resolution Tool** to force a wider mode, otherwise it pillarboxes (fine on the Deck's 16:10 panel).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2006"
+genre     = "Point-and-click adventure"
+modes     = "Single-player"
+summary   = "**Bone: The Great Cow Race** is the second episode in Telltale Games' adventure **series** adapting Jeff Smith's acclaimed **Bone comics**, following the first game, Bone: Out from Boneville (2005). Built on the **Telltale Tool engine**, it adapts the comic's second volume as the Bone cousins get caught up in a rowdy spring-fair cow race. It was one of Telltale's earliest titles before the studio's breakout with **Sam & Max**; the series was never continued because Telltale **lost the Bone license**. The games were delisted from Steam following Telltale's 2018 closure."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Bone: The Great Cow Race (appid 8320)"
+url   = "https://www.protondb.com/app/8320"
+
+[[links.guides]]
+title = "PCGamingWiki — Bone: The Great Cow Race (DRM, fixes, resolution)"
+url   = "https://www.pcgamingwiki.com/wiki/Bone:_The_Great_Cow_Race"
+
+[[links.guides]]
+title = "Steam store page — Bone: The Great Cow Race"
+url   = "https://store.steampowered.com/app/8320/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Status:** Delisted single-player adventure; **ProtonDB lists platinum but on low confidence (only a few reports)**, so treat it as promising, not proven (status `needs-test` = config confirmed against community evidence, not yet hands-on by us).
+
+**Controller:** This is a mouse-driven point-and-click with **NO native gamepad support** — play it with a Steam Input mouse/trackpad+keyboard layout (right trackpad as mouse, a button mapped to left-click); that covers the whole game.
+
+**DRM:** English build uses **SoftwarePassport/Armadillo** protection, so a no-CD/loader fix next to `Bone2v20.exe` is typically needed before it will launch under Proton.
+
+**Display:** Optional widescreen via the **Telltale Custom Resolution Tool**."""

@@ -1,0 +1,74 @@
+[game]
+title       = "Stranger Things 3: The Game"
+slug        = "stranger-things-3-the-game"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "1097800"
+sgdb_id     = ""
+
+[launch]
+binary         = "STBomb.exe"   # Unity build; internal product codename is "STBomb". Verify against your install (steamapps/common/Stranger Things 3 The Game/).
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `1097800`), **Unity** engine (BonusXP / Netflix).
+
+**Proton:** ProtonDB rates it **platinum** and Valve lists it **Steam Deck Verified** — runs essentially out of the box on Proton/Deck. Stock `Proton 8`/`9` or `Proton Experimental` are fine; `GE-Proton` also works.
+
+**DRM:** No GFWL/SecuROM/DRM and **no widescreen hack needed** — it's a fixed top-down 2D Unity title that scales fine to the Deck's `1280x800`.
+
+**Launch:** No special launch options required.
+
+**Controller:** Full native `XInput` controller support, so the Deck gamepad maps automatically; supports local co-op with a second pad.
+
+**Install:** deckport only configures the prefix; **it never bundles or links the game files**."""
+
+[about]
+developer = "BonusXP"
+publisher = "BonusXP"
+released  = "2019"
+genre     = "Action beat 'em up / adventure"
+modes     = "Single-player, two-player local co-op"
+summary   = "**Stranger Things 3: The Game** is a retro 16-bit-style pixel-art **beat 'em up adventure** based on the third season of the **Netflix series**, developed and published by BonusXP and built in **Unity**. Players explore Hawkins, solve puzzles, and fight enemies as one of twelve show characters, with up to two active at once for **couch co-op**. Critical reception was mixed, with reviewers praising the faithful adaptation but criticizing the thin combat and repetitive quests. It was pulled from PC and console storefronts in 2021 after the **BonusXP/Netflix licensing deal** wound down, making it no longer obtainable through normal channels."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 1097800) — Platinum"
+url   = "https://www.protondb.com/app/1097800"
+
+[[links.guides]]
+title = "PCGamingWiki — Stranger Things 3: The Game"
+url   = "https://www.pcgamingwiki.com/wiki/Stranger_Things_3:_The_Game"
+
+[[links.guides]]
+title = "BonusXP — official game page"
+url   = "https://bonusxp.com/games/strangerthings3thegame/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Pulled from Steam/GOG; community ProtonDB reports rate it **platinum** and it runs cleanly on Proton/Deck with no DRM, no widescreen fix, and no launch options.
+
+**Controller:** Native `XInput` controller support means the Deck pad works out of the box (plus second-pad local co-op).
+
+**NEEDS-TEST:** Binary name (`STBomb.exe`) inferred from the Unity build's internal codename — confirm the actual `.exe` in your install folder.
+
+**Co-op:** Single-player/local co-op only, so delisting doesn't break it."""

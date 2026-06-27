@@ -1,0 +1,79 @@
+[game]
+title       = "Bloodborne PSX"
+slug        = "bloodborne-psx"
+aliases     = ["BloodbornePSX", "BBPSX", "Bloodborne PSX", "BloodbornePSX.exe"]
+type        = "proton"
+engine      = "unreal"
+steam_appid = ""
+sgdb_id     = "5318515"
+
+[launch]
+binary         = "BloodbornePSX.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Engine:** Windows Unreal Engine 4 build; runs under Proton on Steam Deck.
+
+**Availability:** The creator's official itch.io page is `b0tster.itch.io/bbpsx` (not `/bloodbornepsx`). NOTE: in 2025 Sony filed a copyright claim and itch.io **suspended the download**, so the official page no longer offers the files. If you already have a legitimately-downloaded build, the steps below apply.
+
+**Install:** Extract the ZIP, add `BloodbornePSX.exe` (in the extracted root) as a non-Steam game, and set `Proton Experimental` in `Properties > Compatibility`.
+
+**Proton:** It is a straightforward packaged UE4 game; community reports indicate it runs well under Proton. No verified ProtonDB tier exists (it was never on Steam), so this is `needs-test`.
+
+**Controls:** Native gamepad support (D-pad to move, face buttons for actions); the Steam Deck controller should work without custom Steam Input mappings.
+
+**Data:** No data files from the original Bloodborne are required; this is a **fully original demake** built from scratch.
+"""
+
+[about]
+developer = "Lilith Walther (b0tster), with Corwyn Prichard"
+publisher = "LWMedia (free fan project)"
+released  = "2022"
+genre     = "Action RPG, Horror, Demake"
+modes     = "Single-player"
+summary   = "**Bloodborne PSX** is a free fan-made **demake** of FromSoftware's **Bloodborne**, reimagined as if it were a PlayStation 1-era game. Created by solo developer Lilith Walther over 13 months using **Unreal Engine 4**, it captures Bloodborne's gothic Yharnam setting, combat, and atmosphere through a low-polygon, **CRT-filtered** aesthetic. The full version released in January 2022 and was met with strong acclaim for its craftsmanship and fidelity to the source game's tone. It is entirely self-contained with no assets from the original Bloodborne, making it a legal fan work independent of Sony's intellectual property claims."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5318515"
+
+[[links.guides]]
+title = "Bloodborne PSX — Official itch.io Page (b0tster / LWMedia)"
+url   = "https://b0tster.itch.io/bbpsx"
+
+[[links.guides]]
+title = "Bloodborne PSX — Steam Community Guide"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3330100466"
+
+[[links.guides]]
+title = "Bloodborne PSX — Wikipedia (overview, takedown history)"
+url   = "https://en.wikipedia.org/wiki/Bloodborne_PSX"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**No owned copy needed:** No owned data files required — **fully self-contained free demake**.
+
+**Availability:** Sony filed a copyright claim in 2025 and itch.io **suspended the official download**, so `b0tster.itch.io/bbpsx` no longer serves the files. The recipe covers running a build you already have.
+
+**Install:** Add `BloodbornePSX.exe` from the extracted ZIP as a non-Steam game and force `Proton Experimental`.
+
+**Binary:** Root executable is `BloodbornePSX.exe` (the final release was v1.05).
+
+**Controls:** Native gamepad support; no Steam Input remap needed.
+
+**Note:** Unofficial FromSoftware/Bloodborne fan project by LWMedia, not affiliated with Sony or FromSoftware.
+"""

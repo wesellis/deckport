@@ -1,0 +1,83 @@
+[game]
+title       = "Open Sonic"
+slug        = "open-sonic"
+aliases     = ["Open Sonic the Hedgehog", "OpenSonic", "Open Surge"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5322656"     # https://www.steamgriddb.com/game/5322656 (Open Surge engine)
+
+[launch]
+binary         = "opensonic"   # confirmed: native Linux ELF inside opensnc-linux-0.1.4.tar.gz (portable, no install)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Overview:** A free, open-source (GPLv2) Sonic fan game; final release `0.1.4` (Sept 2010). Native Linux, no Proton, no DRM.
+
+**Native:** `type = 'native'`. The official Linux package `opensnc-linux-0.1.4.tar.gz` is **portable** — extract it and run the bundled ELF `opensonic`; no installation step. Built on the **Allegro 4** library.
+
+**IMPORTANT (32-bit):** the `0.1.4` Linux binary is **x86 (32-bit) only**. The Steam Deck is x86-64, so the 32-bit Allegro 4 runtime / multilib must be present for the bundled `opensonic` to launch. Add it as a non-Steam game and verify it starts from a terminal first.
+
+**Sound fix:** older builds can fail or hang on audio under PulseAudio/PipeWire. The known workaround is to wrap the launch with ALSA-OSS emulation — set launch_options to `aoss %command%` (or `padsp %command%`) if audio breaks the game on startup.
+
+**Alternative path:** if the aging 32-bit `0.1.4` build won't run cleanly, the engine's actively maintained original-IP successor **Open Surge** (Flatpak `org.opensurge2d.OpenSurge` on Flathub) installs and runs natively on Deck — but it is a *different game* (the "Surge the Rabbit" project), not Open Sonic, so it's a separate recipe rather than a drop-in for these assets.
+
+**Controller:** the Allegro 4 build has limited native joystick support; a **Steam Input** layout (keyboard/gamepad mapping) is the reliable way to drive it on Deck.
+
+**Note:** project is discontinued/unfinished but what's there is playable."""
+
+[about]
+developer = "Alexandre Martins"
+publisher = "Open Surge / SourceForge (community project)"
+released  = "2010 (final release 0.1.4)"
+genre     = "2D platformer"
+modes     = "Single-player"
+summary   = """
+**Open Sonic** is a free, open-source 2D platformer Sonic fan game written in C using the **Allegro** library, started in 2009 by Brazilian developer Alexandre Martins. Its distinctive feature was **cooperative play**, letting the player control Sonic, Tails, and Knuckles simultaneously to solve puzzles.
+
+The Open Sonic phase ended with version 0.1.4 in September 2010, after which the project was discontinued and reborn as the original-IP engine **Open Surge**, which remains actively maintained. It is notable as the origin of the Open Surge retro game engine and game-creation system."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Open Sonic — official site & 0.1.4 download (portable Linux x86 tarball)"
+url   = "https://opensnc.sourceforge.net/home/download.php"
+
+[[links.guides]]
+title = "Open Sonic on SourceForge (opensnc-linux-0.1.4.tar.gz)"
+url   = "https://sourceforge.net/projects/opensnc/files/Open%20Sonic/0.1.4/"
+
+[[links.guides]]
+title = "Open Surge (maintained successor engine) on Flathub"
+url   = "https://flathub.org/apps/org.opensurge2d.OpenSurge"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**License:** Free, open-source GPLv2 fan game (not SEGA), never sold on Steam — **no DRM**. Get it from the creator's official SourceForge page.
+
+**Native + portable:** Native Linux (`type = 'native'`), no Proton. The `opensnc-linux-0.1.4.tar.gz` package is portable — extract and run the bundled `opensonic` ELF directly. Built on **Allegro 4**.
+
+**32-bit gotcha:** the `0.1.4` Linux binary is **x86 (32-bit) only**; the Deck is x86-64, so the 32-bit Allegro 4 / multilib runtime must be available or it won't launch. Test from a terminal before adding it.
+
+**Sound fix:** if audio breaks the game on PulseAudio/PipeWire, wrap the launch with `aoss %command%` (or `padsp %command%`).
+
+**Alternative:** the actively maintained successor **Open Surge** (Flatpak `org.opensurge2d.OpenSurge`) runs natively on Deck, but it is a *different game*, not Open Sonic.
+
+**Controller:** Steam Input layout recommended (Allegro 4 joystick support is limited).
+
+**Note:** incomplete/discontinued but playable."""

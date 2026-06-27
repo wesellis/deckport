@@ -1,0 +1,86 @@
+[game]
+title       = "Psi-Ops: The Mindgate Conspiracy"
+slug        = "psi-ops-mindgate-conspiracy"
+aliases     = ["Psi-Ops", "Psi Ops Mindgate Conspiracy"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "PsiOps.exe"
+launch_options = ""
+requires_files = ["Psi-Ops: The Mindgate Conspiracy PC game files (supply your own legally-obtained copy)"]
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Psi-Ops: The Mindgate Conspiracy is a 2004 third-person action game by **Midway Games** in which players use telekinetic and mind-control powers to fight through military enemies. The PC version was released in 2004 and has never appeared on Steam or GOG.
+
+**Legal status:** In 2008, Midway made the PC version available as a **free freeware download** bundled with optional adware (which is no longer active). The game is therefore freely and legally distributable; supply your own copy of the game files.
+
+**Adding to Steam:** In Desktop Mode, add `PsiOps.exe` as a Non-Steam Game in Steam. Under *Properties → Compatibility*, force **GE-Proton** (install via ProtonUp-Qt if not already present).
+
+**Framerate cap — critical:** The Psi-Ops engine is **framerate-dependent**. Running **above 60fps** causes bugs — ladders can kill the player, jumping may not register, and the character ghosts when moving. **Cap the framerate to 60fps.** The cleanest fix is ThirteenAG's d3d9 wrapper (`d3d9.dll` + `d3d9.ini` with `FPSLimit=60`) included with the Widescreen Fix below; alternatively use the Steam Deck's built-in per-game frame limiter (Performance overlay → Frame Limit → 60) or enable in-game Vsync. 60fps is the target — 30fps is not required and the game is fully playable at 60.
+
+**Essential mod — Widescreen Fix:** Install ThirteenAG's **WidescreenFixesPack** Psi-Ops fix (copy the files next to `PsiOps.exe`). It corrects resolution, aspect ratio, HUD, field of view, and FMV cutscenes for 16:9, and its bundled d3d9 wrapper handles the 60fps limit. Set the desired resolution in `PsiOpsTheMindgateConspiracy.WidescreenFix.ini`.
+
+**Controller mapping:** The game was originally designed for Xbox/PS2 controllers but the PC version's controller detection may not automatically map the Deck inputs correctly. Apply a **community Steam Deck controller layout** from Steam Input (search in the community layouts for "Psi-Ops" — several configurations have been shared). Alternatively, create a manual layout mapping the game's keyboard bindings to Deck buttons.
+
+**Graphics settings:** Without the Widescreen Fix the game is limited to 4:3 resolutions (e.g. 1024×768 or 1280×1024). With the Widescreen Fix installed you can set the Deck's native 1280×800. GE-Proton handles the Direct3D 9 rendering without additional winetricks.
+
+**Stability:** The game may crash on level transitions or after extended sessions under certain Proton versions. If instability occurs, try the previous GE-Proton release.
+
+**Confirmed playthrough:** Community members including the YouTube series *"Barry Plays Psi-Ops"* have confirmed a full playthrough is achievable on Steam Deck hardware.
+"""
+
+[about]
+developer = "Midway Studios San Diego"
+publisher = "Midway Games"
+released  = "2004"
+genre     = "Third-person action"
+modes     = "Single-player"
+summary   = "**Psi-Ops: The Mindgate Conspiracy** is a 2004 action game by **Midway Games** that puts players in the role of a black-ops soldier who recovers telekinetic, pyrokinetic, and mind-control powers to fight a rogue psi organization. Its physics-driven telekinesis system was remarkable for its era and the game developed a cult following. The PC version was released as **freeware by Midway in 2008** and runs on Steam Deck via GE-Proton, though the framerate must be capped to 60fps (running above 60 breaks the engine's framerate-tied physics) and ThirteenAG's Widescreen Fix is recommended."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki – Psi-Ops: The Mindgate Conspiracy"
+url   = "https://www.pcgamingwiki.com/wiki/Psi-Ops:_The_Mindgate_Conspiracy"
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack – Psi-Ops Widescreen Fix (release)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/psiops"
+
+[[links.guides]]
+title = "WSGF – Psi-Ops: The Mindgate Conspiracy"
+url   = "https://www.wsgf.org/dr/psi-ops-mindgate-conspiracy/en"
+
+[[links.guides]]
+title = "r/SteamDeck – Psi-Ops discussion"
+url   = "https://www.reddit.com/r/SteamDeck/search/?q=psi+ops"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Never released on Steam or GOG. The PC version was made freeware by Midway in 2008 — supply your own legally-obtained copy of the game files.
+
+**60fps cap is mandatory:** The engine is framerate-tied. Running *above* 60fps breaks ladders, jumping, and movement. Cap to 60fps via ThirteenAG's d3d9 wrapper (`FPSLimit=60`), the Deck's per-game frame limit, or in-game Vsync. 30fps is not required.
+
+**Install the Widescreen Fix:** ThirteenAG's WidescreenFixesPack Psi-Ops fix corrects resolution, aspect ratio, HUD, FOV, and FMVs, and bundles the d3d9 frame limiter. Copy its files next to `PsiOps.exe`.
+
+**Controller layout:** Default Steam Deck button mapping may not work correctly. Apply a community Steam Input layout for Psi-Ops or create a manual mapping.
+
+**No Steam app ID:** Added as a non-Steam shortcut only; no Steam cloud saves or overlay features.
+"""

@@ -1,0 +1,75 @@
+[game]
+title       = "The Chronicles of Riddick: Assault on Dark Athena"
+slug        = "riddick-assault-on-dark-athena"
+aliases     = ["Assault on Dark Athena", "Riddick Dark Athena", "Chronicles of Riddick"]
+type        = "proton"
+engine      = "other"         # Starbreeze engine
+steam_appid = "9860"
+sgdb_id     = ""
+
+[launch]
+binary         = "DarkAthena.exe"   # in System\Win32_x86\ (GOG/retail); language launcher is DarkAthena_Launcher.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2009 Starbreeze / Tigon, published by Atari — a first-person action game that also bundles a remastered version of **Escape from Butcher Bay**.
+
+**ProtonDB:** Tier sits around **Bronze** (trending Silver, best-reported Platinum, ~11 reports as of mid-2026). The spread reflects the DRM situation below, not the engine: once the DRM blocker is cleared the game itself runs cleanly under Proton.
+
+**Steam Deck:** Not officially Deck-Verified. The Steam build will **not launch out of the box** because of its DRM; once that is resolved it plays well at native Deck resolution.
+
+**Executable:** The real binary is `DarkAthena.exe`, located in `System\\Win32_x86\\` inside the install. A separate `DarkAthena_Launcher.exe` only sets language — point your shortcut at `DarkAthena.exe` directly.
+
+**DRM (launch blocker):** The retail/Steam PC release uses `TAGES` (not `SecuROM`). `TAGES`'s ring-0 driver does not initialise under Proton, so the Steam build fails to start. The GOG release is `TAGES`-free and pre-patched to `v1.01`, so a DRM-free executable from your own copy is the practical route.
+
+**Fix:** Owners of the Steam copy commonly restore the DRM-free `System\\Win32_x86` files from their GOG copy over the Steam install (the `dvm.dll` it contains is a long-standing antivirus false positive, noted in GOG's own support docs). After that it launches normally under `GE-Proton` (`proton_experimental` is a fine fallback). Disabling DXVK is not required.
+
+**Controller:** Native XInput gamepad support is built in — confirmed; the default Steam Deck controls work without a custom layout.
+
+**Display:** Widescreen/16:9–16:10 is supported; if the resolution picker is limited, set it via the in-game options or the bundled `Fullscreensizer` tool — no launch options are normally required."""
+
+[about]
+developer = "Starbreeze Studios, Tigon Studios"
+publisher = "Atari"
+released  = "2009"
+genre     = "First-person action, stealth"
+modes     = "Single-player, multiplayer"
+summary   = "**Assault on Dark Athena** is a 2009 first-person action game built on **Starbreeze's proprietary engine** and based on the **Riddick film series**. It bundles a graphically remastered version of the acclaimed 2004 game **Escape from Butcher Bay** alongside the new Dark Athena campaign, in which Riddick fights his way off a mercenary slaver ship. Reviewers praised its blend of **melee combat, gunplay, and stealth**, with the remastered Butcher Bay widely regarded as a high point. The PC version was later delisted from digital storefronts over **expiry of the Riddick license**, leaving no official way to purchase it."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = """
+**Supply your own copy:** Delisted from Steam (appid `9860`) and GOG — supply your own copy; configuration only, no links.
+
+**DRM:** DRM is `TAGES` (not `SecuROM`) and is **the launch blocker under Proton** — restore the DRM-free `System\\Win32_x86` files from your own GOG copy over the Steam install.
+
+**Executable:** Launch `DarkAthena.exe` from `System\\Win32_x86\\` (not the `DarkAthena_Launcher.exe`, which only sets language).
+
+**Controller:** Native XInput gamepad support, so no custom controller layout needed.
+
+**Display:** Widescreen supported; use in-game options or `Fullscreensizer` if the resolution list is limited."""
+
+[[links.guides]]
+title = "ProtonDB reports — Assault on Dark Athena (appid 9860)"
+url   = "https://www.protondb.com/app/9860"
+
+[[links.guides]]
+title = "Steam Community — make the Steam version functional with your own DRM-free files"
+url   = "https://steamcommunity.com/app/9860/discussions/0/3422187248448659639/"
+
+[[links.guides]]
+title = "GOG Support — dvm.dll / DarkAthena.exe errors (antivirus false positive)"
+url   = "https://support.gog.com/hc/en-us/articles/212453069"

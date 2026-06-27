@@ -1,0 +1,77 @@
+[game]
+title       = "Outland"
+slug        = "outland"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "305050"
+sgdb_id     = ""
+
+[launch]
+binary         = "Outland.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `305050`, Housemarque/Ubisoft side-scrolling platformer).
+
+**Proton:** ProtonDB tier **gold** — community reports it running well on Linux/Proton, so it plays on the Deck. Run the Windows build `Outland.exe` under `GE-Proton` (`Proton 8.0+`/Experimental also work).
+
+**DRM:** No `GFWL`, `SecuROM`, or other DRM hurdles.
+
+**Controller:** The game speaks `DirectInput` rather than native `XInput`, so Steam's default gamepad mapping can act flaky — **force a Steam Input gamepad layout for the title** (`Properties > Controller > 'Enable Steam Input'`) and the Deck's built-in controls work fine.
+
+**Native:** A native Linux build also exists (Feb 2015); this recipe configures the Windows-via-Proton path.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Housemarque"
+publisher = "Ubisoft"
+released  = "2014 (PC; originally 2011 on consoles)"
+genre     = "Action platformer / Metroidvania"
+modes     = "Single-player, online co-op"
+summary   = """
+**Outland** is a 2D action platformer built around a **polarity-switching** mechanic inspired by the shoot-'em-up **Ikaruga**: the player toggles between blue (light) and red (dark) states to absorb same-colored attacks while damaging opposite-colored enemies, all woven into a **Metroidvania**-style adventure. Developed by Housemarque and published by Ubisoft, it debuted in 2011 on Xbox Live Arcade and PlayStation Network to strong reviews before arriving on PC via Steam in 2014.
+
+The PC release supports a full storyline **online co-op** mode in addition to its single-player campaign. The Steam version was **delisted** in December 2018, briefly relisted in October 2020, and removed from sale again in April 2024."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Outland on ProtonDB (appid 305050) — community Proton/Deck reports"
+url   = "https://www.protondb.com/app/305050"
+
+[[links.guides]]
+title = "Outland — PCGamingWiki (fixes, controller notes, game data)"
+url   = "https://www.pcgamingwiki.com/wiki/Outland"
+
+[[links.guides]]
+title = "Gamepad controls support — Outland Steam discussion (DirectInput / Steam Input)"
+url   = "https://steamcommunity.com/app/305050/discussions/0/1353742967801551971/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Status:** Delisted Steam game (appid `305050`). ProtonDB **gold**; community reports confirm it runs on Linux/Proton, so it should run on the Deck under `GE-Proton` — **needs a hands-on Deck pass to confirm this exact recipe**.
+
+**Binary:** `Outland.exe` (Windows build).
+
+**Controller:** `DirectInput`-based, so enable **Steam Input** and use a gamepad layout if the in-game controller mapping misbehaves.
+
+**Native:** A native Linux build also exists if you prefer it over Proton."""

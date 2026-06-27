@@ -1,0 +1,74 @@
+[game]
+title       = "Super Mega Baseball 2"
+slug        = "super-mega-baseball-2"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "414870"
+sgdb_id     = ""
+
+[launch]
+binary         = "supermegabaseball.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `414870`; pulled from sale 2024-01-26, online services shut down 2024-07-24).
+
+**Install:** Unity-engine arcade baseball, exe is `supermegabaseball.exe` in the `Super Mega Baseball 2` folder.
+
+**Proton:** Runs well on Deck via Proton (ProtonDB gold, though a low-confidence sample of ~11 reports); `GE-Proton` is the safe choice but `proton_experimental` also works.
+
+**DRM:** No GFWL/SecuROM DRM to bypass — it's a straightforward Steam DRM title.
+
+**Controller:** Full native Xinput controller support, so it plays gamepad-out-of-the-box on the Deck with **no Steam Input layout needed**.
+
+**Online:** Online/multiplayer servers are dead; **single-player exhibition and season modes are unaffected**.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Metalhead Software"
+publisher = "Metalhead Software"
+released  = "2018"
+genre     = "Sports (baseball simulation/arcade)"
+modes     = "Single-player, local and online multiplayer"
+summary   = "**Super Mega Baseball 2** is an arcade-leaning baseball game and the second entry in Metalhead Software's **Super Mega Baseball** series. Built in the **Unity** engine, it features a customizable roster of fictional teams and players, a tunable difficulty system (**Ego**), exhibition and season/franchise modes, and a stylized cartoon art direction rather than licensed MLB teams. It was well received for its accessible-yet-deep gameplay and earned a **ProtonDB gold** rating on Linux. The game was pulled from Steam in January 2024 and its online services were shut down later that year, leaving the single-player modes as the fully playable experience."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Super Mega Baseball 2 (appid 414870)"
+url   = "https://www.protondb.com/app/414870"
+
+[[links.guides]]
+title = "Super Mega Baseball 2 — Delisted Games (delisting + online shutdown timeline)"
+url   = "https://delistedgames.com/super-mega-baseball-2/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam 2024-01-26 and no longer for sale.
+
+**Proton:** ProtonDB gold (low-confidence, only ~11 reports) — community reports it running on Linux/Proton/Deck.
+
+**Controller:** Native controller support means no Steam Input layout is required.
+
+**Online:** Online multiplayer servers were shut down 2024-07-24, so only single-player (exhibition/season) is fully playable now.
+
+**Recipe:** Updated with real exe (`supermegabaseball.exe`) and `GE-Proton`; still needs a hands-on confirmation on an actual Deck.
+
+**Note:** deckport links nothing."""

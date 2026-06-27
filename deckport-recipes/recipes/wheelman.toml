@@ -1,0 +1,76 @@
+[game]
+title       = "Wheelman"
+slug        = "wheelman"
+aliases     = ["Wheelman", "Vin Diesel Wheelman"]
+type        = "proton"
+engine      = "other"
+steam_appid = "21920"
+sgdb_id     = ""
+
+[about]
+developer = "Tigon Studios and Midway Studios - Newcastle"
+publisher = "Ubisoft (with Midway Games)"
+released  = "2009"
+genre     = "Open-world action driving"
+modes     = "Single-player"
+summary   = """
+**Wheelman** is a 2009 **open-world action-driving** game starring and co-created by **Vin Diesel**, set in a fictionalized **Barcelona** where the player works as an undercover getaway driver caught between rival gangs. Most missions revolve around vehicular action and stunt driving, with some on-foot third-person shooting and a signature **'air-jack'** move for hijacking cars mid-chase.
+
+Reviews were mixed-to-average, with critics praising its over-the-top car chases while faulting a thin story and lack of multiplayer; it has since gained a small **cult following**. The PC version was **delisted in 2012** following **Midway's bankruptcy** and expired in-game car-license contracts."""
+
+[launch]
+binary         = "Wheelman.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2009 Tigon/Midway open-world driving-action game starring Vin Diesel (Steam appid `21920`, delisted 2012 after Midway's bankruptcy and expired in-game car licenses).
+
+**DRM:** The PC port ships with Games for Windows - LIVE and SecuROM; **GFWL sign-in is the main blocker under Proton**.
+
+**Proton:** Use `GE-Proton` for better GFWL handling.
+
+**Fix:** Apply the community xliveless `xlive.dll` replacement to bypass GFWL and run fully offline. **Drop the replacement `xlive.dll` next to `Wheelman.exe` in the install dir.** With that in place the game launches and plays.
+
+**Controller:** The port has **no native XInput/gamepad support** - it expects keyboard + mouse, and there's no in-game key rebinding. Players on Windows use x360ce/xpadder to fake a pad; on the Deck, use **Steam Input** with a keyboard/mouse-style controller layout. Plan on tweaking the per-game controller mapping rather than expecting it to "just work."
+
+**Note:** The port has **no in-game video options and no key rebinding**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "PCGamingWiki: Wheelman (DRM, GFWL, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Wheelman"
+
+[[links.guides]]
+title = "ProtonDB: Wheelman (appid 21920)"
+url   = "https://www.protondb.com/app/21920"
+
+[[links.guides]]
+title = "Steam Community hub (appid 21920)"
+url   = "https://steamcommunity.com/app/21920/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted from Steam in 2012 (Midway bankruptcy + expired car-license contracts).
+
+**GFWL:** Main hurdle is Games for Windows - LIVE; bypass with the xliveless `xlive.dll` replacement to play offline under Proton (`GE-Proton` recommended).
+
+**DRM:** SecuROM DRM is also present.
+
+**Controller:** **No native gamepad support** - use Steam Input with a keyboard/mouse-style layout (the port has **no in-game video options and no key rebinding**).
+
+**ProtonDB:** Very few reports (low confidence); treat tier as unconfirmed and test before trusting it.
+
+**Note:** No verified Deck run yet - test before trusting."""

@@ -1,0 +1,80 @@
+[game]
+title       = "Ultimate Spider-Man"
+slug        = "ultimate-spider-man"
+aliases     = ["Ultimate Spiderman", "USM"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "USM.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** 2005 open-world action game (Treyarch; Beenox PC port), retail-only and delisted (never on Steam). Cel-shaded Spider-Man / Venom adventure across Manhattan.
+
+**DRM:** Runs under Proton, but the original retail SafeDisc DRM does **NOT** work on modern systems or under Proton (kernel disc check) — **you must run a DRM-free / no-DVD `USM.exe` in the game folder** (the real game executable is `USM.exe`, ~1.5 MB, installed to `Activision/Ultimate Spider-Man/`).
+
+**Proton:** `GE-Proton` recommended for the SafeDisc-era engine.
+
+**Display:** The game is low-res by default; install ThirteenAG's Ultimate Spider-Man Widescreen Fix (drops into the game folder, loads via the bundled ASI loader) — it auto-adapts to the Deck's native resolution and applies `FPSLimit = 60` and a corrected FOV. It targets `USM.exe` regardless of the fix's `UltimateSpiderMan.WidescreenFix.ini` filename.
+
+**Cosmetic:** `FixHUD` in that ini trades HUD scaling vs the minimap: `FixHUD = 1` scales the HUD correctly but slightly breaks the minimap; `FixHUD = 0` leaves the HUD stretched but keeps the minimap working. Pick whichever bothers you less.
+
+**Controller:** In-game pad support is partial, so add a Steam Input layout (the community profiles cover the keyboard/mouse gaps); the Deck pad is recognized but does not fully map every action natively.
+"""
+
+[about]
+developer = "Treyarch (Beenox PC port)"
+publisher = "Activision"
+released  = "2005"
+genre     = "Open-world action-adventure"
+modes     = "Single-player"
+summary   = "**Ultimate Spider-Man** is a 2005 open-world action-adventure game based on Marvel's **Ultimate** comics line, with story and art by series creators Brian Michael Bendis and Mark Bagley. It renders Manhattan in a striking cel-shaded **\"Comic Inking\"** style and lets players swing through the city as both **Spider-Man** and **Venom** across alternating story missions. Praised for its web-swinging, presentation and comic-book feel, it remains a fan favorite of the era. The PC version was a Beenox port that was **never sold digitally** and is no longer in print."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Ultimate Spider-Man (DRM, fixes, controller notes)"
+url   = "https://www.pcgamingwiki.com/wiki/Ultimate_Spider-Man"
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack — Ultimate Spider-Man Widescreen Fix"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack"
+
+[[links.guides]]
+title = "Steam Community — Ultimate Spider-Man PC setup tutorial"
+url   = "https://steamcommunity.com/discussions/forum/12/601913251731617582/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**No ProtonDB tier:** The game was never on Steam, so there is no ProtonDB page or community tier for it. Run as a non-Steam shortcut under Proton; treat compatibility as untested until verified on-device.
+
+**Supply your own copy:** Delisted, retail-only commercial game (never sold on Steam).
+
+**DRM:** Original SafeDisc DRM is broken on modern systems and under Proton; a DRM-free / no-DVD `USM.exe` is **required or the game will not launch**.
+
+**Proton:** Use `GE-Proton`.
+
+**Display:** Strongly recommend ThirteenAG's Widescreen Fix for usable Deck resolution/FOV; it auto-detects resolution and caps at 60 FPS. `FixHUD` trades HUD scaling against the minimap — `1` for clean HUD, `0` for a working minimap.
+
+**Controller:** In-game gamepad support is only partial; add a Steam Input layout to cover the keyboard/mouse gaps.
+
+**Links:** deckport links nothing.
+"""

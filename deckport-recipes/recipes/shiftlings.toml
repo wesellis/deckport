@@ -1,0 +1,63 @@
+[game]
+title       = "Shiftlings"
+slug        = "shiftlings"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "310810"
+sgdb_id     = ""
+
+[about]
+developer = "Rock Pocket Games"
+publisher = "Sierra Entertainment"
+released  = "2015"
+genre     = "Puzzle-platformer"
+modes     = "Single-player, local and online co-op"
+summary   = """
+**Shiftlings** is a **2.5D puzzle-platformer** in which two alien twins are tethered together by an **oxygen cable**; players inflate and deflate the pair to solve momentum and traversal puzzles across five interstellar worlds and 50 stages. Developed by Norwegian studio **Rock Pocket Games** and published by **Sierra Entertainment**, it released in 2015 on PC, PS4, Xbox One and Wii U, with a later **Switch Enhanced Edition**.
+
+The PC version was **delisted from Steam** after the Sierra publishing arrangement lapsed, though it was generally well received for its cooperative design and presentation."""
+
+[launch]
+binary         = "Shiftlings.exe"   # Unity build; verify casing against your install (some depots ship "shiftlings.exe")
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 310810`, removed March 2022 after the Rock Pocket/Sierra publishing deal expired; owners keep library access). Unity engine puzzle-platformer.
+
+**Proton:** Steam Deck Verified and ProtonDB platinum — **runs cleanly with stock Proton**. `GE-Proton` is a safe default and `proton_experimental` also works.
+
+**DRM:** No DRM/GFWL/SecuROM steps needed.
+
+**Controller:** Full native controller support, so **no Steam Input layout is required** (gamepad is the recommended way to play). No special launch options required.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted from Steam (`appid 310810`) in March 2022 after the Rock Pocket/Sierra publishing deal expired; existing owners keep library access.
+
+**Proton:** Steam Deck Verified with ProtonDB platinum, so it should run out of the box on the Deck with stock/`GE-Proton`.
+
+**Controller:** Unity engine, full native controller support (gamepad recommended) — **no Steam Input workaround needed**.
+
+**Binary:** Binary name (`Shiftlings.exe`) is best-effort from the Unity build convention; **confirm the exact casing in your own install**."""

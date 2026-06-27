@@ -1,0 +1,54 @@
+[game]
+title       = "Golden Axed: A Cancelled Prototype"
+slug        = "golden-axed"
+aliases     = ["Golden Axed", "Golden Axe Reboot Prototype", "Golden Axed Sega"]
+type        = "proton"
+engine      = "other"
+steam_appid = "1368460"
+sgdb_id     = ""
+
+[launch]
+binary         = "GoldenAxed.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Runs essentially out of the box with standard Proton (whitelisted from Proton 5.13; ProtonDB reports it as platinum). GE-Proton also fine. Steam DRM-wrapped — launch through Steam (steam_appid 1368460), not the bare exe. A controller works, but the in-game input/rebind menu is buggy and does not detect some pads; if buttons aren't read, set the controller to a gamepad layout via Steam Input (Big Picture / Deck controller settings) rather than relying on the game's own binding screen. Unity title. Released free by Sega in October 2020 for the Sega 60th anniversary (alongside Streets of Kamurocho) and delisted from Steam the next day; supply your own copy. Short prototype/vertical-slice (~15-30 minutes) — not a full game. One playable character (Ax Battler / a modernized barbarian) in this build; the never-released reboot was to feature the classic trio."
+
+[about]
+developer = "Sega Studios Australia"
+publisher = "Sega"
+released  = "2020"
+genre     = "Beat-em-up"
+modes     = "Single-player"
+summary   = "Golden Axed is an official Sega prototype of a never-released Golden Axe reboot (internally 'Golden Axe Reborn'), built in roughly two weeks in 2012 by Sega Studios Australia and made public for free in October 2020 for Sega's 60th anniversary. The build is a single short level with one playable barbarian (Ax Battler) hacking through enemies toward Death Adder's throne room — a vertical slice of about 15-30 minutes, released alongside Streets of Kamurocho. Sega delisted it from Steam one day after release, so it is no longer available to download from the store."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Golden Axed"
+url   = "https://www.pcgamingwiki.com/wiki/Golden_Axed:_A_Cancelled_Prototype"
+
+[[links.guides]]
+title = "ProtonDB — Golden Axed: A Cancelled Prototype (1368460)"
+url   = "https://www.protondb.com/app/1368460"
+
+[[links.guides]]
+title = "Proton whitelist report — Golden Axed (ValveSoftware/Proton #4293)"
+url   = "https://github.com/ValveSoftware/Proton/issues/4293"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = "Official Sega free release, now delisted from Steam (live for ~one day in Oct 2020); supply your own copy. Steam DRM-wrapped — must be launched through Steam (appid 1368460). Very short: one level, one playable character (Ax Battler), ~15-30 minutes — it is a 2012 prototype, not a finished game, with rough mechanics by design. ProtonDB reports platinum (runs near-native). Controller works, but the game's own input/rebind menu is buggy and may not detect a pad — use Steam Input to apply a gamepad layout if buttons don't register. Note: separate fan games Golden Axe Myth and Golden Axe Returns also exist and are different, larger-scope projects."

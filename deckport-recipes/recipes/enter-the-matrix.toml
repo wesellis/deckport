@@ -1,0 +1,71 @@
+[game]
+title       = "Enter the Matrix"
+slug        = "enter-the-matrix"
+aliases     = ["Enter the Matrix", "Matrix"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "MatrixOptions.exe"   # launch via the MatrixOptions launcher, not the game exe directly
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2003 Shiny Entertainment / Atari action game tied to **The Matrix Reloaded**. Never sold on Steam (retail only); film/Atari license expired — bring your own disc copy.
+
+**Proton:** No Steam page exists, so there is no ProtonDB rating. Run it via a non-Steam shortcut with `GE-Proton`, or through Lutris/Wine — community reports come from those routes, not ProtonDB.
+
+**Install:** Launch through `MatrixOptions.exe` (sets resolution/options), not the game exe. **Apply an official patch** (`1.52` is the latest; a separate `1.2` patch also exists). Match the **ThirteenAG Widescreen Fix** variant to whichever patch level you install — the fix ships builds for both 1.2 and 1.52.
+
+**DRM:** The retail disc uses **SafeDisc** copy protection. There is no GFWL on this 2003 title (Games for Windows – Live did not launch until 2007). Under Proton/Wine SafeDisc's kernel driver isn't loaded, so the disc check is generally not an obstacle; use a legitimate disc image of your own copy if the game asks for the CD.
+
+**Controller:** A connected gamepad while the **Widescreen Fix** is active is reported to cause on-screen distortion/disorientation, so the safe path on Deck is keyboard/mouse driven by a `Steam Input` layout rather than relying on the game's own controller handling."""
+
+[about]
+developer = "Shiny Entertainment"
+publisher = "Infogrames (Atari)"
+released  = "2003"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "**Enter the Matrix** is the first video game based on **The Matrix** film series, with a story that runs concurrent with **The Matrix Reloaded** and over an hour of **original live-action footage** written and directed by the Wachowskis using the films' cast. Players take the role of Ghost or Niobe across third-person shooting, martial-arts combat, and driving sequences. Famous as one of the **most expensive licensed games** of its era, it sold around five million copies despite mixed reviews that criticized it as rushed and unfinished."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "ThirteenAG Widescreen Fix: Enter the Matrix (release)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/enterthematrix"
+
+[[links.guides]]
+title = "PCGamingWiki: Enter the Matrix (DRM, patches, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Enter_the_Matrix"
+
+[[links.guides]]
+title = "WSGF: Enter the Matrix"
+url   = "https://www.wsgf.org/dr/enter-matrix/en"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Never on Steam (retail-only 2003 title); film/Atari license expired; configuration only, no links.
+
+**No ProtonDB rating:** Not a Steam title, so `protondb_tier` is left empty; run as a non-Steam shortcut under `GE-Proton` or via Lutris/Wine.
+
+**Patch + widescreen fix:** Install an official patch (`1.52` latest, or `1.2`) and pick the matching ThirteenAG Widescreen Fix build.
+
+**DRM:** Retail disc uses **SafeDisc**; its driver isn't loaded under Proton/Wine, so the disc check is usually a non-issue with your own disc image.
+
+**Controller:** A gamepad active alongside the Widescreen Fix can cause screen distortion — use a `Steam Input` keyboard/mouse layout instead.
+
+**Launch:** Via `MatrixOptions.exe`."""

@@ -1,0 +1,76 @@
+[game]
+title       = "Steel & Steam: Episode 1"
+slug        = "steel-steam-episode-1"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "310450"
+sgdb_id     = ""
+
+[launch]
+binary         = "Game.exe"   # standard RPG Maker VX Ace (RGSS3) launcher, sits next to Game.ini + the .rvdata2 data
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 310450`, purchase removed 11 March 2016). No third-party DRM — once you own it, the depot files run directly.
+
+**Engine:** Steampunk JRPG built with **RPG Maker VX Ace** (RGSS3). The launcher is the standard `Game.exe` sitting next to `Game.ini` and the `.rvdata2` data; Red Meat Games added custom menus/emotions/monsters on top of the stock engine.
+
+**Proton:** RPG Maker VX Ace titles run cleanly under Proton (community reports ProtonDB **Gold** for the engine, runs out of the box). `GE-Proton` or `proton_experimental` both work, **no extra winetricks needed**.
+
+**Audio caveat:** Proton's RGSS3 implementation does **not** play MIDI BGM — if any track is missing/silent, that BGM file was MIDI. Converting the offending `.mid`/`.midi` files in the game's `Audio/BGM` folder to `.ogg` restores them; `.ogg`/`.mp3`/`.wav` tracks are unaffected.
+
+**Display:** Toggle fullscreen with **Alt+Enter**. If a missing-RTP error appears, the runtime/fonts ship inside the game folder so no separate RTP install is required; a stubborn RTP error can be cleared by adding the `HKLM\\Software\\Wow6432Node\\Enterbrain\\RGSS3\\RTP\\RPGVXAce` registry key in the prefix.
+
+**Controller:** Keyboard-driven by default (`arrows`/`Z`/`X`/`Shift`/`F`); not a native gamepad — on the Deck add a Steam Input gamepad layout mapping the `d-pad`/`A`/`B`/`X` to those keys.
+
+**Install:** normal Steam install of an owned copy; deckport only configures the prefix, it never bundles or links the game files."""
+
+[about]
+developer = "Red Meat Games"
+publisher = "Digerati Distribution"
+released  = "2014"
+genre     = "Role-playing (JRPG)"
+modes     = "Single-player"
+summary   = "**Steel & Steam: Episode 1** is a retro fantasy-steampunk **JRPG** built in **RPG Maker VX Ace**, with sprite-based visuals and **turn-based combat** that deliberately recall 16-bit Genesis and SNES era role-playing games. It was **Kickstarted** in 2013 by Red Meat Games (funding nearly four times its goal) and launched in April 2014, reaching Steam later that year. Intended as the first chapter of an **episodic series**, no further episodes were ever produced. The game was **removed from sale on Steam in March 2016** and the developers never publicly explained why the series was discontinued."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — RPG Maker VX Ace (engine, Gold tier)"
+url   = "https://www.protondb.com/app/220700"
+
+[[links.guides]]
+title = "Notes for tuning RPG Maker games on Steam Deck (MIDI/BGM fix)"
+url   = "https://hackmd.io/@Mirai/SteamDeck_RPGMaker_eng"
+
+[[links.guides]]
+title = "Steel & Steam: Episode 1 — Delisted Games"
+url   = "https://delistedgames.com/steel-steam-episode-1/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Single-player steampunk JRPG (**RPG Maker VX Ace**), delisted from Steam in March 2016 so no longer for sale.
+
+**Proton:** RPG Maker VX Ace games run well under Proton (engine is ProtonDB Gold), but this specific recipe **has not been confirmed on a Deck yet** — `Game.exe` is the standard engine binary, verify it matches your install folder.
+
+**Audio:** If any background track is silent, it was a MIDI file — Proton can't play RGSS3 MIDI; convert the `.mid` tracks in `Audio/BGM` to `.ogg`.
+
+**Controller:** Native keyboard input only, so add a Steam Input gamepad layout (`d-pad` + `A`/`B` mapped to `arrows`/`Z`/`X`) for handheld play."""

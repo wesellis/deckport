@@ -1,0 +1,73 @@
+[game]
+title       = "Jazz² Resurrection"
+slug        = "jazz2-resurrection"
+aliases     = ["Jazz Jackrabbit 2", "jazz2-native"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run tk.deat.Jazz2Resurrection"
+requires_files = ["Jazz Jackrabbit 2 game data (free Shareware Demo data, or buy the full game on GOG)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "jazz2-native GitHub repository"
+url   = "https://github.com/deathkiller/jazz2-native"
+
+[[links.guides]]
+title = "Jazz Jackrabbit 2 on GOG (buy game data)"
+url   = "https://www.gog.com/game/jazz_jackrabbit_2_collection"
+
+[[links.guides]]
+title = "Jazz² Resurrection on Flathub (Flatpak ID tk.deat.Jazz2Resurrection)"
+url   = "https://flathub.org/apps/tk.deat.Jazz2Resurrection"
+
+[[links.guides]]
+title = "Jazz² Resurrection official site & setup help (deat.tk)"
+url   = "https://deat.tk/jazz2/"
+
+[[links.guides]]
+title = "Jazz Jackrabbit 2 reimplementation gets Flatpak support (GamingOnLinux, Jan 2024)"
+url   = "https://www.gamingonlinux.com/2024/01/jazz-jackrabbit-2-reimplementation-gets-a-new-release-with-flatpak-support/"
+
+[about]
+developer = "Epic MegaGames / Epic Games (original); deathkiller (engine)"
+publisher = "Epic Games"
+released  = "1998 (original); engine actively maintained"
+genre     = "Platformer"
+modes     = "Single-player, Multiplayer"
+summary   = """**Jazz Jackrabbit 2** (Epic MegaGames, 1998) is a beloved fast-paced platformer reimplemented \
+as **Jazz² Resurrection** by deathkiller — a native C++ engine (modified nCine, OpenGL 3.3 renderer). \
+For Steam Deck it adds widescreen aspect ratios, unlocked framerates and pixel-perfect scaling, and runs \
+natively via Flatpak. It needs original Jazz Jackrabbit 2 game data, but the free Shareware Demo data works too, \
+making it one of the more polished open-engine reimplementations available."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Install via Flatpak: search 'Jazz2 Resurrection' in Discover, or run 'flatpak install flathub tk.deat.Jazz2Resurrection' (note the Flatpak ID is tk.deat.Jazz2Resurrection, not io.github.deathkiller.*).
+- Requires Jazz Jackrabbit 2 game data files: copy the contents of an original install into the engine's Source folder. Buy the full game on GOG, or use the free Shareware Demo data (Epic released the demo for free).
+- It does not ship game content bundled in — even the shareware/demo path needs its data files supplied; the app alone has no playable levels.
+- Engine uses OpenGL 3.3 (modified nCine), not Vulkan. No Proton required — native Linux build runs directly on Steam Deck.
+- Gamepad works but may rely on Steam Input on Linux; if the pad isn't detected, add it as a Non-Steam game and enable Steam Input, or supply an SDL2 controller mapping.
+- Launch options when added as a Non-Steam game: flatpak run tk.deat.Jazz2Resurrection
+"""

@@ -1,0 +1,66 @@
+[game]
+title       = "Cut the Rope"
+slug        = "cut-the-rope"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "223280"
+sgdb_id     = ""
+
+[launch]
+binary         = "CutTheRope.exe"   # confirm against your install; some builds ship as ctr.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 223280`) — ZeptoLab paused sales Feb 6 2023 ahead of a planned anniversary rebuild. **No `GFWL`/`SecuROM`/DRM hurdles, no widescreen fix needed.**
+
+**Proton:** ProtonDB tier: platinum; the game is a lightweight 2D puzzle title that runs cleanly on Proton/Deck. It is a .NET/XNA build, and on native Windows some players hit a `.NET`/XNA-dependency crash — under Proton these runtimes are normally provided automatically, so no manual tweaks are usually needed. `GE-Proton` or `proton_experimental` both work.
+
+**Controller:** Gameplay is pure mouse (click-and-drag to cut ropes, tap to pop bubbles) — **there is NO native gamepad support.** On Deck, use a Steam Input mouse-region layout: map the right trackpad (or gyro) to the mouse cursor and right-trigger/`R2` to left-click. That trackpad-as-mouse setup makes precise rope-cutting comfortable on the Deck.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "ZeptoLab"
+publisher = "Chillingo"
+released  = "2013"
+genre     = "Physics-based puzzle"
+modes     = "Single-player"
+summary   = "**Cut the Rope** is a **physics-based puzzle** game in which the player slices ropes to swing a piece of candy into the mouth of a little monster named **Om Nom**, while collecting stars and avoiding hazards. Originally a 2010 mobile hit developed by ZeptoLab and published by Chillingo, it became one of the most successful and **widely-ported** casual franchises of its era. The Windows/Steam edition launched in 2013. ZeptoLab paused Steam sales on February 6, 2023 ahead of a planned rebuild for the title's anniversary, leaving the original version **delisted**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Cut the Rope (appid 223280)"
+url   = "https://www.protondb.com/app/223280"
+
+[[links.guides]]
+title = "Cut the Rope leaves Steam Feb 6 — Delisted Games"
+url   = "https://delistedgames.com/cut-the-rope/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam (sales paused Feb 6 2023); single-player puzzle game with no online dependency, so it stays fully playable offline.
+
+**Proton:** ProtonDB platinum — runs out-of-the-box on Proton/Deck.
+
+**Controller:** No native controller support, so you must set up a Steam Input mouse layout (right trackpad/gyro = cursor, `R2` = left-click) to play comfortably on the Deck.
+
+**Binary:** Binary name (`CutTheRope.exe`) should be confirmed against your own install."""

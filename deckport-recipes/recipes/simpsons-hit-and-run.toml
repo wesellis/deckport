@@ -1,0 +1,75 @@
+[game]
+title       = "The Simpsons: Hit & Run"
+slug        = "simpsons-hit-and-run"
+aliases     = ["Simpsons Hit and Run", "Hit and Run", "SHAR"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Lucas' Simpsons Hit & Run Mod Launcher.exe"   # launch via the Mod Launcher; base game exe is "Simpsons.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2003 Radical Entertainment open-world game (a GTA-style Simpsons romp).
+
+**DRM:** Never re-released digitally and long out of print — **bring your own copy**.
+
+**Proton:** Runs well on Deck under recent stable Proton (`Proton 9.0+` / `GE-Proton` both work).
+
+**Install:** **Strongly recommended** — add `Lucas' Simpsons Hit & Run Mod Launcher.exe` to Steam instead of the base exe — point Proton at it.
+
+**Controller:** In the launcher's Hacks, enable `XInput` for full Steam Deck gamepad support.
+
+**Display:** Enable `Modern Resolution Support`/Widescreen for 16:10.
+
+**Cosmetic:** Enable the `Direct3D 9` renderer plus `Anti-Aliasing` (MSAA) for cleaner visuals.
+
+**Note:** Base game runs without the launcher but defaults to 4:3 and uses keyboard/mouse; the launcher is what makes it a clean controller + widescreen experience on Deck.
+"""
+
+[about]
+developer = "Radical Entertainment"
+publisher = "Vivendi Universal Games"
+released  = "2003"
+genre     = "Action-adventure, open-world driving and platforming"
+modes     = "Single-player"
+summary   = "**The Simpsons: Hit & Run** is a 2003 **open-world action** game built around **Springfield**, often described as a family-friendly riff on **Grand Theft Auto**. Players control members of the Simpson family and Apu across **seven story levels**, driving missions, races, and collectible hunts in a faithfully recreated cartoon world. Developed by **Radical Entertainment** and published by Vivendi Universal Games, it was widely praised and is frequently cited as the best Simpsons game ever made. It was never re-released on modern digital storefronts and has long been **out of print**, so it survives mainly through its dedicated **modding community**."
+
+[[links.guides]]
+title = "Classics On Deck #4: The Simpsons Hit & Run (SteamDeckHQ)"
+url   = "https://steamdeckhq.com/news/classics-on-deck-4-simpsons-hit-run-sacrifice/"
+
+[[links.guides]]
+title = "XInput hack (Donut Team / Lucas' Mod Launcher docs)"
+url   = "https://docs.donutteam.com/docs/lucasmodlauncher/hacks/xinput"
+
+[[links.guides]]
+title = "Running The Simpsons: Hit & Run + launcher on Steam Deck (Donut Team Forum)"
+url   = "https://forum.donutteam.com/topic/5124-running-the-simpsons-hit-run-and-the-launcher-on-the-steam-deck"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Out of print, never digitally re-released — supply your own copy; configuration only, no links.
+
+**Install:** Add `Lucas' Simpsons Hit & Run Mod Launcher.exe` to Steam and run that under Proton — it adds widescreen/modern-resolution, a `Direct3D 9` renderer, MSAA anti-aliasing, and (**critically**) `XInput` so the Deck's built-in controller works natively. Enable those hacks in the launcher's Hacks list.
+
+**Note:** Base game runs without the launcher but is 4:3 and keyboard/mouse only, so the launcher is the recommended path.
+
+**Community:** Community reports (Donut Team forum, SteamDeckHQ) confirm it plays well on Deck with this setup.
+"""

@@ -1,0 +1,70 @@
+[game]
+title       = "Road Blaster"
+slug        = "road-blaster"
+aliases     = ["Road Avenger", "Road Blaster FX"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "RoadBlaster.exe"   # native launcher is JP-named "ゲームを起動"; rename to RoadBlaster.exe to launch
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**About:** Data East's 1985 interactive-movie (FMV) arcade racer — known in the West as **Road Avenger** — in its Japan-only 2009 Windows port (GMODE/EXEED, pub. Jitensha Sougyou; an upscaled X68000 conversion). Timed directional + action inputs over hand-drawn anime FMV.
+
+**Binary:** The Windows build needs no installation — copy the `win/RBWin` folder anywhere and run it (portable). The launcher exe is Japanese-named **「ゲームを起動」**; rename it to **RoadBlaster.exe** so the recipe can target it. The settings tool is **「設定変更」** (rename to RoadBlasterConfig.exe). A `roadblaster.ini` holds display options — set forced-window-mode and match your resolution to avoid a forced mode switch.
+
+**Proton:** DirectX 9 era title. Community reports say it "works perfectly fine on Windows 10 with no compatibility modes," so `proton_experimental` should run it cleanly; if the FMV video stutters, try `GE-Proton`.
+
+**Controller:** The port has **native controller support** with button remapping in its main menu, so the Deck's gamepad should work without a custom Steam Input layout.
+
+**Display:** No confirmed Steam Deck / ProtonDB reports yet for this obscure JP release — left needs-test."""
+
+[about]
+developer = "Data East (original 1985 arcade); 2009 Windows port coded by Taiyo Seisakusho"
+publisher = "Jitensha Sougyou (2009 Windows release)"
+released  = "1985 (arcade); 2009 (Japan-only Windows port)"
+genre     = "Interactive-movie (FMV) action / quick-time racer"
+modes     = "Single-player"
+summary   = "**Road Blaster** is Data East's 1985 **LaserDisc interactive-movie** arcade game, with animation by **Toei Animation**, in which a vigilante hunts the biker gang responsible for his wife's death by steering a souped-up sports car through hand-drawn anime cutscenes via timed directional and action inputs. It was released in the West on Sega CD and other formats as **Road Avenger**. This recipe targets the obscure Japan-only 2009 Windows port (a DirectX 9 era conversion derived from the **Sharp X68030** version), which never had a wide commercial release and remains a sought-after collector title among FMV-game fans."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Road Blaster PC/X68030 Port — file listing & setup notes (Internet Archive)"
+url   = "https://archive.org/details/road-blaster-pc-x68030-port"
+
+[[links.guides]]
+title = "Road Blaster; Thunder Storm 2009 Windows/X68030 ports — release history (Lost Media Wiki)"
+url   = "https://lostmediawiki.com/Road_Blaster;_Thunder_Storm_(found_Windows/Sharp_X68030_ports_of_arcade_games;_2009)"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Import/delisted title — never sold on Steam (pulled from JP retailers after Oct 2012). No DRM blocker reported; the Windows build is portable.
+
+**Run it:** No installer needed — copy the `win/RBWin` folder into the Steam library and add it as a non-Steam game. The launcher is the JP-named **「ゲームを起動」** exe (rename to RoadBlaster.exe); the **「設定変更」** tool (rename to RoadBlasterConfig.exe) and `roadblaster.ini` set display mode — enable forced-window mode and match your resolution to stop it forcing a mode switch.
+
+**Proton:** Reported to run cleanly on Windows 10 with no compat shims, so `proton_experimental` should be fine; switch to `GE-Proton` only if the FMV video stutters.
+
+**Controller:** Native controller support with in-menu remapping — Steam Input keyboard binds are not required (keyboard fallback: arrows = steer, Z = brake, X = accelerate).
+
+**Locale:** Japanese-language game; menu/UI text may mojibake without a JP locale, but gameplay is FMV-driven.
+
+**Status:** No Steam Deck community reports found yet — left needs-test pending a real hardware run."""

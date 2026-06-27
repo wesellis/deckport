@@ -1,0 +1,87 @@
+[game]
+title       = "Project Brutality"
+slug        = "project-brutality"
+aliases     = ["PB", "Project Brutality 0.4", "Brutal Doom fork PB"]
+type        = "native"        # native Linux via GZDoom Flatpak — no Proton needed
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run org.zdoom.GZDoom -iwad doom2.wad -file Project_Brutality.pk3"
+requires_files = [
+  "Project Brutality archive from GitHub releases or ModDB — GZDoom loads the .zip directly, or rename it to .pk3",
+  "Doom II WAD (or Freedoom Phase 2 as a free substitute — freedoom.github.io)",
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Install:** GZDoom is installed via Flatpak: `flatpak install flathub org.zdoom.GZDoom`.
+
+**Files:** Download the latest Project Brutality archive from the [GitHub releases](https://github.com/pa1nki113r/Project_Brutality/releases) (source zip) or ModDB. GZDoom loads the `.zip` directly with `-file`, or you can rename it to `.pk3`. Drop it plus your `DOOM2.WAD` (or `freedoom2.wad`) into `~/.var/app/org.zdoom.GZDoom/`.
+
+**Engine:** Project Brutality 0.3.0+ uses ZScript and requires a recent **GZDoom** — it does **not** run on Zandronum. (Older fan-made "PB 3.0" Zandronum ports exist but are unofficial and unrelated to the current project.)
+
+**Controller:** GZDeck is a controller-friendly launcher for GZDoom mods in Steam Game Mode (handy for managing multiple mod+WAD combos on Deck). It is no longer actively developed but still works; add it as a non-Steam game with the `--no-sandbox` launch argument."""
+
+[about]
+developer = "PsychoPhobiA and the Project Brutality team"
+publisher = "Independently released (free mod)"
+released  = "2015 (first release); 10-year anniversary 0.3.0 Alpha June 2025; latest 0.4.1 (2026)"
+genre     = "First-person shooter (Doom mod)"
+modes     = "Single-player (co-op possible via GZDoom netplay; not Zandronum-compatible)"
+summary   = "A fork of **Brutal Doom** that grew into its own distinct project. **Project Brutality** expands significantly beyond its origins with a greatly enlarged **weapon roster**, multiple variants for nearly every monster type, **randomized enemy loadouts** that change each run, and deeper combat mechanics. Received a major **10-year anniversary update** in June 2025 adding substantial new content. Separate from Brutal Doom — the two projects have diverged considerably since the fork and are each worth playing on their own merits."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Project Brutality official site"
+url   = "https://projectbrutality.com/"
+
+[[links.guides]]
+title = "Project Brutality GitHub (releases)"
+url   = "https://github.com/pa1nki113r/Project_Brutality/releases"
+
+[[links.guides]]
+title = "Setup & Installation wiki (GZDoom load order)"
+url   = "https://github.com/pa1nki113r/Project_Brutality/wiki/_Setup-and-Installation"
+
+[[links.guides]]
+title = "ModDB: Project Brutality download page"
+url   = "https://www.moddb.com/mods/project-brutality"
+
+[[links.guides]]
+title = "GZDeck — controller-friendly GZDoom launcher for Steam Deck"
+url   = "https://github.com/flegald/GZDeck"
+
+[[links.guides]]
+title = "Freedoom Phase 2 — free legal Doom II IWAD substitute"
+url   = "https://freedoom.github.io"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** This is a **GAMEPLAY MOD, not a standalone game** — requires a Doom II WAD (`DOOM2.WAD`) or Freedoom Phase 2 as a free substitute.
+
+**Install:** Install GZDoom via Flatpak (`flatpak install flathub org.zdoom.GZDoom`), download the Project Brutality archive from [GitHub releases](https://github.com/pa1nki113r/Project_Brutality/releases) or ModDB, and drop it (load the `.zip` directly, or rename to `.pk3`) plus your WAD into `~/.var/app/org.zdoom.GZDoom/`.
+
+**Version:** Versioned 0.x (the June 2025 **10-year anniversary** build was 0.3.0 Alpha; latest is 0.4.1). The "PB 3.0" naming refers to old unofficial Zandronum fan ports, not the current project.
+
+**Engine:** Requires a recent **GZDoom** (uses ZScript) — does **not** run on Zandronum.
+
+**Note:** Project Brutality and Brutal Doom are separate forks — you can run both independently.
+
+**Controller:** GZDeck is a Game Mode-friendly GZDoom launcher (now unmaintained but still functional); set it as a non-Steam game with the `--no-sandbox` argument."""

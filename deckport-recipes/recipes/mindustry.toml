@@ -1,0 +1,79 @@
+[game]
+title       = "Mindustry"
+slug        = "mindustry"
+aliases     = ["Mindustry", "mindustry"]
+type        = "native"
+engine      = "other"
+steam_appid = "1127400"
+sgdb_id     = "5248037"
+
+[launch]
+binary         = "Mindustry.jar"
+launch_options = "java -jar Mindustry.jar"
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** A **native Linux build** is available free from itch.io (`anuke.itch.io/mindustry`) and GitHub Releases (`github.com/Anuken/Mindustry/releases`). **No Proton needed.**
+
+**Builds:** The itch.io download (`[Linux-64bit]Mindustry.zip`) provides a ready-to-run Linux package. The GitHub release ships only `.jar` files (`Mindustry.jar`, `server-release.jar`, etc.) — there is **no standalone binary or AppImage**; the jar is run via `java -jar Mindustry.jar`.
+
+**Install:** On Steam Deck, the simplest free route is the **itch.io ZIP** (extract and add as a non-Steam game). If you use the GitHub `Mindustry.jar`, you must install a JRE first (see Java note).
+
+**Java:** The GitHub `.jar` requires a **separately installed Java Runtime (JRE 17+)** — it is **not bundled**. Run with `java -jar Mindustry.jar`. The itch.io package and the Steam version do not need a manual JRE install.
+
+**Steam:** The game is also on Steam (paid, AppID 1127400) if you prefer a managed, auto-updating install — the easiest option on Deck.
+"""
+
+[about]
+developer = "Anuken"
+publisher = "Anuken (free on itch.io and GitHub; paid on Steam)"
+released  = "2019"
+genre     = "Tower Defense, Factory, Real-time Strategy"
+modes     = "Single-player, Multiplayer (co-op and PvP)"
+summary   = "**Mindustry** is a **free and open-source** factory-building **tower defense** game developed by Anuken. Players mine resources, build automated production lines, and construct defensive towers to repel waves of enemies across a variety of campaign and custom maps. The game features extensive **mod support**, a built-in **map editor**, and cross-platform online **multiplayer**. It has been continuously updated since its early access release and has attracted a large modding community. The free version on itch.io and GitHub is feature-complete and identical to the Steam release in gameplay."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = "https://www.protondb.com/app/1127400"
+steamgriddb = "https://www.steamgriddb.com/game/5248037"
+
+[[links.guides]]
+title = "Mindustry — Official itch.io Page"
+url   = "https://anuke.itch.io/mindustry"
+
+[[links.guides]]
+title = "Mindustry — GitHub Releases"
+url   = "https://github.com/Anuken/Mindustry/releases"
+
+[[links.guides]]
+title = "Mindustry — Official Site"
+url   = "https://mindustrygame.github.io/"
+
+[[links.guides]]
+title = "Getting Started — Mindustry Wiki"
+url   = "https://mindustrymodders.gitlab.io/mindustry-documentation/GettingStarted/"
+
+[[links.guides]]
+title = "Running on Steam Deck — Mindustry Discussions"
+url   = "https://steamcommunity.com/app/1127400/discussions/0/3271314273760816558/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Use the Linux build** — the free GitHub release is `Mindustry.jar` (run via `java -jar Mindustry.jar`, **requires a JRE 17+ installed**), or grab the itch.io `[Linux-64bit]Mindustry.zip` which needs no manual Java setup. **No Proton needed** — the game is native Linux.
+
+**Steam:** The Steam version (paid, AppID 1127400) auto-updates and bundles its runtime, so it is usually the easiest option on Deck.
+
+**Controller:** Gamepad support exists but the UI is built for mouse/keyboard; **trackpad or touchscreen recommended for menus.** Many players prefer adding a Steam Input layout when running as a non-Steam game.
+"""

@@ -1,0 +1,54 @@
+[game]
+title       = "Daytona USA"
+slug        = "daytona-usa-pc"
+aliases     = ["Daytona USA PC", "Daytona USA 1997"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "DAYTONA.EXE"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Add DAYTONA.EXE as a non-Steam game and use GE-Proton. The retail port defaults to a DirectDraw/software path; run the included ddx_d3d.exe once first to switch the game to its Direct3D renderer, then drop dgVoodoo2's DDraw.dll and D3DImm.dll (plus dgVoodooCpl.exe) into the game directory so the old DirectDraw/Direct3D calls are wrapped to a modern backend. The game renders at a fixed 640x480 in 16-bit color with no native widescreen. Music plays only when the disc/image is mounted as drive A:, which is awkward under Proton — expect no in-game music unless you set that up."
+
+[about]
+developer = "Sega AM2"
+publisher = "Sega"
+released  = "1996"
+genre     = "Arcade Racing"
+modes     = "Single-player"
+summary   = "Daytona USA is the 1996 Windows PC port (released September 27, 1996) of Sega's legendary Model 2 arcade racing game, featuring oval and circuit tracks with NASCAR-style racing. The PC version is a fairly rough conversion based on the Saturn build, running at a fixed 640x480 in 16-bit color with a capped frame rate. It was a retail CD-ROM release and was never sold on Steam or GOG (the 1997 enhanced 'Daytona USA: Deluxe' is a separate, also-unsold title; later console re-releases were delisted over music licensing). Running it on modern hardware needs the game's Direct3D patch (ddx_d3d.exe) plus dgVoodoo2 to wrap the old DirectDraw/Direct3D calls."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Daytona USA"
+url   = "https://www.pcgamingwiki.com/wiki/Daytona_USA"
+
+[[links.guides]]
+title = "dgVoodoo2 (DirectX wrapper)"
+url   = "http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2/"
+
+[[links.guides]]
+title = "Old PC Gaming — Daytona USA (1996) setup notes"
+url   = "https://oldpcgaming.net/daytona-usa-review/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = "Supply your own retail copy — this 1996 PC port was never on Steam/GOG, so there is no ProtonDB entry (tier is a conservative estimate, not a real report). Launch DAYTONA.EXE, not DAYTONAUSA.EXE. Run ddx_d3d.exe once to enable the Direct3D renderer, then place dgVoodoo2's DDraw.dll and D3DImm.dll in the game directory. Fixed 640x480 / 16-bit, no widescreen. In-game music requires the disc mounted as drive A:, which generally won't work cleanly under Proton."

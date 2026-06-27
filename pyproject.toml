@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deckport"
+version = "0.1.0"
+description = "Get portable games onto a Steam Deck — registered, dressed in artwork, and ready in Game Mode — with one command."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Wesley Ellis", email = "wes@wesellis.com" }]
+keywords = ["steam-deck", "steamos", "non-steam-games", "godot", "love2d", "proton"]
+classifiers = [
+  "Environment :: Console",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+]
+dependencies = []  # the Deck-side importer is pure standard library, by design
+
+[project.optional-dependencies]
+# PC-side tools may use dependencies; the Deck importer never does.
+tools = ["requests>=2.31", "Pillow>=10.0"]
+dev = ["pytest>=8.0", "ruff>=0.5", "jsonschema>=4.0"]
+
+[project.scripts]
+deckport = "deckport.cli:main"
+deckport-art = "deckport_art.cli:main"
+deckport-push = "deckport_push.cli:main"
+deckport-recipe = "deckport_recipe.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/wesellis/deckport"
+Issues = "https://github.com/wesellis/deckport/issues"
+
+[tool.setuptools.packages.find]
+# src/ holds the pure-stdlib Deck importer; tools/ holds the PC-side tools (deps OK).
+where = ["src", "tools"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Put src/ ahead of the repo root so `import deckport` resolves to the package,
+# not the generated single-file deckport.py that sits at the root. tools/ adds
+# the PC-side packages (deckport_art, …).
+pythonpath = ["src", "tools"]

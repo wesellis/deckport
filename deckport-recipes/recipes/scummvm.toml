@@ -1,0 +1,80 @@
+[game]
+title       = "ScummVM"
+slug        = "scummvm"
+aliases     = ["ScummVM engine", "LucasArts adventure games", "Sierra adventure games", "SCUMM engine"]
+type        = "native"        # native Linux binary — no Proton needed
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "org.scummvm.ScummVM"   # Flatpak ID; also installable as native binary
+launch_options = ""
+requires_files = ["Game data files for whichever adventure game you want to play (ScummVM's 'Games' page lists 11 freeware titles you can download for free from scummvm.org)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Engine:** ScummVM is an open-source engine that runs 200+ classic point-and-click adventure games on modern hardware, originally targeting LucasArts SCUMM-engine games (Monkey Island series, Day of the Tentacle, Sam & Max, Full Throttle) but now extended to Sierra On-Line (King's Quest, Space Quest, Police Quest), Humongous Entertainment (Pajama Sam, Freddi Fish), and hundreds of other titles.
+
+**Install:** The cleanest Deck path is the Flathub Flatpak (`org.scummvm.ScummVM`) — **install via Discover in Desktop Mode**, then add as a non-Steam shortcut.
+
+**Freeware:** ScummVM's website offers **11 freeware games that require zero purchases**: Beneath a Steel Sky, Broken Sword 2.5: The Return of the Templars, Dráscula: The Vampire Strikes Back, DreamWeb, Flight of the Amazon Queen, Lure of the Temptress, Soltys, Sfinx, The Griffon Legend, Nippon Safes Inc., and Hi-Res Adventure #1: Mystery House. Download the ZIP for a title from scummvm.org/games, extract it, then point ScummVM at the folder via **Add Game** (ScummVM has no in-launcher downloader — you fetch the files first).
+
+**Commercial titles:** For commercial titles (Monkey Island, Day of the Tentacle, Full Throttle, Grim Fandango, Simon the Sorcerer, etc.) you supply the original game data files from GOG, from CD-ROMs, or other sources. GOG-purchased adventure games in the ScummVM compatibility list work directly with no additional steps beyond pointing ScummVM at the game directory.
+
+**Controller:** The Flatpak includes gamepad support; the ScummVM **virtual joystick mode** maps thumbstick to cursor movement and face buttons to mouse buttons, making most games comfortable on Deck.
+"""
+
+[about]
+developer = "ScummVM team (active since 2001)"
+publisher = "Open source / community release"
+released  = "2001 (first release); ongoing active development through 2026"
+genre     = "Adventure game engine (LucasArts, Sierra, Humongous Entertainment, and 200+ other games)"
+modes     = "Single-player"
+summary   = """
+**ScummVM** (Script Creation Utility for Maniac Mansion Virtual Machine) is an open-source reimplementation of the game engines used by dozens of classic **adventure game** studios. Originally reverse-engineered to run LucasArts' **SCUMM-engine** games on modern operating systems, it now supports over **200 games** from LucasArts, Sierra On-Line, Humongous Entertainment, Revolution Software, Adventure Soft, and many others.
+
+ScummVM handles all the platform-specific complexity — sound, graphics scaling, savegame management — allowing the original game data files to run natively on Linux, Windows, macOS, and handheld devices. Eleven games are offered as **freeware** for free download from scummvm.org, requiring no purchase.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ScummVM on Flathub"
+url   = "https://flathub.org/apps/org.scummvm.ScummVM"
+
+[[links.guides]]
+title = "ScummVM Compatibility List"
+url   = "https://www.scummvm.org/compatibility/"
+
+[[links.guides]]
+title = "ScummVM Freeware Games"
+url   = "https://www.scummvm.org/games/"
+
+[[links.guides]]
+title = "ScummVM Docs: Add and play games"
+url   = "https://docs.scummvm.org/en/latest/use_scummvm/add_play_games.html"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** For commercial games (Monkey Island, Day of the Tentacle, Full Throttle, etc.) you need the original data files from GOG or your own discs.
+
+**Freeware:** The **11 freeware games** (Beneath a Steel Sky, Lure of the Temptress, Flight of the Amazon Queen, Dráscula, DreamWeb, etc.) work with zero purchases — download the ZIP from scummvm.org/games, extract it, and add the folder via **Add Game** (there is no in-launcher downloader). Note: Simon the Sorcerer is *commercial*, not freeware.
+
+**Install:** Install via Flathub for the easiest Deck experience.
+
+**Controller:** ScummVM's **virtual joystick mode** (thumbstick = cursor, face buttons = mouse buttons) makes most games playable with the gamepad; check `scummvm.org/compatibility/` for per-game controller notes.
+"""

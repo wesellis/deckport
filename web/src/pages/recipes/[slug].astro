@@ -1,0 +1,376 @@
+---
+import Base from "../../layouts/Base.astro";
+import StatusBadge from "../../components/StatusBadge.astro";
+import ProtonBadge from "../../components/ProtonBadge.astro";
+import VoteBar from "../../components/VoteBar.astro";
+import { gridUrl } from "../../lib/grids";
+import { heroUrl } from "../../lib/heroes";
+import { shots } from "../../lib/shots";
+import {
+  getAllRecipes,
+  RECIPES_REPO,
+  protondbLink,
+  sgdbLink,
+  safeUrl,
+  fmtProse,
+  PROTON_TIERS,
+  normalizeTier,
+  type Recipe,
+} from "../../lib/recipes";
+
+export function getStaticPaths() {
+  return getAllRecipes().map((recipe) => ({
+    params: { slug: recipe.slug },
+    props: { recipe },
+  }));
+}
+
+interface Props {
+  recipe: Recipe;
+}
+const { recipe } = Astro.props;
+const kind = recipe.type === "proton" ? "Proton (Windows)" : "Native Linux";
+// Lettermark for the hero tile — same grouping rule as the A–Z index dividers.
+const mark0 = (recipe.title.trim()[0] ?? "#").toUpperCase();
+const lettermark = /[A-Z]/.test(mark0) ? mark0 : "#";
+const editUrl = `${RECIPES_REPO}/${recipe.sourceFile}`;
+const protondb = protondbLink(recipe);
+const sgdb = sgdbLink(recipe);
+const tierKey = normalizeTier(recipe.protondbTier);
+const tierNote = tierKey ? PROTON_TIERS[tierKey].note : "";
+// Prefer the wide SteamGridDB hero for the poster background; fall back to the
+// landscape grid (capsule) when a game has no hero.
+const grid = gridUrl(recipe.slug);
+const banner = heroUrl(recipe.slug) ?? grid;
+const screenshots = shots(recipe.slug);
+// Repeat to a minimum count so the auto-scrolling reel always overflows the row
+// (no gap); the markup then renders this twice for a seamless loop.
+const reel = screenshots.length
+  ? Array.from({ length: Math.max(5, screenshots.length) }, (_, i) => screenshots[i % screenshots.length])
+  : [];
+const scriptUrl = `/scripts/${recipe.slug}.deckport.sh`;
+// Only render guide links that are http(s) — drop any javascript:/data: etc.
+const safeGuides = recipe.guides.filter((g) => safeUrl(g.url));
+
+// Short source label for a guide link, from its host.
+function guideSource(url: string): string {
+  try {
+    const h = new URL(url).hostname.replace(/^www\./, "");
+    if (h.includes("reddit")) return "reddit";
+    if (h.includes("youtube") || h.includes("youtu.be")) return "video";
+    if (h.includes("github")) return "github";
+    if (h.includes("protondb")) return "protondb";
+    if (h.includes("steamcommunity")) return "steam";
+    return h.split(".")[0];
+  } catch {
+    return "link";
+  }
+}
+---
+
+<Base title={`${recipe.title} — deckport recipe`} description={recipe.caveats || undefined}>
+  <div class="wrap">
+    <header class="recipe-hero">
+      <p class="eyebrow"><a href="/recipes">← recipe book</a></p>
+      <div
+        class={`recipe-banner ${banner ? "has-art" : "no-art"}`}
+        style={banner ? `background-image:url("${banner}")` : undefined}
+      >
+        <div class="recipe-banner-scrim" aria-hidden="true"></div>
+        <div class="recipe-hero-badges">
+          <StatusBadge status={recipe.status} verifiedOn={recipe.verifiedOn} />
+          {recipe.protondbTier && <ProtonBadge tier={recipe.protondbTier} />}
+        </div>
+        <div class="recipe-banner-body">
+          {!banner && <div class="lettermark" aria-hidden="true">{lettermark}</div>}
+          <div class="recipe-hero-text">
+            <h1>{recipe.title}</h1>
+            <div class="facts">
+              <span class={`fact ${recipe.type === "proton" ? "amber" : "green"}`}>{kind}</span>
+              {recipe.about.genre && <span class="fact">{recipe.about.genre}</span>}
+              {recipe.about.released && <span class="fact">{recipe.about.released}</span>}
+              <span class="fact">{recipe.engine}</span>
+              {recipe.steamAppid && <span class="fact">appid {recipe.steamAppid}</span>}
+              {recipe.type === "proton" && recipe.protonVersion && (
+                <span class="fact proton">⚙ {recipe.protonVersion}</span>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <VoteBar slug={recipe.slug} />
+
+    <section class="section" style="padding-top:1.5rem;">
+      {
+        recipe.about.summary && (
+          <div class="panel about" style="margin-bottom:1rem;">
+            <p class="eyebrow">About</p>
+            <div class="about-summary" set:html={fmtProse(recipe.about.summary)} />
+          </div>
+        )
+      }
+
+      {
+        screenshots.length > 0 && (
+          <div style="margin-bottom:1rem;">
+            <p class="eyebrow">Screenshots</p>
+            <div class="shot-reel">
+              <div class="shot-track">
+                {[...reel, ...reel].map((s, i) => (
+                  <a
+                    class="shot"
+                    href={s.f}
+                    data-full={s.f}
+                    target="_blank"
+                    rel="noopener"
+                    aria-hidden={i >= reel.length ? "true" : undefined}
+                    tabindex={i >= reel.length ? -1 : undefined}
+                    aria-label={`Screenshot ${(i % reel.length) + 1} — open preview`}
+                  >
+                    <img src={s.t} alt={`${recipe.title} screenshot ${(i % reel.length) + 1}`} loading="lazy" decoding="async" width="600" height="338" />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <p class="muted" style="font-size:.8rem;margin:.5rem 0 0;">
+              Official store screenshots from Steam — deckport links them, never rehosts. Hover to pause; click to preview.
+            </p>
+          </div>
+          <div class="lightbox" id="shot-lightbox" hidden aria-hidden="true">
+            <button class="lb-btn lb-close" id="lb-close" aria-label="Close preview">×</button>
+            <button class="lb-btn lb-nav lb-prev" id="lb-prev" aria-label="Previous screenshot">‹</button>
+            <figure class="lb-card">
+              <img id="lb-img" src="" alt="Screenshot preview" />
+            </figure>
+            <button class="lb-btn lb-nav lb-next" id="lb-next" aria-label="Next screenshot">›</button>
+          </div>
+        )
+      }
+
+      <div class="panel accent" style="margin-bottom:1rem;--accent:var(--amber);">
+        <p class="eyebrow">Identity</p>
+        <div class="spec">
+          {recipe.about.developer && (<div class="spec-cell"><span class="spec-k">Developer</span><span class="spec-v">{recipe.about.developer}</span></div>)}
+          {recipe.about.publisher && (<div class="spec-cell"><span class="spec-k">Publisher</span><span class="spec-v">{recipe.about.publisher}</span></div>)}
+          {recipe.about.released && (<div class="spec-cell"><span class="spec-k">Released</span><span class="spec-v">{recipe.about.released}</span></div>)}
+          {recipe.about.genre && (<div class="spec-cell"><span class="spec-k">Genre</span><span class="spec-v">{recipe.about.genre}</span></div>)}
+          {recipe.about.modes && (<div class="spec-cell"><span class="spec-k">Modes</span><span class="spec-v">{recipe.about.modes}</span></div>)}
+          <div class="spec-cell"><span class="spec-k">Engine</span><span class="spec-v">{recipe.engine}</span></div>
+          <div class="spec-cell"><span class="spec-k">Type</span><span class={`spec-v ${recipe.type === "proton" ? "amber" : "green"}`}>{kind}</span></div>
+          {recipe.steamAppid && (<div class="spec-cell"><span class="spec-k">Steam appid</span><span class="spec-v mono">{recipe.steamAppid}</span></div>)}
+          {recipe.contributor && (<div class="spec-cell"><span class="spec-k">Contributor</span><span class="spec-v">{recipe.contributor}</span></div>)}
+          {recipe.aliases.length > 0 && (<div class="spec-cell spec-wide"><span class="spec-k">Aliases</span><span class="spec-v mono">{recipe.aliases.join(", ")}</span></div>)}
+        </div>
+      </div>
+
+      <div class="recipe-cols">
+        <div class="panel accent" style="--accent:var(--cyan);">
+          <p class="eyebrow">Launch</p>
+          <dl class="kv">
+            <dt>Binary</dt>
+            <dd class="mono">{recipe.binary || "—"}</dd>
+            {recipe.launchOptions && (
+              <>
+                <dt>Options</dt>
+                <dd class="mono">{recipe.launchOptions}</dd>
+              </>
+            )}
+            <dt>Needs files</dt>
+            <dd>
+              {recipe.requiresFiles.length > 0 ? (
+                <ul class="clean mono">
+                  {recipe.requiresFiles.map((f) => (
+                    <li>{f}</li>
+                  ))}
+                </ul>
+              ) : (
+                <span class="muted">none beyond the binary</span>
+              )}
+            </dd>
+          </dl>
+        </div>
+
+        {
+          recipe.type === "proton" ? (
+            <div class="panel accent" style="--accent:var(--green);">
+              <p class="eyebrow">Proton</p>
+              <dl class="kv">
+                <dt>Version</dt>
+                <dd class="mono proton-ver">{recipe.protonVersion || "—"}</dd>
+                <dt>Winetricks</dt>
+                <dd class="mono">
+                  {recipe.winetricks.length > 0
+                    ? recipe.winetricks.join(", ")
+                    : "—"}
+                </dd>
+                {recipe.protondbTier && (
+                  <>
+                    <dt>ProtonDB</dt>
+                    <dd class="tier-cell">
+                      <ProtonBadge tier={recipe.protondbTier} />
+                      {tierNote && <span class="tier-note">{tierNote}</span>}
+                    </dd>
+                  </>
+                )}
+              </dl>
+            </div>
+          ) : (
+            <div class="panel accent" style="--accent:var(--green);">
+              <p class="eyebrow">Runtime</p>
+              <dl class="kv">
+                <dt>Runs as</dt><dd>Native Linux</dd>
+                <dt>Proton</dt><dd class="muted">not needed</dd>
+                {recipe.protondbTier && (
+                  <>
+                    <dt>ProtonDB</dt>
+                    <dd class="tier-cell">
+                      <ProtonBadge tier={recipe.protondbTier} />
+                      {tierNote && <span class="tier-note">{tierNote}</span>}
+                    </dd>
+                  </>
+                )}
+              </dl>
+            </div>
+          )
+        }
+      </div>
+
+      {
+        recipe.protonNotes && (
+          <div class="panel accent" style="margin-top:1rem;--accent:var(--amber);">
+            <p class="eyebrow">⚙ Setup notes</p>
+            <div class="setup-notes" set:html={fmtProse(recipe.protonNotes)} />
+          </div>
+        )
+      }
+
+      {
+        recipe.caveats && (
+          <div
+            class={`callout ${recipe.status === "borked" ? "warn" : ""}`}
+            style="margin-top:1rem;"
+          >
+            <p class="label">
+              {recipe.status === "borked" ? "Why it doesn't run" : "The one thing to know"}
+            </p>
+            <div class="cav-text" set:html={fmtProse(recipe.caveats)} />
+          </div>
+        )
+      }
+
+      {
+        safeGuides.length > 0 && (
+          <div style="margin-top:1.5rem;">
+            <p class="eyebrow">Community guides</p>
+            <p class="muted" style="margin-top:0;">
+              Write-ups and threads from people who got this (or a similar) game
+              running. deckport links to them — it doesn't reproduce them.
+            </p>
+            <ul class="guides">
+              {safeGuides.map((g) => (
+                <li>
+                  <a href={g.url} rel="nofollow noopener">
+                    <span class="src">{guideSource(g.url)}</span>
+                    <span>{g.title}</span>
+                    <span class="arr">↗</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
+
+      <div class="callout" style="margin-top:1.5rem;border-left-color:var(--cyan);">
+        <p class="label" style="color:var(--cyan);">Get the artwork</p>
+        <p style="margin:0 0 .75rem;" class="muted">
+          deckport never hosts game images. Open this game on SteamGridDB, pick
+          the cover / hero / logo / icon <em>you</em> like, and drop them into the
+          game folder under <code>.deckport-art/</code> before you push it to the
+          Deck. The importer files them under the right names automatically.
+        </p>
+        <div class="btn-row">
+          <a class="btn cyan" href={sgdb} rel="noopener">Browse artwork on SteamGridDB ↗</a>
+          {protondb && <a class="btn" href={protondb} rel="noopener">ProtonDB report ↗</a>}
+        </div>
+      </div>
+
+      {
+        recipe.status !== "borked" && (
+          <div class="callout" style="margin-top:1rem;border-left-color:var(--green);">
+            <p class="label" style="color:var(--green);">Run it on your Deck</p>
+            <p style="margin:0 0 .75rem;" class="muted">
+              Two files: the one-time importer (<code>deckport.py</code>) in your
+              Deck's home folder, and this game's install helper. Copy the game
+              into <code>~/Games</code> and run the helper with Steam closed — it
+              writes the recipe (binary, launch options{recipe.type === "proton" ? ", Proton version" : ""})
+              and registers the shortcut with artwork.
+            </p>
+            <div class="btn-row">
+              <a
+                class="btn green"
+                href={scriptUrl}
+                download={`${recipe.slug}.deckport.sh`}
+              >
+                Download install script ↓
+              </a>
+              <a class="btn" href="/deckport.py" download="deckport.py">
+                Download importer (deckport.py) ↓
+              </a>
+            </div>
+          </div>
+        )
+      }
+
+      <div class="btn-row" style="margin-top:1.5rem;">
+        <a class="btn" href={editUrl} rel="noopener">Edit this recipe on GitHub</a>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Screenshot lightbox: click a thumbnail to preview it in a card overlay
+  // (instead of jumping to the raw image). Esc / backdrop / × closes; ← → cycles.
+  const lb = document.getElementById("shot-lightbox");
+  if (lb) {
+    const lbImg = document.getElementById("lb-img") as HTMLImageElement | null;
+    const shotEls = Array.from(document.querySelectorAll<HTMLAnchorElement>(".shot"));
+    const urls = [...new Set(shotEls.map((a) => a.dataset.full).filter(Boolean))] as string[];
+    let idx = 0;
+    const show = (i: number) => {
+      idx = (i + urls.length) % urls.length;
+      lbImg?.setAttribute("src", urls[idx]);
+    };
+    const open = (i: number) => {
+      show(i);
+      lb.hidden = false;
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+    const close = () => {
+      lb.hidden = true;
+      lb.setAttribute("aria-hidden", "true");
+      lbImg?.setAttribute("src", "");
+      document.body.style.overflow = "";
+    };
+    shotEls.forEach((a) =>
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        open(urls.indexOf(a.dataset.full || ""));
+      }),
+    );
+    document.getElementById("lb-close")?.addEventListener("click", close);
+    document.getElementById("lb-prev")?.addEventListener("click", (e) => { e.stopPropagation(); show(idx - 1); });
+    document.getElementById("lb-next")?.addEventListener("click", (e) => { e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (lb.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowLeft") show(idx - 1);
+      else if (e.key === "ArrowRight") show(idx + 1);
+    });
+  }
+</script>

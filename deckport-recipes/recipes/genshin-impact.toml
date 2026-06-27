@@ -1,0 +1,88 @@
+[game]
+title       = "Genshin Impact"
+slug        = "genshin-impact"
+aliases     = ["Genshin", "GenshinImpact.exe", "YuanShen.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5267777"
+
+[launch]
+binary         = "GenshinImpact.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Install:** Genshin Impact is **not on Steam**. The recommended Deck approach is to install the HoYoPlay launcher via Heroic Games Launcher (Epic Games version) or by adding the HoYoPlay installer `.exe` as a non-Steam game and running it under `Proton Experimental`.
+
+**Launch:** After HoYoPlay installs and downloads Genshin Impact (~100 GB+), you can either keep launching through the HoYoPlay `launcher.exe` non-Steam entry, or point a non-Steam entry directly at the game's `GenshinImpact.exe` (the global client; the CN client exe is `YuanShen.exe`). Force `Proton Experimental` (or stock `Proton 10`) in either case.
+
+**Launcher:** In HoYoPlay settings, disable `Auto-Launch at Startup` and set `Close Window` to `Exit Launcher` so the launcher doesn't stay resident.
+
+**Anti-cheat:** Genshin's anti-cheat generally **runs under Proton**, but it is **version-sensitive**: as of HoYoPlay v1.5.2+ the community recommends **stock Proton 10+** to launch the actual game, since the anti-cheat behaves differently under `GE-Proton`. Some users also report needing to briefly disconnect the network while the launcher loads to avoid an anti-cheat CPU-usage spike.
+
+**Proton:** Prefer `Proton Experimental` / stock `Proton 10`; `GE-Proton` can work for the launcher but is less reliable for the game's anti-cheat.
+
+**Performance:** On Deck, target `45 fps` with low/medium settings."""
+
+[about]
+developer = "HoYoverse (miHoYo)"
+publisher = "HoYoverse (miHoYo)"
+released  = "2020-09-28"
+genre     = "Action RPG, Open World"
+modes     = "Single-player, Co-op multiplayer (up to 4 players)"
+summary   = """
+**Genshin Impact** is a free-to-play **open-world action RPG** set in the fantastical land of **Teyvat**, developed and published by **HoYoverse**. Players explore a vast **elemental** world, build teams of characters with unique abilities, and progress through a sprawling story involving the seven nations of Teyvat.
+
+Released in September 2020, it became a global phenomenon with hundreds of millions of registered players and billions in revenue driven by its **gacha monetization** system. While not officially supported on Linux or Steam Deck, the community has established working Proton-based setups. The game's enormous file size (~100 GB and growing) and regular version updates are key practical considerations for Deck users."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5267777"
+
+[[links.guides]]
+title = "How to Play Genshin Impact on the Steam Deck - Pi My Life Up"
+url   = "https://pimylifeup.com/steam-deck-genshin-impact/"
+
+[[links.guides]]
+title = "Run Games from HoYoPlay Launcher with Steam Overlay (Steam Community Guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3375162248"
+
+[[links.guides]]
+title = "Heroic Games Launcher — Anime Games Wiki (includes Genshin notes)"
+url   = "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/wiki/Anime-Games"
+
+[[links.guides]]
+title = "Android Authority: Can You Play Genshin Impact on Steam Deck?"
+url   = "https://www.androidauthority.com/genshin-impact-steam-deck-3340883/"
+
+[[links.guides]]
+title = "Community install walkthrough (non-Steam launcher + Proton) — GitHub Gist"
+url   = "https://gist.github.com/cybik/e101f4529090e0f409908f459a055956"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Not on Steam:** Requires HoYoPlay launcher install under `Proton`.
+
+**Storage:** Massive download (~100 GB+); ensure sufficient storage before starting.
+
+**No official Linux support:** HoYoverse may break compatibility after updates.
+
+**Anti-cheat:** Generally runs under Proton, but **version-sensitive** (use stock `Proton 10+`, not `GE-Proton`, for the game) and may need a brief network disconnect at launcher load; **verify after each game/HoYoPlay patch**.
+
+**Performance:** Target `45 fps` on low/medium settings; **stable `60 fps` is not reliably achievable** on Deck hardware.
+
+**Updates:** Regular game version updates require re-testing compatibility."""

@@ -1,0 +1,75 @@
+[game]
+title       = "Observer"
+slug        = "observer"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "514900"
+sgdb_id     = ""
+
+[about]
+developer = "Bloober Team"
+publisher = "Aspyr"
+released  = "2017"
+genre     = "Psychological horror adventure"
+modes     = "Single-player"
+summary   = """
+**Observer** (stylized >observer_) is a first-person **psychological horror adventure** from Bloober Team, set in a **cyberpunk** rendition of 2084 Krakow ravaged by a digital plague. You play Daniel Lazarski, a neural detective who hacks into the minds of suspects and corpses to investigate crimes, with the late **Rutger Hauer** voicing the lead.
+
+Built on **Unreal Engine 4**, it received generally favorable reviews for its dense cyberpunk atmosphere and won Best Setting in Game Informer's 2017 Adventure Game of the Year Awards. The original 2017 build was **delisted** from Steam after being replaced by the 2020 remake **Observer: System Redux**."""
+
+[launch]
+binary         = "Observer.exe"   # UE4 launcher; real shipping exe lives in Observer/Binaries/Win64/Observer-Win64-Shipping.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `514900`), the original >observer_ — replaced on the store by `Observer: System Redux` (`1386900`), so the 2017 build is no longer sold.
+
+**DRM:** Unreal Engine 4 (`4.15.3`) single-player horror, no DRM beyond Steam and no GFWL.
+
+**Proton:** Reported to run well on Deck — ProtonDB overall **platinum** (moderate confidence, ~14 reports; recent reports trend **gold**). Use `GE-Proton` or `proton_experimental`; no winetricks needed.
+
+**Fix:** Top-level `Observer.exe` is the UE4 launcher — **if it stalls, point the launch at `Observer/Binaries/Win64/Observer-Win64-Shipping.exe` directly.**
+
+**Controller:** Native UE4 gamepad support, so the Steam Deck controls work out of the box.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — >observer_ (514900)"
+url   = "https://www.protondb.com/app/514900"
+
+[[links.guides]]
+title = "Observer — Delisted Games writeup"
+url   = "https://delistedgames.com/observer/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Original >observer_ (2017), delisted in favor of `Observer: System Redux` (`1386900`).
+
+**Online:** Single-player UE4 horror with no online component, so nothing to worry about server-side.
+
+**Deck:** ProtonDB platinum and full native controller support, so it should be a clean Deck experience on `GE-Proton`/`experimental`.
+
+**NEEDS-TEST:** based on ProtonDB community reports, not yet confirmed on this exact recipe.
+
+**Fix:** If the top-level `Observer.exe` doesn't launch, target `Observer/Binaries/Win64/Observer-Win64-Shipping.exe`."""

@@ -1,0 +1,69 @@
+[game]
+title       = "Tony Hawk's Underground"
+slug        = "tony-hawks-underground"
+aliases     = ["THUG", "Tony Hawk's Underground", "Tony Hawk Underground"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "THUGPM.exe"   # PARTYMOD-patched exe; run partypatcher.exe once to create it
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+2003 Neversoft skateboarding game.
+
+**Supply your own copy:** Never re-released digitally, out of print.
+
+**Fix:** The PARTYMOD patch (by PARTYMANX) is **essential on Deck** — extract it into the game's `game/` folder, then run `partypatcher.exe` **ONCE** to produce the patched `THUGPM.exe`, and **launch that instead of the original exe**. PARTYMOD replaces the input layer with a modern SDL2 system (controller support with PS2/Xbox/Gamecube glyphs), bypasses the original SafeDisc/modern-Windows compatibility problems, and adds custom resolutions plus configurable windowing — this is what makes the raw PC port playable on Deck. (If you have an old `dinput8.dll` widescreen mod in the folder, delete it first.)
+
+**Config:** Run `partyconfig.exe` first to set resolution/controls (`1024x768` or higher works well).
+
+**Install:** Add the patched `THUGPM.exe` to Steam as a non-Steam game, force `GE-Proton` (or `proton_experimental`) in compatibility.
+
+**Controller:** Let the PARTYMOD SDL2 input layer handle the controller; a default Gamepad Steam Input layout is enough as fallback.
+
+**Series:** THUG2 is Deck-confirmed via the same PARTYMOD route (separate `partymod-thug2` patch), and THUG1 runs the same way."""
+
+[[links.guides]]
+title = "PARTYMOD for THUG1 (PARTYMANX) — patcher + install steps"
+url   = "https://github.com/PARTYMANX/partymod-thug1"
+
+[[links.guides]]
+title = "THUG-SDL — alternative unofficial PARTYMOD port for THUG"
+url   = "https://github.com/atljp/THUG-SDL"
+
+[about]
+developer = "Neversoft (console); Beenox (Windows port)"
+publisher = "Activision"
+released  = "2003 (console); 2004 PC release in Australia and New Zealand"
+genre     = "Skateboarding / extreme sports"
+modes     = "Single-player, multiplayer"
+summary   = "**Tony Hawk's Underground** (THUG) is the fifth entry in Activision's **Tony Hawk's series**. It broke from earlier games by casting the player as a **custom amateur skater** in a full story mode with cutscenes and characters, rather than a roster of pros. The console versions were built by **Neversoft** on the engine that powered the **Pro Skater** games, with the Windows version handled by Beenox. It earned universal acclaim from critics, who singled out its narrative and deep **create-a-skater** tools, but it was never re-released digitally and is long out of print on PC."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Out of print, never on Steam digitally (no appid); configuration only, no links.
+
+**PARTYMOD is required:** Run `partypatcher.exe` once to make `THUGPM.exe`, then launch that under `GE-Proton`.
+
+**Controller:** PARTYMOD's SDL2 input layer provides controller support (PS2/Xbox/Gamecube glyphs), so the gamepad works without a special hack (default Gamepad Steam Input layout as fallback).
+
+**Config:** Set controls/resolution in `partyconfig.exe` before first launch.
+
+**Status:** Community confirms THUG1/THUG2 run on Deck via this route, but **not yet hands-on verified** for this recipe."""

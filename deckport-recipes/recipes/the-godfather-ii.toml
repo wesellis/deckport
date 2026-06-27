@@ -1,0 +1,82 @@
+[game]
+title       = "The Godfather II"
+slug        = "the-godfather-ii"
+aliases     = ["Godfather 2", "The Godfather 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = "24830"
+sgdb_id     = ""
+
+[launch]
+binary         = "godfather2.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** EA Redwood Shores' 2009 open-world Mafia game (sequel to The Godfather), delisted (Steam appid `24830`).
+
+**Proton:** Runs under Proton; `GE-Proton` is a reasonable pick. Reports are very sparse — treat as untested and expect some trial-and-error with Proton versions.
+
+**Note (no SilentPatch):** SilentPatch (`SilentPatchGF`) is for **The Godfather: The Game (2006)** — it fixes that game's WinXP-era hardware-overlay video-player launch crash. There is **no SilentPatch for The Godfather II (2009)**, so do not expect that fix to apply here.
+
+**Known issue:** At least one community report describes a boot loop after the character-select screen on `Proton 9.0-1`; if that happens, try a different Proton/GE-Proton build.
+
+**Display:** If you get a black screen on launch, try Alt-Tab out and back, or minimize/restore the window.
+
+**Launch:** Launch binary is `godfather2.exe`.
+"""
+
+[about]
+developer = "EA Redwood Shores"
+publisher = "Electronic Arts"
+released  = "2009"
+genre     = "Action-adventure, open-world"
+modes     = "Single-player"
+summary   = "**The Godfather II** is a 2009 open-world **action-adventure** game developed by EA Redwood Shores and published by Electronic Arts, based on the 1974 film The Godfather Part II and serving as the **sequel** to the 2006 game The Godfather. Played from a third-person perspective, it casts the player as Dominic, a Corleone family member who rises to don and expands the family's criminal empire across New York, Florida, and Cuba, blending shooting and driving with a strategic **crime-management** layer. It was **delisted** from digital storefronts and is no longer sold."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "The Godfather II — ProtonDB reports (appid 24830)"
+url   = "https://www.protondb.com/app/24830"
+
+[[links.guides]]
+title = "The Godfather II — PCGamingWiki (DRM, fixes, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Godfather_II"
+
+[[links.guides]]
+title = "Godfather Pt 2 on Steam Deck — community boot/setup post"
+url   = "https://steamdeckrepo.com/post/ENwgR/godfather_pt_2_the_steamdeck_long"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted commercial game — supply your own copy.
+
+**DRM:** It shipped with activation-limited SecuROM DRM (machine-authorization limit). EA's old activation servers and the SecuROM layer can fail on modern systems; a copy that does not rely on that DRM is the practical route, and EA's de-authorization tool can free up an activation slot.
+
+**No SilentPatch:** SilentPatch covers the 2006 The Godfather, **not** this 2009 sequel — do not expect that specific fix to apply.
+
+**Proton:** Very few reports exist, so this is effectively untested under Proton. One report mentions a boot loop after character select on `Proton 9.0-1` — try another Proton/GE-Proton build if you hit that.
+
+**Display:** If you get a black screen at launch, try Alt-Tab out and back, or minimize/restore.
+
+**Controller:** Gamepad support on these EA Redwood Shores titles is finicky (the in-game Active Gamepad option can fail to detect modern pads without `settings.ini`/controls tweaks), so don't assume flawless native support — use a Steam Input **Gamepad layout** as the reliable path on Deck.
+
+**Online:** Online is dead (single-player only).
+
+**Launch:** Binary: `godfather2.exe`.
+"""

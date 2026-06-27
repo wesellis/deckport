@@ -1,0 +1,74 @@
+[game]
+title       = "The Lord of the Rings: War in the North"
+slug        = "the-lord-of-the-rings-war-in-the-north"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "32800"
+sgdb_id     = ""
+
+[launch]
+binary         = "War in the North/witn.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** Delisted Steam game (appid `32800`), ProtonDB gold. `GE-Proton` is the recommended runtime: on stock Proton the game stutters/freezes constantly outside cutscenes, while `GE-Proton` (or `proton_experimental`) runs it smoothly; `Proton 7.0-6` forced compatibility also works.
+
+**Fix:** Known launch quirk: the first few launches may crash. **Workaround from the community — start it from Desktop mode and re-launch each time it crashes (about 5 times); after that it boots reliably on the first try every time.** If it instead crashes on reaching the main menu, deleting the two `.sav` files under the prefix's `userdata/<id>/32800/local` folder clears it.
+
+**GFWL:** Uses Games for Windows Live (GFWL) — it still signs in/creates a local offline profile, so single-player works, but a GFWL bypass (drop-in `xlive.dll`/`.ini` in the game's exe folder) avoids the sign-in entirely; **online/co-op functionality is gone either way.**
+
+**Controller:** Native single-gamepad support (it's a console action-RPG), so the Deck's built-in controls map without a custom layout. (One known quirk: RT ranged-attack can misbehave when LT is held — a Steam Input layout can remap around it if you hit this.)
+
+**VOIP:** In-game VOIP is routed through Steam — if you also run Discord, adjust the mic device in Steam settings to avoid it muting Discord.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Snowblind Studios"
+publisher = "Warner Bros. Interactive Entertainment"
+released  = "2011"
+genre     = "Action role-playing game"
+modes     = "Single-player, up to 3-player co-op (split-screen and online)"
+summary   = "**The Lord of the Rings: War in the North** is a 2011 **action role-playing game** by Snowblind Studios, set during the events of the books but following an original trio of heroes fighting Sauron's forces in the largely untold **northern campaign**. It blends hack-and-slash combat with light RPG progression and was built for drop-in **three-player co-op**. Reviews were mixed, praising the visuals and co-op but criticizing the AI and technical rough edges. It was **delisted from Steam in 2019**, most likely because the Tolkien game **license from Middle-earth Enterprises expired**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 32800)"
+url   = "https://www.protondb.com/app/32800"
+
+[[links.guides]]
+title = "Couch co-op (2-3 gamepads) setup guide"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=775253066"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** Delisted Steam game (appid `32800`); deckport links nothing.
+
+**Proton:** ProtonDB gold; community confirms it runs on Linux/Deck. Use `GE-Proton` (or `proton_experimental`) — stock Proton stutters badly.
+
+**Fix:** First launches may crash: re-launch from Desktop mode ~5 times until it sticks, then it boots normally.
+
+**DRM:** GFWL DRM — single-player works via a local offline profile (or use a drop-in `xlive.dll` bypass); **online co-op servers are dead.**
+
+**Controller:** Native controller support, no Steam Input layout needed.
+
+**VOIP:** Routes through Steam (can mute Discord — change device in Steam settings).
+
+**Binary:** Main executable is `witn.exe`, inside the `War in the North` install folder; confirm against your install."""

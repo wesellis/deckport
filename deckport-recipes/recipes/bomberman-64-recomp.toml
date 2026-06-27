@@ -1,0 +1,66 @@
+[game]
+title       = "Bomberman 64 Recompiled"
+slug        = "bomberman-64-recomp"
+aliases     = ["Bomberman 64 PC Port", "Bomberman64Recomp", "Bomberman 64 N64Recomp"]
+type        = "native"        # a native static recompilation — no emulation, no Proton
+engine      = "other"         # N64Recomp framework (Wiseguy's tool)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "BM64Recompiled"   # Linux binary from BM64Recompiled-Linux-X64-Release.zip (RevoSucks/BM64Recomp)
+launch_options = ""
+requires_files = ["Bomberman 64 N64 ROM dump (NTSC-U, US 1.0)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** This is a static N64 recompilation — **no emulation, no Proton.** The original N64 game code is translated to a native PC binary (RT64 renderer).
+
+**Install:** Grab `BM64Recompiled-Linux-X64-Release.zip` from the GitHub releases, extract it to its own folder, add the `BM64Recompiled` binary as a non-Steam game, and point it at your `NTSC-U` (US 1.0) ROM on first run.
+
+**Use the Linux X64 build, not the AppImage:** community reports say the `AppImage` build crashes when loading the game on Steam Deck — use the plain `Linux-X64-Release` zip instead. ARM64, Flatpak, and macOS builds are also published."""
+
+[about]
+developer = "RevoSucks (BM64Recomp), built on the N64Recomp framework (Wiseguy's tool)"
+publisher = "Independently released (static recompilation fan port)"
+released  = "1997 (N64); N64Recomp port v1.0 March 2026"
+genre     = "Action-adventure, arena combat"
+modes     = "Single-player, local multiplayer"
+summary   = "A static N64 recompilation of **Bomberman 64** using the same **N64Recomp** tool (by Wiseguy) as **Zelda 64: Recompiled** and **Banjo: Recompiled**. The original N64 game code is translated to a **native PC binary** rather than emulated, delivering high frame rates, **widescreen support**, and improved performance. v1.0 released March 2026. This is **Hudson Soft's** original 1997 N64 game — not the XBLA title Bomberman Live. Add the Linux binary as a non-Steam game and point to your NTSC-U ROM on first run."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "RevoSucks/BM64Recomp — official GitHub repo & releases"
+url   = "https://github.com/RevoSucks/BM64Recomp"
+
+[[links.guides]]
+title = "Steam Deck HQ — native PC port setup & Steam Deck notes"
+url   = "https://steamdeckhq.com/news/bomberman-64-native-pc-perfect-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a Bomberman 64 N64 ROM — must be the **US 1.0 (`NTSC-U`)** version; the port rejects any other region/revision. This is the original 1997 N64 game, **not Bomberman Live** or other Bomberman releases.
+
+**Native binary, no Proton:** ProtonDB does not apply — this is a native Linux build (RT64 renderer). It is not on Steam, so there is no `steam_appid`. Steam Deck HQ reports it runs well natively with full gamepad support and ~6-7W draw, but treat it as **needs-test** until verified on hardware.
+
+**Use the Linux X64 build:** download `BM64Recompiled-Linux-X64-Release.zip` and run `BM64Recompiled`. The `AppImage` build is reported to crash on load on Steam Deck — avoid it.
+
+**GPU requirement:** needs Direct3D 12 (Shader Model 6), Vulkan 1.2, or Metal Argument Buffers Tier 2 — fine for Steam Deck's Vulkan support.
+
+**Framework:** Uses the `N64Recomp` framework (same toolchain as Zelda 64: Recompiled and Banjo: Recompiled). v1.0.0 released March 2026 (RevoSucks/BM64Recomp).
+
+**Note:** A separate recipe (`bomberman-64`) exists for generic/emulation approaches to this game — this recipe is specifically for the `N64Recomp` native port."""

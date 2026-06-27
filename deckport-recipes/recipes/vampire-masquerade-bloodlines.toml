@@ -1,0 +1,128 @@
+[game]
+title       = "Vampire: The Masquerade – Bloodlines"
+slug        = "vampire-masquerade-bloodlines"
+aliases     = ["VtMB", "Bloodlines"]
+type        = "proton"
+engine      = "other"
+steam_appid = "2600"
+sgdb_id     = ""
+
+[launch]
+binary         = "vampire.exe"
+launch_options = "-game Unofficial_Patch %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+The game's launch binary is **vampire.exe** in the install root
+(~/.steam/steam/steamapps/common/Vampire The Masquerade - Bloodlines/).
+Steam launches that exe; the -game Unofficial_Patch flag tells the
+Source-engine fork to load the patch content directory instead of vanilla.
+
+**Step 1 — Install the Unofficial Patch (mandatory)**
+Install the latest Unofficial Patch by Wesp5. It is a Windows installer
+.exe, so run it inside the game's Proton prefix (easiest with Protontricks
+from Flathub: pick the game → "run an arbitrary executable" → the patch
+.exe), and point it at the VtMB install directory above. Recent patch
+builds (v13+) also drop a loader.exe in the game folder that markedly
+improves modern/Linux compatibility — Bloodlines on Steam Deck went from
+flaky to reliable once that loader shipped. You can either keep launching
+vampire.exe with the launch flag below, or add loader.exe as a non-Steam
+game and pick the Unofficial Patch entry.
+
+**Step 2 — Launch options**
+This recipe sets launch options to:
+  -game Unofficial_Patch %command%
+Without -game Unofficial_Patch the patch files are present but silently
+ignored and you run unpatched (which crashes frequently). After patching,
+start a NEW game — old vanilla saves are moved to save/incompatible.
+
+**Step 3 — Proton version**
+GE-Proton (8.x or newer) is the safe default; install via ProtonUp-Qt
+from Discover. Reports also confirm plain Proton 8 / Proton Experimental
+working — if you use a controller mod or the Clan Quest Mod, Experimental
+is often recommended for the control hooks. GE-Proton tends to handle the
+game's old Miles Sound System audio more cleanly.
+
+**Step 4 — Controller (no native gamepad)**
+Bloodlines (2004) has NO native gamepad support — it is keyboard + mouse
+only. On Deck you MUST drive it through a Steam Input layout that maps
+mouse-look to a trackpad/stick and binds keys to buttons. Community
+layouts exist (search the per-game Steam Input templates / Steam
+Controller DB); expect to tweak dialogue and hotkey bindings.
+
+**Step 5 — Steam Overlay**
+If cutscenes stutter or display at wrong resolution, disable the Steam
+Overlay (Properties → General → uncheck "Enable the Steam Overlay").
+The pre-rendered FMVs are Bink video and can glitch with the overlay
+injected.
+
+**Step 6 — Performance**
+Lock the Deck to 40 fps (QAM → Performance → FPS Limit 40). The engine is
+CPU-bound and does not scale well above 60; 40 fps holds steady and cuts
+power draw.
+
+**Optional — Plus Patch vs Basic Patch**
+Wesp5 ships two variants: Basic (bug-fixes only) and Plus (restorations).
+Basic is recommended for a first playthrough; Plus adds cut content but
+can alter balance.
+
+**Optional — mod-loader DLL override**
+If you layer DLL-based mods (e.g. some controller or Clan Quest setups),
+add WINEDLLOVERRIDES="dbghelp=n,b" before %command% so the loader DLL is
+honoured. Not needed for a plain Basic-patch playthrough.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Steam Deck: Install the Unofficial Patch on Linux via Protontricks (GUI guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2909531565"
+
+[[links.guides]]
+title = "Steam Deck: Installing Bloodlines with the Clan Quest Mod / other mods + controller layout"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3090019133"
+
+[[links.guides]]
+title = "Steam store page"
+url   = "https://store.steampowered.com/app/2600/"
+
+[[links.guides]]
+title = "ProtonDB entry"
+url   = "https://www.protondb.com/app/2600"
+
+[about]
+developer = "Troika Games"
+publisher = "Activision"
+released  = "2004"
+genre     = "RPG, Immersive Sim"
+modes     = "Single-player"
+summary   = """**Vampire: The Masquerade – Bloodlines** by Troika Games (2004) is a cult-classic
+first/third-person RPG set in White Wolf's World of Darkness. It shipped in a
+broken state but the decade-spanning Unofficial Patch by Wesp5 has turned it into
+one of the finest immersive RPGs ever made — essential Deck backlog material."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Launch binary is vampire.exe; -game Unofficial_Patch must be set or the patch is silently ignored.
+- Unofficial Patch (Wesp5) is effectively mandatory; vanilla crashes frequently mid-game.
+- Patch installer is a Windows .exe — run it inside the Proton prefix (Protontricks) or pre-install on Windows.
+- Patch v13+ adds a loader.exe that greatly improves Linux/Deck reliability; you can launch via it instead of vampire.exe.
+- No native controller support — set up a Steam Input layout (mouse-look on trackpad/stick) before playing.
+- GE-Proton or Proton 8 / Experimental all have working reports; Experimental favoured for controller-mod control hooks.
+- Steam Overlay can cause black-screen / glitched Bink cutscenes; disable if you hit this.
+- Save often — some quest triggers can still be fragile even with the patch.
+"""

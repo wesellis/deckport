@@ -1,0 +1,78 @@
+[game]
+title       = "Quake Mission Pack 1: Scourge of Armagon"
+slug        = "quake-mission-pack-1-scourge-of-armagon"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "9040"
+sgdb_id     = ""
+
+[launch]
+binary         = "Quake/Winquake.exe"   # original Steam build's DOS/Win classic launcher; the mission pack is the 'hipnotic' game dir loaded with -hipnotic
+launch_options = "-hipnotic"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Add-on:** This is the `hipnotic` add-on for classic Quake, **not a standalone exe** — it needs a Quake install and is launched with `-hipnotic`.
+
+**DRM:** Delisted standalone Steam game (appid `9040`, purchase disabled Aug 2021 when id rolled the mission packs into **Quake Enhanced/Remastered**). No GFWL or DRM.
+
+**Proton:** ProtonDB **platinum**. The original Steam build ships an outdated GLQuake/Winquake; it boots fine under Proton (use `GE-Proton` or `proton_experimental`).
+
+**Fix:** For a clean Deck experience, drop a modern source port (`QuakeSpasm`/`vkQuake`) into the Quake folder and point the binary at it, launching with `-hipnotic`. The Steam-bundled Armagon soundtrack is poorly ripped — modern ports + the `music/` folder fix that.
+
+**Controller:** The original Steam-bundled `WinQuake.exe` has no native gamepad support, so use a Steam Input keyboard/mouse layout (right pad = mouselook, face buttons mapped to move/fire) — plays great and is Deck-friendly. Note: if you swap to a modern port, the QuakeSpasm SDL2 build (`quakespasm-sdl2`) and vkQuake do have native XInput gamepad support out of the box.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Hipnotic Software"
+publisher = "Activision"
+released  = "1997"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Scourge of Armagon** is the first official expansion pack for id Software's **Quake**, developed by Hipnotic Software and published by Activision in 1997. It adds three new episodes built on Quake's **id Tech** engine, along with new enemies, bosses, weapons such as the **Mjolnir hammer** and proximity-mine laser cannon, and environmental hazards. Well received as a substantial follow-up to the original game, it was later delisted as a standalone purchase when id folded the classic mission packs into the **Quake Enhanced/Remastered** release."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Quake Mission Pack 1: Scourge of Armagon (appid 9040)"
+url   = "https://www.protondb.com/app/9040"
+
+[[links.guides]]
+title = "Steam Guide - Scourge of Armagon on QuakeSpasm (Steam)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1411492407"
+
+[[links.guides]]
+title = "Steam Guide - How I play Quake in the Current Year (Ironwail/QuakeSpasm-Spiked)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=732999296"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Add-on, not standalone:** It requires a Quake install and the `-hipnotic` launch arg, and binary points at the Quake launcher (swap to `QuakeSpasm`/`vkQuake` for best results and to fix the badly-ripped Steam soundtrack via a `music/` folder).
+
+**Delisted:** Delisted standalone (appid `9040`) — superseded by **Quake Enhanced/Remastered**, which already includes this mission pack and is Deck Verified; this recipe targets the classic standalone build.
+
+**Status:** ProtonDB **platinum** for classic Quake; the standalone Scourge entry has thin direct reports, so status is `needs-test` until confirmed on a Deck.
+
+**DRM:** No GFWL/DRM.
+
+**Controller:** The original bundled `WinQuake.exe` has no native controller support — use a Steam Input keyboard/mouse layout (works well on Deck). Modern ports (QuakeSpasm SDL2 build, vkQuake) add native XInput gamepad support if you swap the binary.
+
+**Multiplayer:** Single-player, so no server concerns."""

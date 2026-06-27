@@ -1,0 +1,74 @@
+[game]
+title       = "Killer Queen Black"
+slug        = "killer-queen-black"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "663670"
+sgdb_id     = ""
+
+[launch]
+binary         = "Killer Queen Black.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `663670`, Unity engine). **ProtonDB Gold** (best-reported Platinum, trending Gold) — community reports local/offline play running essentially flawlessly under Proton, and it plays well on the Deck.
+
+**Proton:** `GE-Proton` (or `proton_experimental`) is the safe pick; the game has **no DRM beyond standard Steamworks — no GFWL or extra workarounds needed**.
+
+**Controller:** Native controller support on Windows (designed as a competitive controller game). Under Proton most users get a clean gamepad map, but a few reports note the pad not being picked up — if that happens, **force Steam Input on with a Gamepad layout** as a fallback.
+
+**Online:** The original Amazon GameSparks backend shut down **Nov 30 2022**, so **default matchmaking is dead and auto region-select fails**; offline / local multiplayer works as-is. Liquid Bit added a `beta` branch (announced Dec 13 2022) that restores custom online matches + spectator mode.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Liquid Bit / BumbleBear Games"
+publisher = "BumbleBear Games"
+released  = "2019"
+genre     = "Arcade strategy multiplayer"
+modes     = "Local and online multiplayer, 4v4 team battles, cross-play"
+summary   = """
+**Killer Queen Black** is a console and PC adaptation of the popular **10-player Killer Queen arcade cabinet**, retooled into fast **4v4 team battles**. Two teams race to win by one of three paths: **military** (eliminate the rival queen three times), **economic** (gather berries to fill the hive), or **speed** (ride the snail to the goal).
+
+It launched in 2019 with **cross-play** between Steam and Nintendo Switch and was praised for its tense, accessible competitive design. Liquid Bit announced its retirement on Oct 4 2022 and it was **delisted from Steam on Oct 6 2022**, after Amazon's **GameSparks** backend (which powered online matchmaking) was discontinued; online service then went dark Nov 30 2022. Previously owned copies remain playable in offline and local multiplayer.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB community reports (appid 663670)"
+url   = "https://www.protondb.com/app/663670"
+
+[[links.guides]]
+title = "Delisting & online-shutdown timeline (Delisted Games)"
+url   = "https://delistedgames.com/killer-queen-black-delisted-online-play-shuts-down-november-30th/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam on Oct 6 2022 (no longer for sale); deckport links nothing.
+
+**Proton:** ProtonDB Gold (best-reported Platinum, trending Gold) with community reports of local/offline play running flawlessly under Proton, so it should be smooth on the Deck.
+
+**Controller:** Native controller game on Windows. Usually works under Proton, but a few reports note the gamepad not registering — if so, force Steam Input on with a Gamepad layout.
+
+**Online:** The Amazon GameSparks backend shut down Nov 30 2022, so **stock online matchmaking is gone and auto region-select fails** — offline / local multiplayer works fine, and Liquid Bit's `beta` branch (Dec 13 2022) is the path to custom online + spectator.
+
+**Verify:** Binary expected as `Killer Queen Black.exe` (Unity product name / install-folder convention); not yet independently confirmed against the install. Still needs a hands-on Deck verification pass.
+"""

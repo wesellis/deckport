@@ -1,0 +1,75 @@
+[game]
+title       = "Kameo: RePowered"
+slug        = "kameo-recomp"
+aliases     = ["KameoRePowered", "Kameo Recomp", "Kameo: Elements of Power PC", "Kameo Elements of Power Recompiled"]
+type        = "native"        # Xbox 360 static recompilation via ReXGlue SDK — native Linux build
+engine      = "other"         # ReXGlue SDK Xbox 360 static recompilation toolkit
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "kameorepowered"   # Linux build from kameorepowered-v0.2.1-linux-x64.tar.gz; confirm exact name in the archive
+launch_options = ""
+requires_files = ["Your own legally dumped Kameo: Elements of Power Xbox 360 ISO (extracted into ./assets via extract-xiso)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Recomp:** Static recompilation of the 2005 Xbox 360 launch title Kameo: Elements of Power by **birabittoh** (project name **KameoRePowered**), built on the **ReXGlue SDK**. The tool converts the Xbox 360 PowerPC `default.xex` into native x86_64 code at build time and wraps it with a small host runtime (logging, overlays, hooks) so the game runs natively — not emulated.
+
+**Version:** `v0.2.1` released 23 June 2026 — still an early/active project; **expect rough edges**. Pre-built stable and nightly builds are published on GitHub Releases.
+
+**Proton:** Ships a **native Linux** build (`kameorepowered-v0.2.1-linux-x64.tar.gz`) that runs on the Steam Deck **without Proton**. Add the executable as a non-Steam game.
+
+**Game files:** The recomp is the engine only — **you supply your own copy**. Dump your own disc to an ISO and extract it into the `assets/` folder, e.g. `extract-xiso -d assets "Kameo - Elements of Power (USA).iso"`. The project ships NO game assets.
+
+**Setup:** Place the downloaded executable next to the extracted `assets` directory and run it. Options (keyboard bindings, GPU/`--vulkan_device`, `--user_language`, `--log_level`) can be set on the command line or persisted in `kameorepowered.toml`."""
+
+[about]
+developer = "Rare (original 2005 game); recompilation by birabittoh using the ReXGlue SDK"
+publisher = "Microsoft Game Studios (original 2005 game)"
+released  = "2005 (Xbox 360 launch title); KameoRePowered recompilation v0.2.1 released June 2026"
+genre     = "Action-adventure"
+modes     = "Single-player (original game also had local co-op)"
+summary   = """
+**Kameo: Elements of Power** is a 2005 **action-adventure** game developed by **Rare** and published by **Microsoft Game Studios** as a launch title for the **Xbox 360**. Players control Kameo, an elf who can **transform into elemental warriors** — each with unique combat abilities — to defeat the troll army of Thorn and rescue her family. The game was a showcase for the Xbox 360's early graphical capabilities. It was **never released on PC**.
+
+This recipe uses **KameoRePowered** (by birabittoh), a community **static recompilation** built on the **ReXGlue SDK** that ports the game to **native Windows and Linux without emulation**. You must supply your own legally dumped Xbox 360 ISO."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "KameoRePowered — static recompilation project (GitHub)"
+url   = "https://github.com/birabittoh/KameoRePowered"
+
+[[links.guides]]
+title = "KameoRePowered releases (pre-built Linux/Windows builds)"
+url   = "https://github.com/birabittoh/KameoRePowered/releases/latest"
+
+[[links.guides]]
+title = "ReXGlue SDK — Xbox 360 recompilation runtime and toolkit (GitHub)"
+url   = "https://github.com/rexglue/rexglue-sdk"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a legally dumped Kameo: Elements of Power Xbox 360 ISO, extracted into `assets/` with `extract-xiso`. **The recomp ships NO game assets, code, or data.**
+
+**Version:** `v0.2.1` (June 2026) — early/active project, expect rough edges and missing features. Check GitHub Releases for newer stable/nightly builds.
+
+**Binary:** Use the Linux build (`kameorepowered-v0.2.1-linux-x64.tar.gz`); the executable inside is `kameorepowered` — confirm the exact name after extracting.
+
+**Native Linux:** Runs on the Steam Deck without Proton; add the extracted executable as a non-Steam game.
+
+**Framework:** Built on the `ReXGlue SDK` Xbox 360 static recompilation toolkit (translates PowerPC code to native C++) — repo at github.com/rexglue/rexglue-sdk."""

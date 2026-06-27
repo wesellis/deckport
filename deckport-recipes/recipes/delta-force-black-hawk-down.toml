@@ -1,0 +1,80 @@
+[game]
+title       = "Delta Force: Black Hawk Down"
+slug        = "delta-force-black-hawk-down"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "32670"
+sgdb_id     = ""
+
+[launch]
+binary         = "dfbhd.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Classic 2003 NovaLogic single-player tactical shooter (delisted Steam `appid 32670`) — **NOT the 2024 free-to-play Delta Force** (`appid 2507950`), which uses `ACE` anti-cheat.
+
+**DRM:** No DRM/GFWL, no anti-cheat, so it runs cleanly under Proton.
+
+**Install:** Main exe is `dfbhd.exe` (the Team Sabre expansion ships `dfts.exe`).
+
+**Proton:** ProtonDB rates it gold. Use `GE-Proton` (or `proton_experimental`) — both get into the game on SteamOS.
+
+**Multiplayer:** The old multiplayer relied on NovaWorld servers (gone), so **treat this as single-player/campaign only**.
+
+**Display:** Engine renders 4:3 natively; for widescreen on the Deck's 16:10 panel use a DFBHD widescreen/FOV wrapper byte-edit dropped next to `dfbhd.exe`, otherwise expect pillarboxing or stretching.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "NovaLogic"
+publisher = "NovaLogic"
+released  = "2003"
+genre     = "Tactical first-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Delta Force: Black Hawk Down** is a 2003 tactical first-person shooter from **NovaLogic**, set during the U.S. military's operations in Somalia and the 1993 Battle of Mogadishu depicted in the film of the same name. It runs on NovaLogic's **Voxel Space / Comanche-derived engine** and emphasizes large open environments and squad-based combat across a single-player campaign, later expanded by the **Team Sabre** add-on. The PC release was followed by Mac, PlayStation 2, and Xbox versions, and the series is remembered as a long-running rival to the **Rainbow Six** and **Ghost Recon** tactical shooters. Its original **NovaWorld** online multiplayer servers have since been shut down, leaving the campaign as the primary way to play."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 32670)"
+url   = "https://www.protondb.com/app/32670"
+
+[[links.guides]]
+title = "WSGF widescreen entry (UniWS / hex-edit method)"
+url   = "https://www.wsgf.org/dr/delta-force-black-hawk-down/en"
+
+[[links.guides]]
+title = "Steam guide: running DFBHD on modern Windows (DirectPlay, resolution)"
+url   = "https://steamcommunity.com/app/32670/discussions/0/599641410463882487/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Status:** Community reports the delisted 2003 NovaLogic game running on Linux/Proton at gold; this specific recipe still needs a Deck confirmation.
+
+**Don't confuse:** Not the 2024 free-to-play Delta Force (`appid 2507950`, `ACE` anti-cheat) — that's a different game and still for sale.
+
+**Multiplayer:** NovaWorld multiplayer servers are dead, so this is effectively single-player/campaign only.
+
+**Controller:** No native controller support — bind a Steam Input keyboard/mouse layout (community DFBHD Deck layouts exist) to play with the gamepad.
+
+**Display:** Engine is 4:3 native — apply a widescreen/FOV wrapper byte-edit for proper 16:10 output.
+
+**DirectPlay:** On Windows this game needs Legacy DirectPlay; under Proton wine provides that, so no extra step."""

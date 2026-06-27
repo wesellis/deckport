@@ -1,0 +1,80 @@
+[game]
+title       = "Ashes 2063 (+ Ashes: Afterglow)"
+slug        = "ashes-2063"
+aliases     = ["Ashes 2063", "Ashes Afterglow", "Ashes: Hard Reset", "Ashes 2063 Enriched"]
+type        = "native"        # native Linux via GZDoom Flatpak — no Proton needed
+engine      = "gzdoom"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak"
+launch_options = "run org.zdoom.GZDoom -iwad freedoom2.wad -file <PK3 files from the extracted standalone archive>"
+requires_files = [
+  "Ashes standalone download from ModDB (free) — extract the PK3 files it contains",
+  "Freedoom Phase 2 IWAD (freedoom2.wad), bundled in the standalone or free at freedoom.github.io/freedoom/releases/",
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Standalone (easiest):** The current ModDB download (e.g. "Ashes: Stand Alone Version 1.51") is a free, ready-to-play package that **bundles GZDoom and Freedoom Phase 2** and includes **both campaigns** — Ashes 2063 (Ep.1) and Ashes: Afterglow (Ep.2) — plus the Dead Man Walking and Hard Reset expansions. The bundled launcher is **Windows-only**, so on Linux/Deck you extract its PK3 files and run them with a native GZDoom instead.
+
+**Install GZDoom:** `flatpak install flathub org.zdoom.GZDoom`. Place the extracted PK3 files plus an IWAD (`freedoom2.wad` is included in the standalone) into `~/.var/app/org.zdoom.GZDoom/`, then load the PK3s with `-file`.
+
+**Exact filenames vary by release.** Don't hardcode a guessed name — load whatever PK3 files ship inside the extracted standalone archive (these change across versions, e.g. `AshesSAMenu.pk3`, the Afterglow/menu/light-mode PK3s, etc.). The bundled Windows `.bat` shows the exact load order if you need it.
+
+**IWAD:** Freedoom Phase 2 (`freedoom2.wad`, free) is a **fully legal IWAD substitute** — no Doom II purchase needed. A retail Doom II / Final Doom IWAD also works.
+
+**Controller:** GZDoom has no built-in gamepad menu navigation, so configure it with mouse/keyboard first, then use **Steam Input** in Game Mode. `GZDeck` (github.com/flegald/GZDeck) is a controller-friendly GZDoom mod launcher for the Deck, but it is **no longer maintained** (archived). When launching the GZDoom flatpak as a non-Steam game, add `--no-sandbox` or Steam may hang."""
+
+[about]
+developer = "Vostyok and contributors"
+publisher = "Independently released (free total conversion)"
+released  = "Ashes 2063 (Ep.1) Sept 2018; Enriched/DMW remaster 2021; Ashes: Afterglow (Ep.2) 2021; Hard Reset expansion 2023; ongoing updates"
+genre     = "Post-apocalyptic first-person shooter (GZDoom total conversion)"
+modes     = "Single-player"
+summary   = """
+**Ashes 2063** is a **Cacoward-winning** post-apocalyptic **total conversion** for **GZDoom** with a heavy **Fallout/STALKER** atmosphere. Set in a bleak future wasteland, the full package spans two campaigns — **Ashes 2063** and its sequel **Ashes: Afterglow** — plus the Dead Man Walking and Hard Reset expansions, all freely available from ModDB. It features original enemies, weapons, maps, and music built from scratch.
+
+One of the most acclaimed GZDoom total conversions and an outstanding entry point for players new to Doom-engine mods. The standalone download bundles **Freedoom Phase 2** as a fully legal free IWAD, so no commercial Doom II purchase is required."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ModDB: Ashes 2063 download page"
+url   = "https://www.moddb.com/mods/ashes-2063"
+
+[[links.guides]]
+title = "ModDB: Ashes Stand Alone download (bundles GZDoom + Freedoom, both campaigns)"
+url   = "https://www.moddb.com/mods/ashes-2063/downloads"
+
+[[links.guides]]
+title = "GZDeck — controller-friendly GZDoom launcher for Steam Deck (unmaintained, fork-friendly)"
+url   = "https://github.com/flegald/GZDeck"
+
+[[links.guides]]
+title = "Freedoom Phase 2 — free legal Doom II IWAD substitute"
+url   = "https://freedoom.github.io"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free standalone:** Grab the ModDB "Ashes: Stand Alone" download — it's free and bundles GZDoom + Freedoom Phase 2 with both campaigns and the expansions. The bundled launcher is Windows-only, so on Linux/Deck extract the PK3 files and run them with the native GZDoom Flatpak (`flatpak install flathub org.zdoom.GZDoom`).
+
+**Filenames change per release.** The exact PK3 names differ between versions, so load whatever PK3 files are inside the extracted archive rather than a fixed name. Use the IWAD that ships in the bundle (`freedoom2.wad`).
+
+**IWAD:** Freedoom Phase 2 (free, also at freedoom.github.io) works as the IWAD — **no Doom II purchase needed**. Retail Doom II / Final Doom also works.
+
+**Controller:** GZDoom has no native gamepad menu navigation — set up controls with mouse/keyboard first, then map a **Steam Input** layout in Game Mode. `GZDeck` (github.com/flegald/GZDeck) helps but is **no longer maintained**. Add `--no-sandbox` to the GZDoom flatpak launch options when adding it as a non-Steam game, or Steam can hang. Highly recommended as a first GZDoom total conversion."""

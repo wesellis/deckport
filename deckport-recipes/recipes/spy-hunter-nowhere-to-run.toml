@@ -1,0 +1,79 @@
+[game]
+title       = "Spy Hunter: Nowhere to Run"
+slug        = "spy-hunter-nowhere-to-run"
+aliases     = ["Spy Hunter Nowhere to Run"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "wspy3D.exe"   # stated by the install guide
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Terminal Reality's Spy Hunter (Midway, 2006 console / 2009 PC port by Steel Monkeys) — third-person vehicular combat mixed with on-foot shooting. DirectX 9 retail-disc release, never sold on Steam.
+
+**Install:** Launcher/config is `wspy3DInit.exe`; the game itself is `wspy3D.exe`.
+
+**Proton:** Runs under Proton (`GE-Proton` recommended; DirectPlay is bundled so no extra DirectX setup needed).
+
+**Fix:** **Disable PhysX in the in-game graphics settings.** With PhysX on the framerate collapses to ~15 fps; off it runs smooth.
+
+**Performance:** The game is otherwise hard-capped low (~22-25 fps vs the intended 30).
+
+**First launch:** If it hangs on the very first launch, **kill the `wspy3D.exe` process and relaunch** (leave `rundll32.exe` alone).
+"""
+
+[about]
+developer = "Terminal Reality (PC port by Steel Monkeys)"
+publisher = "Midway Games"
+released  = "2006 (console); 2009 (PC port)"
+genre     = "Third-person shooter / vehicular combat"
+modes     = "Single-player"
+summary   = """
+**SpyHunter: Nowhere to Run** is the fourth game in Midway's **Spy Hunter** series and the first to let the player leave the iconic **Interceptor** car and fight **on foot**, blending third-person shooting with vehicular combat. It stars **Dwayne Johnson** as agent Alex Decker and began as a tie-in to an unmade Spy Hunter film that fell into development hell, leaving the game to ship on its own.
+
+Released for PlayStation 2 and Xbox in 2006 with a later Windows port, it drew mixed reviews for clunky controls and repetitive combat, and is remembered as the entry Johnson himself joked about for its poor reception. It was a **retail-disc release** that was never sold digitally."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Spy Hunter: Nowhere to Run - PCGamingWiki (fixes, DRM, widescreen)"
+url   = "https://www.pcgamingwiki.com/wiki/Spy_Hunter:_Nowhere_to_Run"
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack - FOV request (issue #1311)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/issues/1311"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game.
+
+**Controller:** The PC port has poor/flaky native gamepad support (keyboard+mouse is the good control scheme), so set up a Steam Input keyboard/mouse layout on the Deck rather than relying on built-in pad support.
+
+**Performance:** Framerate is hard-capped low (~22-25 fps; **disabling PhysX is essential** to avoid a 15 fps floor, and Special K can lift the cap toward 30).
+
+**Display:** The in-engine 'widescreen' is just a stretched 4:3 image (ThirteenAG's WidescreenFixesPack can correct FOV). Windowed mode looks sharper.
+
+**First launch:** It can freeze on the very first launch — kill `wspy3D.exe` and relaunch, **do not touch `rundll32.exe`**.
+
+**DRM:** Retail copies carry StarForce disc DRM, which often refuses to run on modern Windows; the community fix is a clean executable that drops the disc check (see PCGamingWiki).
+
+**Binary:** `wspy3D.exe`. deckport links nothing.
+"""

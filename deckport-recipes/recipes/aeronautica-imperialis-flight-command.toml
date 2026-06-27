@@ -1,0 +1,70 @@
+[game]
+title       = "Aeronautica Imperialis: Flight Command"
+slug        = "aeronautica-imperialis-flight-command"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "610160"
+sgdb_id     = ""
+
+[launch]
+binary         = "FlightCommand.exe"   # Unity build; confirm against your install (alt: AeronauticaImperialis.exe in the install root)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `610160`), removed from sale 2023-02-08 by Binary Planets. Unity title, simultaneous turn-based tactical air combat (Warhammer 40k).
+
+**Proton:** ProtonDB lists **platinum**, but on a *low* report count, so treat it as "should run well" rather than a heavily-confirmed result. No DRM, GFWL, or winetricks reported as needed. `GE-Proton` or `proton_experimental` are both reasonable — pick one and let it build the prefix.
+
+**DRM:** No DirectX/SecuROM hacks required.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Binary Planets"
+publisher = "Green Man Gaming Publishing"
+released  = "2020"
+genre     = "Turn-based tactics"
+modes     = "Single-player"
+summary   = "**Aeronautica Imperialis: Flight Command** is a turn-based tactical air-combat game set in the **Warhammer 40,000** universe, adapting Games Workshop's Aeronautica Imperialis tabletop wargame. Both sides issue orders simultaneously under a **WEGO system**, then watch small squadron engagements of roughly three to eight aircraft play out, with movement handled via a drag-and-drop interface. It offers standalone scenarios plus the **Rynn's World Air Superiority** campaign, in which players level up Imperial Navy pilots across randomly generated missions. Critical reception was mixed, with reviewers recommending it mainly to dedicated Warhammer 40,000 fans."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Aeronautica Imperialis: Flight Command (appid 610160)"
+url   = "https://www.protondb.com/app/610160"
+
+[[links.guides]]
+title = "Steam Community Hub (owner-only; delisted from sale)"
+url   = "https://steamcommunity.com/app/610160"
+
+[[links.guides]]
+title = "Steam News — removal from sale (2023-02-08)"
+url   = "https://store.steampowered.com/news/app/610160/view/3654144191636290435"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** Delisted (removed from Steam 2023-02-08), so **only owners with a prior purchase / grey-market key can run it**. deckport links nothing.
+
+**Proton:** ProtonDB tier is platinum but on a low report count, and Valve rates it Steam Deck **Playable** (not Verified) — encouraging, but not heavily confirmed, so this recipe still needs a hands-on Deck pass.
+
+**Controller:** native gamepad support is limited; it's a menu-and-orders strategy game with a planning phase rather than real-time flight, so a Steam Input mouse/keyboard layout (trackpad as mouse) plays it comfortably — set that as the controller layout.
+
+**Servers:** Single-player / hot-seat focused; no live servers to worry about.
+
+**Binary:** Binary name (`FlightCommand.exe`) is a best-guess — **verify against your install root**."""

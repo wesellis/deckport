@@ -1,0 +1,26 @@
+---
+import { PROTON_TIERS, normalizeTier } from "../lib/recipes";
+
+interface Props {
+  tier: string;
+  showNote?: boolean;
+  compact?: boolean;
+}
+const { tier, showNote = false, compact = false } = Astro.props;
+const key = normalizeTier(tier);
+const meta = key ? PROTON_TIERS[key] : null;
+---
+
+{
+  meta && (
+    <span
+      class={`medal${compact ? " medal-sm" : ""}`}
+      style={`--medal:${meta.color}`}
+      title={`ProtonDB: ${meta.label} — ${meta.note}`}
+    >
+      <span class="coin" />
+      {compact ? meta.label : `ProtonDB ${meta.label}`}
+      {showNote && !compact && <span class="medal-note"> · {meta.note}</span>}
+    </span>
+  )
+}

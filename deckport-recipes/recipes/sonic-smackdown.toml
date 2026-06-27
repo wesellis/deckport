@@ -1,0 +1,74 @@
+[game]
+title       = "Sonic Smackdown"
+slug        = "sonic-smackdown"
+aliases     = ["Sonic Smackdown Definitive"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SonicSmackdown_x64.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["vcrun2019"]
+notes      = """
+**Game:** Free Sonic fan fighter by ArcForged (Unreal Engine 4, Windows-only). No SEGA involvement, no DRM.
+
+**Install (portable/standalone):** Download `SonicSmackdown_x64.zip` (the "Definitive Edition") from ArcForged's official itch.io page and extract it (use 7-Zip if standard extraction fails). The launcher is `SonicSmackdown_x64.exe` inside the extracted folder. Add that `.exe` to Steam as a non-Steam game — there is no installer.
+
+**Proton:** Force `GE-Proton` (or `proton_experimental`) in the shortcut's Compatibility settings.
+
+**Redistributables:** The game needs the VS 2019 (VC++) runtime. Under Proton this is covered by `vcrun2019` (via Protontricks on the non-Steam shortcut's prefix); GE-Proton bundles most VC++ runtimes so it often runs without manual steps.
+
+**Controller:** Native XInput gamepad. ArcForged themselves recommend running it as a non-Steam game so Steam Input handles controller detection — this is the documented fix for gamepads not registering.
+
+**Warning:** This is the original/complete Sonic Smackdown. The separate newer **'Ultimate Sonic Smackdown'** tag-fighter is a different download and is reported not to run on Deck, so **stay on the original**.
+"""
+
+[about]
+developer = "ArcForged"
+publisher = "ArcForged"
+released  = "2020"
+genre     = "2D fighting"
+modes     = "Single-player, local versus"
+summary   = """
+**Sonic Smackdown** is a free fan-made **2D fighting game** starring the **Sonic the Hedgehog** cast, built in **Unreal Engine** by indie studio ArcForged. Inspired by titles like Street Fighter and Dragon Ball FighterZ, it offers a complete 1v1 experience with a sizable roster, distinct movesets, and flashy **super moves**.
+
+The game was downloaded over **180,000 times** and was capped off by a **'Definitive Edition'** before ArcForged ceased development to focus on original projects and the later tag-fighter spinoff Ultimate Sonic Smackdown.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Sonic Smackdown - official ArcForged itch.io page (free download + install/controller notes)"
+url   = "https://arcforged.itch.io/sonic-smackdown"
+
+[[links.guides]]
+title = "Sonic on Steam Deck - compatibility guide (The Sonic Stadium)"
+url   = "https://www.sonicstadium.org/forums/topic/30280-sonic-on-steam-deck-a-guide-to-compatibility-of-sonic-games-on-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free fan game (not SEGA), never sold on Steam — runs as a non-Steam shortcut under `GE-Proton`.
+
+**Controller:** Native XInput gamepad support; add to Steam so Steam Input handles controller detection (DirectInput-only pads like DS4 need Steam's mapping). Keyboard/mouse selectable in settings.
+
+**Binary:** Launcher is `SonicSmackdown_x64.exe`, found in the extracted `SonicSmackdown_x64.zip` (Definitive Edition) from ArcForged's itch.io page. Portable — no installer.
+
+**Warning:** The **'Ultimate Sonic Smackdown'** sequel is a different game and is reported not to work on Deck.
+"""

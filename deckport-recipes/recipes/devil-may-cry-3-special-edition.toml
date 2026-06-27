@@ -1,0 +1,79 @@
+[game]
+title       = "Devil May Cry 3: Special Edition"
+slug        = "devil-may-cry-3-special-edition"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "6550"
+sgdb_id     = ""
+
+[launch]
+binary         = "dmc3se.exe"   # 2006 standalone port exe; v1.3 patch + Style Switcher keep the same name (settings saved to dmc3se.ini)
+launch_options = 'PROTON_FORCE_LARGE_ADDRESS_AWARE=1 WINEDLLOVERRIDES="d3d9,dinput8,dsound=n,b" %command%'
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["vcrun2022", "directx9"]
+notes      = """
+**Which version:** This recipe is for the **standalone 2006 PC port** (`appid 6550`), *not* the later **Devil May Cry HD Collection** (`appid 631510`) which also contains DMC3. Deck owners report the standalone 2006 port actually runs cooler and with fewer visual bugs than the HD Collection version, so it remains worth keeping. It was **delisted from Steam (pulled from sale early 2024)** — only existing owners can still install it.
+
+**Proton:** ProtonDB tier **silver** — it runs under Proton/Deck. The reported working launch options are already set: `PROTON_FORCE_LARGE_ADDRESS_AWARE=1` plus `WINEDLLOVERRIDES="d3d9,dinput8,dsound=n,b"`. `GE-Proton` (or a recent stock `Proton 8/9`) is recommended.
+
+**Essential fix:** The original 2006 port is notoriously poor (stutter, audio-tied frame drops, broken pad support). First apply the official **v1.3 patch** (adds HQ music + XInput controller support), then add **Serpentiem's Style Switcher** mod — the build maintained for the 2006 port (`dmc3se-pc-2006-style-switcher`), which is the standalone-port counterpart to the DDMK / Style Switcher mod used on the HD Collection. It fixes controls, frame pacing, free style-switching and quality-of-life. Prereqs the mod expects in the prefix: DirectX June 2010 redist and Visual C++ 2015-2022 redist.
+
+**Display:** A widescreen fix lets the game inherit the Deck's native `1280x800` instead of a stretched 4:3 image; drop the plugin in the game root.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Capcom"
+publisher = "Capcom (PC ports via Mastertronic in the UK, Sourcenext in Japan, and Ubisoft in North America)"
+released  = "2006"
+genre     = "Action, hack and slash"
+modes     = "Single-player"
+summary   = """
+**Devil May Cry 3: Special Edition** is the enhanced re-release of the third entry in Capcom's stylish **action** series, a prequel following a young Dante and the introduction of his twin **Vergil**. The Special Edition adds **Vergil as a playable character**, a new **Bloody Palace** survival mode, and rebalanced difficulty.
+
+The 2006 PC port, handled in-house by Capcom, was widely panned for stutter, audio-driven frame drops, and broken controller support, which is why community patches and fix packs became essential to play it properly. It was **pulled from sale on Steam in early 2024**, though existing owners can still install it."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — DMC3 Special Edition (appid 6550)"
+url   = "https://www.protondb.com/app/6550"
+
+[[links.guides]]
+title = "Style Switcher for the 2006 PC port (Serpentiem, 2006-port build)"
+url   = "https://github.com/ProjectXsent/dmc3se-pc-2006-style-switcher"
+
+[[links.guides]]
+title = "PCGamingWiki — Devil May Cry 3: Special Edition (fixes & patches)"
+url   = "https://www.pcgamingwiki.com/wiki/Devil_May_Cry_3:_Special_Edition"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing. This is the **standalone 2006 port (`appid 6550`)**, not the HD Collection (`appid 631510`).
+
+**Controller:** the 2006 port does **not** auto-detect the Deck's gamepad. The v1.3 patch adds XInput support, and the Style Switcher build for the 2006 port includes controller config (`GPadCfg.exe` → `dmc3se.ini`). The simplest path on Deck is to apply a community **Steam Input** gamepad layout — Deck users confirm this gives full pad controls.
+
+**Essential mod:** the original port is rough out of the box; install the **v1.3 patch** then **Serpentiem's Style Switcher** (2006-port build) for working controls, frame pacing and free style switching. The mod expects DirectX June 2010 + VC++ 2015-2022 redists in the prefix.
+
+**Display:** apply a widescreen fix so the image fills the Deck's `1280x800` screen instead of stretching from 4:3.
+
+**Proton:** ProtonDB silver; Deck owners report it runs cooler and with fewer visual glitches than the HD Collection version. Expect minor FMV/audio quirks common to DMC-era ports.
+
+**Modes:** Single-player only, no online servers to worry about.
+
+**Status:** Recipe still needs a hands-on Deck confirmation."""

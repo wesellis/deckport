@@ -1,0 +1,72 @@
+[game]
+title       = "Warhammer 40,000: Space Wolf"
+slug        = "warhammer-40-000-space-wolf"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "553210"
+sgdb_id     = ""
+
+[launch]
+binary         = "SpaceWolf.exe"   # Unity build; verify in your install (may be "Space Wolf.exe" with a matching *_Data folder)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 553210`; license expired, removed from sale `2023-10-12` so it cannot be bought anymore). Unity engine, turn-based tactical card/deckbuilder.
+
+**Proton:** ProtonDB rates it **platinum** — runs out of the box on Linux/Proton with no DRM/GFWL/widescreen workarounds needed. `GE-Proton` or `proton_experimental` both work; nothing special required.
+
+**Controller:** **NO native gamepad support** — the game is mouse-driven point-and-click. On the Deck use a Steam Input layout that maps the right trackpad to mouse (mouse-region / trackpad-as-mouse) and a button to left-click — that makes it fully playable on the handheld.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "HeroCraft"
+publisher  = "HeroCraft"
+released   = "2017"
+genre      = "Turn-based tactical strategy / collectible card game"
+modes      = "Single-player, online PvP multiplayer"
+summary    = "**Warhammer 40,000: Space Wolf** is a turn-based tactical strategy game set in the **Warhammer 40,000** universe, blending **X-COM-style** squad combat with **collectible-card mechanics** where actions are drawn and played as cards. Players lead a band of Space Wolves Space Marines against the forces of Chaos and the Necrons across a story-driven campaign. Originally a free-to-play mobile title (2014), it arrived on PC via Steam in 2017 and later on consoles, where the full-price versions dropped microtransactions. Reception was mixed, and the game was removed from digital storefronts in **October 2023** after its **licensing agreement expired**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - reports (appid 553210)"
+url   = "https://www.protondb.com/app/553210"
+
+[[links.guides]]
+title = "Gamepad support? (Steam discussion - no native gamepad)"
+url   = "https://steamcommunity.com/app/553210/discussions/0/1621724915800798439/"
+
+[[links.guides]]
+title = "Delisting notice (Oct 12, 2023 - license expired)"
+url   = "https://delistedgames.com/warhammer-40000-space-wolf/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Status:** ProtonDB **platinum** (`appid 553210`); community reports confirm it runs on Linux/Proton, so it should be solid on the Deck — flagged `needs-test` because no one has run this exact recipe end-to-end yet.
+
+**Binary:** `SpaceWolf.exe` is the standard Unity name; double-check it in your install folder.
+
+**Controller:** No native controller support — point-and-click only, so set up a Steam Input trackpad-as-mouse layout before launching (genre plays fine that way).
+
+**Multiplayer:** The PvP multiplayer relied on HeroCraft servers that may be offline post-delist; treat **single-player campaign** as the supported mode.
+"""

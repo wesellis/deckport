@@ -1,0 +1,85 @@
+[game]
+title       = "OpenMW"
+slug        = "openmw"
+aliases     = ["OpenMW", "openmw-launcher", "Open Morrowind"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5253128"
+
+[launch]
+binary         = "openmw"
+launch_options = ""
+requires_files = ["Morrowind.esm", "Morrowind.bsa"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Build:** Native Linux build. Download the latest `openmw-*-Linux-64Bit.tar.gz` from the OpenMW releases page or install via Flathub (`org.openmw.OpenMW`).
+
+**Display:** The Flatpak has had framerate issues in Gaming Mode on some Deck firmware — **the standalone tarball is generally more reliable**.
+
+**Setup:** After extraction, run `openmw-wizard` to point it at your Morrowind data files (Steam installs them to `steamapps/common/Morrowind`). Once configured, add `openmw-launcher` as a non-Steam game, or add `openmw` directly if you want to skip the launcher.
+
+**Luxtorpeda:** Can automate the whole process — install Luxtorpeda via `ProtonUp-Qt`, then launch the Morrowind Steam entry and it downloads and pre-configures OpenMW automatically.
+
+**Controller:** Basic gamepad support has been built in for years, but `0.50` was the big leap — enable the **Controller Menus** option in the launcher for a proper controller-navigable in-game UI (inventory, character sheet, potion brewing, etc.). `0.51` (current stable) carries this forward.
+"""
+
+[about]
+developer = "OpenMW Team (community project)"
+publisher = "Independently released (free, open source)"
+released  = "2013 (first playable); ongoing"
+genre     = "Open-source engine, RPG"
+modes     = "Single-player (TES3MP fork adds multiplayer)"
+summary   = "**OpenMW** is a free, open-source reimplementation of **The Elder Scrolls III: Morrowind**'s **engine**, supporting all original content plus engine-level enhancements like arbitrary resolutions, **distant land**, and its own scripting and modding ecosystem. Development began around 2008 and the project reached feature-complete status for the base game in 2013, with continuous improvements since. It requires the player's own Morrowind data files, which remain available for purchase on Steam, GOG, and the Bethesda launcher. **OpenMW-CS** (the bundled editor) and **TES3MP** (multiplayer fork) extend the platform further. It is widely considered the definitive way to play Morrowind on modern hardware."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5253128"
+
+[[links.guides]]
+title = "Perfect OpenMW 0.50 on Steam Deck (with mods) — Steam Community"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3672237183"
+
+[[links.guides]]
+title = "Simple OpenMW setup with Steam — Steam Community"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3129843975"
+
+[[links.guides]]
+title = "How to setup OpenMW on Linux / SteamOS and Steam Deck — GamingOnLinux"
+url   = "https://www.gamingonlinux.com/guides/view/how-to-setup-openmw-for-modern-morrowind-on-linux-steamos-and-steam-deck/"
+
+[[links.guides]]
+title = "Modernizing Morrowind / Improving Controller Support Mid-2025 (Uses OpenMW) — Steam Community"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3468921954"
+
+[[links.guides]]
+title = "Integrate OpenMW with Steam (Linux) — Steam Community"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2877763412"
+
+[[links.guides]]
+title = "Install Game Files — OpenMW official docs"
+url   = "https://openmw.readthedocs.io/en/stable/manuals/installation/install-game-files.html"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires Morrowind data files (`Morrowind.esm` + BSAs) from your own purchase — Steam/GOG/Bethesda.
+
+**Display:** Flatpak build has had framerate regression in Gaming Mode on some Deck firmware; **prefer the standalone tarball or Luxtorpeda**.
+
+**Requirements:** OpenMW `0.50` requires `glibc 2.38` (SteamOS `3.5+` should satisfy this).
+
+**Setup:** `Morrowind.esm` and Data Files **must be pointed at correctly** via `openmw-wizard` or the launcher config before the game will start.
+"""

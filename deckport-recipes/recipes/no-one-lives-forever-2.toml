@@ -1,0 +1,78 @@
+[game]
+title       = "No One Lives Forever 2: A Spy in H.A.R.M.'s Way"
+slug        = "no-one-lives-forever-2"
+aliases     = ["NOLF2", "No One Lives Forever 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "NOLF2.exe"   # the LithTech launcher; the engine binary is Lithtech.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["dsound", "directmusic", "vcrun6", "vcrun2019"]
+notes      = """
+**Overview:** Monolith's 2002 spy-themed FPS, famously stuck in rights limbo (no current storefront). Runs on Deck under `GE-Proton`.
+
+**Launch:** Run `NOLF2.exe` (the LithTech launcher). It writes config and launches `Lithtech.exe`, the actual engine binary.
+
+**Modernizer:** Install the community 'NOLF2 Modernizer' by HeyThereCoffeee (haekb) — extract into the game folder, then in the launcher pick **Custom** and tick **only** Modernizer (it loads via the `-rez Custom/Mods/Modernizer/Modernizer.REZ` argument). It adds native widescreen/16:10 `1280x800`, re-added AA, crash fixes, a restored server browser, and a rewritten input system with better controller/mouse handling.
+
+**Winetricks:** `dsound` + `directmusic` are needed or in-game music won't play; `vcrun6` + `vcrun2019` (Visual C++ 2019 redist) are required by the Modernizer.
+
+**Audio:** If audio still drops or glitches, set a `dsound` DLL override to `builtin`.
+
+**Controller:** Even with the Modernizer's improved input, there is no clean native gamepad menu — use a **Steam Input** layout (keyboard/mouse emulation) added as a non-Steam game for reliable Deck controls.
+
+**Display:** Force the Deck's native `1280x800` in the game's Display menu."""
+
+[about]
+developer = "Monolith Productions"
+publisher = "Fox Interactive / Sierra Entertainment"
+released  = "2002"
+genre     = "First-person shooter, stealth"
+modes     = "Single-player, multiplayer"
+summary   = "**No One Lives Forever 2: A Spy in H.A.R.M.'s Way** is a 1960s-styled comedic spy **first-person shooter** built on Monolith's **LithTech engine**, starring secret agent Cate Archer of the U.N.I.T.Y. organization against the criminal syndicate H.A.R.M. It blends gunplay, **stealth**, gadgets, and a tongue-in-cheek **James Bond parody** tone, and was widely praised for its writing, humor, and varied level design. The **series** is notable for being stuck in a long-running **rights limbo** between Warner Bros., Activision, and 20th Century Fox, which has kept it off all storefronts for many years despite enduring cult popularity."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "NOLF2 Modernizer (HeyThereCoffeee / haekb) — itch.io"
+url   = "https://haekb.itch.io/nolf2-modernizer"
+
+[[links.guides]]
+title = "PCGamingWiki — The Operative: No One Lives Forever (series fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Operative:_No_One_Lives_Forever"
+
+[[links.guides]]
+title = "UnityHQ — NOLF2 community files, mods & fixes"
+url   = "https://nolfgirl.net/Unityhq/forums/files/category/6-mods/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** NOLF rights are unresolved, so there is no official storefront.
+
+**Setup:** Community reports success on Deck via `GE-Proton` + Bottles-style setup (`dsound`/`directmusic`/`vcrun6`/`vcrun2019`).
+
+**Audio:** Without `directmusic` the soundtrack is silent.
+
+**Modernizer:** Strongly recommended — it adds proper widescreen, AA, crash fixes and a rewritten input system. Even so, plan to use a Steam Input gamepad layout for this FPS (there is no clean native controller menu).
+
+**Binary:** `NOLF2.exe` is the launcher used for both vanilla and Custom mods; it spawns `Lithtech.exe`.
+
+**Links:** deckport links nothing."""

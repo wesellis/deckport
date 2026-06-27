@@ -1,0 +1,78 @@
+[game]
+title       = "Tony Hawk's Underground 2"
+slug        = "tony-hawks-underground-2"
+aliases     = ["THUG2", "Tony Hawk Underground 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""   # THUG2 (2004) was never sold on Steam; 207210 actually belongs to Tony Hawk's Pro Skater HD
+sgdb_id     = ""
+
+[launch]
+binary         = "THUG2.exe"   # confirmed (PCGamingWiki / WSGF)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** Neversoft's 2004 skater. It was **never sold on Steam** — the 2004 PC release shipped on CD only, so there's no Steam appid (`207210` is actually Tony Hawk's Pro Skater HD, a different game). Add the installed `THUG2.exe` as a non-Steam game. Community guides report success forcing **Proton 9.0-4**; `GE-Proton` also works.
+
+**Controller:** The stock game needs manual gamepad config and has weak controller support under Proton. Install **PARTYMOD** (partymod-thug2 by PARTYMANX) for a modern SDL2-based input system with proper controller support and configurable button glyphs. After running PARTYMOD's `partypatcher.exe` the game launches from the new **`THUG2PM.exe`**, so point your shortcut/binary at that exe once PARTYMOD is installed.
+
+**Display:** PARTYMOD also adds custom-resolution / widescreen handling (set the Deck's `1280x800`); ClownJob'd THUG2 is an alternative widescreen patch. The base game is 4:3 only.
+
+**DRM:** The disc release uses **SafeDisc**, which does not run on Windows 10/11 (and therefore not under Proton) without a patched executable. PARTYMOD's patched `THUG2PM.exe` resolves this; no GFWL or always-online DRM is involved.
+
+**Install:** If installing from original CDs, the Deck on-screen keyboard can misbehave at the CD-key prompt — a USB keyboard helps."""
+
+[about]
+developer = "Neversoft"
+publisher = "Activision"
+released  = "2004"
+genre     = "Skateboarding / sports"
+modes     = "Single-player, local and online multiplayer"
+summary   = "**Tony Hawk's Underground 2** (subtitled World Destruction Tour) is the sixth entry in Activision's **Tony Hawk's series**, developed by Neversoft on its **in-house engine**. The story mode follows a custom skater who joins Team Hawk or Team Bam on a globe-trotting, prank-filled competition across levels like New Jersey, Berlin, and Sydney. It expanded the first Underground's create-a-skater and goal-driven gameplay with the new **Focus mode** and Sticker Slap, and earned generally favorable reviews. The 2004 PC version shipped on CD and was never released on Steam, so you supply your own disc/copy."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PARTYMOD for THUG2 (partymod-thug2 by PARTYMANX)"
+url   = "https://github.com/PARTYMANX/partymod-thug2"
+
+[[links.guides]]
+title = "Classics on Deck: Tony Hawk's Underground 2 on Steam Deck (SteamDeckHQ)"
+url   = "https://steamdeckhq.com/news/classics-on-deck-diablo-tony-hawks-underground-2-steam-deck/"
+
+[[links.guides]]
+title = "Tony Hawk's Underground 2 - PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Tony_Hawk's_Underground_2"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**No Steam appid:** THUG2 was never on Steam (appid `207210` is the unrelated Tony Hawk's Pro Skater HD), so there is no official ProtonDB rating — tier is `unknown`. It runs as a non-Steam game under Proton.
+
+**Supply your own copy:** 2004 CD-only commercial game — supply your own copy.
+
+**DRM:** Disc release uses **SafeDisc**, which won't run on Win10/11 or Proton without a patched exe; PARTYMOD's `THUG2PM.exe` resolves this.
+
+**Controller:** Stock game needs manual gamepad config. Use **PARTYMOD** for a modern controller-input system (or build a Steam Input gamepad layout as a fallback).
+
+**Display:** Base game is 4:3; PARTYMOD (or ClownJob'd THUG2) adds widescreen at `1280x800`.
+
+**Install:** CD-key prompt on Deck OSK can be finicky — a USB keyboard helps during install.
+
+**Binary:** `THUG2.exe` for the stock game; becomes **`THUG2PM.exe`** after installing PARTYMOD (recommended).
+
+**Status:** Community guides (SteamDeckHQ Classics on Deck) report it runs on Deck under Proton 9.0-4. Not yet independently verified for this recipe."""

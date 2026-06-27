@@ -1,0 +1,73 @@
+[game]
+title       = "Need for Speed: Underground"
+slug        = "nfs-underground"
+aliases     = ["NFS Underground", "NFSU", "speed.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "speed.exe"   # the classic Black Box NFS engine exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Install:** 2003 EA Black Box racer (delisted — **bring your own legally-owned copy**).
+
+**Proton:** Old DirectX 8 engine; runs well on Deck under `GE-Proton` (`proton_experimental` also fine).
+
+**Display:** For modern displays drop ThirteenAG's Widescreen Fix (`dinput8.dll` + `scripts/` folder into the game dir, set resolution in the INI) plus **SilentPatch** and the **ExOpts/Extra Options** + **HD Reflections** add-ons.
+
+**Fix:** If you hit rendering glitches on AMD, `dgVoodoo2` (`d3d8` wrapper) cleans them up.
+
+**Controller:** This is a 2003 DirectInput-era title, not XInput — base pad support is dated. On Deck, run the game through **Steam Input** (map a gamepad/keyboard layout) and/or enable `ImproveGamepadSupport` in ThirteenAG's Widescreen Fix INI for tighter, drift-friendly steering. Don't assume the pad "just works" untouched.
+
+**DRM:** No EA launcher or online check on this era, but the **retail disc uses SafeDisc** (`secdrv.sys`). SafeDisc's driver is blocked on Windows 10/11 and therefore won't satisfy the disc check under Proton/Wine, so the unpatched `speed.exe` typically fails to boot. The standard community fix is the official **US v1.4 patch** plus a community disc-check-free `speed.exe`; SilentPatch is then applied over that. Bring your own legally-owned copy."""
+
+[about]
+developer = "EA Black Box"
+publisher = "Electronic Arts"
+released  = "2003"
+genre     = "Racing"
+modes     = "Single-player, online multiplayer"
+summary   = "**Need for Speed: Underground** is the seventh entry in EA's long-running **Need for Speed** series and the first to center on the **import/tuner street-racing** scene rather than exotics. It introduced a story-driven career mode (**Underground Mode**) along with deep **car customization**, plus drag and drift events as new race types alongside circuit and sprint racing. Built by **EA Black Box** on the studio's in-house engine, it featured 20 licensed tuner cars and a neon-soaked night-time aesthetic. A major critical and commercial success, it sold around 15 million units; it has since been **delisted** and is no longer sold."
+
+[[links.guides]]
+title = "PCGamingWiki — Need for Speed: Underground (fixes, widescreen, DRM)"
+url   = "https://www.pcgamingwiki.com/wiki/Need_for_Speed:_Underground"
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack (speed.exe widescreen + ImproveGamepadSupport)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack"
+
+[[links.guides]]
+title = "PCGamingWiki — SafeDisc (secdrv.sys blocked on Windows 10/11)"
+url   = "https://www.pcgamingwiki.com/wiki/SafeDisc"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted EA title; deckport describes configuration only and links nothing.
+
+**Proton:** DirectX 8 game — launch with `GE-Proton`; if the 4:3 stretch or rendering artifacts bother you, add ThirteenAG's Widescreen Fix (and `dgVoodoo2` as a `d3d8` wrapper for any AMD glitches).
+
+**Controller:** Not native XInput — it's a DirectInput-era game. Use **Steam Input** on Deck and/or the Widescreen Fix's `ImproveGamepadSupport` option; expect to do some mapping.
+
+**DRM:** Retail disc uses **SafeDisc** (`secdrv.sys`), which is blocked on Windows 10/11 and so won't pass under Proton/Wine — apply the official **US v1.4 patch** and a community disc-check-free `speed.exe` (then SilentPatch) to boot.
+
+**ProtonDB:** Never released on Steam, so there is **no ProtonDB tier** — `unknown`. Compatibility is community/Wine-reported only; treat as untested until you run it.
+
+**Display:** Set in-game resolution to the Deck's `1280x800` (or your widescreen res) on first run."""

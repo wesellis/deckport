@@ -1,0 +1,70 @@
+[game]
+title       = "Tales from Candlekeep: Tomb of Annihilation"
+slug        = "tales-from-candlekeep-tomb-of-annihilation"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "663380"
+sgdb_id     = ""
+
+[launch]
+binary         = "TalesCandlekeep.exe"   # Unity game; payload folder is TalesCandlekeep_Data
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `663380`; removed from sale May 2022 when the D&D/Wizards of the Coast license expired). Turn-based D&D Adventure-System dungeon crawler from BKOM Studios on Unity.
+
+**Proton:** ProtonDB **platinum** (15 reports, moderate confidence; trending gold) — runs under Proton with no DRM/launcher hassle. Use `GE-Proton` (or recent `proton_experimental`); no winetricks needed.
+
+**Install:** Binary is `TalesCandlekeep.exe` (the Unity payload sits in `TalesCandlekeep_Data`).
+
+**DRM:** Steam wrapper only — no GFWL/SecuROM/Denuvo.
+
+**Controller:** Steam does NOT list controller support for this title (no "full"/"partial controller support" flag on the store page; it's a mouse-driven Unity UI). On the Deck plan to use **Steam Input** — enable the gamepad-with-mouse/trackpad layout or a community config — rather than expecting native gamepad input.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "BKOM Studios"
+publisher = "BKOM Studios"
+released  = "2017"
+genre     = "Turn-based tactical RPG / dungeon crawler"
+modes     = "Single-player (Remote Play Together)"
+summary   = "**Tales from Candlekeep: Tomb of Annihilation** is a digital adaptation of the **Dungeons & Dragons Adventure System** board games, set in the **Forgotten Realms** and based on the **Tomb of Annihilation** module. Players control adventurers such as Artus Cimber, Asharra, Birdsong, or Dragonbait through **procedurally assembled tile-based dungeons**, fighting monsters in turn-based combat while drawing encounter and treasure cards. Released by BKOM Studios in 2017, it was praised as a faithful, approachable take on the tabletop game. It was removed from sale on Steam in May 2022 after the **Wizards of the Coast D&D license expired**, though prior owners retain access."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 663380)"
+url   = "https://www.protondb.com/app/663380"
+
+[[links.guides]]
+title = "PCGamingWiki — Tales from Candlekeep: Tomb of Annihilation"
+url   = "https://www.pcgamingwiki.com/wiki/Tales_from_Candlekeep:_Tomb_of_Annihilation"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted from Steam in May 2022 (D&D license expiry); still in library for prior owners.
+
+**Proton:** ProtonDB **platinum** and community reports confirm it runs on Linux/Proton with no tweaks, so it should play well on the Deck — flagged `needs-test` since this exact recipe hasn't been confirmed on hardware.
+
+**Multiplayer:** Single-player only — no online co-op. 'Remote Play Together' just lets you share a session with a friend (only the host needs to own it); not required to play, and no live servers to worry about.
+
+**Controller:** No declared controller support on Steam — it's a mouse-driven Unity interface. Expect to lean on **Steam Input** (gamepad-with-mouse/trackpad or a community layout) on the Deck; treat the gamepad as untested until confirmed on hardware.
+
+**Install:** Confirm the binary name (`TalesCandlekeep.exe`) against your install."""

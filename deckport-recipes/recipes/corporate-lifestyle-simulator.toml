@@ -1,0 +1,70 @@
+[game]
+title       = "Corporate Lifestyle Simulator"
+slug        = "corporate-lifestyle-simulator"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "261880"
+sgdb_id     = ""
+
+[launch]
+binary         = "NotZombies.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `261880`), pulled by Valve over the developer's misuse of platform tools — **not for sale anymore**.
+
+**Engine:** Built on `GameMaker: Studio`, a lightweight 2D isometric office brawler, so it's undemanding and AMD/Deck-friendly.
+
+**Proton:** ProtonDB rates it **platinum** and it **runs out of the box** under recent Proton; `GE-Proton` or `proton_experimental` both work.
+
+**DRM:** No DRM, GFWL, or install hoops.
+
+**Install:** The shipped binary is `NotZombies.exe` (a leftover from the studio's earlier 'Zombies' build that this game expanded — confirm the name against your install). deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Dolphin Barn"
+publisher = "Dolphin Barn"
+released  = "2014"
+genre     = "Isometric action / beat-'em-up"
+modes     = "Single-player"
+summary   = "**Corporate Lifestyle Simulator** is a comedic **isometric action** game from indie studio Dolphin Barn, released in February 2014 and built on **GameMaker: Studio**. It stages a zombie outbreak inside an office building, where the player smashes through hordes of tie-wearing zombies across **27 short missions** using improvised office-supply weapons like staplers, corded phones, and thrown pencils. An expansion of the studio's earlier casual game 'Zombies', it drew mixed reviews for being fun and funny but repetitive and shallow. It was later **pulled from Steam** and is no longer sold."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Corporate Lifestyle Simulator (appid 261880)"
+url   = "https://www.protondb.com/app/261880"
+
+[[links.guides]]
+title = "Delisted Games — why it was pulled from Steam"
+url   = "https://delistedgames.com/corporate-lifestyle-simulator/"
+
+[[links.guides]]
+title = "PCGamingWiki — Corporate Lifestyle Simulator"
+url   = "https://www.pcgamingwiki.com/wiki/Corporate_Lifestyle_Simulator"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing — confirm the binary `NotZombies.exe` against your install (it really is named that; it's the engine build left over from the studio's earlier 'Zombies' game).
+
+**Compatibility:** Delisted single-player `GameMaker` brawler; **ProtonDB platinum**, community reports it running cleanly on Linux/Proton so it should be Deck-friendly.
+
+**Controller:** GameMaker `XInput` gamepad support is usable; if a pad isn't detected, bind a Steam Input keyboard/mouse layout (it plays fine that way).
+
+**Online:** No online dependency."""

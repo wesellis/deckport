@@ -1,0 +1,78 @@
+[game]
+title       = "Banjo-Kazooie: Nuts & Bolts Recompiled (reNut)"
+slug        = "banjo-nuts-bolts-recomp"
+aliases     = ["BK Nuts and Bolts Recomp", "Nuts and Bolts PC", "BKNB Recomp", "reNut"]
+type        = "proton"        # Xbox 360 static recompilation via ReXGlue — Windows build run through Proton on Deck
+engine      = "other"         # ReXGlue Xbox 360 static recompilation toolkit
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "reNut.exe"   # confirm exact filename in the goopie/reNut Windows release; reNut.exe is the expected name
+launch_options = ""
+requires_files = ["Banjo-Kazooie: Nuts & Bolts North American (US) Xbox 360 game files — default.xex from your own legally-dumped disc/XBLA copy"]
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Recomp:** Static recompilation of the 2008 Xbox 360 game Banjo-Kazooie: Nuts & Bolts. The community project is named **reNut** (`masterspike52/reNut`) and is built with the **ReXGlue** toolkit — the Xbox 360 equivalent of `N64Recomp`/`XenonRecomp` that translates **PowerPC** code (and Xenos GPU work) into native **C++**.
+
+**Distribution:** The official, ready-to-run build is a **Windows** release delivered through the **goopie launcher** (goopie.xyz): download the launcher, pick *Banjo-Kazooie: Nuts and Bolts*, point it at your **North American (US)** game files, let it extract, then hit Update to pull the latest Windows reNut build.
+
+**Proton on Deck:** Because the shipped build is a Windows executable, run it on the Steam Deck **through Proton** (add `reNut.exe` as a non-Steam game). There is an experimental Linux fork by *etonedemid* that requires building from source against a modified ReXGlue fork — it is not the standard path and is not a prebuilt native Linux binary.
+
+**Status:** Playable but early — see caveats. Confirm the exact `.exe` name from the reNut Windows release before relying on the binary value above.
+"""
+
+[about]
+developer = "Rare (original 2008 game); reNut recompilation by masterspike52 et al. using ReXGlue"
+publisher = "Microsoft Game Studios (original 2008 game)"
+released  = "2008 (Xbox 360); reNut / ReXGlue recompilation 2026"
+genre     = "Vehicle-building action / platformer hybrid"
+modes     = "Single-player, local multiplayer"
+summary   = """
+**Banjo-Kazooie: Nuts & Bolts** is a 2008 Xbox 360 game by **Rare**, the third main entry in the **Banjo-Kazooie** series. It shifted the series' traditional platforming formula toward **vehicle-based gameplay**, having players collect game worlds and compete in races, challenges, and boss fights using a wide variety of **customisable vehicles** built from parts. The game was only ever released on Xbox 360 and never officially came to PC.
+
+This recipe uses **reNut**, a community static recompilation built with the **ReXGlue** Xbox 360 toolkit, which ports the game to a native executable without emulation. You must supply your own North American Xbox 360 game files; on the Steam Deck the Windows build is run through Proton.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "reNut — Banjo-Kazooie: Nuts & Bolts recompilation (GitHub)"
+url   = "https://github.com/masterspike52/reNut"
+
+[[links.guides]]
+title = "goopie launcher — extracts your game files and pulls the reNut Windows build"
+url   = "https://goopie.xyz/"
+
+[[links.guides]]
+title = "ReXGlue — Xbox 360 recompilation toolkit (GitHub)"
+url   = "https://github.com/rexglue/rexglue-sdk"
+
+[[links.guides]]
+title = "Read Only Memo — interview on how ReXGlue brings Xbox 360 static recompilation to PC"
+url   = "https://readonlymemo.com/rexglue-xbox-360-recompilation-interview/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires Banjo-Kazooie: Nuts & Bolts Xbox 360 game files, specifically the **North American (US)** release (`default.xex`). The reNut build ships **NO game assets** — the goopie launcher extracts them from files you provide.
+
+**Windows build via Proton:** The standard release is a Windows executable; on the Steam Deck add `reNut.exe` as a non-Steam game and run it through Proton. The Linux fork (etonedemid) is build-from-source only and not the recommended path.
+
+**Early / unfinished:** reNut is functional but not polished — community reports note animation **jitter, broken bones, and some half-finished animations**. These reportedly do not block gameplay, but the experience is rough. Treat as experimental.
+
+**Binary name:** `reNut.exe` is the expected executable; verify the exact filename in the goopie/reNut Windows release.
+"""

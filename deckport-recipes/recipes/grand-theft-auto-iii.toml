@@ -1,0 +1,76 @@
+[game]
+title       = "Grand Theft Auto III"
+slug        = "grand-theft-auto-iii"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "12100"
+sgdb_id     = ""
+
+[launch]
+binary         = "gta3.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** Delisted classic Steam game (`appid 12100`; original GTA III, not the Definitive Edition). The main executable is `gta3.exe`.
+
+**Proton:** ProtonDB Gold — community confirms the original runs on `Proton Experimental` at up to 60fps with little fuss.
+
+**Controller:** Vanilla controller support is poor and uses DirectInput. **The clean fix is to drop in `Ultimate ASI Loader` + `SilentPatch` + `GInput`** (rewrites input to XInput) into the game folder — works under Proton, **but the ASI loader DLL (commonly renamed to `dinput8.dll` or `vorbisFile.dll`) must be allowed via a DLL-override launch option** (`WINEDLLOVERRIDES="dinput8=n,b" %command%`) and the mods imported from Desktop Mode.
+
+**Simpler path:** Skip `GInput` and bind a Steam Input gamepad layout instead, which plays fine on Deck.
+
+**DRM:** No GFWL/SecuROM online activation concerns for the Steam build.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports - GTA III (12100)"
+url   = "https://www.protondb.com/app/12100"
+
+[[links.guides]]
+title = "SilentPatch, Controller Support and Widescreen Fix (III)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=641839127"
+
+[[links.guides]]
+title = "SilentPatch for GTA III - Silent's Blog"
+url   = "https://silentsblog.com/mods/gta-iii/"
+
+[about]
+developer = "DMA Design"
+publisher = "Rockstar Games"
+released  = "2002"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "**Grand Theft Auto III** is the first fully 3D entry in the **Grand Theft Auto** series, set in the open world of **Liberty City** where a silent protagonist works his way up the criminal underworld. Built on the **RenderWare engine**, it was a landmark release that popularized the modern **open-world action** template and was widely praised by critics. The PC port arrived in 2002 following the original PlayStation 2 launch. The original classic version was later delisted from Steam ahead of the remastered **Definitive Edition**."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport configures the prefix only and links nothing.
+
+**Game:** Original (classic) GTA III, delisted from Steam (`appid 12100`).
+
+**Proton:** ProtonDB Gold — community reports confirm it runs on Steam Deck under `Proton Experimental`, often a flawless 60fps.
+
+**Server:** Single-player only, so no dead-server worries.
+
+**Controller:** Stock controller support is weak — either apply the `GInput` mod (needs `Ultimate ASI Loader` + `SilentPatch` + an ASI/DLL-override launch option, imported via Desktop Mode) for proper XInput, or just use a Steam Input gamepad layout for a no-mod path.
+
+**Display:** Widescreen/aspect-ratio fixes (`SilentPatch` / widescreen `.ini` tweaks) are recommended for the Deck's 16:10 display.
+"""

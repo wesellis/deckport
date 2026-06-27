@@ -1,0 +1,68 @@
+[game]
+title       = "Beyond Eyes"
+slug        = "beyond-eyes"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "356050"
+sgdb_id     = ""
+
+[launch]
+binary         = "Beyond Eyes.exe"   # Unity build; confirm exact casing against your install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Steam game (appid `356050`) — retired Sept 2021 after the publishing deal with Team17 ended; still in libraries of prior owners but **no longer for sale**.
+
+**Proton:** Unity engine title, runs essentially out of the box on the Deck — ProtonDB rates it platinum. `GE-Proton` (or `proton_experimental`) works.
+
+**DRM:** No DRM/GFWL, no `winetricks`, no launch options needed. It's a short narrative walking game with no online component.
+
+**Controller:** Works natively (Xbox-style gamepad); if the recipe ever ships without detected pad input, a default Steam Input gamepad/keyboard layout covers it.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Tiger & Squid"
+publisher = "Team17"
+released  = "2015"
+genre     = "Narrative adventure / walking simulator"
+modes     = "Single-player"
+summary   = "**Beyond Eyes** is a 2015 **narrative adventure** from Dutch indie studio Tiger & Squid in which you guide Rae, a young blind girl, through serene suburban environments in search of her lost cat, Nani. Because Rae cannot see, the world is revealed as a dream-like **pastel watercolor** landscape that morphs into view as she explores it through her other senses. It was published by Team17 and praised for its evocative art and emotional tone, though some reviewers found its deliberately slow walking pace a drawback. The game was **retired from sale** in September 2021 after the publishing arrangement ended."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (Beyond Eyes)"
+url   = "https://www.protondb.com/app/356050"
+
+[[links.guides]]
+title = "Steam Community: spinning camera / gamepad fix"
+url   = "https://steamcommunity.com/app/356050/discussions/2/341537388316787301/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Not for sale — retired Sept 2021 after Team17 publishing deal ended; prior owners keep it.
+
+**Proton:** ProtonDB platinum and a Unity game, so it should run cleanly on the Deck with `GE-Proton`; no DRM/online dependency.
+
+**Controller:** Native gamepad support (Xbox 360/Xbox-style bindings, not rebindable in-game). The game maps camera rotation to the analog triggers, which are very sensitive — players widely report constant camera spin / unwanted movement from slight trigger pressure. A custom Steam Input layout (or remapping the triggers to a deadzone-friendly binding) is the practical fix if look-rotation drifts.
+
+**Binary:** Name (`Beyond Eyes.exe`) inferred from a standard Unity build; confirm against your install."""

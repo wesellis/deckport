@@ -1,0 +1,77 @@
+[game]
+title       = "Warhammer 40,000: Regicide"
+slug        = "warhammer-40-000-regicide"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "322910"
+sgdb_id     = ""
+
+[launch]
+binary         = "Regicide.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `322910`), turn-based Warhammer 40K chess built in Unity. **Delisted Oct 2022** and the online/multiplayer servers were shut down, but the **single-player/offline mode still works** on existing installs.
+
+**Proton:** ProtonDB **Gold** — runs cleanly under Proton on the Deck. Use `GE-Proton` (or `proton_experimental`). Launch via `Regicide.exe`.
+
+**DRM:** No DRM/GFWL/Denuvo and no `winetricks` needed.
+
+**Controller:** The menus and board are cursor-driven, so if a controller does not feel right, apply a Steam Input gamepad-with-mouse-trackpad layout (right trackpad as mouse, `A` = click) — the Deck trackpads make this play comfortably.
+
+**Online:** Online play is gone; treat it as a single-player title.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Hammerfall Publishing"
+publisher = "Hammerfall Publishing"
+released  = "2015"
+genre     = "Turn-based strategy"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Warhammer 40,000: Regicide** is a turn-based strategy game set in Games Workshop's **grimdark sci-fi universe**, blending **chess** with tactical combat between Space Marines and Orks. It offers two modes: **Classic**, which plays as straight chess with 40K-themed pieces, and **Regicide**, which adds an initiative phase where units use ranged attacks and special abilities, with gory, blood-drenched execution animations.
+
+Released in 2015 for Windows, iOS and Android, it was praised for its detailed models and brutal combat presentation, though its single-player campaign was seen as the weakest part. The game was later **delisted from Steam** and its online multiplayer servers were shut down, leaving single-player as the playable mode on existing installs."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Warhammer 40,000: Regicide (appid 322910)"
+url   = "https://www.protondb.com/app/322910"
+
+[[links.guides]]
+title = "Delisted Games — Warhammer 40,000: Regicide (delisting / servers shut down)"
+url   = "https://delistedgames.com/warhammer-40000-regicide/"
+
+[[links.guides]]
+title = "PC Gamer — Regicide removed from Steam and shut down"
+url   = "https://www.pcgamer.com/without-warning-warhammer-40000-regicide-has-been-removed-from-steam-and-shut-down/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Delisted from Steam Oct 2022 (no longer for sale). Single-player/offline mode still works, but the **online multiplayer servers are permanently shut down**.
+
+**Proton:** ProtonDB **Gold** — community reports it running on Linux/Proton, so it should play on the Deck, but this specific recipe is **not yet hands-on confirmed** (`needs-test`). Binary is `Regicide.exe`; tested-good Proton is `GE-Proton`.
+
+**Controller:** Cursor-driven UI — if native controller input feels off, use a Steam Input gamepad+trackpad-mouse layout.
+
+**DRM:** No DRM."""

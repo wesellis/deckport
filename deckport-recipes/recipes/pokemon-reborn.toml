@@ -1,0 +1,62 @@
+[game]
+title       = "Pokémon Reborn"
+slug        = "pokemon-reborn"
+aliases     = ["Pokemon Reborn", "Reborn", "Reborn Evolved"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Game.AppImage"   # native Linux AppImage from rebornevo.com; chmod +x then add as non-Steam game
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** Ships a native Linux build as **`Game.AppImage`** (mkxp-z / RPG Maker runtime) from rebornevo.com — no Proton needed. Mark the AppImage executable (`chmod +x Game.AppImage` or Properties > Permissions > Allow executing file as program) and add it as a non-Steam game. The official community guide recommends the native Linux build over the Windows .exe via Proton, which caused "very finicky" directional input issues.
+
+**Controller:** Keyboard-driven game — use **Steam Input** to map a controller layout. Several keys are not rebindable in-game and should be assigned to grip/back buttons: **Enter** (the SteamOS virtual-keyboard Enter does not register in name-entry fields), **M** (turbo), **F12** (soft reset). Press **Steam + X** to summon the on-screen keyboard when naming Pokémon. A community Steam Input layout may be available.
+"""
+
+[about]
+developer = "Amethyst and the Reborn Evolved team (rebornevo.com)"
+publisher = "Independently released (free fan project)"
+released  = "v19.16 current; decade-long development"
+genre     = "RPG (fan-made Pokemon game)"
+modes     = "Single-player"
+summary   = "**Pokémon Reborn** is one of the most downloaded **Pokemon fan games** ever made. Set in a dark, crime-ridden region called Reborn City, it features **18 gym badges**, a custom region, mature narrative themes, and a roster of Pokemon drawn from multiple generations. The game is a **standalone free download** from rebornevo.com and ships a native Linux build via the **RPG Maker XP Linux runtime** — no original Pokemon game required. Developed over more than a decade by Amethyst and the broader Reborn Evolved community, it offers **100+ hours** of content for a full playthrough."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Reborn Evolved forums: Setting up Reborn and Rejuvenation on Steam Deck"
+url   = "https://www.rebornevo.com/forums/topic/62240-setting-up-reborn-and-rejuvenation-on-steam-deck/"
+
+[[links.guides]]
+title = "Reborn Evolved: Official download page (Linux AppImage)"
+url   = "https://www.rebornevo.com/pr/download/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Use the Linux AppImage, not Windows/Proton:** Running the Windows `.exe` under Proton produces "very finicky" directional input — the community guide recommends the native `Game.AppImage` instead.
+
+**Steam Input required:** Map a controller layout. Assign **Enter**, **M** (turbo), and **F12** (soft reset) to grip/back buttons since they are not rebindable in-game. The SteamOS virtual-keyboard Enter does NOT register when typing names — bind a physical button to Enter. Press **Steam + X** for the on-screen keyboard during name entry.
+
+**Free download:** Free standalone download from rebornevo.com — no original Pokemon game needed.
+
+**Length:** Very long game (**~100+ hours** for a full playthrough).
+"""

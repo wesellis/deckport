@@ -1,0 +1,64 @@
+[game]
+title       = "Cyber Troopers Virtual-On"
+slug        = "cyber-troopers-virtual-on"
+aliases     = ["Virtual-On", "Cyber Troopers Virtual-On PC", "Virtual On"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "VON.EXE"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """Use GE-Proton for this 1997 PC port (full title: Cyber Troopers Virtual-On: Operation Moongate) of the Sega Model 2 mech-arena game. The default install path is C:/SEGA/VON.
+
+ESSENTIAL FIX: the game enforces a CPU/MMX check that aborts on anything other than a period Pentium MMX or AMD K6. Edit VON.INI in the game directory and, under the [Processor] section, set ProcessorCheck, PentiumCheck, MMXCheck and IntelCheck to off, otherwise it refuses to launch.
+
+TIMING FIX: on modern systems the game tends to run in permanent slow-motion (an internal timing bug tied to the kill-cam replay). The community VO_SPEED launcher works around this and can be run in place of the main executable; VO_PATCH restores audio quality and skips loading screens.
+
+RENDERING: the standard North American/Western PC build is software/MMX rendered and does NOT need a graphics wrapper in most cases. dgVoodoo2 is only worth trying for the Japanese PowerVR 3D-accelerated build or if you hit a DirectDraw issue; it is optional, not a required step.
+
+CONTROLS: the twin-stick arcade scheme does not map cleanly to one pad and the game only reads a couple of axes, so a key-mapper or Steam Input layout is usually needed. Rough layout: left stick = movement/strafe, right stick = turret rotation/aiming, right trigger = right weapon, left trigger = left weapon, face buttons = boost/jump.
+
+This is the ORIGINAL Virtual-On (1995/96 arcade, 1997 PC) and is NOT Virtual-On: Oratorio Tangram (Steam App 427680), which is the sequel."""
+
+[about]
+developer = "Sega AM3"
+publisher = "Sega"
+released  = "1997"
+genre     = "Mech Action, Arena Fighter"
+modes     = "Single-player, Local 2-player"
+summary   = "Cyber Troopers Virtual-On is a mech-arena combat game originally developed by Sega AM3 for the Model 2 arcade hardware in 1995, then ported to PC in 1997. Players pilot customizable mechs called Virtuaroids in fast-paced one-on-one arena battles, using twin-stick controls to move and aim independently. The game is known for its fluid mech animations, energetic electronic soundtrack, and innovative control scheme. This is the original Virtual-On, not the sequel Oratorio Tangram (Steam App 427680)."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Cyber Troopers Virtual-On"
+url   = "https://www.pcgamingwiki.com/wiki/Cyber_Troopers_Virtual-On"
+
+[[links.guides]]
+title = "Virtual-On Forums — Playing the PC port (VON.INI, VO_PATCH, VO_SPEED)"
+url   = "https://www.oratan.com/forum/viewtopic.php?t=1422"
+
+[[links.guides]]
+title = "dgVoodoo2 (optional renderer wrapper)"
+url   = "http://dege.freeweb.hu/dgVoodoo2/dgVoodoo2.html"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "You must supply your own legally obtained copy; this original Virtual-On has no current digital storefront release, so there is no Steam appid or ProtonDB rating (tier left pending). This is the original 1995/1997 Cyber Troopers Virtual-On: Operation Moongate, NOT the sequel Virtual-On: Oratorio Tangram (Steam App 427680). REQUIRED: edit VON.INI [Processor] to disable ProcessorCheck/PentiumCheck/MMXCheck/IntelCheck or the game will not start; VO_SPEED fixes the slow-motion timing bug and VO_PATCH improves audio. The standard PC build is software/MMX rendered, so dgVoodoo2 is optional (mainly for the Japanese PowerVR build), not required. Twin-stick controls need a custom Steam Input or key-mapper layout: left stick movement, right stick turret, triggers for weapons. Note the original game refuses to run on 64-bit Windows, so behavior under 64-bit Proton is untested."

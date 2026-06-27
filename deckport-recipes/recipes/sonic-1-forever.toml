@@ -1,0 +1,81 @@
+[game]
+title       = "Sonic 1 Forever"
+slug        = "sonic-1-forever"
+aliases     = ["Sonic the Hedgehog Forever", "S1Forever", "Sonic 1 Forever mod"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5284162"
+
+[launch]
+binary         = "SonicForever.exe"
+launch_options = ""
+requires_files = ["Data.rsdk"]
+
+[proton]
+version    = "GE-Proton9-20"
+winetricks = []
+notes      = """
+**Engine:** Windows build via the RSDKv4 decompilation engine; runs under Proton on Deck.
+
+**Install:** Download the Sonic 1 Forever Windows release from the Team Forever website. The release ZIP unzips to a folder containing `SonicForever.exe` (the RSDKv4-based engine build) plus the mod's game files.
+
+**Data:** **You must also supply `Data.rsdk` from a legally owned copy of Sonic the Hedgehog (2013 mobile remaster):** the APK can be opened as a ZIP and `Data.rsdk` extracted from the `Assets/` folder inside. Alternatively, data files can come from the Sonic Origins Steam release.
+
+**Proton:** Place `Data.rsdk` alongside `SonicForever.exe`, then add `SonicForever.exe` to Steam as a non-Steam game and force a recent `GE-Proton` build.
+
+**Guide:** A GameBanana tutorial covers the exact Linux/Proton steps.
+"""
+
+[about]
+developer = "Team Forever (ElspethThePict and contributors)"
+publisher = "Independently released (free fan mod)"
+released  = "2021 (ongoing updates)"
+genre     = "Action platformer"
+modes     = "Single-player"
+summary   = """
+**Sonic 1 Forever** is a comprehensive overhaul mod of the 2013 Sega mobile remaster of the original **Sonic the Hedgehog**, built on top of Rubberduckycooly's **RSDKv4 decompilation** of the **Retro Engine**. It adds **drop-dash**, super Sonic, reworked physics, new bonus stages, updated music, and a raft of quality-of-life improvements that bring the classic game closer in feel to **Sonic Mania**.
+
+The underlying RSDKv4 decompilation — maintained at RSDKModding/RSDKv4-Decompilation — reverse-engineered the full Retro Engine v4, enabling both Sonic 1 and Sonic 2 (2013) mods to flourish. Sonic 1 Forever is one of the most polished entries in this modding scene and a go-to recommendation for fans of the 16-bit originals.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5284162"
+
+[[links.guides]]
+title = "Install Sonic 1 Forever on Linux (Steam Proton) — GameBanana tutorial"
+url   = "https://gamebanana.com/tuts/17619"
+
+[[links.guides]]
+title = "Team Forever — Sonic 1 Forever official page"
+url   = "https://teamforeveronline.wixsite.com/home/sonic-1-forever"
+
+[[links.guides]]
+title = "RSDKv4 Decompilation Setup Guide — RSDK Modding Wiki"
+url   = "https://rsdkmodding.com/Guides/RSDKv4/Decompilation/Setup/"
+
+[[links.guides]]
+title = "RSDKv4 Decompilation — GitHub (RSDKModding)"
+url   = "https://github.com/RSDKModding/RSDKv4-Decompilation"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires `Data.rsdk` from a legally purchased copy of Sonic the Hedgehog (2013 mobile remaster, available on Android/iOS) or from Sonic Origins (Steam).
+
+**Extract:** Pull `Data.rsdk` from inside the game APK (treat the APK as a ZIP; file is in `Assets/`). Place it alongside `SonicForever.exe` before launching. **deckport links nowhere to obtain the APK or data files.**
+
+**Controller:** RSDKv4 supports XInput gamepads natively, so the Deck's built-in controls and standard pads are recognized without Steam Input mapping. Bindings can be tweaked in the auto-generated `settings.ini`.
+
+**Upgrading:** If upgrading from an older Forever version, copy `SData.bin` and `settings.ini` from the old folder to the new one to preserve saves.
+"""

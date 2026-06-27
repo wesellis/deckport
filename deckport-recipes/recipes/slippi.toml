@@ -1,0 +1,68 @@
+[game]
+title       = "Slippi (Super Smash Bros. Melee Online)"
+slug        = "slippi"
+aliases     = ["Slippi Melee", "SSBM Online", "Slippi Dolphin", "Melee Netplay"]
+type        = "native"        # native Linux AppImage (Dolphin fork) — no Proton needed
+engine      = "other"         # Slippi-Dolphin (fork of Dolphin GameCube emulator)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Slippi_Online-x86_64.AppImage"   # netplay AppImage in ~/.config/Slippi Launcher/netplay/ (installed by the Slippi Launcher)
+launch_options = ""   # if Vulkan crashes in Game Mode, add --no-sandbox (see Ishiiruka issue #378)
+requires_files = ["Super Smash Bros. Melee GameCube disc image — v1.02, NTSC-U (DOL-GALE-0-02) or NTSC-J (DOL-GALJ-0-02); the 20XX Hack Pack also works. PAL is incompatible (desyncs)."]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[about]
+developer = "Slippi team (github.com/project-slippi/slippi-dolphin); fork of Dolphin emulator"
+publisher = "Independently released (open source)"
+released  = "2020 (Slippi first release); actively maintained 2026"
+genre     = "Platform fighter (GameCube emulation with netplay)"
+modes     = "Online multiplayer, local multiplayer, single-player"
+summary   = "**Slippi** is a fork of the **Dolphin** GameCube emulator that adds **rollback netcode** to **Super Smash Bros. Melee**, enabling online play against players worldwide. It is the dominant platform for competitive and casual Melee online play. A native Linux `AppImage` is available from `slippi.gg`. The Competitive Smash Decker tool (`github.com/the-outcaster/competitive-smash-decker`) automates the full Steam Deck setup including Slippi installation, controller configuration, and Melee ISO verification. An official Deck guide is available at theoutcastersnotebook.com. Requires a Melee v1.02 ISO (NTSC-U or NTSC-J)."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "How to Play Slippi on Steam Deck — The Outcaster's Notebook"
+url   = "https://theoutcastersnotebook.com/post/how-to-play-slippi/"
+
+[[links.guides]]
+title = "competitive-smash-decker (all-in-one Deck setup tool)"
+url   = "https://github.com/the-outcaster/competitive-smash-decker"
+
+[[links.guides]]
+title = "Slippi: Getting it Set Up on Linux — Linux Gaming Central"
+url   = "https://linuxgamingcentral.com/posts/slippi_guide/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a Super Smash Bros. Melee GameCube ISO — version `1.02`, NTSC-U or NTSC-J (PAL is incompatible) — deckport links nothing.
+
+**Easiest setup:** Use the Competitive Smash Decker tool (GitHub: `the-outcaster/competitive-smash-decker`) for the easiest all-in-one Steam Deck setup, covering Slippi install, controller config, and ISO verification.
+
+**Install:** Run the `Slippi Launcher` in Desktop Mode once; it installs the netplay AppImage to `~/.config/Slippi Launcher/netplay/Slippi_Online-x86_64.AppImage`. Add that AppImage as a non-Steam game.
+
+**Controller:** Not native gamepad in Game Mode — Dolphin reads the Deck's built-in controls as `Microsoft X-Box 360 pad 0`, so you must (re)configure the controller profile after switching from Desktop Mode to Game Mode. A real GameCube controller/adapter on a separate port is recommended for competitive play.
+
+**Vulkan/Game Mode crashes:** If the AppImage crashes on launch in Game Mode with the Vulkan backend, add `--no-sandbox` to the launch options (Ishiiruka issue #378) or switch the graphics backend to OpenGL.
+
+**Account:** Requires a `slippi.gg` account for online ranked play.
+
+**Related:** Project+ (a Brawl-based mod with its own netplay) uses a similar Deck setup and is a separate recipe.
+"""

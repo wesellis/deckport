@@ -1,0 +1,71 @@
+[game]
+title       = "Need for Speed: The Run"
+slug        = "nfs-the-run"
+aliases     = ["NFS The Run", "The Run", "nfs.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[about]
+developer = "EA Black Box"
+publisher = "Electronic Arts"
+released  = "2011"
+genre     = "Arcade racing"
+modes     = "Single-player, multiplayer"
+summary   = "**Need for Speed: The Run** is a 2011 arcade racing game and the eighteenth main installment in the **Need for Speed** series, built on the **Frostbite 2** engine. It frames its campaign around 'The Run', an illegal coast-to-coast street race from San Francisco to New York, and introduced on-foot **quick-time event** sequences alongside the driving. It was **EA Black Box**'s final Need for Speed title before the studio closed in 2013, and reviews were mixed, criticizing the short story mode while praising the presentation and Autolog-driven competition. The PC version was **delisted from Steam in May 2021**."
+
+[launch]
+binary         = "Need For Speed The Run.exe"   # Frostbite 2 era; sits next to NFSTheRun.FusionFix files
+launch_options = ""
+requires_files = []
+
+[[links.guides]]
+title = "ThirteenAG Fusion Fix — NFS: The Run (Skip Intro, windowed, free-look)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/nfstherun"
+
+[[links.guides]]
+title = "PCGamingWiki — Need for Speed: The Run (fixes & known issues)"
+url   = "https://www.pcgamingwiki.com/wiki/Need_for_Speed:_The_Run"
+
+[[links.guides]]
+title = "Proton compatibility report — Need for Speed: The Run"
+url   = "https://github.com/ValveSoftware/Proton/issues/7358"
+
+[proton]
+version    = "GE-Proton10-15"
+winetricks = []
+notes      = """
+**Game:** 2011 EA Black Box racer (`Frostbite 2`; delisted from Steam May 2021 — **bring your own copy**). Once running it performs well on Deck (~60fps, medium-high), but getting past the launcher/login takes some setup.
+
+**Proton:** newer `GE-Proton` 10.x builds (e.g. `GE-Proton10-15`/`10.0-30`) are reported to fare best. Multiple users report `GE-Proton9-25`, recent default Proton, and Proton 11 beta **fail to get past the login/launcher** — try a `GE-Proton 10.x` build via ProtonUp-Qt if it won't start.
+
+**Login softlock:** with EA's online services retired, the game can hang on the EA login or **"Connecting to Autolog servers…"**. ThirteenAG's Fusion Fix (`NFSTheRun.FusionFix`, extract next to the `.exe`) has a **Skip Intro** option that bypasses the startup FMVs and login prompts; if it still hangs on Autolog, **block the game's network access** so it falls through to offline play. Fusion Fix also fixes windowed mode and adds a free-look camera.
+
+**Controller:** does **not** reliably detect a pad on its own under Proton — enable **Steam Input** for the game (Controller settings) so the Deck gamepad is mapped, otherwise the controller may not be detected.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** delisted — configuration only, no links.
+
+**Proton version matters:** prefer a `GE-Proton 10.x` build (e.g. `GE-Proton10-15`/`10.0-30`) via ProtonUp-Qt. Several users report `GE-Proton9-25`, recent default Proton, and Proton 11 beta **failing at the login/launcher** — switch builds if it won't get in.
+
+**Login / Autolog softlock:** EA's online services are retired, so the game may hang on the EA login or **"Connecting to Autolog servers…"**. Use Fusion Fix's **Skip Intro** (bypasses login prompts); if it still hangs, **block the game's network access** to force offline play. Online-dependent menus (e.g. exiting Challenge Series) may still hang.
+
+**Crash:** mission 'Business or Pleasure' can crash around checkpoint 18-19; workaround is to drop graphics (and resolution) to the lowest values for that section.
+
+**Controller:** the game may **not detect a pad on its own** under Proton — enable **Steam Input** for the title (Controller settings) so the Deck gamepad is mapped.
+
+**Steam appid:** the original PC release (delisted) was app `24770`; left blank here since there is no live store/ProtonDB listing. Set `steam_appid` if you confirm your install matches.
+"""

@@ -1,0 +1,74 @@
+[game]
+title       = "Ride to Hell: Retribution"
+slug        = "ride-to-hell-retribution"
+aliases     = ["Ride to Hell", "Ride to Hell Retribution"]
+type        = "proton"
+engine      = "ue3"
+steam_appid = "209340"
+sgdb_id     = ""
+
+[launch]
+binary         = "RTH.exe"   # UE3 game exe; config lives in Documents/My Games/Ride to Hell/RTHGame/Config
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2013 Eutechnyx / Deep Silver biker action game on Unreal Engine 3 — infamous as one of the worst-reviewed games ever, which is most of its appeal. Delisted from Steam (appid `209340`) in 2014.
+
+**Proton:** UE3 titles of this era run well under Proton; `GE-Proton` recommended, stock `proton_experimental` also fine. Main executable is `RTH.exe`.
+
+**DRM:** No GFWL/SecuROM DRM.
+
+**Controller:** Has native Xbox 360 / XInput gamepad support (it registers controller input, with some QTE quirks); **apply a Steam Input gamepad layout** to cover any unmapped buttons.
+
+**Known fix (launch/fullscreen crash):** Some setups hit a black screen or an immediate `RTH.exe stopped working` exit when launching in fullscreen. The community workaround is to start in windowed mode: edit `RTHEngine.ini` and set `Fullscreen=False`, then set `ResX`/`ResY` to your target resolution there rather than from the in-game menu (toggling fullscreen back on in-game can re-trigger the crash).
+
+**Config:** Settings/keybinds live in `Documents/My Games/Ride to Hell/RTHGame/Config` (`RTHEngine.ini` / `RTHInput.ini`) under the Proton prefix if you need to tweak resolution or input."""
+
+[[links.guides]]
+title = "ProtonDB - Ride to Hell: Retribution (appid 209340)"
+url   = "https://www.protondb.com/app/209340"
+
+[[links.guides]]
+title = "RTH.exe stopped working / fullscreen crash workaround (Steam discussion)"
+url   = "https://steamcommunity.com/app/209340/discussions/0/846957263105155833/"
+
+[[links.guides]]
+title = "PCGamingWiki - Ride to Hell: Retribution"
+url   = "https://www.pcgamingwiki.com/wiki/Ride_to_Hell:_Retribution"
+
+[about]
+developer = "Eutechnyx"
+publisher = "Deep Silver"
+released  = "2013"
+genre     = "Action, beat 'em up"
+modes     = "Single-player"
+summary   = """
+**Ride to Hell: Retribution** is a third-person **action and beat 'em up** game set in 1960s American biker culture, following a Vietnam veteran on a revenge-fueled rampage. Originally announced in 2008 as an open-world title, it spent years in development hell after budget cuts and the closure of Deep Silver Vienna before Eutechnyx completed and released it in 2013.
+
+Built on **Unreal Engine 3**, it was met with scathing reviews for its broken combat, crude writing and bugs, and is widely cited as **one of the worst-reviewed games ever made**. It was **pulled from sale on Steam in 2014**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted from Steam (appid `209340`) — configuration only, no links.
+
+**Proton:** UE3 game, expected to run under Proton (`GE-Proton` or `proton_experimental`); no GFWL/SecuROM.
+
+**Controller:** Native Xbox 360 / XInput gamepad support — add a Steam Input controller layout to cover QTE/menu input gaps.
+
+**Launch crash:** Watch for a black-screen / `RTH.exe stopped working` exit on fullscreen launch; set `Fullscreen=False` in `RTHEngine.ini` and configure resolution there.
+
+**ProtonDB:** No meaningful tier — the game is delisted and has effectively no ProtonDB reports, so there is no community tier to report. Left as `unknown`; **not yet confirmed on Deck hardware** — needs an on-Deck test pass."""

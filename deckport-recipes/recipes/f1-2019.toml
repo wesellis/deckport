@@ -1,0 +1,72 @@
+[game]
+title       = "F1 2019"
+slug        = "f1-2019"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "928600"
+sgdb_id     = ""
+
+[launch]
+binary         = "f1_2019.exe"   # DX11 launcher (more stable on the Deck's AMD GPU); f1_2019_dx12.exe is the DX12 variant
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Install:** Delisted Steam game (appid `928600`), ProtonDB platinum. The install ships two launchers: `f1_2019.exe` (DirectX 11) and `f1_2019_dx12.exe` (DirectX 12).
+
+**Display:** **Prefer the DX11 exe on the Deck** — DX12 historically had crashes on AMD RX-series GPUs (Geometry Culling, and windowed<->fullscreen toggles), so `f1_2019.exe` is the safer default.
+
+**Proton:** `GE-Proton` runs it cleanly; `proton_experimental` or `Proton 7.0+` also work.
+
+**Controller:** Native controller support is full (the game has a built-in supported-controller list and gamepad mapping), so the Deck pad works out of the box with no Steam Input hack needed. Force-feedback racing wheels are a separate story — older Proton reports show some wheels (e.g. Logitech G920) not being recognized — but the Deck's built-in gamepad is fine.
+
+**DRM:** This title ships with **Denuvo** anti-tamper. It runs fine under Proton (hence the platinum reports), but Denuvo phones home to an activation server and enforces a periodic hardware-activation limit, so an offline-only Deck or frequent hardware changes can occasionally trip a re-activation. Have it activate online once before relying on it offline.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "F1 2019 on ProtonDB (appid 928600, platinum)"
+url   = "https://www.protondb.com/app/928600"
+
+[[links.guides]]
+title = "F1 2019 — PCGamingWiki (fixes, DRM, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/F1_2019"
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters"
+released  = "2019"
+genre     = "Racing simulation"
+modes     = "Single-player, online multiplayer"
+summary   = "**F1 2019** is the official Formula One racing simulator developed and published by **Codemasters**, released in June 2019 as part of their long-running annual **F1 series** built on the **EGO engine**. It was the first entry to feature the **Formula 2 championship** and added a story-driven career mode alongside the series' signature realistic racing, classic cars, and time-trial modes. It was generally well received for its handling and presentation. Following **Electronic Arts' acquisition of Codemasters**, the game was removed from sale on Steam in March 2022 after the underlying licensing arrangements lapsed."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Status:** ProtonDB platinum; community reports it running well on Linux/Proton, so it should play on the Deck (still needs a hands-on confirm).
+
+**Display:** Launch the DX11 exe (`f1_2019.exe`) rather than the DX12 one for stability on AMD.
+
+**Controller:** Native gamepad support means the Deck controller works with no Steam Input layout. (Wheels are hit-or-miss under Proton; the pad is fine.)
+
+**DRM:** Uses Denuvo — runs under Proton, but activate it online once before counting on offline play (hardware-activation limit).
+
+**Multiplayer:** Online multiplayer servers for this title may be retired — treat it as single-player/time-trial only."""

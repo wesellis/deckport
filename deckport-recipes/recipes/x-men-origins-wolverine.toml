@@ -1,0 +1,73 @@
+[game]
+title       = "X-Men Origins: Wolverine"
+slug        = "x-men-origins-wolverine"
+aliases     = ["X-Men Origins Wolverine", "Wolverine", "XMOW"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""              # delisted / never on Steam — no ProtonDB appid
+sgdb_id     = ""
+
+[launch]
+binary         = "Wolverine.exe"   # in the Binaries/ folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"  # Proton Experimental or 9 both reported working
+winetricks = ["physx"]
+notes      = """
+**Game:** Raven Software's 2009 third-person hack-and-slash (Unreal Engine 3), delisted. A community Deck recipe reportedly gets it running at 60 FPS with audio.
+
+**Proton:** Use `Proton Experimental` (or `9`).
+
+**Fix:** Install the legacy PhysX driver (`9.13.1220`) and **drop the two libraries the game looks for** — `cudart32_60.dll` and `PhysXLoader.dll` — into the game's `Binaries\\` folder. **Without them it loads to a black/loading screen and crashes.**
+
+**Display:** Resolution/widescreen is set by editing the UE3 config (`Documents/Wolverine/WGame/Config/WEngine.ini`, or `BaseEngine.ini` in the install).
+
+**Controller:** The game has native Xbox-360-era gamepad support, so the Deck pad usually works; if buttons misbehave, apply the Nexus Ultimate Controller Fix `WEngine.ini`, or just fall back to a Steam Input gamepad/keyboard layout."""
+
+[about]
+developer = "Raven Software"
+publisher = "Activision"
+released  = "2009"
+genre     = "Action-adventure, hack-and-slash"
+modes     = "Single-player"
+summary   = "**X-Men Origins: Wolverine** is a 2009 third-person action game by Raven Software, released as a tie-in to the film of the same name and built on **Unreal Engine 3**. The PC, Xbox 360 and PlayStation 3 versions shipped as the **'Uncaged Edition'**, featuring heightened violence and gore that drew comparisons to God of War, and the game was generally well received as one of the better movie tie-ins of its era. It is no longer sold because the **licensed movie-tie-in rights expired**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+# ProtonDB has no entry (not a Steam game). Pick your own art on SteamGridDB:
+steamgriddb = ""              # blank → the site falls back to a name search
+
+[[links.guides]]
+title = "r/SteamDeck: help installing X-Men Origins: Wolverine"
+url   = "https://www.reddit.com/r/SteamDeck/comments/172g3sw/help_with_installing_xmen_origins_wolverine/"
+
+[[links.guides]]
+title = "r/SteamDeck: getting X-Men Origins: Wolverine to run"
+url   = "https://www.reddit.com/r/SteamDeck/comments/wfqdzk/help_with_getting_xmen_origins_wolverine_to_run/"
+
+[[links.guides]]
+title = "Steam Community: PhysX fix for Linux (legacy PhysX + DLL drop)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2780134576"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted disc-era game.
+
+**DRM:** The original disc used SecuROM DRM that fails on modern systems, so a DRM-free copy is the practical route.
+
+**Fix:** The community-confirmed Deck fix is the PhysX legacy driver + the two missing DLLs (`cudart32_60.dll`, `PhysXLoader.dll`) in `Binaries\\` — **without them it loads to a black/loading screen and crashes.**
+
+**Controller:** Works — the game has native Xbox-360-era pad support and a Steam Input layout covers any quirks.
+
+**Status:** `needs-test` — steps are community-reported as working on Deck but not yet verified here. deckport describes setup only, not where to get the game."""

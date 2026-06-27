@@ -1,0 +1,82 @@
+[game]
+title       = "Need for Speed: Carbon"
+slug        = "nfs-carbon"
+aliases     = ["NFS Carbon", "Carbon", "NFSC.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "NFSC.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2006 EA Black Box racer, delisted 2021 and never sold on Steam — **bring your own copy**. Add it to Steam as a non-Steam game and point it at the installed executable.
+
+**Binary:** The launcher is `NFSC.exe`, normally under `Program Files (x86)/Electronic Arts/Need for Speed Carbon/` (or `Program Files (x86)/Origin Games/Need for Speed Carbon/` for the digital build). Note: `speed.exe` is the *Most Wanted (2005)* executable, **not** Carbon.
+
+**DRM:** Retail discs use SafeDisc, which modern Windows/Wine cannot load — install the official **v1.4 patch** so it boots without the optical-disc check.
+
+**Proton:** Use `GE-Proton` via ProtonUp-Qt. `GE-Proton 9-25` and `GE-Proton 10-15` are community-confirmed working; stock `Proton Experimental`/`9.0-4` and the newest `GE-Proton` builds either fail to launch or **crash to desktop when you change graphics settings** (a known regression vs. Proton 8).
+
+**Display:** Hits a smooth 60fps; some users cap the refresh to 50fps for stability.
+
+**Fix:** A handful of mission checkpoints can crash (e.g. "Business or Pleasure") — drop graphics and resolution to lowest as a workaround.
+
+**Controller:** The PC build's gamepad handling is quirky (limited rebinding, awkward defaults). **Enable Steam Input** in the game's controller settings and apply a community gamepad layout; do not assume clean native support.
+
+**Cosmetic:** Community fixes — ThirteenAG's Widescreen Fix (set `FMVWidescreenMode = 2` to avoid stretched videos), HD Reflections, the Unlimiter, and the DLC Unlocker.
+
+**Warning:** The Widescreen Fix can crash on startup under some Proton/Wine combos — if you get an immediate black-screen crash, remove the widescreen `.asi` and verify the game boots first, then re-add it on a known-good `GE-Proton` build."""
+
+[about]
+developer = "EA Black Box"
+publisher = "Electronic Arts"
+released  = "2006"
+genre     = "Racing"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Need for Speed: Carbon** is the tenth entry in the long-running **Need for Speed** street-racing series and a direct sequel to **Most Wanted**. It centers on illegal night racing across a fictional city and surrounding canyons, introducing one-on-one **canyon duels** and a **crew system** where the player recruits wingmen with specialized skills.
+
+Released in 2006 to generally favorable reviews, it is remembered for its drift-heavy gameplay, **autosculpt** car customization, and atmospheric nighttime aesthetic. The game was **delisted** from digital storefronts in 2021 as part of EA retiring older Need for Speed titles."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted — configuration only, no links.
+
+**Proton:** Version is finicky — use `GE-Proton 9-25` or `10-15`, **NOT** stock `Experimental`/`9.0-4` (crash on graphics-settings change) or the newest `GE-Proton` builds (won't launch).
+
+**Binary:** Launch `NFSC.exe` (not `speed.exe`, which belongs to Most Wanted 2005). Install the official **v1.4 patch** to clear the SafeDisc disc check before adding it to Steam.
+
+**Controller:** PC gamepad support is rough out of the box — **enable Steam Input** and use a community layout rather than relying on native handling.
+
+**Display:** Capping refresh to 50fps helps stability; a few mission checkpoints may crash (lower graphics and resolution to recover).
+
+**Cosmetic:** ThirteenAG Widescreen Fix recommended for modern displays but can cause a startup black-screen crash under some Proton/Wine combos — **boot vanilla first**, add the fix after, and set `FMVWidescreenMode = 2`."""
+
+[[links.guides]]
+title = "ProtonDB / Proton issue #8389 — graphics-settings crash on Proton 9/Experimental"
+url   = "https://github.com/ValveSoftware/Proton/issues/8389"
+
+[[links.guides]]
+title = "PCGamingWiki — Need for Speed: Carbon (DRM, patches, fixes, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/Need_for_Speed:_Carbon"
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack — NFS Carbon widescreen/gamepad fix"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack"

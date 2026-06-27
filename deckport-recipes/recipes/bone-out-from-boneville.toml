@@ -1,0 +1,76 @@
+[game]
+title       = "Bone: Out from Boneville"
+slug        = "bone-out-from-boneville"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "8310"
+sgdb_id     = ""
+
+[launch]
+binary         = "Bone1v20.exe"   # Telltale build; older copies use Bone1.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Telltale point-and-click (Steam appid `8310`), DirectX 8 era.
+
+**Proton:** ProtonDB lists it **platinum**, but on a small/low-confidence report pool — treat as promising rather than proven. `GE-Proton` is the recommended runner; stock `proton_experimental` should also work.
+
+**DRM:** The retail/Steam build carries **SecuROM** copy protection, which fails on modern systems. If the `.exe` refuses to launch, use the open-source **SecuROMLoader** (github.com/nckstwrt/SecuROMLoader): drop its `version.dll` (and bundled `version.json`) next to `Bone1v20.exe` so the legitimately-owned game runs without the long-dead disc check.
+
+**Fix:** If it crashes or hangs on startup, **delete `prefs.prop`** in the install folder (it stores a bad fullscreen/resolution state); the game regenerates it.
+
+**Install:** Install to a non-Windows path inside the prefix to keep DRM happy.
+
+**Files:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2005"
+genre     = "Point-and-click adventure"
+modes     = "Single-player"
+summary   = "**Bone: Out from Boneville** is a **point-and-click adventure** based on Out from Boneville, the first volume of **Jeff Smith's** award-winning **Bone comic series**. Players guide the three Bone cousins -- Fone Bone, Phoney Bone, and Smiley Bone -- after they are run out of Boneville and become lost in a mysterious valley. Notably, it was **Telltale Games' first adventure title** and an early showcase for their **episodic storytelling** style. The game was later **delisted** and is no longer sold."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SecuROMLoader (run owned SecuROM-protected games on modern systems)"
+url   = "https://github.com/nckstwrt/SecuROMLoader"
+
+[[links.guides]]
+title = "ProtonDB - Bone: Out from Boneville (appid 8310)"
+url   = "https://www.protondb.com/app/8310"
+
+[[links.guides]]
+title = "PCGamingWiki - Bone: Out from Boneville"
+url   = "https://www.pcgamingwiki.com/wiki/Bone:_Out_from_Boneville"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Proton:** Delisted Telltale adventure (appid `8310`); ProtonDB lists **platinum** but on few/low-confidence reports, so expect to do a real test pass. Use `GE-Proton`.
+
+**DRM:** **SecuROM** on retail/Steam builds fails on modern systems — restore your owned copy with the open-source `SecuROMLoader` (`version.dll` + `version.json` beside `Bone1v20.exe`) if it won't start.
+
+**Fix:** If it crashes on launch, **delete `prefs.prop`** to reset the bad fullscreen state.
+
+**Controller:** Pure mouse-driven point-and-click with **no native gamepad support** — bind a Steam Input mouse-region/trackpad layout for the Deck (works fine, but plan on a custom controller config).
+
+**Modes:** Single-player only, no servers to worry about."""

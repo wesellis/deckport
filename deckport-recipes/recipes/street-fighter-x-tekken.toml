@@ -1,0 +1,72 @@
+[game]
+title       = "Street Fighter X Tekken"
+slug        = "street-fighter-x-tekken"
+aliases     = ["SFxT", "Street Fighter X Tekken"]
+type        = "proton"
+engine      = "other"
+steam_appid = "209120"
+sgdb_id     = ""
+
+[launch]
+binary         = "SFTK.exe"   # confirmed — main executable (latest official PC patch is the v2013 / v1.08 update)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Fix:** **Get the latest build first.** A **May 2025 Steam update strips Games for Windows Live** from the build, so the current Steam version launches without the old `GFWL` hurdle — update before configuring.
+
+**Proton:** `Proton 8.0-5`+ works; `GE-Proton` runs a touch smoother and is best for controller detection.
+
+**Display:** launch from **Desktop Mode** — Gaming Mode mangles the resolution. Turn **Fullscreen off** in the in-game graphics options to avoid the black-screen / resolution issue.
+
+**Cosmetic:** some arcade-mode cutscenes show a corrupt texture then auto-skip. Gameplay is unaffected.
+"""
+
+[about]
+developer = "Capcom, Dimps (PC port by QLOC)"
+publisher = "Capcom"
+released  = "2012"
+genre     = "Fighting (tag-team crossover)"
+modes     = "Single-player, local versus, online multiplayer"
+summary   = "**Street Fighter X Tekken** is a 2012 crossover fighting game pitting **Capcom's Street Fighter** against **Bandai Namco's Tekken**, using Street Fighter IV-style 2D mechanics with **two-on-two tag-team** battles. Developed by Capcom with Dimps (the Windows port by QLOC), it introduced the **Gem** customization system and **Pandora** mode. It was delisted from Steam in **November 2021** alongside several other Capcom titles, because its outdated Games for Windows Live backend caused problems on the PC version, and it never returned to sale."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Street Fighter X Tekken (app 209120)"
+url   = "https://www.protondb.com/app/209120"
+
+[[links.guides]]
+title = "Steam Community guide — running SFxT on Steam Deck"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3238337810"
+
+[[links.guides]]
+title = "EventHubs — GFWL removed from the Steam build (May 2025)"
+url   = "https://www.eventhubs.com/news/2025/jun/01/gfwl-street-fighter-x-tekken/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy** — delisted commercial game.
+
+**GFWL:** the Steam build got a **May 2025 update removing `GFWL`**, so update to the latest version first. Legacy / non-Steam copies still need community `GFWL` workarounds.
+
+**Display:** run from **Desktop Mode** (Gaming Mode mangles resolution) and turn **Fullscreen off** in graphics options to dodge the black-screen issue.
+
+**Controller:** native gamepad works, but some Proton versions don't detect external pads — switch Proton version (`GE-Proton` recommended) if the gamepad doesn't appear.
+
+**Cosmetic:** a few arcade cutscenes render a broken texture then skip themselves. deckport links nothing.
+"""

@@ -1,0 +1,77 @@
+[game]
+title       = "Micro Machines World Series"
+slug        = "micro-machines-world-series"
+aliases     = []
+type        = "native"
+engine      = "other"
+steam_appid = "535850"
+sgdb_id     = ""
+
+[about]
+developer = "Codemasters"
+publisher = "Codemasters (with Electronic Arts)"
+released  = "2017"
+genre     = "Top-down vehicular-combat racing / party"
+modes     = "Single-player, local split-screen up to 4, online up to 12 (servers offline)"
+summary   = """
+**Micro Machines World Series** is a **Unity**-powered revival of the classic **miniature-car series**, racing tiny vehicles across household-themed tracks like kitchens and pool tables. Beyond traditional Race events it adds **Elimination** and team-based **Battle** modes (including Capture the Flag and King of the Hill) using a roster of **Hasbro-licensed** weapons and toys. The Linux/macOS builds were produced by **Virtual Programming** using their **eON wrapper** (not a hand-written native port), but reviewers found the Linux port ran very smoothly day-one.
+
+It launched in 2017 to mixed reviews, criticized for lacking a career mode and for shaky online play. It was **delisted from Steam in February 2023** after the Hasbro license lapsed, and its online servers were shut down in March 2024, leaving the single-player and local split-screen content as the playable core."""
+
+[launch]
+binary         = "MicroMachines"   # best-guess launch binary for the Linux (eON-wrapped) depot; not independently verified. Windows depot uses MicroMachines.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `535850`, removed Feb 2023 over the Hasbro license).
+
+**Linux depot:** This Unity title shipped a Linux depot day-1, but it is a **Virtual Programming eON-wrapper** port (the Windows binary run through a compatibility layer), not a hand-written native build. It still runs on the Deck directly without Proton, and the day-1 Linux port was reviewed as very smooth (no crashes on max settings). Point the launch binary at `MicroMachines` (exact filename not independently verified — confirm against the Linux depot's `steamapps/common` folder on first run).
+
+**Proton fallback:** If the Linux depot misbehaves on current SteamOS, force `GE-Proton` (or `proton_experimental`) on the Windows depot and point binary at `MicroMachines.exe`. ProtonDB tier is **gold** but on a very small sample (only ~4 reports).
+
+**Controller:** Gamepad support works on Deck out of the box (the Linux port was reviewed with working controller glyphs and rumble); no manual Steam Input remap should be required.
+
+**Online:** Official online multiplayer servers shut down March 21 2024 — Quick Game / local-versus / single-player events still play fully offline. An early, community-run private server (project "MMCOS") exists but is largely untested.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Micro Machines World Series (appid 535850)"
+url   = "https://www.protondb.com/app/535850"
+
+[[links.guides]]
+title = "GamingOnLinux - day-1 Linux review (eON-wrapper port)"
+url   = "https://www.gamingonlinux.com/2017/06/micro-machines-world-series-released-with-day-1-linux-support-its-brilliant/"
+
+[[links.guides]]
+title = "Delisted Games - online functionality shutdown March 21 2024"
+url   = "https://delistedgames.com/older-f1-titles-micro-machines-world-series-lose-online-functionality-on-march-21st-2024/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Delisted from Steam Feb 2023 (Hasbro license lapse) — **not for sale**.
+
+**Linux depot:** Ships a Linux depot (a Virtual Programming **eON-wrapper** port, not a true native build) so it runs on the Deck without Proton; the day-1 Linux port was reviewed as running smoothly. ProtonDB tier is **gold** but on a very small sample (~4 reports), so treat the rating as a weak signal. Gamepad support works out of the box, no Steam Input layout needed.
+
+**Online:** **Official online servers were shut down March 21 2024**, so all official online multiplayer is dead — only single-player and local same-screen versus modes remain playable. A community private-server project ("MMCOS") exists but is early and largely untested.
+
+**Binary:** `MicroMachines` is a best-guess for the Linux depot's launch binary and is **not independently verified** — confirm it against the installed files. If running the Windows depot instead, switch type to proton and use `MicroMachines.exe` under `GE-Proton`."""

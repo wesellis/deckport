@@ -1,0 +1,70 @@
+[game]
+title       = "Override: Mech City Brawl"
+slug        = "override-mech-city-brawl"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "709440"
+sgdb_id     = ""
+
+[launch]
+binary         = "Override-Win64-Shipping.exe"   # UE4 shipping exe, under Override/Binaries/Win64/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `709440`), **Unreal Engine 4**. ProtonDB rates it **Gold**; most reports say it runs out of the box on Proton/Deck.
+
+**Fix:** if the game hangs after the MODUS robot-head intro (splash shows but no menu/sound), rename the prefix folder `Override/Content/Movies` to `_Movies` to skip the intro videos — **this is the most common Deck/Proton fix**.
+
+**Proton:** `GE-Proton` or a recent stable Proton is recommended; `proton_experimental` has been reported to stall on the same intro for some users.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "The Balance"
+publisher = "Modus Games"
+released  = "2018"
+genre     = "Mech-fighting / brawler"
+modes     = "Single-player, local multiplayer, online multiplayer (servers dead)"
+summary   = "**Override: Mech City Brawl** is a 3D **mech-fighting brawler** built in **Unreal Engine 4**, where giant robots fight in destructible cities. A standout feature lets up to **four players co-pilot a single mech**, each controlling different limbs. It received mixed-to-average reviews, praised for its visuals and chaotic multiplayer but criticized for slow, button-mash-heavy combat. All digital versions were **delisted in 2022** and online servers were shut down, leaving only local and single-player content playable; a sequel, **Override 2: Super Mech League**, followed in 2020."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 709440)"
+url   = "https://www.protondb.com/app/709440"
+
+[[links.guides]]
+title = "Fixing opening/ending movie hangs on Steam Deck (UE4 Movies-folder rename)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3062018290"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**ProtonDB:** Gold, Deck status Unsupported (icon only, not a play-blocker).
+
+**Controller:** Native full gamepad support — it's a couch-fighting/brawler designed around controllers, so input works out of the box on Deck.
+
+**Online is dead:** The Balance shut down servers and delisted the game (Oct 2022); only local/offline and single-player content is playable now.
+
+**Fix:** if the game stalls on the MODUS intro, apply the `Movies`-folder rename fix in the proton notes.
+
+**Binary:** the UE4 shipping exe (`Override-Win64-Shipping.exe`); confirm the exact path against your install.
+"""

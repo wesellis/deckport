@@ -1,0 +1,76 @@
+[game]
+title       = "Section 8: Prejudice"
+slug        = "section-8-prejudice"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "97100"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/Win32/S9-Win32-F.exe"   # TimeGate UE3 exe (internal codename "S9")
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted UE3 FPS (Steam appid `97100`). ProtonDB tier silver; Deck-Verified status Unsupported.
+
+**GFWL:** The one real blocker is **Games for Windows Live (GFWL)** — Microsoft shut the Marketplace, so online auth/saves break under stock GFWL.
+
+**Fix:** Bypass GFWL by **replacing `xlive.dll`** in `<install>\\Binaries\\Win32` with a GFWL-emulator/stub dll; with that in place the game launches into offline mode and saves/settings persist. The game exe is `S9-Win32-F.exe` (TimeGate's internal codename for the game is "S9") — sits next to `xlive.dll` in that same folder.
+
+**Proton:** Use `GE-Proton` (community reports `GE-Proton9-25` plus a Media Foundation DLL for video); older reports got the in-game GFWL installer to complete on `Proton 4.11-13` but progression did not save without the `xlive.dll` bypass.
+
+**Controller:** Native gamepad support (console-port FPS) — Steam Input plays nice; no keyboard/mouse layout needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "TimeGate Studios"
+publisher = "SouthPeak Games"
+released  = "2011"
+genre     = "Science-fiction first-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Section 8: Prejudice** is a sci-fi first-person shooter and the direct sequel to 2009's **Section 8**, built on **Unreal Engine 3**. A digital download-only title, it offered more content than its predecessor across a single-player campaign and several multiplayer modes. The PC and Xbox 360 versions earned generally favorable reviews, with critics praising the volume of content while criticizing the execution. It was delisted from Steam in September 2020, likely due to an **expired publishing agreement**, and its PC online features relied on the now-defunct **Games for Windows - LIVE**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Section 8: Prejudice (app 97100)"
+url   = "https://www.protondb.com/app/97100"
+
+[[links.guides]]
+title = "PCGamingWiki — Section 8: Prejudice (GFWL fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Section_8:_Prejudice"
+
+[[links.guides]]
+title = "Steam Community — Section 8: Prejudice discussions"
+url   = "https://steamcommunity.com/app/97100/discussions/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** GFWL dependency is the main hurdle — bypass it by dropping a stub/emulator `xlive.dll` into `Binaries\\Win32` so the game runs offline with working saves; otherwise it loads but won't persist progress.
+
+**Multiplayer:** Dead (official GFWL/Marketplace servers shut down) — single-player/bots/LAN only.
+
+**Controller:** Native controller support, so Steam Input works out of the box.
+
+**Binary:** `Binaries/Win32/S9-Win32-F.exe` (signed by TimeGate Studios; "S9" is the game's internal codename).
+
+**Tier:** ProtonDB silver, Deck-Verified Unsupported."""

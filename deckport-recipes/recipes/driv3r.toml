@@ -1,0 +1,73 @@
+[game]
+title       = "DRIV3R"
+slug        = "driv3r"
+aliases     = ["Driver 3", "DRIV3R", "driv3r.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = "12810"
+sgdb_id     = ""
+
+[launch]
+binary         = "driv3r.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+2004 Reflections / Atari open-world driving-and-shooting game. Delisted, long out of print — **supply your own copy**.
+
+**Proton:** Runs under Proton; `GE-Proton` handles the older codebase most reliably.
+
+**DRM:** The retail release used SafeDisc DRM — disc/no-CD checks can stall under Wine, so **use a clean install and the latest community update before applying mods**.
+
+**Fix:** Strong fix scene: ThirteenAG's Widescreen Fix (drops a `dinput8.dll`-style wrapper next to `driv3r.exe`; requires the game's **Update 2**, which will not install over Update 1 — **reinstall clean, then apply Update 2**) plus an Xbox Particles Fix, texture/skybox fixes, and an optional RTX add-on.
+
+**Display:** After installing the widescreen wrapper, set a Steam launch option that lets Proton load the fix's local proxy DLL — match the override to whatever DLL the release ships (e.g. `WINEDLLOVERRIDES="dinput8=n,b" %command%`).
+
+**Controller:** Native Xbox controller support works out of the box via Steam Input; a controller layout otherwise covers it.
+"""
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack — DRIV3R Widescreen Fix release"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/driv3r"
+
+[[links.guides]]
+title = "PCGamingWiki — Driv3r (fixes, mods, controller, DRM)"
+url   = "https://www.pcgamingwiki.com/wiki/Driv3r"
+
+[[links.guides]]
+title = "ProtonDB — DRIV3R reports"
+url   = "https://www.protondb.com/app/12810"
+
+[about]
+developer = "Reflections Interactive"
+publisher = "Atari"
+released  = "2005"
+genre     = "Action-adventure, open-world driving and third-person shooter"
+modes     = "Single-player"
+summary   = "**DRIV3R** is the third installment in the **Driver** series, putting players in the role of undercover FBI agent **John Tanner** as he investigates a car-smuggling ring across recreated versions of Miami, Nice, and Istanbul. It expanded the series with **on-foot sections**, gun combat, and drive-by shooting alongside free-roam and the returning **film-making director mode**. Originally released for consoles in 2004, the PC version followed in March 2005 and reviewed well, though the game is best remembered for the **'Driv3rgate'** review-scoring controversy."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted / out of print — configuration only, no links.
+
+**DRM:** Retail SafeDisc DRM can hang under Wine — **start from a clean, fully-updated install**.
+
+**Display:** Apply ThirteenAG's Widescreen Fix for modern displays (needs **Update 2**; do not stack on Update 1 — reinstall clean first).
+
+**Launch:** If the widescreen wrapper makes the game refuse to launch, verify the `dinput8` DLL override launch option is set.
+
+**Controller:** Native Xbox gamepad support works via Steam Input.
+"""

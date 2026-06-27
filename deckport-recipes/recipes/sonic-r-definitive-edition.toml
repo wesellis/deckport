@@ -1,0 +1,75 @@
+[game]
+title       = "Sonic R - The Definitive Edition"
+slug        = "sonic-r-definitive-edition"
+aliases     = ["Sonic R", "Sonic R Definitive Edition"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SonicRModManager.exe"   # stated by the release
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Sonic R (Traveller's Tales, 1997) run as a community-enhanced 'Definitive Edition'. The **SRUpdater** patcher takes any copy of the game and updates it to the much friendlier **2004 PC port**, installing the **Sonic R Mod Loader** plus a few quality mods, and launches through the Sonic R Mod Manager.
+
+**Fix:** The original 1998 autorun is a 16-bit executable that **cannot run on 64-bit Windows**, so the patcher / mod-loader path is required on modern systems and works well under Proton on Deck. The patched 2004 port also removes the need for the disc.
+
+**Proton:** Force `GE-Proton` (`GE-Proton9-27` confirmed).
+
+**Install:** First launch from Steam will **fail while it generates the prefix**; run `SonicRModManager.exe` afterward to manage mods and graphics.
+
+**Display:** In the mod manager graphics settings, uncheck `Windowed` and check `Windowed Fullscreen`, then set resolution to `1067x800` (4:3) or `1280x800` (16:10) for the Deck screen."""
+
+[about]
+developer = "Traveller's Tales, Sonic Team"
+publisher = "Sega"
+released   = "1998"
+genre      = "Racing"
+modes      = "Single-player, multiplayer"
+summary    = """
+**Sonic R** is a 3D racing game in the **Sonic the Hedgehog** series, originally released for the Sega Saturn in 1997 and ported to Microsoft Windows in 1998. Developed by **Traveller's Tales** with Sonic Team and published by Sega, it has characters **race on foot** across five large multi-route courses, with a focus on exploration and collecting items rather than vehicles. It is notable as the third racing entry in the series and for its distinctive **vocal soundtrack by Richard Jacques**.
+
+This **Definitive Edition** setup is a community enhancement: the SRUpdater patcher upgrades the aging PC release to the rarer **2004 port** and installs a **mod loader / manager** that restores compatibility on modern systems."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SRUpdater - patcher + Sonic R Mod Loader (GitHub)"
+url   = "https://github.com/cheatfreak47/SRUpdater/"
+
+[[links.guides]]
+title = "Sonic R Updater (GameBanana tool page + mirrors)"
+url   = "https://gamebanana.com/tools/6325"
+
+[[links.guides]]
+title = "Sonic R Mod Loader (2004 PC port) - sonicretro"
+url   = "https://github.com/sonicretro/sonicr-mod-loader"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Community enhancement of the Sonic R PC port. Never sold standalone on Steam, so no `steam_appid`.
+
+**Install:** Launch via `SonicRModManager.exe` after forcing `GE-Proton` (`GE-Proton9-27` confirmed by the community guide); **first Steam launch fails to generate the prefix**.
+
+**Controller:** Gamepad is supported, but by default `L3` (left-stick click) is mapped to `Start` — press it to open Options and rebind controls properly.
+
+**Display:** Set `Windowed Fullscreen` at `1067x800` (4:3) or `1280x800` (16:10) in the mod manager.
+
+**Status:** Test on hardware before marking working. deckport links nothing."""

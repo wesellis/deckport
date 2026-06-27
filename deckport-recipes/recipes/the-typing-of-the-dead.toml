@@ -1,0 +1,50 @@
+[game]
+title       = "The Typing of the Dead"
+slug        = "the-typing-of-the-dead"
+aliases     = ["Typing of the Dead", "The Typing of the Dead PC", "Typing of the Dead 2000"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Tod_e.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Use GE-Proton for this 2000 PC port of the Sega Dreamcast typing-game spinoff. The Western/English release's installed executable is Tod_e.exe (a wizard install may also create todus.exe); run setup.bat once first if your copy needs to unpack its compressed audio. The original retail release uses a CD/serial check and expects the disc in the drive, so it must be installed from your own legitimate media before it can run under Proton. CRITICAL CAVEAT: keyboard input has historically been unreliable for this title under Wine/Proton (the WineHQ AppDB reports the keyboard not functioning normally), and because typing words at speed IS the entire game, broken keyboard input makes it unplayable — this needs real testing on current Proton before it can be called working. The game is keyboard-driven, so a physical USB keyboard is essential and the Steam Deck on-screen keyboard is far too slow; dock the Deck and connect a USB keyboard. It is locked to 640x480 with no in-game graphics options. This is the original 2000 Typing of the Dead based on House of the Dead 2 and is NOT Typing of the Dead: Overkill (Steam App 246580), a separate modern release."
+
+[about]
+developer = "Smilebit"
+publisher = "Sega"
+released  = "2000"
+genre     = "Typing Game, Rail Shooter"
+modes     = "Single-player, Local 2-player"
+summary   = "The Typing of the Dead is a unique educational-action spinoff of Sega's House of the Dead 2, originally released for Dreamcast and PC in 2000. Instead of shooting zombies with a light gun, players must type the words and phrases that appear on screen to defeat enemies before they attack. Developed by Smilebit, the game uses the same levels and story as House of the Dead 2 but replaces all shooting mechanics with typing challenges of escalating difficulty. This is the original 2000 release, not the separate modern sequel Typing of the Dead: Overkill (App 246580)."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — The Typing of the Dead"
+url   = "https://www.pcgamingwiki.com/wiki/The_Typing_of_the_Dead"
+
+[[links.guides]]
+title = "WineHQ AppDB — The Typing of the Dead"
+url   = "https://appdb.winehq.org/objectManager.php?sClass=application&iId=4530"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = "This original 2000 release never shipped on Steam, so there is no Steam appid and no ProtonDB rating — the tier here reflects the WineHQ AppDB community reports, which note keyboard input not functioning normally under Wine. For a game whose entire mechanic is typing, that is a potential showstopper and must be confirmed on current Proton before trusting it. You must supply your own legally obtained copy; the retail version uses a CD/serial key and expects the disc in the drive, so install from your own media first. The installed Western executable is Tod_e.exe (todus.exe from the wizard install); run setup.bat once if your copy needs it to unpack audio. A physical USB keyboard is required — the Steam Deck on-screen keyboard is far too slow for the core typing mechanic — so dock the Deck and use a full keyboard. The game is locked to 640x480 with no graphics options. This is the original Typing of the Dead (2000), NOT Typing of the Dead: Overkill (Steam App 246580), which is a separate modern game on Steam."

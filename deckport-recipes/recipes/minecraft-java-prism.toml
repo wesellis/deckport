@@ -1,0 +1,60 @@
+[game]
+title       = "Minecraft Java Edition (via Prism Launcher)"
+slug        = "minecraft-java-prism"
+aliases     = ["Minecraft Prism Launcher", "Minecraft Java Deck", "Prism Launcher Minecraft"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "prismlauncher"   # Flatpak: org.prismlauncher.PrismLauncher via Flathub; install via Discover
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[about]
+developer = "Prism Launcher team (open source launcher); Minecraft by Mojang/Microsoft"
+publisher = "Prism Launcher team (open source); Minecraft published by Mojang/Microsoft"
+released  = "Minecraft Java 2009 (full release 2011); Prism Launcher actively maintained 2022-2026"
+genre     = "Sandbox survival"
+modes     = "Single-player, Multiplayer"
+summary   = """
+**Prism Launcher** is a free open-source **Minecraft Java Edition** launcher with an official Steam Deck download page at prismlauncher.org/download/steam-deck/. Install via Discover (Flathub: `org.prismlauncher.PrismLauncher`), add your Microsoft/Mojang account, create a Minecraft instance, and install the **Controlify** mod for Steam Deck controller support.
+
+Supports all **mod loaders** (Fabric, Forge, Quilt, NeoForge) and the full range of modpacks. The official Deck download page covers install/artwork; controller setup is documented on the separate **Controller Support** wiki page (Controlify is recommended on Fabric/Quilt for Minecraft 1.19.4+). **Fabric + Sodium** gives the best performance on Deck hardware."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "prismlauncher.org: Official Steam Deck setup guide"
+url   = "https://prismlauncher.org/download/steam-deck/"
+
+[[links.guides]]
+title = "prismlauncher.org: Controller Support (Controlify) wiki"
+url   = "https://prismlauncher.org/wiki/getting-started/controller-support/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Prism Launcher itself is free and open source; **Minecraft Java Edition requires a paid Microsoft/Mojang account** (~$30 one-time purchase).
+
+**Install:** install Prism via Discover/Flathub (`org.prismlauncher.PrismLauncher`). After first launch, add your Microsoft account, create an instance, then install the `Controlify` mod for controller support.
+
+**Performance:** `Fabric + Sodium` recommended for best Deck performance.
+
+**Mods:** full modpack support available."""

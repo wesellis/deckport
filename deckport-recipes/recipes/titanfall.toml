@@ -1,0 +1,74 @@
+[game]
+title       = "Titanfall"
+slug        = "titanfall"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "1454890"
+sgdb_id     = ""
+
+[launch]
+binary         = "Titanfall.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 1454890`), removed from sale in Dec 2021 — passes the not-for-sale rule.
+
+**Online-only:** Original Titanfall is online-multiplayer-only; EA/Respawn kept the official servers online for existing owners.
+
+**Proton:** ProtonDB rates it gold and community reports confirm it runs on Linux/Proton/Deck. **Use `GE-Proton`** — it smooths over the EA App/Origin launcher and in-game overlay handshake that can otherwise block boot or login on stock Proton.
+
+**Binary:** The binary is `Titanfall.exe` in the install's root.
+
+**Controller:** Native controller support (console-origin FPS, full gamepad), so no Steam Input hack is needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Respawn Entertainment"
+publisher = "Electronic Arts"
+released  = "2014"
+genre     = "First-person shooter (mecha / arena multiplayer)"
+modes     = "Online multiplayer only"
+summary   = "**Titanfall** is the debut title from Respawn Entertainment, the studio founded by the creators of the original Call of Duty. Built on a heavily modified **Source engine**, it pairs fast **wall-running** pilot combat with summonable mech-like **Titans** across team-based online matches. Critically acclaimed at its 2014 launch, it had no single-player campaign and was online-multiplayer-only. EA and Respawn **delisted** it from storefronts in December 2021 after persistent DDoS and cheating problems, but kept the official servers running for existing owners."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Titanfall reports (tier + Deck/Proton notes)"
+url   = "https://www.protondb.com/app/1454890"
+
+[[links.guides]]
+title = "ValveSoftware/Proton — Titanfall (1454890) compatibility issue"
+url   = "https://github.com/ValveSoftware/Proton/issues/4410"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Online-only:** this is an online-multiplayer-only game with no offline/campaign mode — **playability depends entirely on the official servers being up**, and they have historically suffered DDoS/cheater outages, so the experience can be hit-or-miss.
+
+**DRM:** Delisted Dec 2021 (no longer for sale).
+
+**Proton:** ProtonDB gold; community reports confirm it runs on Deck/Proton via `GE-Proton`.
+
+**Login:** goes through the EA App/Origin layer; `GE-Proton` handles the overlay/launcher handshake that stock Proton can stumble on.
+
+**Controller:** Full native gamepad support, no Steam Input layout required.
+"""

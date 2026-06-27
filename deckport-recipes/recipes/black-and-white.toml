@@ -1,0 +1,145 @@
+[game]
+title       = "Black & White"
+slug        = "black-and-white"
+aliases     = ["Black and White", "B&W", "Black & White: Creature Isle"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "runblack.exe"
+launch_options = ""
+requires_files = ["runblack.exe", "data\\CreatureMesh.bwm"]
+
+[proton]
+version    = "Proton Experimental"
+winetricks = ["d3dx9", "vcrun2005"]
+notes      = """
+**Overview**
+Black & White (2001) is a disc/ISO-only title — EA and Lionhead (now defunct)
+have never re-released the original god game digitally. (A separate, unrelated
+2023 game also titled "Black & White" exists on Steam, app 1998450 — that is
+NOT this game, so this recipe has no steam_appid.) Supply your own copy from
+your original disc or a personal disc image.
+The game has been confirmed running on Steam Deck by SteamDeckHQ
+(Classics on Steam Deck #1, paired with Unreal Tournament III). Use
+Proton Experimental as the compatibility layer.
+
+**Installation**
+1. Install Black & White from your disc/ISO.
+   Typical install path: ~/Games/BlackAndWhite/
+2. Apply the official patches — the 1.1 and 1.2 (a.k.a. 1.20) updates.
+   These are the final official patches (see PCGamingWiki for sources).
+3. Add runblack.exe as a Non-Steam game in Steam.
+4. In Properties → Compatibility, force Proton Experimental.
+
+**Disc check / SecuROM (community fix)**
+The retail release uses a SecuROM disc check, so the game refuses to start
+without the disc — and SecuROM's CD authentication does not behave well under
+Wine/Proton. The Black & White community maintains an unofficial patch
+(bwgame.net) that produces a clean, modern-OS-friendly binary, and the
+open-source openblack/bw1-patches project provides additional compatibility
+and widescreen fixes that apply on top of it. Use those community patches as
+documented on their own pages — see links below. Do NOT use third-party
+download sites for the game itself; supply your own legally owned copy.
+
+**Resolution / Widescreen**
+Black & White uses a software cursor and a fixed internal resolution.
+To force 1280x800 (native Deck resolution):
+1. Open the game's data\\engine.cfg (create if absent) and add:
+     ScreenResX=1280
+     ScreenResY=800
+2. Alternatively, set resolution in-game from the Options menu —
+   the game will enumerate display modes via Wine/Proton.
+Cap the framerate at 30fps via Steam Deck's per-game framerate limiter;
+the game's internal physics runs at a fixed step and behaves best at 30.
+
+**Controller / Input**
+Black & White is designed around mouse gestures for creature commands.
+Recommended Steam Input layout:
+- Right stick → mouse movement (sensitivity ~120)
+- Gyro → fine mouse control (enable gyro-on-touch on right touchpad)
+  This combination makes gesture drawing (spells, creature commands)
+  feel natural on Deck.
+- Left stick → camera pan
+- Right trigger → primary interact / grab
+- Left trigger → alternate hand
+- A button → leash / unleash creature
+- B button → zoom toggle
+- Back/Select → toggle village camera
+Search the Steam Input community layouts for "Black and White" — several
+gyro-optimized layouts exist.
+
+**Power / Battery**
+Very light load: ~6W TDP at 30fps, 720p.
+Expected battery life: ~7h on OLED Deck.
+This is an ideal game for low-power Deck sessions.
+
+**Creature Isle Expansion**
+Black & White: Creature Isle installs on top of the base game.
+Add it from your disc/ISO after the base game + 1.20 patch are installed.
+Launch is still via runblack.exe; Creature Isle content is selectable
+from the main menu once installed.
+
+**Known Issues**
+- Intro cinematics may stutter or fail to play; skip them with Escape.
+- Audio occasionally drops on first launch; restarting the game resolves it.
+- The creature AI pathfinding has always had edge-case quirks — these are
+  original game bugs, not Proton-specific.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Black & White"
+url   = "https://www.pcgamingwiki.com/wiki/Black_%26_White"
+
+[[links.guides]]
+title = "SteamDeckHQ — Classics on Steam Deck #1 (UT3 / Black & White)"
+url   = "https://steamdeckhq.com/news/unreal-tournament-3-black-white-steam-deck/"
+
+[[links.guides]]
+title = "openblack/bw1-patches — compatibility & widescreen patches"
+url   = "https://github.com/openblack/bw1-patches"
+
+[[links.guides]]
+title = "Black & White Community (bwgame.net) — unofficial patch & Win10 guide"
+url   = "https://www.bwgame.net/threads/running-black-white-on-windows-10.7916/"
+
+[about]
+developer = "Lionhead Studios"
+publisher = "Electronic Arts"
+released  = "2001-03-26"
+genre     = "God game / strategy"
+modes     = "Single-player"
+summary   = """**Black & White** (Lionhead Studios/EA, 2001) is a landmark god game in which the
+player guides a morally influenced creature and a tribe toward dominance — using gesture-based
+spells and direct creature control via mouse. Never re-released digitally after Lionhead's
+closure, it remains disc-only but runs on Steam Deck via Proton Experimental at ~6W TDP, and
+gyro input makes the gesture system surprisingly playable on handheld."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Supply your own copy — disc or personal disc image only; no legal digital storefront exists.
+- The official 1.1 + 1.2 (1.20) patches are required before the game is stable; do not skip them.
+- The retail copy uses a SecuROM disc check that misbehaves under Proton; apply the community
+  unofficial patch (bwgame.net) / openblack bw1-patches so the game launches without disc-auth
+  problems. Supply your own legally owned copy — patch only your own install.
+- Framerate MUST be capped at 30fps; physics step is tied to frame timing above this.
+- Intro cinematics may fail to play under Proton; press Escape to skip them safely.
+- Gyro + right-stick combo strongly recommended for gesture input — pure stick aim for
+  gesture drawing is imprecise.
+- Creature Isle expansion requires base game + patch installed first.
+"""

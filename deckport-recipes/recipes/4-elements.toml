@@ -1,0 +1,71 @@
+[game]
+title       = "4 Elements"
+slug        = "4-elements"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "47000"
+sgdb_id     = ""
+
+[about]
+developer = "Playrix Entertainment"
+publisher = "Playrix Entertainment"
+released  = "2008"
+genre     = "Match-3 / hidden-object puzzle"
+modes     = "Single-player"
+summary   = """
+**4 Elements** is a 2008 casual **puzzle-adventure** from **Playrix** that blends **match-3** boards with **hidden-object** and spot-the-difference scenes wrapped in a light fantasy story. Players restore the magic of a kingdom by unlocking four ancient books of magic across more than 60 levels, guided by a forest fairy, clearing chains of tiles to channel energy through **labyrinth-style boards**.
+
+It was one of Playrix's signature casual hits of the era and helped establish the studio before its later free-to-play success. It was **delisted from Steam in 2018**."""
+
+[launch]
+binary         = "4 Elements.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `47000`, Playrix, 2008; pulled from Steam `2018-07-16`). A 2008 casual match-3 / hidden-object title.
+
+**Proton:** ProtonDB rates it gold and the exe runs under Proton. `proton_experimental` works; fall back to a recent `GE-Proton` if it crashes on launch.
+
+**Install:** Binary is `4 Elements.exe` (note the space). This is a light DirectX 9 game, so it should run well on Deck's AMD GPU.
+
+**Display:** If you see launch crashes or fullscreen/black-screen issues on this old title, **force windowed mode and let Gamescope upscale** (older builds historically needed a windowing wrapper).
+
+**Files:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports - 4 Elements (appid 47000)"
+url   = "https://www.protondb.com/app/47000"
+
+[[links.guides]]
+title = "Delisted Games - 4 Elements (delisting history)"
+url   = "https://delistedgames.com/4-elements/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Confirmed delisted from Steam (`2018-07-16`); not for sale.
+
+**Proton:** ProtonDB gold for this old DirectX 9 casual title — community reports it running under Proton, so on Deck set status `needs-test` pending a hands-on run.
+
+**Controls:** Pure mouse point-and-click match-3 with **no native gamepad support** — playable on Deck via a Steam Input layout (right trackpad as mouse + a button bound to left-click) or the Deck touchscreen, both of which fit a match-3 well.
+
+**Verification:** Per-recipe Deck verification still pending."""

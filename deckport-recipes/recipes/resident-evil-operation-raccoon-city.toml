@@ -1,0 +1,75 @@
+[game]
+title       = "Resident Evil: Operation Raccoon City"
+slug        = "resident-evil-operation-raccoon-city"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "209100"
+sgdb_id     = ""
+
+[launch]
+binary         = "RaccoonCity.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** Use `GE-Proton7-4` (or `Proton 7.0-4`). Newer Proton/experimental tends to break the Games for Windows Live (GFWL) layer this game depends on.
+
+**Binary:** `RaccoonCity.exe`.
+
+**GFWL:** Launch once to trigger the DirectX + GFWL installers, **quit before GFWL finishes**, then provide a working `xlive.dll` and edit `~/.local/share/Steam/steamapps/compatdata/209100/pfx/system.reg` per the community GFWL guides.
+
+**Online:** Single-player works; the GFWL multiplayer servers are gone.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files. Delisted Steam game (appid 209100), ProtonDB silver."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Single-Player Guide for Steam Deck (Steam Community)"
+url   = "https://steamcommunity.com/app/209100/discussions/0/3805026824432337316/"
+
+[[links.guides]]
+title = "GFWL on Steam Deck? (Steam Community discussion)"
+url   = "https://steamcommunity.com/app/209100/discussions/0/3460472919075702821/"
+
+[[links.guides]]
+title = "Enable Native Controller and Steam Deck (Steam Community guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3146546754"
+
+[about]
+developer = "Slant Six Games / Capcom"
+publisher = "Capcom"
+released  = "2012"
+genre     = "Squad-based third-person shooter"
+modes     = "Single-player, online co-op campaign (up to 4 players), competitive multiplayer"
+summary   = """
+**Resident Evil: Operation Raccoon City** is a spin-off in the **Resident Evil** series set during the 1998 Raccoon City outbreak, in which the player controls a squad of **Umbrella Security Service** operatives sent to cover up the company's involvement. Co-developed by Slant Six Games and Capcom, it shifts the franchise toward **squad-based third-person shooting** rather than survival horror.
+
+It received mixed-to-negative reviews, with critics faulting weak AI and design while noting the **co-op** could be fun. The PC version was delisted from Steam in November 2021 because of its dependence on the discontinued **Games for Windows Live** backend."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Proton:** Delisted Steam game (appid 209100), ProtonDB silver — community reports it running on Deck/Proton with `GE-Proton7-4`.
+
+**GFWL:** Requires a Games for Windows Live (GFWL) workaround — install GFWL components and supply a working `xlive.dll`, then patch the prefix `system.reg` (see community GFWL guides).
+
+**Online:** Online/co-op is dead — the GFWL multiplayer servers are gone, so **single-player only**.
+
+**Controller:** The game has built-in XInput gamepad support, and community reports say the controller works natively on Deck under `GE-Proton7-4` once you enable the in-game gamepad option. If it doesn't bind correctly, fall back to a Steam Input layout that maps the gamepad to the keyboard controls."""

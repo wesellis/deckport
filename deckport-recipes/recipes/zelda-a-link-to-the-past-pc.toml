@@ -1,0 +1,66 @@
+[game]
+title       = "The Legend of Zelda: A Link to the Past (PC Port)"
+slug        = "zelda-a-link-to-the-past-pc"
+aliases     = ["ALTTP PC Port", "zelda3 snesrev", "Link to the Past Decompilation"]
+type        = "native"        # decompilation-based native Linux binary — no Proton needed
+engine      = "other"         # built from source via snesrev/zelda3 (plain Makefile + SDL2)
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "zelda3"   # native Linux binary — must be built from source
+launch_options = ""
+requires_files = ["A Link to the Past USA SNES ROM, renamed to zelda3.sfc (must match the SHA256 the project expects) — used for asset extraction only"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[about]
+developer = "snesrev and contributors (github.com/snesrev/zelda3)"
+publisher = "Independently released (decompilation fan port)"
+released  = "1991 (SNES); PC decompilation port active 2022-2026"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = """
+A **decompilation**-based native PC port of **The Legend of Zelda: A Link to the Past** for SNES, produced by the snesrev GitHub organization. The `zelda3` project reverse-engineers the original SNES binary into annotated **C** source that compiles and runs natively on Linux. It supports **MSU-1** CD-quality audio, **widescreen** patches, and frame rate improvements over the original SNES hardware.
+
+Requires building from source with a plain `Makefile` (`make -j$(nproc)`) and SDL2, plus a valid USA SNES ROM (renamed `zelda3.sfc`) for the one-time asset extraction step. The snesrev organization also maintains decompilation ports of **Super Mario World** and **Super Metroid** using the same approach."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "snesrev/zelda3 — source, build instructions and releases"
+url   = "https://github.com/snesrev/zelda3"
+
+[[links.guides]]
+title = "zelda3 Wiki — Building (incl. Steam Deck / Linux)"
+url   = "https://github.com/snesrev/zelda3/wiki/3.-Building"
+
+[[links.guides]]
+title = "EmuDeck — Third-party emulation: decompilations on Steam Deck"
+url   = "https://emudeck.github.io/community-creations/steamos/third-party-emulation/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** You must supply a USA ALTTP SNES ROM (v1.0) for asset extraction — **deckport links nothing**.
+
+**Build required:** A tagged **v0.3** release exists on GitHub, but it is Windows-oriented; for Linux / Steam Deck the practical path is to compile `zelda3` yourself from github.com/snesrev/zelda3.
+
+**Steam Deck:** The recommended path is to open a **Distrobox** Ubuntu container in Desktop Mode, install build dependencies (`make`, `gcc`/`clang`, and the SDL2 dev headers — `libsdl2-dev`), clone the repo, run the asset-extraction step against your `zelda3.sfc` ROM, then `make -j$(nproc)`. The project uses a plain Makefile (no cmake).
+
+**Install:** After a successful build, add the `zelda3` binary as a non-Steam game.
+
+**Audio:** **MSU-1** audio packs are community-made and provide CD-quality music; download and configure them separately."""

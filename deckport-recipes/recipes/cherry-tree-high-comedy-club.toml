@@ -1,0 +1,76 @@
+[game]
+title       = "Cherry Tree High Comedy Club"
+slug        = "cherry-tree-high-comedy-club"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "214610"
+sgdb_id     = ""
+
+[launch]
+binary         = "Game.exe"   # RPG Maker XP default launcher; confirm the exact filename in your install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `214610`) — Western/English release pulled from Steam July 2022 when publisher **Nyu Media** shut down; owners keep library access.
+
+**DRM:** Lightweight singleplayer comedy/dating-sim visual novel with **no DRM** and no online component, so nothing server-side to break.
+
+**Proton:** Runs cleanly under Proton (`GE-Proton` or stock `proton_experimental` both fine); no GFWL/SecuROM, no `winetricks` needed.
+
+**Engine:** Despite looking like a hand-drawn visual novel, the game is a total conversion built on **RPG Maker XP** (RGSS), so it ships the standard `Game.exe` launcher alongside `.rgssad`/`.rgss*` archives.
+
+**Install:** Launch executable is the RPG Maker XP default `Game.exe` — **confirm the exact filename from your install folder**.
+
+**Display:** Runs at a fixed window/resolution; the engine does not do true widescreen, so expect pillarboxing or letterboxing on the Deck's 16:10 screen (cosmetic only).
+
+**deckport** only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "773 (Nanamebashi)"
+publisher = "Capcom (Japan); Nyu Media (English release)"
+released  = "2010 (Japan); 2012 (English)"
+genre     = "Social simulation adventure / visual novel"
+modes     = "Single-player"
+summary   = "**Cherry Tree High Comedy Club** is a Japanese **social-simulation adventure** game in which 17-year-old Mairu Hibisu sets out to recruit fellow students into her fledgling school comedy club before a deadline. Players manage a **daily schedule**, build up conversation topics, and befriend a roster of classmates, blending **visual-novel** storytelling with light stat-building. Originally a **doujin** title by the developer **773**, it was published in Japan by **Capcom** in 2010 and translated into English by **Nyu Media** in 2012. It was removed from sale in July 2022 after Nyu Media ceased operations, though existing owners retain access to their copies."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 214610)"
+url   = "https://www.protondb.com/app/214610"
+
+[[links.guides]]
+title = "Steam community hub"
+url   = "https://steamcommunity.com/app/214610"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** Not yet hands-on verified on a Deck. **deckport** links nothing.
+
+**Delisted:** Nyu Media closed; removed from sale July 2022 — passes the not-for-sale rule.
+
+**DRM:** Singleplayer visual novel, no DRM, no servers — should just work under Proton.
+
+**Install:** Confirm the real `.exe` from your install (RPG Maker XP default = `Game.exe`).
+
+**Controller:** Steam lists only Partial Controller Support, but it is a click-through VN, so apply a Steam Input keyboard/mouse layout (D-pad + A/B mapped to mouse + Enter) for full Deck playability.
+
+**Display:** No true widescreen — the fixed-resolution window pillar/letterboxes on the Deck (cosmetic).
+"""

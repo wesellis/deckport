@@ -1,0 +1,81 @@
+[game]
+title       = "Deep Black: Reloaded"
+slug        = "deep-black-reloaded"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "204760"
+sgdb_id     = ""
+
+[launch]
+binary         = "DeepBlack.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (`appid 204760`, removed Nov 2022). Third-person cover shooter; ProtonDB tier gold.
+
+**Proton:** Use `GE-Proton` (handles the Games for Windows LIVE dependency better than stock Proton).
+
+**GFWL:** **KEY FIX** — the game ships with GFWL and **will crash/hang trying to reach the dead online check service** (`biart7.com`). Community fix (most reliable first): (1) add a firewall/outbound rule blocking `DeepBlack.exe` network access; this alone is what stops the recurring "resources corrupted" crash. (2) Optionally also comment out the online-check lines in `globals/settings.lua` by adding a leading `--`:
+```
+--NetFileURL = "http://www.biart7.com/steamok.txt";
+--NetFileSkipIfNoConnection = 1;
+```
+Note: editing `settings.lua` alone is the weaker fix — by itself the game can still throw a "files corrupted" error after a few minutes, so prefer the firewall block.
+
+**Controller:** It is a Games for Windows title so it has **native Xbox 360 gamepad support** — the Deck's controller works in-game with no extra layout needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Biart"
+publisher = "505 Games"
+released  = "2012"
+genre     = "Third-person cover shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Deep Black: Reloaded** is a **third-person cover shooter** from Russian studio Biart, released on PC in 2012 by 505 Games. Its hook is its setting: alongside conventional ground firefights, large stretches of the game take place **underwater**, with free-swimming traversal and submerged combat. Widely described as a **Gears of War-style clone**, it was poorly received by critics and players for weak animation, story, and AI, though the underwater controls drew some praise. It was later **delisted from Steam** (appid 204760) in November 2022."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "FIX FOR DEEP BLACK RELOADED (firewall + settings.lua) — Steam Discussions"
+url   = "https://steamcommunity.com/app/204760/discussions/0/792924952651389438/"
+
+[[links.guides]]
+title = "Deep Black: Reloaded — ProtonDB reports"
+url   = "https://www.protondb.com/app/204760"
+
+[[links.guides]]
+title = "Deep Black: Reloaded — PCGamingWiki (fixes & GFWL notes)"
+url   = "https://www.pcgamingwiki.com/wiki/Deep_Black:_Reloaded"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted Steam game (`appid 204760`, removed Nov 2022); ProtonDB gold. Binary is `DeepBlack.exe`.
+
+**GFWL:** Needs the GFWL workaround: block `DeepBlack.exe` outbound in the firewall (most reliable), and optionally comment out the `NetFileURL` / `NetFileSkipIfNoConnection` lines in `globals/settings.lua` (add a leading `--`), **otherwise it crashes on the dead online check (`biart7.com`)**. `GE-Proton` recommended.
+
+**Controller:** Native Xbox 360 controller support, so the Deck pad works without a custom layout.
+
+**Offline:** The campaign is single-player and fully playable offline once GFWL is bypassed; any online/multiplayer features are dead.
+
+**Status:** Not independently verified on a Deck yet.
+"""

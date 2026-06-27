@@ -1,0 +1,94 @@
+[game]
+title       = "Impossible Creatures"
+slug        = "impossible-creatures"
+aliases     = ["Impossible Creatures Steam Edition"]
+type        = "proton"
+engine      = "other"
+steam_appid = "324680"
+sgdb_id     = ""
+
+[launch]
+binary         = "IC.exe"
+launch_options = "-moddev %command%"
+requires_files = []
+
+[proton]
+version    = "Proton 9.0"
+winetricks = []
+notes      = """
+**Overview:** Impossible Creatures is a 2003 real-time strategy game by **Relic Entertainment**, published by Microsoft. Players combine DNA from two real-world animals to create custom hybrid creatures, then build armies and battle across a remote island chain. The Steam Edition (app 324680) added Steam Workshop support; it was later delisted from the Steam store, so a license must already be owned to install it.
+
+**ProtonDB status:** ProtonDB lists the game as **Platinum** (recently trending Gold) across ~13 reports. It has not been officially Steam Deck Verified, so this recipe stays **needs-test** — treat the settings below as a starting point, not a confirmed configuration.
+
+**Executable:** The game launches from `IC.exe` in the install root (e.g. `steamapps/common/Impossible Creatures/IC.exe`). Note that `MissionEditor.exe` in the same folder is the separate map editor, not the game.
+
+**Proton version:** Reports are positive on recent stable Proton (Proton 9.0 or the latest stable release is a reasonable default, set under *Steam → Properties → Compatibility*). Older/Experimental builds have been less reliable for some users, so prefer a current stable Proton if you hit problems.
+
+**Fullscreen vs. windowed:** Several users report the game running poorly or not animating in fullscreen under Proton and needing **windowed mode** instead (toggle in-game options, or Alt+Enter). If you get a black/garbled menu or very low framerate at boot, switch to windowed mode first. Some reports also note DXVK helps; on modern Proton DXVK is used by default.
+
+**Slow startup fix:** By default the game re-downloads every subscribed Steam Workshop item on each launch, which can make boot take a very long time. The `-moddev` launch option (already set in this recipe) skips that re-download and starts the game much faster. Remove it if you specifically want Workshop content to update on launch. If it still hangs or crashes at boot, check `warnings.log` in the install root and verify the game files.
+
+**Steam Workshop:** Workshop subscriptions function through Steam on Deck. Subscribe to community creature packs, campaign mods, and skirmish maps from the game's Workshop page; downloaded content appears in the in-game mod browser. (With `-moddev` set, run the game once without it to fetch newly subscribed items.)
+
+**Controls:** This is a mouse-and-keyboard RTS with no native controller support. Use the **right trackpad as a mouse** via Steam Input; the community "mouse + keyboard" Deck layout works well, and community per-game controller layouts may be available in Steam Input's community templates. Plan for some on-screen-keyboard use for hotkeys.
+
+**Display:** Set the resolution in the in-game graphics options. The Deck's native 1280×800 should be selectable; if it is not listed, pick the nearest 16:10 option or run windowed.
+
+**Saves:** Saves live inside the Proton prefix under the Windows user `Documents` path and persist across sessions normally.
+"""
+
+[about]
+developer = "Relic Entertainment"
+publisher = "Microsoft Game Studios"
+released  = "2003"
+genre     = "Real-time strategy"
+modes     = "Single-player, Multiplayer"
+summary   = "**Impossible Creatures** is a 2003 RTS by **Relic Entertainment** in which players fuse DNA from real animals to build entirely custom creature armies — combine a gorilla with a scorpion, a shark with a hawk, and deploy them in tactical island combat. The **Steam Edition** (app 324680) added Steam Workshop support for community creature packs and maps and was later delisted from the store. ProtonDB rates it Platinum (trending Gold); on Steam Deck it has not been officially Verified, so it is still untested in this recipe — windowed mode and the `-moddev` launch option are the main things to try."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Impossible Creatures on Steam"
+url   = "https://store.steampowered.com/app/324680/Impossible_Creatures_Steam_Edition/"
+
+[[links.guides]]
+title = "ProtonDB – Impossible Creatures"
+url   = "https://www.protondb.com/app/324680"
+
+[[links.guides]]
+title = "PCGamingWiki – Impossible Creatures"
+url   = "https://www.pcgamingwiki.com/wiki/Impossible_Creatures"
+
+[[links.guides]]
+title = "Proton issue tracker – Impossible Creatures (324680)"
+url   = "https://github.com/ValveSoftware/Proton/issues/1055"
+
+[[links.guides]]
+title = "Steam Community – Impossible Creatures modding & launch options"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=735413158"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Untested on this Deck:** ProtonDB is Platinum (trending Gold), but the game is not Steam Deck Verified and this recipe has not been hands-on tested — status stays needs-test.
+
+**Delisted title:** The Steam Edition was removed from the store. You must already own it on your Steam account to install it.
+
+**Fullscreen can misbehave:** Some users see very low framerate or a non-animating/black menu in fullscreen under Proton and have to use **windowed mode** (in-game option or Alt+Enter). Try windowed first if performance is bad.
+
+**Slow startup:** The game re-downloads subscribed Workshop content on every launch. The `-moddev` launch option (set in this recipe) skips that for fast boots; drop it temporarily when you want Workshop items to update.
+
+**Mouse-centric UI:** No native controller support — it is a keyboard-and-mouse RTS. Use the right trackpad as a mouse via Steam Input and expect some on-screen-keyboard use.
+
+**Resolution:** Set the resolution in-game; choose 1280×800 (or the nearest 16:10 option) for the native Deck display.
+"""

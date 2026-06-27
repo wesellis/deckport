@@ -1,0 +1,76 @@
+[game]
+title       = "Wings! Remastered Edition"
+slug        = "wings-remastered-edition"
+aliases     = []
+type        = "proton"
+engine      = "unity"
+steam_appid = "320840"
+sgdb_id     = ""
+
+[about]
+developer = "Cinemaware"
+publisher = "Kalypso Media"
+released  = "2014"
+genre     = "Action / vehicular combat with light role-playing elements"
+modes     = "Single-player"
+summary   = "**Wings! Remastered Edition** is a **Unity** remake of Cinemaware's 1990 Amiga classic **Wings**, putting the player in the cockpit of a **WWI fighter squadron** across a campaign of dogfights, strafing runs and bombing missions interspersed with **diary-style narrative**. It faithfully recreates the original's structure with modernized 3D graphics but few mechanical changes, drawing very positive player reviews while critics found the dated design largely unaltered.\n\nThe game was pulled from sale when Cinemaware/Kalypso **delisted the broader Cinemaware Anthology**, leaving it unavailable on Steam."
+
+[launch]
+binary         = "Wings.exe"   # Unity game; confirm the .exe in your install root (single Unity exe)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Delisted Cinemaware Steam game (`appid 320840`), `Unity` engine, single-player WWI dogfighting. Runs under Proton — ProtonDB silver.
+
+**Proton:** Use `GE-Proton` (`proton_experimental` also works); pick this per-game in the Steam compatibility tab.
+
+**Display:** The game does **NOT support modern/widescreen resolutions natively** and **can crash on launch on modern hardware** (a long-standing complaint in the Steam discussions). There is no single packaged community fix — players have generally relied on the in-game options plus Unity launch flags and (on Windows) compatibility-mode tweaks. Under Proton, try forcing a borderless/windowed mode or a supported resolution via the Unity arg `-screen-fullscreen 0` / `-screen-width 1280 -screen-height 720` in launch options if it won't start cleanly at the Deck's native resolution.
+
+**Controller:** Steam lists Partial Controller Support — gamepad flies the plane but a keyboard layer is still needed for text entry (e.g. typing your pilot name on the high-score screen), so bind a Steam Input layout with an on-screen-keyboard toggle to cover those moments.
+
+**Install:** deckport only configures the prefix; it never bundles the game files.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Wings! Remastered Edition (appid 320840)"
+url   = "https://www.protondb.com/app/320840"
+
+[[links.guides]]
+title = "PCGamingWiki - Wings! Remastered Edition"
+url   = "https://www.pcgamingwiki.com/wiki/Wings!_Remastered_Edition"
+
+[[links.guides]]
+title = "Steam Community Discussions - Wings! Remastered Edition (controller / launch help)"
+url   = "https://steamcommunity.com/app/320840/discussions/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Pulled from Steam on `2023-12-22`, when the whole **Cinemaware Anthology** was delisted (the Cinemaware library rights moved from Starbreeze to Nordcurrent in early 2024); not currently for sale. Owners who bought it before then keep it in their library.
+
+**Needs-test:** ProtonDB silver — community reports it running on Linux/Proton, but **no one has confirmed THIS recipe on a physical Deck yet**.
+
+**Display:** The game ships pre-widescreen and is crash-prone on modern systems — expect to fiddle with resolution/windowed mode (Unity `-screen-*` launch flags) to get a clean start; there is no one-click packaged fix.
+
+**Controller:** Gamepad axes were buggy at launch (a 2014 patch added joystick/throttle axes but X360 sticks could drift up-left), and a keyboard is still required for name entry, so use a Steam Input layout with an OSK toggle.
+
+**Single-player:** Only — no servers to worry about.
+"""

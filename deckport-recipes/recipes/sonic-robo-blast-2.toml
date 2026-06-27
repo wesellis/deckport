@@ -1,0 +1,89 @@
+[game]
+title       = "Sonic Robo Blast 2"
+slug        = "sonic-robo-blast-2"
+aliases     = ["SRB2", "srb2"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5248291"
+
+[launch]
+binary         = "srb2"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Platform:** Native Linux — no Proton required.
+
+**Install:** The easiest Deck install path is the official Flatpak (`org.srb2.SRB2`) via Discover in Desktop Mode — **no compilation needed**.
+
+**Alternative:** Download the Linux package from `srb2.org`/build it, then add the SDL2 ELF binary as a non-Steam game. The compiled Linux executable is usually named `lsdl2srb2`; some system packages install it simply as `srb2`.
+
+**Controller:** Gamepad support is built in, but on the Deck the defaults are awkward — the right stick is often unusable for the camera and the L2 trigger can make the camera pan-spin. Plan to remap the look axes (Options → Setup Controls → Gamepad / Joystick Options), or run it through Steam and use a Steam Input layout instead.
+
+**Data:** No owned data files required — all game assets are bundled in the free download.
+"""
+
+[about]
+developer = "Sonic Team Junior"
+publisher = "Sonic Team Junior (free fan project)"
+released  = "1998 (first public release); v2.2 released 2019, ongoing updates"
+genre     = "3D platformer, fan game"
+modes     = "Single-player, Online multiplayer"
+summary   = """
+**Sonic Robo Blast 2** is a free, fan-made **3D Sonic the Hedgehog** platformer built on a heavily modified fork of **Doom Legacy**, developed entirely by volunteers under the banner **Sonic Team Junior**. Development began in 1998 and the game has been continuously updated ever since, reaching version 2.2 in 2019.
+
+It features three playable characters — **Sonic, Tails, and Knuckles** — each with distinct abilities, across a full campaign of original zones. A thriving **modding community** produces custom characters, levels, and game modes. The game also includes a built-in **multiplayer server browser** supporting co-op and competitive modes.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5248291"
+
+[[links.guides]]
+title = "Official SRB2 Download Page"
+url   = "https://www.srb2.org/download/"
+
+[[links.guides]]
+title = "SRB2 Flatpak on Flathub"
+url   = "https://flathub.org/en/apps/org.srb2.SRB2"
+
+[[links.guides]]
+title = "srb2bld — AppImage/Flatpak build tool (GitHub)"
+url   = "https://github.com/Bijman/srb2bld"
+
+[[links.guides]]
+title = "SRB2 on GamingOnLinux"
+url   = "https://www.gamingonlinux.com/itemdb/28008/"
+
+[[links.guides]]
+title = "SRB2 Wiki — Controls (gamepad/axis remap)"
+url   = "https://wiki.srb2.org/wiki/Controls"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free fan game:** No purchase needed.
+
+**Install:** Use Discover (Flatpak `org.srb2.SRB2`) for the simplest Deck experience.
+
+**Data path:** Flatpak user data lives at `~/.var/app/org.srb2.SRB2/.srb2/`.
+
+**Non-Steam:** If adding from a direct download/build, point Steam to the SDL2 binary (`lsdl2srb2`, or `srb2` on some packaged installs).
+
+**Controller:** Gamepad is detected, but expect to remap the camera/look axes on the Deck — the right stick is frequently unusable for the camera by default and the L2 trigger can trigger a camera pan-spin. See the SRB2 Wiki Controls guide, or use a Steam Input layout.
+
+**Affiliation:** No SEGA/Sonic Team affiliation.
+"""

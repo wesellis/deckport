@@ -1,0 +1,75 @@
+[game]
+title       = "Rollercoaster Tycoon 3: Platinum!"
+slug        = "rollercoaster-tycoon-3-platinum"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "2700"
+sgdb_id     = ""
+
+[launch]
+binary         = "RCT3plus.exe"   # Platinum uses RCT3plus.exe (Complete Edition uses RCT3.exe)
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 2700`, pulled May 2018 over the Atari/Frontier royalty dispute). The Platinum binary is `RCT3plus.exe` (the still-sold Complete Edition is a different appid, `1368820`, and uses `RCT3.exe`).
+
+**Proton:** ProtonDB tier **gold**: runs well on Linux/Proton with no DRM blockers. Use `GE-Proton` or `proton_experimental`.
+
+**Fix:** Known gotcha: holding **Shift** to elevate buildings while placing them can fail under `DXVK`/`D9VK` — if you hit that, **force WineD3D for the D3D9 path** by adding `PROTON_USE_WINED3D=1` to the launch options.
+
+**Display:** Widescreen/1080p: the game runs at 4:3/5:4 by default; set resolution by editing `Options.txt` in the prefix (`compatdata .../pfx user AppData\\Atari\\RCT3\\Options.txt`) and adding a `Resolution 1280 800` line for the Deck panel, or pick the closest in-game res.
+
+**Cosmetic:** The CoasterCam stays 5:4 and stretches on widescreen.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Frontier Developments"
+publisher = "Atari Interactive"
+released  = "2004"
+genre     = "Construction and management simulation"
+modes     = "Single-player"
+summary   = """
+**RollerCoaster Tycoon 3** is a 2004 amusement-park construction and management sim, the first entry in the **series** to render parks in **full 3D** and let players ride their own coasters via the in-game **CoasterCam**. Players build rides, scenery, shops and staff while keeping visitors ("peeps") happy, across a scenario-based career mode and an open sandbox mode. The **Platinum** edition bundles the base game with both expansions: **Soaked!** (water parks) and **Wild!** (zoos and animals).
+
+Well-reviewed and long a fan favorite, the original appid was **delisted from Steam in May 2018** amid an Atari/Frontier royalty dispute; a separately published Complete Edition is a different product."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — RollerCoaster Tycoon 3: Platinum (appid 2700)"
+url   = "https://www.protondb.com/app/2700"
+
+[[links.guides]]
+title = "ValveSoftware/Proton #2933 — Shift-to-elevate fails under D9VK, works with WineD3D"
+url   = "https://github.com/ValveSoftware/Proton/issues/2933"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted (`appid 2700`, removed May 2018); the Complete Edition re-release is a separate product.
+
+**Proton:** ProtonDB **gold** — community reports it runs on Linux/Proton, so it should play on the Deck (needs a hands-on Deck pass to confirm).
+
+**Controller:** No native controller support: it is a mouse+keyboard park sim, so set up a **Steam Input** gamepad layout (trackpad-as-mouse + on-screen/keyboard binds) — fully playable on Deck that way, just not plug-and-play.
+
+**Fix:** If Shift-to-elevate placement misbehaves, add `PROTON_USE_WINED3D=1`.
+
+**Display:** Pick a Deck-friendly resolution via `Options.txt`; CoasterCam is locked 5:4 and stretches in widescreen."""

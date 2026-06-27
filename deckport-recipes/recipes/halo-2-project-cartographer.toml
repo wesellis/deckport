@@ -1,0 +1,149 @@
+[game]
+title       = "Halo 2: Project Cartographer"
+slug        = "halo-2-project-cartographer"
+aliases     = ["Halo 2 Vista", "Halo 2 PC", "Halo 2 Project Cartographer"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "halo2.exe"
+launch_options = ""
+requires_files = ["halo2.exe", "maps\\mainmenu.map"]
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["dxvk", "vcrun2019", "wmp10"]
+notes      = """
+**Overview**
+Halo 2 Vista (2007) was delisted when Games for Windows Live shut down.
+Project Cartographer (cartographer.online) is a free community patch that
+restores full functionality and adds P2P multiplayer without GFWL.
+You need a Halo 2 Vista disc/ISO (supply your own copy) plus the free
+Project Cartographer installer from the official site.
+
+**Installation**
+1. Install Halo 2 Vista from your disc/ISO into a folder such as
+   ~/Games/Halo2/.
+2. Download the Project Cartographer installer from cartographer.online.
+3. Copy the Project Cartographer installer into the Halo 2 install folder.
+4. Add the installer EXE as a temporary Non-Steam game with GE-Proton forced,
+   run it once to patch the install, then remove it.
+5. Add halo2.exe as the permanent Non-Steam game entry with GE-Proton forced.
+
+**DXVK**
+DXVK is required for stable D3D9 → Vulkan translation.
+GE-Proton includes DXVK by default. Use a RECENT DXVK — versions older than
+2.5.3 are reported to crash on startup because Cartographer uses D3D9Ex; a
+current GE-Proton ships a new enough DXVK. If you are using a custom Wine
+prefix, install dxvk via winetricks or place the DXVK DLLs manually into the
+halo2.exe directory and set the DLL overrides:
+  d3d9 = n,b
+
+**Audio (important)**
+Audio is silent in menus and in-game on most Linux/Proton setups until
+Windows Media Player 10 is installed into the prefix. Install it via
+`winetricks wmp10` (already listed above). This is the single most common
+Steam Deck complaint for this title, so do it before assuming the game is
+broken.
+
+**LIVE / Network tab missing**
+If the in-game LIVE/Network (online) tab is missing or non-functional, the
+custom mf.dll did not land in the Halo 2 folder — re-run the Project
+Cartographer mod installer inside the same prefix to restore it.
+
+**Games for Windows Live Removal**
+Project Cartographer replaces the GFWL layer entirely.
+Do NOT install the original GFWL redistributable — it will conflict.
+Xbox Live sign-in is not required; accounts are managed through
+the Project Cartographer website.
+
+**Controller / Input**
+Halo 2 Vista has built-in gamepad support, but driving it through Steam Input
+with the standard Gamepad template is the reliable path on Deck. Some users
+report the game crashing on gamepad button presses on certain Wine/Proton
+builds — if that happens, switch to a different GE-Proton/Wine-GE build (a
+ge-protonified no-fshack build is the commonly cited workaround) rather than
+assuming the recipe is wrong.
+For gyro aim assist, run the gamepad as a controller (not gyro-to-mouse) and
+layer gyro on top, or use gyro-to-mouse if you prefer — both work; tune
+sensitivity to taste.
+
+**Display / Resolution**
+Edit My Documents\\My Games\\Halo2\\Config\\HaloPC.cfg inside the Wine prefix:
+  vid_mode = 1280x800
+Project Cartographer also exposes resolution settings in its overlay (F7).
+
+**Multiplayer**
+Project Cartographer provides P2P multiplayer via its own matchmaking.
+No port forwarding required for most connections — uses UPnP.
+Server browser is available in-game under Multiplayer → Online.
+Check cartographer.online for current server population.
+
+**Performance**
+Light on resources for a 2007 title; it should hold 60 fps at 1280x800 well
+within the Deck's TDP. If you see physics/timing oddities at very high
+framerates, cap to 60 fps via the Deck's per-game frame limiter as a safe
+default.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Project Cartographer — Official Site"
+url   = "https://www.cartographer.online"
+
+[[links.guides]]
+title = "Project Cartographer — Install Help (halo2.online)"
+url   = "https://www.halo2.online/help/install/"
+
+[[links.guides]]
+title = "Project Cartographer on Linux / Steam Deck (official forum guide)"
+url   = "https://www.halo2.online/threads/halo-2-project-cartographer-on-linux-guide.3108/"
+
+[[links.guides]]
+title = "PCGamingWiki — Halo 2"
+url   = "https://www.pcgamingwiki.com/wiki/Halo_2"
+
+[[links.guides]]
+title = "ProtonDB — search Halo 2"
+url   = "https://www.protondb.com"
+
+[about]
+developer = "Bungie / Hired Gun"
+publisher = "Microsoft Game Studios"
+released  = "2007-05-31"
+genre     = "First-person shooter"
+modes     = "Single-player, Multiplayer (P2P via Project Cartographer)"
+summary   = """**Halo 2 Vista** (Bungie/Microsoft, 2007) was delisted when Games for Windows Live
+shut down, leaving no legal digital way to purchase it. **Project Cartographer** is a free
+community patch from cartographer.online that restores full SP/MP functionality without GFWL,
+and it runs well on Steam Deck via GE-Proton with DXVK — making the full Halo 2 campaign and
+multiplayer playable on handheld for the first time."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Supply your own copy of Halo 2 Vista — disc or personal disc image only; game is delisted.
+- Project Cartographer installer must be run inside the same Wine/Proton prefix as halo2.exe;
+  do not run it as a standalone app or it will patch a separate prefix.
+- Do NOT install the original GFWL redistributable — it conflicts with Cartographer.
+- DXVK must be active AND reasonably new (2.5.3+); older DXVK crashes on startup because Cartographer uses D3D9Ex. A current GE-Proton already satisfies this.
+- Audio is SILENT until Windows Media Player 10 is installed into the prefix (winetricks wmp10). This is the most common Steam Deck complaint — do it first.
+- If the in-game LIVE/Network tab is missing, re-run the Cartographer mod installer in the same prefix to restore the custom mf.dll.
+- Intro / credits FMV videos can break the prefix into a black screen on some setups; if that happens, skip the intro or disable the videos.
+- Gamepad input may crash on some Wine/Proton builds; if so, try a different GE-Proton / Wine-GE build before assuming the setup is broken.
+- Custom resolutions require manual config file edit or the in-game F7 overlay.
+- Multiplayer requires a free Project Cartographer account (cartographer.online registration).
+"""

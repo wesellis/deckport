@@ -1,0 +1,76 @@
+[game]
+title       = "Unreal Tournament 2004 (Editor's Choice Edition)"
+slug        = "unreal-tournament-2004-editor-s-choice-edition"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "13230"
+sgdb_id     = ""
+
+[launch]
+binary         = "System/UT2004.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Proton:** Delisted Steam game (appid `13230`). ProtonDB tier platinum — runs well on Deck with `Proton Experimental`.
+
+**Fix:** Main hurdle is an **'Invalid CD KEY' error** on first launch. Fix it via `Protontricks` -> select UT2004 -> default prefix -> `regedit`, then under `HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Unreal Technology\\Installed Apps\\UT2004` (create the keys if missing) add a String value named `CDkey` set to your CD key, then relaunch.
+
+**Install:** If you hit **error 0x02**, install the game on the Deck's internal drive rather than an SD card / external disk.
+
+**Display / stutter:** Out of the box the game stutters badly on Deck. Selecting `Proton Experimental` largely fixes it; reports also recommend forcing DXVK's Direct3D 8 path and disabling **Reduce mouse lag** in the in-game input menu for a big FPS jump. As an alternative, edit `System/UT2004.ini` to use the OpenGL renderer instead of D3D. Optional: run `foxWSFix` for a corrected widescreen HUD/FOV.
+
+**Alternative:** `Luxtorpeda` provides a native UT2004 client.
+
+**Controller:** PC release is keyboard+mouse only, so apply a Steam Input gamepad layout (community KBM/mouse-joystick templates exist) to play handheld."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Unreal Tournament 2004: Editor's Choice Edition (appid 13230)"
+url   = "https://www.protondb.com/app/13230"
+
+[[links.guides]]
+title = "Steam Community Guide: Fix UT2004 invalid CD key on Linux/Proton"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3644510127"
+
+[[links.guides]]
+title = "Steam Community Guide: How to reduce stutter in UT2004 on Linux"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3334441858"
+
+[about]
+developer = "Epic Games, Digital Extremes"
+publisher = "Atari"
+released  = "2004"
+genre     = "First-person arena shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Unreal Tournament 2004** (UT2004) is the third game in the **Unreal Tournament** series, built on the **Unreal Engine 2**, and an expanded re-release of Unreal Tournament 2003. The **Editor's Choice Edition** bundles the UnrealEd editor and bonus content. It is a fast-paced first-person arena shooter centered on deathmatch and team modes, and notably introduced large-scale vehicle-based **Onslaught** matches. Widely praised on release as a high point for the series, it was later **delisted** from digital storefronts but remains fully playable offline against bots."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** Delisted from Steam (appid `13230`); community ProtonDB reports rate it platinum on Deck.
+
+**Fix:** First launch usually throws an **'Invalid CD KEY' error** — fix by adding the `CDkey` String value in the wineprefix registry via `Protontricks` (see [proton] notes).
+
+**Install:** Install on the internal drive to avoid **error 0x02**.
+
+**Display / stutter:** Default stutter is heavy; `Proton Experimental` plus forcing DXVK Direct3D 8 and disabling **Reduce mouse lag** smooths it out. Alternatively switch the renderer to OpenGL in `UT2004.ini`; `foxWSFix` corrects widescreen HUD/FOV.
+
+**Controller:** Originally a keyboard+mouse game with no native gamepad support — a Steam Input controller layout is required for handheld play.
+
+**Online:** Multiplayer relies on community master servers, which may be intermittent."""

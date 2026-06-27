@@ -1,0 +1,79 @@
+[game]
+title       = "Viva Piñata: Trouble in Paradise Recompiled (ReTiP)"
+slug        = "viva-pinata-trouble-recomp"
+aliases     = ["VP TiP Recomp", "Viva Pinata TiP PC", "VPTiPRecomp", "ReTiP"]
+type        = "proton"        # Xbox 360 static recompilation via ReXGlue — currently a Windows build, run via Proton on Deck
+engine      = "other"         # ReXGlue Xbox 360 static recompilation toolkit
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "retip-windows-x64.exe"   # downloaded/launched by the Goopie launcher; not normally run directly
+launch_options = ""
+requires_files = ["Viva Piñata: Trouble in Paradise Xbox 360 ISO (World region)"]
+
+[proton]
+version    = "GE-Proton (latest)"
+winetricks = []
+notes      = """
+**Recomp:** Static recompilation of the 2008 Xbox 360 game Viva Piñata: Trouble in Paradise (project name **ReTiP**) using the `ReXGlue` toolkit, which translates Xbox 360 PowerPC code to `C++` for native PC execution. Latest release `v1.10` (2 May 2026). The renderer currently still leans on Xenia's backend; the developer plans to replace it.
+
+**Platform / Proton:** The recomp currently ships a **Windows build only** (`retip-windows-x64.exe`) — a native Linux build is planned but not yet released. On the Steam Deck you run the Windows build through **Proton** (GE-Proton recommended). Distribution and launching is handled by the **Goopie launcher** (goopie.xyz): you point it at your ISO, it extracts and downloads the recompiled exe, then launches it. Because the workflow is launcher-driven, getting it onto the Deck is fiddly and unverified — treat as experimental.
+
+**Install:** The recomp is the engine only — **you supply your own Xbox 360 game files** (a legal ISO, **World** region). The Goopie launcher extracts the ISO; use an extraction path with no special characters.
+
+**Heads-up:** Third-party overlays such as RivaTuner / MSI Afterburner can crash the game at launch — disable them.
+
+**History:** A sequel to the original Viva Piñata (which had an official PC release on Games for Windows Live), Trouble in Paradise was an Xbox 360 exclusive and was never officially released on PC before this fan recompilation.
+
+**Framework:** Built on the `ReXGlue` Xbox 360 static recompilation toolkit — the same toolkit behind other 360 recomps such as Banjo-Kazooie: Nuts & Bolts."""
+
+[about]
+developer = "Rare (original 2008 game); ReTiP recompilation by SolarCookies / community using ReXGlue"
+publisher = "Microsoft Game Studios (original 2008 game)"
+released  = "2008 (Xbox 360); ReTiP recompilation v1.10 released 2 May 2026"
+genre     = "Life simulation"
+modes     = "Single-player, local co-op"
+summary   = """
+**Viva Piñata: Trouble in Paradise** is a 2008 **life simulation** game developed by **Rare** for the Xbox 360, and the sequel to the original **Viva Piñata**. Players tend a garden, attracting and **breeding piñata animals** while managing their habitat, feeding requirements, and inter-species conflicts. Trouble in Paradise expanded the original with new environments including a desert and arctic zone, new piñata species, co-op play, and mini-game modes.
+
+Unlike the original, which received an official PC port, Trouble in Paradise was **never released outside of Xbox 360**. This recipe uses the **ReTiP** community static recompilation (v1.10, May 2026) built with the **ReXGlue** toolkit, which ports the game's code to native PC. It is currently a **Windows build** (Linux planned), so on the Steam Deck it runs through Proton. You must supply your own Xbox 360 game files (World-region ISO)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "TiP-Recomp (ReTiP) — project & install instructions (GitHub)"
+url   = "https://github.com/SolarCookies/TiP-Recomp"
+
+[[links.guides]]
+title = "TiP-Recomp releases — latest v1.10 build (GitHub)"
+url   = "https://github.com/SolarCookies/TiP-Recomp/releases"
+
+[[links.guides]]
+title = "ReXGlue SDK — Xbox 360 recompilation runtime & toolkit (GitHub)"
+url   = "https://github.com/rexglue/rexglue-sdk"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires Xbox 360 game files for Viva Piñata: Trouble in Paradise — a legal **World**-region ISO. **The recomp ships NO game assets.**
+
+**Windows build only (for now):** v1.10 provides `retip-windows-x64.exe`; there is no native Linux build yet (it is planned). On the Steam Deck you must run the Windows build under **Proton**, so this is unverified/experimental.
+
+**Launcher-driven:** Installation and launching go through the **Goopie launcher** (goopie.xyz), which extracts the ISO and downloads the recompiled exe. Use an extraction path with no special characters. Getting the launcher flow working under Proton on the Deck is the main unknown.
+
+**Crashes:** Disable overlay tools (RivaTuner / MSI Afterburner) — they can crash the game at launch.
+
+**Version:** `v1.10` (2 May 2026).
+
+**Framework:** Built on the `ReXGlue` Xbox 360 static recompilation toolkit (same toolkit as other 360 recomps such as Banjo-Kazooie: Nuts & Bolts)."""

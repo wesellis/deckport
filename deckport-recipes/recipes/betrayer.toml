@@ -1,0 +1,76 @@
+[game]
+title       = "Betrayer"
+slug        = "betrayer"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "243120"
+sgdb_id     = ""
+
+[launch]
+binary         = "Betrayer.exe"   # UDK/Unreal Engine 3 launcher; the actual engine binary lives under Binaries\Win32\ (GOG free build mirrors the old Steam layout)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Install:** Delisted from Steam (`appid 243120`, removed May 2021), but the original devs (Blackpowder Games) re-released it **FREE on GOG** in July 2023 — **that official free build is the one to use**.
+
+**Engine:** First-person action-adventure on `Unreal Engine 3` / `UDK`.
+
+**Proton:** Runs well on Linux/Proton; community reports it playing cleanly under `Wine-GE` / `GE-Proton` (`proton_experimental` also works).
+
+**DRM:** No `GFWL`/`SecuROM` DRM to bypass.
+
+**Controller:** the game ships built-in `XInput` gamepad support, but it's only **partial** — community reports note it shows keyboard prompts even on a pad, has no aim assist, awkward menu navigation, and an unmapped/hard-to-bind jump. Plan on a `Steam Input` layout on the Deck (map jump and add keyboard fallbacks for any unbound menu actions) rather than expecting flawless out-of-the-box pad support.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Blackpowder Games"
+publisher = "Blackpowder Games"
+released  = "2014"
+genre     = "First-person action-adventure / stealth"
+modes     = "Single-player"
+summary   = "**Betrayer** is a first-person action-adventure with **stealth** elements, set in a haunted early-colonial Virginia in the 17th century. It was made by **Blackpowder Games**, a studio formed largely by **Monolith Productions** veterans who had worked on **F.E.A.R.** and **No One Lives Forever**. The game is known for its striking **near-monochrome black-and-white art direction** and eerie, mysterious tone, built on **Unreal Engine 3**. It drew positive notice for its atmosphere, though some reviewers found the combat clumsy; it was later **delisted from Steam** and re-released for free by the developers."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Betrayer on GOG (free, DRM-free)"
+url   = "https://www.gog.com/en/game/betrayer"
+
+[[links.guides]]
+title = "ProtonDB — Betrayer (app 243120)"
+url   = "https://www.protondb.com/app/243120"
+
+[[links.guides]]
+title = "After being removed from Steam, Betrayer is now free on GOG — GamingOnLinux"
+url   = "https://www.gamingonlinux.com/2023/07/after-being-removed-from-steam-betrayer-is-now-free-on-gog/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted from Steam (`appid 243120`) but officially re-released **FREE on GOG** by the original developers in July 2023 — **use that build**.
+
+**Proton:** ProtonDB tier `gold`; community reports it running cleanly under `Wine-GE` / `GE-Proton` on Linux, so it should be playable on the Deck (still needs a Deck-specific confirmation pass, hence `needs-test`).
+
+**DRM:** No `GFWL`/DRM bypass required.
+
+**Multiplayer:** Single-player only, so no dead-server concern.
+
+**Controller:** built-in pad support is only **partial** (keyboard prompts on a controller, no aim assist, clumsy menus, jump can need manual binding). Use a `Steam Input` layout and add keyboard fallbacks for unbound actions.
+
+**Binary:** `Betrayer.exe` (`UDK` launcher); confirm the exact path against your install (engine binary under `Binaries\\Win32\\`)."""

@@ -1,0 +1,81 @@
+[game]
+title       = "Severed Chains (Legend of Dragoon PC Port)"
+slug        = "severed-chains"
+aliases     = ["Severed Chains", "Legend of Dragoon PC", "LoD PC Port"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "launch"   # the "launch" shell script (launch.bat on Windows); auto-downloads Java 21 on first run
+launch_options = ""
+requires_files = ["Legend of Dragoon NTSC-U (North American) PS1 disc images, all 4 discs, placed in the isos/ folder (ISO or BIN)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**About:** Severed Chains is a fan-made PC engine port of the 2000 PlayStation RPG The Legend of Dragoon, developed by the Legendofdragoon.org modding community (lead: Monoxide). The 3.x line adds a major graphics overhaul (4K, 60 FPS, widescreen). The engine is updated frequently, so always grab the latest build.
+
+**Engine:** The engine is Java-based (`Java 21`). You do **not** need to install a JRE yourself — the included `launch` script downloads the correct Java runtime on first run (needs an internet connection), then launches the game.
+
+**Setup:** An official, detailed Steam Deck setup guide is maintained — **follow it closely**. Extract the build, drop your disc images in the `isos` folder, then run the `launch` script.
+
+**Display:** Enhancements include `60 FPS` gameplay, `4K` rendering, true widescreen, and full controller support.
+
+**Discs:** Supply your own legal Legend of Dragoon disc images. The project currently supports the **NA (North American / NTSC-U) region only** — PAL and NTSC-J discs are not supported at this time. All four discs go in the `isos` folder.
+
+**Install:** Right-click the `launch` script in Desktop Mode and "Add to Steam" (run the first-time setup in Desktop Mode where the file picker is reliable)."""
+
+[about]
+developer = "Sony Computer Entertainment Japan (original 2000 PS1 game); PC port by the Legendofdragoon.org modding community"
+publisher = "Sony Computer Entertainment (original); fan-made PC port"
+released  = "2000 (PS1 — Japan 1999, North America 2000, PAL 2001); Severed Chains PC port ongoing (3.x line adds 4K/60 FPS/widescreen)"
+genre     = "RPG"
+modes     = "Single-player"
+summary   = """
+**The Legend of Dragoon** is a 1999/2000 Japanese **role-playing game** developed and published by Sony Computer Entertainment Japan for the PlayStation. Set in the fantasy world of Endiness, it follows Dart Feld and a party of companions wielding the ancient power of the **Dragoons** to stop a global catastrophe.
+
+**Severed Chains** is a community PC engine port maintained by Legendofdragoon.org that re-implements the game in **Java 21**, supplying the player's own NTSC-U PS1 disc data as the game content. The port brings the classic JRPG to modern hardware with substantial quality-of-life upgrades including 60 FPS combat, 4K resolution support, true widescreen rendering, and full controller remapping— while preserving the original **Addition combat system** and FMV sequences."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Severed Chains — official project site and downloads (Legendofdragoon.org)"
+url   = "https://legendofdragoon.org/projects/severed-chains/"
+
+[[links.guides]]
+title = "Severed Chains — official Steam Deck setup guide"
+url   = "https://legendofdragoon.org/guides/setup-steamdeck/"
+
+[[links.guides]]
+title = "Severed Chains — general setup guide (launch script, isos folder, NA region)"
+url   = "https://legendofdragoon.org/guides/setup-severed-chains/"
+
+[[links.guides]]
+title = "Severed Chains — source, releases and README (GitHub)"
+url   = "https://github.com/Legend-of-Dragoon-Modding/Severed-Chains"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** You must provide your own legal Legend of Dragoon disc images. The project supports the **NA / NTSC-U region only** at this time — PAL and NTSC-J discs do not work. `ISO` or `BIN` formats are accepted; place all four discs in the `isos` folder.
+
+**Java:** Java-based engine (`Java 21`). You do **not** need to install a JRE yourself — the `launch` script auto-downloads Java on first run (internet connection required), so the first launch takes a while as it downloads Java and unpacks assets. Do not place the game in a read-only/Program Files location and do not run it as administrator.
+
+**Binary:** The launcher is the `launch` shell script (`launch.bat` on Windows). Right-click it in Desktop Mode and "Add to Steam" rather than pointing Steam at a Java executable.
+
+**Setup:** Do the initial setup in Desktop Mode where the file picker is reliably available.
+
+**Update:** Download the latest build from the project site — the engine is updated frequently and newer builds improve compatibility and performance."""

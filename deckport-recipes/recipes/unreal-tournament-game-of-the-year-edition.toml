@@ -1,0 +1,76 @@
+[game]
+title       = "Unreal Tournament (Game of the Year Edition)"
+slug        = "unreal-tournament-game-of-the-year-edition"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "13240"
+sgdb_id     = ""
+
+[launch]
+binary         = "System/UnrealTournament.exe"   # UT99 GOTY launcher exe under the install's System/ dir
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `13240`), **ProtonDB gold**.
+
+**Display:** The stock 1999 build runs under Proton but defaults to the old `Direct3D`/software renderer that looks rough and can stutter on the Deck's AMD GPU.
+
+**Fix:** The big quality-of-life fix is the community **OldUnreal patch** (`v469+`): install it into the game folder, then in-game switch the renderer to `OpenGL`/`XOpenGL` (or `D3D11`) under `Preferences > Rendering`. That adds raw mouse input, native widescreen, and high-res GUI/font scaling that matches the Deck's 1280x800 panel.
+
+**Proton:** `GE-Proton` handles it cleanly; `proton_experimental` also works. **If you skip OldUnreal, force the `OpenGL` renderer to avoid the `D3D9` glitches.**
+
+**Controller:** Controller is not native — bind a **Steam Input** gamepad/keyboard-mouse layout (community 'gamepad' templates exist for UT99) since the game only understands keyboard+mouse.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Epic Games, Digital Extremes"
+publisher = "GT Interactive"
+released  = "1999 (Game of the Year Edition, 2000)"
+genre     = "First-person arena shooter"
+modes     = "Single-player (bot matches), local/LAN and online multiplayer"
+summary   = "**Unreal Tournament** is a 1999 first-person arena shooter built on the original **Unreal Engine**, developed by Epic Games and Digital Extremes. It pioneered fast **deathmatch** and objective game modes such as **Capture the Flag**, Assault, and Domination, and was widely praised as one of the defining multiplayer FPS titles of its era, winning numerous Game of the Year awards.\n\nThe Game of the Year Edition is a 2000 re-release that bundles extra maps, mutators, and bonus content. The Steam release was later **delisted**, leaving the community **OldUnreal patch** project to keep the game running on modern systems."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "OldUnreal 469 patch (official downloads)"
+url   = "https://www.oldunreal.com/downloads/unrealtournament/oldunreal-patches-for-unrealtournament-version-469/"
+
+[[links.guides]]
+title = "OldUnreal UT99 Patch repository (GitHub releases)"
+url   = "https://github.com/OldUnreal/UnrealTournamentPatches/releases"
+
+[[links.guides]]
+title = "ProtonDB reports - Unreal Tournament GOTY (appid 13240)"
+url   = "https://www.protondb.com/app/13240"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Status:** Delisted Steam game (appid `13240`); **ProtonDB gold** with multiple reports of it running on Linux/Proton, so it should play on the Deck — set to `needs-test` pending a hands-on Deck confirmation.
+
+**Fix:** Install the **OldUnreal patch** (`v469+`) and switch to the `OpenGL`/`XOpenGL` renderer for clean visuals, raw input, native widescreen, and Deck-resolution GUI scaling; `foxWSFix99` is an alternative widescreen mod if not using OldUnreal.
+
+**Controller:** No native controller support — use a **Steam Input** layout (gamepad or keyboard/mouse) since the game is keyboard+mouse only.
+
+**Multiplayer:** It's primarily a multiplayer/online shooter: offline bot matches and LAN play work fine, but verify whether community servers still exist before counting on online play.
+"""

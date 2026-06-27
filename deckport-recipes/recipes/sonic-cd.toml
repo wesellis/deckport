@@ -1,0 +1,79 @@
+[game]
+title       = "Sonic CD"
+slug        = "sonic-cd"
+aliases     = ["Sonic CD 2011"]
+type        = "proton"
+engine      = "other"
+steam_appid = "200940"
+sgdb_id     = ""
+
+[about]
+developer = "Christian Whitehead, BlitWorks"
+publisher = "Sega"
+released  = "2012"
+genre     = "Platformer"
+modes     = "Single-player"
+summary   = """
+**Sonic CD** is a from-scratch remaster of the 1993 Sega CD game, rebuilt on Christian Whitehead's **Retro Engine** with widescreen support and both the Japanese and US soundtracks. The original is a classic **2D Sonic platformer** notable for its **time-travel mechanic** and for introducing **Amy Rose** and **Metal Sonic**.
+
+This 2012 PC release was well received but was pulled from sale on Steam in May 2022 ahead of its inclusion in the **Sonic Origins** collection, so it is no longer purchasable for new buyers."""
+
+[launch]
+binary         = "soniccd.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["directx9"]
+notes      = """
+**DRM:** Delisted Steam game (`appid 200940`; removed from sale May 2022 ahead of Sonic Origins). Runs on Steam Deck but needs setup: with plain Proton the game shows a black screen and closes.
+
+**Fix:** **Install the DirectX runtime into the Proton prefix.** Recommended path: force `GE-Proton` in the game's compatibility settings, then in Desktop Mode use `Protontricks` (or run the bundled `DXSETUP.exe` in the install's `DirectX` folder) to install the DirectX 9 runtime into the prefix. After that it boots and plays normally.
+
+**Alternative:** Set `PROTON_USE_WINED3D=1` in launch options instead of installing DirectX.
+
+**Display:** If it silently fails to launch, **shorten a very long install-folder path**.
+
+**Controller:** Retro Engine build has native gamepad support and the Deck controller is generally recognized out of the box; if any input is missed, enable a Steam Input gamepad layout as a fallback.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Sonic CD (200940)"
+url   = "https://www.protondb.com/app/200940"
+
+[[links.guides]]
+title = "Steam Deck black screen fix (install DirectX via Protontricks)"
+url   = "https://steamcommunity.com/app/200940/discussions/0/5738191325962682813/"
+
+[[links.guides]]
+title = "Steam Deck setup — force GE-Proton (community thread)"
+url   = "https://steamcommunity.com/app/200940/discussions/0/3732952742335826632/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam in May 2022 (folded into Sonic Origins); existing owners keep it in their library.
+
+**Fix:** Community confirms it runs on Steam Deck with one setup step: plain Proton gives a black screen, so install the DirectX 9 runtime into the Proton prefix (via `Protontricks` or the install's `DXSETUP.exe`) — `GE-Proton` recommended. Once DirectX is in the prefix it plays fine.
+
+**Controller:** Native controller support in the Retro Engine build; Deck gamepad is usually recognized without a layout, with Steam Input as a fallback if needed.
+
+**Modes:** Single-player, no server dependency.
+
+**Save:** To wipe the bundled save, delete `SData.bin` in the game root."""

@@ -1,0 +1,85 @@
+[game]
+title       = "Veloren"
+slug        = "veloren"
+aliases     = ["veloren-voxygen", "Airshipper"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5280325"
+
+[launch]
+binary         = "airshipper"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native Linux.** No Proton needed.
+
+**Install:** The recommended Deck install is the Airshipper launcher Flatpak (`net.veloren.airshipper`), available on Flathub and installable via Discover in Desktop Mode. Airshipper handles downloading and updating the game client (`veloren-voxygen`) automatically.
+
+**Alternative:** Download Airshipper directly from veloren.net and run it as a non-Steam game pointing to the `airshipper` binary.
+
+**Controller:** Veloren is keyboard/mouse-first and has **no full native gamepad UI** — you'll primarily use the Deck's trackpads/mouse emulation (the right d-pad toggles mouse control). Note the Flathub Airshipper Flatpak has a known controller-input permission limitation; the manual Airshipper download from veloren.net is the workaround for better controller behavior. See the official Deck notes for current quirks.
+
+**Display:** The in-game UI is small at Deck resolution and there is no Steam Input virtual keyboard, so **pairing a Bluetooth keyboard for initial account setup is helpful**."""
+
+[about]
+developer = "Veloren Contributors (open-source community)"
+publisher = "Veloren Contributors (free, open-source)"
+released  = "2019 (first public alpha); ongoing weekly/nightly releases"
+genre     = "Multiplayer voxel RPG, action-adventure"
+modes     = "Single-player, Online multiplayer"
+summary   = "**Veloren** is a free, open-source **multiplayer voxel RPG** written entirely in **Rust** and inspired by games like Cube World, Minecraft, and The Legend of Zelda: Breath of the Wild. Development began in 2018 with the first public release in 2019, and the project continues with weekly releases driven by a large volunteer contributor community. Players explore a **procedurally generated open world**, combat creatures, craft gear, and adventure together on community-run servers. The **Airshipper** launcher keeps the client up to date and displays live server player counts. Performance on Steam Deck is generally good at medium settings."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5280325"
+
+[[links.guides]]
+title = "Official Veloren Download Page"
+url   = "https://veloren.net/download/"
+
+[[links.guides]]
+title = "Airshipper on Flathub"
+url   = "https://flathub.org/en/apps/net.veloren.airshipper"
+
+[[links.guides]]
+title = "Official Veloren Steam Deck Notes (HackMD)"
+url   = "https://hackmd.io/@veloren/B1GbtsAgq"
+
+[[links.guides]]
+title = "Airshipper Launcher Documentation (Veloren Book)"
+url   = "https://book.veloren.net/players/airshipper.html"
+
+[[links.guides]]
+title = "Airshipper GitHub Mirror"
+url   = "https://github.com/veloren/Airshipper"
+
+[[links.guides]]
+title = "Veloren v0.17 Release — GamingOnLinux"
+url   = "https://www.gamingonlinux.com/2025/01/veloren-the-free-and-open-source-action-adventure-rpg-update-017-brings-plenty-new-to-explore/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free, open-source game** — no purchase needed.
+
+**Install:** Use the Airshipper Flatpak (`net.veloren.airshipper`, Flathub) for the easiest Deck install.
+
+**Display:** The UI is small at Deck's native resolution — consider increasing UI scale in settings.
+
+**Keyboard:** No built-in virtual keyboard: use a Bluetooth keyboard or Steam's on-screen keyboard for initial character/account setup.
+
+**Controller:** No full native gamepad support — Veloren is keyboard/mouse-first, so expect to use the Deck trackpads/mouse emulation (right d-pad toggles mouse control). The Flathub Airshipper Flatpak has a known controller-input permission limitation; if controller behavior is poor, use the manual Airshipper download from veloren.net instead."""

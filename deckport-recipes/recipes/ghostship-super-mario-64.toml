@@ -1,0 +1,77 @@
+[game]
+title       = "Ghostship: Super Mario 64"
+slug        = "ghostship-super-mario-64"
+aliases     = ["Ghostship SM64", "SM64 Ghostship"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Ghostship.appimage"   # native Linux build ships as an AppImage
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Build:** A native PC port of Super Mario 64 by Lywx and the Harbour Masters team (the `LUS` engine behind Ship of Harkinian), built from the decompilation.
+
+**Proton:** Ships a native Linux build as an `AppImage`, so it runs directly on the Deck with **no Proton** — no Proton version needed.
+
+**Install:** The Linux build ships inside `Mary-Celeste-Alfa-Linux.zip`. **Extract every file** into a folder of your choosing, then **mark the AppImage executable** (`chmod +x Ghostship.appimage`) before adding it as a non-Steam game.
+
+**ROM:** On first run it asks for a US or JP Super Mario 64 ROM (which you supply yourself) to generate its assets.
+
+**Display:** The frame cap defaults to **30 FPS** — raise it in the in-game settings/config UI for 60+ FPS. Ultrawide and HD texture-pack support are available in the config menu.
+
+**Controller:** Native gamepad support, so the Deck's built-in controls work out of the box; pick the `Gamepad with Joystick Trackpad` template or leave default Steam Input."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "HarbourMasters/Ghostship (official repo + releases)"
+url   = "https://github.com/HarbourMasters/Ghostship"
+
+[[links.guides]]
+title = "GamingOnLinux: Ghostship gets a Linux release (AppImage)"
+url   = "https://www.gamingonlinux.com/2026/01/ghostship-the-new-super-mario-64-pc-port-gets-a-linux-release/"
+
+[about]
+developer = "Harbour Masters (lead developer Lywx)"
+publisher = "Harbour Masters"
+released  = "2026"
+genre     = "3D platformer"
+modes     = "Single-player"
+summary   = """
+**Ghostship** is a free fan-made native PC port of Nintendo's 1996 **Super Mario 64**, created by the Harbour Masters team (the same group behind **Ship of Harkinian** and ports of Ocarina of Time, Majora's Mask, Star Fox 64 and Mario Kart 64). Announced in January 2026, it is built on the **libultraship (LUS)** framework, wrapping the original N64 game logic in a modern C++ engine for Windows, Linux, macOS and Switch.
+
+It adds 60+ FPS support, a modern configuration UI, level select, a debug menu, HD texture-pack support and an **integrated randomizer**, while keeping the original Nintendo EAD gameplay intact. The port ships no game assets and requires a user-supplied US or Japanese Super Mario 64 ROM on first launch; as a **decompilation**-based project, Nintendo has historically issued takedowns, making its availability unstable."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a user-supplied US or JP Super Mario 64 ROM on first launch to build assets (not included).
+
+**Proton:** Native Linux `AppImage` from the Harbour Masters team (the `LUS` engine, same as Ship of Harkinian) — runs directly on the Deck, **no Proton**.
+
+**Install:** Extract `Mary-Celeste-Alfa-Linux.zip`, `chmod +x Ghostship.appimage`, then add it as a non-Steam game.
+
+**Display:** Frame cap defaults to **30 FPS**; raise it in the in-game config UI.
+
+**Controller:** Native gamepad support works on Deck out of the box.
+
+**DRM:** Built from the SM64 **decompilation**, a fan project Nintendo has issued takedowns against, so its availability is unstable.
+
+**ProtonDB:** No ProtonDB tier since it is a native fan port rather than a Steam title."""

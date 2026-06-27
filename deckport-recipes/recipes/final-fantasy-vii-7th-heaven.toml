@@ -1,0 +1,70 @@
+[game]
+title       = "Final Fantasy VII (PC + 7th Heaven)"
+slug        = "final-fantasy-vii-7th-heaven"
+aliases     = ["FF7 7th Heaven", "Final Fantasy 7 PC"]
+type        = "proton"
+engine      = "other"
+steam_appid = "39140"
+sgdb_id     = ""
+
+[launch]
+binary         = "7th Heaven.exe"   # the 7th Heaven mod manager; it launches FF7 itself
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Final Fantasy VII (the modern Steam re-release, AppID 39140) run through the `7th Heaven` mod manager, with HD community mod packs (Tsunamods SYW textures/FMVs, ChaOS field models, 60 FPS). The mod manager runs in the same Proton prefix as the game.
+
+**Controller:** `7th Heaven` also applies proper gamepad support, which the rough vanilla Steam port lacks. The bare Steam port still launches via a secondary launcher that usually needs a touchscreen/mouse tap to dismiss.
+
+**Proton:** The `7th Heaven.exe` manager is run inside FF7's Proton prefix. `GE-Proton` works (`GE-Proton 7.0-5`/`7.0-6` were widely reported), and the current installers (see below) default to a stock Proton 9.x runner; newer Proton 9/10 builds are fine. Pin a specific Proton version rather than letting it drift.
+
+**Install:** Don't run `7th Heaven.exe` by hand — use a community installer that prepares the prefix for you. The current tool is **MateriaForge** (supersedes the now-deprecated `7thDeck`), run from Konsole in desktop mode; it patches FF7's prefix, installs `7th Heaven`, adds it to Steam, and applies Deck controller/graphics config. These installers require a fresh **Steam** install of FF7 (AppID 39140); the old 1998 disc port is not what this targets. As of 2026, 7th Heaven v4.5.x + FFNx are compatible with the current Steam release with no `.exe` downgrade needed."""
+
+[about]
+developer = "Square (Square Soft, Inc.)"
+publisher = "Eidos Interactive"
+released  = "1998"
+genre     = "Role-playing (JRPG)"
+modes     = "Single-player"
+summary   = "**Final Fantasy VII** is the seventh entry in Square's flagship **RPG series** and a landmark of the genre, blending pre-rendered **3D backgrounds** with a turn-based **Materia combat system**. Originally a 1997 PlayStation hit, it was ported to Windows in 1998 by Square's Costa Mesa team and published in the West by Eidos Interactive. The original 1998 disc port is **delisted**; the version sold on Steam today (AppID 39140) is the 2012/2013 re-release, which is what this recipe and the **7th Heaven** mod manager target. The Steam port's rough native gamepad and compatibility support is why **7th Heaven** is commonly used to run it. It remains widely regarded as one of the most influential and acclaimed **JRPGs** ever made."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "MateriaForge — all-in-one 7th Heaven installer for Linux/Deck (supersedes 7thDeck)"
+url   = "https://github.com/dotaxis/MateriaForge-rs"
+
+[[links.guides]]
+title = "7th Heaven Mod Manager (official, Tsunamods)"
+url   = "https://7thheaven.rocks/"
+
+[[links.guides]]
+title = "ProtonDB — FINAL FANTASY VII (AppID 39140)"
+url   = "https://www.protondb.com/app/39140"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Own the Steam release:** This targets the FF7 sold on Steam today (AppID 39140), not the delisted 1998 disc port. Install FF7 from Steam first; the installers below need that fresh Steam copy.
+
+**Install:** Install-only (`7th Heaven` won't run portably) and a multi-step Deck setup. Use **MateriaForge** (the now-deprecated `7thDeck`'s successor) from Konsole in desktop mode: it preps FF7's Proton prefix, installs `7th Heaven`, and registers it in Steam. The recipe binary `7th Heaven.exe` is then what you launch.
+
+**Proton:** `GE-Proton` works (`7.0-5`/`7.0-6` widely reported); current installers default to a stock Proton 9.x runner and newer 9/10 builds are fine. The bare Steam port shows a secondary launcher that usually needs a touchscreen/mouse tap. Once set up, community reports say it runs cleanly (Platinum on ProtonDB).
+
+**Controller:** Controller support comes from `7th Heaven` (the vanilla Steam port's pad support is poor); a Steam Input layout also works as a fallback.
+
+**Difficulty:** Treat as advanced. deckport links nothing."""

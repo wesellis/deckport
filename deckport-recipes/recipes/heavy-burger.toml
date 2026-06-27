@@ -1,0 +1,69 @@
+[game]
+title       = "Heavy Burger"
+slug        = "heavy-burger"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "922250"
+sgdb_id     = ""
+
+[launch]
+binary         = "Heavy Burger.exe"   # Unity build; exe is named after the title in the install dir
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (`appid 922250`) — a Unity run-and-gun by Lub Blub (2018) built around classic **Data East** arcade titles (BurgerTime, Bad Dudes, Karate Champ, Heavy Barrel, Side Pocket).
+
+**Proton:** Run with `GE-Proton` (`proton_experimental` also works). ProtonDB rates it **platinum**, though that's on a thin sample (~3 low-confidence reports), so treat it as "expected to run clean" rather than battle-tested. Unity title with **no DRM/GFWL hoops**.
+
+**Controller:** Detects the Deck's built-in gamepad natively and ships with broad controller support, so it should play **without a Steam Input keyboard layout**. Add a community gamepad layout if any in-game menu prompts go unbound.
+
+**Install:** No launch options or winetricks required. deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Lub Blub"
+publisher = "Flying Tiger Entertainment (FTE Games)"
+released  = "2018"
+genre     = "Run-and-gun / arena shooter"
+modes     = "Single-player, local multiplayer (up to 4 players)"
+summary   = """
+**Heavy Burger** is a competitive top-down **run-and-gun** for up to four players, built in **Unity** by Lub Blub and published by Flying Tiger Entertainment. Its arenas mash up classic **Data East** arcade properties — including BurgerTime, Bad Dudes, Karate Champ, Heavy Barrel, Side Pocket and Lock ’n’ Chase — with Data East characters appearing as enemies.
+
+It originally launched in October 2018 on Steam and Nintendo Switch (later PlayStation 4 in 2021) and has since been **delisted from Steam**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Heavy Burger (appid 922250)"
+url   = "https://www.protondb.com/app/922250"
+
+[[links.guides]]
+title = "Steam Community hub: Heavy Burger (appid 922250)"
+url   = "https://steamcommunity.com/app/922250"
+
+[[links.guides]]
+title = "Delisted Games: Heavy Burger (history & delisting)"
+url   = "https://delistedgames.com/heavy-burger/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing. **Delisted from Steam** (`appid 922250`) — no longer for sale.
+
+**Compatibility:** ProtonDB **platinum** (small, low-confidence sample — verify on your hardware); Unity engine, **no DRM/GFWL**, no widescreen hacks needed. Native gamepad detection (Deck controller picked up automatically). Purely offline/local multiplayer, so no server-shutdown concerns.
+
+**Binary:** `Heavy Burger.exe` inferred from a standard Unity build — **confirm the actual exe in your install dir** if it differs."""

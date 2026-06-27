@@ -1,0 +1,134 @@
+---
+interface Props {
+  slug: string;
+}
+const { slug } = Astro.props;
+// Same-origin /api in production (nginx proxies it). Override at build time with
+// PUBLIC_API_BASE for a split local setup.
+const apiBase = import.meta.env.PUBLIC_API_BASE || "/api";
+---
+
+<div class="votebar" data-slug={slug} data-api={apiBase}>
+  <span class="vb-label">Does it run on your Deck?</span>
+  <div class="vb-buttons">
+    <button class="vb-btn up" data-vote="up" type="button" aria-pressed="false">
+      <span class="vb-thumb">👍</span><span class="vb-up vb-count">–</span>
+    </button>
+    <button class="vb-btn down" data-vote="down" type="button" aria-pressed="false">
+      <span class="vb-thumb">👎</span><span class="vb-down vb-count">–</span>
+    </button>
+  </div>
+  <span class="cverified vb-verified" hidden title="Confirmed working by the community via 👍 votes — separate from the maintainer status">
+    <span class="check">✓</span> Community-verified
+  </span>
+  <span class="vb-status" role="status"></span>
+</div>
+
+<script>
+  const KEY_VOTER = "deckport_voter";
+  const VERIFY_THRESHOLD =
+    parseInt(
+      document
+        .querySelector<HTMLMetaElement>('meta[name="deckport-verify-threshold"]')
+        ?.content || "10",
+      10,
+    ) || 10;
+
+  // Community-verified = enough 👍 AND a positive majority, so a disputed recipe
+  // never falsely shows verified.
+  function isVerified(up: number, down: number): boolean {
+    return up >= VERIFY_THRESHOLD && up > down;
+  }
+
+  function voterId(): string {
+    let v = "";
+    try {
+      v = localStorage.getItem(KEY_VOTER) || "";
+      if (!v) {
+        v =
+          (crypto as any)?.randomUUID?.() ??
+          `v-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+        localStorage.setItem(KEY_VOTER, v);
+      }
+    } catch {
+      // private mode / storage blocked — fall back to an ephemeral id
+      v = `v-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`;
+    }
+    return v;
+  }
+
+  function initBar(el: HTMLElement) {
+    const slug = el.dataset.slug!;
+    const api = el.dataset.api || "/api";
+    const upBtn = el.querySelector<HTMLButtonElement>(".vb-btn.up")!;
+    const downBtn = el.querySelector<HTMLButtonElement>(".vb-btn.down")!;
+    const upEl = el.querySelector<HTMLElement>(".vb-up")!;
+    const downEl = el.querySelector<HTMLElement>(".vb-down")!;
+    const verifiedEl = el.querySelector<HTMLElement>(".vb-verified")!;
+    const statusEl = el.querySelector<HTMLElement>(".vb-status")!;
+    const myKey = `deckport_vote_${slug}`;
+
+    let myVote: string = "none";
+    try {
+      myVote = localStorage.getItem(myKey) || "none";
+    } catch {}
+
+    function paint(up: number | string, down: number | string) {
+      upEl.textContent = String(up);
+      downEl.textContent = String(down);
+      upBtn.setAttribute("aria-pressed", String(myVote === "up"));
+      downBtn.setAttribute("aria-pressed", String(myVote === "down"));
+      verifiedEl.hidden = !isVerified(Number(up), Number(down));
+    }
+
+    function setOffline(msg: string) {
+      el.classList.add("offline");
+      statusEl.textContent = msg;
+    }
+
+    async function load() {
+      try {
+        const r = await fetch(`${api}/votes/${encodeURIComponent(slug)}`);
+        if (!r.ok) throw new Error("bad status");
+        const d = await r.json();
+        el.classList.remove("offline");
+        statusEl.textContent = "";
+        paint(d.up, d.down);
+      } catch {
+        upEl.textContent = "–";
+        downEl.textContent = "–";
+        setOffline("voting will go live once the server is up");
+      }
+    }
+
+    async function vote(choice: string) {
+      const next = myVote === choice ? "none" : choice; // click again = undo
+      try {
+        const r = await fetch(`${api}/votes/${encodeURIComponent(slug)}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ vote: next, voter: voterId() }),
+        });
+        if (!r.ok) throw new Error("bad status");
+        const d = await r.json();
+        myVote = next;
+        try {
+          localStorage.setItem(myKey, myVote);
+        } catch {}
+        statusEl.textContent =
+          next === "none" ? "vote removed" : "thanks — vote counted";
+        paint(d.up, d.down);
+      } catch {
+        setOffline("voting is offline right now — try again later");
+      }
+    }
+
+    upBtn.addEventListener("click", () => vote("up"));
+    downBtn.addEventListener("click", () => vote("down"));
+    load();
+  }
+
+  document
+    .querySelectorAll<HTMLElement>(".votebar")
+    .forEach((el) => initBar(el));
+</script>

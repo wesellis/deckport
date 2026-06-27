@@ -1,0 +1,63 @@
+[game]
+title       = "OpenTyrian 2000"
+slug        = "opentyrian-2000"
+aliases     = ["Tyrian 2000", "OpenTyrian"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "opentyrian2000"
+launch_options = ""
+requires_files = ["Tyrian 2000 game data (free freeware download from camanis.net — see caveats)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "OpenTyrian2000 GitHub repository (KScl)"
+url   = "https://github.com/KScl/opentyrian2000"
+
+[[links.guides]]
+title = "OpenTyrian2000 releases (prebuilt Windows x64/x86 zips)"
+url   = "https://github.com/KScl/opentyrian2000/releases"
+
+[[links.guides]]
+title = "Tyrian 2000 freeware data files (camanis.net, per the README)"
+url   = "https://www.camanis.net/tyrian/tyrian2000.zip"
+
+[about]
+developer = "Epic MegaGames (original); KScl (engine)"
+publisher = "Epic MegaGames"
+released  = "1999 (original); engine actively maintained"
+genre     = "Shoot 'em up"
+modes     = "Single-player, Co-op"
+summary   = """**Tyrian 2000** (Epic MegaGames, 1999) is a vertical-scrolling shoot 'em up and one of the \
+most feature-rich shmups of the DOS era, now playable via **OpenTyrian2000** — a native Linux port by KScl \
+that eliminates the DOSBox requirement entirely. Epic released Tyrian 2000 as freeware, making this a \
+completely legal zero-cost setup on Steam Deck."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Tyrian 2000 game data is freeware (legally free). Per the README, download tyrian2000.zip from camanis.net (https://www.camanis.net/tyrian/tyrian2000.zip) and place the extracted data files in the same folder as the executable.
+- IMPORTANT: the GitHub releases only ship prebuilt WINDOWS binaries (opentyrian2000-x64-Release.zip / x86). There is no prebuilt Linux binary. On Steam Deck you have two paths: (a) build the native Linux binary from source via the Makefile, which needs SDL2 and SDL2_net (output binary: opentyrian2000); or (b) add the prebuilt Windows x64 zip to Steam as a non-Steam game and run it through Proton.
+- The native source build produces a binary named opentyrian2000 (Makefile TARGET); no DOSBox is required either way.
+- Set the scaler/fullscreen option in the in-game video settings for a proper Steam Deck display fit.
+- Status is needs-test: neither the native build nor the Proton-on-Windows-zip path has been verified on hardware here.
+"""

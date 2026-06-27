@@ -1,0 +1,79 @@
+[game]
+title       = "Clone Hero"
+slug        = "clone-hero"
+aliases     = ["CloneHero", "Clone Hero"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5245291"
+
+[launch]
+binary         = "clonehero"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** A native Linux build is available from clonehero.net — **no Proton needed**.
+
+**Install:** Download `clonehero-linux.tar.xz`, extract it (`tar -xf clonehero-linux.tar.xz`), and mark the `clonehero` binary executable (`chmod +x ./clonehero`). Add as a non-Steam game pointing at the extracted `clonehero` binary.
+
+**Songs:** Song charts (`.chart` / `.mid`) must be downloaded separately and placed in a `songs` folder — see the wiki for folder structure.
+
+**Flatpak:** A community-maintained Flatpak is also available on Flathub (`net.clonehero.CloneHero`, listed as unverified — not an official Clone Hero Team build) and can be installed via Discover in Desktop Mode.
+"""
+
+[about]
+developer = "Clone Hero Team"
+publisher = "Clone Hero Team (free community project)"
+released  = "2017"
+genre     = "Rhythm, Music"
+modes     = "Single-player, Local multiplayer"
+summary   = """
+**Clone Hero** is a free, cross-platform **rhythm game** that emulates the **Guitar Hero** and **Rock Band** guitar-controller experience. It supports Guitar Hero and Rock Band controllers, as well as keyboard play, and can load community-made chart files in `.chart` and `.mid` formats.
+
+The game launched publicly in 2017 and has grown a massive community that continuously produces and shares **song charts**. Clone Hero is fully self-contained and requires no paid base game; players **supply their own song library**.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = "https://www.steamgriddb.com/game/5245291"
+
+[[links.guides]]
+title = "Clone Hero Wiki — Installation Guide"
+url   = "https://wiki.clonehero.net/books/clone-hero-manual/page/installation"
+
+[[links.guides]]
+title = "Clone Hero Wiki — Installation, Updating & Migration"
+url   = "https://wiki.clonehero.net/books/guides-and-tutorials/page/installation-updating-and-migration-guide"
+
+[[links.guides]]
+title = "How to Play Clone Hero on Steam Deck 2025 — YouTube"
+url   = "https://www.youtube.com/watch?v=ykPizGwxvpo"
+
+[[links.guides]]
+title = "Clone Hero on Flathub (Flatpak)"
+url   = "https://flathub.org/en/apps/net.clonehero.CloneHero"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own songs:** Song charts are **NOT included** — download them from community sites.
+
+**No Proton needed:** Use the native Linux build or Flatpak.
+
+**Controller:** Controller support is a core feature, but mapping may need adjustment in-game for Steam Deck's layout.
+
+**Install:** The Flatpak path via Discover is the lowest-friction install on Deck.
+"""

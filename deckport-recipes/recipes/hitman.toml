@@ -1,0 +1,79 @@
+[game]
+title       = "HITMAN"
+slug        = "hitman"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "236870"
+sgdb_id     = ""
+
+[about]
+developer = "IO Interactive"
+publisher = "Square Enix"
+released  = "2016"
+genre     = "Stealth"
+modes     = "Single-player"
+summary   = """
+**HITMAN** (2016) is the sixth mainline entry in the long-running **Hitman series** and the first chapter of the **World of Assassination** trilogy, built on IO Interactive's in-house **Glacier engine**. Players control Agent 47 across large, **sandbox-style locations**, planning and executing assassinations with disguises, improvised tools, and emergent systemic interactions, and the included **Contracts mode** lets players create and share custom hits.
+
+Originally sold episodically from March to October 2016 to generally strong reviews praising its level design and replayability. IO Interactive **delisted** the standalone product in January 2023 after folding its content into HITMAN: World of Assassination, so it is no longer sold separately though it stays in the libraries of prior owners."""
+
+[launch]
+binary         = "HITMAN.exe"   # DX11 build at the install root (most reliable on Deck)
+launch_options = ""             # add -d3d12 for the DX12 path (it lives in dx12Retail/HITMAN.exe)
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted standalone HITMAN (2016, `appid 236870` — the World of Assassination Glacier-engine title, **NOT** Absolution/`203140`). IO Interactive removed the standalone product on 2023-01-26 when its content rolled into HITMAN: World of Assassination; **if you already own it, it stays in your library.** Denuvo Anti-Tamper shipped at launch but was **removed in June 2017**, so the current Windows build is Steamworks-only.
+
+**Proton:** Runs well on Deck via Proton (`GE-Proton` or recent `Proton Experimental`, which added Nixxes/IOI launcher support).
+
+**Display:** Two render paths — `HITMAN.exe` (DX11, at the install root, **most reliable**) and a DX12 build at `dx12Retail/HITMAN.exe`, selected via the in-game launcher or the `-d3d12` launch argument (root `HITMAN.exe` defaults to DX11).
+
+**Controller:** Gamepad works fine through the **Windows build under Proton** — no Steam Input layout needed. **Avoid the native Linux (Feral) build on Deck:** it has a known bug where the controller option is greyed out and the Deck is not recognized as a gamepad; forcing a Proton version downloads the Windows build, which sees the controller correctly.
+
+**Online:** Online servers were required for live unlocks/progression; **with the standalone backend wound down, treat progression as offline-only** and play the story/Contracts content.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — HITMAN (236870)"
+url   = "https://www.protondb.com/app/236870"
+
+[[links.guides]]
+title = "Steam Deck: native Linux build doesn't recognize the controller (force Proton)"
+url   = "https://steamcommunity.com/app/1675200/discussions/1/3186866449236594230/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Standalone HITMAN (2016, `appid 236870`) was delisted 2023-01-26 when its content folded into HITMAN: World of Assassination; the standalone product is no longer for sale, but it remains in libraries of prior owners.
+
+**Proton:** Community ProtonDB reports rate it **Platinum** (strong confidence) on Linux/Deck — runs via `GE-Proton` or recent `Proton Experimental` (which added IOI/Nixxes launcher support).
+
+**Display:** Default binary `HITMAN.exe` (DX11, at the install root) is the most reliable; the DX12 path lives at `dx12Retail/HITMAN.exe` and can be picked via the in-game launcher or the `-d3d12` launch argument.
+
+**Controller:** Works fine with no Steam Input layout **when running the Windows build under Proton.** The native Linux (Feral) build, however, has a known Deck bug — the controller is greyed out and the Deck isn't detected as a gamepad — so force a Proton version (which downloads the Windows build) for proper controller support.
+
+**DRM:** Denuvo shipped at launch but was removed in June 2017; the current Windows build is Steamworks-only.
+
+**Online:** Online progression servers for the standalone are effectively gone — **expect offline-only play** (story + Contracts); live unlocks may not sync.
+
+**NEEDS-TEST:** not yet confirmed on a specific Deck under this recipe."""

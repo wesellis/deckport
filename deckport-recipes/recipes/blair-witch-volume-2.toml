@@ -1,0 +1,76 @@
+[game]
+title       = "Blair Witch Volume II: The Legend of Coffin Rock"
+slug        = "blair-witch-volume-2"
+aliases     = ["Blair Witch Vol 2", "Blair Witch Coffin Rock", "Blair Witch Volume 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "BlairWitch2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+Add the game executable as a non-Steam game and set Proton version to GE-Proton.
+Built on Terminal Reality's Nocturne engine (the SAME engine as Volume I and the
+1999 game Nocturne), NOT a Quake 2 derivative. It is a third-person survival
+horror with fixed/static camera angles (Resident Evil-style), not first-person.
+
+This is an old 3dfx/Glide-era retail title and needs the same modern-system fixes
+as on Windows: the original installs to a System folder with blairwitch2.exe and
+expects a Voodoo/3dfx (Glide) or early Direct3D path. The community fix uses
+dgVoodoo2 to wrap the 3dfx/Glide and DirectDraw output, plus DirectPlay enabled,
+then selects "Voodoo 3dfx card" in the in-game video options at 640x480. Expect to
+ship those dgVoodoo2 DLLs alongside the game and to need the nocturne.ini tweak.
+Intro/cutscene videos use the legacy Indeo codec and may not play under Proton.
+
+Because of the fixed-camera tank-style controls, Steam Input works fine and is
+often preferable to mouse+keyboard for movement; map the trackpad/right stick for
+menu use. Note: this is the 2000 PC game, NOT the 2019 Bloober Team game
+(Steam App 1149640).
+"""
+
+[about]
+developer = "Human Head Studios"
+publisher = "Gathering of Developers"
+released  = "2000"
+genre     = "Third-person survival horror (fixed camera)"
+modes     = "Single-player"
+summary   = "Blair Witch Volume II: The Legend of Coffin Rock is a third-person survival horror game with fixed/static camera angles (Resident Evil-style), developed by Human Head Studios and published by Gathering of Developers in 2000. It follows a Civil War veteran who becomes entangled with the Blair Witch legend near Burkittsville, Maryland. It is the second entry in the 2000 Blair Witch anthology trilogy. Unlike what some descriptions claim, it uses Terminal Reality's Nocturne engine - the SAME engine as Volume I and the 1999 game Nocturne - not a separate or Quake 2-based engine. Human Head Studios would later be known for Prey (2006)."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Blair Witch Volume II: The Legend of Coffin Rock"
+url   = "https://www.pcgamingwiki.com/wiki/Blair_Witch_Volume_II:_The_Legend_of_Coffin_Rock"
+
+[[links.guides]]
+title = "silentgameplays — Blair Witch Volume 2 / Coffin Rock modern Windows fix (dgVoodoo2, DirectPlay, nocturne.ini)"
+url   = "https://github.com/silentgameplays/The-Blair-Witch-Project-Volume-2-Coffin-Rock-Windows-10-Fix"
+
+[[links.guides]]
+title = "Nocturne engine (Wikipedia) — same engine family used by all three Blair Witch volumes"
+url   = "https://en.wikipedia.org/wiki/Nocturne_(video_game)"
+
+[[links.guides]]
+title = "Blair Witch (2019) on Steam — Bloober Team game, NOT this one"
+url   = "https://store.steampowered.com/app/1149640/Blair_Witch/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "bronze"
+caveats       = "Supply your own legally obtained copy of the game. This is NOT the 2019 Bloober Team Blair Witch game (Steam App 1149640). This is Volume II of the 2000 PC anthology trilogy. Developed by Human Head Studios but built on Terminal Reality's Nocturne engine - the SAME engine as Volume I (not a Quake 2 derivative). It is third-person fixed-camera survival horror, not first-person. Being a 3dfx/Glide-era title, it needs modern-system work (dgVoodoo2 wrapper, DirectPlay, XP-era compatibility, nocturne.ini); intro videos use the legacy Indeo codec and may not play. Steam Input works well for the fixed-camera controls; bronze tier is an estimate given the wrapper requirement, not measured."

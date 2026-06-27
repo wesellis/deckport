@@ -1,0 +1,78 @@
+[game]
+title       = "WWE 2K22"
+slug        = "wwe-2k22"
+aliases     = ["WWE 2K22", "WWE2K22"]
+type        = "proton"
+engine      = "other"
+steam_appid = "1255630"
+sgdb_id     = ""
+
+[launch]
+binary         = "WWE2K22_x64.exe"
+launch_options = "RADV_PERFTEST=gpl %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2022 Visual Concepts / 2K wrestling game (appid `1255630`). Binary is `WWE2K22_x64.exe` (64-bit; requires an AVX-capable CPU, which the Deck has).
+
+**DRM:** Ships with **Denuvo Anti-Tamper**. This matters on Deck: Denuvo counts each Proton-version change as a new machine activation and will **lock you out for ~24h if you swap Proton builds too often** — so pick ONE Proton and stay on it. (Online servers also went offline Jan 2024 and 2K delisted it from Steam days later — owners keep library access but it's no longer for sale.)
+
+**Proton:** Community reports are genuinely mixed (crash/black-screen-on-launch is common). Pick a single recent build — **Proton Experimental or a `GE-Proton` build** both have working reports (e.g. `GE-Proton7-24`/`7-50` era) — and **do not keep switching** (see Denuvo note above). Verify game files if it crashes on first launch.
+
+**Fix:** Add launch option `RADV_PERFTEST=gpl %command%` to cut shader-compile stutter.
+
+**Install:** Large install (~50 GB).
+
+**Controller:** Native Xbox-style controller support, no Steam Input layout required."""
+
+[about]
+developer = "Visual Concepts"
+publisher = "2K"
+released  = "2022"
+genre     = "Professional wrestling / sports"
+modes     = "Single-player, local and online multiplayer"
+summary   = """
+**WWE 2K22** is the entry in the long-running **WWE 2K** wrestling series, built on a **rebuilt engine** after the franchise skipped a year following the poorly received WWE 2K20. It was widely seen as a successful recovery for the series, praised for smoother controls, a large roster, and the return of fan-favorite modes including **MyGM** (General Manager), MyRISE (career), MyFACTION, Showcase, and Universe Mode.
+
+Online and MyFACTION servers were shut down in early 2024 and 2K **delisted** the title from Steam shortly after, leaving existing owners with the offline single-player experience."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "ProtonDB: WWE 2K22 (appid 1255630)"
+url   = "https://www.protondb.com/app/1255630"
+
+[[links.guides]]
+title = "ValveSoftware/Proton issue #5737: WWE 2K22 launch/crash reports"
+url   = "https://github.com/ValveSoftware/Proton/issues/5737"
+
+[[links.guides]]
+title = "GamingOnLinux: Denuvo can lock you out if you change Proton versions"
+url   = "https://www.gamingonlinux.com/2025/05/denuvo-will-lock-you-out-of-games-on-linux-steamos-steam-deck-if-you-keep-changing-proton-versions/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Denuvo:** Game uses Denuvo Anti-Tamper. **Don't repeatedly change Proton versions** — Denuvo treats each swap as a new activation and can lock you out for ~24h. Pick one Proton and stick with it.
+
+**Delisted:** Removed from Steam Jan 2024 (servers offline first); existing owners only, no longer for sale.
+
+**Proton:** ProtonDB reports are genuinely mixed (crash/black-screen-on-launch is common) — use a single recent Proton (Experimental or a `GE-Proton` build), verify files, and avoid stock-Proton black-screens.
+
+**Online:** Online/MyFACTION modes are dead (servers gone) so treat as offline single-player.
+
+**Install:** ~50 GB install.
+
+**Display:** For best Deck framerate drop to `1280x720`, Texture/Model quality `Standard`, VSync off, `FSR1` upscaling.
+
+**Licensing:** Wrestler-likeness licensing makes it rights-heavy even as documentation."""

@@ -1,0 +1,62 @@
+[game]
+title       = "Septerra Core: Legacy of the Creator"
+slug        = "septerra-core"
+aliases     = ["Septerra Core"]
+type        = "proton"
+engine      = "other"
+steam_appid = "253940"
+sgdb_id     = ""
+
+[launch]
+binary         = "septerra.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "The game's executable is septerra.exe (Core.exe does not exist). If you own the Steam build, install it with the default Steam Proton first, then switch the compatibility tool to the latest GE-Proton — installing under GE first can corrupt the install and require a file-integrity verify. The single most important fix: delete InstallScript.vdf from the game's install folder (steamapps/common/Septerra Core). Without this the game typically launches only once after install; with it removed, the game launches reliably and full-motion videos play correctly. The latest official patch is 1.04, which fixes the fatal crashes in certain special effects (e.g. the Lava Monster and one of Led's attacks). For a modern recompiled binary, the community M-HT/SR static recompilation runs the game cleanly on current systems. Windowed mode is unreliable on the original engine and is not needed on the Steam Deck — leave it fullscreen. The game is mouse-driven and has no native gamepad support; map a mouse-emulation layout via Steam Input (or attach a Bluetooth mouse) for comfortable play."
+
+[about]
+developer = "Valkyrie Studios"
+publisher = "TopWare Interactive"
+released  = "1999"
+genre     = "RPG"
+modes     = "Single-player"
+summary   = "Septerra Core: Legacy of the Creator is a 1999 isometric JRPG-style RPG set on a layered mechanical world called Septerra. Inspired by Japanese RPGs like Final Fantasy VII, it features a turn-based combo battle system, a large cast of party members, and an epic story involving an ancient AI god and the fate of the planet's seven shell layers. Developed by Valkyrie Studios, it was one of the most ambitious Western RPGs of its era. Deleting InstallScript.vdf and applying the official 1.04 patch (or the M-HT/SR recompilation) gives the most stable modern experience."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Septerra Core"
+url   = "https://www.pcgamingwiki.com/wiki/Septerra_Core:_Legacy_of_the_Creator"
+
+[[links.guides]]
+title = "Steam Community — Septerra Core Steam Deck guide (delete InstallScript.vdf)"
+url   = "https://steamcommunity.com/app/253940/discussions/0/3274691189152607390/"
+
+[[links.guides]]
+title = "Steam Community — Official & unofficial patches (1.04)"
+url   = "https://steamcommunity.com/app/253940/discussions/0/792923683612848741/"
+
+[[links.guides]]
+title = "M-HT/SR — Septerra Core static recompilation (modern binary)"
+url   = "https://github.com/M-HT/SR"
+
+[[links.guides]]
+title = "ProtonDB — Septerra Core (253940)"
+url   = "https://www.protondb.com/app/253940"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = "You must supply your own copy (available on Steam and GOG). The executable is septerra.exe, not Core.exe. Delete InstallScript.vdf from the install folder so the game launches reliably and videos play; install under default Proton then switch to GE-Proton. Apply the official 1.04 patch (or use the M-HT/SR recompiled binary) for crash fixes. Leave it fullscreen — windowed mode is unreliable. Controller support requires a Steam Input mouse-emulation layout — no native gamepad support."

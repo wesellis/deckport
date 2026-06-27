@@ -1,0 +1,76 @@
+[game]
+title       = "Sonic 3 A.I.R. (Angel Island Revisited)"
+slug        = "sonic-3-air"
+aliases     = ["Sonic 3 AIR", "S3AIR", "Sonic 3 and Knuckles PC Port"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "sonic3air_linux"   # native Linux executable inside sonic3air_game.tar.gz from sonic3air.org (a `sonic3air` wrapper script is also included). Add as a non-Steam game
+launch_options = ""
+requires_files = ["Compatible Sonic 3 & Knuckles ROM — supply your own copy (e.g. from the Steam SEGA Mega Drive & Genesis Classics version you already own); copied in via the in-app installer on first launch"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Port:** Sonic 3 A.I.R. (Angel Island Revisited) is an unofficial enhanced PC port of **Sonic 3 & Knuckles**, developed by Eukaryot (Christian Stadler) using the custom **Oxygen Engine**.
+
+**Proton:** A native Linux binary is available directly from sonic3air.org and **runs on Steam Deck without Proton**.
+
+**Features:** The engine provides widescreen rendering, a Time Attack mode, competitive split-screen multiplayer, numerous bug fixes, and a full mod support framework.
+
+**DRM:** S3AIR is engine-only and ships **no game data** — a compatible **Sonic 3 & Knuckles ROM** supplies all content, copied in via the in-app installer on first launch. The official site recommends the ROM from the Steam **SEGA Mega Drive & Genesis Classics** version of S3&K. The standalone S3&K title was **delisted from Steam in May 2022** (the wider Genesis Classics collection followed in **December 2024**), so the game is no longer purchasable there — use a copy you already own.
+
+**Install:** Extract `sonic3air_game.tar.gz` from sonic3air.org and add the `sonic3air_linux` binary (or the bundled `sonic3air` launcher script) as a non-Steam game in Desktop Mode.
+
+**Controller:** Controller support works out of the box (no Steam Input remap required); the Deck gamepad is detected natively.
+"""
+
+[about]
+developer = "Sonic Team / Sega (original 1994 game); Sonic 3 A.I.R. by Eukaryot (Christian Stadler)"
+publisher = "Sega (original); fan-made PC enhancement port"
+released  = "1994 (Sega Mega Drive / Genesis); Sonic 3 A.I.R. v24.x actively maintained 2024-2026"
+genre     = "Platformer"
+modes     = "Single-player, competitive split-screen multiplayer"
+summary   = """
+**Sonic 3 & Knuckles** is the 1994 combined **Mega Drive / Genesis** platformer formed by locking the Sonic & Knuckles cartridge onto Sonic the Hedgehog 3, widely regarded as the high watermark of the classic 2D Sonic era.
+
+**Sonic 3 A.I.R.** (Angel Island Revisited) is an unofficial enhanced PC port developed by Eukaryot using the **Oxygen Engine**, transforming the original game data into a modern experience with **widescreen rendering**, 60 FPS throughout, a competitive split-screen multiplayer mode, a full Time Attack feature, comprehensive bug fixes, and an extensible mod system. The project ships no game data and requires the player to supply their own Sonic 3 & Knuckles ROM (the standalone Steam release was delisted in May 2022; the SEGA Mega Drive & Genesis Classics collection followed in December 2024).
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Sonic 3 A.I.R. — official site and downloads"
+url   = "https://sonic3air.org"
+
+[[links.guides]]
+title = "Sonic 3 A.I.R. — GitHub repository (Eukaryot / Oxygen Engine)"
+url   = "https://github.com/Eukaryot/sonic3air"
+
+[[links.guides]]
+title = "Sonic 3 A.I.R. — Flathub (alternative Linux/Steam Deck install)"
+url   = "https://flathub.org/apps/org.sonic3air.Sonic3AIR"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** sonic3air.org provides the engine binary only and ships **no game data** — players must supply a compatible **Sonic 3 & Knuckles ROM** they already own (the official site recommends the Steam SEGA Mega Drive & Genesis Classics version). The standalone S3&K Steam title was **delisted in May 2022** and the full Genesis Classics collection in **December 2024**, so it is no longer purchasable. The in-app installer copies the ROM into place on first launch.
+
+**Proton:** Use the native Linux binary on Deck (`type = 'native'`, no Proton). Add `sonic3air_linux` as a non-Steam game.
+
+**Features:** Widescreen, Time Attack, and competitive split-screen multiplayer are all available out of the box. The mod system is fully functional on Linux.
+"""

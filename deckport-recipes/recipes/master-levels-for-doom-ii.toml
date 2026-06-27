@@ -1,0 +1,75 @@
+[game]
+title       = "Master Levels for DOOM II"
+slug        = "master-levels-for-doom-ii"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "9160"
+sgdb_id     = ""
+
+[launch]
+binary         = "dosbox.exe"   # Steam launches the WADs through a bundled DOSBox; the wrapper exe is dosbox.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 9160`) — these are the 1995 Master Levels WAD packs for **DOOM II**. Steam ships them inside a DOSBox wrapper (`dosbox.exe` runs `doom2.exe` + the `master.wad` maps).
+
+**Proton:** ProtonDB rates it gold and the DOSBox wrapper runs fine under `Proton`/`GE-Proton` on the Deck.
+
+**Fix:** **RECOMMENDED — swap the slow DOSBox setup for a modern source port.** Drop GZDoom into the install folder, rename `gzdoom.exe` to `dosbox.exe` so Steam launches it, place `master.wad` next to `doom2.wad`, and add `-file master.wad` to mount the maps.
+
+**Controller:** The source port gives native controller support; for the vanilla DOSBox path apply a Steam Input keyboard/mouse layout.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "id Software"
+publisher = "GT Interactive"
+released  = "1995"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer (deathmatch and co-op via the underlying DOOM II engine)"
+summary   = """
+**Master Levels for DOOM II** is an official **expansion pack** for **DOOM II: Hell on Earth**, released on CD in December 1995. It bundles **20 commissioned WAD map files** built by outside level designers under contract to **id Software**, plus the separate **Maximum Doom** shovelware collection of thousands of community maps. id produced it to officially license and curate the wave of unauthorized commercial DOOM level disks that were appearing at the time.
+
+The standalone product is no longer sold because the maps were **folded into the later enhanced re-release** of DOOM II, and the original Steam listing (appid 9160) was **delisted**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Run Master Levels For Doom II With A Source Port (Steam guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=1658162458"
+
+[[links.guides]]
+title = "ProtonDB reports — Master Levels for Doom II (appid 9160)"
+url   = "https://www.protondb.com/app/9160"
+
+[[links.guides]]
+title = "How to run Master Levels for Doom 2 on GZDoom (Doomworld)"
+url   = "https://www.doomworld.com/forum/topic/119650-how-to-run-master-levels-for-doom-2-on-gzdoom/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam (`appid 9160`); these maps were later folded into the **DOOM II enhanced re-release**, so the standalone product is no longer sold.
+
+**Fix:** ProtonDB gold — the DOSBox wrapper runs under `Proton`, but vanilla DOSBox is **fiddly and keyboard-only**. **Strongly prefer the GZDoom source-port swap** (rename `gzdoom.exe` to `dosbox.exe`, mount `master.wad` via `-file master.wad`) for proper Deck-native controller support.
+
+**Controller:** The vanilla DOSBox path is playable with a Steam Input keyboard/mouse layout.
+
+**Multiplayer:** Single-player only, no servers involved."""

@@ -1,0 +1,71 @@
+[game]
+title       = "Fable III"
+slug        = "fable-3"
+aliases     = ["Fable 3", "Fable III"]
+type        = "proton"
+engine      = "other"
+steam_appid = "105400"
+sgdb_id     = ""
+
+[launch]
+binary         = "fable3.exe"   # confirmed: steamapps/common/fableIII/fable3.exe (FableLauncher.exe is the GFWL launcher front-end)
+launch_options = "PROTON_NO_D3D11=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton8-22"
+winetricks = ["vcrun2008", "xact", "xact_x64"]
+notes      = """
+**Game:** 2011 Lionhead Studios / Microsoft action-RPG, PC port. Delisted — bring your own copy.
+
+**GFWL:** Built on Games for Windows Live (dead): needs a GFWL bypass to launch/save.
+
+**Proton:** Deck recipe (community-confirmed): force `GE-Proton8-22` or newer + the `PROTON_NO_D3D11=1 %command%` launch option above.
+
+**Fix:** Delete the Games-for-Windows-LIVE folder under the prefix (`compatdata/105400/pfx/drive_c/Program Files (x86)/Common Files/`); **drop a fake/replacement `xlive.dll` NEXT TO `fable3.exe`** in `steamapps/common/fableIII/` (wrong folder = no launch); install `vcrun2008` and the `xact`/`xact_x64` DLLs via `protontricks`. **Do NOT run the GFWL installer.**
+
+**DRM:** `xlive` bypass is single-player only (no GFWL online/DLC sync).
+
+**Install:** If it still won't open, try a different `GE-Proton` build — some SteamOS updates favor newer/older builds."""
+
+[about]
+developer = "Lionhead Studios"
+publisher = "Microsoft Game Studios"
+released  = "2011"
+genre     = "Action role-playing"
+modes     = "Single-player, two-player co-op (local and online)"
+summary   = "**Fable III** is the third entry in Lionhead Studios' **action-RPG** series, set on the fictional continent of Albion fifty years after **Fable II**. The player leads a revolution against a tyrannical king, becomes ruler, and must balance moral promises against the harsh demands of governing and defending the kingdom. It is known for its **choice-and-consequence morality system** and its political 'rule the kingdom' twist. The PC version shipped with **Games for Windows LIVE**, whose shutdown is the main reason the title is hard to run today."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[[links.guides]]
+title = "Steam Community Guide: Fable III on Steam Deck (latest fix)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3623350057"
+
+[[links.guides]]
+title = "ProtonDB reports (appid 105400)"
+url   = "https://www.protondb.com/app/105400"
+
+[[links.guides]]
+title = "PCGamingWiki: Fable III (DRM, GFWL, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Fable_III"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted — configuration only, no links.
+
+**GFWL:** KEY dependency — **apply the `xlive.dll` bypass next to `fable3.exe` before it will run; without it the game fails at launch on Deck.**
+
+**Controller:** Native Xbox-style controller support — Steam Deck maps the gamepad automatically, no custom layout needed.
+
+**DRM:** The `xlive` bypass disables GFWL online, co-op, and DLC sync (single-player works).
+
+**Status:** Community reports it runs once configured, but the GFWL bypass plus prefix tweaks make it finicky; protondb tier is `silver` (some report platinum-quality runs after fixes, but the consensus reflects the manual work and occasional launch failures)."""

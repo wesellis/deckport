@@ -1,0 +1,72 @@
+[game]
+title       = "PokeMMO"
+slug        = "pokemmo"
+aliases     = ["PokeMMO", "Pokemon MMO", "Pokemon Online MMO"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "flatpak run com.pokemmo.PokeMMO"   # Java application; official Flatpak is the easiest Deck path: com.pokemmo.PokeMMO (Flathub) or via the official installer from pokemmo.com
+launch_options = ""
+requires_files = [
+  "ROM files for each Pokemon region game you want to play (FireRed for Kanto, HeartGold/SoulSilver for Johto, Black/White for Unova, Platinum for Sinnoh, Emerald for Hoenn)"
+]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Install:** The official Flatpak is the easiest Deck path: `com.pokemmo.PokeMMO` via Flathub (install through the Discover app), or use the official installer from `pokemmo.com`. PokeMMO runs as a Java application with a native Linux build, so **no Proton is required**. Launch it once in Desktop Mode first so it downloads its client files.
+
+**Display:** Use **Borderless Windowed** mode on Deck — Wayland has issues.
+
+**Controller:** No official controller profile ships; a community **Steam Input** profile can be selected under Controller Settings > Community Profiles. **You must launch PokeMMO through Steam** (add the Flatpak as a non-Steam game) for the controller config to apply — controllers do not work if launched from the Desktop applications menu.
+
+**ROMs:** ROM files for each region you want to play must be supplied from your own legally-owned copies (FireRed for Kanto, HeartGold/SoulSilver for Johto, Black/White for Unova, Platinum for Sinnoh, Emerald for Hoenn).
+
+**Docs:** Official Steam Deck setup guide at `support.pokemmo.com`.
+"""
+
+[about]
+developer = "PokeMMO team (pokemmo.com)"
+publisher = "PokeMMO team (pokemmo.com)"
+released  = "2012 (first release); actively maintained 2026"
+genre     = "MMORPG (Pokemon fan MMO)"
+modes     = "Multiplayer online"
+summary   = "**PokeMMO** is a free-to-play **Pokemon MMORPG** with hundreds of thousands of active players across multiple regions derived from the official mainline games. It runs as a **Java application** with a native Linux build; the official **Flatpak** (`com.pokemmo.PokeMMO` via Flathub) is the cleanest install path on Steam Deck. Official Steam Deck support documentation is available at `support.pokemmo.com`. ROM files for each region you wish to play must be supplied by the user from their own legally-owned copies of the corresponding games."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "support.pokemmo.com: Official Steam Deck setup guide"
+url   = "https://support.pokemmo.com/knowledgebase/article/steam-deck-setup"
+
+[[links.guides]]
+title = "Flathub: official PokeMMO Flatpak (com.pokemmo.PokeMMO)"
+url   = "https://flathub.org/apps/com.pokemmo.PokeMMO"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires ROM files for each region (FireRed, HeartGold/SoulSilver, Black/White, Platinum, Emerald) — **you must provide your own legally-owned copies**.
+
+**Display:** Use **Borderless Windowed** mode on Deck (Wayland has issues).
+
+**Install:** The official **Flatpak** (`com.pokemmo.PokeMMO`) is the easiest Deck install. Run once in Desktop Mode to fetch client files.
+
+**Controller:** No official profile; pick a community **Steam Input** profile, and launch via Steam (not the Desktop menu) or the controller config won't apply.
+
+**Docs:** Official Deck guide at `support.pokemmo.com`.
+"""

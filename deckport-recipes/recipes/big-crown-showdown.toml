@@ -1,0 +1,72 @@
+[game]
+title       = "Big Crown: Showdown"
+slug        = "big-crown-showdown"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "793360"
+sgdb_id     = ""
+
+[launch]
+binary         = "Big Crown Showdown.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (`appid 793360`), `Unity` engine.
+
+**Proton:** ProtonDB rates it gold; runs well on the Deck under Proton (`GE-Proton` recommended; `proton_experimental` also reported fine).
+
+**DRM:** The game phones a third-party online service on launch and the servers were shut down (Dec 2022), so out of the box it can hang/fail to reach the menu.
+
+**Fix:** **Offline/local fix** — hex-edit `Assembly-CSharp.dll` in `Big Crown Showdown_Data/Managed` at offset `128269`, replacing bytes `39 02` with `00 00`. **This bypasses the dead server check and boots straight to the menu.**
+
+**Multiplayer:** After patching, local 4-player works via `Local -> Quickplay` or `Local -> Custom Game`.
+
+**Controller:** Native controller support is excellent (built for 4 pads), so no Steam Input layout is needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Hyper Luminal Games"
+publisher = "Hyper Luminal Games"
+released  = "2018"
+genre     = "Party brawler / platformer"
+modes     = "Local and online multiplayer (up to 4 players), couch co-op"
+summary   = "**Big Crown: Showdown** is a frantic four-player **party brawler** from UK studio Hyper Luminal Games, blending precision platforming with chaotic **one-button combat** as players knock each other off scrolling courses across three medieval-themed worlds to claim the crown. Built in **Unity**, it released on PC, PS4, Xbox One and Switch in December 2018 and was praised as fun couch competition with full native controller support. It was delisted across all platforms in 2024 because the **third-party online service** it relied on was shut down, leaving the online modes inoperable and only local play available."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Big Crown: Showdown (appid 793360)"
+url   = "https://www.protondb.com/app/793360"
+
+[[links.guides]]
+title = "Steam Community — \"abandoned?\" thread (offline hex fix, Nov 2023)"
+url   = "https://steamcommunity.com/app/793360/discussions/0/3762229949255197043/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted multiplayer brawler; deckport links nothing.
+
+**Servers:** Online servers are dead (shut down Dec 2022), so online modes are gone — **local-only now**.
+
+**Fix:** To even reach the menu offline you **must** apply the `Assembly-CSharp.dll` hex patch described in the proton notes (offset `128269`, `39 02 -> 00 00`); without it the game can hang on the server check. **Verify the exact byte offset against your build before editing.**
+
+**Once patched:** Gold-tier on Proton with full native 4-pad controller support — great Deck couch game.
+"""

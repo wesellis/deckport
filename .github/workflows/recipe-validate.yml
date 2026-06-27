@@ -1,0 +1,26 @@
+name: recipe-validate
+
+on:
+  pull_request:
+    paths:
+      - "deckport-recipes/recipes/**"
+      - "deckport-recipes/schema.json"
+      - "src/deckport/recipe.py"
+      - "scripts/validate_recipes.py"
+  push:
+    branches: [main]
+    paths:
+      - "deckport-recipes/recipes/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"  # tomllib is stdlib here
+      - name: Install schema validator
+        run: pip install jsonschema
+      - name: Validate recipes
+        run: python scripts/validate_recipes.py

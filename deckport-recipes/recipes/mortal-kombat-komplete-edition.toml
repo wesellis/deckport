@@ -1,0 +1,69 @@
+[game]
+title       = "Mortal Kombat: Komplete Edition"
+slug        = "mortal-kombat-komplete-edition"
+aliases     = ["Mortal Kombat 9", "MK9", "MK Komplete Edition"]
+type        = "proton"
+engine      = "other"         # Unreal Engine 3
+steam_appid = "237110"
+sgdb_id     = ""
+
+[launch]
+binary         = "DiscContentPC/MKKE.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 4.2-9"
+winetricks = []
+notes      = """
+**Game:** 2013 PC release of NetherRealm's 2011 Mortal Kombat (MK9), Komplete Edition (UE3).
+
+**DRM:** Delisted — supply your own copy.
+
+**Proton:** Runs under Proton; Valve-rated Deck-Playable. **PIN Proton to `4.2-9`** — newer Proton **hangs at the MK logo**. Community reports `6.3-x` also launches and can run smoother; try `4.2-9` first, then `6.3-x` if you get stutter. Proton Experimental / GE-Proton are NOT recommended (logo hang).
+
+**Binary:** Main game exe is `DiscContentPC/MKKE.exe`. The advanced settings/config launcher (resolution, graphics) is `DiscContentPC/MKLauncher.exe` in the same folder.
+
+**Controller:** Works with the Deck's built-in gamepad — no Steam Input remap needed for basic play.
+
+**Install:** Normal Steam install (folder `MortalKombat_KompleteEdition`); config lives in the prefix `%appdata%/MKKE/`.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "NetherRealm Studios, High Voltage Software"
+publisher = "Warner Bros. Interactive Entertainment"
+released  = "2013"
+genre     = "Fighting"
+modes     = "Single-player, local and online multiplayer"
+summary   = "The 2013 PC port of NetherRealm Studios' 2011 **Mortal Kombat** (the ninth main entry, MK9), built on **Unreal Engine 3**. The **Komplete Edition** bundles the base game with all downloadable content, including the four DLC fighters (Skarlet, Kenshi, Rain, and guest character **Freddy Krueger**) plus extra costumes and Klassic skins. It rebooted the **series** with a return to **2D-plane fighting** and was widely praised for revitalizing the franchise. The game has been **delisted** from sale, in part due to **expired licensing for guest content**."
+
+[[links.guides]]
+title = "ProtonDB — Mortal Kombat Komplete Edition (237110)"
+url   = "https://www.protondb.com/app/237110"
+
+[[links.guides]]
+title = "Steam Community — Help with Steam Deck (SOLVED): pin Proton 4.2-9"
+url   = "https://steamcommunity.com/app/237110/discussions/0/3274689286968313118/"
+
+[[links.guides]]
+title = "PCGamingWiki — Mortal Kombat Komplete Edition"
+url   = "https://www.pcgamingwiki.com/wiki/Mortal_Kombat_Komplete_Edition"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted from sale (expired guest-content licensing) — supply your own copy; configuration only, no links.
+
+**Proton version is load-bearing:** Default/newer Proton hangs at the MK logo. Pin `4.2-9` (or `6.3-x`).
+
+**Binary confirmed:** Main exe is `DiscContentPC/MKKE.exe`.
+"""

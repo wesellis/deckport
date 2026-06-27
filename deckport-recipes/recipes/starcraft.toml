@@ -1,0 +1,74 @@
+[game]
+title       = "StarCraft + Brood War"
+slug        = "starcraft"
+aliases     = ["StarCraft", "StarCraft Brood War", "StarCraft 1", "SC1"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Battle.net Launcher.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+This recipe runs the Windows Battle.net launcher under Proton, then installs and launches the free StarCraft + Brood War from it. There is no Steam release, so there is no Steam app ID.
+
+Setup: download the Battle.net desktop app installer from blizzard.com, add it to Steam as a non-Steam game, and force a recent GE-Proton (GE-Proton 9-23 or newer — those builds carry the fix for the Battle.net launcher self-update that previously broke under Proton; GE-Proton 10-x also works). Run the installer once to bootstrap the prefix, then point the Steam shortcut's target at the installed 'Battle.net Launcher.exe' (under .../drive_c/Program Files (x86)/Battle.net/) and relaunch.
+
+From the launcher, install StarCraft (free). The game itself installs to .../drive_c/Program Files (x86)/StarCraft/, and the actual game binary is StarCraft/x86_64/StarCraft.exe — but you normally launch through the Battle.net launcher rather than that exe directly.
+
+Controls: this is a keyboard-and-mouse RTS. Best played docked with a keyboard, or use a Steam Input layout with the right trackpad as a mouse; there is no native gamepad support.
+
+The base game including the Brood War expansion has been officially free since 2017 (patched to 1.18). A paid StarCraft Remastered upgrade is available via Battle.net for HD graphics and widescreen, but the base game is entirely free."""
+
+[about]
+developer = "Blizzard Entertainment"
+publisher = "Blizzard Entertainment"
+released  = "1998"
+genre     = "Real-Time Strategy"
+modes     = "Single-player, Multiplayer"
+summary   = "StarCraft is Blizzard Entertainment's landmark 1998 real-time strategy game that defined competitive RTS gaming and became a cultural phenomenon, particularly in South Korea. Players command one of three asymmetric factions — Terran, Zerg, or Protoss — across two full single-player campaigns and intense multiplayer competition on Battle.net. The Brood War expansion adds additional campaigns, units, and balance changes. Since 2017 Blizzard has made the full game including Brood War free to download and play officially."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official Blizzard Free Download Page"
+url   = "https://starcraft.com/en-us/articles/20674424"
+
+[[links.guides]]
+title = "PCGamingWiki — StarCraft"
+url   = "https://www.pcgamingwiki.com/wiki/StarCraft"
+
+[[links.guides]]
+title = "GamingOnLinux — Install Battle.net on SteamOS / Steam Deck (WoW & StarCraft)"
+url   = "https://www.gamingonlinux.com/guides/view/how-to-install-battle-net-on-linux-steamos-and-steam-deck-for-world-of-warcraft-and-starcraft/"
+
+[[links.guides]]
+title = "GamingOnLinux — GE-Proton 9-23 Battle.net launcher fix"
+url   = "https://www.gamingonlinux.com/2025/01/ge-proton-9-23-released-with-a-battlenet-fix-for-linux-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+FREE — official Blizzard free download since 2017 via the Battle.net desktop app (the original game patched to 1.18, including the Brood War expansion). There is no Steam release and no Steam app ID, so there is no single ProtonDB tier for it; rate the Battle.net launcher experience instead.
+
+Battle.net launcher: requires GE-Proton (use GE-Proton 9-23 or newer for the launcher self-update fix). After installing, repoint the Steam shortcut to 'Battle.net Launcher.exe', not the installer.
+
+Controls: keyboard/mouse RTS — no native gamepad. Best docked with a keyboard, or use a Steam Input layout (right trackpad as mouse).
+
+A paid StarCraft Remastered upgrade is available via Battle.net for HD graphics and widescreen, but the base game is fully free."""

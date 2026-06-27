@@ -1,0 +1,68 @@
+[game]
+title       = "Magic 2015 - Duels of the Planeswalkers"
+slug        = "magic-2015-duels-of-the-planeswalkers"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "255420"
+sgdb_id     = ""
+
+[launch]
+binary         = "DotP_D15.exe"   # main game exe; a Launcher_x64.exe sits alongside it but launch the game exe directly to skip the launcher
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid 255420, pulled Nov 2020). ProtonDB tier silver.
+
+**Install:** Main executable is `DotP_D15.exe` (the install also ships `Launcher_x64.exe`).
+
+**Proton:** Use `GE-Proton` rather than stock `proton_experimental`: community reports the stock branch can hang on the loading/title screen, and `GE-Proton` clears the most reports.
+
+**Display:** If it sticks on a black or loading screen, **force a windowed start** and let it settle, then return to fullscreen from the in-game options.
+
+**DRM:** No GFWL or SecuROM — plain Steam-DRM build, so no DRM bypass needed.
+
+**Supply your own copy:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Stainless Games"
+publisher = "Wizards of the Coast"
+released  = "2014"
+genre     = "Digital collectible card game / strategy"
+modes     = "Single-player campaign, local/hotseat, online multiplayer (servers now dead)"
+summary   = "**Magic 2015 - Duels of the Planeswalkers** is the digital adaptation of Wizards of the Coast's **Magic: The Gathering** trading card game, developed by Stainless Games and released in July 2014 on PC, consoles, and mobile. It was the sixth entry in the **Duels of the Planeswalkers** series and introduced **fully customizable decks**, letting players build from cards unlocked through a single-player campaign. The shift to a free-to-play-style economy with in-game booster packs and microtransactions drew a polarized critical reception, ranging from praise for the new deck-building to sharp criticism of its grind and monetization. It was **pulled from Steam in November 2020** and is no longer sold."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (appid 255420)"
+url   = "https://www.protondb.com/app/255420"
+
+[[links.guides]]
+title = "PCGamingWiki - Magic 2015 (DRM, gamepad, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Magic_2015_-_Duels_of_the_Planeswalkers"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted Steam game (appid 255420, removed Nov 2020); only previous owners retain it in their library. deckport links nothing.
+
+**Proton:** ProtonDB silver — it runs under Proton but a clean run can take work. Prefer `GE-Proton`, since stock Proton has reports of hanging on the loading screen.
+
+**Controller:** The PC build is menu/mouse-driven (no first-class native PC gamepad support), so apply a **Steam Input gamepad-mouse / keyboard layout** on the Deck for full controller play.
+
+**Multiplayer:** Online multiplayer relied on now-dead servers; only single-player and local/hotseat play is dependable."""

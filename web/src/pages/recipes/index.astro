@@ -1,0 +1,358 @@
+---
+import Base from "../../layouts/Base.astro";
+import RecipeCard from "../../components/RecipeCard.astro";
+import { getAllRecipes, statusCounts, STATUS_ORDER, STATUS_LABEL, normalizeTier } from "../../lib/recipes";
+
+const recipes = getAllRecipes();
+const counts = statusCounts();
+const typeCounts = {
+  native: recipes.filter((r) => r.type === "native").length,
+  proton: recipes.filter((r) => r.type === "proton").length,
+};
+
+// ProtonDB tier as a quality threshold: "Gold +" = gold and better.
+const TIER_RANK: Record<string, number> = { platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1 };
+const atLeast = (min: string) =>
+  recipes.filter((r) => {
+    const k = normalizeTier(r.protondbTier);
+    return k !== null && TIER_RANK[k] >= TIER_RANK[min];
+  }).length;
+const tierThresholds = [
+  { key: "platinum", label: "Platinum", count: atLeast("platinum") },
+  { key: "gold", label: "Gold +", count: atLeast("gold") },
+  { key: "silver", label: "Silver +", count: atLeast("silver") },
+];
+const unknownCount = recipes.filter((r) => {
+  const k = normalizeTier(r.protondbTier);
+  return k === null || k === "pending";
+}).length;
+
+// Alphabetical, grouped by first letter (digits/symbols under "#").
+const sorted = recipes
+  .slice()
+  .sort((a, b) => a.title.localeCompare(b.title, "en", { sensitivity: "base", numeric: true }));
+
+function letterOf(title: string): string {
+  const c = (title.trim()[0] ?? "#").toUpperCase();
+  return /[A-Z]/.test(c) ? c : "#";
+}
+// Safe anchor key — "#" can't be an id fragment.
+const anchorKey = (letter: string) => (letter === "#" ? "num" : letter);
+
+type Group = { letter: string; items: typeof recipes };
+const groups: Group[] = [];
+for (const r of sorted) {
+  const L = letterOf(r.title);
+  let g = groups[groups.length - 1];
+  if (!g || g.letter !== L) {
+    g = { letter: L, items: [] };
+    groups.push(g);
+  }
+  g.items.push(r);
+}
+
+const ALPHABET = ["#", ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")];
+const present = new Set(groups.map((g) => g.letter));
+---
+
+<Base title="Recipes — deckport" current="recipes">
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">recipe book</p>
+      <h2 style="margin-bottom:.5rem;">{recipes.length} recipes</h2>
+      <p class="muted" style="margin-top:0;">
+        Search by title, alias or engine, or filter by status and type. Listed
+        alphabetically — use the A–Z bar to jump.
+      </p>
+
+      <div class="toolbar">
+        <input
+          type="search"
+          id="q"
+          placeholder="Search games, aliases, engines…"
+          autocomplete="off"
+          aria-label="Search recipes"
+        />
+        <span class="result-count" id="result-count">{recipes.length} shown</span>
+      </div>
+
+      <div class="filter-row">
+        <span class="filter-label">Status</span>
+        <button class="chip" data-filter="all" aria-pressed="true">All</button>
+        {
+          STATUS_ORDER.map((s) => (
+            <button class="chip" data-filter={s} aria-pressed="false">
+              {STATUS_LABEL[s]} ({counts[s]})
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="filter-row">
+        <span class="filter-label">Type</span>
+        <button class="chip" data-type-filter="all" aria-pressed="true">All</button>
+        <button class="chip" data-type-filter="native" aria-pressed="false">
+          Native ({typeCounts.native})
+        </button>
+        <button class="chip" data-type-filter="proton" aria-pressed="false">
+          Proton ({typeCounts.proton})
+        </button>
+      </div>
+
+      <div class="filter-row">
+        <span class="filter-label">ProtonDB</span>
+        <button class="chip" data-tier-min="all" aria-pressed="true">Any</button>
+        {
+          tierThresholds.map((t) => (
+            <button class="chip" data-tier-min={t.key} aria-pressed="false">
+              {t.label} ({t.count})
+            </button>
+          ))
+        }
+        <button class="chip" data-tier-min="unknown" aria-pressed="false">
+          Unknown ({unknownCount})
+        </button>
+      </div>
+
+      <nav class="az-nav" aria-label="Jump to letter">
+        {
+          ALPHABET.map((L) =>
+            present.has(L) ? (
+              <a href={`#letter-${anchorKey(L)}`} data-az={L}>{L}</a>
+            ) : (
+              <span class="az-off" data-az={L}>{L}</span>
+            ),
+          )
+        }
+      </nav>
+
+      {
+        recipes.length > 0 ? (
+          <div id="recipe-list">
+            {groups.map((g) => (
+              <div class="alpha-group" data-letter={g.letter}>
+                <h3 class="alpha-head" id={`letter-${anchorKey(g.letter)}`}>{g.letter}</h3>
+                <div class="grid cols-2">
+                  {g.items.map((r) => (
+                    <RecipeCard recipe={r} />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p class="empty">No recipes yet.</p>
+        )
+      }
+      <p class="empty" id="no-results" hidden>No recipes match those filters.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .result-count {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--sub);
+    white-space: nowrap;
+  }
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+  }
+  .filter-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sub);
+    margin-right: 0.35rem;
+    min-width: 3.2rem;
+  }
+
+  /* sticky A–Z jump bar */
+  .az-nav {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+    padding: 0.55rem 0;
+    margin: 0.75rem 0 1.5rem;
+    background: color-mix(in srgb, var(--ink) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .az-nav a,
+  .az-nav span {
+    display: grid;
+    place-items: center;
+    min-width: 1.7rem;
+    height: 1.7rem;
+    padding: 0 0.35rem;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.12s ease, opacity 0.12s ease;
+  }
+  .az-nav a {
+    color: var(--amber);
+  }
+  .az-nav a:hover {
+    background: color-mix(in srgb, var(--amber) 16%, transparent);
+  }
+  .az-nav .az-off {
+    color: color-mix(in srgb, var(--sub) 38%, transparent);
+    cursor: default;
+  }
+  .az-nav .az-hidden {
+    opacity: 0.22;
+    pointer-events: none;
+  }
+  .alpha-head {
+    scroll-margin-top: 4rem;
+  }
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>
+
+<script>
+  // Client-side filter/search over the statically-rendered cards. Combines a text
+  // term with a status filter and a type filter; hides empty letter sections,
+  // dims A–Z letters with no visible cards, and keeps a live result count.
+  const q = document.getElementById("q") as HTMLInputElement | null;
+  const list = document.getElementById("recipe-list");
+  const noResults = document.getElementById("no-results");
+  const countEl = document.getElementById("result-count");
+  const statusChips = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".chip[data-filter]"),
+  );
+  const typeChips = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".chip[data-type-filter]"),
+  );
+  const tierChips = Array.from(
+    document.querySelectorAll<HTMLButtonElement>(".chip[data-tier-min]"),
+  );
+  const TIER_RANK: Record<string, number> = {
+    platinum: 5, gold: 4, silver: 3, bronze: 2, borked: 1,
+  };
+  const azItems = Array.from(
+    document.querySelectorAll<HTMLElement>(".az-nav [data-az]"),
+  );
+  const groups = list
+    ? Array.from(list.querySelectorAll<HTMLElement>(".alpha-group"))
+    : [];
+  const cards = list
+    ? Array.from(list.querySelectorAll<HTMLElement>(".recipe-card"))
+    : [];
+  const total = cards.length;
+
+  let activeStatus = "all";
+  let activeType = "all";
+  let activeTierMin = "all";
+
+  function apply() {
+    const term = (q?.value ?? "").trim().toLowerCase();
+    let shown = 0;
+    for (const card of cards) {
+      const matchStatus =
+        activeStatus === "all" || card.dataset.status === activeStatus;
+      const matchType =
+        activeType === "all" || card.dataset.type === activeType;
+      const cardRank = TIER_RANK[card.dataset.tier ?? ""] ?? 0;
+      const matchTier =
+        activeTierMin === "all"
+          ? true
+          : activeTierMin === "unknown"
+            ? card.dataset.tier === "unknown"
+            : cardRank >= (TIER_RANK[activeTierMin] ?? 0);
+      const matchTerm =
+        term === "" || (card.dataset.search ?? "").includes(term);
+      const visible = matchStatus && matchType && matchTier && matchTerm;
+      card.style.display = visible ? "" : "none";
+      if (visible) shown++;
+    }
+    // hide letter headers whose whole group is filtered out + dim the A–Z links
+    const visibleLetters = new Set<string>();
+    for (const g of groups) {
+      const anyVisible = Array.from(
+        g.querySelectorAll<HTMLElement>(".recipe-card"),
+      ).some((c) => c.style.display !== "none");
+      g.style.display = anyVisible ? "" : "none";
+      if (anyVisible) visibleLetters.add(g.dataset.letter ?? "");
+    }
+    for (const item of azItems) {
+      if (item.classList.contains("az-off")) continue;
+      item.classList.toggle("az-hidden", !visibleLetters.has(item.dataset.az ?? ""));
+    }
+    if (countEl)
+      countEl.textContent =
+        shown === total ? `${total} shown` : `${shown} of ${total} shown`;
+    if (noResults) noResults.hidden = shown !== 0;
+    syncUrl();
+  }
+
+  // Keep the URL in sync so any filtered view is shareable / deep-linkable.
+  function syncUrl() {
+    const p = new URLSearchParams();
+    const term = (q?.value ?? "").trim();
+    if (term) p.set("q", term);
+    if (activeStatus !== "all") p.set("status", activeStatus);
+    if (activeType !== "all") p.set("type", activeType);
+    if (activeTierMin !== "all") p.set("tier", activeTierMin);
+    const qs = p.toString();
+    history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+  }
+
+  function press(chips: HTMLButtonElement[], attr: string, val: string) {
+    for (const c of chips)
+      c.setAttribute("aria-pressed", (c.dataset[attr] ?? "all") === val ? "true" : "false");
+  }
+
+  q?.addEventListener("input", apply);
+  for (const chip of statusChips) {
+    chip.addEventListener("click", () => {
+      activeStatus = chip.dataset.filter ?? "all";
+      for (const c of statusChips)
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+      apply();
+    });
+  }
+  for (const chip of typeChips) {
+    chip.addEventListener("click", () => {
+      activeType = chip.dataset.typeFilter ?? "all";
+      for (const c of typeChips)
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+      apply();
+    });
+  }
+  for (const chip of tierChips) {
+    chip.addEventListener("click", () => {
+      activeTierMin = chip.dataset.tierMin ?? "all";
+      for (const c of tierChips)
+        c.setAttribute("aria-pressed", c === chip ? "true" : "false");
+      apply();
+    });
+  }
+
+  // Honour deep-link params on load (e.g. ?q=crysis from the homepage search).
+  (function initFromUrl() {
+    const p = new URLSearchParams(location.search);
+    const qp = p.get("q");
+    if (qp && q) q.value = qp;
+    const sp = p.get("status");
+    if (sp) { activeStatus = sp; press(statusChips, "filter", sp); }
+    const tp = p.get("type");
+    if (tp) { activeType = tp; press(typeChips, "typeFilter", tp); }
+    const tier = p.get("tier");
+    if (tier) { activeTierMin = tier; press(tierChips, "tierMin", tier); }
+    if (qp || sp || tp || tier) apply();
+  })();
+</script>

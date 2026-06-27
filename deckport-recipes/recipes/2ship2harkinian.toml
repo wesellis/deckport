@@ -1,0 +1,76 @@
+[game]
+title       = "2Ship2Harkinian"
+slug        = "2ship2harkinian"
+aliases     = ["2S2H", "Majora's Mask PC Port", "HarbourMasters MM Port"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "2ship.appimage"
+launch_options = ""
+requires_files = ["Majora's Mask US/NTSC ROM (N64 .z64 dump OR GameCube version)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Proton:** 2Ship2Harkinian is a **native Linux build** — no Proton needed.
+
+**Install:** Download the `Linux` release zip from GitHub (`2Ship-...-Linux.zip`), extract it, copy your **Majora's Mask US ROM** into the same folder, then add the `2ship.appimage` file as a non-Steam game from `Desktop Mode`.
+
+**ROM:** On first run the game prompts you to provide your **Majora's Mask US/NTSC ROM** — either an N64 `.z64` dump or the GameCube version. It extracts assets locally, so **you only need the ROM once**.
+
+**Display:** The port runs at a full `60 FPS` at 2x native resolution on Steam Deck, under `8W` power draw.
+
+**Controller:** Works through **Steam Input** as a non-Steam game; apply a gamepad layout. Free look is mapped to the **right stick** and items/masks can be bound to DPad slots.
+
+**Features:** Autosave, pause-save, mask quick-equip, and a HUD editor.
+
+**Guide:** A full setup guide is available at Steam Deck HQ (see Guides links below)."""
+
+[about]
+developer = "HarbourMasters"
+publisher = "HarbourMasters (community project)"
+released  = "2000 (Nintendo 64 original); PC port first released May 2024; v4.0.2 March 2026"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "**2Ship2Harkinian** is an unofficial native PC port of *The Legend of Zelda: Majora's Mask* for Nintendo 64, developed by the **HarbourMasters** community team — the same group behind **Ship of Harkinian** (OoT). Built on the **zelda64 decompilation** project, it compiles the original game code directly to x86 and ARM targets. The port adds **60 FPS** gameplay, widescreen support, autosave, pause-save, mask quick-equip, free look on the right stick, a HUD editor, and numerous quality-of-life improvements. It requires the player to supply their own Majora's Mask ROM dump. Note: this is a separate and simultaneously maintained project from **Zelda 64: Recompiled** (Wiseguy's N64Recomp-based port of the same game)."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "2Ship2Harkinian — GitHub releases"
+url   = "https://github.com/HarbourMasters/2ship2harkinian/releases"
+
+[[links.guides]]
+title = "Steam Deck HQ — 2Ship2Harkinian setup guide"
+url   = "https://steamdeckhq.com/news/another-majoras-mask-pc-port-on-steam-deck/"
+
+[[links.guides]]
+title = "Retro Handhelds — Majora's Mask on Steam Deck/Windows"
+url   = "https://retrohandhelds.gg/how-to-play-majoras-mask-on-android-steam-deck-and-windows/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires your own **Majora's Mask US/NTSC ROM** — an N64 `.z64` dump or the GameCube version both work.
+
+**Install:** Extract the `Linux` release zip, copy your ROM into that folder, add the `2ship.appimage` file as a non-Steam game, and point to your ROM on first run — assets are extracted once and the ROM is no longer needed.
+
+**Controller:** Configured via **Steam Input** (it is a non-Steam game); pick a gamepad layout in its Steam controller settings.
+
+**Performance:** `60fps` stable at `~8W` on Steam Deck.
+
+**Not the same project:** This is a separate project from **Zelda 64: Recompiled** (Wiseguy's N64Recomp-based port of the same game) — both exist simultaneously and are actively maintained."""

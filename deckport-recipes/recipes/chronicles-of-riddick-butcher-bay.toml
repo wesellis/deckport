@@ -1,0 +1,74 @@
+[game]
+title       = "The Chronicles of Riddick: Escape from Butcher Bay"
+slug        = "chronicles-of-riddick-butcher-bay"
+aliases     = ["Riddick Butcher Bay", "Escape from Butcher Bay"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "System/Win64_AMD64/SbzEngine.exe"   # 64-bit DRM-free exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**About:** Starbreeze's acclaimed 2004 stealth-action prequel to Pitch Black, delisted (later folded into `Assault on Dark Athena`).
+
+**Proton:** Runs well on Deck under Proton/GE-Proton. Reports use the GE-Proton runner.
+
+**Binary:** Point Steam at the 64-bit DRM-free `System/Win64_AMD64/SbzEngine.exe` — the 32-bit `System/Riddick.exe` (and `Win32_x86_SSE2/`) ships with `SecuROM` that fights Proton.
+
+**Fallback:** If the 64-bit exe crashes or has visual glitches (reported with some D3D wrappers), fall back to the 32-bit `Win32_x86_SSE2` build, which several users find more stable under Wine/Proton.
+
+**Controller:** PC version has NO native gamepad support — set up a Steam Input keyboard/mouse mapping (or use the bundled community gamepad profile) for the Deck's controls.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — The Chronicles of Riddick: Escape from Butcher Bay"
+url   = "https://www.pcgamingwiki.com/wiki/The_Chronicles_of_Riddick:_Escape_from_Butcher_Bay"
+
+[[links.guides]]
+title = "ProtonDB — The Chronicles of Riddick: Assault on Dark Athena (includes Butcher Bay)"
+url   = "https://www.protondb.com/app/9860"
+
+[[links.guides]]
+title = "WineHQ AppDB — Escape from Butcher Bay"
+url   = "https://appdb.winehq.org/objectManager.php?sClass=application&iId=4418"
+
+[about]
+developer = "Starbreeze Studios, Tigon Studios"
+publisher = "Vivendi Universal Games"
+released  = "2004"
+genre     = "First-person action-adventure with stealth and shooter elements"
+modes     = "Single-player"
+summary   = "**Escape from Butcher Bay** is a prequel to the film **Pitch Black**, casting players as the antihero Riddick as he breaks out of a brutal triple-max prison. Built on **Starbreeze's own engine**, it blends **first-person stealth, melee, and gunplay** and is widely regarded as one of the best movie tie-in games ever made, winning praise for outshining the films it is based on. A **Director's Cut** Windows port added higher resolutions and extra content. The game was later delisted from digital storefronts after the **Universal license expired**."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game — must be owned. Not currently sold on any digital storefront (the standalone Butcher Bay was folded into `Assault on Dark Athena`, itself also delisted).
+
+**DRM blocker:** The 32-bit `Riddick.exe` is protected by `SecuROM`, which misbehaves under Proton — use the 64-bit DRM-free `System/Win64_AMD64/SbzEngine.exe` instead.
+
+**Install method:** Normal install (or copy an existing install folder), then add `SbzEngine.exe` as a non-Steam shortcut and force a GE-Proton/Proton version.
+
+**Controller:** No native gamepad support; needs a Steam Input keyboard/mouse mapping.
+
+**Not hardware-tested** for this recipe — binary, Proton version, and notes are research-based starting points.
+"""

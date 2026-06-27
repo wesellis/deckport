@@ -1,0 +1,76 @@
+[game]
+title       = "Project CARS 3"
+slug        = "project-cars-3"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "958400"
+sgdb_id     = ""
+
+[launch]
+binary         = "pCARS3.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `958400`), removed from sale Aug 24 2025. Main binary is `pCARS3.exe` (Slightly Mad Studios). **ProtonDB platinum** and **Steam Deck Verified**.
+
+**Proton:** Use `proton_experimental` (the Oct 2021+ build fixed the bug where the game ignored controller/keyboard input after Alt+Tab) or current `GE-Proton`.
+
+**DRM:** No DRM/GFWL hoops — **runs cleanly out of the box**. No special launch options or `winetricks` needed.
+
+**Controller:** Native gamepad support, so the Steam Deck's built-in controls work without a custom layout.
+
+**Online:** Online services shut down Feb 24 2026, but the full single-player career, free-play and time-trial modes **remain playable offline**.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Slightly Mad Studios"
+publisher = "Bandai Namco Entertainment"
+released  = "2020"
+genre     = "Racing / sim-cade"
+modes     = "Single-player career, free play, time trial; online multiplayer (servers retired)"
+summary   = "**Project CARS 3** is the third installment in the **Project CARS** racing series from Slightly Mad Studios, published by Bandai Namco. Unlike its sim-focused predecessors, it pivoted toward a more accessible, arcade-leaning **'sim-cade'** style with a structured single-player career, car upgrades and progression. The shift drew a mixed critical reception from fans of the earlier games' realism. It was **removed from sale** on Steam and other digital storefronts in August 2025, and its online services were retired, though the single-player content remains playable offline."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB community reports (appid 958400)"
+url   = "https://www.protondb.com/app/958400"
+
+[[links.guides]]
+title = "Steam Community: 'Verified on Steam Deck' performance discussion"
+url   = "https://steamcommunity.com/app/958400/discussions/0/4867839654244096423/"
+
+[[links.guides]]
+title = "GG.deals: Project CARS 3 removed from digital storefronts"
+url   = "https://gg.deals/gaming-news/project-cars-3-is-scheduled-to-be-removed-from-digital-storefronts-soon/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Status:** **ProtonDB platinum** + **Steam Deck Verified**; binary is `pCARS3.exe`.
+
+**Performance:** Some users report the Verified rating is optimistic on performance: expect to drop to Medium/High settings and cap the framerate for a stable 30-40fps on Deck.
+
+**Proton:** Use `proton_experimental` or `GE-Proton`; the older input-loss-after-Alt+Tab issue is fixed in current Proton.
+
+**Controller:** Native gamepad support — no custom Steam Input layout required.
+
+**Online:** Online multiplayer was shut down Feb 24 2026 — single-player career, free play and time trials still work offline."""

@@ -1,0 +1,79 @@
+[game]
+title       = "Friday Night Funkin (Psych Engine)"
+slug        = "friday-night-funkin"
+aliases     = ["FNF", "Friday Night Funkin", "Friday Night Funkin'"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "PsychEngine"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Friday Night Funkin — itch.io (official free download)"
+url   = "https://maddymakesgamesinc.itch.io/fnf"
+
+[[links.guides]]
+title = "Psych Engine (GitHub)"
+url   = "https://github.com/ShadowMario/FNF-PsychEngine"
+
+[[links.guides]]
+title = "GameBanana — How to play Psych Engine on the Steam Deck"
+url   = "https://gamebanana.com/tuts/16556"
+
+[[links.guides]]
+title = "GameBanana — Psych Engine prebuilt Steam Deck / Linux build"
+url   = "https://gamebanana.com/mods/461486"
+
+[about]
+developer = "ninjamuffin99 / The Funkin Crew"
+publisher = "The Funkin Crew"
+released  = "2020"
+genre     = "Rhythm, Music"
+modes     = "Single-player"
+summary   = """**Friday Night Funkin** is a free, open-source rhythm game by **ninjamuffin99 / \
+The Funkin Crew** (2020) inspired by Dance Dance Revolution and PaRappa the Rapper, featuring \
+Boyfriend battling a cast of bizarre characters in rap battles. The best Steam Deck path is \
+**Psych Engine** — a community fork by ShadowMario that officially supports Linux (since 1.0.1), \
+offering improved performance and mod support over the base Kade/vanilla builds. Grab a prebuilt \
+Steam Deck/Linux build from GameBanana (the former Flathub Flatpak was archived as end-of-life on \
+2026-01-01), extract it, and mark the PsychEngine executable runnable, then add it to Steam as a \
+non-Steam game."""
+
+[meta]
+status        = "unverified"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- The old Psych Engine Flatpak (io.github.shadowmario.fnf-psychengine) was archived as \
+  end-of-life on 2026-01-01 and is no longer on Flathub — do NOT rely on `flatpak run`.
+- Current path: download a prebuilt Steam Deck / Linux Psych Engine build from GameBanana \
+  (see guide links), extract it, `chmod +x` the PsychEngine executable, then add that file to \
+  Steam as a non-Steam game. The official ShadowMario GitHub releases ship source you compile \
+  yourself, so they are not a one-click option for most Deck users.
+- The official base game remains free and open-source at maddymakesgamesinc.itch.io/fnf — \
+  Psych Engine is a separate fan fork, not the official commercial release.
+- Default keyboard controls map to face buttons via Steam Input; verify keybinds in \
+  Options → Controls before first run. There is no native gamepad menu in older builds, so a \
+  Steam Input controller layout is the reliable way to drive menus on the Deck.
+- Mods (songs, weeks, characters) go in the build's own `mods/` folder next to the executable; \
+  the old per-app Flatpak data path (~/.var/app/...) no longer applies.
+"""

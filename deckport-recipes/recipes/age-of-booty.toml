@@ -1,0 +1,78 @@
+[game]
+title       = "Age of Booty"
+slug        = "age-of-booty"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "21600"
+sgdb_id     = ""
+
+[launch]
+binary         = "Age of Booty.exe"   # best guess; confirm against your install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 21600`), removed from the Steam store in Sept 2015. ProtonDB rates it **gold** (only a handful of low-confidence reports) and the single-player campaign runs on Proton/Deck.
+
+**DRM (the real blocker):** This title ships with **SecuROM PA (product activation)** plus a Steam wrapper. SecuROM does an **online CD-key activation** with a limited activation count (reported ~20 machines, and the count cannot be reset), and it installs an extra DirectX (DXSETUP) package. SecuROM PA is the part most likely to misbehave under Proton, so if launch fails, that's the first thing to look at — use a recent **`GE-Proton`** (or `proton_experimental`), which handles the bundled `vcredist`/DirectX shims.
+
+**GFWL:** It is also a Games for Windows LIVE title, but the online/multiplayer side died with the GameSpy/GFWL marketplace shutdowns — only the single-player campaign is playable now, so no GFWL sign-in is required for offline play.
+
+**Controller:** The **PC/Steam version has NO native gamepad support** (it is mouse + keyboard only, despite Xbox button prompts in the store screenshots). On Deck you must add a **Steam Input mouse/keyboard layout** (e.g. trackpad-as-mouse) — the gamepad will not work out of the box.
+
+**Install:** deckport only configures the prefix; it **never bundles or links the game files**.
+"""
+
+[about]
+developer = "Certain Affinity / A.C.R.O.N.Y.M. Games"
+publisher = "Capcom"
+released  = "2009 (PC; Xbox 360/PS3 in 2008)"
+genre     = "Real-time strategy"
+modes     = "Single-player, online multiplayer (4/6/8-player team-based)"
+summary   = "**Age of Booty** is a pirate-themed **real-time strategy** game in which players command a ship to capture towns, gather resources, and sink rival vessels for their faction. Developed by **Certain Affinity** with A.C.R.O.N.Y.M. Games and published by **Capcom**, it debuted on Xbox Live Arcade in 2008 before the Windows release in 2009. Its streamlined, accessible take on RTS emphasizes **teamwork** and coordination across cooperative and competitive team modes. The Xbox 360 version drew generally favorable reviews and earned two Xbox Live Arcade award nominations, while the team-based online play depended on **GameSpy** services that have since shut down."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Age of Booty - ProtonDB reports (appid 21600)"
+url   = "https://www.protondb.com/app/21600"
+
+[[links.guides]]
+title = "Age of Booty - PCGamingWiki (DRM / fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Age_of_Booty"
+
+[[links.guides]]
+title = "Age of Booty - Steam community discussions (SecuROM / controls)"
+url   = "https://steamcommunity.com/app/21600/discussions/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam (`appid 21600`) in Sept 2015; not for sale. ProtonDB **gold**, but only a few low-confidence reports — keep status `needs-test`.
+
+**SecuROM (main risk):** The game uses **SecuROM PA online product activation** with a limited (~20-machine) activation count that cannot be reset, plus a bundled DXSETUP install. This activation step is the most likely point of failure under Proton — if the game won't launch, suspect SecuROM before anything else.
+
+**Multiplayer:** Online/multiplayer is **permanently dead** (GameSpy/GFWL services shut down) — only the single-player campaign is playable, so treat this as a solo-only recipe.
+
+**GFWL:** It is also a GFWL title, but offline single-player does not need a Live sign-in.
+
+**Controller:** **NO native controller support on PC** — it is mouse + keyboard only. On Deck you must apply a Steam Input mouse/keyboard layout; the gamepad will not work by default.
+
+**Binary:** Binary name `Age of Booty.exe` is a best guess — **confirm against your own install**.
+"""

@@ -1,0 +1,175 @@
+[game]
+title       = "Jurassic Park: Operation Genesis"
+slug        = "jurassic-park-operation-genesis"
+aliases     = ["JPOG", "JP:OG", "Jurassic Park Operation Genesis"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SimJP.exe"
+launch_options = ""
+requires_files = ["SimJP.exe"]
+
+[proton]
+version    = "Proton Experimental"
+winetricks = ["d3dx9", "vcrun2005"]
+notes      = """
+**Overview**
+Jurassic Park: Operation Genesis (2003) never received a digital release —
+it is not on Steam or GOG (only a GOG community wishlist exists). Publisher
+Vivendi/Universal Games is defunct and the IP rights are fragmented, so this
+remains a disc/ISO-only title. Supply your own copy from an original retail
+disc or a personal disc image.
+
+The launcher executable is **SimJP.exe**, found under the install tree at
+`Program Files (x86)/Universal Interactive/Blue Tongue Software/Jurassic Park
+Operation Genesis/JPOG/SimJP.exe`.
+
+The game has been confirmed running on Steam Deck by SteamDeckHQ
+(Classics on Deck #11). Their working setup used Lutris with a Wine-GE 8-26
+runner and **DXVK pinned to 2.3.1** (newer DXVK versions did not work). If you
+add it as a Non-Steam game with Proton Experimental instead, expect more
+manual tinkering; the Lutris route is the documented happy path.
+
+**Installation**
+1. Install JPOG from your disc/ISO (run Setup.exe). If a DirectX 8 install is
+   offered, skip it — DXVK handles Direct3D.
+2. Add the game in Lutris (Search Lutris Website for Installers → "Operation
+   Genesis"), or add SimJP.exe as a Non-Steam game and force a compatibility
+   tool in Properties → Compatibility.
+3. If using Lutris, set the runner's DXVK version to 2.3.1.
+
+**Disc check / SafeDisc DRM**
+The retail release is protected by SafeDisc, whose kernel driver was removed
+from Windows 10+ and is absent under Wine/Proton, so the unpatched SimJP.exe
+will fail its disc check on the Deck. PCGamingWiki documents a community
+disc-check fix (a replacement SimJP.exe) that removes the SafeDisc disc
+requirement — consult the PCGamingWiki page (linked below) for the current
+recommended file. Use only methods from PCGamingWiki; do not use
+third-party pirate sites.
+
+**Widescreen / Resolution**
+JPOG uses an Options.ini file for display configuration.
+To set the native Steam Deck resolution (1280x800):
+1. Locate Options.ini in the game install directory (or create it).
+2. Set the following values:
+     [Display]
+     ScreenWidth=1280
+     ScreenHeight=800
+     Fullscreen=1
+If Options.ini is not present, the game defaults to 800x600 — always
+create/edit it before first launch.
+
+**Performance**
+Very light workload for the Deck GPU.
+Recommended settings:
+  TDP limit: 7W
+  GPU clock: 800 MHz
+  Framerate target: 90fps (the engine runs cleanly at high framerates)
+  Display resolution: 1280x800
+Battery life: ~6h on OLED Deck at these settings.
+Minor camera stutter can occur when panning quickly over large terrain
+sections with many dinosaurs — this is an original engine limitation,
+not a Proton issue.
+
+**Controller / Input**
+JPOG has NO native gamepad support — it is mouse + keyboard only, so the Deck
+must drive a virtual mouse/keyboard via Steam Input (or, in Lutris, the
+"Keyboard (WASD) + Mouse" community template). Plan on using a touchpad/gyro
+for the mouse cursor.
+Recommended Steam Input layout:
+- Right stick → mouse camera pan
+- Left stick → WASD camera movement
+- Gyro → fine camera rotation (gyro-on-right-touchpad)
+- Right trigger → left mouse (select / place)
+- Left trigger → right mouse (context menu / cancel)
+- A → confirm / interact
+- B → cancel
+- Y → open dinosaur viewer
+- Start → pause menu
+Search community layouts for "Jurassic Park Operation Genesis" — layouts
+tuned for the Deck touchpads and gyro exist.
+
+**Mod Community**
+There is no official standalone remake, but a still-active modding community on
+ModDB has produced dinosaur expansions, content packs, and patches (e.g.
+x1mpressed's expanded JPOG, JPOG: The Forgotten, Documentaries Edition). These
+install into the game directory and do not require any additional Wine
+configuration beyond the base setup. See the ModDB JPOG page (linked below).
+
+**Known Issues**
+- Intro Vivendi logo video may fail to play; press Escape or Space to skip.
+- Very occasional crash-to-desktop when loading certain visitor feedback
+  pop-ups; this is an original game bug reproducible on Windows as well.
+- The in-game resolution picker may not list 1280x800 — set it via
+  Options.ini instead of the in-game menu.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki — Jurassic Park: Operation Genesis"
+url   = "https://www.pcgamingwiki.com/wiki/Jurassic_Park:_Operation_Genesis"
+
+[[links.guides]]
+title = "ProtonDB — search Jurassic Park Operation Genesis"
+url   = "https://www.protondb.com"
+
+[[links.guides]]
+title = "ModDB — JPOG mods and community"
+url   = "https://www.moddb.com/games/jurassic-park-operation-genesis"
+
+[[links.guides]]
+title = "SteamDeckHQ — Classics on Deck #11 (Lutris, Wine-GE 8-26, DXVK 2.3.1)"
+url   = "https://steamdeckhq.com/news/classics-on-deck-11"
+
+[[links.guides]]
+title = "Lutris installer — Jurassic Park: Operation Genesis (1.0)"
+url   = "https://lutris.net/games/install/37663/view"
+
+[about]
+developer = "Blue Tongue Entertainment"
+publisher = "Vivendi Universal Games"
+released  = "2003-03-28"
+genre     = "Theme park builder / management simulation"
+modes     = "Single-player"
+summary   = """**Jurassic Park: Operation Genesis** (Blue Tongue Entertainment/Vivendi, 2003)
+is a beloved theme park builder set in the Jurassic Park universe — task the player with
+constructing a functioning dinosaur park, managing dinosaur health, and keeping visitors
+alive. Never digitally re-released due to fragmented IP rights, it remains disc-only but
+runs on Steam Deck via Proton Experimental at just 7W TDP, making it an excellent battery-
+friendly classic for Deck play."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Launcher is SimJP.exe (not "JPOG.exe") under .../Blue Tongue Software/Jurassic Park
+  Operation Genesis/JPOG/.
+- Supply your own copy — disc or personal disc image only; no legal digital storefront exists
+  (not on Steam or GOG).
+- SafeDisc DRM: the disc check fails under Wine/Proton (and on Windows 10+), so a PCGamingWiki
+  disc-check fix (replacement SimJP.exe) is required for disc-free operation. Use only methods
+  documented on PCGamingWiki.
+- SteamDeckHQ's verified path is Lutris with Wine-GE 8-26 and DXVK pinned to 2.3.1; newer DXVK
+  builds did not work. There is no Steam/ProtonDB entry, so protondb_tier is left blank.
+- No native controller support — mouse + keyboard only; map a virtual mouse via Steam Input.
+- Resolution MUST be set via Options.ini before first launch — the in-game picker will not
+  list 1280x800 and will default to 800x600.
+- Minor camera stutter when panning quickly over large dino-populated areas is an engine limit,
+  not a Proton bug — cannot be fixed by tweaking settings.
+- Intro logo video may not play under Proton; press Escape or Space to skip past it.
+- Crash-to-desktop on certain visitor feedback pop-ups is a known original game bug (reproducible
+  on Windows); save frequently.
+"""

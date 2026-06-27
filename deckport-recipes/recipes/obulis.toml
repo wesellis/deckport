@@ -1,0 +1,77 @@
+[game]
+title       = "Obulis"
+slug        = "obulis"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "11330"
+sgdb_id     = ""
+
+[launch]
+binary         = "obulis_steam.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `11330`, removed Nov 2020 after the IonFX/Meridian4 agreement lapsed).
+
+**Proton:** ProtonDB Platinum — recent reports (`Proton 10.0-3`) confirm it **runs out of the box** on Linux/Deck; `GE-Proton` or `proton_experimental` both work.
+
+**Install:** The real binary is `obulis_steam.exe`.
+
+**Display:** If it fails to launch, force windowed / low-res via the in-game options. The Windows `Run in 640x480` compatibility flag has no direct Proton analogue, so set resolution from the launcher instead.
+
+**Note:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Obulis (appid 11330)"
+url   = "https://www.protondb.com/app/11330"
+
+[[links.guides]]
+title = "PCGamingWiki: Obulis"
+url   = "https://www.pcgamingwiki.com/wiki/Obulis"
+
+[[links.guides]]
+title = "IonFx official Obulis manual (controls)"
+url   = "http://www.ionfx.com/manual_obulis.htm"
+
+[about]
+developer = "IonFx Studios"
+publisher = "Meridian4"
+released  = "2008"
+genre     = "Physics puzzle"
+modes     = "Single-player"
+summary   = """
+**Obulis** is a **physics-based puzzle game** in which each level tasks the player with dropping colored spheres into matching pots. The spheres hang from chains and ropes that the player cuts, setting them in motion under **simulated gravity** so they swing, collide, and roll toward their targets. Levels are arranged across a linear world map with occasional branching paths, and the goal is to collect six medallions by clearing marked stages.
+
+It was a small independent title later **delisted from Steam** after its distribution agreement with **Meridian4** lapsed in 2020."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Delisted from Steam Nov 2020 (no longer for sale).
+
+**Proton:** ProtonDB Platinum with recent `Proton 10` reports, so it should run cleanly on the Deck — flagged `needs-test` because nobody has confirmed this exact recipe on hardware.
+
+**Install:** Binary confirmed as `obulis_steam.exe`.
+
+**Controller:** No native gamepad support — Obulis is mouse-driven (left-click selects a rope/chain, right-click or Space cuts it, R restarts). On the Deck apply a `Steam Input` layout that maps the right trackpad/stick to mouse and a button to left/right click, or use the touchscreen.
+
+**Online:** Single-player puzzle game, no online dependency."""

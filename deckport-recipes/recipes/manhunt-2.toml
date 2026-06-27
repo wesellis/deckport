@@ -1,0 +1,75 @@
+[game]
+title       = "Manhunt 2"
+slug        = "manhunt-2"
+aliases     = ["Manhunt II"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Manhunt2.exe"
+launch_options = "PROTON_DXVK_D3D8=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** Rockstar's 2009 PC stealth-horror, delisted (the PC version was never on Steam; sold only via long-dead storefronts). Runs under Proton — `GE-Proton` works well.
+
+**Fix:** The base PC port is locked to 30 FPS and is otherwise rough; **install the community `PluginMH2`** by ermaccer (extract `PluginMH2.zip` into the game root next to `Manhunt2.exe`) to lift the 30 FPS cap (60 FPS patch), skip the legal screen, fix disappearing decals, clean up headshots, and optionally restore firearm executions / first-person mode via `PluginMH2.ini`.
+
+**Display:** This is a DirectX 8 title: if you hit black/pitch textures or lighting glitches, enable `D8VK` (set `PROTON_DXVK_D3D8=1` in launch options) to translate `D3D8` to Vulkan.
+
+**Controller:** No native gamepad support — add a Steam Input layout that maps the controller to keyboard/mouse (community 'Manhunt 2' templates exist); this makes it fully playable on the Deck."""
+
+[about]
+developer = "Rockstar London"
+publisher = "Rockstar Games"
+released  = "2009 (PC)"
+genre     = "Stealth-horror action"
+modes     = "Single-player"
+summary   = """
+**Manhunt 2** is a **stealth-horror** action game and the sequel to 2003's **Manhunt**, casting the player as an amnesiac asylum escapee who must sneak past and brutally execute pursuers to survive. Built on a **stealth-and-execution loop** where killings are graded by their savagery, it became one of gaming's most notorious titles: it was given an **Adults Only** rating in the US and refused classification by the BBFC in Britain, forcing Rockstar to censor the executions before a re-rated release, and it was banned outright in several countries.
+
+The PC version arrived in 2009 and is locked to 30 FPS with a rough port that the community has since patched."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PluginMH2 (ermaccer) - 60 FPS patch, executions, first-person, fixes"
+url   = "https://github.com/ermaccer/Manhunt2.PluginMH2"
+
+[[links.guides]]
+title = "PCGamingWiki - Manhunt 2 (fixes, D8VK / D3D8 notes)"
+url   = "https://www.pcgamingwiki.com/wiki/Manhunt_2"
+
+[[links.guides]]
+title = "Delisted Games - Manhunt 2 (release/storefront history)"
+url   = "https://delistedgames.com/manhunt-2/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted commercial game. Mature/AO content.
+
+**No Steam page:** The PC version was never sold on Steam, so there is no Steam appid and no dedicated ProtonDB page; tier is pending community reports.
+
+**Fix:** Install `PluginMH2` in the game root to lift the 30 FPS cap and fix the rough port.
+
+**Display:** Enable `D8VK` (`PROTON_DXVK_D3D8=1`) if textures render black — it is a DirectX 8 game.
+
+**Controller:** No native controller support: bind a Steam Input keyboard/mouse layout.
+
+**Links:** deckport links nothing."""

@@ -1,0 +1,78 @@
+[game]
+title       = "Pac-Man and the Ghostly Adventures"
+slug        = "pac-man-and-the-ghostly-adventures"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "239720"
+sgdb_id     = ""
+
+[launch]
+binary         = "PacMan.exe"   # confirmed process name; lives under the install's Binaries/Win32 folder (UE3 layout)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (appid `239720`, removed `2020-07-09`); **requires Steam DRM**, so launch through Steam with your owned copy.
+
+**Proton:** Unreal Engine 3 platformer. Valve marks it **Steam Deck Playable** and ProtonDB reports rate it **Platinum** — it runs clean out of the box. Use `GE-Proton` (or `proton_experimental`) — both work.
+
+**Controller:** Game has **native XInput controller support** (Xbox 360 / XInput pads work without config), so the Deck's built-in gamepad works out of the box. Note: some users report an Xbox One controller only worked after toggling off Steam's generic-controller (Steam Input) setting — if input drops, flip the per-game controller setting.
+
+**Install:** The `PacMan.exe` process lives under the install's `Binaries/Win32` folder (UE3 layout). deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — PAC-MAN and the Ghostly Adventures (app 239720)"
+url   = "https://www.protondb.com/app/239720"
+
+[[links.guides]]
+title = "PCGamingWiki — Pac-Man and the Ghostly Adventures"
+url   = "https://www.pcgamingwiki.com/wiki/Pac-Man_and_the_Ghostly_Adventures"
+
+[[links.guides]]
+title = "Steam Community — Controller Support discussion"
+url   = "https://steamcommunity.com/app/239720/discussions/0/666824800714268151/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam (appid `239720`, removed `2020-07-09`) but remains in the library of prior owners; **requires Steam DRM**, so it must be launched through Steam.
+
+**Proton:** Valve rates it **Steam Deck Playable** and ProtonDB reports trend **Platinum** (small sample); runs under Proton (`GE-Proton` / Experimental both fine).
+
+**Controller:** Native XInput support — the Deck gamepad works without a Steam Input layout. If a controller misbehaves (reported with Xbox One pads), toggle the per-game Steam Input / generic-controller setting.
+
+**Modes:** Single-player only — no servers to worry about.
+
+**Binary:** `PacMan.exe` (confirmed process name) under `Binaries/Win32`.
+"""
+
+[about]
+developer = "Vicious Cycle Software (Monkey Bar Games)"
+publisher = "Namco Bandai Games"
+released  = "2013"
+genre     = "3D platformer"
+modes     = "Single-player campaign with a local multiplayer ghost-chase mode"
+summary   = """
+**Pac-Man and the Ghostly Adventures** is a 2013 **3D platformer** based on the Namco Bandai **animated TV series** of the same name, in which a teenage Pac explores Pac-World across themed levels using **berry-based power-ups**. Built on **Unreal Engine 3** and released for Windows alongside the Xbox 360, PlayStation 3 and Wii U versions, it features a **Pac-Man Vs.-style mode** where players take control of the four ghosts to chase Pac through a maze.
+
+The game drew mixed reviews, praised for its polish and presentation but criticized for shallow, repetitive platforming. It was **removed from Steam in 2020**, leaving it unavailable for new buyers while remaining playable for prior owners.
+"""

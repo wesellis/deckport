@@ -1,0 +1,117 @@
+[game]
+title       = "Empire Earth"
+slug        = "empire-earth"
+aliases     = ["Empire Earth I", "EE1"]
+type        = "proton"
+engine      = "other"
+steam_appid = "254760"
+sgdb_id     = ""
+
+[launch]
+binary         = "Empire Earth.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Getting Started**
+This recipe targets "Empire Earth: Gold Edition" on Steam (app 254760), the compilation
+that bundles the original 2001 Empire Earth and "The Art of Conquest" expansion. The
+title was long unavailable on modern storefronts but is purchasable on Steam today.
+Install via Steam normally and force a Proton build under the game's Compatibility
+settings. GE-Proton is the recommended runner; recent Proton Experimental / Proton 9
+also run the game. ProtonDB community reports for app 254760 trend toward Gold-tier with
+minor tweaks; treat this recipe as needs-test until verified on-device.
+
+**Which Executable Runs**
+The base game launches `Empire Earth.exe`. The expansion uses a separate executable,
+`EE-AoC.exe`, in the "Empire Earth - The Art of Conquest" subfolder; on Steam the
+default Play button starts the base game's launcher. Run the base game once before the
+expansion. Default install path is under Steam's `common/Empire Earth Gold Edition`.
+
+**Performance on Deck**
+Empire Earth is heavily single-threaded and CPU-bound, so it runs comfortably on Deck
+hardware. Cap the framerate at 60fps via the Steam Deck's per-game performance overlay
+(three-dot menu → Performance → Frame Limit = 60) and enable the system TDP limit to
+keep the fan quiet and extend battery life.
+
+**Display & Resolution**
+The game was designed for 4:3 resolutions and does not natively support widescreen. On
+the Deck's 16:10 screen, 1280x800 works with minor UI stretching; alternatively lock to
+1024x768 via Options → Video and accept letterboxing. The community NeoEE patch and the
+EE-modders community setup add higher-resolution support (up to 4K) plus a selectable
+DirectX wrapper (dgVoodoo, DX7→DX12) that resolves minimap/rendering glitches on some
+GPUs — apply these inside the Proton prefix if you want a sharper picture.
+
+**Framerate Cap & vsync**
+In-game vsync can cause microstutter under Proton. Disable in-game vsync and use the
+Deck's system-level frame limiter instead (60fps cap as above).
+
+**Controls**
+Empire Earth is a mouse-and-keyboard RTS with no native controller support. Use a Steam
+Input layout that maps the right trackpad to the mouse cursor and the left trackpad/grip
+buttons to common hotkeys and camera controls; the community "RTS Trackpad" templates in
+Steam Input are a good starting point.
+
+**Multiplayer / LAN**
+The original Sierra/GameSpy lobby servers are long defunct. The community NeoEE project
+restores online lobby multiplayer for EE1 and Art of Conquest; LAN play also works for
+local sessions. No official matchmaking remains.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Empire Earth: Gold Edition on Steam"
+url   = "https://store.steampowered.com/app/254760/Empire_Earth_Gold_Edition/"
+
+[[links.guides]]
+title = "ProtonDB — Empire Earth: Gold Edition (app 254760)"
+url   = "https://www.protondb.com/app/254760"
+
+[[links.guides]]
+title = "PCGamingWiki — Empire Earth"
+url   = "https://www.pcgamingwiki.com/wiki/Empire_Earth"
+
+[[links.guides]]
+title = "EE-modders community setup (NeoEE, DX wrapper, hi-res fixes)"
+url   = "https://github.com/EE-modders/Empire-Earth-Setup"
+
+[about]
+developer = "Stainless Steel Studios"
+publisher = "Rebellion (originally Sierra Entertainment)"
+released  = "2001-11-23"
+genre     = "Real-Time Strategy"
+modes     = "Singleplayer, Multiplayer (LAN / community lobby)"
+summary   = """**Empire Earth** by Stainless Steel Studios (2001) is an epic real-time \
+strategy game spanning 500,000 years of human history across 14 epochs, from the \
+Prehistoric Age to the nano-technology future. The Steam release, "Empire Earth: Gold \
+Edition" (app 254760), bundles the original game and "The Art of Conquest" expansion; \
+the title was long unavailable on modern storefronts before its Steam re-release. On the \
+Steam Deck it runs well under GE-Proton with a 60fps cap, making it an excellent couch RTS."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+- Steam app ID is 254760 ("Empire Earth: Gold Edition" — includes The Art of Conquest).
+- Base game runs Empire Earth.exe; the expansion uses EE-AoC.exe in its own subfolder.
+- Single-threaded CPU load; cap at 60fps to avoid fan ramp-up and extend battery.
+- 4:3 native aspect ratio, no native widescreen; slight UI stretching at 1280x800.
+  Community NeoEE / EE-modders setup adds hi-res (up to 4K) and a DirectX wrapper.
+- Mouse/keyboard RTS with no controller support; needs a Steam Input trackpad layout.
+- Original Sierra/GameSpy lobbies are offline; NeoEE restores online play, LAN also works.
+- GE-Proton preferred over stock Proton for best compatibility.
+- status = needs-test: ProtonDB tier and on-Deck behavior not yet personally verified.
+"""

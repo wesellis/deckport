@@ -1,0 +1,73 @@
+[game]
+title       = "Citizens of Earth"
+slug        = "citizens-of-earth"
+aliases     = []
+type        = "proton"
+engine      = "unity"
+steam_appid = "258910"
+sgdb_id     = ""
+
+[about]
+developer = "Eden Industries"
+publisher = "Atlus"
+released  = "2015"
+genre     = "Turn-based role-playing game"
+modes     = "Single-player"
+summary   = """
+**Citizens of Earth** is a turn-based RPG built in **Unity** in which you play the newly elected Vice President of the World and recruit ordinary townspeople as your party members, each with abilities tied to their everyday jobs. Drawing clear inspiration from **Mother/EarthBound**, it pairs a quirky comedic tone with a deep roster of over **40 recruitable citizens**.
+
+It launched in January 2015 to a mixed-to-positive reception, praised for its humor and creativity but criticized for early balance and bug issues. It was pulled from Steam in July 2023 when the **publishing agreement between Sega and developer Eden Industries** ended."""
+
+[launch]
+binary         = "Citizens of Earth.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `258910`), pulled `2023-07-14` when the Sega/Eden Industries publishing terms ended.
+
+**Proton:** Turn-based Unity RPG; ProtonDB rates it gold and Unity titles of this era run clean under Proton (`GE-Proton` or `Proton 7.0+`/`Experimental` all work).
+
+**DRM:** **No `GFWL`/`SecuROM`/DRM to bypass** and no widescreen hack needed.
+
+**Launch:** Launch via the prefix, **no special launch options required**.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Citizens of Earth (258910)"
+url   = "https://www.protondb.com/app/258910"
+
+[[links.guides]]
+title = "Steam Community — Help setting up a gamepad"
+url   = "https://steamcommunity.com/app/258910/discussions/0/618458030657890885/"
+
+[[links.guides]]
+title = "Delisted Games — Citizens of Earth"
+url   = "https://delistedgames.com/citizens-of-earth/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Online:** Single-player turn-based RPG, so no servers to worry about.
+
+**Controller:** Controller support is in-game and works best with an Xbox 360 / `XInput`-style pad — on the Deck, set the Steam Input config to a standard gamepad layout and it plays fine on the sticks/buttons. Note the game's pre-launch settings window does **not** take controller input, so if it appears you'll need to click *Play* with the trackpad/mouse before the pad takes over. Menus and combat are also fully keyboard/mouse navigable as a fallback.
+
+**Install:** Confirm the exact `.exe` name from your install if `Citizens of Earth.exe` doesn't match (Unity ships one game `.exe`)."""

@@ -1,0 +1,64 @@
+[game]
+title       = "Magna Carta: The Phantom of Avalanche"
+slug        = "magna-carta-phantom-of-avalanche"
+aliases     = ["Magna Carta Phantom of Avalanche", "마그나카르타 판타즘 오브 아발란체"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "C:/Program Files (x86)/SOFTMAX/MagnaCarta/MagnaCarta.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+Run with GE-Proton as a non-Steam shortcut (this game has no Steam release). The installer's default path is C:/Program Files (x86)/SOFTMAX/MagnaCarta/MagnaCarta.exe.
+
+Disc/DRM: installation requires the original CD key/serial, and gameplay requires the Play disc (MC_PLAY) to remain mounted (a virtual mount works; the other discs are only needed for install). Provide your own discs/keys.
+
+Locale: the game is Korean and shows garbled text without a Korean locale. Install with the prefix/system region set to Korea, and if text is still corrupted set LANG=ko_KR.UTF-8 in the launch options or configure an EUC-KR locale via protontricks.
+
+English fan translation by Talbain (Lakuuna), Sobodash, and Nejuf must be copied into the game folders (BGR, Fpb, Itm, Sgi, Abi) before launching — see the GitHub install guide. Setting the exe to Windows XP compatibility helps on the Windows side; under Proton this maps to the wine prefix Windows version.
+
+This is the original 2001 PC-only Korean release — a turn-based RPG, and a completely different game from Magna Carta: Tears of Blood / Crimson Stigmata (2005, PS2) and Magna Carta 2 (Xbox 360).
+"""
+
+[about]
+developer = "Softmax"
+publisher = "Softmax"
+released  = "2001"
+genre     = "Tactical RPG"
+modes     = "Single-player"
+summary   = "Magna Carta: The Phantom of Avalanche is a Korean role-playing game developed and published by Softmax, released exclusively for PC in Korea on December 28, 2001. It uses a turn-based battle system built around Turn Points (TP), with elaborate fantasy world-building and a story centered on war and political intrigue. It is the first entry in the Magna Carta series and the predecessor to the PS2 title Magna Carta: Crimson Stigmata (released in the West as Tears of Blood). It was never officially localized for Western audiences, but a fan translation exists. This game is unrelated to the later Magna Carta 2 (Xbox 360) despite sharing the series name."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "GitHub - Nejuf install guide (discs, serial, English translation)"
+url   = "https://github.com/Nejuf/magnacarta-installguide/blob/main/InstallGuideForMagnaCartaThePhantomOfAvalanche.md"
+
+[[links.guides]]
+title = "PCGamingWiki - Magna Carta: The Phantom of Avalanche"
+url   = "https://www.pcgamingwiki.com/wiki/Magna_Carta:_The_Phantom_of_Avalanche"
+
+[[links.guides]]
+title = "Wikipedia - Magna Carta: The Phantom of Avalanche"
+url   = "https://en.wikipedia.org/wiki/Magna_Carta:_The_Phantom_of_Avalanche"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = "Not on Steam — runs as a non-Steam GE-Proton shortcut, so there is no ProtonDB tier. Supply your own discs and CD key: install needs the serial, and gameplay needs the Play disc (MC_PLAY) mounted (a virtual mount works). Apply the English fan translation (by Talbain/Lakuuna, Sobodash, Nejuf) by copying its files into the game folders before launching — see the GitHub install guide. The game is Korean: install with a Korean system/prefix region, and if text is still garbled add LANG=ko_KR.UTF-8 or configure an EUC-KR locale via protontricks. This is the original 2001 PC-only Korean game — a turn-based RPG, completely different from Magna Carta: Tears of Blood / Crimson Stigmata (PS2, 2005) and Magna Carta 2 (Xbox 360)."

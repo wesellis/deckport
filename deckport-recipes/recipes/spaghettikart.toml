@@ -1,0 +1,77 @@
+[game]
+title       = "SpaghettiKart (Mario Kart 64 PC Port)"
+slug        = "spaghettikart"
+aliases     = ["SpaghettiKart", "Mario Kart 64 PC", "MK64 Recomp", "Mario Kart 64 Port"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "spaghetti.appimage"
+launch_options = ""
+requires_files = ["Mario Kart 64 N64 ROM dump (US, .z64)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** **SpaghettiKart ships a native Linux build — no Proton needed.** The 1.0.0 release page links `spaghetti-linux.zip` (labelled "Linux / Steam Deck"); inside is an AppImage (`spaghetti.appimage`). Windows (`Spaghettify.exe`), macOS, OpenBSD, and Nintendo Switch builds are also published.
+
+**Install:** Add the AppImage as a non-Steam game in Desktop Mode and point it at a US Mario Kart 64 ROM (`.z64`, SHA-1 verified) on first run — assets are extracted once and **the ROM is no longer needed afterwards**.
+
+**Handheld:** The port is also available on `PortMaster` for retro handhelds.
+
+**Features:** Widescreen / ultrawide, high framerates, frame interpolation, custom track support (community-made tracks work out of the box), harder CPU difficulty, and HD texture pack support.
+
+**Status:** v1.0.0 "Bolognese Alfa" released Feb 2026 — a recent **HarbourMasters** port. Distributed direct from GitHub for Linux / SteamOS; community Deck reports are positive but limited."""
+
+[about]
+developer = "HarbourMasters"
+publisher = "HarbourMasters (community project)"
+released  = "1996 (Nintendo 64 original); v1.0.0 'Bolognese Alfa' released Feb 2026; updates ongoing"
+genre     = "Kart racing"
+modes     = "Single-player, local multiplayer"
+summary   = """
+**SpaghettiKart** is an unofficial native PC port of **Mario Kart 64** for Nintendo 64, developed by the **HarbourMasters** community team. It is a reverse-engineering of the original game **powered by libultraship** — the same runtime behind HarbourMasters' Ship of Harkinian (Zelda) ports — and ships no original assets; you supply your own ROM.
+
+The port adds widescreen / ultrawide support, high framerates and frame interpolation, **custom track support** so community-made tracks work out of the box, harder CPU difficulty options, and HD texture pack support. Builds are available for Windows, Linux, macOS, OpenBSD, Nintendo Switch, and via PortMaster for retro handhelds. v1.0.0 "Bolognese Alfa" released February 2026 with updates ongoing. Requires the player to supply a US Mario Kart 64 ROM dump (.z64)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "SpaghettiKart — GitHub releases"
+url   = "https://github.com/HarbourMasters/SpaghettiKart/releases"
+
+[[links.guides]]
+title = "SpaghettiKart — source & build/setup README"
+url   = "https://github.com/HarbourMasters/SpaghettiKart"
+
+[[links.guides]]
+title = "SpaghettiKart on PortMaster (handheld)"
+url   = "https://portmaster.games/detail.html?name=spaghettikart"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires a **US Mario Kart 64 ROM dump** (`.z64`, SHA-1 verified). Only the US ROM is supported.
+
+**Binary:** The Linux build is an AppImage (`spaghetti.appimage`) inside `spaghetti-linux.zip`; the Windows exe is `Spaghettify.exe`. Mark the AppImage executable if your file manager hasn't.
+
+**Status:** v1.0.0 released Feb 2026 — a recent **HarbourMasters** port; community Deck reports are positive but limited.
+
+**Custom tracks:** Custom track support means community-made tracks work out of the box.
+
+**Handheld:** Also available via `PortMaster` for retro handhelds.
+
+**Base:** A reverse-engineered port **powered by libultraship** (the Ship of Harkinian runtime), not a literal mk64 decompilation."""

@@ -1,0 +1,72 @@
+[game]
+title       = "The Matrix: Path of Neo"
+slug        = "matrix-path-of-neo"
+aliases     = ["Path of Neo", "Matrix Path of Neo"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "TheMatrixPathOfNeo.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Shiny Entertainment's 2005 action game (a 2005 disc release; never sold on Steam).
+
+**DRM:** Ships with `StarForce` DRM, which **will NOT load under Proton** — you must run a no-CD/no-DVD replacement of `TheMatrixPathOfNeo.exe`, otherwise it refuses to start.
+
+**Proton:** Use `GE-Proton`: the in-engine FMV cutscenes need GE's codecs, and they may still glitch/skip on stock Proton.
+
+**Display:** Install ThirteenAG's Widescreen Fix (an ASI mod loaded via the bundled Ultimate ASI Loader proxy DLL — typically `dinput8.dll`) by dropping its files into the game root and editing `TheMatrixPathOfNeo.WidescreenFix.ini` to set your `1280x800` (Deck) resolution and kill the 4:3 stretch; it also fixes FOV/HUD/FMV aspect.
+
+**Controller:** The PC port has only basic DirectInput gamepad support — it auto-detects a pad and maps buttons with no in-game rebind menu, and gameplay/tutorial prompts still show keyboard keys. The right stick is mis-mapped (axes swapped) on some controllers. For a sane Deck experience, drive it with a gamepad-with-mouse-trackpad Steam Input layout (community 'Path of Neo' templates exist) rather than relying on the game's own detection.
+"""
+
+[about]
+developer = "Shiny Entertainment"
+publisher = "Atari"
+released  = "2005"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = "**The Matrix: Path of Neo** is a third-person action-adventure that retells the original **Matrix** film trilogy from Neo's perspective, taking the hacker Thomas Anderson from his awakening as The One through **bullet-time** gunfights and martial-arts duels. Built on the **Unreal Engine 2** by Shiny Entertainment, it was written and co-directed by the **Wachowskis**, who replaced the films' downbeat finale with an original 'MegaSmith' final boss. It was the last Matrix game and the final title released under the Shiny name before the studio was folded, and it **never received a digital re-release**, leaving the 2005 disc version the only way to play it on PC."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ThirteenAG Widescreen Fix — The Matrix: Path of Neo"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack/releases/tag/thematrixpathofneo"
+
+[[links.guides]]
+title = "PCGamingWiki — The Matrix: Path of Neo (DRM, fixes, controller notes)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Matrix:_Path_of_Neo"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Commercial game that never came to Steam — supply your own copy (no appid).
+
+**Hard requirement:** `StarForce` DRM blocks launch under Proton, so a no-CD/no-DVD exe is **mandatory**.
+
+**Cutscenes:** FMV cutscenes can stutter/skip even on `GE-Proton` (community reports them borked on stock Proton).
+
+**Controller:** Only crude built-in DirectInput pad support (no rebind menu, keyboard prompts shown, right stick mis-mapped on some pads) — use a gamepad-with-mouse-trackpad Steam Input layout for a usable input path.
+
+**Display:** Apply ThirteenAG's Widescreen Fix and set the Deck's `1280x800` in `TheMatrixPathOfNeo.WidescreenFix.ini` or you'll get a 4:3 stretch.
+
+**Links:** see the Widescreen Fix release and PCGamingWiki guides for the display fix and DRM/controller details.
+"""

@@ -1,0 +1,75 @@
+[game]
+title       = "eXceed 3rd - Jade Penetrate Black Package"
+slug        = "exceed-3rd-jade-penetrate-black-package"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "207400"
+sgdb_id     = ""
+
+[launch]
+binary         = "eXceed3rd.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 8.0-2"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam shmup (appid `207400`, removed along with the other two eXceed games).
+
+**Proton:** Runs on the Deck with `Proton 8.0-2` plus the gamepad layout, or `Proton 5.13-6` (both report fully playable).
+
+**Controller:** **A regression after `Proton 5.13-6` causes controller inputs to CRASH the game on some newer Proton builds** — if you hit input crashes, drop back to `Proton 8.0-2` or `5.13-6`. Native keyboard AND gamepad input are both supported in-game (configurable in Options), and a gamepad is not required. If gamepad mapping misbehaves, a Steam Input keyboard layout (arrows = move, mapped fire/bomb buttons) works cleanly as a fallback.
+
+**Display:** For fullscreen framerate issues on newer hardware, force fullscreen via Proton/Deck display settings.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Tennen-sozai"
+publisher = "Nyu Media"
+released  = "2012 (Steam release; original Japanese doujin version 2009)"
+genre     = "Vertical-scrolling danmaku (bullet hell) shoot 'em up"
+modes     = "Single-player"
+summary   = """
+**eXceed 3rd - Jade Penetrate Black Package** is the third entry in the **eXceed series** of Japanese doujin bullet-hell shooters by the circle **Tennen-sozai** (天然素材, formerly known as FLAT). It drops the second game's color-swap mechanic in favor of straightforward, dense **screen-filling danmaku** action and was localized for the West and brought to Steam by Nyu Media in 2012. The "Black Package" is the expanded version of the original 2007 -JADE PENETRATE- doujin release.
+
+The eXceed games are an underrated cult trilogy inspired by classic shmup studios such as **Cave** and **Treasure**. All three titles, along with the eXceed Collection bundle, were delisted from Steam on **January 6th, 2023** after the developer dropped out of contact."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - eXceed 3rd (appid 207400)"
+url   = "https://www.protondb.com/app/207400"
+
+[[links.guides]]
+title = "ValveSoftware/Proton issue #6381 - controller input regression after Proton 5.13-6"
+url   = "https://github.com/ValveSoftware/Proton/issues/6381"
+
+[[links.guides]]
+title = "Steam Community - Reiko's in-depth guide (controls / Xbox 360 mapping)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=121477532"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted Steam shmup (appid `207400`, no longer for sale). deckport links nothing.
+
+**Proton:** Community ProtonDB/Proton-issue reports confirm it runs on Deck/Linux — use `Proton 8.0-2` or `5.13-6`.
+
+**Controller:** **Controller inputs can crash the game on Proton versions after `5.13-6`** — stick to `8.0-2` / `5.13-6` or use a Steam Input keyboard layout if the gamepad path crashes.
+
+**Online:** Single-player offline title, so no server concerns.
+
+**Binary:** Confirm the actual `.exe` name in your install (`eXceed3rd.exe` assumed)."""

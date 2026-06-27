@@ -1,0 +1,79 @@
+[game]
+title       = "Mighty Final Fight Forever"
+slug        = "mighty-final-fight-forever"
+aliases     = ["MFF Forever", "mff4ever", "Mighty Final Fight Forever"]
+type        = "proton"        # shipped as a Windows .exe; native-Linux OpenBOR also works
+engine      = "openbor"
+steam_appid = ""              # freeware fan game, not on Steam → no ProtonDB tier
+sgdb_id     = ""
+
+[about]
+developer = "Bouncer Games (Daniel Kucera, Robert Levay)"
+publisher = "Bouncer Games"
+released  = "2025"
+genre     = "Beat 'em up"
+modes     = "Single-player, two-player local co-op"
+summary   = """
+**Mighty Final Fight Forever** is a freeware, fan-made remake and expansion of Capcom's 1993 NES game *Mighty Final Fight*, built on the open-source **OpenBOR** beat 'em up engine. It greatly enlarges the original spinoff of Capcom's **Final Fight** series, returning the trio of **Haggar, Cody and Guy** with redesigned chibi-style sprites and expanded movesets across both remade and brand-new stages.
+
+The **v1.00** release arrived in December 2025 as a non-profit passion project distributed free of charge. As an **unlicensed fan work** based on Capcom's intellectual property, it has no commercial release and could be withdrawn at the rightsholder's request."""
+
+[launch]
+binary         = "PLAY Mighty Final Fight Forever.exe"   # verified: the OpenBOR engine exe in the v1.00 release
+launch_options = ""
+requires_files = ["Paks/MFF4ever.pak"]                   # the game data PAK must sit in Paks/ beside the exe
+
+[proton]
+version    = "proton_experimental"   # OpenBOR Windows builds generally run fine under Proton
+winetricks = []
+notes      = """
+**Engine:** `OpenBOR` beat 'em up — a freeware fan remake of Capcom's 1993 Mighty Final Fight (Bouncer Games, v1.00, Dec 2025).
+
+**Confirmed OpenBOR:** the v1.00 release ships a Windows OpenBOR engine exe (`PLAY Mighty Final Fight Forever.exe`) beside a `Paks/MFF4ever.pak` (~485 MB) plus `Saves/` and `ScreenShots/`.
+
+**Proton:** the default path is Proton.
+
+**Native alternative:** the lighter option is a native-Linux OpenBOR engine (`Flatpak`/`AppImage`) loading the same `MFF4ever.pak` — no Proton needed.
+
+**Display/Deck:** **set the game folder permissions to read-write in Desktop Mode to avoid OpenBOR freezing on the Deck.**
+
+**Install:** get it from the developer's official page, linked below."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""              # blank → site falls back to a name search
+
+[[links.guides]]
+title = "Official site — Bouncer Games (free download)"
+url   = "https://bouncergames.com/mff4ever/"
+
+[[links.guides]]
+title = "GameJolt — Mighty Final Fight Forever (official, free)"
+url   = "https://gamejolt.com/games/mff4ever/538842"
+
+[[links.guides]]
+title = "Ausretrogamer — overview of the fan remake"
+url   = "https://ausretrogamer.com/a-new-retro-indie-fanmade-game-mighty-final-fight-forever/"
+
+[[links.guides]]
+title = "ChronoCrash — OpenBOR community resource page"
+url   = "https://www.chronocrash.com/forum/resources/mighty-final-fight-forever.264/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** freeware fan game; get it only from the developer's official source linked above.
+
+**Needs-test:** structure verified (`OpenBOR` engine, real exe name, `Paks/MFF4ever.pak` present) from the v1.00 release, but **not yet launched on a Deck**.
+
+**Native alternative:** native-Linux OpenBOR with the PAK avoids Proton entirely.
+
+**Legal:** as an unlicensed fan game built on Capcom's Final Fight, **it could be pulled at the rightsholder's request** — deckport only describes how to configure it, and links the creator's own free release."""

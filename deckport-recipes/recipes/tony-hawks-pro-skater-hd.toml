@@ -1,0 +1,76 @@
+[game]
+title       = "Tony Hawk's Pro Skater HD"
+slug        = "tony-hawks-pro-skater-hd"
+aliases     = ["THPS HD", "Tony Hawk Pro Skater HD"]
+type        = "proton"
+engine      = "unreal"
+steam_appid = "207210"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/Win32/THHDGame.exe"  # UE3; community launcher = Binaries/Win32/Launcher.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** Robomodo's 2012 Unreal Engine 3 HD remake of THPS 1 & 2, delisted from Steam on 2017-07-17 (no longer for sale). Steam appid `207210`.
+
+**Proton:** UE3 runs well under Proton on Deck; use `GE-Proton` (`proton_experimental` also works).
+
+**Install:** Game files live under `Binaries\\Win32` (`THHDGame.exe` = game, `Launcher.exe` = original launcher).
+
+**Fix:** Install the **THHD Launcher v1.02 + Community Patch** (skejt23, KaMeR) over the install to fix resolution/widescreen, controls and visual fx; **force the game to run the community `Launcher.exe`** rather than the stock launcher.
+
+**Controller:** The game uses XInput, but reports note it can fail to read the pad with Steam's defaults. If the controller isn't detected, set **Steam Input to Disabled** for this game (Properties → Controller) so the Deck pad is seen as a plain XInput device; you do *not* need a custom Steam Input layout.
+
+**Save/config:** `My Games/Tony Hawk Pro Skater HD/THHDGame/Config` (`THHDEngine.ini`).
+"""
+
+[about]
+developer = "Robomodo"
+publisher = "Activision"
+released  = "2012"
+genre     = "Skateboarding / extreme sports"
+modes     = "Single-player career and free skate; online multiplayer (up to 4 players, now offline)"
+summary   = "**Tony Hawk's Pro Skater HD** is a high-definition remake of levels from the classic **Tony Hawk's Pro Skater 1 and 2**, built by Robomodo in **Unreal Engine 3** and published by Activision. It rebuilds the original **combo-and-trick** skateboarding gameplay with updated visuals and modes like Career, Free Skate, Hawkman and Big Head Survival. The game met mixed reviews (Metacritic 66) and was **delisted** from all storefronts on 2017-07-17 over **expired music licensing**, though previously purchased copies remain playable offline. Online multiplayer servers are no longer active, but the single-player content runs fully offline."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Tony Hawk's Pro Skater HD (207210)"
+url   = "https://www.protondb.com/app/207210"
+
+[[links.guides]]
+title = "PCGamingWiki — Tony Hawk's Pro Skater HD"
+url   = "https://www.pcgamingwiki.com/wiki/Tony_Hawk's_Pro_Skater_HD"
+
+[[links.guides]]
+title = "THHD Launcher v1.02 + Community Patch (skejt23, KaMeR)"
+url   = "https://community.pcgamingwiki.com/files/file/283-tony-hawks-pro-skater-hd-launcher-and-community-mod/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (off Steam since 2017-07-17).
+
+**Proton:** UE3 title, runs under Proton (`GE-Proton`).
+
+**Fix:** Apply the **THHD Launcher v1.02 + Community Patch** (skejt23, KaMeR) for widescreen/resolution and control fixes, and **launch via the community `Launcher.exe`** in `Binaries\\Win32`.
+
+**Controller:** XInput-based. If the pad isn't detected, set **Steam Input = Disabled** for the game; no custom layout needed.
+
+**ProtonDB:** Tier is **gold** but based on only a handful of low-confidence reports (some note .NET install hiccups on newer Proton); treat as needs-test rather than guaranteed.
+"""

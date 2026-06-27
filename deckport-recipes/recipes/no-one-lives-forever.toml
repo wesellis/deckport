@@ -1,0 +1,82 @@
+[game]
+title       = "The Operative: No One Lives Forever"
+slug        = "no-one-lives-forever"
+aliases     = ["No One Lives Forever", "NOLF", "The Operative"]
+type        = "proton"
+engine      = "other"         # Monolith's LithTech engine
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "nolf.exe"   # nolf.exe is the launcher you run (Display/Advanced settings, modernizer); it spawns lithtech.exe (the engine that actually runs the game)
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["dsound", "directmusic", "vcrun6", "vcrun2019"]
+notes      = """
+**Overview:** 2000 Monolith spy shooter (`LithTech` engine).
+
+**Rights:** The textbook orphaned-rights case — rights are so tangled between Monolith/WB/Fox/Activision that **NO ONE can legally sell it**. It's been unavailable for two decades, so it passes the not-for-sale rule.
+
+**Proton:** Community reports run NOLF1 on Steam Deck under `GE-Proton` (e.g. `GE-Proton9-4`). No Steam page exists, so there is **no official ProtonDB rating** — tier is community-anecdotal, not measured.
+
+**Install:** Run the `nolf.exe` launcher (it spawns `lithtech.exe`, the engine); install `dsound` + `directmusic` (music) + `vcrun6` + `vcrun2019` via `winetricks`.
+
+**Audio:** Set `dsound` override to `Builtin` (Wine) to fix glitchy NOLF1 audio.
+
+**Display:** In the launcher's Display settings pick your native res and a mode ending in `x32` (32-bit).
+
+**FMVs:** **Delete the in-game `Movies` folder before launching** — the intro FMVs can crash SteamOS in Game Mode.
+
+**Cosmetic:** NOLF1 crashes on exit (harmless).
+
+**Fix:** Apply the community **NOLF1 Modernizer** (haekb / HeyThereCoffeee, on itch.io) for higher resolutions, HUD scaling, a 60fps cap, fixed mouse input, and modern-OS / multiplayer fixes. (It does not add native gamepad support.)
+"""
+
+[about]
+developer = "Monolith Productions"
+publisher = "Fox Interactive"
+released  = "2000"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**The Operative: No One Lives Forever** is a 2000 spy-themed first-person shooter from **Monolith Productions**, built on the studio's **LithTech** engine. Set in a stylized 1960s Cold War world, it casts the player as British super-spy **Cate Archer** of the secret agency UNITY, blending gunplay with stealth, gadgets, and a tongue-in-cheek **James Bond pastiche**.
+
+The game was a critical hit, praised for its writing, humor, and strong female lead, and is regarded as a **cult classic**. It has been commercially unavailable for two decades because its rights are **tangled between Monolith, Warner Bros., Fox, and Activision**, leaving no party able to legally sell it."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"   # no Steam page / no ProtonDB entry; runs under GE-Proton per community reports, but unrated
+caveats       = """
+**Orphaned rights:** Genuinely unsellable, not just delisted (never had a Steam page, so `steam_appid` stays empty).
+
+**Controller:** Keyboard/mouse game with no clean native modern-gamepad support (DirectInput-era control menu). The modernizer improves mouse input but does **not** add controller support — use a Steam Input gamepad-to-keyboard/mouse layout on Deck.
+
+**Audio:** Glitchy audio unless `dsound` override is set to `Builtin`.
+
+**Cosmetic:** Crashes on exit (cosmetic).
+
+**FMVs:** Delete the `Movies` folder to avoid a Game Mode crash on the intro FMVs.
+"""
+
+[[links.guides]]
+title = "NOLF1 Modernizer (resolution / HUD / mouse / modern-OS fixes)"
+url   = "https://haekb.itch.io/nolf-modernizer"
+
+[[links.guides]]
+title = "NOLF on Steam Deck — UnityHQ community thread"
+url   = "https://nolfgirl.net/Unityhq/forums/topic/59464-nolf-on-steamdeck/"
+
+[[links.guides]]
+title = "The Operative: No One Lives Forever — PCGamingWiki (fixes, executables)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Operative:_No_One_Lives_Forever"

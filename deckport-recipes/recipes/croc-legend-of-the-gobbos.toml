@@ -1,0 +1,74 @@
+[game]
+title       = "Croc: Legend of the Gobbos (Classic, 1997 PC)"
+slug        = "croc-legend-of-the-gobbos"
+aliases     = ["Croc Legend of the Gobbos", "Croc Classic", "Croc 1997"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "CrocD3D.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Which version:** This recipe targets the **classic 1997 PC build** of Croc: Legend of the Gobbos, not the 2025 Argonaut Games remaster (Steam app 3043940 / GOG Platinum Edition). The cleanest legitimate way to get the classic build today is **GOG**: buying the remaster ("Platinum Edition") also grants the original 1997 PC version, and GOG additionally lists it standalone as "Croc Legend of the Gobbos Classic". Install via the **Heroic Games Launcher** (or add it as a non-Steam game) and run it through Proton.
+
+**Binary — why CrocD3D.exe:** The classic install ships two executables. **Crocrun.exe** is the front-end launcher/configurator, but it requests administrator rights every launch (and can crash with DEP), which makes it unreliable under Proton/Wine. **CrocD3D.exe** is the actual Direct3D game executable; launching it directly skips the admin prompt and is the recommended target on the Deck. Run Crocrun.exe once first (on a PC or via the launcher) to set graphics/audio options, then point the recipe at CrocD3D.exe.
+
+**ProtonDB / Deck status:** ProtonDB tiering on app 3043940 reflects the *remaster*, not this classic build, so treat the classic as **needs-test**. The GOG classic ships pre-configured with **DDrawCompat** (a DirectDraw wrapper) to run on modern systems, which carries over under Proton; the legacy D3D path is lightweight and runs comfortably at the Deck's TDP.
+
+**Recommended fix — Definitive Edition patch:** For the best handheld experience, apply the community **"Croc: Legend of the Gobbos – Definitive Edition"** unofficial patch (by crocguy0688). It adds non-stretched **widescreen / higher resolutions**, **full analog controller support** (like the console versions), native modern Windows/Linux support, and selectable PSX/PC/DEMO soundtracks. Install by extracting it into the game's main folder over the classic files; it integrates with the existing executables.
+
+**Controller:** The unpatched 1997 build has limited/keyboard-centric input and no native analog gamepad support, so use **Steam Input** to map a controller (or use the Big Picture / Deck input mapper). The Definitive Edition patch restores proper analog controller support and is the better route if you want native gamepad handling.
+
+**Proton:** Use **GE-Proton**. A recent GE build handles the legacy DirectDraw/Direct3D path and the patch's modern code well. If you see a black screen or the launcher hangs, switch which executable Heroic/Steam targets (CrocD3D.exe vs Crocrun.exe) and retry.
+"""
+
+[about]
+developer = "Argonaut Software"
+publisher = "Fox Interactive"
+released  = "1997 (PC / PlayStation / Saturn); classic PC build re-released on GOG 2025"
+genre     = "3D platformer"
+modes     = "Single-player"
+summary   = "**Croc: Legend of the Gobbos** is a 1997 3D platformer developed by **Argonaut Software** and published by **Fox Interactive**, released simultaneously on PlayStation, Sega Saturn and Windows. This recipe covers the **classic 1997 PC version**, which is bundled with (and sold standalone alongside) the 2025 GOG remaster. On modern hardware it runs through Proton via GOG/Heroic; the community Definitive Edition patch adds widescreen and analog controller support for a smooth handheld experience."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Croc: Legend of the Gobbos – PCGamingWiki (classic PC)"
+url   = "https://www.pcgamingwiki.com/wiki/Croc:_Legend_of_the_Gobbos"
+
+[[links.guides]]
+title = "Croc: Legend of the Gobbos – Definitive Edition unofficial patch (PCGamingWiki community files)"
+url   = "https://community.pcgamingwiki.com/files/file/1833-croc-legend-of-the-gobbos-definitive-edition/"
+
+[[links.guides]]
+title = "Croc Legend of the Gobbos on GOG (Platinum Edition includes the classic build)"
+url   = "https://www.gog.com/en/game/croc_legend_of_the_gobbos"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Classic build, not the remaster:** This recipe is for the original 1997 PC version. Get it legitimately via GOG — the remaster purchase ("Platinum Edition") includes the classic, and GOG also lists "Croc Legend of the Gobbos Classic" standalone. Install through Heroic or add as a non-Steam game.
+
+**Launch CrocD3D.exe, not Crocrun.exe:** Crocrun.exe is the launcher and demands admin rights every run (and can hit DEP crashes), which is flaky under Proton. Configure once via Crocrun.exe, then launch **CrocD3D.exe** directly.
+
+**Apply the Definitive Edition patch for widescreen + controller:** The unpatched build is 4:3 with limited gamepad support. The community Definitive Edition patch adds widescreen, higher resolution and native analog controller support; without it, map the controller via Steam Input.
+
+**Status is needs-test:** ProtonDB tier on app 3043940 reflects the 2025 remaster, not this classic build, so this is unverified on Deck for the original.
+"""

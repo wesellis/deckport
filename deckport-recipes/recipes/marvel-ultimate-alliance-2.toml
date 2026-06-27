@@ -1,0 +1,78 @@
+[game]
+title       = "Marvel Ultimate Alliance 2"
+slug        = "marvel-ultimate-alliance-2"
+aliases     = ["MUA2", "Marvel: Ultimate Alliance 2"]
+type        = "proton"
+engine      = "other"
+steam_appid = "433320"        # 2016 PC port, delisted shortly after release
+sgdb_id     = ""
+
+[launch]
+binary         = "MUA2.exe"   # best guess — MUA1 ships as MUA.exe; verify the real .exe in your copy
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["vcrun2022"]
+notes      = """
+**Port:** 2016 PC port (Zoë Mode) of the 2009 action-RPG, delisted not long after release.
+
+**ProtonDB / Deck:** Runs on Deck under Proton. `GE-Proton` and `proton_experimental` are both reported working; several users also report the default Valve Proton works fine once the controller files are in place.
+
+**DRM:** No GFWL/SecuROM — plain Steam port, so it boots without DRM workarounds.
+
+**Controller (the one real catch):** The game is built on DirectInput (DINPUT), so a modern XInput pad isn't detected properly out of the box and only the touchscreen responds. The community fix is **XIDI** (open-source DINPUT→XInput wrapper by SamuelGR on GitHub): drop the XIDI files into the game's root folder, install the **VC++ 2022 runtime** (`vcrun2022`), and set the Steam Input template to a Gamepad layout (the `Gamepad with Mouse and Trackpad` Valve template, or the community `Zoë Mode Official Layout`, both work). A known side effect of the gamepad template is the game seeing a phantom Player 2 — open in-game Options right after launch and set Player 2's controller to keyboard so Start pauses instead of joining a second player.
+
+**Runtime:** The VC++ 2022 runtime (`vcrun2022`) clears the most common startup issues and is required by the XIDI fix.
+
+**Install:** Normal Steam install, then copy the XIDI controller files into the game's root folder before first launch. deckport configures the prefix and runtime.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Steam guide: DEFINITIVE CONTROLLER FIX (XIDI) for MUA2"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3095349183"
+
+[[links.guides]]
+title = "PCGamingWiki: Marvel: Ultimate Alliance 2"
+url   = "https://www.pcgamingwiki.com/wiki/Marvel:_Ultimate_Alliance_2"
+
+[[links.guides]]
+title = "XIDI (DInput→XInput wrapper) by SamuelGR"
+url   = "https://github.com/samuelgr/Xidi"
+
+[about]
+developer = "Vicarious Visions (2016 PC port by Zoë Mode)"
+publisher = "Activision"
+released  = "2016 (PC port; originally 2009)"
+genre     = "Action role-playing game"
+modes     = "Single-player, local co-op up to 4 players (online multiplayer servers shut down in 2020)"
+summary   = """
+**Marvel: Ultimate Alliance 2** is an **action-RPG** sequel to the 2006 original, with a story inspired by Marvel's **Civil War** crossover. Players assemble a team of four Marvel heroes and combine powers through signature **Fusion attacks**.
+
+The 2016 console-and-PC re-release was handled by **Zoë Mode** and based on the Vicarious Visions version. It was pulled from digital storefronts in 2018 due to **licensing issues** between Activision and Marvel.
+"""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Controller:** Out of the box only the touchscreen responds — the game is DirectInput-only. Drop the **XIDI** wrapper files into the game's root folder, install the VC++ 2022 runtime, and select a Gamepad Steam Input template (`Gamepad with Mouse and Trackpad` or the `Zoë Mode Official Layout`). After launch, set Player 2 to keyboard in Options so Start pauses rather than adding a phantom player.
+
+**Verify the exe:** The `.exe` name (`MUA2.exe`) is a **best guess** based on MUA1's `MUA.exe`; confirm the real launcher in your copy.
+
+**Status:** Community reports confirm the 2016 port runs on Deck under Proton, but it was delisted quickly so coverage is thin and the ProtonDB tier is unsettled — needs a hardware pass.
+
+**Scope:** Recipe describes setup only, not where to get the game.
+"""

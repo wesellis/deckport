@@ -1,0 +1,78 @@
+[game]
+title       = "Star Trek: Bridge Crew"
+slug        = "star-trek-bridge-crew"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "527100"
+sgdb_id     = ""
+
+[launch]
+binary         = "BridgeCrew.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `527100`), still runs on Deck via Proton — ProtonDB gold.
+
+**Proton:** Prefer `GE-Proton` over stock for smoother Ubisoft Connect (Uplay) sign-in; `proton_experimental` also works.
+
+**DRM:** Requires Ubisoft Connect + always-online for all modes, so **you must log in to the Ubisoft overlay on first launch** (the main source of friction under Proton — Linux/Proton users commonly hit a Ubisoft Connect "unable to connect / connection error" on sign-in; if login fails, retry or switch to a different `GE-Proton` build).
+
+**Display:** Play the **FLAT (non-VR) desktop mode** — a free compatibility patch added headset-free play, so pick the plain `Play Star Trek Bridge Crew` entry, not the `Launch in VR` one (launching via Ubisoft Connect defaults to non-VR).
+
+**Controller:** Full gamepad support in non-VR — enable controller mode as the game loads to drive both hands at once; the Deck's built-in controller works.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Red Storm Entertainment"
+publisher = "Ubisoft"
+released  = "2017"
+genre     = "Co-op action-adventure / starship simulation"
+modes     = "Single-player, online co-op (up to four players)"
+summary   = "**Star Trek: Bridge Crew** puts you and up to three other players on the bridge of a Federation starship, filling the roles of **Captain, Helm, Tactical, and Engineer** to crew the ship together. Built by Ubisoft's Red Storm Entertainment, it launched in 2017 as a flagship **VR** title and later added a free patch enabling **headset-free (flat) desktop play**. Its emphasis on communication and teamwork made it a standout social **co-op** experience, praised when a coordinated crew works in sync. It was **delisted from Steam** after Ubisoft's Star Trek license lapsed."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Star Trek: Bridge Crew (appid 527100)"
+url   = "https://www.protondb.com/app/527100"
+
+[[links.guides]]
+title = "Ubisoft: Playing Star Trek: Bridge Crew in Desktop (non-VR) Mode"
+url   = "https://www.ubisoft.com/en-us/help/star-trek-bridge-crew/gameplay/article/playing-star-trek-bridge-crew-in-desktop-mode/000064577"
+
+[[links.guides]]
+title = "Ubisoft News: Bridge Crew now playable without VR (free update)"
+url   = "https://news.ubisoft.com/en-us/article/3vz996eixVluvKQRK7aVqf/star-trek-bridge-crew-now-playable-without-vr-after-free-update"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Removed from Steam (appid `527100`) after Ubisoft's Star Trek license lapsed; community ProtonDB reports rate it gold on Linux/Proton.
+
+**DRM:** Requires Ubisoft Connect (Uplay) DRM and a **constant internet connection for ALL modes** — the Ubisoft Connect login is the main thing to get past under Proton; `GE-Proton` handles it best.
+
+**Controller:** Play the non-VR (flat) desktop mode — it has full gamepad support, so the Deck controls work, but you must enable controller mode as the game loads.
+
+**Multiplayer:** It's online/co-op oriented (crew of four), so verify multiplayer/matchmaking still functions before relying on it.
+
+**Status:** Recipe params set from research but not yet confirmed on a physical Deck.
+"""

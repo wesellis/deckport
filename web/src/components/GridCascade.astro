@@ -1,0 +1,103 @@
+---
+// Decorative 45°-angled marquee of recipe grid art for the homepage hero.
+// Pulls real banners from the build-time grid cache; rows alternate direction.
+import gridCache from "../lib/grid-cache.json";
+
+const ROWS = 12;
+// Wide enough that one copy always overflows the rotated viewport diagonal — so
+// the duplicated strip below loops with zero gap at any screen size.
+const PER_ROW = 24;
+const all = (Object.values(gridCache as Record<string, string | null>).filter(Boolean) as string[]);
+
+// Spread the art across rows with a stride so each row looks different — purely
+// deterministic (no RNG) so builds stay reproducible.
+const rows = all.length
+  ? Array.from({ length: ROWS }, (_, r) =>
+      Array.from({ length: PER_ROW }, (_, i) => all[(r * 5 + i * 13 + r) % all.length])
+    )
+  : [];
+---
+
+{rows.length > 0 && (
+  <div class="gc" aria-hidden="true">
+    <div class="gc-rotor">
+      {rows.map((row, i) => (
+        <div
+          class={`gc-row ${i % 2 ? "rtl" : "ltr"}`}
+          style={`animation-duration:${64 + (i % 5) * 11}s`}
+        >
+          {[...row, ...row].map((u) => (
+            <img src={u} alt="" loading="lazy" decoding="async" width="188" height="88" />
+          ))}
+        </div>
+      ))}
+    </div>
+    <div class="gc-veil"></div>
+  </div>
+)}
+
+<style>
+  .gc {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  /* A tall, very wide block of rows, centred and tilted to 45°. */
+  .gc-rotor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    opacity: 0.26;
+  }
+  .gc-row {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    flex: none;
+    will-change: transform;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .gc-row.ltr {
+    animation-name: gc-left;
+  }
+  .gc-row.rtl {
+    animation-name: gc-right;
+  }
+  .gc-row img {
+    width: 188px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex: none;
+    display: block;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
+  }
+  /* Each row duplicates its art, so shifting by 50% loops seamlessly. */
+  @keyframes gc-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes gc-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  /* Fade the art out under the headline (left) and into the page edges, so the
+     copy stays crisp while the cascade still reads as a backdrop. */
+  .gc-veil {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(100deg, var(--bg, #0e1116) 24%, transparent 82%),
+      linear-gradient(to bottom, transparent 55%, var(--bg, #0e1116));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gc-row { animation: none; }
+  }
+</style>

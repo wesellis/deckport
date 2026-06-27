@@ -1,0 +1,72 @@
+[game]
+title       = "The Punisher"
+slug        = "the-punisher"
+aliases     = ["Punisher 2005"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = "5404430"
+
+[launch]
+binary         = "pun.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** The Punisher (2005, Volition / THQ) — third-person shooter with Thomas Jane as Frank Castle, never sold on Steam. DirectX 8 title.
+
+**Install:** Add the game's `pun.exe` (the actual game executable, ~2.6 MB) as a non-Steam game and force `GE-Proton`. Note `Punisher.exe` in the install folder is only the graphics/config utility, not the game itself. Community gameplay confirms it runs well on Deck.
+
+**Display:** **Apply ThirteenAG's WidescreenFixesPack** (drops a `d3d8.dll` ASI loader plus `ThePunisher.WidescreenFix.ini` into the game folder) so it picks the Deck's native resolution instead of stretched 4:3. Set your resolution in the `.ini` if it doesn't auto-detect.
+
+**DirectPlay:** Required by the engine but Wine/Proton provides it, so no extra `winetricks` are typically needed.
+
+**Cosmetic:** An optional gore patch restores full violence (removes the black-and-white censor filter on executions)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "The Punisher (2005) — PCGamingWiki (fixes, widescreen, settings)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Punisher_(2005)"
+
+[[links.guides]]
+title = "ThirteenAG WidescreenFixesPack (d3d8 ASI loader source)"
+url   = "https://github.com/ThirteenAG/WidescreenFixesPack"
+
+[[links.guides]]
+title = "Punisher JoytoKey Config (Modernized) — Nexus Mods"
+url   = "https://www.nexusmods.com/thepunisher/mods/2"
+
+[about]
+developer = "Volition"
+publisher = "THQ"
+released  = "2005"
+genre     = "Third-person shooter / action-adventure"
+modes     = "Single-player"
+summary   = "**The Punisher** is a 2005 **third-person shooter** based on the Marvel Comics antihero, developed by **Volition** and published by **THQ** for Windows, PlayStation 2 and Xbox. Players control Frank Castle through linear combat missions, using a system of human shields, quick kills and signature **interrogation 'hot spots'** where enemies are coerced through death threats and torture. It is remembered for its extreme, over-the-top violence (which forced an edited black-and-white censor filter on the most graphic executions) and its faithful, ruthless portrayal of the character. The PC version was **never released on Steam** and is no longer commercially available."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Never released on Steam (no appid) — supply your own copy and add the game's `pun.exe` (not the `Punisher.exe` config tool) as a non-Steam game.
+
+**Controller:** No native gamepad support — the game is keyboard/mouse only, so apply a Steam Input layout (community Deck/Xbox/DualSense configs exist on SteamInputDB and the Steam Controller DB; a `JoytoKey` config also works).
+
+**Display:** DX8 game — use the WidescreenFixesPack `d3d8.dll` wrapper for correct resolution; if Steam Input feels flaky note it stems from the DX8 input path.
+
+**Install:** Install outside `Program Files` so the game can boot.
+
+deckport links nothing."""

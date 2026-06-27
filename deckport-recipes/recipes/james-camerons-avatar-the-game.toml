@@ -1,0 +1,71 @@
+[game]
+title       = "James Cameron's Avatar: The Game"
+slug        = "james-camerons-avatar-the-game"
+aliases     = ["Avatar The Game", "Avatar 2009", "James Cameron's Avatar"]
+type        = "proton"
+engine      = "other"
+steam_appid = "33280"
+sgdb_id     = ""
+
+[launch]
+binary         = "Avatar.exe"   # stated: in the bin/ folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** Ubisoft's 2009 third-person shooter tie-in to the Avatar film (RDA vs Na'vi on Pandora), delisted.
+
+**Proton:** Community reports run it well on the Deck under Proton in **DX9** mode; the main thing to get right is the single-core launch fix below. ProtonDB has very few reports, so treat any tier as provisional.
+
+**Display:** Has both `DirectX 9` and `DirectX 10` render modes.
+
+**Mods:** There's an active Avatar Modding community for the 2009 game."""
+
+[about]
+developer = "Ubisoft Montreal"
+publisher = "Ubisoft"
+released  = "2009"
+genre     = "Action-adventure / Third-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**James Cameron's Avatar: The Game** is a 2009 **third-person shooter** set as a prequel to the Avatar film, putting players on the jungle moon **Pandora** amid the conflict between the human **RDA** corporation and the native **Na'vi**. Players can side with either faction, and the game features both **DirectX 9** and **DirectX 10** render paths.
+
+It was a movie tie-in released alongside the film and received mixed reviews. The PC version was **delisted** from Steam in 2013 and is no longer sold on any Ubisoft storefront."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki - James Cameron's Avatar: The Game"
+url   = "https://www.pcgamingwiki.com/wiki/James_Cameron's_Avatar:_The_Game"
+
+[[links.guides]]
+title = "Steam guide - Fix if your game is not launching (CPU affinity)"
+url   = "https://steamcommunity.com/app/33280/discussions/0/3052861637930653188/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game — **supply your own copy**.
+
+**DRM:** The retail/Steam release used **Tagès / Solidshield (T@GES)** activation — limited to 3 activations that replenish one per 30 days, with online or manual code activation. A community DRM-free build avoids that activation layer.
+
+**Fix:** If it won't launch (or crashes on load on modern multi-core CPUs), **pin it to a single CPU core** (set CPU 0 affinity / `/affinity 1`). This is the most-reported launch fix.
+
+**Display:** The 'black squares' bug is `DX10` + HDR/bloom — disable bloom or use `DX9` mode.
+
+**Warning:** Heavy flashing colour/effects (**possible epilepsy trigger**).
+
+**Binary:** `bin/Avatar.exe`. deckport links nothing."""

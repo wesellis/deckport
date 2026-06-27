@@ -1,0 +1,74 @@
+[game]
+title       = "Midnight Club 2"
+slug        = "midnight-club-2"
+aliases     = ["Midnight Club II", "MC2"]
+type        = "proton"
+engine      = "other"
+steam_appid = "12160"
+sgdb_id     = "1356"
+
+[launch]
+binary         = "mc2.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Midnight Club 2 (2003, Rockstar San Diego / Rockstar Games) — open-world street racing with cars, motorcycles and high-speed urban stunts across Los Angeles, Paris and Tokyo. Steam app 12160.
+
+**Availability:** Delisted from the Steam store around 2018, so it can no longer be purchased there. Owners who bought it before delisting still have it in their Steam library and can install it normally; it remains your legitimately owned copy.
+
+**Install:** Install from your Steam library. GE-Proton recommended. The launch binary is `mc2.exe` (in `steamapps/common/Midnight Club 2/`).
+
+**Controller:** No native gamepad support — apply a community Steam Input layout that maps keyboard inputs to the Deck's controller. Note that steering and acceleration are digital (not analog), so fine control is limited. The touchpad or right stick works for camera.
+
+**Performance:** Runs great with very low power draw (~7W) — excellent for travel gaming. Comfortably hits high frame rates at native 1280x800.
+
+**Note:** Midnight Club: Los Angeles (2009) is a separate, newer title (app 12900) with different Steam Deck compatibility."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Midnight Club 2 — Steam page"
+url   = "https://store.steampowered.com/app/12160/Midnight_Club_2/"
+
+[[links.guides]]
+title = "ProtonDB — Midnight Club 2"
+url   = "https://www.protondb.com/app/12160"
+
+[[links.guides]]
+title = "Classics on Deck: Midnight Club II (SteamDeckHQ)"
+url   = "https://steamdeckhq.com/news/classics-on-deck-7/"
+
+[[links.guides]]
+title = "Quick setup for modern gamepads (Steam Community)"
+url   = "https://steamcommunity.com/app/12160/discussions/0/1473095965300019230/"
+
+[about]
+developer = "Rockstar San Diego"
+publisher = "Rockstar Games"
+released  = "2003"
+genre     = "Racing / open world"
+modes     = "Single-player, multiplayer"
+summary   = "**Midnight Club 2** is a **2003 open-world street racing game** by **Rockstar San Diego** featuring unlicensed street races through Los Angeles, Paris and Tokyo. Now delisted from the Steam store but still playable by existing owners, it runs very well on Deck via GE-Proton with very low power draw."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Controller:** No native gamepad support — apply a community Steam Input keyboard-mapping layout. Steering/acceleration are digital, not analog.
+
+**Delisted:** Removed from the Steam store (~2018); only prior owners can install it from their library.
+
+**Distinct from MC:LA:** Midnight Club 2 (app 12160) is different from Midnight Club: Los Angeles (app 12900)."""

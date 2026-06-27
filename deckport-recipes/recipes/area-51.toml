@@ -1,0 +1,76 @@
+[game]
+title       = "Area 51"
+slug        = "area-51"
+aliases     = ["Area-51", "Area 51"]
+type        = "proton"
+engine      = "other"
+steam_appid = "1125130"       # the official free Steam re-release
+sgdb_id     = ""
+
+[about]
+developer = "Midway Studios Austin"
+publisher = "Midway"
+released  = "2005"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Area 51** is a 2005 sci-fi **first-person shooter** that loosely remakes Midway's 1995 arcade **light-gun game**. Players control HAZMAT soldier Ethan Cole investigating an alien outbreak at the titular base, gaining **mutant powers** as the story unfolds. The game is notable for its B-movie voice cast, featuring **David Duchovny**, Powers Boothe, and **Marilyn Manson**.
+
+It was later released for free on **Steam** by Midway/Warner Bros., with the original **StarForce DRM** removed from that build."""
+
+[launch]
+binary         = "A51.exe"      # confirmed — the launcher exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2005 Midway Studios Austin sci-fi FPS (David Duchovny + Marilyn Manson).
+
+**DRM:** This recipe targets the official free Steam re-release (app `1125130`), which already has the old `StarForce` DRM stripped out, so **no DRM workaround is needed**.
+
+**Proton:** DX9 title; launches via `A51.exe`. Force a recent `GE-Proton` (`proton_experimental` also works) for best compatibility.
+
+**Display:** In Video Settings enable `High Detailed Textures`.
+
+**Controller:** The PC port has **no native gamepad support** and is keyboard/mouse only, so on Deck apply a Steam Input gamepad-to-keyboard/mouse layout (an FPS template binds cleanly).
+
+**FOV:** Widescreen is VERT- by default. For a HOR+ field of view, either apply the community "Area 51 HOR+ FOV fix" patch, or hex-edit `A51.exe` at offset `338C20`, changing `92 0A 86 3F` to your desired FOV value.
+
+**Optional mod:** The community **Project Dreamland** mod restores multiplayer, widens FOV, and fixes crashes on modern GPUs, but it adds setup complexity; for a minimal Deck run the stock `A51.exe` plus the FOV fix is enough."""
+
+[[links.guides]]
+title = "Area 51 (2005) - PCGamingWiki"
+url   = "https://www.pcgamingwiki.com/wiki/Area_51_(2005)"
+
+[[links.guides]]
+title = "Area 51 (2005) Windows 10/11 patches & FOV/controller guide (Lucas C)"
+url   = "https://lucasc.me/post/area-51-2005-windows-10-11-patches-guide"
+
+[[links.guides]]
+title = "Project Dreamland mod (ModDB)"
+url   = "https://www.moddb.com/mods/project-dreamland"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Use the official free Steam re-release (app `1125130`); `StarForce` DRM is already removed from that build.
+
+**Proton:** Run `A51.exe` under `GE-Proton` and enable `High Detailed Textures`.
+
+**Controller:** **No native controller support** — bind a Steam Input gamepad-to-keyboard/mouse FPS layout on Deck.
+
+**FOV:** Widescreen defaults to VERT- (narrowed FOV on 16:10); optional `A51.exe` hex-edit at offset `338C20` (`92 0A 86 3F`) restores a HOR+ FOV.
+
+**ProtonDB:** Tier not confirmed via an aggregate rating; mark verified after a real Deck run."""

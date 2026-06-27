@@ -1,0 +1,77 @@
+[game]
+title       = "fheroes2: Heroes of Might and Magic II Engine"
+slug        = "fheroes2"
+aliases     = ["fheroes2", "Free Heroes 2", "Heroes of Might and Magic II fheroes2"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "fheroes2"
+launch_options = ""
+requires_files = ["DATA", "MAPS"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native:** Native Linux via Flatpak (`io.github.ihhub.Fheroes2` on Flathub/Discover). **No Proton needed.**
+
+**Install:** Install via Discover in Desktop Mode.
+
+**Data:** On first launch, point `fheroes2` at your Heroes of Might and Magic II data: either supply the GOG installer `.exe` (`fheroes2` can extract it automatically) or copy the `DATA`, `MAPS`, `ANIM`, and `MUSIC` subdirectories to `~/.var/app/io.github.ihhub.Fheroes2/data/fheroes2/`.
+
+**Demo:** A free in-game demo downloader is also available if you only want to try before buying.
+
+**Controller:** Controller/trackpad support: use the `Keyboard (WASD) and Mouse` Steam Input layout; right trackpad = mouse, triggers = mouse buttons.
+"""
+
+[about]
+developer = "ihhub and contributors"
+publisher = "Independent (free open-source project)"
+released  = "2021 (v1.0); ongoing — v1.1.16 in May 2026"
+genre     = "Turn-based strategy"
+modes     = "Single-player, Hotseat multiplayer"
+summary   = "**fheroes2** is a from-scratch, open-source recreation of the **Heroes of Might and Magic II** game engine, written in **C++** by ihhub and a large community of contributors. It replicates the original gameplay faithfully while adding **higher resolution support**, **improved AI**, countless bug fixes, and quality-of-life improvements the original never had. The engine requires the original game's data files (sold on GOG) or the free official demo. Active development continues with regular releases; the project hit v1.1.16 in 2026. It is one of the most polished open-engine recreations available on Linux and Steam Deck."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official fheroes2 Installation Guide"
+url   = "https://ihhub.github.io/fheroes2/INSTALL.html"
+
+[[links.guides]]
+title = "fheroes2 Steam Deck Setup Discussion (GitHub)"
+url   = "https://github.com/ihhub/fheroes2/discussions/6427"
+
+[[links.guides]]
+title = "Using Steam Deck Trackpads with fheroes2 (GitHub Discussion)"
+url   = "https://github.com/ihhub/fheroes2/discussions/6373"
+
+[[links.guides]]
+title = "fheroes2 GitHub Repository"
+url   = "https://github.com/ihhub/fheroes2"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires owned Heroes of Might and Magic II data files (`DATA/`, `MAPS/` at minimum). Purchase on GOG and supply the `.exe` installer — the `fheroes2` Flatpak can auto-extract it.
+
+**Demo:** The free official demo is also supported for basic play.
+
+**Native:** Native Flatpak path is **strongly recommended over any Proton approach**.
+
+**Controller:** Controller input needs the `Keyboard + Mouse` Steam Input layout manually selected.
+"""

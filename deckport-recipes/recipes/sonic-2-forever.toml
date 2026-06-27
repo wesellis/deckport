@@ -1,0 +1,77 @@
+[game]
+title       = "Sonic 2 Forever"
+slug        = "sonic-2-forever"
+aliases     = ["Sonic The Hedgehog 2 Forever", "Sonic 2 Absolute", "S2F", "Sonic2Absolute.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Sonic2Absolute.exe"
+launch_options = ""
+requires_files = ["Data.rsdk"]
+
+[proton]
+version    = "GE-Proton9-20"
+winetricks = []
+notes      = """
+**Engine:** `Sonic 2 Forever` uses the `RSDKv4` decompilation engine (same as Sonic 1 Forever). The Windows release ships as `Sonic2Absolute.exe`.
+
+**Data file:** **Requires a `Data.rsdk` file** from a legitimately owned copy of Sonic The Hedgehog 2 (2013). The simplest source is the **Sonic The Hedgehog 2 Classic Android app**: extract the APK like a ZIP, pull `Data.rsdk` from the `assets/` folder, and **place it next to the executable**. Sonic Origins data is also supported (since the project's v1.3.2 builds) but is **not** plug-and-play — it requires extracting `Sonic2u.rsdk`, hex-editing the extracted `GameConfig.bin`, and sourcing audio separately, so the Android datapack is the recommended route.
+
+**Proton:** Use `GE-Proton` (latest stable) for best compatibility; standard `Proton Experimental` also works.
+
+**Install:** Add the exe to Steam as a non-Steam game and force the Proton version.
+
+**Display:** The game runs at 60 FPS widescreen natively once the data file is present."""
+
+[about]
+developer = "Team Forever (fan project, built on RSDKModding/RSDKv4-Decompilation)"
+publisher = "Independently released (free fan project)"
+released  = "2022"
+genre     = "Platformer, Action"
+modes     = "Single-player"
+summary   = "**Sonic 2 Forever** (released as Sonic 2 Absolute) is Team Forever's enhanced PC build of Sonic the Hedgehog 2, using the open-source **RSDKv4 decompilation** of the 2013 Sega mobile remaster. It adds widescreen support, a locked 60 FPS framerate, a built-in **mod loader**, and quality-of-life improvements while preserving the feel of the original game. It is a companion to Team Forever's **Sonic 1 Forever** and is distributed free of charge. (Note: the project's official name is **Sonic 2 Absolute** — 'Sonic 2 Forever' is an informal community name for it.) Because it is built on the official decompilation engine, it **requires original game data files** to run — either from the Android APK or a Sonic Origins purchase."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+protondb    = ""
+steamgriddb = ""
+
+[[links.guides]]
+title = "Install Sonic 1 Forever on Linux / Steam Proton (GameBanana — same steps apply to S2)"
+url   = "https://gamebanana.com/tuts/17619"
+
+[[links.guides]]
+title = "Team Forever official page — Sonic 2 Absolute"
+url   = "https://teamforeveronline.wixsite.com/home/sonic-2-absolute"
+
+[[links.guides]]
+title = "RSDKv4 Decompilation GitHub (engine source)"
+url   = "https://github.com/RSDKModding/RSDKv4-Decompilation"
+
+[[links.guides]]
+title = "Sonic 2 Absolute source / releases (ElspethThePict, Team Forever)"
+url   = "https://github.com/ElspethThePict/S2Absolute"
+
+[[links.guides]]
+title = "RSDK Modding Wiki — obtaining the Sonic 1 & 2 datapacks (Data.rsdk)"
+url   = "https://rsdkmodding.com/Guides/Games/Sonic1-2/Datapack/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Requires `Data.rsdk` from a legitimately owned copy of Sonic The Hedgehog 2 (2013) — easiest from the Sonic The Hedgehog 2 Classic Android app; Sonic Origins data also works but needs extra conversion. **deckport links nowhere to obtain game data.**
+
+**Setup:** Place `Data.rsdk` next to `Sonic2Absolute.exe` before launching.
+
+**Proton:** Use `GE-Proton` for best results on Deck; add as a non-Steam game in Desktop Mode, then force the Proton layer."""

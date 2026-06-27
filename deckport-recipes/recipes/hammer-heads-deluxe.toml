@@ -1,0 +1,75 @@
+[game]
+title       = "Hammer Heads Deluxe"
+slug        = "hammer-heads-deluxe"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "3400"
+sgdb_id     = ""
+
+[about]
+developer = "Nuclide Games"
+publisher = "PopCap Games"
+released  = "2006"
+genre     = "Arcade / Whac-A-Mole action"
+modes     = "Single-player"
+summary   = """
+**Hammer Heads Deluxe** is a casual **whack-a-mole**-style arcade game built on the **PopCap Games Framework**. The player wields a mouse-controlled hammer to smash gnomes popping out of holes, earning coins and hearts to buy power-ups while avoiding traps and missed swings that drain health.
+
+The Deluxe edition adds two modes: a 25-level **Classic Bash** culminating in a boss fight against King Globus (which unlocks a harder Tough Cookie mode) and an endless **Marathon Bash**. It is one of PopCap's small mid-2000s catalog titles, later **removed from Steam sale in 2019**."""
+
+[launch]
+binary         = "HammerHeads.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted PopCap Steam game (appid `3400`, removed from sale Dec 2019; existing owners keep library access). Built on the **PopCap Games Framework** — a tiny, low-spec 2006 arcade title that runs fine under Proton on Deck.
+
+**Issue:** PopCap-Framework games often mis-detect graphics hardware acceleration and **fall back to laggy software rendering or crash on launch**.
+
+**Fix:** If the screen is blank/laggy, force `GE-Proton` (or `proton_experimental`) and add launch option `PROTON_USE_WINED3D=1` to push it through WineD3D; that clears the hardware-accel false-negative on AMD.
+
+**Binary:** The real executable is `HammerHeads.exe` (not a generic `game.exe`).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Hammer Heads Deluxe on ProtonDB (appid 3400)"
+url   = "https://www.protondb.com/app/3400"
+
+[[links.guides]]
+title = "Hammer Heads Deluxe on Steam (delisted store page)"
+url   = "https://store.steampowered.com/app/3400/Hammer_Heads_Deluxe/"
+
+[[links.guides]]
+title = "Hammer Heads (PopCap) — Wikipedia overview"
+url   = "https://en.wikipedia.org/wiki/Hammer_Heads"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing. Delisted PopCap arcade game (whack-the-gnomes); single-player only, no servers to worry about.
+
+**Controller:** Input is mouse-pointer driven — there is **NO native gamepad support**, so on the Deck play it with a Steam Input layout that maps the right trackpad (or gyro) to mouse and a button to left-click; that virtual-mouse layout is the working controller path.
+
+**Display:** Watch for the **PopCap Games Framework hardware-acceleration false-negative** (blank screen / heavy lag); the launch-option `WineD3D` fallback in the `[proton]` notes clears it.
+
+**Tier confidence:** ProtonDB shows **Platinum** for appid `3400`, but on a **low report count** (only a handful of submissions). Treat it as a promising-but-thin signal rather than a heavily-confirmed rating.
+
+**NEEDS-TEST:** binary and tier set from ProtonDB (appid 3400) + PopCap-Framework + delisted-games research, not yet confirmed on a physical Deck."""

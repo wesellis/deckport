@@ -1,0 +1,77 @@
+[game]
+title       = "Deadpool"
+slug        = "deadpool"
+aliases     = ["Deadpool", "Deadpool The Game"]
+type        = "proton"
+engine      = "other"         # Unreal Engine 3
+steam_appid = "224060"
+sgdb_id     = ""
+
+[launch]
+binary         = "DP.exe"   # UE3 game exe: Binaries\Win32\DP.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 9.0-4"
+winetricks = []
+notes      = """
+**Game:** 2013 High Moon Studios action game (`UE3`, 32-bit).
+
+**ProtonDB:** Silver overall, trending Gold. Runs once you opt into a recent Proton — the title is flagged Unsupported on Deck until you force a runtime.
+
+**Proton:** Community confirms it on Steam Deck via Proton 9. In `Properties > Compatibility`, tick **Force the use of a specific Steam Play compatibility tool** and pick `Proton 9.0` (a community report specifically used `Proton 9 Beta`). Stock Proton 9 works; no winetricks needed.
+
+**Framerate softlock:** Do NOT add framerate-uncap launch options. With an unlocked framerate the game can softlock at a Chapter 5 cutscene (the two-guards / toilet scene). Leaving `launch_options` empty avoids this.
+
+**Crash-dialog workaround:** If a startup/credits crash dialog appears, try `--nocrashdialog` as a launch option (otherwise leave launch options blank).
+
+**DRM:** Delisted in 2017 when the Marvel license lapsed (briefly re-released 2015–2017) — **bring your own copy**. Steam DRM-wrapped, so it must launch through Steam.
+
+**Install:** Main executable is `DP.exe` under `Binaries\\Win32\\`.
+"""
+
+[about]
+developer = "High Moon Studios"
+publisher = "Activision"
+released  = "2013"
+genre     = "Action-adventure, hack and slash"
+modes     = "Single-player"
+summary   = "**Deadpool** is a 2013 **action-adventure** game starring the Marvel antihero, with a story written by comics writer Daniel Way. Built on **Unreal Engine 3**, it has the player fight through hordes of enemies alongside Cable and the **X-Men** against Mister Sinister, leaning heavily on self-referential humor and **fourth-wall breaks**. It was delisted in 2017 when Activision's **Marvel license lapsed**, after a brief re-release window, making it unavailable to buy through normal channels."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted (lapsed Marvel license); configuration only, no links.
+
+**Controller:** The game uses native XInput (Xbox 360) gamepad support, which is exactly what the Deck's controls present — so the built-in gamepad works out of the box, no Steam Input layout needed. (On desktop, non-XInput pads need x360ce; not a concern on Deck.)
+
+**Framerate:** Leave launch options empty. Uncapping the framerate can softlock a Chapter 5 cutscene — don't add frame-cap-removal flags.
+
+**Proton:** **Force compatibility ON** and use `Proton 9.0` (a community report used `9 Beta`); the title shows as Unsupported on Deck until you do.
+
+**DRM:** Steam DRM means it must run through Steam.
+
+**Install:** Binary is `DP.exe` in `Binaries\\Win32\\`.
+"""
+
+[[links.guides]]
+title = "ProtonDB — Deadpool (app 224060)"
+url   = "https://www.protondb.com/app/224060"
+
+[[links.guides]]
+title = "Steam Community — Works on Steam Deck via Proton 9"
+url   = "https://steamcommunity.com/app/224060/discussions/0/4356744017102677776/"
+
+[[links.guides]]
+title = "PCGamingWiki — Deadpool (fixes & framerate softlock)"
+url   = "https://www.pcgamingwiki.com/wiki/Deadpool"

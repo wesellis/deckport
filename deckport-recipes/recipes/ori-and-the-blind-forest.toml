@@ -1,0 +1,68 @@
+[game]
+title       = "Ori and the Blind Forest"
+slug        = "ori-and-the-blind-forest"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "261570"
+sgdb_id     = ""
+
+[launch]
+binary         = "ori.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Edition:** Original (non-Definitive) Ori and the Blind Forest, Steam appid `261570` — delisted in 2016 when the Definitive Edition (`387290`) replaced it. The main executable is `ori.exe` (the DE uses `oriDE.exe` instead).
+
+**Proton:** ProtonDB rates the original **platinum**: it runs essentially out of the box under Proton on the Steam Deck. `GE-Proton` or `proton_experimental` both work.
+
+**Fix:** **No DRM/GFWL workarounds, winetricks, or custom launch options are required.**
+
+**Controller:** The game ships with full native Xbox-style controller support, so the Deck's built-in gamepad just works — no Steam Input layout needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Ori and the Blind Forest (261570)"
+url   = "https://www.protondb.com/app/261570"
+
+[[links.guides]]
+title = "Proton whitelist report — runs flawlessly, no workarounds (Issue #2269)"
+url   = "https://github.com/ValveSoftware/Proton/issues/2269"
+
+[about]
+developer = "Moon Studios"
+publisher = "Microsoft Studios"
+released  = "2015"
+genre     = "Metroidvania platform-adventure"
+modes     = "Single-player"
+summary   = "**Ori and the Blind Forest** is a 2015 **Metroidvania** platform-adventure developed by Moon Studios and published by Microsoft Studios. Players guide Ori, a small forest spirit, through a **hand-painted world** using fluid movement and progressively unlocked abilities. It was widely praised for its visuals, music, and tight platforming, and was followed by a sequel, **Ori and the Will of the Wisps**. This recipe targets the original (non-Definitive) Windows release, which was **delisted from Steam in 2016** when the expanded Definitive Edition replaced it."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Edition:** Original edition (appid `261570`), delisted in 2016 in favour of the Definitive Edition (`387290`) which is still sold; this recipe targets the older non-DE build only. Binary is `ori.exe`.
+
+**Proton:** ProtonDB **platinum** for the original — community reports it running cleanly under Proton on Deck with **no fixes, no DRM/GFWL steps, and no winetricks**.
+
+**Controller:** Full native controller support, single-player offline, so no online-server concerns.
+
+**Status:** `needs-test` — not yet confirmed on a physical Deck by a contributor."""

@@ -1,0 +1,68 @@
+[game]
+title       = "Adeptus Titanicus: Dominus"
+slug        = "adeptus-titanicus-dominus"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "853140"
+sgdb_id     = ""
+
+[launch]
+binary         = "Dominus.exe"   # Unity build; data folder is Dominus_Data, so the exe is Dominus.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 853140`), removed Jan 2022 when the Warhammer license expired; Membraine Studios has since ceased operations.
+
+**Engine:** Unity engine (PlayMaker state machine).
+
+**Proton:** ProtonDB gold — community reports it running cleanly on Linux/Proton, so it plays on the Deck. Use `GE-Proton` (or `proton_experimental`); **no DRM/GFWL workarounds needed**.
+
+**Controller:** It is a 3D turn-based strategy game, so input is mouse-driven — bind a Steam Input mouse/trackpad-and-keyboard layout on the Deck (right trackpad as mouse, `A` = left click). **No native gamepad scheme.**
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files.
+"""
+
+[about]
+developer = "Membraine Studios"
+publisher = "Membraine Studios"
+released  = "2018"
+genre     = "3D turn-based strategy"
+modes     = "Single-player"
+summary   = "**Adeptus Titanicus: Dominus** is a **3D turn-based strategy** game adapting Games Workshop's classic **Titan Legions / Adeptus Titanicus** tabletop wargame, in which players command **god-machine Titans** in the **Warhammer 40,000** universe. It was developed and published by **Membraine Studios**, a small Australian indie team, launching into Steam Early Access in 2018. The game was delisted from Steam in January 2022 after the studio's **Warhammer license expired**, and was pulled from GOG in March 2022 when Membraine Studios ceased operations, leaving it unavailable for sale on any storefront."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Adeptus Titanicus: Dominus (appid 853140)"
+url   = "https://www.protondb.com/app/853140"
+
+[[links.guides]]
+title = "Steam Community hub — Adeptus Titanicus: Dominus"
+url   = "https://steamcommunity.com/app/853140/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted Steam game (`appid 853140`) — no longer for sale anywhere. deckport links nothing.
+
+**Proton:** ProtonDB gold; runs on Proton (`GE-Proton` / experimental).
+
+**Controller:** Turn-based strategy with mouse-driven UI: it has no native controller scheme, so on the Deck set up a Steam Input mouse+keyboard layout (right trackpad = mouse, `A` = click) — **fully playable that way, but not couch-friendly out of the box**.
+
+**Binary:** Unity build — the game data folder is `Dominus_Data`, so the launcher exe is `Dominus.exe` (crash logs `output_log.txt` / `error_log.txt` live inside `Dominus_Data`).
+"""

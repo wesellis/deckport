@@ -1,0 +1,74 @@
+[game]
+title       = "Pac-Man Museum"
+slug        = "pac-man-museum"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "236470"
+sgdb_id     = ""
+
+[launch]
+binary         = "PACMuseum.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Original `PAC-MAN MUSEUM` (2014 emulated arcade compilation, `appid 236470`) — delisted from Steam on `2020-07-20`. **NOT to be confused** with the 2022 sequel `PAC-MAN MUSEUM+` (`appid 1665130`), which is still on sale.
+
+**DRM:** The PC/Steam release uses Steam DRM only (no GFWL), so the prefix needs nothing special.
+
+**Proton:** Recent `GE-Proton` or `proton_experimental` both run it. Executable is `PACMuseum.exe`.
+
+**Controller:** Works natively (Xbox 360 / Xbox One pad) **as long as it is connected BEFORE launching the game** — connect the Deck controller / pair the gamepad first, then start.
+
+**Display:** No widescreen or DRM patch needed.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Mine Loader Software"
+publisher = "Namco Bandai Games"
+released  = "2014"
+genre     = "Arcade compilation"
+modes     = "Single-player, local multiplayer"
+summary   = "**PAC-MAN MUSEUM** is a 2014 compilation that bundles nine classic and modern **PAC-MAN** arcade titles, including the original Pac-Man, **Pac-Man Battle Royale**, Pac-Man Championship Edition and Pac-Man Championship Edition DX. Developed by Mine Loader Software and published by Namco Bandai Games, it added achievements, **online leaderboards** and a museum-style front end. It was **delisted** from Steam and other storefronts on July 20, 2020, and later superseded by the 2022 sequel **PAC-MAN MUSEUM+**."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — PAC-MAN MUSEUM (236470)"
+url   = "https://www.protondb.com/app/236470"
+
+[[links.guides]]
+title = "Steam Community hub — PAC-MAN MUSEUM"
+url   = "https://steamcommunity.com/app/236470"
+
+[[links.guides]]
+title = "pacbrcade — community mod to play Pac-Man Battle Royale arcade-style (PC version)"
+url   = "https://github.com/vikbez/pacbrcade"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Correct appid:** the original delisted game is `236470`, **NOT** `1665130` (that is the still-for-sale 2022 sequel `PAC-MAN MUSEUM+`).
+
+**Compatibility:** The original is a Steam-DRM emulation compilation; community reports confirm it runs on Linux/Proton, so it should play on the Deck (`needs-test` — not yet confirmed on this specific recipe).
+
+**Controller:** Native, but **must be connected before the game launches** or it won't be detected.
+
+**Input quirk:** The classic arcade titles expect 4-direction input while modern pads send 8-direction, so diagonal flicks on the analog stick can misfire — **use the D-pad for the maze games**."""

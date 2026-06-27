@@ -1,0 +1,66 @@
+[game]
+title       = "Tony Hawk's Pro Skater 3"
+slug        = "tony-hawks-pro-skater-3"
+aliases     = ["THPS3", "Tony Hawk Pro Skater 3"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Skate3.exe"   # original Neversoft PC port ships as Skate3.exe; PARTYMOD's partypatcher.exe generates a patched THPS3.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** Neversoft's 2002 skater (original PC port, delisted). Base executable is `Skate3.exe`.
+
+**Patch:** Apply the 1.01 patch first.
+
+**PARTYMOD:** Install community PARTYMOD (`partymanx/partymod-thps3`): **delete any prior widescreen** `dinput8.dll`, extract PARTYMOD into the install dir, and run `partypatcher.exe` to produce a patched `THPS3.exe` — point the recipe at that patched exe if you patch. PARTYMOD adds widescreen support, modern-PC compatibility and broad controller/gamepad support.
+
+**Proton:** Runs under `Proton Experimental` on Deck. The original PC port is delisted and has no ProtonDB page of its own (only the 2023 'THPS 3+4' remake, appid 2545710, is tracked), so there is no official ProtonDB tier — treat compatibility as community-reported via PARTYMOD rather than a verified rating.
+
+**Note:** Not the 2023 'THPS 3+4' remake."""
+
+[about]
+developer = "Neversoft"
+publisher = "Activision"
+released  = "2002"
+genre     = "Skateboarding / sports / arcade"
+modes     = "Single-player career, local multiplayer; original online play via GameSpy (now defunct, game is fully playable offline)"
+summary   = "**Tony Hawk's Pro Skater 3** is the third installment in Neversoft's acclaimed arcade **skateboarding series**, with the PC port arriving in 2002 after the 2001 console releases. It introduced the **revert mechanic**, which let players chain vert tricks into manuals for far longer combo runs, and was the first entry in the series to offer **online multiplayer**. The game is widely regarded as a high point for the franchise; the PS2 version tied Grand Theft Auto III as the highest-rated PS2 title on Metacritic and earned a perfect score from GameSpot. The original PC version was later **delisted** and is no longer sold, distinct from the separate 2023 'Tony Hawk's Pro Skater 3 + 4' remake."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PARTYMOD for THPS3 (partymanx) — patcher, controller & frame-pacing fixes"
+url   = "https://github.com/PARTYMANX/partymod-thps3"
+
+[[links.guides]]
+title = "Tony Hawk's Pro Skater 3 — PCGamingWiki (fixes, widescreen, controller)"
+url   = "https://www.pcgamingwiki.com/wiki/Tony_Hawk's_Pro_Skater_3"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game (original Neversoft PC port).
+
+**Binaries:** Base binary is `Skate3.exe`; PARTYMOD's `partypatcher.exe` creates a patched `THPS3.exe` you can launch instead.
+
+**Controller:** Stock port has spotty gamepad detection. **PARTYMOD is strongly recommended** — it ships control fixes, multi-device stick support and corrected 60Hz frame pacing; pair with Steam Input if the in-game pad handling is still flaky on Deck.
+
+**Note:** Distinct from the 2023 'Tony Hawk's Pro Skater 3 + 4' remake, which is still for sale (do not confuse the two)."""

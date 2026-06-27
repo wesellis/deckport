@@ -1,0 +1,74 @@
+[game]
+title       = "Hexen: Beyond Heretic"
+slug        = "hexen-beyond-heretic"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "2360"
+sgdb_id     = ""
+
+[launch]
+binary         = "DOSBOX.exe"   # original Steam release boots through DOSBox; this is the bundled launcher in the install root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Steam game (appid `2360`, removed `2025-08-07`).
+
+**DRM:** This is the original 1995 DOS release, so the Steam copy boots through a bundled DOSBox (launcher `DOSBOX.exe`) rather than a native Windows exe. DOSBox-wrapped id-Tech-1 games run cleanly under Proton on the Deck (`GE-Proton` or `proton_experimental` both work). **No DRM, no GFWL.**
+
+**Best experience:** Drop a `GZDoom` source port into the install's `base` subfolder (where `HEXEN.WAD` lives) and point it at `HEXEN.WAD` — `GZDoom` runs at native resolution with mouselook and built-in gamepad support, and a community GZDoom-on-Deck launcher (flatpak) exists. A common community trick keeps Steam's playtime/launch working: rename the stock `DOSBOX.exe` and drop `gzdoom.exe` in as `DOSBOX.exe`.
+
+**Controller:** If you keep the stock DOSBox build, set a Steam Input keyboard/mouse layout for full controller play.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Raven Software"
+publisher = "id Software"
+released  = "1995"
+genre     = "Dark fantasy first-person shooter"
+modes     = "Single-player, local split-screen and LAN deathmatch/co-op"
+summary   = "**Hexen: Beyond Heretic** is a 1995 dark-fantasy first-person shooter by Raven Software, the sequel to Heretic and the second entry in the **Serpent Riders** trilogy. Built on a heavily modified **id Tech 1 (Doom) engine**, it introduced three selectable character classes (Fighter, Cleric, Mage) and a **non-linear hub level structure** with switches and puzzles that affect connected maps. It was well received at launch and remains a cult classic of the genre. The standalone Steam release was **delisted in 2025** when an enhanced Heretic + Hexen package shipped, with prior owners granted that release for free."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Hexen: Beyond Heretic"
+url   = "https://www.protondb.com/app/2360"
+
+[[links.guides]]
+title = "Steam Community guide — using GZDoom with Hexen: Beyond Heretic"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=2577270322"
+
+[[links.guides]]
+title = "Heretic + Hexen release notes (free upgrade for prior owners)"
+url   = "https://slayersclub.bethesda.net/en-US/article/heretic-hexen-release-notes"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted `2025-08-07`:** the standalone original was pulled when the combined Heretic + Hexen remaster shipped (existing owners were given that remaster free), so the old appid `2360` build is no longer for sale on its own.
+
+**Single-player only:** no online servers to worry about.
+
+**Recommended setup:** Original release runs in DOSBox; at the stock res/controls it is dated, so the recommended setup is the `GZDoom` source port (native res, mouselook, native gamepad).
+
+**Controller:** `GZDoom` has built-in pad support; the vanilla DOSBox build needs a Steam Input keyboard/mouse layout.
+
+**Status:** Not yet confirmed on real hardware — bump to verified after a Deck run."""

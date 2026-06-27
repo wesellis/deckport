@@ -1,0 +1,70 @@
+[game]
+title       = "Unreal Tournament 3: Black Edition"
+slug        = "unreal-tournament-3"
+aliases     = ["UT3", "Unreal Tournament 3"]
+type        = "proton"
+engine      = "other"
+steam_appid = "13210"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/UT3.exe"
+launch_options = "PROTON_NO_ESYNC=1 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Epic's 2007 arena shooter; the Black Edition bundles the Titan Pack and bonus content.
+
+**GFWL:** This build dropped the GFWL dependency the original retail UT3 shipped with, so **no `xlive.dll` bypass is needed**.
+
+**Proton:** Runs well on Deck under `GE-Proton` (`proton_experimental` also works). Make sure `Binaries/UT3.exe` is the launched executable — some launchers default to an AGEIA PhysX test binary, which is the wrong target.
+
+**Fix:** Launch the game once, set resolution to `1280x800` in the video menu, enable V-Sync, then **fully exit and relaunch** — this clears the first-boot multi-colored foliage textures and frame-pacing glitch.
+
+**Display:** Caps at a smooth `60 FPS`; a `~7W` TDP limit is plenty for max settings.
+
+**Install:** The expired-certificate problem only affects the standalone `SetupUT3.exe` installer, not the installed game itself."""
+
+[about]
+developer = "Epic Games"
+publisher = "Midway Games"
+released  = "2007"
+genre     = "First-person arena shooter"
+modes     = "Single-player campaign, offline bot matches, splitscreen, online multiplayer"
+summary   = "**Unreal Tournament 3** is the fourth main entry in Epic Games' **Unreal Tournament** series, built on **Unreal Engine 3**. It pairs a story-driven single-player campaign with the series' signature fast-paced arena combat across modes like Deathmatch, Capture the Flag, and the vehicle-heavy **Warfare**. The Black Edition bundles the game with the Titan Pack expansion, adding the Greed and Betrayal modes, new maps, weapons, and a **Titan transformation powerup**. Epic **delisted** the Unreal games from digital storefronts in 2022, leaving owners reliant on existing copies."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Classics On Steam Deck: Unreal Tournament III (SteamDeckHQ)"
+url   = "https://steamdeckhq.com/news/unreal-tournament-3-black-white-steam-deck/"
+
+[[links.guides]]
+title = "ProtonDB reports — Unreal Tournament 3 (13210)"
+url   = "https://www.protondb.com/app/13210"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial game.
+
+**Controller:** No usable native gamepad support on this build — apply the Steam Input `Keyboard (WASD) + Mouse` template for menus and aiming, then lower the look sensitivity to help with aim.
+
+**Fix:** Do the resolution + V-Sync set-then-relaunch step on first boot to clear the foliage-texture and frame-pacing glitch.
+
+**Crashes:** Rare random crashes (alt-tab / launch) are reported on some configs.
+
+**Black screen on first start:** If the first launch shows only a black screen, run once with `-windowed`, pick the native resolution, then relaunch without `-windowed`."""

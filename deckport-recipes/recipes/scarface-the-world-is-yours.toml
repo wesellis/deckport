@@ -1,0 +1,77 @@
+[game]
+title       = "Scarface: The World Is Yours"
+slug        = "scarface-the-world-is-yours"
+aliases     = ["Scarface", "The World Is Yours", "scarface.exe"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Scarface.exe"
+launch_options = "PROTON_USE_WINED3D=1 %COMMAND%"
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** 2006 Radical Entertainment / Vivendi open-world action game (long delisted due to lapsed film rights — **bring your own copy**). There is no canonical Steam release, so `steam_appid` is intentionally left blank (do not confuse it with the unrelated game "SCARF", app 645320).
+
+**Proton:** Runs under `Proton Experimental` on Deck. Keep `Proton Experimental` selected — older Proton builds fail to detect the analog sticks.
+
+**Fix:** Set launch option `PROTON_USE_WINED3D=1 %COMMAND%`. **Without it you get a black screen.**
+
+**Essential patch:** Install **SilentPatch** (CookiePLMonster) into the game folder. It is what actually fixes the **game-breaking texture/graphical corruption on modern systems** (the standalone "Modern Windows Fix" is an older fix superseded by SilentPatch — you do not need both), and it also adds a proper gamepad control scheme, fixes the very slow in-game mouse speed, and adds windowed mode and a skippable intro. Updating the game to patch 1.00.2 first is recommended.
+
+**Controller:** Controller is not reliably native — install SilentPatch (or GangstaPatch, which adds Xbox/PlayStation/Steam Deck button prompts) for a good gamepad scheme. If the pad still isn't detected, enable **Steam Input** so it presents as an Xbox controller.
+
+**Loading hang:** If it hangs forever on the loading screen after the prologue, cap the frame rate to 30 fps (set `FPSLimit = 30` in the Fusion Fix `D3D9.ini`). Once the game has saved past the prologue the limit can be raised.
+"""
+
+[about]
+developer = "Radical Entertainment"
+publisher = "Vivendi Games"
+released  = "2006"
+genre     = "Open-world action-adventure"
+modes     = "Single-player"
+summary   = "**Scarface: The World Is Yours** is an **open-world action** game that serves as an alternate-history sequel to the 1983 film, casting players as a surviving Tony Montana rebuilding his drug empire across a recreated 1980s Miami. Developed by Radical Entertainment and published by Vivendi Games, it features driving, third-person shooting, and a **'Balls' meter** that rewards aggressive play. It earned generally positive reviews and a cult following for capturing the film's tone. The PC version is long delisted because the underlying **Scarface film license lapsed**, leaving no official storefront release."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Long delisted (film-license expiry) — configuration only, no links. No canonical Steam app, so `steam_appid` is blank (645320 is a different game, "SCARF").
+
+**Required fix:** Required launch option `PROTON_USE_WINED3D=1 %COMMAND%` (black screen without it); stay on `Proton Experimental` so the analog sticks are detected.
+
+**Essential patch:** `SilentPatch` (into the game folder) is required to fix the game-breaking texture/graphical corruption on modern systems — this is not just cosmetic. It also adds the better gamepad scheme and fixes the slow mouse speed. (It supersedes the older standalone "Modern Windows Fix"; you do not need both.)
+
+**Controller:** Not reliably native — use SilentPatch (or GangstaPatch for Steam Deck button prompts), and enable Steam Input if the pad still isn't picked up.
+
+**Stability:** The original game is janky and can crash without warning; loading-screen hangs after the prologue are fixed by capping to 30 fps (`FPSLimit = 30` in the Fusion Fix `D3D9.ini`).
+
+**Remaster:** A community Remastered Project mod (final 2022 build) also runs on Deck with mostly-correct Deck button prompts.
+
+**Tier note:** Marked `silver` rather than `gold` — it is playable but needs several manual tweaks (WineD3D, SilentPatch, FPS cap), and there is no official ProtonDB page since the game is delisted.
+"""
+
+[[links.guides]]
+title = "SilentPatch for Scarface (CookiePLMonster, GitHub)"
+url   = "https://github.com/CookiePLMonster/SilentPatchScarface"
+
+[[links.guides]]
+title = "GangstaPatch — Steam Deck/Xbox/PS button prompts (GitHub)"
+url   = "https://github.com/GangstaTeam/GangstaPatch"
+
+[[links.guides]]
+title = "PCGamingWiki — Scarface: The World Is Yours (fixes & mods)"
+url   = "https://www.pcgamingwiki.com/wiki/Scarface:_The_World_Is_Yours"

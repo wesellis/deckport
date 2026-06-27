@@ -1,0 +1,71 @@
+[game]
+title       = "Starship Troopers"
+slug        = "starship-troopers"
+aliases     = ["Starship Troopers 2005", "Starship Troopers FPS"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "STGame.exe"   # real engine exe (the WSGF/AMD fixes replace this)
+launch_options = "PROTON_USE_WINED3D=1 %command%"   # WineD3D fallback if the renderer glitches on the AMD APU; drop it if D3D9 runs clean
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2005 Strangelite Studios FPS (the bug-hunt one). **Out of print — bring your own copy.**
+
+**DRM:** The game ships SafeDisc DRM, whose `secdrv` driver does not run on Proton. **Apply the `v5.24` community patch (or a no-CD/no-DVD playfix) so the exe launches DRM-free.**
+
+**Fix:** The patched/WSGF modified `STGame.exe` also adds widescreen + ultrawide and a fix for the corrupted-graphics issue on AMD/ATI GPUs — important on the Deck's AMD APU.
+
+**Proton:** `GE-Proton` tends to be the most reliable; if the renderer glitches, force WineD3D (`PROTON_USE_WINED3D=1`) via the launch options.
+
+**Controller:** No native controller support — map a Steam Input gamepad->keyboard/mouse FPS layout.
+"""
+
+[about]
+developer = "Strangelite Studios"
+publisher = "Empire Interactive"
+released  = "2005"
+genre     = "First-person shooter"
+modes     = "Single-player campaign, multiplayer (Deathmatch, Team Deathmatch, Co-op)"
+summary   = "**Starship Troopers** is a 2005 **first-person shooter** from British studio **Strangelite Studios**, based on Paul Verhoeven's 1997 film. Set five years after the movie, the player is **Marauder Zero Six** fighting the Arachnid bugs on the planet Hesperus. It received mixed-to-negative reviews, criticized for weak AI and dated graphics. It was a Windows-only release that **never came to Steam** and is long out of print, making it a frequent target for preservation and **WSGF widescreen fixes**."
+
+[[links.guides]]
+title = "WSGF — Starship Troopers (widescreen / ultrawide fix, replaces STGame.exe)"
+url   = "https://www.wsgf.org/dr/starship-troopers/en"
+
+[[links.guides]]
+title = "PCGamingWiki — Starship Troopers (DRM, patches, fixes)"
+url   = "https://www.pcgamingwiki.com/wiki/Starship_Troopers"
+
+[[links.guides]]
+title = "ModDB — Official Patch 5.24 (EU/US)"
+url   = "https://www.moddb.com/games/starship-troopers/downloads/patch-5-24-eu-us"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Out of print; configuration only, no links.
+
+**DRM:** SafeDisc DRM must be removed (`v5.24` community patch / no-CD playfix) — `secdrv` does not run on Proton.
+
+**AMD APU:** Needs the AMD/ATI corrupted-graphics fix (bundled in the patched/WSGF `STGame.exe`); force WineD3D if the renderer glitches.
+
+**Controller:** No native gamepad — use a Steam Input keyboard/mouse FPS layout.
+
+**Status:** Not yet confirmed running on Deck hardware; no ProtonDB entry (never on Steam).
+"""

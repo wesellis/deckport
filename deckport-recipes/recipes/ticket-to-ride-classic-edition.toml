@@ -1,0 +1,70 @@
+[game]
+title       = "Ticket to Ride: Classic Edition"
+slug        = "ticket-to-ride-classic-edition"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "108200"
+sgdb_id     = ""
+
+[launch]
+binary         = "Ticket to Ride.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 108200`, removed Oct 3 2023 to make way for a new separate release under `appid 2477010` — the Classic Edition is no longer sold).
+
+**Game:** Days of Wonder / Asmodee digital adaptation of the board game; the install folder (`steamapps/common/Ticket to Ride`) ships `Ticket to Ride.exe` (note the spaces in both the folder and the exe name). ProtonDB tier `gold` (strong confidence, ~40 reports) and community discussions confirm the Windows build runs on Linux/Proton with no special tricks.
+
+**Proton:** **Runs out of the box** on `GE-Proton` (`proton_experimental` also works); no DRM/GFWL, no widescreen patch needed.
+
+**Controller:** This is a point-and-click board game with **no native gamepad support** — drive it with the Deck's touchscreen, or apply a Steam Input layout that maps the right trackpad to the mouse and a button to left-click (the `Mouse Only` / desktop-style community template works well)."""
+
+[about]
+developer = "Days of Wonder"
+publisher = "Days of Wonder / Asmodee Digital"
+released  = "2012"
+genre     = "Digital board game, Strategy"
+modes     = "Single-player, local pass-and-play, online multiplayer"
+summary   = "**Ticket to Ride** is the official digital adaptation of **Alan R. Moon's** award-winning **railway-themed board game**, in which players collect train-car cards to claim railway routes across a map and complete secret **destination tickets**. This was the long-running Days of Wonder / Asmodee Digital version sold on Steam, supporting single-player matches against AI, local pass-and-play, and **online multiplayer** with cross-play to mobile editions. It was **delisted on October 3, 2023**, when publisher Asmodee replaced it with a separately-sold, rebuilt edition (a different Steam product), leaving the original Classic Edition no longer available for purchase. The original release remains a faithful, well-regarded conversion of one of the best-selling modern board games."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Ticket to Ride: Classic Edition (appid 108200)"
+url   = "https://www.protondb.com/app/108200"
+
+[[links.guides]]
+title = "SteamDB - Ticket to Ride (appid 108200, delisted)"
+url   = "https://steamdb.info/app/108200/"
+
+[[links.guides]]
+title = "Steam discussion - Ticket to Ride delisting (Oct 3 2023)"
+url   = "https://steamcommunity.com/app/108200/discussions/0/3875967397713147819/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport configures the prefix only.
+
+**Delisted:** Delisted from Steam on Oct 3 2023 (Classic Edition `appid 108200` no longer for sale; the newer `appid 2477010` is a separate product).
+
+**Status:** ProtonDB `gold` + community reports confirm it runs under Proton on Deck, but this exact recipe has **not been Deck-verified yet**, hence `needs-test`.
+
+**Controller:** No native controller support — plan on the touchscreen or a Steam Input mouse/trackpad layout.
+
+**Online:** Online/multiplayer features may be degraded if matchmaking servers have been retired; local hotseat and pass-and-play remain fine."""

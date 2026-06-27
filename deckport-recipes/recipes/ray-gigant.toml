@@ -1,0 +1,66 @@
+[game]
+title       = "Ray Gigant"
+slug        = "ray-gigant"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "421600"
+sgdb_id     = ""
+
+[launch]
+binary         = "Game/RayGigant.exe"   # best guess: install layout is .../common/Ray Gigant/Game/RayGigant.exe; confirm against your install
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Proton:** ProtonDB **silver** (best reported **platinum**, 6 reports / low confidence). Use `GE-Proton` (or `Proton Experimental`) and it boots into the JRPG menus; reports note it generally runs once a working Proton build is selected.
+
+**Controller:** Single-player dungeon-crawler JRPG (originally PS Vita), so it ships with full native gamepad support — the Deck controls work out of the box, no Steam Input keyboard layout needed.
+
+**DRM:** Steam DRM only — no GFWL/SecuROM/online DRM and no multiplayer servers. **Fully offline** once installed.
+
+**Install:** Normal Steam install. The community install layout is `steamapps/common/Ray Gigant/Game/RayGigant.exe` — the game launches the `RayGigant` executable inside the `Game` subfolder. If your install puts the exe at the install root instead, set `[launch].binary = "RayGigant.exe"`.
+
+**Delisting:** Delisted Steam game (appid `421600`), removed from sale 2024-02-29 when the license expired, so it no longer appears in the store. You must already own it. deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Experience Inc."
+publisher = "Bandai Namco Entertainment (Japan); Acttil (North America/Europe)"
+released  = "2016"
+genre     = "Dungeon-crawler JRPG"
+modes     = "Single-player"
+summary   = "**Ray Gigant** is a **dungeon-crawler JRPG** that blends first-person dungeon exploration with **visual-novel storytelling**, originally released on the PlayStation Vita in 2015 before coming to PC in 2016. Its three branching tales follow Ichiya, Kyle, and Nil, and it forgoes random encounters in favor of a narrative focus and a distinctive **three-distance battle system** against towering 'Gigant' enemies, with rhythm-based **'Slash Beat Mode'** segments. It was developed by **Experience Inc.**, a studio known for dungeon RPGs, and progression uses an **'Evolve Tree'** skill system. The Steam version was delisted in 2024 when its **publishing license expired** and was never re-released elsewhere."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Ray Gigant — ProtonDB reports (Steam Deck / Linux compatibility)"
+url   = "https://www.protondb.com/app/421600"
+
+[[links.guides]]
+title = "Ray Gigant — PCGamingWiki (fixes, save location, configuration)"
+url   = "https://www.pcgamingwiki.com/wiki/Ray_Gigant"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted from Steam 2024-02-29 (license expired) and never re-released elsewhere, so it is no longer for sale.
+
+**Install:** Normal Steam install. Binary is set to `Game/RayGigant.exe` (the `RayGigant` executable inside the `Game` subfolder, per community install instructions). If your copy's exe sits at the install root, change `[launch].binary` to `RayGigant.exe`.
+
+**Proton:** Pick `GE-Proton` or `Proton Experimental` if the default complains. ProtonDB silver — community confirms it runs on Linux/Proton; not yet confirmed on this exact recipe, so status is **needs-test**.
+
+**Controller:** Fully offline single-player JRPG with native controller support (Vita port), so input works on the Deck with no Steam Input layout."""

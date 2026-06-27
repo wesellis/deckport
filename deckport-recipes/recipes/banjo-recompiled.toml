@@ -1,0 +1,78 @@
+[game]
+title       = "Banjo: Recompiled"
+slug        = "banjo-recompiled"
+aliases     = ["Banjo Kazooie Recompiled", "BanjoRecomp", "Banjo-Kazooie PC Port"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "BanjoRecompiled"   # native Linux binary; also available as a Flatpak — add as a non-Steam game
+launch_options = ""
+requires_files = ["Banjo-Kazooie N64 ROM dump (North American / US 1.0)"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Recomp:** Banjo: Recompiled is an unofficial static recompilation of `Banjo-Kazooie` (N64) built on the `N64Recomp` framework with the `RT64` renderer, developed by the BanjoRecomp team. Unlike past decomp ports it is **not** built from decompiled source — static recompilation bypasses the need for it (the project only borrows headers and a few functions from the decompilation). It accepts only the **North American / US 1.0** ROM. Version `1.0.1` was released January 29, 2026.
+
+**Install:** **Steam Deck users should use the Linux build or Flatpak — no Proton required.** Native builds are available for Windows, Linux (including a Flatpak), and macOS. Extract the Linux build, then in Desktop Mode right-click the `BanjoRecompiled` executable and "Add to Steam" (or, for the Flatpak, install the local bundle and add it to Steam).
+
+**Display:** The game requires a GPU supporting `D3D12` (Shader Model 6) / `Vulkan 1.2` or higher (`Metal` Argument Buffers Tier 2 on macOS); the Steam Deck's RDNA2 GPU qualifies.
+
+**Controller:** Controller support is native (configurable in the in-game/recompile menu). **Analog (right-stick) camera control is supported** when enabled — a major improvement over the original N64 game.
+
+**Note:** A separate HarbourMasters port called `Lighthouse` (with planned online co-op) is expected July 2026 and will be a distinct recipe when released.
+"""
+
+[about]
+developer = "BanjoRecomp team (static recompilation via N64Recomp; not built from decompiled source)"
+publisher = "Rare (original 1998 N64 game); fan-made PC port"
+released  = "1998 (N64); Banjo: Recompiled v1.0.0 January 2026, v1.0.1 January 29, 2026"
+genre     = "Platformer, collect-a-thon"
+modes     = "Single-player"
+summary   = """
+**Banjo-Kazooie** is a 1998 **collect-a-thon platformer** developed by **Rare** for the **Nintendo 64**, starring bear-and-bird duo Banjo and Kazooie as they navigate Gruntilda's lair to rescue Banjo's sister Tooty. The game is widely considered one of the defining titles of the N64 era.
+
+**Banjo: Recompiled** is an unofficial **static PC port** built using the **N64Recomp** framework with the **RT64** renderer. Static recompilation produces a native port without relying on decompiled source (the project borrows only headers and a few functions from the decomp effort). The recomp ships native binaries for Windows, Linux, and macOS, bringing the game to modern hardware with **widescreen/ultrawide support**, high/uncapped frame rates, instant loading, analog camera control, and other quality-of-life enhancements. As with all static recomps, players must supply their own legally-owned **North American / US 1.0** ROM dump.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "BanjoRecomp — official project repository"
+url   = "https://github.com/BanjoRecomp/BanjoRecomp"
+
+[[links.guides]]
+title = "Releases (Windows / Linux / Flatpak / macOS binaries)"
+url   = "https://github.com/BanjoRecomp/BanjoRecomp/releases"
+
+[[links.guides]]
+title = "Guide: Play Banjo-Kazooie natively on Steam Deck (NerdZap)"
+url   = "https://nerdzap.com/guides/banjo-kazooie-native-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** This is a **static recompilation** (not an emulator) using the `N64Recomp` framework — the engine is the recomp, but the game data comes from your own legally-owned `Banjo-Kazooie` N64 ROM dump, supplied at first-run setup. The project accepts **only the North American / US 1.0** ROM (other formats are auto-converted if it is the correct version).
+
+**Install:** Use the native Linux build or Flatpak on Deck (`type = 'native'`, no Proton needed). Add the `BanjoRecompiled` executable as a non-Steam game from Desktop Mode.
+
+**Display:** GPU must support `Vulkan 1.2` minimum; the Steam Deck RDNA2 GPU qualifies.
+
+**Controller:** Analog camera control works natively with a controller.
+
+**Note:** A separate HarbourMasters port called `Lighthouse` — which adds online co-op and is planned for July 2026 — is a distinct project and will have its own recipe when it releases.
+"""

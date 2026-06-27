@@ -1,0 +1,76 @@
+[game]
+title       = "Lost Planet: Extreme Condition - Colonies Edition"
+slug        = "lost-planet-colonies"
+aliases     = ["Lost Planet", "Lost Planet Colonies", "Extreme Condition"]
+type        = "proton"
+engine      = "other"         # Capcom MT Framework
+steam_appid = "45720"
+sgdb_id     = "18813"       # base Lost Planet: Extreme Condition (same game, has landscape art)
+
+[launch]
+binary         = "LostPlanetColoniesDX9.exe"   # DX9 path is most Proton-compatible; a DX10 exe (LostPlanetColoniesDX10.exe) also exists
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2008 Capcom third-person shooter (MT Framework), Colonies Edition (Steam AppID 45720). Delisted from Steam Nov 2021.
+
+**Install:** Launch the DX9 executable (`LostPlanetColoniesDX9.exe`) — **DX9 is the most Proton-compatible path**; the DX10 exe is more crash-prone under Proton.
+
+**Proton:** Older Proton (5.x) crashed on startup in both modes, so use `GE-Proton` or `proton_experimental`.
+
+**GFWL:** the original retail/unpatched build uses Games for Windows Live for saves and multiplayer; on a GFWL build **you need a GFWL bypass/emulator or saves won't work**. Capcom's **May 29, 2025** Steam update removed the GFWL requirement on the current default build (local saves, no emulator needed) but also stripped online multiplayer (and wiped any old GFWL-profile saves). The pre-patch GFWL build can still be restored by downgrading to an older Steam depot.
+
+**Controller:** Native Xbox-style controller support — works with the Deck pad out of the box.
+"""
+
+[about]
+developer = "Capcom"
+publisher = "Capcom"
+released  = "2008"
+genre     = "Third-person shooter"
+modes     = "Single-player, online multiplayer"
+summary   = "**Lost Planet: Extreme Condition - Colonies Edition** is an expanded re-release of Capcom's 2007 sci-fi third-person shooter, built on the **MT Framework** engine. Set on the frozen colony world of E.D.N. III, players fight insectoid **Akrid** aliens and rival snow pirates on foot or piloting mechanized **Vital Suits**, harvesting thermal energy (T-ENG) to survive the cold. The Colonies Edition adds new characters, weapons, multiplayer maps, and first/third-person camera options, with **cross-platform multiplayer** against Xbox 360 players. The original earned an IGN Editor's Choice award on Xbox 360, though the PC and PlayStation 3 versions saw more mixed reception."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Lost Planet: Extreme Condition Colonies Edition (appid 45720)"
+url   = "https://www.protondb.com/app/45720"
+
+[[links.guides]]
+title = "Steam Community Hub (owner-only; delisted from sale)"
+url   = "https://steamcommunity.com/app/45720"
+
+[[links.guides]]
+title = "TwistedVoxel — Capcom removes GFWL from Lost Planet on Steam (May 2025)"
+url   = "https://twistedvoxel.com/capcom-removes-gfwl-steam-lost-planet-other-titles-online-features/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted Nov 2021 — configuration only, no links.
+
+**Install:** Pick the DX9 exe; `LostPlanetColoniesDX10.exe` is crash-prone under Proton.
+
+**Proton:** Use `GE-Proton` (older Proton 5.x crashes on startup).
+
+**GFWL:** original/unpatched build needs a GFWL bypass/emulator for saves; the **May 29, 2025** Steam update dropped GFWL on the current default build (local saves) but also removed online multiplayer and wiped old GFWL saves. Downgrade to an older depot if you want the GFWL/online build back.
+
+**Controller:** Native controller support — playable with the Deck gamepad.
+
+**Status:** ProtonDB trends Silver/Gold on recent Proton (old Proton 5.x reports showed startup crashes), but treat as needs-test until confirmed on your build.
+"""

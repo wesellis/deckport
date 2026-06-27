@@ -1,0 +1,69 @@
+[game]
+title       = "Jurassic Park: The Game"
+slug        = "jurassic-park-the-game"
+aliases     = ["Jurassic Park Telltale", "JP The Game"]
+type        = "proton"
+engine      = "other"
+steam_appid = "201830"
+sgdb_id     = ""
+
+[launch]
+binary         = "GameData/JurassicPark101.exe"   # patched build; unpatched original ships as JurassicPark100.exe in the same GameData folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Game:** Telltale's 2011 episodic **Jurassic Park** adventure (all episodes) — a cinematic, QTE-driven game on the **Telltale Tool** engine.
+
+**Binary:** The real launcher lives in the `GameData` subfolder of the install directory as **`JurassicPark101.exe`** (the patched build). Older/unpatched copies use `JurassicPark100.exe` in the same folder — point the recipe at whichever exists.
+
+**Controller:** Native gamepad support (the whole game is QTE/button-prompt driven) — Steam Input not required. If the game refuses to start, unplug extra controllers and leave only one active.
+
+**Known fix — missing cursor / QTE icons:** A Telltale Tool bug can hide the mouse cursor and on-screen QTE prompts. Workaround: pause (Spacebar/Esc) → **Load** → reload the latest checkpoint to make the icons reappear.
+
+**Install method:** Normal Steam install. As a Telltale Tool title it runs well under Proton; do **not** let it install its bundled DirectX (Proton/DXVK handles that).
+
+**Display:** Playable on Deck (`~800p`, `30-60fps`)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Jurassic Park: The Game (app 201830)"
+url   = "https://www.protondb.com/app/201830"
+
+[[links.guides]]
+title = "PCGamingWiki — Jurassic Park: The Game (fixes & exe path)"
+url   = "https://www.pcgamingwiki.com/wiki/Jurassic_Park:_The_Game"
+
+[about]
+developer = "Telltale Games"
+publisher  = "Telltale Games"
+released   = "2011"
+genre      = "Episodic graphic adventure"
+modes      = "Single-player"
+summary    = """
+**Jurassic Park: The Game** is an episodic graphic adventure developed and published by **Telltale Games**, set during the events of the 1993 film and built on the **Telltale Tool** engine. Gameplay is cinematic and story-driven, relying heavily on **quick-time events** and dialogue rather than traditional point-and-click puzzles.
+
+It was released across four episodes in November 2011 and met a mixed critical reception, with praise for its setting and atmosphere but criticism of its restrictive QTE-focused design. The game was delisted from digital storefronts following the **closure of Telltale Games in 2018**."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Delisted commercial game — Telltale's catalogue was pulled from storefronts after the studio's 2018 closure, so it can no longer be purchased. Run it from a copy you already own in your Steam library.
+
+**Binary:** Launcher is `GameData/JurassicPark101.exe` (patched) — or `JurassicPark100.exe` on unpatched copies. Confirm which file your install actually contains.
+
+**Controller:** Native gamepad support; the whole game is button-prompt/QTE based."""

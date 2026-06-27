@@ -1,0 +1,52 @@
+[game]
+title       = "Bomberman 64"
+slug        = "bomberman-64"
+aliases     = ["Bomberman 64 Recompiled", "Bomberman64", "BM64"]
+type        = "native"        # a native static recompilation — no emulation, no Proton
+engine      = "other"         # N64: Recompiled
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "BM64Recompiled"   # native exe; confirmed from CMakeLists project/target in RevoSucks/BM64Recomp (no .exe on Linux)
+launch_options = ""
+requires_files = []
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "Hudson Soft"
+publisher = "Nintendo"
+released  = "1997"
+genre     = "Action-adventure platformer"
+modes     = "Single-player, local multiplayer"
+summary   = """
+**Bomberman 64** is the first fully 3D entry in Hudson Soft's long-running **Bomberman** series, released for the **Nintendo 64** in 1997 (known as **Baku Bomberman** in Japan). Rather than the series' traditional maze arenas, its single-player campaign mixes action-adventure and platforming across themed stages where Bomberman uses bombs to solve puzzles and defeat bosses. A competitive **Battle Mode** for multiple players is also included.
+
+This recipe runs the game as a static **native PC recompilation** via the **N64: Recompiled** toolchain rather than emulation."""
+
+[[links.guides]]
+title = "RevoSucks/BM64Recomp (official repo & releases)"
+url   = "https://github.com/RevoSucks/BM64Recomp/releases"
+
+[[links.guides]]
+title = "Steam Deck HQ: Bomberman 64 native PC port on Steam Deck"
+url   = "https://steamdeckhq.com/news/bomberman-64-native-pc-perfect-steam-deck/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** ships **NO game assets**. The port accepts **only** the **US / North American 1.0** N64 ROM of `Bomberman 64` — other regions/revisions are rejected. Provide your own dump in the in-app menu on first launch. Configuration only, no links.
+
+**Port:** Hudson Soft's 1997 N64 game as a native PC port via `N64: Recompiled` (RT64 renderer, same family as `Zelda 64 Recompiled` / `Banjo Recompiled`) — runs directly on the Deck, **no emulation**, with widescreen/ultrawide + high-frame-rate support.
+
+**Binary:** `BM64Recompiled` — confirmed from the project's CMake target name (no `.exe` suffix on the Linux build).
+
+**Deck:** use the `Linux X64` release build. **Avoid the AppImage build — it crashes on load** (Steam Deck HQ). Has **native gamepad support** in Game Mode (no Steam Input layout needed), plus in-app menus for graphics, controls, framerate and cheats; very low power draw (~6-7 W)."""

@@ -1,0 +1,68 @@
+[game]
+title       = "Prey (2006)"
+slug        = "prey-2006"
+aliases     = ["Prey", "Prey 2006"]
+type        = "proton"
+engine      = "other"
+steam_appid = "3970"
+sgdb_id     = ""
+
+[launch]
+binary         = "prey.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Human Head's 2006 `id Tech 4` shooter (the original **Prey**, not the 2017 Arkane game), Steam appid `3970`, delisted 2009-12-28.
+
+**Proton:** `id Tech 4` titles run well under Proton; community reports it **runs out of the box on Deck** and supports the `1280x800` panel natively. `GE-Proton` recommended; `proton_experimental` also works.
+
+**Display:** To force a resolution edit `preyconfig.cfg` in the install's `base/` folder: `seta r_customWidth "1280"`, `seta r_customHeight "800"`, `seta r_mode "-1"`.
+
+**DRM:** No `GFWL`/`SecuROM` concerns reported on the Steam build."""
+
+[about]
+developer = "Human Head Studios"
+publisher = "2K Games"
+released  = "2006"
+genre     = "First-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = "**Prey** is a first-person shooter developed by Human Head Studios (under contract for 3D Realms) and published by 2K Games in 2006. Built on a heavily modified **id Tech 4** engine, it is best known for its inventive use of **portals** and variable/walkable-wall **gravity** to build disorienting alien environments. The player follows Cherokee garage mechanic Tommy aboard a living spacecraft called the Sphere. The game was well received (Metacritic 83 on PC) and won PC Gamer US 2006 awards, though its multiplayer was criticized for offering only two modes."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Prey (appid 3970)"
+url   = "https://www.protondb.com/app/3970"
+
+[[links.guides]]
+title = "Proton compatibility report (ValveSoftware/Proton #1741)"
+url   = "https://github.com/ValveSoftware/Proton/issues/1741"
+
+[[links.guides]]
+title = "Steam Community - Prey on Steam Deck discussion"
+url   = "https://steamcommunity.com/app/3970/discussions/0/4635988522932744988/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted commercial game (appid `3970`, removed from Steam 2009-12-28). This is the **2006 original**, not the 2017 reboot.
+
+**Controller:** A 2015 Steam update added native gamepad support; if your copy lacks it, a community Steam Input layout (Xbox 360 / Deck) covers gameplay.
+
+**Display:** For widescreen/resolution set `r_customWidth`/`r_customHeight`/`r_mode` in `preyconfig.cfg`.
+
+**Troubleshooting:** If it crashes at launch, **check the in-game resolution/config first**."""

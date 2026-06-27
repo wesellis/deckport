@@ -1,0 +1,126 @@
+[game]
+title       = "City of Heroes: Homecoming"
+slug        = "city-of-heroes-homecoming"
+aliases     = ["CoH", "City of Heroes", "CoH Homecoming"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "launcher.exe"
+launch_options = "%command%"
+requires_files = []
+
+[proton]
+version    = "Proton 7.0"
+winetricks = []
+notes      = """
+**Overview**
+City of Heroes: Homecoming is the community-run revival of the 2004 MMO, operated under
+license from NCSoft by Homecoming Servers, LLC. It is free to play — there is no game
+purchase. There is no Steam release; you install the official Homecoming Launcher and run
+it on the Deck under Proton via the community LinuxHC installer.
+
+**What you run**
+The Homecoming Launcher (`launcher.exe`) is the official client/patcher. The LinuxHC
+installer places it at `~/Games/Homecoming/` and creates a desktop launcher (a
+`hc-launcher.sh` wrapper that runs `launcher.exe` through your chosen Proton runtime).
+You add THAT shortcut to Steam and launch the game from it in Gaming Mode.
+
+**Installation (Desktop Mode)**
+1. Switch to Desktop Mode (Steam button → Power → Switch to Desktop).
+2. Open Konsole (taskbar or application menu).
+3. Run the one-command LinuxHC installer:
+     bash <(curl -s https://raw.githubusercontent.com/FaultlineHC/LinuxHC/main/hc-install.sh)
+4. When prompted, pick a Proton runtime (the author tested with Proton 7.0; the script will
+   offer to download GE-Proton if none is detected). Follow the prompts — it downloads the
+   full client and creates a "City of Heroes" desktop shortcut.
+
+**Adding to Steam**
+1. In Desktop Mode, right-click the "City of Heroes" desktop shortcut → Add to Steam
+   (or Steam → Games → Add a Non-Steam Game and browse to it).
+2. Back in Gaming Mode the launcher appears in your library; open it, log in, and let it
+   patch on first run (the launcher already invokes Proton via the wrapper, so you usually
+   do not need to set a Proton version on the shortcut itself).
+
+**Proton Version**
+Testing was done with Proton 7.0 and it is a safe default for this old engine. The installer
+reports it should work with other versions too, including GE-Proton; GE's newer-title
+optimizations give little benefit here. If you hit display issues, try adding
+`PROTON_ENABLE_WAYLAND=1 %command%` to the shortcut's launch options.
+
+**Controller / Input**
+This is a mouse-and-keyboard MMO, so plan on a Steam Input layout. In Gaming Mode the right
+trackpad works well as a mouse for camera and targeting; map power trays to the buttons.
+After adding the non-Steam shortcut, open the controller settings and browse community
+layouts (search "City of Heroes") as a starting point.
+
+**Performance**
+- The engine is from 2004 and largely single-threaded; the Deck CPU, not the GPU, is the
+  usual bottleneck during big team fights.
+- Reduce shadow and reflection quality first if frame rate dips; the game otherwise runs
+  comfortably at the Deck's native resolution.
+
+**Account Creation (free)**
+Register a free forum account at https://forums.homecomingservers.com/register/, verify your
+email, then create a free Game Account from the Game Account Center before first launch. No
+purchase is required.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Homecoming Official Site"
+url   = "https://homecomingservers.com"
+
+[[links.guides]]
+title = "LinuxHC Installer for Steam Deck (GitHub)"
+url   = "https://github.com/FaultlineHC/LinuxHC"
+
+[[links.guides]]
+title = "Homecoming Wiki — City of Heroes on Steam Deck"
+url   = "https://homecoming.wiki/wiki/City_of_Heroes_on_Steam_Deck"
+
+[about]
+developer = "Cryptic Studios / NCSoft (original); Homecoming team (server)"
+publisher = "NCSoft (original)"
+released  = "2004 (original); Homecoming servers ongoing"
+genre     = "MMORPG, Superhero"
+modes     = "Multiplayer (MMO)"
+summary   = """**City of Heroes: Homecoming** is the community-run revival of the beloved 2004 superhero \
+MMORPG originally developed by Cryptic Studios and shut down by NCSoft in 2012. Homecoming Servers, LLC \
+runs the game free to play under license from NCSoft, making it one of the most accessible MMO revivals. \
+On Steam Deck it runs via the community LinuxHC installer, which sets up the official Homecoming Launcher \
+under Proton, bringing full character creation, hundreds of zones, and cooperative missions to handheld play."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Not on Steam; install via the community LinuxHC bash installer in Desktop Mode Konsole, then
+add the created "City of Heroes" desktop shortcut to Steam.
+- The thing you launch is the official Homecoming Launcher (launcher.exe), installed at
+~/Games/Homecoming/ and run through Proton by the installer's wrapper script.
+- Proton 7.0 is the tested default; other versions (including GE-Proton) reportedly work. If you
+see display glitches, try PROTON_ENABLE_WAYLAND=1 in the shortcut's launch options.
+- Free to play — no purchase. Create a free forum account at forums.homecomingservers.com, verify
+your email, then make a free Game Account before first launch.
+- Operated by Homecoming Servers, LLC under license from NCSoft; ongoing availability depends on
+the Homecoming team.
+- Mouse-and-keyboard MMO; right trackpad as a mouse + a community Steam Input layout strongly
+recommended for comfortable handheld play.
+- Full client download is sizable; ensure SD card or internal storage has room before running the
+installer.
+- Status is needs-test: the launcher path works for the community, but this specific recipe has
+not been verified on-device.
+"""

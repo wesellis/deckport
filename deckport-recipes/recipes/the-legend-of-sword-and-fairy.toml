@@ -1,0 +1,58 @@
+[game]
+title       = "The Legend of Sword and Fairy"
+slug        = "the-legend-of-sword-and-fairy"
+aliases     = ["仙剑奇侠传", "Xian Jian Qi Xia Zhuan", "PAL", "Chinese Paladin 1"]
+type        = "proton"
+engine      = "other"
+steam_appid = "695630"
+sgdb_id     = ""
+
+[launch]
+binary         = "sdlpal.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = "Run with GE-Proton (Steam's bundled Proton also works since this is a lightweight engine). The Steam release (App 695630, 2021) is the official re-release of the classic 1995 game and ships with both the DOS build (runs under DOSBox) and a Windows build that launches through the open-source SDLPAL engine. The recommended, controller-friendly executable is sdlpal.exe, located in the 'Pal98rqp' subfolder of the install directory — if the default launcher boots the DOSBox version instead, point the recipe at that sdlpal.exe. SDLPAL has built-in multilingual support, so English can be selected in-game without a separate fan patch on the Steam version; the romhacking.net community English translation is mainly for self-supplied DOS copies. The game renders at a low 4:3 internal resolution and has no native widescreen. SDLPAL supports gamepad input (Xbox controllers work); if a controller is not detected, enable Steam Input and use the right trackpad as a mouse for the menus."
+
+[about]
+developer = "Softstar Entertainment"
+publisher = "Softstar Entertainment"
+released  = "1995 (Steam re-release 2021)"
+genre     = "Turn-based RPG"
+modes     = "Single-player"
+summary   = "The Legend of Sword and Fairy (仙剑奇侠传, also known as Chinese Paladin) is a landmark Chinese RPG developed by Softstar Entertainment, first released for MS-DOS in 1995. Set in ancient China with elements of Taoist mythology, the game follows the hero Li Xiaoyao on an epic journey involving love, fate, and sacrifice. The 2021 Steam release (App 695630) bundles the original DOS and Windows builds and uses the open-source SDLPAL engine, which adds multilingual (including English) support. A separate community English translation on romhacking.net exists for self-supplied DOS copies."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "PCGamingWiki - The Legend of Sword and Fairy"
+url   = "https://www.pcgamingwiki.com/wiki/The_Legend_of_Sword_and_Fairy"
+
+[[links.guides]]
+title = "ProtonDB - Chinese Paladin: Sword and Fairy (695630)"
+url   = "https://www.protondb.com/app/695630"
+
+[[links.guides]]
+title = "SDLPAL engine (GitHub)"
+url   = "https://github.com/sdlpal/sdlpal"
+
+[[links.guides]]
+title = "Steam - Chinese Paladin: Sword and Fairy"
+url   = "https://store.steampowered.com/app/695630/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = "The official Steam release (App 695630, 2021) runs the Windows build through the SDLPAL engine and includes English in its in-game language menu — no separate fan patch needed there. Low 4:3 internal resolution with no native widescreen. SDLPAL supports gamepads; if the controller is not picked up, enable Steam Input and use the right trackpad as a mouse for menus. ProtonDB tier is Platinum but based on only a handful of reports, so still mark as needs-test on Deck."

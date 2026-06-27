@@ -1,0 +1,72 @@
+[game]
+title       = "Hedon Bloodrite"
+slug        = "hedon-bloodrite"
+aliases     = ["Hedon", "Hedon 2 Bloodrite", "Hedon GZDoom"]
+type        = "native"
+engine      = "gzdoom"
+steam_appid = "1072150"
+sgdb_id     = ""
+
+[launch]
+binary         = "hedon"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**Native on BOTH stores:** Hedon Bloodrite ships a **native Linux binary** — both on `itch.io` (DRM-free) and on Steam (App ID `1072150`, which has a native Linux/SteamOS depot). On Steam Deck it runs **natively, no Proton required**; just install from Steam and launch. If you own the Steam copy, prefer the native build over forcing Proton.
+
+**itch.io install:** Download `Hedon … Linux 64-bit.zip` from `itch.io` (`zanthebonebreaker.itch.io/hedon`), extract, and add the Linux binary as a non-Steam game in Desktop Mode.
+
+**Engine:** The game runs on a `GZDoom` fork bundled with the executable — you do **NOT** need to install `GZDoom` separately; the bundled engine handles everything.
+
+**Controller:** Full controller support is built in.
+
+**Length:** The game is a 20+ hour adventure/FPS with RPG elements.
+
+**Steam version:** The Steam release has a native Linux depot, so it runs without Proton on Deck. Forcing a Proton version is unnecessary and not recommended unless a future update breaks the native build."""
+
+[about]
+developer = "Zan the Bonebreaker (ZTB)"
+publisher = "Zan the Bonebreaker (self-published)"
+released  = "2019 (Hedon original); Hedon 2: Bloodrite 2022; ongoing updates"
+genre     = "First-person shooter, action-adventure"
+modes     = "Single-player"
+summary   = "**Hedon Bloodrite** is a commercial 20+ hour old-school **first-person shooter** built on a customised **GZDoom engine fork**, developed and self-published by solo developer **Zan the Bonebreaker**. Set in a dark fantasy world of orcs, demons, and ancient magic, it features **multiple playable characters**, extensive lore, and a gameplay loop that blends arena combat with exploration and RPG elements. Sold on both **itch.io** (DRM-free, includes native Linux build) and Steam, it is one of the most ambitious commercial GZDoom-engine games ever released."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Hedon Bloodrite — itch.io page (DRM-free Linux build)"
+url   = "https://zanthebonebreaker.itch.io/hedon"
+
+[[links.guides]]
+title = "Hedon Bloodrite — Steam page"
+url   = "https://store.steampowered.com/app/1072150/Hedon_Bloodrite/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Paid game:** ~$17 on `itch.io`; the Steam release (App ID `1072150`) is often on sale.
+
+**Native Linux on both stores:** Both the Steam and `itch.io` builds include a **native Linux binary**, so the game runs on Steam Deck **without Proton**. The `itch.io` build is additionally DRM-free.
+
+**Engine:** The bundled `GZDoom` fork handles the engine; **no separate GZDoom installation needed**.
+
+**Proton not required:** Because a native Linux depot exists, leave Proton off (Steam default for native titles). Only force a Proton version if a future update ever breaks the native build.
+
+**Controller:** Full controller support built in.
+
+**Length:** 20+ hours of content across the full Bloodrite campaign."""

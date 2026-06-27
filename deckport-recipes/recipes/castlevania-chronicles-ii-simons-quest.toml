@@ -1,0 +1,71 @@
+[game]
+title       = "Castlevania Chronicles II: Simon's Quest"
+slug        = "castlevania-chronicles-ii-simons-quest"
+aliases     = ["Simon's Quest", "Castlevania Chronicles II", "CCII"]
+type        = "proton"
+engine      = "clickteam"     # Clickteam Fusion 2.5 runtime
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Castlevania Chronicles II - Simon's Quest.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"   # Clickteam Fusion title; lightweight 2D, undemanding
+winetricks = []
+notes      = """
+**Game:** Freeware fan remake of Konami's Castlevania II: Simon's Quest (BMC WarMachine / WarMachine Studios, 2023) — a from-scratch build in `Clickteam Fusion 2.5`, **not Konami's code**.
+
+**Install:** Ships as a single Windows `.exe` with no DRM/GFWL, so **add it as a non-Steam shortcut**, force a Proton runtime, and launch.
+
+**Proton:** `GE-Proton` recommended; `proton_experimental` also works.
+
+**Compatibility:** Clickteam Fusion runtimes are well-behaved under Wine/Proton and this game is lightweight 2D, so it runs out of the box with no `winetricks`. Listed on Lutris as a Linux-runnable title.
+
+**Controller:** Native Xbox-style controller support, so the Deck gamepad works directly — no Steam Input keyboard layout needed (set the controller layout to `Gamepad` if input isn't detected)."""
+
+[about]
+developer = "BMC WarMachine (also credited as WarMachine Studios)"
+publisher = "BMC WarMachine"
+released  = "2023"
+genre     = "Action-platformer / Metroidvania"
+modes     = "Single-player"
+summary   = "A free, from-scratch fan remake of Konami's 1987 NES title **Castlevania II: Simon's Quest**, built in **Clickteam Fusion 2.5** by a solo developer working under the WarMachine Studios name and released in January 2023. It rebuilds the original's open-ended, RPG-flavored quest with overhauled graphics, unique **mansions** with dedicated boss fights, a **gold-based economy**, a slide move, and a remixed metal-and-orchestra soundtrack. Often cited as the kind of modern remake Konami never made for one of the series' most divisive entries, it was well received by **Castlevania** fans and covered by outlets like GamesRadar and Kotaku. As an unlicensed fan project on Konami IP, it is distributed for free and could be pulled at the rightsholder's request."
+
+[[links.guides]]
+title = "Developer's official release thread (Clickteam Community Hub)"
+url   = "https://community.clickteam.com/forum/thread/110001-castlevania-chronicles-ii-simon-s-quest/"
+
+[[links.guides]]
+title = "GamesRadar+ — coverage of the fan remake"
+url   = "https://www.gamesradar.com/konami-wont-do-it-so-fans-remade-the-most-infamous-castlevania/"
+
+[[links.guides]]
+title = "Time Extension — release writeup (free download, controller support)"
+url   = "https://www.timeextension.com/news/2023/01/you-can-play-this-castlevania-ii-simons-quest-remake-right-now-for-free"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Free fan remake built in `Clickteam Fusion 2.5` (no Konami game files).
+
+**Licensing:** As an unlicensed fan game on Konami IP it **can be pulled at the rightsholder's request**.
+
+**No Steam appid:** Never sold on Steam, so there is no `steam_appid`.
+
+**Controller:** Native Xbox-controller support means the Deck pad works without a Steam Input layout.
+
+**ProtonDB:** No community ProtonDB entry (it is not a Steam app); compatibility is inferred from its Lutris/Linux listing and the generally Proton-friendly Clickteam Fusion runtime, so **confirm a clean run on your own Deck**.
+
+**Scope:** deckport describes configuration only."""

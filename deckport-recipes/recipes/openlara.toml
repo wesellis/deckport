@@ -1,0 +1,72 @@
+[game]
+title       = "OpenLara (Tomb Raider)"
+slug        = "openlara"
+aliases     = ["Tomb Raider", "TR1", "OpenLara Libretro"]
+type        = "native"
+engine      = "other"
+steam_appid = "224960"
+sgdb_id     = ""
+
+[launch]
+binary         = "retroarch"
+launch_options = "-L openlara_libretro.so"
+requires_files = ["Tomb Raider game data from Steam app 224960 or GOG"]
+
+[proton]
+version    = ""
+winetricks = []
+notes      = ""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Tomb Raider (OpenLara) — official Libretro core docs (setup & data files)"
+url   = "https://docs.libretro.com/library/openlara/"
+
+[[links.guides]]
+title = "OpenLara GitHub repository (XProger)"
+url   = "https://github.com/XProger/OpenLara"
+
+[[links.guides]]
+title = "Tomb Raider I on Steam (buy game data)"
+url   = "https://store.steampowered.com/app/224960/"
+
+[[links.guides]]
+title = "Tomb Raider I on GOG (buy game data)"
+url   = "https://www.gog.com/game/tomb_raider_i"
+
+[about]
+developer = "Core Design / Eidos Interactive (original); XProger (engine)"
+publisher = "Eidos Interactive"
+released  = "1996 (original); OpenLara actively maintained"
+genre     = "Action-adventure"
+modes     = "Single-player"
+summary   = """**Tomb Raider** (Core Design, 1996) launched one of gaming's most iconic franchises, and \
+**OpenLara** by XProger is an open source reverse-engineered renderer for the classic Tomb Raider \
+games. Played on Steam Deck via the Libretro core in RetroArch, only **Tomb Raider 1 is fully \
+playable**; TR2/TR3 levels can be loaded but lack their later mechanics, and TR4/TR5 are not yet \
+supported by the core. It delivers uncapped FPS \
+(60/90/120), optional PSX disc audio (which many consider superior to the PC version), and clean \
+widescreen output."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+- Install via EmuDeck, which includes RetroArch and can install the OpenLara Libretro core.
+- CRITICAL: in RetroArch, switch the video driver to OpenGL before loading the core — the default Vulkan driver causes rendering corruption with OpenLara.
+- Requires Tomb Raider game data (.phd / .psx files); buy TR1 on Steam (app 224960) or GOG.
+- PSX disc rip (.bin/.cue) is supported and provides better audio quality than the PC version — supply your own rip from a disc you own.
+- Only Tomb Raider 1 is fully playable in this core. TR2/TR3 levels can be loaded with the correct file layout but use TR1's moveset (no sprint/duck/proper climb); TR4/TR5 are not supported yet. Each game requires its own data files.
+- After selecting the OpenGL driver, enable 'Show Advanced Settings' then turn on Settings -> Core -> 'Enable Shared Hardware Context' (required by the core).
+- Launch command shown is for manual RetroArch invocation; within EmuDeck/ES-DE, load the .phd file directly via the OpenLara core.
+"""

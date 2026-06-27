@@ -1,0 +1,78 @@
+[game]
+title       = "Tom Clancy's Ghost Recon Advanced Warfighter 2"
+slug        = "ghost-recon-advanced-warfighter-2"
+aliases     = ["GRAW 2", "Ghost Recon Advanced Warfighter 2", "GRAW2"]
+type        = "proton"
+engine      = "other"         # GRIN's Diesel engine
+steam_appid = "13510"
+sgdb_id     = ""
+
+[launch]
+binary         = "GRAW2.exe"   # confirmed — main game exe (the v1.05 Divide-Zero fix targets GRAW2.exe)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Overview:** 2007 GRIN / Ubisoft tactical shooter (`Diesel` engine), no GFWL.
+
+**Patch:** **Patch to `v1.05` first** — several fixes only apply to the `v1.05` `GRAW2.exe`.
+
+**Crash:** If it crashes on launch (PhysX `2.7.1` startup crash), **install the PhysX legacy driver**; a community 'Divide by Zero' fix resolves another startup crash.
+
+**Audio:** Distorted sound comes from `OpenAL Soft 1.19.x` — use `1.20.1`.
+
+**Proton:** Reported Playable on Deck with recent Proton (`GE-Proton` or `proton_experimental`).
+
+**Controller:** No native gamepad — bind a Steam Input keyboard/mouse layout (a community controller-support mod also exists).
+"""
+
+[about]
+developer = "GRIN"
+publisher = "Ubisoft"
+released  = "2007"
+genre     = "Tactical third-person shooter"
+modes     = "Single-player, online co-op, multiplayer"
+summary   = """
+The PC version of **Ghost Recon Advanced Warfighter 2** is a 2007 tactical shooter developed by Swedish studio **GRIN** and published by **Ubisoft**, built on GRIN's proprietary **Diesel engine**. A follow-up to the original GRAW, it casts the player as Captain Scott Mitchell commanding the Ghosts across a 72-hour conflict along the U.S.-Mexico border, emphasizing the **squad command** and **Cross-Com tactical HUD** the series is known for.
+
+The four-player **co-op campaign** and competitive multiplayer were well received by critics. It was **delisted from Steam** around 2015 after the Diesel engine license used for the PC versions expired."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam (no longer for sale); configuration only, no links.
+
+**Controller:** No native controller support — set up a Steam Input keyboard/mouse mapping (a ModDB controller-support mod also exists).
+
+**Patch:** **Patch to `v1.05`** before applying any fixes.
+
+**Crash:** Startup crashes — PhysX `2.7.1` legacy driver and/or the community Divide-by-Zero fix.
+
+**Audio:** Distorted audio = `OpenAL Soft 1.19.x`; use `1.20.1`.
+
+**ProtonDB:** Reports skew Platinum/Gold but the sample is small (~7) and depends on doing the patch + PhysX/audio fixes; we list **Gold** to set honest expectations for an out-of-the-box run. Verify on your Deck.
+"""
+
+[[links.guides]]
+title = "PCGamingWiki — Ghost Recon Advanced Warfighter 2 (fixes, PhysX, OpenAL)"
+url   = "https://www.pcgamingwiki.com/wiki/Tom_Clancy's_Ghost_Recon_Advanced_Warfighter_2"
+
+[[links.guides]]
+title = "GRAW2 (Divide Zero) Fix — unofficial patch for v1.05 GRAW2.exe"
+url   = "https://community.pcgamingwiki.com/files/file/2345-tom-clancys-ghost-recon-advanced-warfighter-2-graw2-divide-zero-fix/"
+
+[[links.guides]]
+title = "ProtonDB — GRAW 2 (AppID 13510) reports"
+url   = "https://www.protondb.com/app/13510"

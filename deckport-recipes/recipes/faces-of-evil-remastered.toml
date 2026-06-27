@@ -1,0 +1,67 @@
+[game]
+title       = "Zelda: The Faces of Evil (Remastered)"
+slug        = "faces-of-evil-remastered"
+aliases     = ["Faces of Evil Remastered", "Link Faces of Evil"]
+type        = "native"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "FOER"   # best guess — GameMaker Ubuntu export binary inside "FOER v1.4.2 (Ubuntu).zip"; verify actual filename after extracting
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = """
+**About:** Free fan remaster of the 1993 CD-i game Link: The Faces of Evil by Seth Fulkerson (Dopply), built in `GameMaker` and released Nov 2020 with separate native Windows, Linux (Ubuntu) AND Android builds. The widely-preserved patched release is `v1.4.2`, distributed as a dedicated `FOER v1.4.2` package (separate from the Wand of Gamelon / `WOGR` package) plus an optional `foeconfigtoolV2` settings utility.
+
+**Install:** Standalone/portable — extract the `FOER v1.4.2 (Ubuntu).zip` and add the GameMaker binary as a non-Steam game. The native Linux build runs directly on the Deck with **no Proton** (type `native`). The internal binary name is not documented publicly; confirm the actual executable name after extraction (GameMaker Linux exports are commonly named after the project, hence the `FOER` best guess).
+
+**Proton:** If the Linux runner misbehaves, extract `FOER v1.4.2 (Windows).zip` and run the `.exe` under `GE-Proton` instead — GameMaker Windows games are well-supported by Proton.
+
+**Display:** Has a built-in widescreen mode for the Deck's 16:10 screen; enable `Remastered Mode` in options for the smoother gameplay/difficulty tweaks. Use `foeconfigtoolV2` to set resolution/fullscreen if the in-game options aren't enough."""
+
+[about]
+developer = "Seth \"Dopply\" Fulkerson"
+publisher = "Seth \"Dopply\" Fulkerson (self-published, free fan project)"
+released  = "November 2020"
+genre     = "Action-adventure side-scroller"
+modes     = "Single-player"
+summary   = """
+A free, fan-made PC remake of **Link: The Faces of Evil**, the infamous 1993 **Legend of Zelda** side-scroller that Animation Magic developed and Philips published for the **CD-i**. Built from scratch in **GameMaker** over roughly four years by amateur developer Seth Fulkerson as a way to teach himself game development and as a tribute to original director Dale DeSharone, it adds cutscene subtitles, a widescreen mode, unlockable content, and an optional **Remastered Mode** that smooths out the original's notorious controls and difficulty.
+
+Fulkerson pulled the download two days after its November 2020 release to avoid a **Nintendo cease-and-desist**, but it was widely preserved; the project's success led him to create the spiritual successor **Arzette: The Jewel of Faramore**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Zelda Dungeon — CD-i Zelda fan remasters (overview & features)"
+url   = "https://www.zeldadungeon.net/the-not-so-legendary-cd-i-zelda-games-receive-new-life-in-this-fan-remaster/"
+
+[[links.guides]]
+title = "PC Gamer — A fan has remade The Faces of Evil and The Wand of Gamelon"
+url   = "https://www.pcgamer.com/a-fan-has-remade-the-faces-of-evil-and-the-wand-of-gamelon/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Free fan project:** Not Nintendo/Philips; never sold on Steam, so **no appid**. Pulled by the creator two days after the Nov 2020 launch to avoid a Nintendo cease-and-desist, but widely preserved; the patched `v1.4.2` is the build to use.
+
+**Install:** `GameMaker` game, distributed as a standalone zip (Windows / Ubuntu / Android builds). Native Linux build runs on the Deck with no Proton; if it errors, run the Windows `.exe` under `GE-Proton`.
+
+**Controller:** GameMaker games expose gamepad input; if any prompts read as keyboard, apply a Steam Input gamepad/keyboard layout. **Touch input not supported.**
+
+**Binary:** `FOER` is a best guess for the GameMaker Linux export — **verify the actual filename** inside the extracted `FOER v1.4.2 (Ubuntu).zip`; it varies by version."""

@@ -1,0 +1,61 @@
+[game]
+title       = "Super Mario Bros. Remastered"
+slug        = "super-mario-bros-remastered"
+aliases     = ["SMB Remastered", "SMB1R"]
+type        = "native"
+engine      = "godot"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SMB1R.x86_64"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = ""
+winetricks = []
+notes      = "Native Linux Godot build (custom Godot 4.6.x fork) — runs without Proton. No Steam app id; distributed via the creator's GitHub releases."
+
+[[links.guides]]
+title = "Official GitHub releases (Linux build SMB1R.x86_64)"
+url   = "https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public/releases"
+
+[[links.guides]]
+title = "FAQ — how to supply your own SMB1 ROM"
+url   = "https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public/wiki/Frequently-Asked-Questions"
+
+[[links.guides]]
+title = "How to play SMB Remastered on Steam Deck (video walkthrough)"
+url   = "https://www.youtube.com/watch?v=i6x48hp5NyM"
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "JHDev2006"
+publisher = "JHDev2006 (free open-source fan project)"
+released  = "2024"
+genre     = "Platformer"
+modes     = "Single-player, local co-op"
+summary   = """
+**Super Mario Bros. Remastered** is a free, open-source fan remake built in the **Godot engine** that recreates the original NES **Super Mario Bros.**, **The Lost Levels**, **Super Mario Bros. Special** and **All Night Nippon: Super Mario Bros.** from the ground up. It adds widescreen visuals, new playable characters, resource packs, custom modes and a full **level editor** with a custom-level sharing system.
+
+Because it is an unofficial **Nintendo-IP** project distributed as source/binaries rather than a commercial release, it is not sold on any storefront and has seen **takedown pressure**. The game loads assets from the player's own legally-dumped NES ROM, which must be supplied separately."""
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** You must provide your own original **SMB1** NES ROM (USA/JP "World", or EU region; uncompressed `.nes`, not zipped). The game **does** launch without it and shows a ROM verification screen on first run — you **drag-and-drop the ROM file onto the game window** there. It is then extracted and cached in the user-data folder (`~/SMB1R/` as `baserom.nes`), so the ROM does **not** have to live next to the binary afterward.
+
+**Proton:** Native Linux **Godot** build — no Proton needed.
+
+**Controller (Steam Deck):** Recent builds (1.0.2+) improved native input, but as a non-Steam Godot title it often still isn't seen as a gamepad. If the D-pad/buttons don't respond, add it as a Non-Steam Game and apply a **Steam Input controller layout that maps buttons to keyboard keys**.
+
+**Install:** Ships with `libdiscord` and a `godotgif` `.so` beside the binary; **keep the whole extracted folder intact** and run `SMB1R.x86_64` from inside it."""

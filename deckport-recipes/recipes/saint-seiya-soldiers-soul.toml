@@ -1,0 +1,70 @@
+[game]
+title       = "Saint Seiya: Soldiers' Soul"
+slug        = "saint-seiya-soldiers-soul"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "348710"
+sgdb_id     = ""
+
+[launch]
+binary         = "SSSS.exe"   # installs to steamapps/common/SSSS/
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 7.0-6"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `348710`), a 3D arena fighter. **ProtonDB silver** — community reports it running on Linux/Proton, and it became playable on the Deck via a Proton update.
+
+**Proton:** Use `Proton 7.0-6` (stable); `GE-Proton` also works. Real executable is `SSSS.exe` in `steamapps/common/SSSS/`.
+
+**DRM:** No GFWL/SecuROM DRM to bypass.
+
+**Controller:** Native controller handling is flaky on raw Windows (people resort to `x360ce`/`JoyToKey`), but on the Deck Steam Input presents the built-in gamepad as a standard controller, so a **Gamepad/Gamepad-with-Joystick-Trackpad layout** maps it cleanly without those hacks.
+
+**Known issue:** A few arenas/stages can render incorrectly under Proton (Valve/Proton #3128).
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Dimps"
+publisher = "Bandai Namco Entertainment"
+released  = "2015"
+genre     = "3D arena fighting"
+modes     = "Single-player, local versus, online multiplayer"
+summary   = "**Saint Seiya: Soldiers' Soul** is a **3D arena fighting game** based on Masami Kurumada's **Saint Seiya** (Knights of the Zodiac) manga and anime. Developed by Dimps and published by Bandai Namco, it is an expanded successor to Saint Seiya: Brave Soldiers, adapting the Sanctuary, Asgard, Poseidon and Hades sagas with a roster of **more than 70 fighters** across numerous costumes and stages. The PC version arrived in late 2015 and was later **delisted from Steam**, leaving it unavailable for new purchase."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Saint Seiya: Soldiers' Soul (appid 348710)"
+url   = "https://www.protondb.com/app/348710"
+
+[[links.guides]]
+title = "Steam Community discussions (SSSS.exe troubleshooting, black-screen fixes)"
+url   = "https://steamcommunity.com/app/348710/discussions/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** Delisted Steam game (appid `348710`); deckport links nothing.
+
+**Proton:** ProtonDB silver, confirmed running on Deck under `Proton 7`. Binary is `SSSS.exe` (`steamapps/common/SSSS/`).
+
+**Controller:** On Deck, use a Steam Input **Gamepad layout** — native controller support is unreliable on Windows, but Steam Input handles it cleanly, so no `x360ce`/`JoyToKey` needed.
+
+**Known issues:** A few arenas may render incorrectly under Proton (Valve/Proton #3128); rare black-screen-on-launch reports exist, usually resolved by switching Proton version.
+
+**Status:** Recipe config not yet hands-on tested on a specific Deck."""

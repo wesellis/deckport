@@ -1,0 +1,74 @@
+[game]
+title       = "Crayola Scoot"
+slug        = "crayola-scoot"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "772530"
+sgdb_id     = ""
+
+[about]
+developer = "Climax Studios"
+publisher = "Outright Games"
+released  = "2018"
+genre     = "Sports / arcade trick action"
+modes     = "Singleplayer, local and online multiplayer"
+summary   = "**Crayola Scoot** is a colorful **arcade trick-action** game built around the Crayola brand. Players ride scooters and perform tricks and combos to **paint the environment**, blending the ink-coverage idea of **Splatoon** with the trick scoring of **Tony Hawk's Pro Skater**. It was released in 2018 for PC, Nintendo Switch, PlayStation 4, and Xbox One. It was removed from sale on Steam on 2022-12-30 after the **Crayola brand license expired**, though existing owners can still install it from their library."
+
+[launch]
+binary         = "Crayola Scoot.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (`appid 772530`), removed from sale `2022-12-30` over expired Crayola brand licensing; owners can still **install it from their Steam library**.
+
+**Engine:** Unity engine, **Steam DRM**.
+
+**Proton:** ProtonDB rates it **gold** and the community reports it running fine on Linux/Proton, so it should play on the Deck out of the box. `Proton Experimental` (or current stable Proton) is the known-good runtime; **no winetricks or DRM workaround needed** since Steam DRM is satisfied by launching through Steam.
+
+**Controller:** Full native controller support — no Steam Input layout required; the Deck's built-in gamepad works as-is.
+
+**Cosmetic:** If it stutters on first launch, give it time to compile shaders.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB - Crayola Scoot (appid 772530)"
+url   = "https://www.protondb.com/app/772530"
+
+[[links.guides]]
+title = "Steam Community Hub - Crayola Scoot"
+url   = "https://steamcommunity.com/app/772530"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Proton:** ProtonDB **gold**; community reports it running on Linux/Proton.
+
+**Binary:** The Unity executable is `Crayola Scoot.exe` (typically under a `Game/` subfolder of the install) — **confirm the exact name and path against your install**.
+
+**Controller:** Full native controller support, so the Deck gamepad works without a Steam Input layout.
+
+**DRM:** Steam DRM is required, so **launch it through Steam**.
+
+**Multiplayer:** Online/multiplayer modes may no longer have live servers, but the singleplayer trick/challenge content is self-contained.
+
+**Status:** Not yet hands-on verified on a physical Deck."""

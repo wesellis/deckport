@@ -1,0 +1,80 @@
+[game]
+title       = "Kung Fu Panda: Showdown of Legendary Legends"
+slug        = "kung-fu-panda-showdown-of-legendary-legends"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "369230"
+sgdb_id     = ""
+
+[launch]
+binary         = "KFP.exe"   # main game executable in the install root
+launch_options = "DXVK_FRAME_RATE=60 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = ["xact"]
+notes      = """
+**Game:** Delisted Steam game (appid `369230`, license ended, pulled from Steam 2019-01-01). 2.5D platform fighter (Smash-style brawler). ProtonDB tier silver.
+
+**Compatibility:** Compatibility is finicky. The upstream Proton issue (#8465) reports stock builds misbehaving — `7.0-6` throws a memory-allocation error, `8.0.5` hangs on the loading screen, and `9.0.4`/`Experimental` randomly crash with `DXVK` loaded. **Root cause is the XAudio2 audio subsystem.**
+
+**Fix:** Use `GE-Proton` and install the `xact` winetricks verb so XAudio2 is provided (some users instead set `xaudio2_7.dll` to `native,builtin` in `winecfg`).
+
+**Display:** The `DXVK_FRAME_RATE=60` launch wrapper is a workaround for frame-rate-related instability. If crashes persist, try toggling `DXVK` off.
+
+**Controller:** Controller-first game (native Xbox 360 / PS4 gamepad support), so it plays well with the Deck's built-in controls.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Vicious Cycle Software"
+publisher = "Little Orbit"
+released  = "2015"
+genre     = "Platform fighter / brawler"
+modes     = "Single-player, local multiplayer (up to 4 players)"
+summary   = """
+**Kung Fu Panda: Showdown of Legendary Legends** is a **2.5D platform fighter** in the **Super Smash Bros.** mould, built around the DreamWorks **Kung Fu Panda** film franchise. Players brawl as Po, the Furious Five, Tai Lung, Shen and other series characters across themed stages, using combos and special moves to knock opponents off the screen.
+
+Developed by Vicious Cycle Software and published by Little Orbit as a tie-in to **Kung Fu Panda 3**, it launched in late 2015 on PC and consoles to mixed-to-mediocre reception. The Steam version was later **delisted when the licensing arrangement ended**."""
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports (app 369230)"
+url   = "https://www.protondb.com/app/369230"
+
+[[links.guides]]
+title = "Proton issue #8465 — XAudio2 / version-specific crashes"
+url   = "https://github.com/ValveSoftware/Proton/issues/8465"
+
+[[links.guides]]
+title = "Steam Community discussions (startup/crash troubleshooting)"
+url   = "https://steamcommunity.com/app/369230/discussions/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**DRM:** Delisted from Steam 2019-01-01 (no longer for sale; owners keep library access).
+
+**Stability:** ProtonDB silver — playable but not flawless. Known XAudio2-driven instability: stock Proton builds can throw memory-alloc errors (`7.0-6`), hang at the loading screen (`8.0.5`), or randomly crash with `DXVK` (`9.0.4` / `Experimental`) per Proton issue #8465.
+
+**Mitigations:** `GE-Proton` + `xact` winetricks (or `xaudio2_7.dll` `native,builtin` in `winecfg`), the `DXVK_FRAME_RATE=60` launch wrapper, and as a last resort disabling `DXVK`.
+
+**Binary:** Main executable is `KFP.exe` in the install root (`steamapps/common/Kung Fu Panda Showdown of Legendary Legends/KFP.exe`). Set the binary if your install differs.
+
+**Controller:** Controller support is solid (native Xbox 360 / PS4 pads) and keyboard-only play is not really supported, so use the Deck gamepad.
+
+**Multiplayer:** Online multiplayer servers may be dead post-delisting; local 4-player still works.
+
+**Status:** Needs hands-on Deck confirmation."""

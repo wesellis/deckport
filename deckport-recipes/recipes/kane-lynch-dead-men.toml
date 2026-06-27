@@ -1,0 +1,83 @@
+[game]
+title       = "Kane & Lynch: Dead Men"
+slug        = "kane-lynch-dead-men"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "8080"
+sgdb_id     = ""
+
+[launch]
+binary         = "kaneandlynch.exe"   # main game exe under the install root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "Proton 8.0-5"
+winetricks = []
+notes      = """
+**Status:** Delisted Steam game (appid `8080`), ProtonDB silver — confirmed running on Steam Deck.
+
+**Proton:** Known-good is `Proton 8.0-5`. `Proton 9` shows graphical glitches and `Proton 10`/`11` currently fail to launch, so **force Proton 8** in the title's compatibility settings (or `GE-Proton 8`).
+
+**GFWL:** **Required fix** — the game ships with Games for Windows LIVE (GFWL), which is dead, and will fail with a missing `xlive.dll` until handled. Either run the bundled `XLiveRedist` installer from the game folder, or apply the PCGamingWiki "Play without Games for Windows - LIVE" replacement `xlive.dll` (Xliveless) into the game folder. On Linux some reports instead use `protontricks 8080 d3dx9_31 d3dx9_34 gfw` on a fresh prefix.
+
+**Chapter-4 bug:** Cap the framerate to ~30 fps at the start of chapter 4 to avoid a known game-breaking softlock.
+
+**Controller:** Uses XInput, but recognition can be flaky and you can't mix keyboard+mouse with a pad — leave Steam Input enabled (Gamepad with Mouse Trackpad / Xbox 360 template) so the Deck controls map reliably.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "IO Interactive"
+publisher = "Eidos Interactive"
+released  = "2007"
+genre     = "Third-person shooter"
+modes     = "Single-player, co-op, multiplayer"
+summary   = """
+**Kane & Lynch: Dead Men** is a third-person shooter from IO Interactive, built on the studio's **Glacier engine** and released in 2007. It follows two violent criminals — death-row mercenary Kane and his unstable, medicated escort Lynch — through a brutal, cinematic crime spree, and introduced the competitive heist mode **Fragile Alliance**.
+
+The game is best remembered for **'Gerstmanngate'**: GameSpot critic Jeff Gerstmann's 2007 dismissal after a lukewarm review of the heavily-advertised title, a landmark moment in games-journalism ethics. Its original online co-op and multiplayer relied on **Games for Windows LIVE**, and the title has since been **delisted from Steam**."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB — Kane and Lynch: Dead Men (app 8080)"
+url   = "https://www.protondb.com/app/8080"
+
+[[links.guides]]
+title = "Steam Community — How to start Kane and Lynch: Dead Men (GFWL fix)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=948801322"
+
+[[links.guides]]
+title = "PCGamingWiki — Kane & Lynch: Dead Men (Play without GFWL)"
+url   = "https://www.pcgamingwiki.com/wiki/Kane_%26_Lynch:_Dead_Men"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "silver"
+caveats       = """
+**Supply your own copy:** Delisted Steam game (appid `8080`). deckport links nothing.
+
+**Status:** Community confirms it runs on Steam Deck via `Proton 8` after the GFWL bypass.
+
+**GFWL:** **You MUST disable Games for Windows LIVE** (extract the GFWL-disable files into the game folder) or it won't launch.
+
+**Proton:** Pin `Proton 8.0-5` — `Proton 9` has graphical glitches and `Proton 10`/`11` fail to start.
+
+**Chapter-4 bug:** Cap to ~30 fps at the start of chapter 4 to dodge a known game-breaking bug.
+
+**Multiplayer:** The original online co-op/multiplayer relies on GFWL servers that are gone — treat it as single-player.
+
+**Controller:** XInput-based but recognition can be flaky and keyboard+mouse can't be mixed with a pad — keep Steam Input on (Xbox 360 / Gamepad template) for reliable Deck controls.
+
+**Binary:** Launch exe is `kaneandlynch.exe` in the install root (the same exe that errors on missing `xlive.dll` until GFWL is handled)."""

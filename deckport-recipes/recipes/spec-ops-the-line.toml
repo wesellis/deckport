@@ -1,0 +1,75 @@
+[game]
+title       = "Spec Ops: The Line"
+slug        = "spec-ops-the-line"
+aliases     = ["Spec Ops The Line", "SpecOps"]
+type        = "proton"
+engine      = "other"         # Unreal Engine 3
+steam_appid = "50300"
+sgdb_id     = ""
+
+[launch]
+binary         = "Binaries/Win32/SpecOpsTheLine.exe"   # confirmed: 32-bit UE3 exe under <install>/Binaries/Win32
+launch_options = "PROTON_NO_ESYNC=1 PROTON_NO_FSYNC=1 PULSE_LATENCY_MSEC=60 %command%"
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2012 Yager / 2K third-person shooter (UE3). ProtonDB community tier sits around Gold; runs well once the Windows build is forced.
+
+**Install:** Normal Steam install (copied to the Deck). The store entry ships a native Linux build that Steam installs by default — community reports flag that native build as problematic (broken controller detection, no audio for some, graphics settings not saved). Force the Windows build through Proton instead.
+
+**DRM:** Delisted Jan 2024 over expiring licensed-music rights — supply your own copy. No GFWL/SecuROM concerns reported on the Steam build.
+
+**Fix:** Right-click > Properties > Compatibility > Force a specific tool, and select `GE-Proton` (or `proton_experimental` / a recent stable Proton, both of which community users confirm working). Under Proton the gamepad is recognized and the game runs at a steady 60fps.
+
+**Launch options:** `PROTON_NO_ESYNC=1 PROTON_NO_FSYNC=1 PULSE_LATENCY_MSEC=60 %command%` is a community-recommended starting point that helps with the occasional audio glitch when idling; drop the PULSE option if you have no sound issues.
+
+**Controller:** Native gamepad once on Proton — the stock Steam Input gamepad layout works, no custom mapping needed. If menus don't respond to clicks before a pad is detected, a controller input wakes them up.
+"""
+
+[about]
+developer = "Yager Development"
+publisher = "2K"
+released  = "2012"
+genre     = "Third-person shooter"
+modes     = "Single-player, multiplayer"
+summary   = """
+**Spec Ops: The Line** is a 2012 third-person shooter built on **Unreal Engine 3** and a reboot of the long-running **Spec Ops** series. Players control Delta Force Captain Martin Walker on a recon mission into a sandstorm-buried Dubai, where the **narrative** deliberately deconstructs military-shooter tropes with themes drawn from Heart of Darkness and Apocalypse Now.
+
+It earned strong critical praise for its storytelling, winning several narrative awards, and became a cult classic. It was delisted from digital stores in early 2024 due to **expiring licensed-music rights.**
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted Jan 2024 (music licensing) — this recipe is configuration only, no game links.
+
+**Force Proton:** The default native Linux build is the trap — broken controller detection, audio issues, and graphics settings not saving have all been reported. You MUST force the Windows build via Proton (`GE-Proton`, `proton_experimental`, or a recent stable Proton) to get working gamepad support and a smooth 60fps.
+
+**Minor known issues (Windows-on-Proton path):** occasional audio glitch after the game idles for a long time, brief lag spikes when loading large new areas, and a harmless error popup on exit.
+
+**Valve rating:** Spec Ops shows as 'Unsupported' on Deck — that verdict reflects the broken native build, not the Proton path this recipe uses.
+"""
+
+[[links.guides]]
+title = "ProtonDB — Spec Ops: The Line (app 50300)"
+url   = "https://www.protondb.com/app/50300"
+
+[[links.guides]]
+title = "Steam Community — Spec Ops: The Line on Steam Deck discussion"
+url   = "https://steamcommunity.com/app/50300/discussions/0/3476233614740588567/"
+
+[[links.guides]]
+title = "Steam Store — Spec Ops: The Line"
+url   = "https://store.steampowered.com/app/50300/"

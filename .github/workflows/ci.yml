@@ -1,0 +1,60 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,tools]"
+      - name: Lint (ruff)
+        run: ruff check src tools tests scripts
+      - name: Test
+        run: pytest -q
+
+  single-file:
+    # The Deck-side importer must stay a pure-stdlib single file that matches src/.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: deckport.py is in sync with src/ (and stdlib-only)
+        run: python scripts/build_single_file.py --check
+      - name: Single file imports and runs
+        run: |
+          python -c "import ast; ast.parse(open('deckport.py').read())"
+          python deckport.py --version
+
+  api:
+    # The votes service (api/) has its own deps; test it in its own job.
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt httpx pytest
+      - name: Test
+        run: pytest -q

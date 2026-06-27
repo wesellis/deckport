@@ -1,0 +1,74 @@
+[game]
+title       = "Final Doom"
+slug        = "final-doom"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "2290"
+sgdb_id     = ""
+
+[launch]
+binary         = "dosbox.exe"   # Steam build runs the DOS originals through bundled DOSBox; IWADs (TNT.WAD, PLUTONIA.WAD) live in the base/ folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**DRM:** Delisted Steam game (`appid 2290`) — **as of Aug 2022 it was folded into Doom II and is no longer sold standalone**, so the 'not for sale' rule holds. ProtonDB tier: **gold**.
+
+**Proton:** The Steam package is the MS-DOS originals (TNT: Evilution + The Plutonia Experiment) wrapped in DOSBox, so the default launcher is `dosbox.exe` and it runs fine under `GE-Proton` (`proton_experimental` also works).
+
+**Campaign:** Pick a campaign with launch options `-iwad TNT.WAD` or `-iwad PLUTONIA.WAD` (`DOOM2.EXE` prioritizes `PLUTONIA.WAD` when both are present).
+
+**Display:** Recommended Deck path — drop a source port (`GZDoom`) into the install and point it at the `TNT.WAD` / `PLUTONIA.WAD` IWADs in `base/` for crisp scaling and native gamepad support.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "TeamTNT (with Dario and Milo Casali)"
+publisher = "id Software"
+released  = "1996"
+genre     = "First-person shooter"
+modes     = "Single-player, local and network multiplayer (co-op, deathmatch)"
+summary   = "**Final Doom** is a 1996 first-person shooter built on the **Doom engine**, packaging two 32-level **megawads**, **TNT: Evilution** and **The Plutonia Experiment**. TNT: Evilution was created by the hobbyist mapping group **TeamTNT** and was about to be released free before id Software acquired it as an official product; The Plutonia Experiment was made for id by brothers Dario and Milo Casali and is known for its **punishing difficulty**. id Software published it (distributed by GT Interactive) as a standalone follow-up to Doom and Doom II. The standalone Steam release was retired in August 2022 when its content was folded into the **Doom II** package."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Final Doom - PCGamingWiki (fixes, source ports, config)"
+url   = "https://www.pcgamingwiki.com/wiki/Final_Doom"
+
+[[links.guides]]
+title = "Fix TNT: Evilution's Text Strings (Steam guide)"
+url   = "https://steamcommunity.com/sharedfiles/filedetails?id=192421838"
+
+[[links.guides]]
+title = "ProtonDB reports for Final DOOM (appid 2290)"
+url   = "https://www.protondb.com/app/2290"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**DRM:** Delisted standalone (bundled into Doom II in Aug 2022); **not for sale on its own**. ProtonDB **gold**.
+
+**Proton:** Steam build is the DOS originals under DOSBox — runs through Proton with no special `winetricks`.
+
+**Campaign:** Choose via `-iwad TNT.WAD` or `-iwad PLUTONIA.WAD`.
+
+**Controller:** Default DOSBox build has no native gamepad — either bind a Steam Input keyboard/mouse layout, or use the source-port route (`GZDoom` on the IWADs in `base/`) which has native controller support and better Deck scaling.
+
+**Cosmetic:** Steam's DOS TNT: Evilution ships with a known text-string bug (uses Plutonia's strings) — cosmetic only."""

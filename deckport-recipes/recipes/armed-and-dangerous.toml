@@ -1,0 +1,73 @@
+[game]
+title       = "Armed and Dangerous"
+slug        = "armed-and-dangerous"
+aliases     = ["Armed and Dangerous", "Armed & Dangerous"]
+type        = "proton"
+engine      = "other"
+steam_appid = "6090"          # Steam app 6090 (delisted — no longer for sale on Steam)
+sgdb_id     = ""
+
+[launch]
+binary         = "game.exe"   # confirmed main exe (WSGF widescreen fix swaps/hex-edits this)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2003 Planet Moon Studios comedic action game (published by LucasArts, rights now under Disney/Lucasfilm).
+
+**Install:** Delisted from Steam — supply your own copy.
+
+**Proton:** Runs well on Deck under Proton GE (`GE-Proton`); `proton_experimental` also works.
+
+**Framerate fix (CRITICAL):** Physics/game speed are tied to framerate and **run wildly too fast above 60 FPS** — cap the framerate to 60 in Steam's per-game performance overlay (`Frame Limit = 60` / 60 Hz) **before playing**.
+
+**Display:** Apply the WSGF Widescreen Fix (czarman) for 16:9+ resolutions — either copy the matching `game.exe` from the fix, or drop `d3d9.dll` + `resolution.ini` into the game folder and edit `resolution.ini` for a HOR+ resolution.
+
+**Controller:** No native gamepad support — bind a Steam Input keyboard/mouse layout (a community `gamepad with mouse trackpad` template works well).
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[about]
+developer = "Planet Moon Studios"
+publisher = "LucasArts"
+released  = "2003"
+genre     = "Third-person shooter"
+modes     = "Single-player"
+summary   = "**Armed and Dangerous** is a comedic **third-person run-and-gun shooter** from Planet Moon Studios, the studio founded by former Shiny Entertainment developers behind **Giants: Citizen Kabuto**. Players control Roman, leader of a band of outlaws, across destructible battlefields featuring exotic weapons like the **Land Shark Gun** and a **Topsy-Turvy bomb** that flips the world upside down. The game is best known for its irreverent humor and cutscenes that parody **Star Wars**, **The Lord of the Rings**, and **Monty Python**. It was released in 2003 for Windows and Xbox and has since been **delisted** from digital storefronts."
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted from Steam — configuration only, no links.
+
+**Framerate (#1 fix):** **MUST cap framerate to 60 FPS** (`Frame Limit`) or game speed/physics break and run far too fast.
+
+**Display:** Apply the WSGF Widescreen Fix (`game.exe` swap, or `d3d9.dll` + `resolution.ini`) for non-4:3 resolutions.
+
+**Controller:** No native controller — map a Steam Input keyboard/mouse layout.
+
+**Tier estimate:** `protondb_tier` `gold` is a best estimate from community reports; verify on hardware.
+"""
+
+[[links.guides]]
+title = "Steam Community: How to fix the game running at super fast speed"
+url   = "https://steamcommunity.com/sharedfiles/filedetails/?id=3079248523"
+
+[[links.guides]]
+title = "WSGF: Armed and Dangerous widescreen / FOV fix"
+url   = "https://www.wsgf.org/dr/armed-and-dangerous/en"
+
+[[links.guides]]
+title = "ProtonDB: Armed and Dangerous (app 6090)"
+url   = "https://www.protondb.com/app/6090"

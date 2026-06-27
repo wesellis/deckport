@@ -1,0 +1,80 @@
+[game]
+title       = "Castlevania Chronicles III: Dracula's Curse (Fan Game)"
+slug        = "castlevania-chronicles-iii-draculas-curse"
+aliases     = ["Castlevania Chronicles III", "Dracula's Curse Fan Game"]
+type        = "proton"
+engine      = "clickteam-fusion"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Castlevania Chronicles III - Dracula's Curse.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Free fan remake by BMC WarMachine (2024), built in **Clickteam Fusion 2.5** — an original 2D action-platformer reworking **Castlevania III: Dracula's Curse**, not Konami's ROM.
+
+**Proton:** Clickteam Fusion exports are plain Win32/DirectX `.exe` titles that run well under Proton; `GE-Proton` is recommended because it adds the gamepad support Fusion games need on Deck (stock Proton works for many Fusion games too).
+
+**DRM:** **No DRM, no GFWL.**
+
+**Controller:** Native controller support (the dev advertises "released on PC with controller support"); a standard gamepad auto-maps, so **no Steam Input layout is required**.
+
+**Install:** Portable Windows build — extract the archive and add the `.exe` directly as a non-Steam game (no installer). The confirmed executable is `Castlevania Chronicles III - Dracula's Curse.exe` (verified via the community cheat-table process name; current build was v3.0.295.10 / 03-2024).
+
+**Cosmetic:** If the intro/cutscene blackscreens, that's the known Fusion DirectShow video-playback issue — **skip the movie (press a button)** to reach gameplay.
+"""
+
+[about]
+developer = "BMC WarMachine"
+publisher = "BMC WarMachine"
+released  = "2024"
+genre     = "Action-platformer"
+modes     = "Single-player"
+summary   = """
+**Castlevania Chronicles III: Dracula's Curse** is a free fan-made remake of Konami's 1989 NES classic **Castlevania III: Dracula's Curse**, built by solo developer **BMC WarMachine** in **Clickteam Fusion 2.5** and released for Windows in 2024. It rebuilds the original whip-and-subweapon action-platformer with updated 16-bit-style visuals, reworked stage layouts, new enemies and bosses, and a remastered soundtrack, while keeping the series' **branching paths** and recruitable companions (Grant, Sycha and Alucard).
+
+Most sprite work is sourced from other **Castlevania** titles alongside a few original assets such as a custom Trevor sprite and a new boss. As an unofficial **fan project** unaffiliated with Konami, it was never sold commercially and is notable as a community labor of love rather than a licensed release.
+"""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Castlevania Chronicles III: Dracula's Curse — fan-game overview (The Inverted Dungeon)"
+url   = "https://www.inverteddungeon.com/index.php?section=fanworks&page=game_castlevania_chronicles_iii"
+
+[[links.guides]]
+title = "WarMachine Studios (developer) — official YouTube / release channel"
+url   = "https://www.youtube.com/channel/UCm590er3bCmsIHEYZbhmvRA"
+
+[[links.guides]]
+title = "Clickteam Community Hub — Dracula's Curse fan remake dev thread"
+url   = "https://community.clickteam.com/forum/thread/110632-castlevania-chronicles-iii-dracula-s-curse-fan-remake/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Unofficial fan game (BMC WarMachine), not affiliated with Konami; never sold on Steam, so `steam_appid` stays empty and there's no appid to launch through.
+
+**Proton:** Built in **Clickteam Fusion 2.5**; Fusion games are well-proven on Deck under Proton with good performance and native controller support. Use `GE-Proton` for reliable gamepad input.
+
+**Cosmetic:** Known Fusion gotcha — DirectShow intro/cutscene videos can blackscreen on Proton; **press a button to skip past the movie.**
+
+**Binary:** Executable confirmed as `Castlevania Chronicles III - Dracula's Curse.exe` (the Fusion export is named after the game; matches the community cheat-table process name). It is a portable build — extract and add the `.exe` as a non-Steam game.
+
+**Source:** Free fan game; official builds come from the developer **WarMachine Studios** (Discord / YouTube community / The Inverted Dungeon fan page), not Steam — so `steam_appid` stays empty.
+"""

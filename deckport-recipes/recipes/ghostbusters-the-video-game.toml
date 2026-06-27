@@ -1,0 +1,74 @@
+[game]
+title       = "Ghostbusters: The Video Game"
+slug        = "ghostbusters-the-video-game"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "9870"
+sgdb_id     = ""
+
+[launch]
+binary         = "Ghostbusters.exe"   # 2009 original GFWL release main executable
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Version:** 2009 original (Steam `appid 9870`), delisted from Steam Feb 2017 after the license lapsed — distinct from the still-for-sale Remastered (`appid 1449280`).
+
+**GFWL:** The original uses Games for Windows Live (`GFWL`/`xlive`) which is dead and can hang launch or block save/profile creation.
+
+**Fix:** Best path on Deck: run under `GE-Proton` and **apply an xlive bypass** (drop a stub `xlive.dll` / use an XLiveLess-style fix in the prefix) so the GFWL login is skipped; the game then boots straight into single-player.
+
+**Controller:** Native Xbox 360 (XInput) controller support, so the Deck gamepad works without a Steam Input layout. Known quirk: the game may boot with keyboard/mouse prompts — nudge the left stick (or open Controls in the options menu) once to switch to gamepad prompts; some setups also prefer the pad connected before launch.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Terminal Reality"
+publisher = "Atari"
+released  = "2009"
+genre     = "Action-adventure / third-person shooter"
+modes     = "Single-player campaign; online multiplayer (servers defunct)"
+summary   = "**Ghostbusters: The Video Game** is a 2009 action-adventure shooter based on the **Ghostbusters** franchise, with the original film cast (Dan Aykroyd, Harold Ramis, Bill Murray and Ernie Hudson) reprising and voicing their roles. Aykroyd and Ramis wrote the story, which is set after Ghostbusters II and is widely regarded as an **unofficial third film**; players join as a new recruit using the proton pack and other gadgets to capture ghosts. Built on Terminal Reality's **Infernal engine**, it was well received for its faithful tone, humor and destructible environments. The 2009 original (appid 9870) was **delisted from Steam** in early 2017 when the license lapsed, and is distinct from the still-for-sale 2019 Remastered edition."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — Ghostbusters: The Video Game (appid 9870)"
+url   = "https://www.protondb.com/app/9870"
+
+[[links.guides]]
+title = "steamtinkerlaunch — GFWL/xlive handling (NOGFWL)"
+url   = "https://github.com/sonic2kk/steamtinkerlaunch/wiki/GFWL"
+
+[[links.guides]]
+title = "PCGamingWiki — Ghostbusters: The Video Game"
+url   = "https://www.pcgamingwiki.com/wiki/Ghostbusters:_The_Video_Game"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Version:** This is the 2009 ORIGINAL (`appid 9870`), delisted from Steam in Feb 2017 — not the Remastered (`appid 1449280`), which is still on sale and out of scope.
+
+**GFWL:** Main caveat is Games for Windows Live: the dead `GFWL`/`xlive` layer can hang the launcher or refuse to create a save profile, so **an xlive bypass** (stub `xlive.dll` / XLiveLess-style fix) in the prefix is **effectively required**; with that in place it runs well under `GE-Proton`.
+
+**Multiplayer:** Multiplayer/online features are gone but the campaign is fully single-player.
+
+**Controller:** Controller works natively (XInput/Xbox layout), no Steam Input remap needed — but on first launch nudge the left stick (or visit the Controls option screen) to flip from keyboard to gamepad prompts.
+
+**Binary:** Binary set to `Ghostbusters.exe` — confirm against your install."""

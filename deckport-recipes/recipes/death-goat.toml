@@ -1,0 +1,75 @@
+[game]
+title       = "Death Goat"
+slug        = "death-goat"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "340770"
+sgdb_id     = ""
+
+[launch]
+binary         = "DeathGoat.exe"   # main game executable in the install root
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Source:** Delisted Steam game (appid `340770`), retired at the publisher's (Terminal Press) request. Arcade twin-stick shooter, a small/simple indie title.
+
+**DRM:** No GFWL or invasive DRM — **runs clean under Proton**.
+
+**Proton:** Use `GE-Proton` (`proton_experimental` also fine); **no winetricks needed**. ProtonDB tier gold and Valve listed it Deck-Playable.
+
+**Controller:** Native full-controller support: both analog sticks map automatically, so no Steam Input keyboard layout is required.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Terminal Press"
+publisher = "Terminal Press"
+released  = "2016"
+genre     = "Twin-stick shoot 'em up"
+modes     = "Single-player"
+summary   = """
+**Death Goat** is a frantic arcade **twin-stick shoot 'em up** built around speed, survival and nonstop combat, soaked in extreme gore and a hardcore **heavy metal soundtrack**. It was the only release from **Terminal Press**, the studio of artist Brian Ewing and programmer/musician Brian "Doombot" Kokernak, and shipped with eleven original tracks from metal bands such as Between the Buried and Me, God Forbid and Fallujah.
+
+The game built a small cult following for its over-the-top Twitch-style action. It was **delisted from Steam in December 2019** as the studio moved away from game development."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Death Goat (appid 340770)"
+url   = "https://www.protondb.com/app/340770"
+
+[[links.guides]]
+title = "Steam Community hub (appid 340770)"
+url   = "https://steamcommunity.com/app/340770/"
+
+[[links.guides]]
+title = "Delisted Games: Death Goat"
+url   = "https://delistedgames.com/death-goat/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing. Delisted (retired at publisher request) — **passes the not-for-sale rule**.
+
+**Proton:** ProtonDB gold + Valve Deck-Playable; runs well under Proton (`GE-Proton`) with **no special tweaks or DRM bypass**.
+
+**Controller:** Full native controller support (twin-stick), so it plays with the Deck's built-in sticks out of the box.
+
+**Online:** Single-player arcade shooter, so no online-server concern.
+
+**Verify:** Confirm the exact `.exe` name from your install if it differs from `DeathGoat.exe`."""

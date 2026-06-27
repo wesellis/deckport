@@ -1,0 +1,71 @@
+[game]
+title       = "Poker Night Double Pack"
+slug        = "poker-night-double-pack"
+aliases     = ["Poker Night at the Inventory", "Poker Night 2", "Poker Night"]
+type        = "proton"
+engine      = "other"         # Telltale Tool
+steam_appid = "234710"   # Poker Night 2 (appid 31280 = Poker Night at the Inventory)
+sgdb_id     = ""
+
+[launch]
+binary         = "PokerNight2.exe"   # PN2 exe (confirmed via crash logs); PN1 exe = CelebrityPoker.exe
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Pack:** Telltale's two poker games — Poker Night at the Inventory (2010, appid `31280`) and Poker Night 2 (2013, appid `234710`). Each game is its own folder/exe; both run under Proton on Deck.
+
+**DRM:** Both delisted (Telltale's closure + the cross-franchise guest characters' licenses) — **bring your own copy**.
+
+**Proton:** Use `GE-Proton` (or a recent `proton_experimental`) — the Telltale Tool engine is OpenGL-era and behaves better on GE.
+
+**Fix:** A black screen after the Telltale logo on launch is caused by a **corrupt save, not Proton** — delete the save file under the prefix's `Documents/Telltale Games/<game>` folder (e.g. `pnati_save.save`) so the game writes a fresh one.
+
+**Exes:** Poker Night 2's binary is `PokerNight2.exe`; Poker Night at the Inventory's binary is `CelebrityPoker.exe` (its internal working title). Both sit in their own install folder; the importer targets one game per recipe run.
+
+**Controller:** Both games have native gamepad support, so the Steam Deck controls work out of the box (fall back to a Steam Input gamepad/mouse layout if a menu doesn't take input)."""
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2010 (Poker Night at the Inventory) / 2013 (Poker Night 2)"
+genre     = "Card game / poker"
+modes     = "Single-player"
+summary   = "A pair of crossover **Texas hold'em poker** games built on the **Telltale Tool** engine, in which the player sits at a private table against four guest characters drawn from various franchises. **Poker Night at the Inventory** (2010) features Tycho Brahe (Penny Arcade), Max (Sam & Max), the Heavy (Team Fortress 2) and Strong Bad (Homestar Runner); **Poker Night 2** (2013) features Brock Samson (The Venture Bros.), Ash Williams (Evil Dead), Claptrap (Borderlands) and Sam (Sam & Max), with GLaDOS (Portal) as the dealer. Both are noted for their **fully voiced banter** and TF2 item tie-ins, and both were pulled from sale in 2018 when their **licensed-character agreements lapsed** around Telltale's closure."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** Delisted (Telltale closure / licensed guest characters) — configuration only, no links.
+
+**Two games:** Two separate games in the pack (appids `31280` + `234710`) — point the importer at whichever exe you want: `PokerNight2.exe` for Poker Night 2, and `CelebrityPoker.exe` for Poker Night at the Inventory (the PN1 exe keeps its original "Celebrity Poker" working title).
+
+**Fix:** Black-screen-after-Telltale-logo is a **corrupt save, not a Proton fault** — delete the save under `Documents/Telltale Games/<game>` in the prefix.
+
+**Proton:** Older OpenGL engine — prefer `GE-Proton` if `proton_experimental` black-screens.
+
+**Controller:** Native controller support works on Deck."""
+
+[[links.guides]]
+title = "Poker Night 2 — ProtonDB reports (appid 234710)"
+url   = "https://www.protondb.com/app/234710"
+
+[[links.guides]]
+title = "Poker Night at the Inventory — ProtonDB reports (appid 31280)"
+url   = "https://www.protondb.com/app/31280"
+
+[[links.guides]]
+title = "Poker Night 2 — PCGamingWiki (fixes, save/config locations)"
+url   = "https://www.pcgamingwiki.com/wiki/Poker_Night_2"

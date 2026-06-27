@@ -1,0 +1,71 @@
+[game]
+title       = "Infinity Blade II (PC Port)"
+slug        = "infinity-blade-ii-pc-port"
+aliases     = ["Infinity Blade 2", "Infinity Blade II", "IB2"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""              # iOS-exclusive, delisted 2018 / removed 2020 — never on PC officially
+sgdb_id     = ""
+
+[launch]
+binary         = "Infinity Blade Launcher.exe"   # stated: run it from the Binaries/ folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = ["d3dx9", "vcrun2010"]   # the port needs the DirectX 9 + VC++ 2010 runtimes
+notes      = """
+**Port:** Community preservation port of the iOS-exclusive Infinity Blade II (**ChAIR Entertainment** / **Epic**, **Unreal Engine 3**) to Windows — the originals were delisted in 2018 and pulled in 2020.
+
+**Proton:** The port's own notes confirm it runs on the Steam Deck via Proton.
+
+**Controller:** The port adds keyboard/mouse and **gamepad** input — bind dodge/block/stab/strike to buttons in the launcher's config. The Deck's touchscreen also lets you finger-swipe the sword combat as on iOS.
+
+**Install:** Launch via `Binaries/Infinity Blade Launcher`; install the **DirectX 9** and **VC++ 2010** runtimes (`d3dx9`, `vcrun2010` winetricks above)."""
+
+[about]
+developer = "Chair Entertainment / Epic Games"
+publisher = "Epic Games"
+released  = "2011 (iOS); fan PC port later"
+genre     = "Action role-playing"
+modes     = "Single-player"
+summary   = """
+**Infinity Blade II** is an action RPG originally released for iOS in December 2011 by Chair Entertainment and Epic Games, the sequel to the original **Infinity Blade**. Built on **Unreal Engine 3**, it was a technical showcase for mobile hardware, with **swipe-and-tap touchscreen sword combat** where the player attacks, parries, and dodges in one-on-one duels across a cyclical bloodline storyline.
+
+The series was critically acclaimed and historically significant for the platform, but Epic removed all three Infinity Blade games from the App Store in December 2018 as it shifted focus to **Fortnite**. This entry is a community preservation port that makes the iOS-exclusive game playable on Windows."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Infinity Blade 2 PC Port — overview (DSOGaming)"
+url   = "https://www.dsogaming.com/news/infinity-blade-2-pc-port-available-now-for-download/"
+
+[[links.guides]]
+title = "Infinity Blade II ported to PC for preservation (Notebookcheck)"
+url   = "https://www.notebookcheck.net/Infinity-Blade-II-ported-to-PC-for-preservation-purposes.991979.0.html"
+
+[[links.guides]]
+title = "Fans bring Infinity Blade back, works on Steam Deck (NeoGAF thread)"
+url   = "https://www.neogaf.com/threads/fans-bring-ios-classic-infinity-blade-back-and-it-works-on-steam-deck.1667733/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** A fan preservation port (the original was iOS-only and is no longer obtainable).
+
+**Runtimes:** Needs the **DirectX 9** + **VC++ 2010** runtimes — apply via the winetricks above or protontricks (`d3dx9`, `vcrun2010`).
+
+**Controller:** Configurable **gamepad** controls (set dodge/block/stab in the launcher) plus keyboard/mouse; on the Deck, touchscreen swiping also works for the sword combat.
+
+**Saves:** Saves live in `My Games/Infinity Blade II/SwordGame/Cloud` under the user Documents folder."""

@@ -1,0 +1,76 @@
+[game]
+title       = "Transformers: Devastation"
+slug        = "transformers-devastation"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "338930"
+sgdb_id     = ""
+
+[launch]
+binary         = "TransformerDevastation.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** Delisted Steam game (appid `338930`), a PlatinumGames action title.
+
+**Proton:** ProtonDB tier is **platinum** (trending platinum, moderate confidence on a modest report count), and community reports (TFW2005, ResetEra) confirm it runs well on the Steam Deck. `GE-Proton` or `proton_experimental` both work — no tweaks reported as required. An old Proton issue (#3501) noted missing audio in animated cutscenes under early Proton; current builds report no such problem, but if cutscene audio drops, switch Proton version.
+
+**Binary:** Main binary is `TransformerDevastation.exe` (note the singular "Transformer" — confirmed from users' `steamapps` folders).
+
+**DRM:** **No DRM/GFWL workaround needed.**
+
+**Controller:** Full native controller support (built for gamepad), so no Steam Input remapping required.
+
+**Display:** Note the limited resolution list (`1366x768`/`1280x720`/`1024x768`/`800x600`/`1680x1050`/`4K`) — pick `1280x720` on the Deck's `1280x800` panel. An optional PCGamingWiki widescreen fix exists but is unnecessary for handheld play.
+
+**Install:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "PlatinumGames"
+publisher = "Activision"
+released  = "2015"
+genre     = "Action hack-and-slash"
+modes     = "Single-player"
+summary   = "**Transformers: Devastation** is a fast-paced action hack-and-slash from **PlatinumGames** (the studio behind Bayonetta and Metal Gear Rising), set in the **Generation 1** continuity. Its **cel-shaded** art style faithfully recreates the look of the original 1980s cartoon, and players control one of five Autobots — Optimus Prime, Bumblebee, Sideswipe, Wheeljack, or Grimlock — **switching between robot and vehicle modes mid-combat** as the Autobots fight to stop the Decepticons from cyberforming Earth. It launched to generally favorable reviews praising its combat and nostalgic faithfulness, though the short campaign drew criticism. Following the **expiry of Activision's Transformers license with Hasbro**, the game and its DLC were delisted from Steam and other storefronts on December 21, 2017."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB reports — TRANSFORMERS: Devastation (338930)"
+url   = "https://www.protondb.com/app/338930"
+
+[[links.guides]]
+title = "Proton issue #3501 — cutscene audio note (historical)"
+url   = "https://github.com/ValveSoftware/Proton/issues/3501"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "platinum"
+caveats       = """
+**Supply your own copy.** deckport links nothing.
+
+**Delisted:** Delisted single-player Steam game (appid `338930`); no online component, so nothing to lose from server shutdowns.
+
+**Proton:** ProtonDB platinum (modest report count) and community reports say it runs well on the Steam Deck with no required tweaks. Run with `GE-Proton` or `proton_experimental`.
+
+**Binary:** `TransformerDevastation.exe`.
+
+**Controller:** Native gamepad support — no Steam Input layout needed.
+
+**Display:** Resolution menu is limited; use `1280x720` on the Deck.
+
+**Status:** Still needs a **hands-on confirmation on a Deck** before marking verified."""

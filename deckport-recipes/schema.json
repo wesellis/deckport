@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://deckport/recipe.schema.json",
+  "title": "deckport recipe",
+  "description": "One TOML file per game. See RECIPE_FORMAT.md. The machine contract shared by the importer, the website, and recipe-validation CI.",
+  "type": "object",
+  "required": ["game", "launch", "meta"],
+  "additionalProperties": true,
+  "properties": {
+    "game": {
+      "type": "object",
+      "required": ["title", "slug", "type"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "type": { "enum": ["native", "proton"] },
+        "engine": { "enum": ["godot", "love", "unity", "gamemaker", "clickteam", "clickteam-fusion", "renpy", "openbor", "gzdoom", "unreal", "ue3", "source", "native", "other"] },
+        "steam_appid": { "type": "string" },
+        "sgdb_id": { "type": "string" }
+      }
+    },
+    "launch": {
+      "type": "object",
+      "required": ["binary"],
+      "properties": {
+        "binary": { "type": "string", "minLength": 1 },
+        "launch_options": { "type": "string", "not": { "pattern": "[;|&`]|\\$\\(" } },
+        "requires_files": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "proton": {
+      "type": "object",
+      "properties": {
+        "version": { "type": "string" },
+        "winetricks": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "art": {
+      "type": "object",
+      "properties": {
+        "cover": { "type": "string" },
+        "hero": { "type": "string" },
+        "logo": { "type": "string" },
+        "icon": { "type": "string" }
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "protondb": { "type": "string", "pattern": "^($|https?://)" },
+        "steamgriddb": { "type": "string", "pattern": "^($|https?://)" },
+        "guides": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["url"],
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string", "pattern": "^https?://" }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": { "enum": ["unverified", "needs-test", "working", "borked"] },
+        "verified_on": { "type": "string" },
+        "contributor": { "type": "string" },
+        "protondb_tier": { "enum": ["", "platinum", "gold", "silver", "bronze", "borked", "pending"] },
+        "caveats": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "comment": "The honest rule: status 'working' requires verified_on.",
+          "if": { "properties": { "status": { "const": "working" } } },
+          "then": { "required": ["verified_on"], "properties": { "verified_on": { "minLength": 1 } } }
+        }
+      ]
+    }
+  }
+}

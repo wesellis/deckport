@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# When the site gets its real domain, set `site` in astro.config and add:
+# Sitemap: https://your-domain/sitemap-index.xml

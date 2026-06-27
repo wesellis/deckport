@@ -1,0 +1,73 @@
+[game]
+title       = "The Suffering"
+slug        = "the-suffering"
+aliases     = ["The Suffering", "Suffering"]
+type        = "proton"
+engine      = "other"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "Suffering.exe"   # confirmed: main exe in the GOG/freeware install folder
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Game:** 2004 Surreal Software horror action game (Midway). Never released on Steam; a freeware build was published in 2008 and Warner Bros. later put it on `GOG` (2017) — **bring your own copy**.
+
+**Proton:** Runs under `GE-Proton` (confirmed playable on Linux via `Lutris`).
+
+**DRM:** Use the freeware or `GOG` build. The original retail disc uses `SafeDisc` DRM, which **fails under modern Windows/Wine**.
+
+**Display:** Recommend the community AiO/widescreen patch for native widescreen + FOV + HUD/FMV correction; it also marks the exe Windows-version/high-DPI aware.
+
+**Fix:** **Cap framerate to ~59fps** to avoid the high-FPS sped-up audio/dialogue bug. The community AiO patch ships its own 59 FPS limiter; otherwise cap via `MangoHud`/driver V-sync.
+
+**Controller:** No native gamepad support — bind a Steam Input keyboard/mouse layout (gyro + right-stick mouse) for full controller play on Deck. Community confirms a Steam Input layout plays the whole game fine.
+
+**Install:** Normal install (GOG/freeware) then run `Suffering.exe`. Enable DirectPlay so the installer/runtime doesn't error."""
+
+[about]
+developer = "Surreal Software"
+publisher = "Midway Games (PC published by Encore in North America, Zoo Digital Publishing in Europe)"
+released  = "2004"
+genre     = "Psychological horror action shooter"
+modes     = "Single-player"
+summary   = "**The Suffering** is a 2004 psychological-horror action game by **Surreal Software**, played from a switchable **first/third-person view**. You play Torque, a death-row inmate at the haunted Abbott State Penitentiary on Carnate Island, who survives a supernatural breakout and battles grotesque creatures themed around methods of execution. Creature designs were contributed by **Stan Winston Studio**, and the game was praised for its atmosphere, gore, and **morality-driven multiple endings**. It spawned a 2005 sequel, **Ties That Bind**; the PC version never reached Steam and the retail disc relies on **SafeDisc DRM** that fails on modern systems."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = """
+**Supply your own copy:** Use the 2008 freeware or `GOG` build — the retail disc's `SafeDisc` DRM is **broken on modern systems**.
+
+**Steam:** Never on Steam (`steam_appid` stays empty).
+
+**Controller:** No native controller support — use a Steam Input keyboard/mouse layout (counts as the gamepad path).
+
+**Display:** Apply the community AiO/widescreen patch for resolution/FOV, and **cap to 60fps** to fix high-FPS audio.
+
+**Binary:** Main exe is `Suffering.exe` in the install folder."""
+
+[[links.guides]]
+title = "The Suffering — PCGamingWiki (fixes, widescreen, FPS/audio)"
+url   = "https://www.pcgamingwiki.com/wiki/The_Suffering"
+
+[[links.guides]]
+title = "The Suffering Series AiO Patch (widescreen + 59fps audio fix) — ModDB"
+url   = "https://www.moddb.com/games/the-suffering/downloads/the-suffering-series-aio-patch"
+
+[[links.guides]]
+title = "Guide: The Suffering PC Fixes — Rely on Horror"
+url   = "https://www.relyonhorror.com/in-depth/guide-suffering-pc-fixes/"

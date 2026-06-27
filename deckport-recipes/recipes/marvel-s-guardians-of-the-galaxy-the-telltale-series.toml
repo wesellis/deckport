@@ -1,0 +1,74 @@
+[game]
+title       = "Marvel’s Guardians of the Galaxy: The Telltale Series"
+slug        = "marvel-s-guardians-of-the-galaxy-the-telltale-series"
+aliases     = []
+type        = "proton"
+engine      = "other"
+steam_appid = "579950"
+sgdb_id     = ""
+
+[launch]
+binary         = "GoG.exe"   # Telltale Tool engine launcher for this title (verify against your install)
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """
+**Delisted:** Delisted Steam game (appid `579950`, retired June 2019 after Telltale's closure). Telltale Tool engine episodic adventure.
+
+**Proton:** ProtonDB rates it **gold** (overall tier; recent reports trend platinum) — it runs well on Linux/Proton with no DRM/GFWL middleware to bypass. Use `GE-Proton` (or `proton_experimental`); no winetricks needed.
+
+**Controller:** Like other late Telltale Tool titles, this game is **picky about gamepad detection** — it only accepts a device the engine sees as a true gamepad (DInput DevType `66069`), so on Windows people often needed x360ce. On Proton this is handled by Proton's built-in Telltale/Yakuza controller-mapping fix, so the Deck pad generally works, but it is **not** effortless native support: if the in-game pad isn't detected, set the controller layout to **Gamepad with Mouse Trackpad** (or a Keyboard/Mouse layout) in Steam Input as a fallback.
+
+**Install:** The launcher .exe is typically `GoG.exe` for this title (Telltale's internal short name for the game), but **confirm the actual executable in your install folder** and adjust if different. No special launch options required.
+
+**DRM:** deckport only configures the prefix; it never bundles or links the game files."""
+
+[about]
+developer = "Telltale Games"
+publisher = "Telltale Games"
+released  = "2017"
+genre     = "Episodic graphic adventure"
+modes     = "Single-player"
+summary   = "A five-episode narrative adventure based on Marvel's Guardians of the Galaxy comics, built on Telltale's proprietary **Telltale Tool** engine and centered on **choice-driven dialogue** and quick-time action sequences. Players control **Star-Lord** as the team contends with the cosmic conqueror Hala while wrestling with their own pasts. Released episodically across 2017 to generally favorable reviews, it became **delisted** in mid-2019 following the **studio's closure** and majority layoffs, leaving it unavailable for purchase through normal storefronts."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "ProtonDB: Marvel's Guardians of the Galaxy: The Telltale Series (appid 579950)"
+url   = "https://www.protondb.com/app/579950"
+
+[[links.guides]]
+title = "Proton issue #847: controller detection for Telltale games"
+url   = "https://github.com/ValveSoftware/Proton/issues/847"
+
+[[links.guides]]
+title = "Steam Community: Controller support discussion (appid 579950)"
+url   = "https://steamcommunity.com/app/579950/discussions/0/1488866813763600602/"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "gold"
+caveats       = """
+**Supply your own copy:** deckport links nothing.
+
+**Delisted:** Delisted from Steam/GOG/consoles in mid-2019 (Telltale closure) — no longer for sale, single-player so no online dependency.
+
+**Proton:** ProtonDB **gold** — runs well under `Proton`/`GE-Proton` with no DRM or GFWL to work around.
+
+**Controller:** the Telltale Tool engine is **fussy about gamepad detection** (it wants a true DInput gamepad, DevType `66069`). Proton ships a Telltale/Yakuza controller-detection fix so the Deck pad usually works, but it is **not** flawless native support — if the pad isn't picked up in-game, fall back to a **Gamepad with Mouse Trackpad** / Keyboard-Mouse Steam Input layout.
+
+**Install:** Binary listed as `GoG.exe` (Telltale Tool launcher) — confirm against your install.
+
+**NEEDS-TEST:** not yet confirmed on a Deck for this specific recipe."""

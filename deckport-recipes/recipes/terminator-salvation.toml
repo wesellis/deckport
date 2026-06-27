@@ -1,0 +1,72 @@
+[game]
+title       = "Terminator Salvation"
+slug        = "terminator-salvation"
+aliases     = ["Terminator Salvation", "Terminator"]
+type        = "proton"
+engine      = "other"
+steam_appid = "21080"
+sgdb_id     = ""
+
+[launch]
+binary         = "TerminatorSalvation.exe"   # stated by the install guide
+launch_options = "MESA_VK_WSI_PRESENT_MODE=fifo %command%"   # caps the uncapped framerate on the Deck/Proton
+requires_files = []
+
+[proton]
+version    = "proton_experimental"
+winetricks = ["vcrun2008"]   # the port wants the VC++ 2008 runtime; uses OpenAL + PhysX
+notes      = """
+**Game:** GRIN's 2009 cover-shooter (John Connor vs Skynet, ~3 hrs), delisted from Steam (`appid 21080`).
+
+**Proton:** A community member reports it running on Linux/Deck via Proton — `proton_experimental` or `GE-Proton` both work; if the default build misbehaves, `GE-Proton` bundles extra fixes.
+
+**Controller:** Native Xbox 360 / XInput gamepad support means the Deck controller works out of the box (no Steam Input layout needed).
+
+**Display:** The game has **no vsync and an uncapped framerate**, fixed by the `MESA_VK_WSI_PRESENT_MODE=fifo %command%` launch option above.
+
+**Audio/PhysX:** It uses `OpenAL` audio and `PhysX`; if it won't load, the legacy `PhysX` driver helps."""
+
+[about]
+developer = "GRIN"
+publisher = "Equity Games / Evolved Games (Halcyon)"
+released  = "2009"
+genre     = "Third-person cover shooter"
+modes     = "Single-player, local split-screen co-op"
+summary   = """
+**Terminator Salvation** is a 2009 **third-person cover-shooter** tie-in to the film of the same name, with players controlling **John Connor** in the war against **Skynet**. The campaign runs roughly three hours and can be played solo or in **local split-screen co-op** as John Connor and Blair Williams.
+
+It was developed by Swedish studio **GRIN** as that team's final game before closure, and shipped to mostly negative reviews. The game was later **delisted from Steam** (appid 21080)."""
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = "pending"
+caveats       = """
+**Supply your own copy:** Delisted movie tie-in — supply your own copy.
+
+**DRM:** The original used **SecuROM DRM** that misbehaves on modern systems, so a **DRM-free copy is the practical route**.
+
+**Install:** Install the `vcrun2008` (VC++ 2008) runtime, `OpenAL`, and (if it won't load) the legacy `PhysX` driver.
+
+**Display:** The `MESA_VK_WSI_PRESENT_MODE=fifo` launch option above tames the uncapped framerate on the Deck.
+
+**Controller:** Native Xbox 360 / XInput controller support means the Deck gamepad works without a custom layout.
+
+**Status:** ProtonDB tier not yet confirmed (page is JS-gated); community reports indicate it runs via Proton, so status is `needs-test` pending a hands-on Deck run.
+
+**Binary:** `TerminatorSalvation.exe` (the legit Evolved Games executable, ~7 MB, in the install root)."""
+
+[[links.guides]]
+title = "ProtonDB - Terminator Salvation (AppID 21080)"
+url   = "https://www.protondb.com/app/21080"
+
+[[links.guides]]
+title = "PCGamingWiki - Terminator: Salvation"
+url   = "https://www.pcgamingwiki.com/wiki/Terminator:_Salvation"

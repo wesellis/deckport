@@ -1,0 +1,54 @@
+[game]
+title       = "Sonic Triple Trouble 16-Bit"
+slug        = "sonic-triple-trouble-16bit"
+aliases     = ["Sonic Triple Trouble 16-bit", "Sonic Triple Trouble Fan Remake"]
+type        = "proton"
+engine      = "gamemaker"
+steam_appid = ""
+sgdb_id     = ""
+
+[launch]
+binary         = "SonicTripleTrouble16Bit.exe"
+launch_options = ""
+requires_files = []
+
+[proton]
+version    = "GE-Proton"
+winetricks = []
+notes      = """\
+Run with GE-Proton (standard Proton also works per community reports). Free standalone GameMaker game — no base game required. \
+Built-in gamepad support: Xbox/XInput controllers work out of the box (controls are remappable in Settings). \
+Download the Windows 64-bit build from the official Game Jolt page (https://gamejolt.com/games/sonictripletrouble16bit/322794), unzip it, and add the .exe as a non-Steam game, then force a Proton version. \
+The default Windows-64 executable folder name varies by version; confirm the .exe name after unzipping and update [launch].binary if it differs."""
+
+[about]
+developer = "Noah Copeland"
+publisher = "Noah Copeland"
+released  = "2022"
+genre     = "2D Platformer"
+modes     = "Single-player"
+summary   = "Sonic Triple Trouble 16-Bit is a 2022 free fan remake of the 1994 Sega Game Gear title Sonic Triple Trouble, rebuilt from scratch as a full 16-bit Mega Drive/Genesis-style game by solo developer Noah Copeland over several years. The remake expands and reimagines the original game with overhauled level design, new zones, updated visuals, and a full soundtrack while preserving the spirit of the source material. It is widely considered one of the highest-quality Sonic fan games ever made and is completely free. Released for Windows in August 2022, with macOS and Android builds following in May 2023."
+
+[art]
+cover = "auto"
+hero  = "auto"
+logo  = "auto"
+icon  = "auto"
+
+[links]
+steamgriddb = ""
+
+[[links.guides]]
+title = "Official Game Jolt Page — Free Download"
+url   = "https://gamejolt.com/games/sonictripletrouble16bit/322794"
+
+[[links.guides]]
+title = "Wikipedia — Sonic Triple Trouble 16-Bit"
+url   = "https://en.wikipedia.org/wiki/Sonic_Triple_Trouble_16-Bit"
+
+[meta]
+status        = "needs-test"
+verified_on   = ""
+contributor   = ""
+protondb_tier = ""
+caveats       = "Completely free — download the Windows build from the official Game Jolt page (https://gamejolt.com/games/sonictripletrouble16bit/322794). No base game required. Not on Steam, so there is no ProtonDB rating; runs as a non-Steam game under GE-Proton (standard Proton also reported working). Built-in gamepad support — Xbox/XInput controllers work out of the box and are remappable in Settings. Binary name is unconfirmed; verify the .exe inside the unzipped Win-64 build and update [launch].binary if needed."
