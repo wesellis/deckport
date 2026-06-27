@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/site";
 import Base from "../../layouts/Base.astro";
 import StatusBadge from "../../components/StatusBadge.astro";
 import ProtonBadge from "../../components/ProtonBadge.astro";
@@ -71,7 +72,7 @@ function guideSource(url: string): string {
 <Base title={`${recipe.title} — deckport recipe`} description={recipe.caveats || undefined}>
   <div class="wrap">
     <header class="recipe-hero">
-      <p class="eyebrow"><a href="/recipes">← recipe book</a></p>
+      <p class="eyebrow"><a href={withBase("/recipes")}>← recipe book</a></p>
       <div
         class={`recipe-banner ${banner ? "has-art" : "no-art"}`}
         style={banner ? `background-image:url("${banner}")` : undefined}
@@ -311,12 +312,12 @@ function guideSource(url: string): string {
             <div class="btn-row">
               <a
                 class="btn green"
-                href={scriptUrl}
+                href={withBase(scriptUrl)}
                 download={`${recipe.slug}.deckport.sh`}
               >
                 Download install script ↓
               </a>
-              <a class="btn" href="/deckport.py" download="deckport.py">
+              <a class="btn" href={withBase("/deckport.py")} download="deckport.py">
                 Download importer (deckport.py) ↓
               </a>
             </div>

@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import { SUPPORT_URL } from "../lib/site";
+import { SUPPORT_URL, withBase } from "../lib/site";
 
 interface Props {
   title: string;
@@ -39,7 +39,7 @@ const supportUrl = SUPPORT_URL;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase("/favicon.svg")} />
     <meta name="theme-color" content="#0c1016" />
     <meta name="color-scheme" content="dark" />
     <!-- Critical theme: makes the very first paint already dark, so the bundled
@@ -70,12 +70,12 @@ const supportUrl = SUPPORT_URL;
   <body>
     <header class="site-header">
       <div class="wrap">
-        <a class="brand" href="/">deck<span class="dot">port</span></a>
+        <a class="brand" href={withBase("/")}>deck<span class="dot">port</span></a>
         <nav class="nav">
           {
             nav.map((n) => (
               <a
-                href={n.href}
+                href={n.href.startsWith("http") ? n.href : withBase(n.href)}
                 aria-current={current === n.key ? "page" : undefined}
               >
                 {n.label}
@@ -99,9 +99,9 @@ const supportUrl = SUPPORT_URL;
           >
         </span>
         <span style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
-          <a href="/recipes">Recipes</a>
-          <a href="/contribute">Contribute</a>
-          <a href="/about">About</a>
+          <a href={withBase("/recipes")}>Recipes</a>
+          <a href={withBase("/contribute")}>Contribute</a>
+          <a href={withBase("/about")}>About</a>
           <a href="https://github.com/wesellis/deckport">GitHub</a>
           {supportUrl && (
             <a class="support-link" href={supportUrl} rel="noopener" target="_blank">☕ Support</a>

@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import RecipeCard from "../components/RecipeCard.astro";
 import GridCascade from "../components/GridCascade.astro";
@@ -80,7 +81,7 @@ const tierLegend = ["platinum", "gold", "silver", "bronze"];
         artwork — so it lands in Game Mode looking like it belongs. It tells you how
         to set a game up; <strong>never where to download it.</strong>
       </p>
-      <form class="hero-search" action="/recipes" method="get" role="search">
+      <form class="hero-search" action={withBase("/recipes")} method="get" role="search">
         <input
           type="search"
           name="q"
@@ -90,8 +91,8 @@ const tierLegend = ["platinum", "gold", "silver", "bronze"];
         <button class="btn primary" type="submit">Search</button>
       </form>
       <div class="btn-row" style="margin-top:.85rem;">
-        <a class="btn" href="/recipes">Browse all {recipes.length} →</a>
-        <a class="btn" href="/proton-packs">Install Proton first</a>
+        <a class="btn" href={withBase("/recipes")}>Browse all {recipes.length} →</a>
+        <a class="btn" href={withBase("/proton-packs")}>Install Proton first</a>
       </div>
       <div class="hero-stats">
         <div class="stat-card"><b>{recipes.length}</b><span>recipes</span></div>
@@ -109,7 +110,7 @@ const tierLegend = ["platinum", "gold", "silver", "bronze"];
           <p class="eyebrow">the recipe book</p>
           <h2 style="margin:0;">Games worth the extra coaxing</h2>
         </div>
-        <a href="/recipes">See all {recipes.length} recipes →</a>
+        <a href={withBase("/recipes")}>See all {recipes.length} recipes →</a>
       </div>
       <p class="muted" style="max-width:640px;">
         A taste of what's inside — sorted to the strongest first. Each card shows
@@ -145,14 +146,14 @@ const tierLegend = ["platinum", "gold", "silver", "bronze"];
           <span class="jicon" aria-hidden="true">🔎</span>
           <h3>Find your game</h3>
           <p>Search the book for a delisted, abandoned or modded title.</p>
-          <a href="/recipes">Browse recipes →</a>
+          <a href={withBase("/recipes")}>Browse recipes →</a>
         </li>
         <li class="jstep">
           <span class="jnum">2</span>
           <span class="jicon" aria-hidden="true">📦</span>
           <h3>Install the Proton pack</h3>
           <p>The recipe names the build — GE-Proton, Experimental, CachyOS. Add it once.</p>
-          <a href="/proton-packs">Proton setup →</a>
+          <a href={withBase("/proton-packs")}>Proton setup →</a>
         </li>
         <li class="jstep">
           <span class="jnum">3</span>
@@ -314,9 +315,9 @@ const tierLegend = ["platinum", "gold", "silver", "bronze"];
         Proton setup, the tweaks, and real artwork worked out for you.
       </p>
       <div class="btn-row" style="justify-content:center;">
-        <a class="btn primary" href="/recipes">Browse the recipe book</a>
-        <a class="btn" href="/proton-packs">Install Proton packs</a>
-        <a class="btn" href="/contribute">Add a recipe</a>
+        <a class="btn primary" href={withBase("/recipes")}>Browse the recipe book</a>
+        <a class="btn" href={withBase("/proton-packs")}>Install Proton packs</a>
+        <a class="btn" href={withBase("/contribute")}>Add a recipe</a>
       </div>
     </div>
   </section>

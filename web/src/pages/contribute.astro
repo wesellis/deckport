@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/site";
 import Base from "../layouts/Base.astro";
 import ProtonBadge from "../components/ProtonBadge.astro";
 import { PROTON_TIER_ORDER } from "../lib/recipes";
@@ -22,7 +23,7 @@ import { PROTON_TIER_ORDER } from "../lib/recipes";
           The <strong>Suggest a recipe</strong> form fills out the TOML for you and
           opens a pull request under your own GitHub account — no git, no setup.
         </p>
-        <a class="btn primary" href="/suggest">Suggest a recipe →</a>
+        <a class="btn primary" href={withBase("/suggest")}>Suggest a recipe →</a>
       </div>
 
       <h3>The honest rule</h3>

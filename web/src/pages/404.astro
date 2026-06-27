@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/site";
 import Base from "../layouts/Base.astro";
 ---
 
@@ -12,8 +13,8 @@ import Base from "../layouts/Base.astro";
         The recipe book is still where you left it.
       </p>
       <div class="btn-row" style="justify-content:center;">
-        <a class="btn primary" href="/recipes">Browse the recipe book</a>
-        <a class="btn" href="/">Home</a>
+        <a class="btn primary" href={withBase("/recipes")}>Browse the recipe book</a>
+        <a class="btn" href={withBase("/")}>Home</a>
       </div>
     </div>
   </section>

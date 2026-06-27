@@ -1,0 +1,59 @@
+name: pages
+
+# Builds the Astro recipe-book site and publishes it to GitHub Pages on every
+# push to main. The site is served at https://<user>.github.io/deckport/, so the
+# build sets PUBLIC_BASE_PATH=/deckport and all internal links go through
+# withBase() (web/src/lib/site.ts) to resolve under that subpath.
+#
+# One-time setup: repo Settings -> Pages -> Build and deployment -> Source:
+# "GitHub Actions". Nothing else needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "web/**"
+      - "deckport-recipes/recipes/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build site (GitHub Pages base path)
+        working-directory: web
+        env:
+          PUBLIC_BASE_PATH: /deckport
+          PUBLIC_SITE_URL: https://wesellis.github.io
+        run: |
+          npm ci
+          npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
