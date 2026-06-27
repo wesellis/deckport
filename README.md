@@ -2,6 +2,8 @@
 
 **Drop a portable game on your PC and have it land on your Steam Deck — unlocked, registered with Steam, dressed in real box art, and ready to play in Game Mode — without installing anything.**
 
+> 🌐 **Live recipe book:** [wesellis.github.io/deckport](https://wesellis.github.io/deckport/)
+
 deckport treats self-contained PC games the way an emulator treats ROMs: the game folder is the cartridge, and a small set of tools does the boring work of getting it recognized and presentable on the Deck. It is deliberately small, dependency-light, and scriptable — not another launcher with a GUI to babysit.
 
 It has also grown a **recipe book and website**: a browsable, fact-checked collection of community configs for **delisted, abandoned, and full-game-modded PC games**. Each recipe carries the right Proton or native setup, real SteamGridDB artwork (capsule + cinematic hero), Steam screenshots, the community ProtonDB tier, and an honest tested-status. The importer, the recipe data, and the site all live in this one repo.
