@@ -13,7 +13,7 @@
     "heroes": "node scripts/fetch-heroes.mjs"
   },
   "dependencies": {
-    "astro": "^5.5.0",
+    "astro": "^6.4.6",
     "smol-toml": "^1.3.1"
   }
 }
